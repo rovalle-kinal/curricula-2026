@@ -483,7 +483,7 @@ def generate_maa():
     </main>
 
     <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
-        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Mecanismos del Automóvil 2026
+        Fundación Kinal • Escuela Técnica Superior • Coordinación Académica • Propuesta Curricular Mecanismos del Automóvil 2026
     </footer>
 
     <script>

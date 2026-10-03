@@ -1,6 +1,6 @@
 # PROGRAMA DE CAPACITACIÓN DOCENTE: INTELIGENCIA ARTIFICIAL APLICADA A LA PLANIFICACIÓN Y PRODUCCIÓN DIDÁCTICA TÉCNICA
 ### Enfoque en Herramientas Gratuitas, Ideario Institucional y Normativa de Convivencia Kinal
-**Fundación Kinal — Dirección Académica / Centro de Capacitación Docente**
+**Fundación Kinal — Coordinación Académica / Centro de Capacitación Docente**
 **Duración Total:** 12 horas presenciales/taller (3 sábados de 4 horas cada uno)
 
 ---
