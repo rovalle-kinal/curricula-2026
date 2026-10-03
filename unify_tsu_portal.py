@@ -839,8 +839,8 @@ master_html = f"""<!DOCTYPE html>
 
         .map-layout {{
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 24px;
+            grid-template-columns: 1fr 280px;
+            gap: 16px;
             align-items: start;
         }}
         .curriculum-grid-container {{
@@ -852,24 +852,26 @@ master_html = f"""<!DOCTYPE html>
         }}
         .grid-header-row {{
             display: grid;
-            grid-template-columns: 240px repeat(4, minmax(210px, 1fr));
+            grid-template-columns: 150px repeat(4, minmax(135px, 1fr));
             background: var(--kinal-blue-dark);
             color: #ffffff;
             font-weight: 700;
-            font-size: 0.92rem;
+            font-size: 0.82rem;
             border-bottom: 2px solid var(--kinal-accent);
         }}
         .grid-header-cell {{
-            padding: 14px 16px;
+            padding: 10px 8px;
             text-align: center;
             border-right: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.82rem;
+            line-height: 1.25;
         }}
         .grid-header-cell:first-child {{ text-align: left; }}
         .grid-header-cell:last-child {{ border-right: none; }}
 
         .grid-linea-row {{
             display: grid;
-            grid-template-columns: 240px 1fr;
+            grid-template-columns: 150px 1fr;
             border-bottom: 1px solid var(--border-color);
         }}
         .grid-linea-row:last-child {{ border-bottom: none; }}
@@ -877,81 +879,81 @@ master_html = f"""<!DOCTYPE html>
         .grid-linea-label {{
             background: #f8fafc;
             border-right: 1px solid var(--border-color);
-            border-left: 5px solid var(--kinal-blue);
-            padding: 18px 16px;
+            border-left: 4px solid var(--kinal-blue);
+            padding: 12px 10px;
             display: flex;
-            align-items: center;
-            gap: 12px;
+            align-items: flex-start;
+            gap: 8px;
         }}
-        .linea-row-icon {{ font-size: 1.6rem; line-height: 1; }}
+        .linea-row-icon {{ font-size: 1.25rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }}
         .grid-linea-label strong {{
-            font-size: 0.92rem;
+            font-size: 0.78rem;
             color: var(--kinal-blue);
-            line-height: 1.3;
+            line-height: 1.25;
             display: block;
         }}
-        .linea-row-sub {{ font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }}
+        .linea-row-sub {{ font-size: 0.70rem; color: var(--text-muted); margin-top: 3px; line-height: 1.2; }}
 
         .grid-linea-cols {{
             display: grid;
-            grid-template-columns: repeat(4, minmax(210px, 1fr));
+            grid-template-columns: repeat(4, minmax(135px, 1fr));
         }}
         .grid-cell {{
-            padding: 12px;
+            padding: 8px;
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             background: #fafbfc;
         }}
         .grid-cell:last-child {{ border-right: none; }}
 
         .node-card {{
             background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 6px;
+            padding: 8px 8px;
             cursor: pointer;
             transition: all 0.2s;
             position: relative;
         }}
         .node-card:hover {{
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             border-color: var(--kinal-blue);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         }}
         .node-badge-row {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }}
         .node-code {{
             background: #e2e8f0;
             color: #1e293b;
             font-weight: 800;
-            font-size: 0.72rem;
-            padding: 2px 6px;
-            border-radius: 4px;
+            font-size: 0.65rem;
+            padding: 1px 5px;
+            border-radius: 3px;
         }}
-        .node-period {{ font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }}
+        .node-period {{ font-size: 0.65rem; color: var(--text-muted); font-weight: 600; }}
         .node-title {{
             display: flex;
             align-items: flex-start;
-            gap: 6px;
-            margin-bottom: 4px;
+            gap: 4px;
+            margin-bottom: 3px;
         }}
-        .node-icon {{ font-size: 1rem; line-height: 1.2; }}
+        .node-icon {{ font-size: 0.85rem; line-height: 1.2; flex-shrink: 0; }}
         .node-title strong {{
-            font-size: 0.88rem;
+            font-size: 0.76rem;
             color: var(--kinal-blue);
-            line-height: 1.25;
+            line-height: 1.2;
         }}
         .node-sub {{
-            font-size: 0.76rem;
+            font-size: 0.68rem;
             color: var(--text-muted);
-            line-height: 1.3;
-            margin-bottom: 8px;
+            line-height: 1.2;
+            margin-bottom: 5px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -959,12 +961,12 @@ master_html = f"""<!DOCTYPE html>
         }}
         .node-conn-summary {{
             display: flex;
-            gap: 8px;
-            font-size: 0.7rem;
+            gap: 6px;
+            font-size: 0.64rem;
             border-top: 1px solid var(--border-light);
-            padding-top: 6px;
+            padding-top: 4px;
         }}
-        .conn-count {{ padding: 2px 6px; border-radius: 4px; font-weight: 700; }}
+        .conn-count {{ padding: 1px 4px; border-radius: 3px; font-weight: 700; }}
         .conn-count.in {{ background: #ecfdf5; color: #065f46; }}
         .conn-count.out {{ background: #fffbeb; color: #92400e; }}
 
