@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Electromecánica Automotriz | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5 text-red-400"></i>
+                    Electromecánica Automotriz
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="Mecanica_Motores_Gasolina_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Motores</a>
+                <a href="Mecanismos_del_Automovil_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Mecanismos</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-red-600 text-white font-bold">EMA</span>
+                <a href="Inyeccion_Electronica_Automotriz_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Inyección</a>
+                <a href="Aire_Acondicionado_Automotriz_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Aire Acond.</a>
+                <a href="Mecanica_de_Motocicletas_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Motos</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_EMAM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-red-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Electromecánica Automotriz (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización del diagnóstico eléctrico automotriz: Corrección estructural del sistema de carga, diagnóstico de redes multiplexadas <strong>CAN-Bus y LIN-Bus</strong> con osciloscopio, alternadores inteligentes controlados por ECU, baterías AGM/EFB para sistemas Start-Stop y <strong>Protocolos de Desenergización en Alta Tensión</strong> para vehículos híbridos (HEV).
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">1 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Platinos Mecánicos)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">14 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Alternadores / AGM / Faros LED)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (CAN-Bus / LIN / Híbridos)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">78 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-red-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Transformación tecnológica del taller eléctrico automotriz frente a la arquitectura electrónica digital y la movilidad híbrida en Guatemala.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="network" class="w-5 h-5 text-red-600"></i>
+                        Redes de Comunicación CAN-Bus y LIN-Bus
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        En los automóviles modernos, un foco que no enciende o un vidrio eléctrico inoperativo no se debe a un fusible quemado, sino a un fallo de comunicación en el bus de datos LIN o CAN. El técnico debe ser capaz de conectar el osciloscopio en el conector DLC y analizar voltajes espejo (CAN-H 2.5 a 3.5V, CAN-L 2.5 a 1.5V).
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="battery-charging" class="w-5 h-5 text-amber-600"></i>
+                        Alternadores Inteligentes y Baterías Start-Stop
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Los alternadores ya no cargan a un voltaje fijo de 14.2V; son gobernados por modulación PWM o bus LIN desde la ECU para desacoplar carga durante aceleraciones y recuperar energía en desaceleración. Instalar una batería convencional en un auto con sensor IBS sin reprogramar la ECU la destruye en pocos meses.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="zap-off" class="w-5 h-5 text-emerald-600"></i>
+                        Seguridad de Alta Tensión en Híbridos (HEV)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Con miles de híbridos rodando en Guatemala (Toyota Prius, Aqua, Camry, Hyundai Ioniq), un electromecánico que toque el cableado naranja de 200 a 650 VDC sin guantes dieléctricos Clase 0 y sin extraer el Service Plug de seguridad corre peligro mortal de electrocución por arco voltaico continuo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-red-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Electromecánica Automotriz (2025_EMAM.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas distribuidas en 10 Módulos cronológicos</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma Técnico en Electromecánica Automotriz</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, razonamiento lógico-deductivo e interés por la electricidad automotriz.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para diagnosticar y reparar sistemas de arranque, carga, iluminación, accesorios de confort y encendido electrónico en vehículos automotores.</div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalía Monumental Detectada en el Archivo Fuente (2025_EMAM.xlsx)
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Módulo 6 Copiado Textualmente del Módulo 5 (Error Grave de Captura):</strong> En el Excel oficial, la columna del <em>Módulo 6 (Sistema de Carga)</em> contiene exactamente los mismos temas del <em>Módulo 5 (Sistema de Arranque)</em>: lista <em>"El motor de arranque"</em>, <em>"Relé de arranque o solenoide"</em>, etc. Los temas reales del alternador, puente de diodos y reguladores de voltaje fueron omitidos por un error de copia. Esta propuesta 2026 corrige integralmente dicha falla curricular.</li>
+                    <li><strong>Contenido Obsoleto de Platinos:</strong> En el Módulo 10 se mantiene <em>"Encendido de platinos con ayuda electrónica"</em>, tecnología abandonada hace décadas.</li>
+                    <li><strong>Ausencia de Redes Multiplexadas y Seguridad Híbrida:</strong> El temario no contemplaba las redes de comunicación CAN/LIN (que gestionan todo el cableado moderno del automóvil) ni los protocolos de seguridad vitales para desconectar baterías de alta tensión en vehículos híbridos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-red-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>93 temas</strong> desglosados en sus 10 módulos oficiales corregidos.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (96)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (1)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (14)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (3)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (78)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Principios de Electricidad</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principios de seguridad industrial.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Estructura atómica y cargas eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conductores y aislantes eléctricos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Teoría del flujo eléctrico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Unidades eléctricas (intensidad, tensión, resistencia).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ley de Ohm.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito eléctrico (básico, cerrado, abierto).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos en serie, paralelo y serie-paralelo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conceptos de señales eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">Principios de Electrónica</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Magnetismo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Electromagnetismo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Inducción.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Resistores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Semiconductores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Transistores, condensadores y transformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fusibles e interruptores de circuitos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El relé.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Identificación de los terminales de los relés.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de relé.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">El Multímetro</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El multímetro.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Digital</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Mediciones de caída de tensión en miliVoltios bajo carga real, impedancia de entrada (> 10 MΩ para protección de ECUs) y pinzas amperimétricas DC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes del multímetro.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Digital</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Mediciones de caída de tensión en miliVoltios bajo carga real, impedancia de entrada (> 10 MΩ para protección de ECUs) y pinzas amperimétricas DC.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Comprobación y medición de componentes eléctricos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medir voltaje disponible.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medir resistencia en un circuito.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medir intensidad de un circuito.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medir caídas de tensión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medir corrientes parásitas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+                            <h4 class="font-bold text-slate-900 text-base">Batería o Acumuladores</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">La batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Acumuladores Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico con probadores de conductancia digital (Midtronics), baterías AGM/EFB para vehículos Start-Stop y control de estado de salud (SOH).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Baterías de plomo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Acumuladores Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico con probadores de conductancia digital (Midtronics), baterías AGM/EFB para vehículos Start-Stop y control de estado de salud (SOH).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Baterías AGM y de litio.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes de una batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Comprobación de carga de una batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Acoplamiento de una batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Causas de sobrecarga en una batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Procedimiento de recarga de una batería.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento y servicio.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Seguridad y Protocolos de Desenergización en Alta Tensión para Vehículos Híbridos (HEV)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad en Vehículos Híbridos</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Uso obligatorio de guantes dieléctricos Clase 0 (1,000 V), extracción del Service Plug de la batería híbrida y verificación de ausencia de tensión en el inversor.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sistema de Arranque</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Circuito de Arranque</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Pruebas de caída de tensión en línea positiva y de masa (< 0.5V), prueba de corriente pico con osciloscopio y solenoides integrados.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito eléctrico del motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Circuito de Arranque</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Pruebas de caída de tensión en línea positiva y de masa (< 0.5V), prueba de corriente pico con osciloscopio y solenoides integrados.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de motores de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes de un motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor eléctrico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Relé de arranque o solenoide.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito computarizado de motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor de arranque con reluctor.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diagnóstico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Servicio y reparación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">6</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sistema de Carga</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sistema de Carga Corregido</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar (Error del Excel Corregido): Este módulo se titulaba "Sistema de Carga" pero copió erróneamente los temas de arranque. Se debe instruir sobre el alternador, puente de diodos y regulador LIN/PWM.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito eléctrico del motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sistema de Carga Corregido</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar (Error del Excel Corregido): Este módulo se titulaba "Sistema de Carga" pero copió erróneamente los temas de arranque. Se debe instruir sobre el alternador, puente de diodos y regulador LIN/PWM.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de motores de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes de un motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor eléctrico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Relé de arranque o solenoide.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito computarizado de motor de arranque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor de arranque con reluctor.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diagnóstico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Servicio y reparación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Alternadores Inteligentes con Control LIN / PWM y Sensor de Batería IBS</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gestión Inteligente de Carga</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Comunicación digital del alternador con la ECU para regular el voltaje según la aceleración y carga regenerativa, y registro de batería nueva con escáner.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">7</span>
+                            <h4 class="font-bold text-slate-900 text-base">Interpretación de un Diagrama Eléctrico</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">¿Qué es un diagrama eléctrico?</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Simbología.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Colores que identifican un cable.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conectores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Identificación de conectores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Dispositivos de control.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de conexiones eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de diagramas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso de un diagrama para determinar fallas eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Diagnóstico de Redes de Comunicación Multiplexadas CAN-Bus y LIN-Bus</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Comunicaciones Multiplexadas</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Medición de voltajes diferenciales en pines 6 y 14 del conector OBDII con osciloscopio, comprobación de resistencias de 120 Ω y aislamiento de módulos en corto.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">8</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sistema de Accesorios e Iluminación</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sistema de iluminación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Iluminación Inteligente</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Faros LED de alta potencia, luces diurnas DRL, circuitos modulados por ancho de pulso (PWM) y control computarizado por módulo de carrocería (BCM).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de lámparas del sistema de iluminación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Iluminación Inteligente</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Faros LED de alta potencia, luces diurnas DRL, circuitos modulados por ancho de pulso (PWM) y control computarizado por módulo de carrocería (BCM).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Panel de instrumentos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de medidores  (análogos, digitales).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Velocímetro (análogos, digitales).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Limpiaparabrisas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Elevalunas o vidrios eléctricos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cerradura central.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Claxon o bocina de aviso.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cinturones de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">9</span>
+                            <h4 class="font-bold text-slate-900 text-base">Componentes del Sistema de Encendido</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes del sistema de encendido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">La bobina.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Encendido Estático</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Bobinas independientes COP individuales por cilindro, módulos DIS, control de tiempo de saturación (Dwell) por la ECU y diagnóstico con osciloscopio.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El distribuidor.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cables de bujías.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">La bujía.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Valor térmico de la bujía.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Calibración y apriete de bujías.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Identificación de las bujías.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">10</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sistemas de Encendido</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Encendido de platinos con ayuda electrónica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tecnología de Platinos Obsoleta</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Los sistemas de encendido mecánico con platinos y condensador están descontinuados hace décadas en Guatemala; enfocar en bobinas transistorizadas COP (Coil-On-Plug).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Encendido electrónico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Encendido Estático</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Bobinas independientes COP individuales por cilindro, módulos DIS, control de tiempo de saturación (Dwell) por la ECU y diagnóstico con osciloscopio.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generador de impulsos de inducción.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generador con sensor óptico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generador de impulsos de efecto Hall.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sistema de encendido electrónico digital.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Encendido Estático</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Bobinas independientes COP individuales por cilindro, módulos DIS, control de tiempo de saturación (Dwell) por la ECU y diagnóstico con osciloscopio.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sistema de encendido electrónico DIS.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Encendido Estático</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Bobinas independientes COP individuales por cilindro, módulos DIS, control de tiempo de saturación (Dwell) por la ECU y diagnóstico con osciloscopio.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diagnóstico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Reparación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electromecánica Automotriz</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento eléctrico y de cableado esencial para el diagnóstico y reparación de circuitos del automóvil.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-red-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Sistema de Carga</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Módulo 6 corrupto en el Excel con temas copiados de motor de arranque.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Alternadores inteligentes con comunicación LIN / PWM con la ECU, sensores inteligentes de batería IBS y recuperación de energía.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Baterías y Acumuladores</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Prueba con hidrómetro y densímetro de ácido tradicional y carga lenta fija.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Diagnóstico de conductancia con analizador Midtronics, baterías selladas AGM/EFB para Start-Stop y registro digital de batería.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Redes de Comunicación</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Cableado convencional punto a punto con interruptores directos de carga.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Redes multiplexadas CAN-Bus (alta/baja velocidad) y LIN-Bus, módulos de carrocería (BCM) y diagnóstico con osciloscopio automotriz.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Sistema de Encendido</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Estudio residual de platinos y condensador con distribuidores centrífugos.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Bobinas individuales COP (Coil-On-Plug) con transistor de potencia integrado y diagnóstico de primario/secundario por osciloscopio.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Seguridad en Alta Tensión</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Ausencia de protocolos para voltajes superiores a 12/24V.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Protocolos de desenergización y comprobación de ausencia de tensión en sistemas de alto voltaje (200-650 VDC) de vehículos híbridos (HEV).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-red-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-red-500/20 text-red-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-red-500/30 text-red-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-red-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Electromecánica Automotriz</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="network" class="w-4 h-4"></i>
+                        Decodificación y Análisis de Tramas CAN-Bus Asistida por IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Software que captura el flujo binario en la red del vehículo y mediante algoritmos de Machine Learning identifica patrones de ruido, tramas corruptas o módulos que colisionan el bus de datos en microsegundos.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: PicoScope Waveform AI / CAN-Bus Analyzer Copilot.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        Termografía con IA para Detección de Fugas Parásitas y Puntos Calientes
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Cámaras térmicas conectadas a modelos de visión que escanean la caja de fusibles con el vehículo en reposo, identificando al instante el fusible por donde se fuga corriente parásita descargando la batería.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: FLIR ONE Pro Thermal Auto / Snap-on Diagnostic Thermal.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Asistente RAG para Diagramas Eléctricos y Mapeo de Pines de ECU
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Asistente interactivo que interpreta diagramas esquemáticos en PDF (Mitchell1, Identifix) y entrega al técnico la ruta de cableado, color de conductor, número de conector y prueba de voltaje exacta a realizar.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: AutoElectrics Copilot / Identifix Direct-Hit AI.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Electromecánica Automotriz 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

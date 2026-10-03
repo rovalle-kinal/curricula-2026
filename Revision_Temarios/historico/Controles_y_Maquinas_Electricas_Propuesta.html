@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Controles y Máquinas Eléctricas | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i>
+                    Controles y Máquinas Eléctricas
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="Instalaciones_Electricas_Generales_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Inst. Eléctricas</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-amber-600 text-white font-bold">CME</span>
+                <a href="Electronica_Analogica_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Electrónica Analógica</a>
+                <a href="Control_Industrial_Sistemas_Programables_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Sist. Programables</a>
+                <a href="Automatizacion_Industrial_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Automatización Ind.</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_CMEM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-amber-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Controles y Máquinas Eléctricas (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización integral orientada a la industria manufacturera, agroindustria y generación en Guatemala: Variadores de Frecuencia (VFD), Arrancadores Suaves (Soft Starters), corrección de factor de potencia bajo normativa <strong>CNEE (NTDOID)</strong>, mantenimiento predictivo con termografía y análisis MCSA, y seguridad eléctrica frente a arco eléctrico bajo estándar <strong>NFPA 70E</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Dinamos/Bombas Residenciales)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">36 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (VFD/CNEE/Guardamotores)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (FP Activo / NFPA 70E)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">63 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Exigencias operativas y regulatorias que impactan directamente el montaje, mantenimiento y control de motores eléctricos en el parque industrial guatemalteco.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="shield-alert" class="w-5 h-5 text-amber-600"></i>
+                        Regulación CNEE y Calidad de Red (NTDOID)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Las empresas distribuidoras en Guatemala (EEGSA, Deorsa, Deocsa) aplican severos recargos económicos por factor de potencia inductivo inferior a 0.90 y exigen límites estrictos a la inyección de armónicos (IEEE 519). El técnico egresado debe saber dimensionar bancos de condensadores automáticos con reactancias anti-resonantes.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="gauge" class="w-5 h-5 text-blue-600"></i>
+                        Transición de Arranque Directo a VFD / Soft Starter
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Los picos de corriente del arranque directo (hasta 7-8 veces la corriente nominal) provocan caídas de tensión inaceptables en líneas de producción y fatiga mecánica en bombas y molinos. El mercado laboral demanda técnicos capaces de comisionar variadores vectoriales con frenado dinámico y rampas suaves de desaceleración.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="hard-hat" class="w-5 h-5 text-emerald-600"></i>
+                        Seguridad frente a Arc Flash (NFPA 70E / MinTrab)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        En cumplimiento del Reglamento de Salud y Seguridad Ocupacional (Acuerdo Gubernativo 229-2014), las plantas multinacionales y corporaciones locales exigen procedimientos estrictos de desenergización, prueba de ausencia de tensión, bloqueo/etiquetado (LOTO) y uso de caretas y trajes contra arco eléctrico en tableros CCM.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha de Venta Original y Diagnóstico Crítico de Anomalías -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-amber-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Controles y Máquinas Eléctricas (2025_CMEM.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas cronológicas distribuidas en 10 Módulos</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma de Técnico en Electricidad Industrial</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, conocimientos del curso de instalaciones eléctricas generales, habilidades lógicas y manuales.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencias para desempeñarse en la industria como técnico electricista industrial en conexión de máquinas de CA, circuitos de control, mando y reparación de averías.</div>
+            </div>
+
+            <!-- Diagnóstico Crítico -->
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Programa Original
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Tecnología Anacrónica:</strong> Módulo 2 incluye <em>"Generadores de corriente continua"</em>, una tecnología que no se instala en ninguna industria moderna guatemalteca desde hace décadas, consumiendo horas que debieran asignarse a plantas generadoras diésel y alternadores síncronos con ATS.</li>
+                    <li><strong>Contenido Fontanero Residencial Fuera de Contexto:</strong> Módulo 4 incluye <em>"Bombas monofásicas periféricas domiciliarias"</em>, lo cual desentona por completo con el perfil de un técnico electricista industrial enfocado en bombas trifásicas centrifugas y sumergibles industriales.</li>
+                    <li><strong>Riesgo Operativo en Métodos Obsoletos:</strong> Módulo 6 lista <em>"Arranque estrella-delta manual"</em>, maniobra mecánica altamente propensa a quemar contactos por tiempo indebido de conmutación del operario y generar arcos eléctricos peligrosos.</li>
+                    <li><strong>Omisión de Factor de Potencia y Armónicos:</strong> Pese a ser el principal motivo de sanciones económicas de las distribuidoras eléctricas en Guatemala, el temario no contemplaba bancos automáticos de capacitores ni filtros de armónicos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-amber-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>102 temas</strong> desglosados en sus 10 módulos oficiales.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (106)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (3)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (36)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (4)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (63)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sistemas Trifásicos</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos de sistemas trifásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alineación Normativa CNEE</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar código de colores normado por el NEC/NTDOID de la CNEE para conductores de fase, neutro y tierra en sistemas 208/120V y 480/277V en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión en estrella.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión en delta.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Voltajes y corrientes de fase y línea.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Potencia trifásica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gestión Energética</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Calcular penalizaciones por bajo factor de potencia (< 0.90) según el pliego tarifario de grandes usuarios de EEGSA y Energuate, y dimensionar bancos de condensadores.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conductores y puntos de un sistema trifásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Comparación entre conexión estrella y delta.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Red trifásica simétrica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Red trifásica asimétrica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Triángulo de potencias.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gestión Energética</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Calcular penalizaciones por bajo factor de potencia (< 0.90) según el pliego tarifario de grandes usuarios de EEGSA y Energuate, y dimensionar bancos de condensadores.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Monitores de voltaje</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">Generadores Eléctricos</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principio de funcionamiento de máquinas eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generadores de corriente continua.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tecnología en Desuso</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Los generadores de CC (dinamos) están completamente obsoletos en la matriz eléctrica industrial de Guatemala; han sido reemplazados por alternadores de CA sincrónicos y rectificadores de potencia.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generadores de corriente alterna.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generadores de AC monofásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generadores de AC trifásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Plantas eléctricas de emergencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Modernización de Control</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfatizar controladores automáticos de transferencia (ATS) microprocesados (Deep Sea / ComAp), precalentadores de motor y monitoreo de baterías.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Hidroeléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sincronoscopio.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conmutación o transferencia de redes eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Modernización de Control</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfatizar controladores automáticos de transferencia (ATS) microprocesados (Deep Sea / ComAp), precalentadores de motor y monitoreo de baterías.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Energías alternativas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">Transformadores Eléctricos</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición, estructura y funcionamiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Relación de transformación de voltajes y corrientes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Transformadores monofásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexiones en serie y paralelo de transformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Transformadores trifásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ingeniería de Distribución</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Grupos de conexión (Dyn5, Ynd11), desbalance de neutro, análisis de gases disueltos (DGA) y factor K para cargas con armónicos.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexiones de transformadores trifásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ingeniería de Distribución</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Grupos de conexión (Dyn5, Ynd11), desbalance de neutro, análisis de gases disueltos (DGA) y factor K para cargas con armónicos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Rendimiento de transformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Placa de características de transformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Prueba de polaridad de transformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Autotransformadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Transformadores de aislamiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+                            <h4 class="font-bold text-slate-900 text-base">Motores Eléctricos</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición, estructura y funcionamiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Magnitudes mecánicas y eléctricas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores de corriente continua.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexiones de motores de corriente continua.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores de corriente alterna.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores de AC monofásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bombas monofásicas periféricas domiciliarias.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Incongruencia de Nivel</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Contenido fontanero/residencial básico desalineado con los objetivos técnicos de un curso de máquinas trifásicas y mandos industriales de alta potencia.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor de fase partida.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores con capacitores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores trifásicos (jaula de ardilla y rotor bobinado).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Eficiencia Energética</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Normativa de eficiencia IE3/IE4 (Premium Efficiency), interpretación de placas NEMA/IEC y pruebas de aislamiento de devanados con megóhmetro (IEEE 43).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexiones de motores monofásicos y trifásicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Relevación Industrial I</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Contactores eléctricos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Protecciones de sobrecarga.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Aparamenta de Protección</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Guardamotores magnetotérmicos de alta capacidad de corte, relés electrónicos de sobrecarga con clase de disparo seleccionable y protección contra pérdida de fase.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Temporizadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Pulsadores o botoneras.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Simbología americana y europea.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito de potencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito de mando o control.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Arranque directo de motor monofásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cambio de giro de un motor monofásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Arranque directo de motor trifásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Seguridad Eléctrica y Mitigación de Arc Flash (NFPA 70E / OSHA)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad Operacional</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Procedimientos LOTO de bloqueo/etiquetado, cálculo de distancia de aproximación y uso de equipo de protección personal (EPP) calificado para maniobras de fuerza.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">6</span>
+                            <h4 class="font-bold text-slate-900 text-base">Relevación Industrial II</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cambio de giro manual de motor trifásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cambio de giro automático de motor trifásico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Arranque estrella-delta manual.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Maniobra Insegura</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Los conmutadores manuales estrella-delta presentan alto riesgo de arco eléctrico y fatiga de contactos; se sustituyen por mandos automáticos por contactores y arrancadores de estado sólido.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Arranque estrella-delta automático.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos automáticos con temporizadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos con botoneras combinadas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos industriales a escala.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos secuenciales semiautomáticos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos secuenciales automáticos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Arrancadores suaves.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Electrónica de Potencia</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Parametrización de tiristores anti-paralelo, control de par en aceleración/desaceleración para bombas (golpe de ariete) y cableado de contactor de bypass.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Seguridad Eléctrica y Mitigación de Arc Flash (NFPA 70E / OSHA)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad Operacional</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Procedimientos LOTO de bloqueo/etiquetado, cálculo de distancia de aproximación y uso de equipo de protección personal (EPP) calificado para maniobras de fuerza.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">7</span>
+                            <h4 class="font-bold text-slate-900 text-base">Variadores de Frecuencia</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">12 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición, estructura y funcionamiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de variadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión de motores a variadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Parámetros de ajuste de un variador.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Configuración de variadores para control local.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Configuración de variadores para control remoto.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Aplicación de variadores de frecuencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diversas velocidades en un variador de frecuencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cómo seleccionar un variador.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ventajas y desventajas de los variadores de frecuencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Accionamientos Modernos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Programación de rampas, control vectorial sin sensor (Sensorless Vector), entradas multifunción 4-20mA/0-10V, redes de comunicación Modbus/Profinet y frenado dinámico.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Corrección Automática de Factor de Potencia con Bancos de Capacitores y Filtros de Armónicos</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Calidad de Energía y Normativa CNEE</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Evitar multas severas de EEGSA/Energuate por factor de potencia menor a 0.90 mediante reguladores automáticos de pasos capacitivos y reactancias desintonizadas.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Análisis de Firmas de Corriente en Motores (MCSA) y Termografía en Tableros CCM</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mantenimiento Predictivo 4.0</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Detección temprana de barras rotas en el rotor, excentricidad de entrehierro y sobrecalentamiento en bornes sin interrumpir la operación de la planta.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">8</span>
+                            <h4 class="font-bold text-slate-900 text-base">Sensores Industriales</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición y características de sensores digitales y análogos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Lógicas PNP y NPN.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores de 2, 3 y 4 hilos en serie y paralelo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores en AC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores de contacto.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores de movimiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores térmicos y sus controladores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores ópticos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores inductivos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores capacitivos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">9</span>
+                            <h4 class="font-bold text-slate-900 text-base">Automatización Micro PLC</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos básicos de automatización.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Estructura de un sistema de automatización.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principios de programación ladder.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diagrama de contactos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Software de programación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Programación de micro PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Controladores Lógicos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Siemens LOGO! 8 y S7-1200, cableado de señales sourcing/sinking y mapeo de I/O en tableros industriales.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión de sensores y botoneras a micro PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión de contactores y actuadores a micro PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Controladores Lógicos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Siemens LOGO! 8 y S7-1200, cableado de señales sourcing/sinking y mapeo de I/O en tableros industriales.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos automatizados simples.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos automatizados complejos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">10</span>
+                            <h4 class="font-bold text-slate-900 text-base">Automatización PLC</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Funciones lógicas intermedias.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Contadores y temporizadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Marcas y memorias.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Software de programación de PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Controladores Lógicos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Siemens LOGO! 8 y S7-1200, cableado de señales sourcing/sinking y mapeo de I/O en tableros industriales.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Programación de PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Controladores Lógicos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Siemens LOGO! 8 y S7-1200, cableado de señales sourcing/sinking y mapeo de I/O en tableros industriales.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión y alimentación de PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Controladores Lógicos</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Siemens LOGO! 8 y S7-1200, cableado de señales sourcing/sinking y mapeo de I/O en tableros industriales.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conexión de sensores, botoneras y actuadores al PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Instrumentación Discreta</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Conexión segura de sensores industriales inductivos, fotoeléctricos y capacitivos de 2, 3 y 4 hilos NPN/PNP con fuentes conmutadas de 24VDC.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuitos automatizados con subrutinas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Funciones aritméticas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento Esencial</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto electrotécnico fundamental indispensable para la formación de técnicos electricistas industriales en Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa (Temario Tradicional vs. Temario Modernizado 2026) -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-amber-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Generación y Transferencia</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Estudio teórico de dinamos de corriente continua y sincronoscopio manual analógico en desuso.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Grupos electrógenos diésel de emergencia, controladores ATS microprocesados (Deep Sea / ComAp) y sincronización automática.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Arranque de Motores</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Énfasis excesivo en arranques estrella-delta mecánicos manuales y bombas periféricas domésticas.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Arrancadores suaves (Soft Starters) con bypass interno y control de bombas, y variadores de frecuencia vectoriales.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Calidad de Energía y Normativa</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Cálculo básico de potencia trifásica sin consideración de penalizaciones comerciales ni armónicos.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Bancos automáticos de capacitores con reactancias de desintonización bajo normativa NTDOID de la CNEE (FP > 0.90).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Seguridad Operacional</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Normas generales de seguridad sin protocolos cuantitativos de arco eléctrico ni bloqueo de energía.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Estándar NFPA 70E para prevención de Arc Flash, distancias de aproximación límite y protocolos LOTO certificados.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Mantenimiento Predictivo</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Mantenimiento reactivo tras fallo de bobinado o disparo térmico del contactor.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Monitoreo predictivo con termografía infrarroja de tableros CCM y análisis de firma de corriente (MCSA) para rodamientos y entrehierro.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-amber-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-amber-500/20 text-amber-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-amber-500/30 text-amber-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-amber-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Controles y Máquinas Eléctricas</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                        Diagnóstico Predictivo de Fallas en Motores con Visión y Audio IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Modelos de IA en dispositivos móviles que analizan el espectro acústico y térmico de un motor en funcionamiento para identificar soltura mecánica, desalineación o cavitación antes de que ocurra la falla catastrófica.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: ABB Ability Smart Sensor AI / Fluke Acoustic Imager AI.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        Optimización de Parámetros de VFD Asistida por Copilot
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Asistentes basados en LLMs entrenados con manuales de Siemens, Danfoss y Schneider Electric para generar listas de parámetros de comisionamiento rápido según las características de la placa del motor y tipo de carga (bombas, transportadores).
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: VFD Copilot / Schneider EcoStruxure Automation Advisor.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        Análisis de Curvas de Demanda y Deslastre Inteligente de Cargas
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Algoritmos de aprendizaje automático que predicen la potencia punta en la factura eléctrica de la planta y desconectan de forma secuencial cargas no críticas para evitar saltar al siguiente escalón tarifario penalizado.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Energy Management AI / Siemens Sentron Powercenter.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Controles y Máquinas Eléctricas 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

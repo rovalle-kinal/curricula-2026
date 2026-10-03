@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Administración de Obras | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="clipboard-check" class="w-5 h-5 text-blue-400"></i>
+                    Administración de Obras
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    Portal Maestro
+                </a>
+                <a href="Fundamentos_de_la_Construccion_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    Fundamentos
+                </a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white font-bold">
+                    Adm. Obras
+                </span>
+                <a href="AutoCAD_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    AutoCAD 2D&3D
+                </a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_ADO.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-blue-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Administración de Obras (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización integral orientada a la demanda gerencial y de supervisión en Guatemala: incorporación protagónica del <strong>Plan de Salud y Seguridad Ocupacional (Acuerdo Gubernativo 229-2014)</strong>, introducción práctica a <strong>Autodesk Revit (BIM)</strong> para extracción de cuantificaciones, eliminación de temas eléctricos incongruentes y control de rendimientos según la Cámara Guatemalteca de la Construcción.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">6 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Incongruentes/Eléctricos)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">7 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Gantt, APU, Estación Total)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">7 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (SSO 229-2014 & Revit BIM)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">12 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Costos y Presupuestos)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-blue-50 text-blue-700">
+                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Gestión y Supervisión en Guatemala
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Requerimientos de constructoras, desarrolladores inmobiliarios y entidades fiscalizadoras en Guatemala (2025–2026).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-red-600"></i>
+                        Obligatoriedad Legal de SSO en Obra
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El Ministerio de Trabajo y Previsión Social (MinTrab) y el IGSS sancionan severamente proyectos que no cuenten con un <strong>Plan de SSO aprobado (Acuerdo Gubernativo 229-2014 y 33-2016)</strong> y un <strong>Comité Bipartito de Salud y Seguridad Ocupacional</strong> activo. Las empresas exigen que los administradores y residentes de obra lideren la prevención, permisos de trabajo de alto riesgo y libros de actas de seguridad.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Marco Legal: Acdo. Gub. 229-2014, 33-2016 e Inspección General de Trabajo.
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="box" class="w-4 h-4 text-blue-600"></i>
+                        Transición a Metodología BIM (Revit)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Los desarrolladores líderes en Guatemala (multi-familiares verticales, centros comerciales y parques industriales) gestionan sus proyectos bajo <strong>BIM Forum Guatemala</strong>. Un administrador de obra ya no puede limitarse a hojas impresas: debe saber <strong>abrir modelos de Revit</strong>, verificar interferencias espaciales entre ductos y estructura, y generar tablas automáticas de cubicación/metrado para control de compras y pagos.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Tendencia: Cuantificación 3D y Control de Avance BIM.
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="scale" class="w-4 h-4 text-amber-600"></i>
+                        Control Laboral y Contratos de Construcción
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El sector constructor opera intensamente con mano de obra subcontratada. La administración eficiente exige dominar el <strong>Código de Trabajo de Guatemala</strong>, cálculo de planillas de albañilería (jornal vs destajo/tarea), contratos de obra a precio alzado o por administración, bitácora de obra del Colegio de Ingenieros/Arquitectos y trámites municipales/FHA.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Referencia: Cámara Guatemalteca de la Construcción / Código de Trabajo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: PESTAÑA REPORTE ORIGINAL (PROMESA DE VENTA) -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-blue-50 text-blue-700">
+                        <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                        </h3>
+                        <p class="text-sm text-slate-500">
+                            Ficha oficial en [2026_ADO.xlsx](file:///d:/OneDrive/Software/Antigravity/Cuentas%20Kinal/Programas%20de%20Curso/2026_ADO.xlsx).
+                        </p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full border border-slate-300">
+                    <i data-lucide="lock" class="w-3.5 h-3.5"></i> Ficha Oficial de Venta
+                </span>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <div class="border-b border-slate-200 pb-4 mb-4 flex flex-wrap justify-between items-start gap-4">
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Nombre del Curso</div>
+                        <h4 class="text-2xl font-bold text-slate-900 text-blue-900">ADMINISTRACIÓN DE OBRAS</h4>
+                    </div>
+                    <div class="flex gap-6 text-right">
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Duración</div>
+                            <div class="text-lg font-bold text-slate-800">180 Horas</div>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Estructura</div>
+                            <div class="text-lg font-bold text-slate-800">4 Módulos / Año</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-y-4 gap-x-8 text-xs sm:text-sm">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Inversión y Costos:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Inscripción: <strong>Sin Costo</strong> | Mensualidades: <strong>Q 350.00</strong><br>
+                            • Graduación: <strong>Q 500.00</strong> | Prácticas de taller en todos los módulos.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido A:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Trabajadores de la construcción: albañiles, maestros de obra, encargados de obra, dibujantes, estudiantes de arquitectura o ingeniería civil, e interesados en aprender sobre gestión y costos de obra.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Sector al que va Dirigido:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Empresas constructoras, desarrolladores inmobiliarios, contratistas independientes, municipalidades y entidades supervisoras de proyectos.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <span class="font-bold text-slate-900 block mb-1">Diagnóstico Crítico de la Ficha Original:</span>
+                        <div class="p-3 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed">
+                            <strong>⚠️ Anomalía Detectada en el Documento Fuente:</strong> En el <strong>Módulo 3</strong> original se incluyeron temas de circuitos eléctricos domiciliarios (<em>"El camino de la energía", "Varilla de tierra", "Termomagnéticos", "Balance de cargas"</em>), un error evidente de copiado que desvirtúa la naturaleza del curso. Estos temas se eliminan por completo para dar cabida a la <strong>Gestión Integral de SSO (Acuerdo 229-2014)</strong> y a la <strong>Introducción a Revit (BIM)</strong> solicitada por la industria.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-indigo-50 text-indigo-700">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Comparación analítica tema por tema de los 4 módulos de Administración de Obras.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 1 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-blue-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 10)</span>
+                                <span>Duración: ~45 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Topografía Práctica de Obra, Cálculo y Replanteo</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Realizar levantamientos y replanteos con instrumental moderno, curvas de nivel y cálculo de movimientos de tierra.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Aritmética y geometría para topografía</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cálculo de áreas poligonales, perímetros y coordenadas cartesianas básicas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Trigonometría aplicada (Pitágoras, senos y cosenos)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Resolución de triángulos y pendientes para desniveles de zanjas y plataformas.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Teodolito mecánico tradicional de nonio</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> El teodolito mecánico manual está completamente obsoleto en la construcción formal guatemalteca. Consume excesivo tiempo en lecturas ópticas manuales propensas a error.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Nivelación y Replanteo con Estación Total y Nivel Láser</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Reemplaza el teodolito antiguo. Operación de nivel láser autonivelante para pisos/cielos y uso básico de estación total para transferir ejes desde planos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Curvas de nivel y cortes de terreno</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Interpretación de desniveles naturales, cálculo de volúmenes de corte y relleno y botaderos.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. [NUEVO] Control Topográfico de Desplomes, Verticalidad y Tolerancias Sísmicas (AGIES)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Verificación de verticalidad de encofrados (columnas y muros de corte) y apuntalamiento de losas antes y después de la fundición con plomada óptica/láser y estación total, controlando tolerancias dimensionales admisibles de la norma AGIES / ACI 117.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 2 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-blue-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 11 a 19)</span>
+                                <span>Duración: ~45 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Prefabricados, Logística de Maquinaria y Rendimientos</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Evaluar y cotizar sistemas prefabricados, planificar logística de transporte/izaje y controlar rendimientos de equipo.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Análisis Costo-Beneficio de Prefabricados</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Comparativa económica: sistemas prefabricados (vigueta/bovedilla, muros prefabricados) vs construcción tradicional in situ.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Logística de Transporte, Grúas e Izaje de Cargas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Radios de giro para camiones de premezclado, grúas telescópicas, capacidad de pluma y protocolos de señalización de maniobras de izaje.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Cálculo aislado del "módulo de gradas"</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Descontextualizado en un módulo de logística y prefabricados. El trazo de gradas se integra en dibujo técnico o cuantificación de concreto armado.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Cotización de Prefabricados y Gestión de Proveedores</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Comparación de ofertas, condiciones de entrega en obra, tiempos de fabricación y garantías.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. [NUEVO] Rendimientos de Maquinaria y Equipo Menor</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Cálculo de costos horarios y rendimientos de retroexcavadoras, camiones de volteo, mezcladoras (trompos), vibradores y cortadoras de concreto.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. [NUEVO] Gestión de Almacén y Control de Mermas en Obra</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Procedimientos de recepción de materiales (cemento, acero, agregados), almacenamiento adecuado contra intemperie y control de desperdicios.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 3 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 20 a 29)</span>
+                                <span>Duración: ~45 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Supervisión, Plan de SSO (Acuerdo 229-2014) y Revit BIM</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Implementar el Plan de Salud y Seguridad Ocupacional (MinTrab), gestionar bitácoras y supervisar mediante modelos Revit.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <!-- Eliminación de contenido incongruente -->
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Temas de Circuitos Eléctricos Domiciliares</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar (4 subtemas)</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Se eliminan en su totalidad: <em>"Fundamentos de instalaciones eléctricas", "El camino de la energía", "Varilla de tierra", "Termomagnéticos" y "Balance de cargas"</em>. Fueron incluidos por error de edición y no corresponden a las competencias de un administrador de obras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Bitácora de Obra Oficial y Control Documental</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Apertura y asientos en el Libro de Bitácora oficial (normado por el Colegio de Ingenieros/Arquitectos), actas de inicio, órdenes de cambio y actas de recepción de obra.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Programación de Obra (Gantt, CPM y Last Planner)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Elaboración de cronogramas con Diagrama de Gantt, cálculo de Ruta Crítica (CPM) y programación semanal con metodología <em>Last Planner / Lean Construction</em> para reducir tiempos muertos.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos Estratégicos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. [NUEVO] Plan de Salud y Seguridad Ocupacional (SSO) y Permisos de Trabajo de Alto Riesgo (Acuerdo Gub. 229-2014)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva (Eje Central)</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Exigencia legal del Ministerio de Trabajo. Elaboración de la política de SSO, conformación y actas del Comité Bipartito, matriz IPER, dotación de EPP normado (COGUANOR) y protocolos de <strong>Análisis de Trabajo Seguro (AST) y Permisos de Trabajo de Alto Riesgo (PTW)</strong> para trabajos en alturas (andamios normados), excavaciones profundas y espacios confinados.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. [NUEVO] Introducción a Revit (BIM) para Supervisores de Obra</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Solicitud clave de la industria. Navegación en modelos federados 3D, visualización de disciplinas cruzadas (arquitectura, estructura, hidrosanitario), detección visual de interferencias y extracción automática de cantidades de obra (Takeoff / Tablas de Planificación).</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 4 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-blue-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 30 a 38)</span>
+                                <span>Duración: ~45 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Costos, Presupuestos (APU), Flujos y Leyes Laborales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Elaborar presupuestos por renglón con hojas electrónicas, calcular análisis de precios unitarios y administrar planillas conforme a la ley.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Interpretación de planos para cuantificación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Desglose ordenado de renglones de trabajo (cimentación, muros, losas, acabados e instalaciones).</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Análisis de Precios Unitarios (APU) en Excel</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Estructura paramétrica de costos directos (materiales, mano de obra, equipo/herramienta) y costos indirectos (administración, imprevistos, utilidad e impuestos IVA/ISR).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Presupuesto Integral y Oferta Económica</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Integración de renglones en pliego de cotización para clientes o licitaciones públicas/privadas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Flujo de Caja y Curva "S" de Avance Financiero</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Proyección de desembolsos semanales/quincenales, anticipos, estimaciones de avance y retenciones de fondo de garantía.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. [NUEVO] Leyes Laborales y Planillas de Mano de Obra (Código de Trabajo GT)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Obligación patronal en Guatemala: cálculo de prestaciones de ley (Bono 14, Aguinaldo, Vacaciones, IGSS), contratos a plazo fijo por obra y liquidaciones laborales de cuadrillas.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. [NUEVO] Trámites de Licencias Municipales y Requisitos FHA</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Expedientes para licencias de construcción en municipalidades (Ciudad de Guatemala, Mixco, Santa Catarina Pinula), alineación con FHA y requisitos de CONRED NRD.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz de Cambios Curriculares y Marco Técnico Aplicable
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Resumen de acciones pedagógicas y normativas para la dirección académica de Kinal.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Instalaciones eléctricas residenciales (5 temas)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Error evidente de copiado en el archivo original 2026. Desvirtúa el curso de Administración de Obras y quita tiempo lectivo a temas de gestión gerencial y seguridad.</td>
+                            <td class="p-3 text-slate-500 font-medium">Corrección Curricular Kinal</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Teodolito óptico mecánico</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Equipo en desuso comercial. Las constructoras utilizan niveles láser y estaciones totales con lectura digital.</td>
+                            <td class="p-3 text-slate-500 font-medium">Tecnología de Topografía</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Programación de obras</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Modernizar de simple listado a cronogramas con Diagrama de Gantt, Ruta Crítica (CPM) y técnicas de Last Planner promovidas por la CGC.</td>
+                            <td class="p-3 text-slate-500 font-medium">Lean Construction / CGC</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Bitácora de obra</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Enfocar en la Bitácora Oficial reglamentaria del Colegio de Ingenieros de Guatemala (CIG) y Colegio de Arquitectos, con validez legal ante disputas.</td>
+                            <td class="p-3 text-slate-500 font-medium">Reglamento CIG / CA</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Control Topográfico de Desplomes y Tolerancias Sísmicas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Verificación de verticalidad de encofrados (columnas y muros) con plomada óptica/láser y estación total antes y después de la fundición, controlando tolerancias dimensionales.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Normas AGIES / ACI 117</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Plan de SSO y Permisos de Trabajo de Alto Riesgo</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Requisito legal inexcusable para toda obra formal. Elaboración del plan, comités bipartitos, matriz IPER, permisos de trabajo en altura/excavaciones y señalización reglamentaria.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Acuerdo Gubernativo 229-2014 MinTrab</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Introducción a Autodesk Revit (BIM)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Capacidad de navegar modelos 3D, verificar cruces de tuberías contra estructura y extraer tablas automáticas de cubicación/materiales para presupuestos.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Leyes Laborales y Planillas de Obra</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Contratos de trabajo por obra determinada, prestaciones laborales (Bono 14, Aguinaldo), control de destajos vs jornales y responsabilidades patronales.</td>
+                            <td class="p-3 text-slate-500 font-medium">Código de Trabajo de Guatemala</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN E INTELIGENCIA ARTIFICIAL (IA) -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: Inteligencia Artificial en Gestión y Supervisión de Obras</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Aplicaciones predictivas y analíticas de IA para optimizar tiempos, costos y seguridad contractual en proyectos de Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        Predicción de Retrasos y Riesgos en Cronogramas (IA 4D)
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Uso de modelos predictivos que analizan el histórico de rendimientos de cuadrillas y condiciones climáticas para alertar cuellos de botella en la Ruta Crítica (CPM) antes de que impacten la fecha contractual de entrega.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Automatización de Bitácoras e Informes Diarios con LLMs
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Dictado por voz desde el celular por parte del residente de obra para que agentes de IA estructuren el reporte diario de obra, clasifiquen fotografías de avance, contabilicen personal en campo y redacten asientos técnicos para el Libro de Bitácora oficial.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        Estimación Generativa de Costos y Validación de APUs
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Herramientas de IA que comparan presupuestos en Excel contra bases de datos de costos de la Cámara Guatemalteca de la Construcción, detectando discrepancias en rendimientos, omisiones de prestaciones laborales o desvíos en consumos de materiales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            Fundación Kinal • Escuela Técnica Superior • Propuesta Curricular Administración de Obras 2026
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = {
+                'all': document.getElementById('btn-all'),
+                'delete': document.getElementById('btn-delete'),
+                'update': document.getElementById('btn-update'),
+                'new': document.getElementById('btn-new'),
+                'keep': document.getElementById('btn-keep')
+            };
+
+            Object.values(buttons).forEach(btn => {
+                if (btn) btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+            });
+
+            if (buttons[status]) buttons[status].classList.add('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 1,
+  "course_id": "CURSO-UNIV-01",
+  "course_title": "Estrategias de Productividad Académica y Gestión del Conocimiento Universitario: NotebookLM, Notion, Notion Calendar y Anki",
+  "stage_name": "Curated Curriculum Specification",
+  "curated_by": "curador_investigador",
+  "institutional_context": {
+    "institution": "Fundación Kinal",
+    "campus": "Educación Superior / Técnico Universitario (Guatemala)",
+    "mission": "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad.",
+    "vision": "Ser líderes en la formación técnica, tecnológica y humana de la región con superación personal y profesional.",
+    "core_values": [
+      "Visión cristiana de la vida",
+      "Respeto a la dignidad de la persona",
+      "Espíritu de servicio",
+      "Trabajo bien hecho",
+      "Libertad personal responsable"
+    ],
+    "code_of_conduct_and_ethics": {
+      "technology_policy": "Uso de dispositivos digitales delimitado estrictamente a propósitos formativos y académicos, combatiendo la distracción y el facilismo.",
+      "academic_integrity": "Rechazo categórico al 'copia y pega'; exigencia de comprensión crítica, síntesis propia y citación rigurosa de fuentes primarias.",
+      "punctuality_and_attendance": "Registro riguroso de asistencia y puntualidad como manifestación de respeto y autodominio personal.",
+      "minimum_passing_score": 75
+    }
+  },
+  "qualification_framework": {
+    "framework": "DQR (Deutscher Qualifikationsrahmen) / Marco de Competencias",
+    "target_level": "DQR Nivel 5 - 6 (Desarrollo de autonomía profesional, destrezas metodológicas y juicio crítico)",
+    "competence_definition": "the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act.",
+    "dimensions": {
+      "professional_competence": {
+        "knowledge": "Comprensión conceptual de neurociencia del aprendizaje, modelos de IA fundamentada (grounded AI), arquitectura de información y principios de gestión del tiempo.",
+        "skills": "Dominio instrumental de NotebookLM, Notion, Notion Calendar y Anki para estructurar flujos de trabajo académico eficientes y reproducibles."
+      },
+      "personal_competence": {
+        "social_competence": "Colaboración constructiva, retroalimentación respetuosa entre pares y orientación del aprendizaje hacia el servicio a la comunidad.",
+        "autonomy": "Autorregulación del estudio, planificación proactiva, resiliencia ante la dificultad cognitiva y disciplina en la ejecución."
+      },
+      "methodological_competence": "Capacidad transversal para convertir información dispersa en conocimiento consolidado a largo plazo mediante bitácoras reflexivas (Berichtsheft universitario)."
+    }
+  },
+  "modules": [
+    {
+      "module_id": "MOD-01",
+      "title": "Fundamentos del Aprendizaje Universitario y Principios Formativos",
+      "focus_and_values": "El trabajo universitario como medio de desarrollo integral de la persona y de servicio. Ética en el uso de la tecnología: uso estricto de dispositivos con fines estrictamente formativos y académicos, afán de superación personal y rechazo al facilismo mediante el principio del 'trabajo bien hecho'.",
+      "topics": [
+        {
+          "topic_id": "1.1",
+          "title": "Sentido del estudio y la productividad como medio de superación y servicio a la comunidad",
+          "key_concepts": ["Trascendencia del estudio", "Formación integral", "Espíritu de servicio en la profesión"]
+        },
+        {
+          "topic_id": "1.2",
+          "title": "Ética académica y uso responsable de entornos digitales en la educación superior",
+          "key_concepts": ["Integridad académica", "Foco atencional", "Normativa Kinal de uso de dispositivos"]
+        },
+        {
+          "topic_id": "1.3",
+          "title": "Construcción de competencias profesionales y personales (autonomía y responsabilidad en el aprendizaje)",
+          "key_concepts": ["Autorregulación", "Metacognición", "Matriz DQR: conocimientos, destrezas y autonomía"]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-02",
+      "title": "NotebookLM para Investigación y Preparación de Clases",
+      "focus_and_values": "Uso de modelos fundamentados (grounded AI) para estructurar el estudio a partir de fuentes directas y verificables, fomentando el juicio crítico y la profundidad de conocimiento.",
+      "topics": [
+        {
+          "topic_id": "2.1",
+          "title": "Creación de cuadernos de estudio por materia o proyecto de investigación",
+          "key_concepts": ["Organización de cuadernos temáticos", "Delimitación de alcances de estudio"]
+        },
+        {
+          "topic_id": "2.2",
+          "title": "Curaduría y carga rigurosa de fuentes primarias (PDFs académicos, notas de clase, artículos científicos)",
+          "key_concepts": ["Criterios de validez académica", "Documentos primarios vs secundarios", "Verificación cruzada"]
+        },
+        {
+          "topic_id": "2.3",
+          "title": "Interrogación y contraste de fuentes mediante prompts analíticos",
+          "key_concepts": ["Prompts analíticos", "Resúmenes ejecutivos", "Mapas conceptuales", "Síntesis temáticas con citas verificadas"]
+        },
+        {
+          "topic_id": "2.4",
+          "title": "Preparación activa de clases: generación de guías de discusión, preguntas clave y detección de vacíos de conocimiento",
+          "key_concepts": ["Aula invertida (Flipped classroom)", "Identificación de lagunas de comprensión", "Preguntas de alto orden cognitivo"]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-03",
+      "title": "Notion como Segundo Cerebro y Toma de Notas",
+      "focus_and_values": "Estructuración ordenada y sistemática del material de estudio, reflejando el hábito de un trabajo exigente y ordenado.",
+      "topics": [
+        {
+          "topic_id": "3.1",
+          "title": "Arquitectura de información para la universidad: bases de datos para asignaturas, tareas y proyectos",
+          "key_concepts": ["Modelo PARA / Arquitectura relacional", "Bases de datos de asignaturas", "Gestión de tareas académicas"]
+        },
+        {
+          "topic_id": "3.2",
+          "title": "Métodos de toma de notas integrados (Cornell, esquemas y notas jerárquicas)",
+          "key_concepts": ["Método Cornell estructurado", "Notas progresivas", "Pensamiento visual y esquemas"]
+        },
+        {
+          "topic_id": "3.3",
+          "title": "Conexión de notas con fuentes de NotebookLM: síntesis propia para evitar el copia y pega",
+          "key_concepts": ["Apropiación del conocimiento", "Redacción con voz propia", "Trazabilidad de citas"]
+        },
+        {
+          "topic_id": "3.4",
+          "title": "Creación de una bitácora de aprendizaje (análoga al cuaderno de informes o Berichtsheft)",
+          "key_concepts": ["Berichtsheft universitario", "Registro sistemático de aprendizajes", "Autoevaluación de progresos"]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-04",
+      "title": "Notion Calendar para la Gestión y Organización del Tiempo",
+      "focus_and_values": "Gestión rigurosa del tiempo orientada a vivir la puntualidad y alcanzar una alta productividad académica.",
+      "topics": [
+        {
+          "topic_id": "4.1",
+          "title": "Planificación semanal y distribución de bloques de estudio (time blocking)",
+          "key_concepts": ["Bloques de foco profundo (Deep Work)", "Distribución balanceada de carga de estudio"]
+        },
+        {
+          "topic_id": "4.2",
+          "title": "Coordinación de entregas académicas, evaluaciones parciales y exámenes finales",
+          "key_concepts": ["Hitos temporales críticos", "Cronogramas invertidos", "Prevención de la procrastinación"]
+        },
+        {
+          "topic_id": "4.3",
+          "title": "Integración bidireccional entre la base de datos de tareas de Notion y Notion Calendar",
+          "key_concepts": ["Sincronización de tareas y eventos", "Visión unificada de compromisos"]
+        },
+        {
+          "topic_id": "4.4",
+          "title": "Equilibrio personal: balance armónico entre vida académica, descanso y desarrollo personal/familiar",
+          "key_concepts": ["Descanso programado", "Salud mental y física", "Vida familiar y espiritual"]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-05",
+      "title": "Anki, Active Recall y Repetición Espaciada (Spaced Repetition)",
+      "focus_and_values": "Consolidación de conocimientos a largo plazo mediante aprendizaje activo y reflexivo, buscando la excelencia y el dominio técnico duradero.",
+      "topics": [
+        {
+          "topic_id": "5.1",
+          "title": "Principios neurocientíficos del Active Recall (recuperación activa) vs. relectura pasiva",
+          "key_concepts": ["Esfuerzo de recuperación (retrieval practice)", "Consolidación sináptica", "Falacia de fluidez pasiva"]
+        },
+        {
+          "topic_id": "5.2",
+          "title": "Algoritmos de repetición espaciada (Spaced Repetition) y la curva del olvido",
+          "key_concepts": ["Curva de Ebbinghaus", "Intervalos óptimos de repaso", "Algoritmos SM-2 / FSRS"]
+        },
+        {
+          "topic_id": "5.3",
+          "title": "Buenas prácticas para la formulación de tarjetas (flashcards)",
+          "key_concepts": ["Principio del contenido mínimo (tarjetas atómicas)", "Cloze deletion (texto con huecos)", "Inversión de preguntas y respuestas"]
+        },
+        {
+          "topic_id": "5.4",
+          "title": "Flujo de trabajo integrado: extracción de conceptos clave desde NotebookLM y Notion hacia Anki para la preparación de exámenes",
+          "key_concepts": ["Pipeline de estudio completo", "Preparación reflexiva para evaluaciones de suficiencia", "Sostenibilidad del repaso diario"]
+        }
+      ]
+    }
+  ],
+  "terminal_competencies": [
+    {
+      "code": "CT-UNIV-01",
+      "title": "Gestión Ética y Autónoma del Aprendizaje Universitario",
+      "description": "Dirigir el propio proceso de estudio universitario con autonomía, responsabilidad moral y disciplina, utilizando los entornos digitales como instrumentos de desarrollo integral y servicio profesional."
+    },
+    {
+      "code": "CT-UNIV-02",
+      "title": "Investigación y Juicio Crítico Asistido por Grounded AI",
+      "description": "Utilizar NotebookLM para curar fuentes académicas primarias, interrogar textos con rigor analítico y preparar clases activas sin incurrir en alucinaciones o facilismo."
+    },
+    {
+      "code": "CT-UNIV-03",
+      "title": "Arquitectura Personal de Conocimiento y Bitácora Sistemática",
+      "description": "Diseñar y mantener un segundo cerebro en Notion que organice asignaturas, métodos de notas y una bitácora de aprendizaje continuo (Berichtsheft)."
+    },
+    {
+      "code": "CT-UNIV-04",
+      "title": "Planificación Temporal y Productividad Balanceada",
+      "description": "Estructurar cronogramas de estudio efectivos con Notion Calendar mediante bloques de tiempo (time blocking), garantizando puntualidad y balance armónico personal."
+    },
+    {
+      "code": "CT-UNIV-05",
+      "title": "Consolidación de Memoria Técnica a Largo Plazo",
+      "description": "Diseñar mazos de tarjetas atómicas en Anki mediante active recall y repetición espaciada, consolidando el dominio conceptual y técnico para evaluaciones de alto rendimiento."
+    }
+  ]
+}

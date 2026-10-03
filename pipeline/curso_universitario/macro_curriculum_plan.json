@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 2,
+  "stage_name": "Macro Curriculum Plan",
+  "generated_by": "planificador_curricular",
+  "course_metadata": {
+    "title": "Estrategias de Productividad Académica y Gestión del Conocimiento Universitario: NotebookLM, Notion, Notion Calendar y Anki",
+    "institution": "Fundación Kinal - Educación Superior / Técnico Universitario (Guatemala)",
+    "level_equivalency": "DQR Nivel 5 - 6 (Formación Técnico-Universitaria y Especialización Metodológica)",
+    "total_hours": 120,
+    "classroom_theory_hours": 38,
+    "laboratory_practice_hours": 82,
+    "minimum_passing_grade": 75,
+    "admission_profile": "Estudiantes de nivel técnico superior o universitario que buscan desarrollar competencias metodológicas avanzadas, autorregulación del estudio y dominio de herramientas de productividad con rigor ético.",
+    "graduate_profile": "Profesional técnico capaz de autogestionar su aprendizaje continuo, sintetizar información compleja mediante IA fundamentada, estructurar bases de conocimiento personal en Notion, planificar su tiempo con puntualidad y retener conceptos técnicos a largo plazo mediante repetición espaciada."
+  },
+  "modules_distribution": [
+    {
+      "module_id": "MOD-01",
+      "name": "Fundamentos del Aprendizaje Universitario y Principios Formativos",
+      "reference_level": "DQR 5",
+      "theory_hours": 8,
+      "practice_hours": 8,
+      "total_hours": 16,
+      "pedagogical_focus_and_milestones": "Reflexión crítica sobre el sentido del estudio, asimilación del ideario Kinal ('trabajo bien hecho', servicio y dignidad) y delimitación ética del uso de tecnología académica.",
+      "key_assessment": "Manifiesto personal de ética académica y diagnóstico de hábitos de estudio (Mínimo aprobatorio: 75 pts)."
+    },
+    {
+      "module_id": "MOD-02",
+      "name": "NotebookLM para Investigación y Preparación de Clases",
+      "reference_level": "DQR 5 - 6",
+      "theory_hours": 8,
+      "practice_hours": 18,
+      "total_hours": 26,
+      "pedagogical_focus_and_milestones": "Carga rigurosa de fuentes primarias académicas (papers, libros), generación de guías de discusión previas a clase y formulación de prompts analíticos sin alucinación.",
+      "key_assessment": "Defensa técnica de un Cuaderno de Estudio temático con contraste de fuentes y síntesis analítica verificada."
+    },
+    {
+      "module_id": "MOD-03",
+      "name": "Notion como Segundo Cerebro y Toma de Notas",
+      "reference_level": "DQR 6",
+      "theory_hours": 8,
+      "practice_hours": 20,
+      "total_hours": 28,
+      "pedagogical_focus_and_milestones": "Implementación de arquitectura de datos relacional para asignaturas, integración del método Cornell y registro de la Bitácora de Aprendizaje continuo (Berichtsheft universitario).",
+      "key_assessment": "Auditoría del espacio de trabajo en Notion: base de datos de asignaturas relacionales y bitácora de aprendizaje documentada."
+    },
+    {
+      "module_id": "MOD-04",
+      "name": "Notion Calendar para la Gestión y Organización del Tiempo",
+      "reference_level": "DQR 5 - 6",
+      "theory_hours": 6,
+      "practice_hours": 16,
+      "total_hours": 22,
+      "pedagogical_focus_and_milestones": "Diseño de rutinas de time blocking, sincronización bidireccional de tareas con eventos y cultivo de la puntualidad como virtud personal y profesional.",
+      "key_assessment": "Simulación y ejecución de un plan de estudio semanal con bloques de foco profundo y auditoría de cumplimiento temporal."
+    },
+    {
+      "module_id": "MOD-05",
+      "name": "Anki, Active Recall y Repetición Espaciada (Spaced Repetition)",
+      "reference_level": "DQR 6",
+      "theory_hours": 8,
+      "practice_hours": 20,
+      "total_hours": 28,
+      "pedagogical_focus_and_milestones": "Creación de mazos atómicos en Anki con cloze deletion, conexión con resúmenes de Notion y práctica diaria de recuperación activa.",
+      "key_assessment": "Examen de suficiencia conceptual y auditoría de retención: revisión de estadísticas del mazo y sustentación de tarjetas atómicas."
+    }
+  ],
+  "integrated_capstone_project": {
+    "title": "Ecosistema Personal de Productividad y Aprendizaje Permanente (Theorie und Praxis integrierende Prüfung)",
+    "description": "El estudiante sustenta ante tribunal técnico su flujo integrado completo: artículo científico procesado en NotebookLM -> síntesis propia y bitácora estructurada en Notion -> planificación en Notion Calendar -> mazo de tarjetas maestras en Anki para retención a largo plazo.",
+    "evaluation_modality": "Presentación en vivo con rúbrica analítica terminal",
+    "passing_threshold": 75
+  }
+}

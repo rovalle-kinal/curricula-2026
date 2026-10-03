@@ -1,0 +1,63 @@
+{
+  "curriculum_metadata": {
+    "program_name": "Programa Universitario de Productividad Intelectual y Gestión del Conocimiento",
+    "module_number": 2,
+    "module_title": "Toma de Notas Universitarias, Método Cornell y Ecosistema Digital en Notion",
+    "target_level": "DQR Nivel 5 - 6 (Especialización Metodológica, Arquitectura de Información y Autonomía)",
+    "institution": "Fundación Kinal - Escuela Técnica Superior / Educación Universitaria",
+    "total_hours": 8,
+    "theory_hours": 2.5,
+    "practice_hours": 5.5,
+    "minimum_passing_score": 70,
+    "grading_scale": "0 - 100",
+    "evaluation_system": "Theorie und Praxis integrierende Prüfung (Examen Integrador Dual)"
+  },
+  "cognitive_and_scientific_foundations": {
+    "key_theories": [
+      {
+        "theory": "Hipótesis de la Codificación Generativa vs. Transcripción Pasiva",
+        "authors": "Pam A. Mueller & Daniel M. Oppenheimer (2014) - The Pen Is Mightier Than the Keyboard",
+        "core_concept": "La transcripción pasiva en computadoras promueve el copiado literal sin procesamiento cognitivo profundo; la toma de apuntes activa exige resumir, esquematizar y reconceptualizar con palabras propias, activando el procesamiento generativo."
+      },
+      {
+        "theory": "El Efecto de Generación",
+        "authors": "Norman J. Slamecka & Peter Graf (1978)",
+        "core_concept": "La memoria a largo plazo retiene significativamente más información cuando el estudiante produce y genera la respuesta o síntesis activamente en lugar de simplemente leerla o escucharla."
+      },
+      {
+        "theory": "Teoría de la Carga Cognitiva",
+        "authors": "John Sweller (1988)",
+        "core_concept": "La memoria de trabajo tiene límites estrictos. En una clase universitaria, intentar registrarlo todo produce sobrecarga cognitiva. Es indispensable discriminar señal conceptual de ruido anecdótico."
+      }
+    ]
+  },
+  "methodological_framework": {
+    "cornell_system": {
+      "author": "Dr. Walter Pauk (Cornell University)",
+      "page_layout": {
+        "notes_column": "70% del ancho (aprox. 15 cm) - captura estructurada durante la sesión",
+        "cue_column": "30% del ancho (aprox. 6.5 cm) - preguntas disparadoras y conceptos clave tras la clase",
+        "summary_area": "5 a 7 líneas en el pie de página - síntesis en 2 o 3 oraciones con voz propia"
+      },
+      "six_r_cycle": [
+        "Record (Registrar en clase de forma telegráfica)",
+        "Reduce (Reducir en las primeras 24h a preguntas clave y términos disparadores)",
+        "Recite (Recitar a ciegas tapando la columna derecha de notas)",
+        "Reflect (Reflexionar sobre implicaciones prácticas, técnicas y éticas)",
+        "Review (Revisar espaciadamente a las 24 horas, 7 días y 30 días)",
+        "Recapitulate (Recapitular en el resumen inferior en un párrafo denso)"
+      ]
+    },
+    "notion_architecture": {
+      "relational_model": "Base de datos de Apuntes Universitarios vinculada a Asignaturas y Proyectos",
+      "interactive_template": "Diseño a 2 columnas con bloques Toggle para ocultar el desarrollo y practicar Active Recall directo en pantalla",
+      "hybrid_workflow": "Escaneo técnico de libretas físicas con corrección trapezoidal y contraste alto, extracción OCR auditada manualmente y archivo en Galería de Notion indexada"
+    }
+  },
+  "institutional_values_kinal": {
+    "well_done_work": "El orden, la pulcritud y el rigor en las notas reflejan la dignidad profesional del estudiante y su respeto hacia la verdad.",
+    "laboriousness": "Atención concentrada y esfuerzo constante en el aula, venciendo la pasividad y el facilismo.",
+    "academic_honesty": "Rechazo categórico al 'copia y pega' o la descarga indiscriminada de apuntes ajenos sin procesamiento personal.",
+    "spirit_of_service": "La información estructurada se orienta a resolver problemas reales de la comunidad y del entorno productivo."
+  }
+}

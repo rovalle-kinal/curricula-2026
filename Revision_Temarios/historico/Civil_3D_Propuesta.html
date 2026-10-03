@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Autodesk Civil 3D | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="map" class="w-5 h-5 text-sky-400"></i>
+                    Autodesk Civil 3D
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="AutoCAD_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">AutoCAD</a>
+                <a href="Revit_Architecture_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Revit Arch</a>
+                <a href="Revit_Structure_MEP_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Revit Str/MEP</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-sky-600 text-white font-bold">Civil 3D</span>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_Civil 3D.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-sky-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Autodesk Civil 3D (90 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización integral orientada a la infraestructura vial, topografía moderna y redes hidrosanitarias en Guatemala: alineamiento a normas de la <strong>Dirección General de Caminos (DGC/SIECA)</strong>, integración de <strong>nubes de puntos LiDAR/drones (ReCap)</strong>, diseño de drenajes bajo normas <strong>EMPAGUA/INFOM</strong> e interoperabilidad <strong>BIM-GIS (Civil 3D a Revit/Navisworks)</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">2 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Teoría / Recorridos)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">11 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (DGC, GTM, Drenajes)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (LiDAR, SIECA, BIM-GIS)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">27 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Puntos, Vías, TIN)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-sky-50 text-sky-700">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Topografía e Infraestructura en Guatemala (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Diagnóstico fundamentado en proyectos del Ministerio de Comunicaciones (CIV/DGC), Cámara Guatemalteca de la Construcción (CGC) y normativas de urbanización municipal.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="milestone" class="w-4 h-4 text-sky-600"></i>
+                        Diseño Vial Bajo Normativa DGC y SIECA
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El Ministerio de Comunicaciones e infraestructura privada en Guatemala exigen que los proyectos viales apliquen estrictamente el <strong>Manual de Normas de Diseño Geométrico de la DGC</strong> y estándares <strong>SIECA</strong>. Los profesionales deben dominar peraltes máximos (8% para carreteras montañosas), sobreanchos en curvas, espirales de transición clotoides y diagramas de masa compensados para evitar sobrecostos de botadero y transporte.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Normativas: DGC Guatemala, Manual SIECA, AASHTO Green Book.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="navigation" class="w-4 h-4 text-emerald-600"></i>
+                        Revolución de Drones y Georreferenciación GTM
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El levantamiento topográfico tradicional de estación punto por punto ha sido complementado masivamente por <strong>vuelos fotogramétricos y sensores LiDAR de drones</strong>. Las empresas constructoras exigen técnicos capaces de procesar millones de puntos mediante Autodesk ReCap, georreferenciar en el sistema oficial <strong>GTM (Guatemala Transversa de Mercator)</strong> y generar superficies de terreno de alta resolución en minutos.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Sistemas: IGN / GTM, WGS84 UTM 15N/16N, Autodesk ReCap Pro.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="droplets" class="w-4 h-4 text-blue-600"></i>
+                        Redes Hidrosanitarias y Mitigación CONRED NRD
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        La aprobación de lotificaciones y urbanizaciones en municipalidades y el FHA requiere el diseño formal de <strong>redes de drenaje pluvial y sanitario por gravedad</strong>. Se exige el cálculo de cuencas de captación pluvial, pozos de visita normalizados bajo estándares de <strong>EMPAGUA / INFOM</strong> y perfiles longitudinales con verificación de pendientes mínimas de auto-limpieza para prevenir colapsos.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Reglamentos: EMPAGUA, INFOM-UNEPAR, CONRED NRD-2 y FHA.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: FICHA ORIGINAL DE VENTA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-sky-50 text-sky-700">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Datos institucionales extraídos del archivo fuente <code>2026_Civil 3D.xlsx</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 text-xs">
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Nombre Oficial del Curso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 font-semibold">
+                            CIVIL 3D (Autodesk Civil 3D)
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Sábados de 08:00 a 11:00 horas | Domingos de 08:00 a 11:00 horas<br>
+                            • Viernes de 08:00 a 11:00 horas | Sábados de 20:00 a 23:00 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Duración y Módulos:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Duración: <strong>90 Horas</strong> lectivas.<br>
+                            • Estructura: <strong>4 Módulos</strong> (con prácticas directas de software en cada sesión).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido a y Perfil de Ingreso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Profesionales y estudiantes de Ingeniería Civil, Arquitectura, Topografía y Construcción. Requiere conocimientos de dibujo técnico/CAD básico y nociones de agrimensura y matemáticas.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Acreditación Oficial:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Diploma de aprobación de Kinal ETS en Autodesk Civil 3D, certificando competencias para proyectos viales, curvas de nivel, corredores, rasantes y redes de tuberías.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Diagnóstico Crítico de la Ficha Original:</span>
+                        <div class="p-3 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed">
+                            <strong>⚠️ Anomalías Detectadas en el Excel Fuente:</strong> En la cuadrícula de la hoja <em>Reporte</em>, el encabezado del <strong>Módulo 2</strong> fue rotulado erróneamente como <em>"Módulo 4: Modelado de redes de tuberias"</em> (a pesar de contener los temas de alineamientos y perfiles), y el <strong>Módulo 4</strong> contiene una celda rota con error <code>#REF!</code>. En la hoja <em>Temas Módulos</em> sí están los 4 bloques bien diferenciados, los cuales se auditan temario por temario a continuación.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-sky-50 text-sky-700">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color (40 Temas Analizados)
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Análisis analítico de todos los temas oficiales del pensum frente a los estándares de la DGC, SIECA, IGN y EMPAGUA.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- MÓDULO 1 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-sky-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 5)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Fundamentos de Civil 3D y Modelado de Terreno</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Configurar el entorno de trabajo georreferenciado, gestionar puntos COGO y modelar superficies TIN precisas con explanaciones.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Introducción y presentación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Presentación del entorno BIM de infraestructura y metodología de trabajo con objetos dinámicos paramétricos.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Tipos de software</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Discusión teórica genérica sobre software del mercado. En un curso técnico de 90 horas este tiempo debe invertirse directamente en modelado de superficies y prácticas de campo.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Uso de plantillas y archivos de configuración</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de plantilla estándar (.DWT) institucional con capas normalizadas, estilos de texto, unidades métricas y formatos oficiales de presentación DGC.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Georreferenciación de espacio de trabajo</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Asignación del Sistema de Coordenadas Oficial de Guatemala: <strong>GTM (Guatemala Transversa de Mercator)</strong> y WGS84 UTM Zonas 15N y 16N, con descarga de mapas satelitales en vivo (Bing Maps).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Características de Puntos C3D (COGO)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Propiedades de puntos de geometría coordinada: número, norte, este, elevación y descripción (PNEZD).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Herramientas de Creación de Puntos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Importación masiva de archivos de texto/CSV de estación total, GPS diferencial y creación manual por rumbos/distancias.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Etiquetado de puntos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Estilos de marca y estilos de etiqueta de puntos con escalas anotativas para presentación de planos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Creación y estilo de superficies</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Generación de superficies a partir de grupos de puntos, curvas de nivel y líneas de rotura (Breaklines) para bordes de río y zanjas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Tipos de superficies</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Superficies de triangulación TIN, superficies Grid y superficies de volumen TIN para comparación de terrenos.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Análisis y edición de superficies</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Inversión de aristas de triángulos, simplificación de curvas de nivel, mapas de elevación hipsométrica y vectores de dirección de pendiente para drenaje natural.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. Perfiles rápidos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Uso de la herramienta Quick Profile para análisis instantáneo del relieve sobre líneas o polilíneas sin generar alineamiento formal.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>12. Creación de emplazamientos (Sites) y Parcelas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Subdivisión automática de predios en urbanizaciones, tablas de rumbos y distancias de linderos compatibles con el Registro de Información Catastral (RIC).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>13. Edición de emplazamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Modificación de vértices de parcelas, exclusiones de áreas de servidumbre y reordenamiento de lotes.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>14. Superficies a partir de emplazamientos (Gradings)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Explanaciones y plataformas de construcción con proyección de taludes de corte (1:1) y relleno (1.5:1) hacia la superficie de terreno.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>15. [NUEVO] Importación de Nubes de Puntos de Drones (LiDAR / ReCap)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Integración de ortofotos georreferenciadas y nubes de puntos densas (.RCP/.RCS) obtenidas con drones para generar superficies topográficas de alta fidelidad en proyectos de gran extensión.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-sky-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 6 a 10)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Alineamientos Horizontales y Perfiles Longitudinales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Diseñar alineamientos viales bajo normativa DGC/SIECA, curvas de transición, perfiles de terreno y rasantes de diseño.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Creación de alineamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Conversión de polilíneas y trazo dinámico con tangentes, puntos de inflexión (PI) y curvas circulares simples.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Herramientas y parámetros de alineamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Aplicación de normas de diseño vial de la Dirección General de Caminos (DGC) y SIECA: velocidad de diseño (ej. 40, 60, 80 km/h) y radio mínimo de curvatura horizontal.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Trazado de alineamientos con curvas de transición</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Inserción de espirales de transición (clotoides) entre tangentes y curvas para carreteras de velocidad media y alta.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Desfases y ensanchamientos (Sobreanchos)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Cálculo automático de sobreanchos en curvas para vehículos de diseño comunes en Guatemala (camiones C2 y articulados WB-15 según DGC).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Estilos de alineamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración de ejes de carretera, hombros, líneas de derecho de vía y estacado cada 20 metros (0+000, 0+020...).</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Configuraciones de impresión de alineamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Formatos de hojas oficiales en escalas 1:1000 y 1:500 con grillado UTM y orientaciones de norte magnético.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Etiquetas, leyendas y tablas de alineamientos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Generación automática del cuadro de curvas: Radio, Delta, Longitud de Curva, Tangente, Cuerda y Coordenadas del PI.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Perfiles longitudinales de terreno</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Muestreo y extracción del perfil altimétrico del terreno a lo largo del alineamiento horizontal.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Herramientas de creación de perfiles de rasante</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Trazo de subrasante y rasante vial respetando pendientes máximas (norma DGC: 10% a 12% en terreno escarpado) y curvas verticales parabólicas simétricas cóncavas y convexas (parámetro K).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Etiquetas, leyendas y tablas de Perfiles</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Bandas inferiores de guitarra: Cota terreno, cota rasante, altura de corte, altura de relleno, pendiente longitudinal y abscisado.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Cálculo y Transición de Peraltes según Norma DGC / SIECA</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Configuración del asistente de peraltes de Civil 3D con tablas de peralte máximo e = 8% y e = 6%, bombeo normal de 2% y longitud de desarrollo de transición de peralte según velocidad de proyecto.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-sky-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 11 a 15)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Modelado de Corredores Viales y Secciones Transversales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ensamblar secciones típicas de carretera, modelar corredores tridimensionales paramétricos y cuantificar volúmenes de corte y relleno.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Creación de ensamblajes y subensamblajes</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Construcción de la sección transversal de carretera a partir de la paleta de herramientas de subensamblajes de Autodesk.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Parámetros y herramientas de edición de subensamblajes</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de carriles de pavimento asfáltico (carpeta, base triturada, subbase) y concreto hidráulico con cunetas revestidas trapezoidales o en "V" según normas DGC.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Herramientas de creación de corredores</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Modelado 3D del sólido vial combinando alineamiento horizontal (eje), rasante vertical y ensamblajes seccionales con objetivos de superficie (Targets).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Generación de superficies a partir de corredores</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Creación de superficie de coronación (Top) y superficie de sub-rasante (Datum) para cubicación de tierras.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Recorridos virtuales en corredores (Drive / Render)</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Civil 3D no es un motor de render ni de animación; consume excesivo tiempo de clase y recursos de hardware con resultados pobres. La visualización moderna se traslada a Infraworks o Twinmotion, liberando horas para cubicar tierras y diseñar alcantarillas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Edición y transición de peraltes en corredor</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Resolución de anomalías de bombeo y peraltado en transiciones, verificación de escorrentía en bordes de calzada y cordones de cuneta.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Creación de líneas de muestreo (Sample Lines)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Definición de anchos de franja de muestreo y estaciones a cada 10 o 20 metros en tangentes y curvas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Creación y diagramación de secciones transversales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Generación de vistas de sección múltiple con achurados diferenciados de áreas de corte y terraplén.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Reporte de movimientos de tierras y Diagrama de Masas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Cálculo por el método de áreas medias, factores de abundamiento (esponjamiento) y contracción según tipo de suelo en Guatemala, y trazado del Diagrama de Bruckner (curva de masas) para compensación económica de tierras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Planos de planta y perfil (Plan Production)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Generación automatizada de láminas dobles Planta-Perfil (Plan & Profile Sheets) con marcos y cajetines según requerimientos de licitaciones públicas de la DGC/CIV.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Interoperabilidad BIM / GIS y Exportación LandXML e IFC</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Exportación de corredores y terrenos hacia Autodesk Revit y Navisworks (vía IFC y LandXML) para detección de interferencias interdisciplinarias y modelado BIM de puentes y túneles.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-sky-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 16 a 20)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Modelado de Redes de Tuberías y Drenajes</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Diseñar redes de drenaje pluvial y sanitario por gravedad, trazar perfiles hidráulicos de tuberías y verificar pendientes mínimas de escorrentía.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Introducción a redes de tuberías por gravedad (Pipe Networks)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamentos de redes inteligentes de saneamiento y pluviales compuestas por estructuras (pozos/tragantes) y tuberías.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Catálogo de piezas y estructuras (Parts List)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Adaptación de la lista de piezas con pozos de visita de concreto estándar de Guatemala (diámetro interior 1.20 m) y tuberías de concreto reforzado y PVC corrugado tipo Novafort de diámetros comerciales (8", 10", 12", 18", 24" y mayores).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Herramientas de creación y composición de redes</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Trazado de redes en planta siguiendo los ejes de calles y avenidas, vinculando cotas de tapadera con la superficie de la rasante vial.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Trazo de perfiles longitudinales de tuberías</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Proyección de la red de tuberías en las vistas de perfil longitudinal, verificando profundidad mínima de colchón (1.00 m mínimo bajo calzada vehicular según EMPAGUA) y pendientes mínimas de auto-limpieza (0.5% - 1%).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Etiquetado, leyendas y tablas de tuberías y pozos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Tablas dinámicas de pozos de visita: número de pozo, cota rasante, cota de invert (fondo), profundidad y longitud/pendiente de tramo.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Planos y documentación de red de tuberías</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Elaboración de planos hidrosanitarios bajo estándares de aprobación municipal, FHA y requisitos de mitigación de inundaciones de CONRED NRD-2.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. [NUEVO] Delimitación de Cuencas Hidrológicas de Captación Pluvial (Catchments)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Uso de herramientas hidrológicas de Civil 3D para delimitar áreas de drenaje y calcular el caudal de diseño mediante el Método Racional para dimensionar tragantes y colectores pluviales.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Cambios Curriculares en Autodesk Civil 3D
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Resumen técnico y justificaciones normativas en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Tipos de software (teoría comercial)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Charla teórica introductoria redundante. Se sustituye por práctica inmediata de configuración de coordenadas y puntos.</td>
+                            <td class="p-3 text-slate-500 font-medium">Eficiencia Lectiva Kinal</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Recorridos virtuales en corredores (Drive)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Herramienta anticuada e ineficiente en Civil 3D; desvía tiempo del cálculo de volúmenes y diseño hidráulico.</td>
+                            <td class="p-3 text-slate-500 font-medium">Optimización de Cómputo</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Georreferenciación y Sistema de Coordenadas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Implementar formalmente la proyección oficial GTM (Guatemala Transversa de Mercator) y WGS84 para compatibilidad catastral.</td>
+                            <td class="p-3 text-slate-500 font-medium">IGN / RIC Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Parámetros de Diseño y Alineamientos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Incorporar tablas oficiales de velocidad de diseño, radios mínimos de curvatura y curvas espirales de transición.</td>
+                            <td class="p-3 text-slate-500 font-medium">Manual de Diseño DGC / SIECA</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Subensamblajes y Secciones Típicas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Modelar capas estructurales de pavimento asfáltico y concreto con cunetas revestidas estándar tipo Caminos.</td>
+                            <td class="p-3 text-slate-500 font-medium">Normas Técnicas DGC</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Catálogo y Trazo de Redes de Tuberías</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Personalizar catálogos con pozos de visita de 1.20 m, tuberías PVC Novafort y verificación de pendientes de auto-limpieza.</td>
+                            <td class="p-3 text-slate-500 font-medium">EMPAGUA / INFOM / FHA</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Nubes de Puntos de Drones (LiDAR / ReCap)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Levantamientos aerofotogramétricos modernos para creación rápida de terrenos en grandes áreas.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Topografía Digital con Drones</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Cálculo y Transición de Peraltes según DGC</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Cálculo automatizado de peraltes en curvas para seguridad en carreteras de topografía montañosa.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Manual SIECA / DGC</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Interoperabilidad BIM / GIS (LandXML / IFC)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Federación de modelos de infraestructura civil con modelos arquitectónicos y estructurales de Revit y Navisworks.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Delimitación de Cuencas y Gasto Pluvial</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Cálculo hidrológico de escorrentía sobre el terreno para dimensionar alcantarillas y colectores.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">CONRED NRD-2 / EMPAGUA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN CON IA -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: IA en Topografía y Vías con Civil 3D</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Herramientas de inteligencia artificial generativa y predictiva aplicadas a infraestructuras viales e hidrológicas en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        Clasificación de Nubes de Puntos con IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Modelos de redes neuronales convolucionales (como los integrados en ReCap y herramientas GIS) que segmentan y clasifican automáticamente nubes de puntos de drones, separando vegetación, postes, vehículos y edificaciones para extraer el modelo digital de terreno (Bare Earth) sin intervención manual.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramientas: Autodesk ReCap AI / CloudCompare AI / ArcGIS Deep Learning.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="trending-down" class="w-4 h-4"></i>
+                        Optimización Generativa de Rasantes Viales
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Algoritmos generativos de optimización multiobjetivo que evalúan millones de combinaciones de pendientes y curvas verticales para proponer la rasante óptima que logre el balance perfecto de corte y relleno (balance cero), minimizando los costos de acarreo de tierras y cumpliendo pendientes máximas.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-purple-200 font-mono">
+                        Herramientas: Autodesk Grading Optimization / Dynamo for Civil 3D.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="cloud-rain" class="w-4 h-4"></i>
+                        Análisis Hidrológico y Predicción de Inundaciones
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Modelos de simulación de escorrentía asistidos por IA que analizan modelos de elevación digital y patrones climáticos para predecir zonas de empozamiento, flujo superficial de agua y puntos críticos de colapso en cuencas urbanas, acelerando el dimensionamiento de alcantarillas pluviales.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramientas: Autodesk Storm and Sanitary Analysis (SSA) / InfoWorks ICM.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Autodesk Civil 3D 2026
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // Función interactiva de filtrado de temas
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            // Actualizar estado visual de los botones
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            // Filtrar elementos
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

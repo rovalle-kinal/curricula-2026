@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 3,
+  "stage_name": "Detailed Didactic Sequences",
+  "generated_by": "dosificador_secuencias",
+  "course_reference": "CURSO-UNIV-01",
+  "session_model": {
+    "standard_duration_minutes": 100,
+    "phases": [
+      {
+        "phase": "Apertura / Inicio",
+        "duration": "20 min",
+        "focus": "Activación de conocimientos previos, planteamiento de caso o dilema, conexión con el principio del 'trabajo bien hecho' e ideario Kinal."
+      },
+      {
+        "phase": "Desarrollo / Aplicación",
+        "duration": "60 min",
+        "focus": "Práctica instrumental guiada y autónoma en software (NotebookLM, Notion, Calendar, Anki), trabajo reflexivo en equipo y modelado docente bajo estándares de excelencia."
+      },
+      {
+        "phase": "Cierre / Consolidación",
+        "duration": "20 min",
+        "focus": "Evaluación formativa, registro reflexivo en la Bitácora de Aprendizaje (Berichtsheft universitario), retroalimentación y verificación de estándares éticos."
+      }
+    ]
+  },
+  "modules_sequences": [
+    {
+      "module_id": "MOD-01",
+      "session_title": "Sesión 1: Sentido del Estudio, Ética Digital y el Trabajo Bien Hecho",
+      "learning_outcomes": [
+        "Definir el propósito personal del estudio universitario como servicio a la sociedad y superación profesional.",
+        "Establecer compromisos explícitos de ética digital y delimitación estricta de dispositivos a fines formativos.",
+        "Formular un plan diagnóstico de autonomía y autorregulación según la matriz DQR."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Presenta el dilema ético del 'facilismo tecnológico': atajos digitales frente a la asimilación profunda del conocimiento. Expone la misión y los valores de Kinal (respeto a la dignidad, espíritu de servicio, trabajo bien hecho).",
+        "student_activity": "Participa en lluvia de ideas guiada sobre distracciones digitales comunes; reflexiona individualmente sobre cómo el esfuerzo honesto dignifica el estudio universitario.",
+        "resources": "Pizarra interactiva; documento guía con el Ideario y Normativa de Convivencia de Kinal.",
+        "assessment": {
+          "criterion": "Comprensión del valor formativo del estudio y disposición ética hacia el trabajo exigente.",
+          "instrument": "Lista de cotejo de participación y autoevaluación diagnóstica inicial."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_activity": "Explica la matriz de competencias del DQR distinguiendo entre competencia profesional (conocimiento y destrezas) y competencia personal (autonomía y responsabilidad). Modela la redacción de metas de estudio autorreguladas.",
+        "student_activity": "En parejas, analiza casos de estudio sobre integridad académica. Diseña su propio 'Código Personal de Estudio Ético' definiendo reglas para el uso de computadoras y teléfonos en clase.",
+        "resources": "Matriz DQR; plantilla de metas SMART y código de conducta personal.",
+        "assessment": {
+          "criterion": "Capacidad de autorregulación y formulación de compromisos éticos concretos.",
+          "instrument": "Rúbrica formativa de metas y código ético (escala de 0 a 100, umbral 75 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_activity": "Sintetiza las conclusiones del grupo, enfatizando que la excelencia técnica carece de sentido sin solvencia moral. Introduce la estructura de la Bitácora de Aprendizaje.",
+        "student_activity": "Escribe en su cuaderno de notas su primera reflexión de bitácora: '¿Cómo aportará mi formación técnica al bienestar de mi familia y comunidad?'.",
+        "resources": "Bitácora física/digital de aprendizaje.",
+        "assessment": {
+          "criterion": "Capacidad reflexiva y alineación con el espíritu de servicio de Kinal.",
+          "instrument": "Revisión de entrada de bitácora (sello formativo)."
+        }
+      }
+    },
+    {
+      "module_id": "MOD-02",
+      "session_title": "Sesión 2: Curaduría de Fuentes e Investigación Crítica con NotebookLM",
+      "learning_outcomes": [
+        "Crear cuadernos temáticos de estudio y cargar fuentes primarias rigurosamente validadas.",
+        "Interrogar documentos mediante prompts analíticos para generar síntesis y mapas conceptuales con citas trazables.",
+        "Detectar vacíos de comprensión antes de asistir a la clase magistral (preparación activa)."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Demuestra el fenómeno de las 'alucinaciones' en IA generativa general frente a la precisión de los modelos fundamentados (grounded AI) basados en fuentes directas en NotebookLM.",
+        "student_activity": "Analiza dos respuestas sobre un tema técnico: una sin fuentes y otra con citas en NotebookLM. Identifica la importancia de la verificabilidad para el trabajo riguroso.",
+        "resources": "Proyector; cuenta de NotebookLM; dos artículos científicos de muestra en PDF.",
+        "assessment": {
+          "criterion": "Reconocimiento del valor de la evidencia documental y rigor científico.",
+          "instrument": "Preguntas de verificación diagnóstica en plenaria."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_activity": "Guía el proceso de configuración de un cuaderno de estudio para una materia real. Modela la formulación de prompts analíticos de alto orden cognitivo (síntesis de contradicciones, extracción de variables, guías de discusión).",
+        "student_activity": "Crea su propio cuaderno en NotebookLM, carga 3 fuentes académicas primarias de su especialidad y ejecuta una sesión de interrogación estructurada, generando una guía previa de clase.",
+        "resources": "Laboratorio de computo / equipo personal con acceso a NotebookLM; repositorio de PDFs académicos.",
+        "assessment": {
+          "criterion": "Destreza instrumental en la curaduría de fuentes y formulación de prompts analíticos con verificación de citas.",
+          "instrument": "Escala de valoración técnica de cuadernos de estudio (umbral >= 75 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_activity": "Revisa aleatoriamente guías de discusión generadas por aprendices, brindando retroalimentación técnica y metodológica sobre la profundidad del análisis.",
+        "student_activity": "Documenta en la Bitácora de Aprendizaje las dudas no resueltas detectadas en el cuaderno para plantearlas al catedrático en la siguiente sesión.",
+        "resources": "NotebookLM; Bitácora de Aprendizaje.",
+        "assessment": {
+          "criterion": "Capacidad de identificar vacíos propios de conocimiento (metacognición).",
+          "instrument": "Verificación del registro de dudas en la bitácora."
+        }
+      }
+    },
+    {
+      "module_id": "MOD-03",
+      "session_title": "Sesión 3: Arquitectura de Información Universitaria y Notas Cornell en Notion",
+      "learning_outcomes": [
+        "Estructurar un 'Segundo Cerebro' en Notion con bases de datos relacionales para materias, tareas y proyectos.",
+        "Aplicar el método de notas Cornell integrado con las síntesis de NotebookLM evitando el copia y pega.",
+        "Implementar la Bitácora de Aprendizaje universitaria (análoga al Berichtsheft dual)."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Presenta el problema del 'caos documental' universitario y la sobrecarga cognitiva. Introduce el concepto de Segundo Cerebro y la tradición dual del cuaderno de informes (Berichtsheft) como herramienta de orden.",
+        "student_activity": "Examina su estado actual de apuntes y archivos; reflexiona sobre el costo en tiempo y serenidad del desorden académico.",
+        "resources": "Ejemplo de espacio estructurado en Notion vs. escritorio desordenado.",
+        "assessment": {
+          "criterion": "Conciencia sobre el valor del orden metódico en el trabajo intelectual.",
+          "instrument": "Registro participativo en lista de cotejo."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_activity": "Modela la creación de una base de datos relacional de 'Asignaturas' vinculada a 'Notas' y 'Tareas'. Enseña a diseñar una plantilla Cornell con secciones: Preguntas clave, Notas de clase y Resumen ejecutivo propio.",
+        "student_activity": "Construye en su espacio de Notion la arquitectura de su semestre. Toma una síntesis de NotebookLM de la sesión anterior y la procesa en su plantilla Cornell redactando las conclusiones con sus propias palabras.",
+        "resources": "Espacio de trabajo en Notion; plantilla institucional de Segundo Cerebro Kinal.",
+        "assessment": {
+          "criterion": "Precisión en la arquitectura de datos, coherencia relacional y originalidad en la síntesis conceptual.",
+          "instrument": "Rúbrica de evaluación de espacio en Notion (umbral mínimo 75 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_activity": "Supervisa la creación de la página 'Bitácora Semanal de Aprendizaje' (Berichtsheft) y valida los vínculos relacionales entre bases de datos.",
+        "student_activity": "Registra formalmente en su nueva bitácora la entrada del día: conceptos dominados, dificultades superadas y evidencias de trabajo bien hecho.",
+        "resources": "Base de datos de Bitácora en Notion.",
+        "assessment": {
+          "criterion": "Rigor en la documentación sistemática del aprendizaje.",
+          "instrument": "Cotejo de bitácora con firma digital del tutor."
+        }
+      }
+    },
+    {
+      "module_id": "MOD-04",
+      "session_title": "Sesión 4: Time Blocking, Puntualidad y Gestión con Notion Calendar",
+      "learning_outcomes": [
+        "Planificar la semana académica mediante bloques de tiempo de foco profundo (Deep Work).",
+        "Sincronizar bidireccionalmente la base de datos de tareas de Notion con Notion Calendar.",
+        "Vivir la puntualidad como expresión de respeto a la dignidad ajena y lograr balance armónico personal."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Expone la virtud de la puntualidad según el ideario Kinal: el respeto al tiempo de los demás y la paz interior del trabajo ordenado. Analiza los costos de la procrastinación.",
+        "student_activity": "Calcula el número de horas reales disponibles en su semana habitual tras deducir clases, traslados, sueño y comidas. Descubre su disponibilidad neta para estudio profundo.",
+        "resources": "Pizarra técnica; calculadora de presupuesto temporal semanal.",
+        "assessment": {
+          "criterion": "Toma de conciencia del recurso tiempo y compromiso con la puntualidad.",
+          "instrument": "Diagnóstico de uso del tiempo en formato de autoevaluación."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_activity": "Demuestra la configuración de Notion Calendar, la vinculación con Google Calendar / correo institucional y la sincronización con la base de datos de tareas creada en Notion. Explica la técnica de time blocking para estudio.",
+        "student_activity": "Instala y sincroniza Notion Calendar con su Notion. Asigna bloques fijos para clases, bloques de 90 minutos de foco profundo sin distracciones y agenda con antelación las entregas de tareas del semestre.",
+        "resources": "Notion Calendar; calendario académico del semestre con fechas de parciales y entregas.",
+        "assessment": {
+          "criterion": "Coherencia en la asignación de bloques temporales, realismo del plan y correcta sincronización digital.",
+          "instrument": "Lista de cotejo de auditoría de calendario (umbral >= 75 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_activity": "Verifica que cada estudiante haya reservado bloques específicos para descanso, vida familiar y desarrollo espiritual/físico, reforzando la visión integral de la persona.",
+        "student_activity": "Coteja su horario planificado con un compañero; acuerdan recordatorios mutuos de puntualidad para la llegada a las sesiones prácticas.",
+        "resources": "Notion Calendar.",
+        "assessment": {
+          "criterion": "Integración del principio de balance de vida y puntualidad.",
+          "instrument": "Validación cruzada entre pares con rúbrica breve."
+        }
+      }
+    },
+    {
+      "module_id": "MOD-05",
+      "session_title": "Sesión 5: Active Recall, Repetición Espaciada y Mazos Atómicos con Anki",
+      "learning_outcomes": [
+        "Distinguir con base neurocientífica la recuperación activa (Active Recall) de la relectura pasiva ineficaz.",
+        "Crear tarjetas atómicas en Anki utilizando cloze deletion e inversión pregunta-respuesta.",
+        "Consolidar el pipeline completo: de NotebookLM y Notion hacia Anki para preparación de exámenes de alto rendimiento."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Explica la curva del olvido de Ebbinghaus y presenta evidencia sobre cómo el esfuerzo de recordar (retrieval practice) fortalece las conexiones neuronales duraderas.",
+        "student_activity": "Participa en un experimento en clase: comparación de retención inmediata entre un grupo que relee y un grupo que hace autoevaluación sin mirar los apuntes.",
+        "resources": "Gráficas de neurociencia del aprendizaje; datos experimentales de Roediger & Karpicke.",
+        "assessment": {
+          "criterion": "Comprensión teórica de los mecanismos de consolidación de memoria a largo plazo.",
+          "instrument": "Cuestionario interactivo inicial."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_activity": "Modela las reglas de oro de las flashcards: principio del contenido mínimo (tarjetas atómicas), uso de texto con huecos (cloze deletion) y contexto significativo. Muestra cómo exportar conceptos desde las notas de Notion a Anki.",
+        "student_activity": "Descarga y configura Anki. Toma sus notas Cornell de Notion creadas en el Módulo 3 y genera un mazo de al menos 20 tarjetas atómicas sobre una materia técnica, evitando tarjetas ambiguas o saturadas.",
+        "resources": "Aplicación Anki; apuntes de Notion de asignaturas universitarias reales.",
+        "assessment": {
+          "criterion": "Aplicación del principio de atomicidad en flashcards, sintaxis correcta de cloze y relevancia conceptual.",
+          "instrument": "Rúbrica de calidad de mazos de Anki (escala 0-100, umbral 75 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_activity": "Facilita la integración final del ecosistema: NotebookLM (investigación) -> Notion (segundo cerebro y Berichtsheft) -> Notion Calendar (rutina diaria) -> Anki (retención permanente). Asigna pauta para el proyecto integrador.",
+        "student_activity": "Programa en Notion Calendar su rutina diaria de 15 minutos de repaso en Anki. Realiza su primera sesión de repaso y documenta el hito final en la Bitácora de Aprendizaje.",
+        "resources": "Ecosistema completo integrado.",
+        "assessment": {
+          "criterion": "Visión sistémica del ecosistema personal de productividad académica.",
+          "instrument": "Evaluación final integrada de sesión (&ge;75 pts)."
+        }
+      }
+    }
+  ]
+}

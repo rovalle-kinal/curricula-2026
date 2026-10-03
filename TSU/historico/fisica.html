@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Física y Tecnología (IA) | Dictamen Curricular TSU Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 32px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 6px; }
+        header p { color: #cbd5e1; font-size: 0.98rem; }
+        nav.nav-bar {
+            background: #0b1f3a;
+            padding: 0 40px;
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav.nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.nav-bar a:hover { color: #ffffff; border-bottom-color: var(--kinal-accent); }
+        nav.nav-bar a.active { color: #ffffff; background: rgba(255,255,255,0.06); border-bottom-color: var(--kinal-accent); }
+        main { padding: 40px; }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .analysis-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .analysis-header h3 { font-size: 1.15rem; color: var(--kinal-blue); }
+        .analysis-body { padding: 24px; }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .comp-table th, .comp-table td {
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+        .comp-table th { background: #f1f5f9; color: var(--text-dark); font-weight: 600; }
+
+        .callout-box {
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .callout-yellow { background: var(--color-actualizar-bg); border-left: 4px solid var(--color-actualizar-border); color: var(--color-actualizar-text); }
+        .callout-red { background: var(--color-anular-bg); border-left: 4px solid var(--color-anular-border); color: var(--color-anular-text); }
+        .callout-blue { background: var(--color-nuevo-bg); border-left: 4px solid var(--color-nuevo-border); color: var(--color-nuevo-text); }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="header-badge">Eje Curricular: Ciencias Físicas e Innovación Tecnológica</span>
+        <h1>Área de Física Aplicada, Tecnología y Programación con IA</h1>
+        <p>Diagnóstico de 4 asignaturas trimestrales del Técnico Superior Universitario (TSU Kinal). Transformación de la física teórica abstracta en Física Industrial Computacional: fluidos de potencia, auditoría térmica y una nueva <strong>Unidad de Tecnología con Programación e Inteligencia Artificial para Mantenimiento Predictivo</strong>.</p>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html">Portal General</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; font-weight: 700;">🗺️ Mapa Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; font-weight: 700;">📚 Temarios por Línea</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; font-weight: 700;">🌟 Nueva Distribución 2026</a>
+        <a href="administracion.html">Administración y Operaciones</a>
+        <a href="matematica.html">Matemática Aplicada</a>
+        <a href="fisica.html" class="active">Física y Tecnología (IA)</a>
+        <a href="etica.html">Ética Profesional y HITL</a>
+    </nav>
+
+    <main>
+        <div class="callout-box callout-blue" style="font-size: 0.95rem;">
+            <strong>Revolución Didáctica en Física:</strong> En los modelos técnicos superiores de Alemania (DQR 5/6) y Suecia, la física no se imparte memorizando fórmulas en una pizarra. Se enseña como <strong>física de ingeniería asistida por computadora</strong>: los estudiantes adquieren datos físicos reales de sensores industriales (vibración, caudal, temperatura, tensión) y utilizan herramientas modernas de programación e Inteligencia Artificial para predecir fallas y optimizar la energía de la maquinaria.
+        </div>
+
+        <!-- I TRIMESTRE: FÍSICA BÁSICA 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>I Trimestre • Física Básica 1: Cinemática y Dinámica de Maquinaria</h3>
+                <div>
+                    <span class="tag-pill tag-anular">Anular Fricción Cero</span>
+                    <span class="tag-pill tag-actualizar">Mecánica de Máquinas</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cinemática y Dinámica Idealizada</strong><br>Tiro parabólico clásico, bloques en planos inclinados sin fricción y sistemas de poleas ideales sin masa.</td>
+                            <td><span class="tag-pill tag-anular">Anular</span></td>
+                            <td>
+                                <div class="callout-box callout-red" style="margin: 0 0 8px 0; padding: 8px 12px;">
+                                    <strong>Motivo de anulación:</strong> Resolver problemas sobre superficies sin rozamiento genera vicios conceptuales en supervisores que deben lidiar con desgaste y rozamiento real.
+                                </div>
+                                <strong>Sustituir por: Cinemática de Mecanismos y Transmisión de Potencia:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Cálculo de relaciones de transmisión en trenes de engranajes, fajas sincronizadas y cadenas de rodillos.</li>
+                                    <li>Torque motor ($T = P / \omega$), momento de inercia ($J$) y aceleración angular en el arranque de cargas pesadas.</li>
+                                    <li>Rozamiento dinámico, coeficiente de fricción y cálculo de fuerzas de frenado en transporte por faja.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Vibraciones Mecánicas en Maquinaria Rotativa:</strong>
+                                Fundamentos de oscilaciones forzadas y frecuencia natural. Identificación del fenómeno de <strong>resonancia</strong> destructiva en motores y compresores. Parámetros de vibración: desplazamiento, velocidad pico y aceleración en g.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- II TRIMESTRE: FÍSICA APLICADA 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>II Trimestre • Física Aplicada 1: Hidráulica y Fluidos Industriales</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Hidrodinámica Real</span>
+                    <span class="tag-pill tag-nuevo">Fluidos de Potencia y Cavitación</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hidrostática Básica</strong><br>Cálculos de presión estática, principio de Arquímedes y prensas hidráulicas ideales.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Hidrodinámica de Tuberías y Flujo de Fluidos Reales:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Ecuación de Bernoulli y pérdida de carga por fricción (ecuación de Darcy-Weisbach y uso del diagrama de Moody).</li>
+                                    <li>Pérdidas menores en accesorios: codos, válvulas de retención, filtros y reducciones.</li>
+                                    <li>Selección y dimensionamiento de <strong>bombas centrífugas</strong>: cálculo de la curva del sistema frente a la curva de la bomba y punto de operación.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Cavitación y Oleohidráulica de Potencia:</strong>
+                                Cálculo del NPSH disponible vs. requerido para evitar la destrucción de impulsores por cavitación. Introducción a circuitos de aceite hidráulico de potencia a alta presión (100–210 bar), viscosidad ISO VG y actuadores de gran tonelaje.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- III TRIMESTRE: FÍSICA APLICADA 2 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>III Trimestre • Física Aplicada 2: Termodinámica y Eficiencia Energética</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Vapor y Refrigeración</span>
+                    <span class="tag-pill tag-nuevo">Auditoría Energética</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Termodinámica Teórica de Gases Ideales</strong><br>Ecuaciones generales de gases (PV=nRT), calorimetría escolar de mezclas de agua en calorímetros ideales.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Generación de Vapor y Refrigeración Industrial (Ciclos Reales):</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Uso de <strong>tablas de vapor saturado y sobrecalentado</strong>: entalpía, calidad del vapor y calor latente de vaporización.</li>
+                                    <li>El ciclo Rankine en calderas industriales pirotubulares y acuotubulares (industria azucarera y papelera de Guatemala).</li>
+                                    <li>El ciclo de refrigeración por compresión mecánica de vapor: diagramas presión-entalpía (P-h), cálculo del Coeficiente de Rendimiento (<strong>COP</strong>) y manejo de refrigerantes ecológicos.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Transferencia de Calor y Auditoría Energética de Planta:</strong>
+                                Modos de transferencia (conducción, convección forzada en intercambiadores de calor de placas/tubos, y radiación). Cálculo de pérdidas térmicas en tuberías desnudas y selección del espesor óptimo de aislamiento. Inspección de trampas de vapor para evitar fugas millonarias de vapor vivo.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- IV TRIMESTRE: FÍSICA APLICADA 3 & UNIDAD DE TECNOLOGÍA (IA) -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>IV Trimestre • Física Aplicada 3: Electricidad & Nueva Unidad de Tecnología, Programación e IA</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Electricidad Industrial AC</span>
+                    <span class="tag-pill tag-nuevo">Programación e IA en Física</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Electricidad Elemental</strong><br>Leyes de Ohm, Watts y Kirchhoff aplicadas a circuitos resistivos simples de corriente continua (DC).</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Sistemas Trifásicos Industriales y Calidad de la Energía:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Circuitos trifásicos en estrella (Y) y delta (Δ) a 208/240/480 VAC; corrientes de fase y de línea.</li>
+                                    <li>Cálculo de potencia activa (kW), reactiva (kVAR) y aparente (kVA). Corrección del <strong>factor de potencia (&ge; 0.90)</strong> mediante bancos de condensadores para evitar penalizaciones del Administrador del Mercado Mayorista (AMM).</li>
+                                    <li>Distorsión armónica total (THD) provocada por variadores de velocidad y fuentes conmutadas.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="background: #eff6ff;">
+                            <td><strong>Nueva Unidad de Tecnología</strong><br><em>(Requerimiento estratégico Kinal 2026)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Unidad de Tecnología: Programación e Inteligencia Artificial en Física Industrial:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li><strong>Física Computacional y Simulación:</strong> Introducción a scripts en Python para graficar y simular curvas de bombeo, tiro térmico y trayectorias sin cálculos manuales lentos.</li>
+                                    <li><strong>Sensores Inteligentes y Telemetría:</strong> Adquisición digital de variables físicas mediante transductores (acelerómetros piezoeléctricos MEMS para vibración, termorresistencias PT100 para temperatura y transmisores piezorresistivos de presión).</li>
+                                    <li><strong>Modelos de Inteligencia Artificial para Mantenimiento Predictivo (PdM):</strong>
+                                        <ul style="margin: 4px 0 0 16px;">
+                                            <li>Concepto de aprendizaje automático (*Machine Learning*) aplicado a series temporales de datos físicos de máquinas.</li>
+                                            <li>Detección temprana de anomalías en firmas de vibración (desalineación de ejes, solturas mecánicas o desgaste de pistas en rodamientos) semanas antes del fallo catastrófico.</li>
+                                            <li>Visión artificial básica para control de velocidad y presencia física de materiales.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Gemelos Digitales (Digital Twins) Simplificados:</strong> Creación de modelos computacionales que simulan el estrés térmico o mecánico de un equipo bajo diferentes condiciones de carga de trabajo.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout-box callout-blue">
+                    <strong>Sinergia con el Ideario Kinal:</strong> La física moderna combinada con Inteligencia Artificial permite cumplir el ideal del <strong>"trabajo bien hecho"</strong> a un nivel científico: prevenir roturas imprevistas, cuidar la vida y seguridad de los operarios y asegurar un uso eficiente y responsable de los recursos energéticos del país.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Eje de Física y Tecnología TSU • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>

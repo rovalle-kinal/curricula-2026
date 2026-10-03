@@ -1,0 +1,58 @@
+{
+  "macro_plan_metadata": {
+    "module_number": 2,
+    "module_name": "Toma de Notas Universitarias, Método Cornell y Ecosistema Digital en Notion",
+    "total_hours": 8,
+    "theory_hours": 2.5,
+    "practice_hours": 5.5,
+    "passing_threshold": 70
+  },
+  "blocks": [
+    {
+      "block_id": "2.1",
+      "block_name": "Neurociencia de la Toma de Notas y Criterios de Captura",
+      "dqr_level": "DQR 5",
+      "theory_duration_min": 45,
+      "practice_duration_min": 75,
+      "key_focus": "Desmontar la copia taquigráfica; enseñar a identificar señal vs. ruido y señales de énfasis del docente.",
+      "evaluative_milestone": "Taller de discriminación de ideas clave sobre conferencia técnica (Mínimo: 70 pts)"
+    },
+    {
+      "block_id": "2.2",
+      "block_name": "El Método Cornell y el Ciclo de Auto-recuperación 6R",
+      "dqr_level": "DQR 5 - 6",
+      "theory_duration_min": 30,
+      "practice_duration_min": 90,
+      "key_focus": "Geometría espacial de página, regla de las 6R, auto-evaluación a ciegas y protocolo de repaso 24h-7d-30d.",
+      "evaluative_milestone": "Apunte completo bajo formato Cornell con cues y resumen en 3 oraciones evaluado"
+    },
+    {
+      "block_id": "2.3",
+      "block_name": "Notion como Segundo Cerebro y Plantilla Interactiva",
+      "dqr_level": "DQR 6",
+      "theory_duration_min": 30,
+      "practice_duration_min": 90,
+      "key_focus": "Base de datos relacional de notas de asignaturas; plantilla a 2 columnas con toggles de Active Recall.",
+      "evaluative_milestone": "Espacio de Notion configurado con propiedades relacionales y plantilla funcional"
+    },
+    {
+      "block_id": "2.4",
+      "block_name": "Flujo Híbrido: Notas a Mano, OCR y Capstone Módulo 2",
+      "dqr_level": "DQR 6",
+      "theory_duration_min": 45,
+      "practice_duration_min": 75,
+      "key_focus": "Protocolo de escaneo técnico, extracción OCR, curaduría en Notion y sustentación en vivo.",
+      "evaluative_milestone": "Evaluación integrada (Theorie und Praxis integrierende Prüfung): defensa del sistema (≥ 70 pts)"
+    }
+  ],
+  "capstone_project": {
+    "title": "Segundo Cerebro de Apuntes Universitarios en Notion con Libreta Cornell Híbrida",
+    "passing_score": 70,
+    "components": [
+      "Base de datos relacional en Notion con materias y notas vinculadas",
+      "Al menos 2 clases procesadas en plantilla interactiva Cornell con toggles de Active Recall",
+      "Al menos 2 conjuntos de notas a mano escaneadas, auditadas con OCR y catalogadas en la galería",
+      "Demostración de búsqueda indexada instantánea en vivo (Cmd+K)"
+    ]
+  }
+}

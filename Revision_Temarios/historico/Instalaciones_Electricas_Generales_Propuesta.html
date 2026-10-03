@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Instalaciones Eléctricas Generales | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i>
+                    Instalaciones Eléctricas Generales
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-amber-600 text-white font-bold">IEG</span>
+                <a href="Controles_y_Maquinas_Electricas_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Controles y Máquinas</a>
+                <a href="Electronica_Analogica_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Electrónica Analógica</a>
+                <a href="Control_Industrial_Sistemas_Programables_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Sist. Programables</a>
+                <a href="Automatizacion_Industrial_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Automatización Ind.</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_IEGM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-amber-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Instalaciones Eléctricas Generales (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización integral bajo las <strong>Normas de Distribución de EEGSA / Energuate</strong>, regulación de la <strong>CNEE</strong>, Código Eléctrico Nacional <strong>(NEC / NFPA 70)</strong>, medición de resistencia de puesta a tierra con telurómetro digital e integración de <strong>Sistemas Solares Fotovoltaicos On-Grid</strong> para generación distribuida en Guatemala.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Soldadura Blanda/Historia)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">22 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Normas EEGSA/GFCI)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">6 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (Solar FV, Telurómetro, NFPA 70E)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">46 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Fundamentos y Circuitos)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-amber-50 text-amber-700">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Electricistas Técnicos en Guatemala (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Diagnóstico fundamentado en la Comisión Nacional de Energía Eléctrica (CNEE), distribuidoras (EEGSA y Energuate) y contratistas de montaje electromecánico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="plug-zap" class="w-4 h-4 text-amber-600"></i>
+                        Normas Técnicas de Distribución CNEE y Acometidas EEGSA
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Toda conexión eléctrica residencial o comercial en el área central (Guatemala, Sacatepéquez, Escuintla) debe ser aprobada bajo la <strong>Norma de Distribución de EEGSA</strong>, y en el interior bajo <strong>Energuate (DEORSA/DEOCSA)</strong>. Se exige el uso de bases de medidor normalizadas (socket 100A/200A), alturas de mufa reglamentarias, varilla de puesta a tierra de cobre de 5/8" x 8 pies y tubería conduit galvanizada o PVC eléctrico cédula 40.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Normativas: NTDOID / CNEE, Normas de Acometidas EEGSA y Energuate.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="sun" class="w-4 h-4 text-yellow-600"></i>
+                        Boom de Generación Distribuida (Energía Solar On-Grid)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Bajo la <strong>Resolución CNEE-186-2008</strong> y sus reformas para Autoconsumo con Excedentes, miles de residencias y comercios en Guatemala instalan techos solares fotovoltaicos interconectados con medidor bidireccional. La industria exige técnicos electricistas certificados capaces de dimensionar strings de paneles, conectar microinversores, cable solar FV resistente a intemperie y protecciones contra sobretensiones (DPS).
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Regulación: CNEE Autoconsumo Renovable / Medición Neta Bidireccional.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-red-600"></i>
+                        Seguridad Ocupacional MinTrab 229-2014 y Malla de Puesta a Tierra
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Las auditorías del Ministerio de Trabajo sancionan instalaciones sin electrodo de puesta a tierra verificado o sin protecciones diferenciales. Las constructoras formales exigen electricistas que certifiquen el valor óhmico del sistema de puesta a tierra (máximo 25 Ω residenciales, menos de 5 Ω para equipos sensibles) utilizando <strong>telurómetro digital de 3 picas</strong> y que apliquen protocolos de seguridad eléctrica <strong>NFPA 70E</strong>.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Normas: Acdo. Gub. 229-2014, NFPA 70E, IEEE 81 (Telurómetro).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: FICHA ORIGINAL DE VENTA -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-amber-50 text-amber-700">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Datos institucionales extraídos del archivo fuente <code>2026_IEGM.xlsx</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 text-xs">
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Nombre Oficial del Curso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 font-semibold">
+                            Instalaciones Eléctricas Generales
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Duración y Módulos:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Duración: <strong>180 Horas</strong> lectivas.<br>
+                            • Estructura: <strong>10 Módulos</strong> teórico-prácticos en taller eléctrico.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido a y Perfil de Ingreso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Personas interesadas en iniciarse en el oficio de electricista instalador residencial y comercial, ayudantes de obra, técnicos de mantenimiento y contratistas eléctricos. Requiere ciclo básico o diversificado aprobado.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Acreditaciones y Salida Laboral:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Certificado por módulo y diploma de Técnico Instalador Electricista de Kinal ETS. Habilita para tramitar acometidas residenciales, cableado de edificaciones, tableros de breakers y montajes fotovoltaicos.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Diagnóstico Crítico del Pensum Original:</span>
+                        <div class="p-3 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed">
+                            <strong>⚠️ Prácticas Obsoletas Detectadas:</strong> El pensum original incluye <em>"soldadura blanda de estaño para empalmes de fuerza"</em> (práctica expresamente desaconsejada y prohibida por el Código Eléctrico Nacional para cableado de fuerza, donde deben usarse capuchones plásticos normados Wire-Nut o conectores de compresión mecánica). Se elimina y se actualiza a técnicas normalizadas de conexionado seguro y mallas de tierra con telurómetro.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-amber-50 text-amber-700">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color (71 Temas Oficiales Analizados)
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Desglose de cada tema de los 10 módulos de <code>2026_IEGM.xlsx</code> contrastados contra el Código Eléctrico (NEC) y normas EEGSA.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- MÓDULO 1 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 4)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Conceptos Básicos de Electricidad</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de conceptos básicos de electricidad.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Definición e historia de la electricidad.</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>¿Por qué eliminar?</strong> La historia enciclopédica no aporta destreza práctica al electricista. Se sustituye por seguridad y uso de EPP normado desde el día 1.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Importancia de la electricidad.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Herramienta básica del electricista.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Formas de producir electricidad.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Conductores y aislantes eléctricos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Empalmes convencionales en conductores eléctricos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Empleo de cinta autofundente de alta tensión, cinta vinílica aislante certificada UL y capuchones roscados de compresión Wire-Nut.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 5 a 8)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Magnitudes Eléctricas en Circuitos Eléctricos</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de magnitudes eléctricas en circuitos eléctricos.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Aislamiento de empalmes.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Empleo de cinta autofundente de alta tensión, cinta vinílica aislante certificada UL y capuchones roscados de compresión Wire-Nut.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Soldadura blanda.</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>¿Por qué eliminar?</strong> La soldadura blanda con estaño en instalaciones eléctricas fijas de fuerza está desaconsejada por el NEC (riesgo de cortocircuito ante sobrecalentamiento). Se sustituye por conectores mecánicos de resorte Wire-Nut.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Terminales básicas para uniones eléctricas.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Magnitudes básicas de la electricidad.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Circuito eléctrico simple.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Ley de OHM.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Potencia eléctrica.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 9 a 12)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Circuitos Eléctricos Fundamentales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de circuitos eléctricos fundamentales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Circuitos en serie.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Resolución de circuitos en serie.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Circuitos en paralelo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Resolución de circuitos en paralelo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Circuitos en serie-paralelo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Resolución de circuitos en serie-paralelo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 13 a 16)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Medición de Magnitudes Eléctricas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de medición de magnitudes eléctricas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Voltímetro.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Amperímetro.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Óhmetro.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Medición de voltaje, intensidad y resistencia.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Vatímetro / Medición de potencia.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modernización bajo normas técnicas de la CNEE y el Código Eléctrico Nacional (NEC 2023).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Contador eléctrico / Consumo de energía.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Eficiencia y ahorro de energía.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Medición y Certificación de Puesta a Tierra con Telurómetro Digital</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Manejo del telurómetro de 3 picas según norma IEEE 81 para certificar que la resistencia del electrodo de tierra sea menor a 25 ohmios (exigencia del MinTrab y distribuidoras).</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 5 (Semanas 17 a 20)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Circuitos de Fuerza e Iluminación</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de circuitos de fuerza e iluminación.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Tipos de instalaciones eléctricas.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Cajas, conectores, abrazaderas y tuberías.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Interruptores y tomacorrientes.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Tipos de luminarias.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Circuitos residenciales de iluminación.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Circuitos residenciales de fuerza.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 6 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 6 (Semanas 21 a 24)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Circuitos con Sensores Residenciales en Instalaciones Eléctricas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de circuitos con sensores residenciales en instalaciones eléctricas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Tipos de tableros eléctricos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Instalación de centros de carga tipo QO/Homeline, peines de distribución y balance equilibrado de fases 120/240V.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Simbología eléctrica.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Diagramas eléctricos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Fotoceldas.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Conexión de fotoceldas electrónicas, sensores de movimiento infrarrojos (PIR) y temporizadores para control automático de iluminación eficiente LED.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Instalaciones eléctricas de fuerza e iluminación.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Sensores de uso residencial.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Conexión de fotoceldas electrónicas, sensores de movimiento infrarrojos (PIR) y temporizadores para control automático de iluminación eficiente LED.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 7 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 7 (Semanas 25 a 28)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Protecciones Eléctricas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de protecciones eléctricas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Fusibles.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Reemplazar fusibles antiguos de tapón por interruptores termomagnéticos modernos y disyuntores diferenciales GFCI para zonas húmedas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Interruptores térmicos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modernización bajo normas técnicas de la CNEE y el Código Eléctrico Nacional (NEC 2023).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Interruptores magnéticos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Interruptores termomagnéticos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Supresores.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modernización bajo normas técnicas de la CNEE y el Código Eléctrico Nacional (NEC 2023).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. UPS.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Sistemas de tierra.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Pararrayos.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Disyuntores Diferenciales GFCI y Detección de Falla de Arco AFCI</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Instalación de interruptores GFCI en baños, cocinas y exteriores (protección humana contra electrocución) y breakers AFCI para prevenir incendios por falso contacto.</p>
+                            </div>
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Protocolo de Seguridad Eléctrica y EPP contra Arco Eléctrico (NFPA 70E)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Cumplimiento legal del Acuerdo Gubernativo 229-2014: uso de guantes dieléctricos Clase 0, careta de protección facial contra fogonazo y bloqueo/etiquetado (LOTO).</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 8 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 8 (Semanas 29 a 32)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Señales Sonoras y Circuitos Electromagnéticos</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de señales sonoras y circuitos electromagnéticos.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Magnetismo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Electromagnetismo.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Circuitos de timbres de 120 VAC.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Circuitos de chapas eléctricas de 12VAC.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Circuitos de intercomunicadores.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. El relé y el contactor.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Circuitos de aplicación de relé.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Circuitos de aplicación de contactor.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 9 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 9 (Semanas 33 a 36)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Acometidas Eléctricas Residenciales y Comerciales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de acometidas eléctricas residenciales y comerciales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Partes de una acometida.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Montaje de mufa, tubo conduit galvanizado de 1-1/4" y base de medidor (socket 100A/200A) según especificaciones técnicas oficiales de EEGSA y Energuate.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Tipos de acometidas.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Montaje de mufa, tubo conduit galvanizado de 1-1/4" y base de medidor (socket 100A/200A) según especificaciones técnicas oficiales de EEGSA y Energuate.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Acometida eléctrica residencial.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Montaje de mufa, tubo conduit galvanizado de 1-1/4" y base de medidor (socket 100A/200A) según especificaciones técnicas oficiales de EEGSA y Energuate.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Cambio de servicio 120V a 120/240V.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Acometida eléctrica comercial.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Montaje de mufa, tubo conduit galvanizado de 1-1/4" y base de medidor (socket 100A/200A) según especificaciones técnicas oficiales de EEGSA y Energuate.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Acometidas eléctricas industriales.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Montaje de mufa, tubo conduit galvanizado de 1-1/4" y base de medidor (socket 100A/200A) según especificaciones técnicas oficiales de EEGSA y Energuate.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Requisitos para solicitud de un servicio de energía.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Requisitos para una solicitud de un cambio de servicio.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Sistemas Solares Fotovoltaicos On-Grid para Autoconsumo (CNEE-186-2008)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Interconexión de inversores de red a tableros principales de distribución, cable solar resistente a rayos UV y trámites para medidores bidireccionales en Guatemala.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 10 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 10 (Semanas 37 a 40)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Diseño de Planos para Instalaciones Eléctricas Residenciales</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Ejecutar con destreza técnica y seguridad las competencias de diseño de planos para instalaciones eléctricas residenciales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Definición de anteproyecto y proyecto.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Planta amueblada.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Plano instalación eléctrica de iluminación.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Diseño de planos unifilares y cuadros de balance de cargas eléctricas residenciales según exigencias municipales y de distribuidoras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Plano instalación eléctrica de fuerza.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Diseño de planos unifilares y cuadros de balance de cargas eléctricas residenciales según exigencias municipales y de distribuidoras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Plano instalación de cargas eléctricas especiales.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Diseño de planos unifilares y cuadros de balance de cargas eléctricas residenciales según exigencias municipales y de distribuidoras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Plano para señal de teléfono y televisión.</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Diseño de planos unifilares y cuadros de balance de cargas eléctricas residenciales según exigencias municipales y de distribuidoras.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Cálculos eléctricos por instalación y generales.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Calculo de material por instalación y generales.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Costo de mano de obra y costo total.</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fundamento esencial para el dominio técnico del oficio de instalador electricista.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Cuadros de Carga Automáticos y Cálculo de Caída de Tensión</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Cálculo formal del porcentaje de caída de tensión (máximo 3% en alimentadores) y dimensionamiento del calibre de conductores AWG en tuberías conduit.</p>
+                            </div>
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>[NUEVO] Cableado Estructurado Básico (Voz, Datos y Cámaras CCTV Residenciales)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Todo electricista actual en Guatemala debe instalar tuberías y cable UTP Cat 6 para puntos de internet y alimentación PoE de cámaras de videovigilancia.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Cambios Curriculares en Instalaciones Eléctricas Generales
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Resumen técnico y justificaciones normativas en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Historia de la electricidad</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Teoría enciclopédica estéril. Se reemplaza por seguridad en el taller y uso inmediato de multímetro.</td>
+                            <td class="p-3 text-slate-500 font-medium">Eficiencia Formativa Kinal</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Soldadura blanda de estaño en fuerza</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Práctica prohibida en cableado de fuerza por el NEC/CNEE por riesgo de desconexión térmica. Se usan capuchones Wire-Nut.</td>
+                            <td class="p-3 text-slate-500 font-medium">Código Eléctrico Nacional</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 7</td>
+                            <td class="p-3 font-medium">Protecciones eléctricas por fusible</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Actualizar a interruptores termomagnéticos y disyuntores diferenciales GFCI de disparo rápido.</td>
+                            <td class="p-3 text-slate-500 font-medium">Norma CNEE / NEC</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 9</td>
+                            <td class="p-3 font-medium">Acometidas Eléctricas Residenciales</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Montaje de acometida monofásica y bifásica 120/240V bajo los planos de detalle oficiales de EEGSA y Energuate.</td>
+                            <td class="p-3 text-slate-500 font-medium">EEGSA / Energuate</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Medición con Telurómetro Digital</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Verificación de la resistencia de la varilla de tierra (máx 25 Ω) requerida en recepciones de obra del MinTrab.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Acuerdo Gub. 229-2014</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 9</td>
+                            <td class="p-3 font-medium">Sistemas Solares Fotovoltaicos On-Grid</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Interconexión a la red bajo la norma de Generación Distribuida de la CNEE para medidores bidireccionales.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Resolución CNEE-186-2008</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN CON IA -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: IA en Instalaciones Eléctricas</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Aplicaciones de visión computacional y modelos predictivos para electricistas modernos en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        Termografía y Detección de Puntos Calientes con Visión IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Cámaras termográficas acoplables a smartphones con algoritmos de IA que identifican automáticamente bornes flojos, desbalances de fases y sobrecargas en interruptores termomagnéticos antes de que ocurra un incendio o disparo intempestivo.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: FLIR ONE Pro AI Thermal Analysis / Hikmicro Viewer.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="sliders" class="w-4 h-4"></i>
+                        Balance de Cargas y Cálculo de Conductores con IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Asistentes basados en LLMs configurados para distribuir de forma óptima los circuitos en tableros bifásicos y trifásicos, calculando simultáneamente la caída de tensión y sugiriendo el diámetro de tubería conduit según el factor de relleno normado.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-purple-200 font-mono">
+                        Herramienta: NEC Electrical Copilot / ChatGPT Code Interpreter.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="sun-medium" class="w-4 h-4"></i>
+                        Dimensionamiento Generativo de Techos Solares
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Software asistido por IA que analiza imágenes satelitales de techos residenciales en Guatemala, calculando sombras arrojadas por árboles o muros vecinos y proponiendo la orientación y cantidad exacta de paneles solares para maximizar la generación eléctrica en kWh.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Helioscope AI / Aurora Solar / PVsyst Automation.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Instalaciones Eléctricas Generales 2026
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

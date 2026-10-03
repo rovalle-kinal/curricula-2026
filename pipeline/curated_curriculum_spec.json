@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 1,
+  "stage_name": "Curated Curriculum Specification",
+  "generated_by": "curador_investigador",
+  "reference_frameworks": [
+    "DQR (Deutscher Qualifikationsrahmen)",
+    "German Dual VET System (Duales Ausbildungssystem - BBiG)",
+    "Australian VET System (School Based Apprenticeship)",
+    "Canadian Apprenticeship Models",
+    "Saxony Vocational Education Pathways (Berufliche Bildung Sachsen)",
+    "Fundacion Kinal Institutional Norms, Code of Conduct and Evaluation Schema"
+  ],
+  "institutional_context": {
+    "institution": "Fundación Kinal",
+    "campus": "Escuela Técnica Superior (Guatemala)",
+    "mission": "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad.",
+    "vision": "Ser líderes en la formación técnica, tecnológica y humana de la región con superación personal y profesional.",
+    "core_values": [
+      "Visión cristiana de la vida",
+      "Respeto a la dignidad de la persona",
+      "Espíritu de servicio",
+      "Trabajo bien hecho",
+      "Libertad personal responsable"
+    ],
+    "applicable_programs": ["Carreras Técnicas (CTs)", "Carreras de Tecnologías (TICs)", "Técnico Universitario (TU)", "Cursos en línea", "Kinal Language School (KLS)"],
+    "minimum_passing_score": 75,
+    "code_of_conduct": {
+      "attitude": "Trato respetuoso hacia directores, instructores y compañeros; lenguaje correcto, sereno; prohibición estricta de fumar; delimitación del uso de dispositivos digitales estrictamente a fines académicos.",
+      "attendance_and_punctuality": "Registro formal con carné en instalaciones físicas o validación nominal por el instructor en aulas virtuales.",
+      "evaluation_system": "Exámenes por suficiencia con nota mayor a 75 puntos; suficiencia en idioma inglés mediante prueba ELASH II nivel A2 en cada aspecto evaluado; ponderaciones determinadas por el instructor sobre el 100%."
+    }
+  },
+  "qualification_framework": {
+    "framework": "DQR (Deutscher Qualifikationsrahmen)",
+    "target_level": "DQR Nivel 6",
+    "level_equivalencies": {
+      "dqr_2": "Preparación vocacional (Hauptschule tras clase 9)",
+      "dqr_3": "Formación profesional dual de 2 años (Realschule tras clase 10)",
+      "dqr_4": "Formación dual de 3 a 3.5 años o certificado de acceso a universidad (Abitur)",
+      "dqr_5": "Formación continua y especialización ocupacional (mínimo 400 horas lectivas)",
+      "dqr_6": "Formación continua para ascender profesionalmente, grado maestro (Meister), Bachelor Professional y títulos universitarios de Bachelor (mínimo 1,200 horas lectivas)",
+      "dqr_7": "Gestión responsable de organizaciones, problemas estratégicos complejos e innovadores, equivalente a Máster (mínimo 1,600 horas lectivas adicionales)"
+    },
+    "competence_concept_definition": "the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act.",
+    "competence_matrix_dimensions": {
+      "professional_competence": {
+        "knowledge": "Amplitud y profundidad teórica, conceptual y empírica (Fachwissen).",
+        "skills": "Destrezas instrumentales, metodológicas, sistémicas y juicio crítico (Fertigkeiten)."
+      },
+      "personal_competence": {
+        "social_competence": "Liderazgo, comunicación asertiva, cooperación y trabajo en equipo (Sozialkompetenz).",
+        "autonomy": "Responsabilidad autónoma, iniciativa, reflexividad y autocontrol (Selbständigkeit)."
+      },
+      "transversal_competence": {
+        "methodological_competence": "Competencia transversal aplicada a la resolución de problemas técnicos complejos (Methodenkompetenz)."
+      }
+    },
+    "permeability": "Durchlässigkeit entre la formación técnico-profesional y la educación superior universitaria."
+  },
+  "modules": [
+    {
+      "module_id": "MOD-01",
+      "title": "Fundamentos de la Educación Técnico-Profesional y Sistemas Comparados",
+      "topics": [
+        {
+          "topic_id": "1.1",
+          "title": "Articulación y Modelos Internacionales",
+          "subtopics": [
+            "Análisis comparado de sistemas técnicos: Alemania, Australia y Canadá",
+            "Mecanismos de articulación vertical y horizontal dentro del sistema educativo",
+            "Trayectorias escolares hacia la formación técnico-profesional",
+            "Vinculación con el sector productivo y transiciones al mercado laboral"
+          ]
+        },
+        {
+          "topic_id": "1.2",
+          "title": "El Sistema Dual de Aprendizaje en la Empresa (Apprenticeship / Duales System)",
+          "subtopics": [
+            "Concepto de alternancia escuela/centro de formación y empresa (duale Ausbildung, duales System)",
+            "Programas de prácticas vinculados a la industria (School Based Apprenticeship australiano)",
+            "Formación en el puesto de trabajo (Ausbildung am Arbeitsplatz), fuera del puesto y supraempresarial (überbetriebliche Ausbildung)",
+            "Reglamentación, convenios colectivos (Tarifvertrag) y retribución acordada"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-02",
+      "title": "Marcos de Cualificaciones y Estándares de Competencia",
+      "topics": [
+        {
+          "topic_id": "2.1",
+          "title": "Marco Alemán de Cualificaciones (DQR)",
+          "subtopics": [
+            "Estructura general de 8 niveles basada en resultados de aprendizaje (learning outcomes)",
+            "Descriptores y requisitos horarios: Niveles 2 al 7 (400h DQR 5, 1,200h DQR 6, 1,600h DQR 7)"
+          ]
+        },
+        {
+          "topic_id": "2.2",
+          "title": "Matriz y Concepto de Competencia del DQR",
+          "subtopics": [
+            "Definición formal de competencia como capacidad integral de actuar",
+            "Desglose de Competencia Profesional (Conocimientos y Destrezas)",
+            "Desglose de Competencia Personal (Social y Autonomía)",
+            "Competencia metodológica como eje transversal"
+          ]
+        },
+        {
+          "topic_id": "2.3",
+          "title": "Permeabilidad y Cualificaciones Universitarias Continuas",
+          "subtopics": [
+            "Permeabilidad del sistema formativo (Durchlässigkeit)",
+            "Uso del DQR para comparabilidad transnacional y aseguramiento de la calidad"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-03",
+      "title": "Vías Formativas, Instituciones e Inclusión Laboral",
+      "topics": [
+        {
+          "topic_id": "3.1",
+          "title": "Vías de Formación Técnica (Modelo de Sajonia y homólogos)",
+          "subtopics": [
+            "Vía 1 (formación dual en oficios reconocidos) vs Vía 2 (escolarizada a tiempo completo: Berufsschule, Berufsfachschule)",
+            "Cualificación de estudios y perfeccionamiento (Fachoberschule, Berufliches Gymnasium, Fachschule)",
+            "Opciones de doble cualificación (DUBAS: Dual con Abitur; FOS+: Fachoberschule y formación abreviada)",
+            "Áreas ocupacionales técnicas: Electrotecnia, Informática, Mecatrónica, Tecnología automotriz, Tecnología alimentaria, Tecnología médica, Administración, Hostelería"
+          ]
+        },
+        {
+          "topic_id": "3.2",
+          "title": "Formación Especial, Inclusión y Tutoría",
+          "subtopics": [
+            "Formación profesional adaptada para jóvenes con necesidades educativas especiales",
+            "Programas para personas desfavorecidas (Benachteiligtenprogramm) y centros de fomento (BFW)",
+            "Reglamento de Aptitud de Instructores (AEVO) y rol de las Cámaras (DIHK)"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "MOD-04",
+      "title": "Marco Institucional, Ética y Normativa de Convivencia y Evaluación (Modelo Fundación Kinal)",
+      "topics": [
+        {
+          "topic_id": "4.1",
+          "title": "Ideario Institucional, Misión, Visión y Valores",
+          "subtopics": [
+            "Misión y visión institucional de Fundación Kinal",
+            "Valores nucleares: Visión cristiana de la vida, dignidad humana, espíritu de servicio, trabajo bien hecho, libertad responsable",
+            "Marco civil no confesional de respeto y asesoría personalizada"
+          ]
+        },
+        {
+          "topic_id": "4.2",
+          "title": "Normativa de Convivencia, Asistencia y Evaluación Kinal",
+          "subtopics": [
+            "Reglas de actitud, serenidad, lenguaje y disciplina tecnológica",
+            "Control riguroso de asistencia y puntualidad (presencial y virtual)",
+            "Esquema de evaluación: exámenes de suficiencia y cursos regulares con nota aprobatoria mínima de 75 puntos",
+            "Evaluación en idiomas vía ELASH II nivel A2"
+          ]
+        }
+      ]
+    }
+  ],
+  "terminal_competencies": [
+    {
+      "code": "CT-01",
+      "title": "Diseño Curricular Dual",
+      "description": "Diseñar programas formativos técnicos alineados a los principios de formación en alternancia centro-empresa, articulación horizontal/vertical y estándares de cualificación basados en resultados de aprendizaje."
+    },
+    {
+      "code": "CT-02",
+      "title": "Alineación DQR/EQF",
+      "description": "Estructurar descriptores de competencias desglosando la competencia profesional (conocimientos y destrezas) y la competencia personal (social y autonomía) con sus requerimientos de carga horaria (DQR 5, 6 y 7)."
+    },
+    {
+      "code": "CT-03",
+      "title": "Gestión Docente y Formativa Institucional",
+      "description": "Integrar normas de convivencia, seguimiento del estudiante, ideario institucional ético-formativo (trabajo bien hecho, servicio, dignidad) y sistemas de evaluación por suficiencia y ponderación regular."
+    }
+  ],
+  "mandatory_verbatim_citations": {
+    "dual_system": "concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa",
+    "dqr_competence": "the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act",
+    "kinal_values": "Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable",
+    "kinal_mission": "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad"
+  }
+}

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Autodesk Revit Structure & MEP | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="layers-3" class="w-5 h-5 text-orange-400"></i>
+                    Autodesk Revit Structure & MEP
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="AutoCAD_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">AutoCAD</a>
+                <a href="Revit_Architecture_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Revit Arch</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-orange-600 text-white font-bold">Revit Str/MEP</span>
+                <a href="Civil_3D_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Civil 3D</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_ARS&M.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-orange-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Autodesk Revit Structure & MEP (90 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Formación técnica orientada a la ingeniería constructiva en Guatemala: modelado sísmico de concreto armado según normas <strong>AGIES (NSE-4 / NSE-3) y ACI 318</strong>, despiece automático de varilla con nomenclatura en octavos de pulgada, ruteo hidrosanitario normado y detección de interferencias interdisciplinarias (Clash Detection) con <strong>Autodesk Navisworks</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">0 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Temario Muy Sólido)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">14 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (AGIES, ACI, Navisworks)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (Mampostería, Acero, PPR)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">26 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Modelado Str & MEP)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-orange-50 text-orange-700">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Coordinación Estructural y MEP en Guatemala (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Diagnóstico fundamentado en la Asociación Guatemalteca de Ingeniería Estructural y Sísmica (AGIES), Cámara Guatemalteca de la Construcción (CGC) y empresas de gerencia de proyectos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-red-600"></i>
+                        Detallado de Acero Sísmico y Normas AGIES
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Guatemala es un país de alta sismicidad donde las normas <strong>AGIES NSE-3 (Edificaciones) y NSE-4 (Vivienda)</strong> son de cumplimiento legal obligatorio. Las oficinas de cálculo y las obras exigen que el modelo estructural en Revit incluya ganchos sísmicos a 135°, confinamiento riguroso de estribos en extremos de columnas y nudos viga-columna sin congestión indebida, garantizando la constructibilidad real en campo.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Normativas: AGIES NSE-3/4, ACI 318, FHA Criterios Estructurales.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="git-pull-request" class="w-4 h-4 text-orange-600"></i>
+                        Detección de Colisiones (Clash Detection)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        La principal fuente de sobrecostos en las obras verticales guatemaltecas (apartamentos y oficinas) son las interferencias no previstas entre tuberías hidrosanitarias o ductos de climatización y vigas de concreto armado o losas estructurales. El mercado exige coordinadores BIM capaces de federar modelos y ejecutar <strong>matrices de colisiones con Autodesk Navisworks</strong> antes de colar concreto.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Software: Revit Interference Check, Autodesk Navisworks Manage.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+                        Tablas de Doblez de Varilla y Cómputo Rápido
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Los talleres de habilitado de varilla y armaduría en obra requieren planos de despiece detallados (Bending Schedules) donde cada tipo de varilla reporte su forma, longitud de corte, número de piezas y peso total en quintales. Integrar este despiece automático reduce el desperdicio de acero del 15% tradicional a menos del 3%.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Impacto: Optimización de pedidos de varilla (Aceros de Guatemala / Ternium).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: FICHA ORIGINAL DE VENTA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-orange-50 text-orange-700">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Datos institucionales extraídos del archivo fuente <code>2026_ARS&M.xlsx</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 text-xs">
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Nombre Oficial del Curso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 font-semibold">
+                            Autodesk Revit Structure & MEP
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Duración y Estructura:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Duración: <strong>90 Horas</strong> lectivas.<br>
+                            • Módulos: <strong>5 Módulos</strong> (2.5 módulos de Structure + 2.5 módulos de MEP coordinados).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido a y Perfil de Ingreso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Ingenieros civiles, arquitectos, técnicos en instalaciones electromecánicas, estudiantes y dibujantes con conocimientos previos de Revit Architecture y sistemas constructivos estructurales.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Acreditación Oficial:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Certificado modular de ETS y diploma de participación en Autodesk Revit Structure & MEP, avalando competencias de modelado BIM interdisciplinario y cuantificación.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Diagnóstico Crítico del Pensum Original:</span>
+                        <div class="p-3 rounded-lg bg-orange-50 border border-orange-300 text-orange-900 text-xs leading-relaxed">
+                            <strong>⚠️ Hallazgos Críticos y Modernización 2026:</strong>
+                            <ul class="list-disc pl-4 mt-1 space-y-1">
+                                <li><strong>Eliminación de Mala Práctica:</strong> Se elimina el cálculo de <em>mano de obra directa en tablas de Revit</em>, ya que Revit no es un software ERP ni de rendimientos laborales; se enfoca en QTO (Quantity Takeoff) métrico profesional exportable a hojas APU.</li>
+                                <li><strong>Eliminación de Servidores Locales:</strong> Se descarta la configuración de Worksharing por carpetas de red local (SMB) por su alta tasa de corrupción de archivos centrales, reemplazándolo por federación de modelos vinculados y entornos colaborativos modernos.</li>
+                                <li><strong>Actualización Local Sísmica:</strong> Integración estricta de normas <strong>AGIES NSE-3 y NSE-4</strong>, despiece de varilla guatemalteca en octavos de pulgada, tuberías PPR/CPVC y Clash Detection formal con <strong>Autodesk Navisworks Manage</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-orange-50 text-orange-700">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color (40 Temas Analizados)
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Análisis detallado de los 40 temas del archivo <code>2026_ARS&M.xlsx</code> con estándares AGIES y BIM Forum GT.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- MÓDULO 1 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-orange-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 4)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Gestión y Estructura de Concreto Armado</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Vincular modelos arquitectónicos mediante Copy/Monitor, modelar cimentaciones, columnas y losas estructurales con normas sísmicas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Interfaz de Revit Structure y plantillas estructurales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración del entorno de trabajo estructural métrico y reconocimiento de elementos analíticos vs físicos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Vinculación de modelos arquitectónicos: Posicionamiento</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Inserción del archivo de arquitectura por Coordenadas Compartidas o de Origen a Origen sin desfasar ejes.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Copy/Monitor (Copiar y supervisar)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Adopción y supervisión dinámica de niveles y rejillas del arquitecto para alertar automáticamente ante cambios en el diseño original.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Configuración de visibilidad y rangos de vista estructurales</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de la dirección de vista del plano estructural: visualización hacia abajo para cimentaciones y visualización hacia arriba (vigas invertidas) según estándares del Colegio de Ingenieros de Guatemala.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Modelado de cimientos corridos y zapatas aisladas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modelado de cimiento corrido de concreto ciclópeo o armado y zapatas aisladas y combinadas según especificaciones de la norma <strong>AGIES NSE-4 y FHA</strong>.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Modelado de pilotes, pilastras y losas de cimentación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cimentaciones profundas, cabezales de pilotes, muros de contención de sótano y losas radier de cimentación.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Gestión de familias de sistema vs. cargables (Zapatas y Losas)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Diferencias de comportamiento paramétrico entre elementos modelados in-situ y familias estructurales paramétricas reutilizables.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Columnas estructurales y muros de cortante (Shear Walls)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modelado de columnas de concreto armado con dimensiones típicas comerciales (ej. 0.30x0.30 m, 0.40x0.40 m) y muros de corte sismorresistentes según AGIES NSE-3.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Sistemas de vigas principales, secundarias y voladizos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Trazado de vigas de carga, vigas de amarre y sistemas de vigas automáticos para soporte de entrepisos.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Losas estructurales aligeradas y macizas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Modelado de sistemas de losa con vigueta pretensada y bovedilla (altamente utilizado en Guatemala) y losas macizas de concreto con dirección de armado.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Soleras y Columnas de Amarre para Mampostería Confinada (AGIES NSE-4)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Modelado específico de soleras de humedad, intermedias y de corona, así como mochetas y columnas de confinamiento tipo block según la norma de vivienda popular y residencial de Guatemala.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-orange-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 5 a 8)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Armado de Acero Sísmico y Despiece de Varilla</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Modelar acero de refuerzo 3D en elementos estructurales, estribos de confinamiento a 135° y generar planillas de doblado de varilla.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Configuración de recubrimientos estructurales</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Ajuste de recubrimientos según ACI 318 / AGIES: 7.5 cm en cimentación en contacto con suelo, 4.0 cm en vigas y columnas y 2.0 cm en losas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Modelado de acero de refuerzo longitudinal y transversal</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Colocación de varillas de acero (Rebar) en zapatas, vigas perimetrales y armaduras de columnas con ganchos de anclaje.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Configuración de diámetros de varilla y estribos sísmicos</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Creación de familias de varilla con nomenclatura guatemalteca en octavos: No. 2 (1/4\"), No. 3 (3/8\"), No. 4 (1/2\"), No. 5 (5/8\") y estribos cerrados con ganchos a 135° según AGIES.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Visualización de refuerzos en 3D (Constructibilidad)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Visualización de varillas como sólidos cilíndricos 3D sin tapar (View as Solid) para verificar traslapes y evitar congestión en nudos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Refuerzo por área y trayectoria en losas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Modelado de mallas electrosoldadas, bastones de momento negativo y refuerzo continuo de temperatura.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Extracción de volúmenes de concreto estructural</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cómputo métrico exacto de m³ de concreto clasificados por resistencia f\'c (210 kg/cm², 280 kg/cm²).</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Tablas de planificación de acero (Bending Schedules)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Planilla de doblado de varilla: esquema gráfico de doblez (Shape), longitud de corte, número de barras y peso total cuantificado en quintales comerciales.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Cuantificación directa de mano de obra en tablas de Revit</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación técnica:</strong> Mala práctica metodológica en proyectos BIM. Revit es una herramienta de modelado de información geométrica y cómputo de materiales (QTO), no un motor de rendimientos de mano de obra o destajos de cuadrillas. Intentar cuantificar mano de obra dentro de las familias de Revit sobrecarga el modelo y genera desfases contables; se elimina en favor de la exportación de cómputos métricos limpios hacia presupuestos externos.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Cuantificación de materiales y exportación para APU estructural</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Conexión y exportación de tablas de cubicación geométrica (m³ de concreto, quintales de acero y m² de encofrado) hacia hojas de Análisis de Precios Unitarios (APU) para renglones constructivos.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. [NUEVO] Modelado de Estructuras Metálicas y Conexiones de Acero</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Modelado de perfiles laminados W, tubulares y costaneras para naves industriales y techos, incluyendo placas base con pernos de anclaje y cartelas de rigidización.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-orange-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 9 a 12)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Documentación Estructural y Entorno Revit MEP</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Generar planos estructurales completos, federar modelos en plantillas MEP y configurar conectores hidrosanitarios.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Creación de detalles constructivos estructurales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cortes constructivos, detalles ampliados de anclaje de columnas en zapata y empalmes de vigas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Etiquetado inteligente de acero (Tags)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Anotaciones dinámicas de varilla indicando número de barras, diámetro y separación (ej. 4 No. 4 + Est. No. 2 @ 0.15 m).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Filtros de vista para diámetros de varilla</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Filtros de color en 3D para supervisión visual de armados: azul para No. 3, rojo para No. 4, verde para No. 5.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Láminas y planos estructurales finales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Diagramación de planos de cimentación, cuadros de columnas, vigas y plantas de armaduras con notas técnicas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Introducción al entorno Revit MEP y plantillas Systems</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración de unidades de flujo hidráulico (GPM / L/s), presión (PSI) y potencia eléctrica.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Trabajo colaborativo basado en servidores locales obsoletos</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación técnica:</strong> Obsolescencia tecnológica que genera fallas de sincronización. La configuración de Worksharing mediante carpetas compartidas locales de Windows (SMB) o Revit Server local provoca bloqueos de permisos y frecuente corrupción de archivos centrales .rvt. Se elimina este protocolo obsoleto.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Modelos federados vinculados y coordinación interdisciplinaria</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Flujo moderno de vinculación limpia entre archivos de Arquitectura, Estructura y MEP, con coordenadas compartidas y control estricto de visibilidad para trabajo en equipo sin corrupción de datos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Vinculación y Copy/Monitor en el modelo MEP</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Supervisión de niveles de piso terminado y ejes para referencias de altura de tuberías y ductos.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Familias MEP y configuración de conectores</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de conectores hidráulicos de entrada y salida (diámetro 1/2\", 3/4\", 2\", 4\"), clasificación del sistema (Agua Fría, Sanitario, Ventilación) y dirección de flujo.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-orange-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 13 a 16)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Instalaciones Hidrosanitarias y Trazado de Tuberías</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Modelar redes de agua potable y drenajes por gravedad con pendientes normalizadas y verificar interferencias con vigas estructurales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Navegador de sistemas y configuración de tuberías (Routing)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de preferencias de enrutamiento con catálogos comerciales de PVC presión (Schedule 40 / 160 PSI) y PVC norma drenaje sanitario según medidas de Guatemala.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Filtros de vista para clasificar sistemas hidráulicos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Asignación de colores por disciplina: azul para agua potable fría, magenta para agua caliente y verde para drenajes y aguas negras.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Colocación de artefactos sanitarios y accesorios</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Inserción de inodoros, lavamanos, duchas, sifones en \"P\" y accesorios de plomería con alturas de instalación reglamentarias.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Trazado de tuberías con pendientes reglamentarias</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Ruteo con pendientes del 1% y 2% hacia cajas de registro y bajadas de aguas servidas, verificando ventilación sanitaria (tuberías de respiro) para evitar desifonamiento.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Revisión visual de cruces con vigas y zapatas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Identificación en 3D de tuberías que atraviesan peraltes de vigas o cabezales estructurales, proponiendo pases de tubería encamisados o desvíos técnicos.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. [NUEVO] Redes de Agua Caliente con Tubería CPVC y PPR Termofusión</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Modelado de instalaciones de agua caliente con sistemas de termofusión (PPR) y CPVC, ampliamente exigidos en residencias de nivel medio y alto en Guatemala.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-orange-400 font-semibold mb-1">
+                                <span>MÓDULO 5 (Semanas 17 a 20)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Climatización, Electricidad y Detección de Colisiones (Navisworks)</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Modelar ductos mecánicos y circuitos eléctricos, ejecutar detección de colisiones interdisciplinarias y generar planos coordinados.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Equipos mecánicos y terminales de aire (HVAC)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Colocación de unidades tipo Split, Fan Coils y difusores de suministro/rejillas de retorno en cielos falsos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Trazado de ductos mecánicos, aislamiento y codos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Modelado de ductos rectangulares y circulares con transiciones, dampers de balance y revestimiento térmico.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Dispositivos eléctricos, luminarias y tableros</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Inserción de tomacorrientes (120V/240V), apagadores, lámparas LED empotrables y panel de distribución eléctrico.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Creación de circuitos eléctricos y cuadros de carga</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Agrupación lógica de luminarias y tomas en circuitos ramales, balanceo preliminar de cargas por fase y cálculo de amperaje para interruptores termomagnéticos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Coordinación y gestión de información multidisciplinaria</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Superposición simultánea de modelos de arquitectura, estructura de concreto, ductos HVAC, drenajes y electricidad.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Interference Check y Clash Detection con Navisworks Manage</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Exportación NWC y ejecución de la matriz de colisiones en Autodesk Navisworks (Estructura vs Tuberías sanitarias / Estructura vs Ductos), generando reportes de interferencias con tolerancias milimétricas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Cuantificación de equipos y tuberías MEP</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Tablas automáticas de metros lineales de tubería PVC por diámetro, conteo de codos y accesorios, metros lineales de ducto galvanizado y luminarias para cotización de compras.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Generación de planos de instalaciones coordinados</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Diagramación de láminas compuestas con detalles isométricos de tuberías, esquemas unifilares y notas generales de instalación.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Exportación y entrega final de modelos coordinados</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Preparación del paquete de entrega profesional: archivo federado NWD, archivos IFC openBIM para cálculo estructural y juego de planos en PDF de alta resolución.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Cambios Curriculares en Autodesk Revit Structure & MEP
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Resumen técnico y justificaciones normativas en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Mano de Obra en Tablas de Revit</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Mala práctica metodológica; Revit genera cómputos de materiales (QTO), no rendimientos de cuadrillas. Se elimina para evitar distorsiones en el modelo.</td>
+                            <td class="p-3 text-slate-500 font-medium">Estándar Profesional BIM</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Servidores Locales (SMB / Revit Server)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Protocolo de red local obsoleto con alta tasa de corrupción de archivos centrales. Se sustituye por modelos federados vinculados y nube.</td>
+                            <td class="p-3 text-slate-500 font-medium">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Cimentaciones y Muros de Corte</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Modelar cimientos corridos y muros de corte de acuerdo a especificaciones sismorresistentes locales.</td>
+                            <td class="p-3 text-slate-500 font-medium">Normas AGIES NSE-3/4</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Diámetros de Varilla y Estribos a 135°</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Nomenclatura nacional de varilla en octavos de pulgada (No. 3 a No. 8) y ganchos de confinamiento a 135 grados.</td>
+                            <td class="p-3 text-slate-500 font-medium">AGIES / ACI 318</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Despiece de Acero (Bending Schedule)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Generación de planillas de corte y doblado con peso en quintales para pedidos directos a aceros locales.</td>
+                            <td class="p-3 text-slate-500 font-medium">Aceros de Guatemala / Ternium</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Pendientes de Drenaje y Cruces con Vigas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Trazado hidrosanitario con pendiente del 1% al 2% y resolución de pases en vigas de concreto.</td>
+                            <td class="p-3 text-slate-500 font-medium">EMPAGUA / FHA</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 5</td>
+                            <td class="p-3 font-medium">Clash Detection con Navisworks Manage</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Matriz formal de detección de interferencias entre estructura y ductos/tuberías antes del fundido en obra.</td>
+                            <td class="p-3 text-slate-500 font-medium">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Mampostería Confinada (Soleras y Mochetas)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Modelado del sistema constructivo predominante en Guatemala: soleras de corona, humedad y columnas de amarre.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Norma AGIES NSE-4</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Estructura Metálica y Placas Base</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Modelado de perfiles W y C con placas de anclaje para naves industriales y techos comerciales.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">AISC / Práctica GT</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Tuberías CPVC y PPR Termofusión</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Modelado de instalaciones hidrosanitarias modernas para agua caliente y sistemas presurizados.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Instalaciones de Vanguardia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN CON IA -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: IA en Estructuras y Coordinación MEP</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Algoritmos generativos y de visión artificial aplicados al detallado estructural y resolución de interferencias.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="git-merge" class="w-4 h-4"></i>
+                        Ruteo Generativo de Tuberías y Ductos
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Algoritmos de optimización espacial asistidos por IA que proponen automáticamente el trazado de menor longitud y menor cantidad de codos entre artefactos y montantes, respetando zonas vedadas de vigas y losas estructurales para reducir costos de material y pérdidas de carga.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Dynamo Generative Design / Autodesk MEP Routing AI.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                        Clasificación Inteligente de Interferencias (Clash Matrix AI)
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Modelos de machine learning integrados en visores de coordinación que clasifican automáticamente los reportes de miles de colisiones en Navisworks, separando colisiones críticas reales (ej. tubo de 4\" que parte viga maestra) de falsos positivos (holguras de aislamiento o cajas eléctricas).
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-purple-200 font-mono">
+                        Herramienta: Revizto AI / Navisworks Clash Automation / Autodesk Construction Cloud.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-4 h-4"></i>
+                        Verificación Automatizada de Armado Sísmico
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Scripts analíticos asistidos por IA que inspeccionan el modelo estructural en Revit para verificar el cumplimiento estricto de separaciones mínimas entre varillas según el tamaño máximo de agregado grueso, evitando la segregación del concreto durante el colado en obra.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: ACI Rebar Compliance Scripts + Python Dynamo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Autodesk Revit Structure & MEP 2026
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

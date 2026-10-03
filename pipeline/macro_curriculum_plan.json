@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 2,
+  "stage_name": "Macro Curriculum Plan",
+  "generated_by": "planificador_curricular",
+  "program_metadata": {
+    "title": "Programa Formativo Integral: Formación Profesional Dual y Gestión Técnica",
+    "specialty": "Especialidad en Formación Técnica Superior y Gestión de Procesos",
+    "institution": "Fundación Kinal - Escuela Técnica Superior (Guatemala)",
+    "qualification_level": "Equivalencia DQR 6 (Bachelor Professional / Meister / Técnico Superior)",
+    "total_hours": 1200,
+    "classroom_theory_hours": 400,
+    "workplace_practice_hours": 800,
+    "minimum_passing_score": 75,
+    "admission_profile": "Graduados con cualificación DQR 4 (formación dual previa de 3-3.5 años o Bachillerato/Abitur) o certificado de ciclo 10 (Realschule) con promedio mínimo normado. Superación de prueba de aptitud técnica y compromiso ético institucional.",
+    "graduate_profile": "Capacidad y aptitud para asumir tareas de gestión, liderazgo técnico y resolución autónoma de problemas especializados en entornos complejos y cambiantes. Actuación regida por el espíritu de servicio, dignidad humana y búsqueda del trabajo bien hecho."
+  },
+  "modules_distribution": [
+    {
+      "module_id": "MOD-01",
+      "name": "Estructuras Comparadas y Formación Dual en Alternancia",
+      "reference_level": "DQR 4 - 5",
+      "theory_hours": 80,
+      "practice_workplace_hours": 120,
+      "total_module_hours": 200,
+      "dual_methodology_and_milestones": "Rotación sistemática entre centro de formación técnica y puesto de trabajo; análisis comparativo de modelos aplicados (Alemania, Australia y Canadá).",
+      "key_assessment": "Informe de diagnóstico de entorno productivo y viabilidad dual en empresa colaboradora (Umbral mínimo: 75 puntos)."
+    },
+    {
+      "module_id": "MOD-02",
+      "name": "Cualificaciones Profesionales y Descriptores de Competencia (DQR/EQF)",
+      "reference_level": "DQR 5 - 6",
+      "theory_hours": 100,
+      "practice_workplace_hours": 200,
+      "total_module_hours": 300,
+      "dual_methodology_and_milestones": "Diseño de matrices taxonómicas integrando conocimientos (Fachwissen), destrezas (Fertigkeiten), competencia social y autonomía operativa.",
+      "key_assessment": "Defensa técnica de matriz de competencias y resultados de aprendizaje aplicados a un perfil ocupacional reconocido."
+    },
+    {
+      "module_id": "MOD-03",
+      "name": "Gestión de Procesos Técnicos Especializados y Calidad (Área Industrial)",
+      "reference_level": "DQR 6",
+      "theory_hours": 120,
+      "practice_workplace_hours": 280,
+      "total_module_hours": 400,
+      "dual_methodology_and_milestones": "Resolución de problemas técnicos complejos en taller o planta industrial; supervisión formativa bajo estándares AEVO e instrumentos de registro.",
+      "key_assessment": "Examen que integra la teoría y la práctica (Theorie und Praxis integrierende Prüfung) ante comité técnico."
+    },
+    {
+      "module_id": "MOD-04",
+      "name": "Liderazgo Formativo, Ética y Convivencia Laboral",
+      "reference_level": "DQR 6",
+      "theory_hours": 100,
+      "practice_workplace_hours": 200,
+      "total_module_hours": 300,
+      "dual_methodology_and_milestones": "Asesoría personalizada, vivencia de los valores nucleares de Kinal en el taller/empresa y registro sistemático en el cuaderno de informes (Berichtsheft).",
+      "key_assessment": "Auditoría exhaustiva del cuaderno de evaluación/informes (Berichtsheft) y sustentación del proyecto de liderazgo en servicio y mejora continua."
+    }
+  ],
+  "assessment_system": {
+    "scale": "0 a 100 puntos",
+    "minimum_passing_grade": 75,
+    "sufficiency_exam_threshold": 75,
+    "language_sufficiency": "Prueba estandarizada ELASH II con nivel mínimo A2 en cada aspecto evaluado",
+    "integrated_evaluation_type": "Theorie und Praxis integrierende Prüfung"
+  }
+}

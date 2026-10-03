@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 3,
+  "stage_name": "Detailed Didactic Sequences",
+  "generated_by": "dosificador_secuencias",
+  "course_id": "TALLER-NLM-8H",
+  "session_structure_template": {
+    "total_minutes": 120,
+    "phases": [
+      {
+        "phase": "Apertura / Inicio",
+        "duration_minutes": 20,
+        "purpose": "Activación metacognitiva, desmitificación de mitos de estudio, conexión con el principio del 'trabajo bien hecho' e ideario Kinal."
+      },
+      {
+        "phase": "Desarrollo / Aplicación Práctica",
+        "duration_minutes": 75,
+        "purpose": "Modelado docente, experimentación directa en NotebookLM con fuentes universitarias, aplicación de prompts analíticos y trabajo por parejas."
+      },
+      {
+        "phase": "Cierre / Consolidación",
+        "duration_minutes": 25,
+        "purpose": "Evaluación formativa, retroalimentación dialéctica, documentación formal en la Bitácora de Aprendizaje y preparación para el siguiente bloque."
+      }
+    ]
+  },
+  "blocks_sequences": [
+    {
+      "block_id": "BLOQUE-01",
+      "session_title": "Bloque 1: Fundamentos de Grounded AI y Superación de la Ilusión de Competencia (2 Horas)",
+      "learning_outcomes": [
+        "Identificar el sesgo de la 'ilusión de competencia' provocado por la relectura pasiva y el subrayado.",
+        "Comprender la arquitectura de Grounded AI de NotebookLM (anclaje documental estricto y trazabilidad de citas).",
+        "Configurar un cuaderno temático cargando fuentes primarias académicas verificables (PDFs, papers, apuntes)."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Plantea el dilema del estudiante universitario: 'He estudiado 6 horas releyendo y subrayando, pero en el examen me quedo en blanco'. Expone la evidencia sobre la ilusión de competencia y el concepto de memoria semántica. Presenta la misión y valores de Kinal (esfuerzo honesto vs atajos fáciles).",
+        "student_activity": "Participa en sondeo interactivo sobre sus hábitos de estudio habituales; identifica momentos en los que ha sufrido la ilusión de competencia y reflexiona sobre el valor del rigor intelectual.",
+        "resources": "Pizarra técnica; infografía comparativa entre reconocimiento pasivo y memoria semántica.",
+        "assessment": {
+          "criterion": "Capacidad de autorreflexión crítica sobre los propios hábitos de estudio.",
+          "instrument": "Cuestionario diagnóstico inicial de autorregulación del aprendizaje."
+        }
+      },
+      "desarrollo": {
+        "duration": "75 min",
+        "teacher_activity": "Demuestra en vivo la diferencia entre ChatGPT/Gemini abierto (propenso a alucinaciones por falta de anclaje) y NotebookLM (Grounded AI anclado a fuentes). Enseña la taxonomía de fuentes primarias y guía la creación del primer cuaderno de estudio universitario.",
+        "student_activity": "Abre NotebookLM, crea su cuaderno temático para una asignatura de su carrera y carga al menos 3 fuentes primarias rigurosas (artículo científico en PDF, capítulo de libro base y notas de cátedra). Realiza su primera verificación de citas haciendo clic en los chips numéricos de las respuestas.",
+        "resources": "Laboratorio de computo / computadoras portátiles con acceso a internet; repositorio de PDFs universitarios.",
+        "assessment": {
+          "criterion": "Criterio riguroso en la selección de fuentes académicas y correcto anclaje técnico en la herramienta.",
+          "instrument": "Lista de cotejo de validación de cuaderno y fuentes cargadas (escala 0-100, umbral 70 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "25 min",
+        "teacher_activity": "Revisa en pantalla compartida dos cuadernos de estudiantes, destacando la pertinencia de las fuentes y el orden temático. Recuerda la normativa de Kinal sobre el uso de computadoras exclusivamente para fines académicos.",
+        "student_activity": "Registra en su bitácora digital: 1) Título del cuaderno creado; 2) Justificación de por qué las 3 fuentes seleccionadas son primarias y confiables; 3) Meta de aprendizaje para la siguiente sesión.",
+        "resources": "NotebookLM; Bitácora de Aprendizaje universitaria.",
+        "assessment": {
+          "criterion": "Rigor en la justificación de fuentes y compromiso formativo.",
+          "instrument": "Cotejo de bitácora formativa (&ge;70 pts)."
+        }
+      }
+    },
+    {
+      "block_id": "BLOQUE-02",
+      "session_title": "Bloque 2: La Técnica Feynman y NotebookLM como Tutor Dialéctico (Método MIT) (2 Horas)",
+      "learning_outcomes": [
+        "Transformar el rol de la IA de un resumidor pasivo a un tutor crítico e implacable.",
+        "Aplicar la Técnica Feynman asistida por IA para explicar conceptos complejos desde cero.",
+        "Formular 'Prompts de Desenmascaramiento' que identifiquen lagunas lógicas en la comprensión propia."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Introduce la Técnica Feynman y la premisa del video de referencia: 'Si no puedes explicarlo de forma sencilla, no lo has entendido de verdad'. Explica cómo pasar de la lectura lineal pasiva a la interrogación activa.",
+        "student_activity": "Intenta explicar en 60 segundos a su compañero de banco un concepto técnico complejo de su materia sin usar tecnicismos vacíos. Evalúan la dificultad de la tarea.",
+        "resources": "Pizarra técnica; video fragmento ilustrativo de la técnica Feynman.",
+        "assessment": {
+          "criterion": "Conciencia de las dificultades de la simplificación conceptual auténtica.",
+          "instrument": "Rúbrica breve de coevaluación entre pares."
+        }
+      },
+      "desarrollo": {
+        "duration": "75 min",
+        "teacher_activity": "Modela el uso del 'Prompt de Feynman' y el 'Prompt de Desenmascaramiento'. Muestra cómo pedir a NotebookLM que evalúe una explicación dada por el estudiante, señalando omisiones y contradicciones con base en las fuentes.",
+        "student_activity": "En su cuaderno de NotebookLM ejecuta los siguientes prompts guiados:\n1. Prompt Feynman: 'Basándote exclusivamente en las fuentes, ¿cuáles son los 3 conceptos fundamentales que debo entender para poder enseñarle este tema a alguien sin conocimientos previos?'.\n2. Escribe su propia explicación del concepto y le indica a NotebookLM: 'Evalúa mi siguiente explicación técnica: [su texto]. Identifica errores conceptuales, términos ambiguos o lagunas según las fuentes cargadas'.\n3. Prompt de Desenmascaramiento: 'Genera 5 preguntas difíciles que pondrían en evidencia a un estudiante que solo memorizó de memoria y no entendió los principios subyacentes'.",
+        "resources": "NotebookLM; banco oficial de prompts dialécticos del taller.",
+        "assessment": {
+          "criterion": "Habilidad para interrogar críticamente al modelo y asimilar la retroalimentación correctiva.",
+          "instrument": "Escala de valoración de diálogo socrático con IA (&ge;70 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "25 min",
+        "teacher_activity": "Coordina un debate en plenaria: ¿Qué lagunas descubrieron que creían dominar? Enfatiza la humildad intelectual y el valor del 'trabajo bien hecho' frente a la superficialidad.",
+        "student_activity": "Documenta en su bitácora las 2 preguntas de desenmascaramiento que más le costó responder y redacta la respuesta corregida y fundamentada con las citas de NotebookLM.",
+        "resources": "NotebookLM; Bitácora de Aprendizaje.",
+        "assessment": {
+          "criterion": "Capacidad de corrección conceptual y fundamentación con citas.",
+          "instrument": "Revisión de respuestas corregidas en bitácora."
+        }
+      }
+    },
+    {
+      "block_id": "BLOQUE-03",
+      "session_title": "Bloque 3: Síntesis Avanzada, Relaciones Ocultas y Multimodalidad (Audio Overview) (2 Horas)",
+      "learning_outcomes": [
+        "Extraer los 5 conceptos nucleares y detectar patrones no evidentes o discrepancias entre autores.",
+        "Generar guías de discusión previas para participar activamente en el aula universitaria (Flipped Classroom).",
+        "Utilizar pedagógicamente el Audio Overview (podcast de inmersión profunda) para consolidación auditiva."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Presenta el concepto de 'Pensamiento Sintético No Lineal': la capacidad de ver la totalidad del bosque antes de estudiar árbol por árbol. Introduce la función de 'Audio Overview' (Deep Dive) de NotebookLM.",
+        "student_activity": "Escucha un fragmento de 3 minutos de un Audio Overview generado a partir de dos textos técnicos; identifica cómo los dos presentadores debaten tensiones y conexiones clave entre los documentos.",
+        "resources": "Equipo de audio; ejemplo de Audio Overview pre-generado sobre un caso de estudio.",
+        "assessment": {
+          "criterion": "Capacidad de atención analítica a la interacción de ideas en formato sonoro.",
+          "instrument": "Preguntas de comprensión auditiva en plenaria."
+        }
+      },
+      "desarrollo": {
+        "duration": "75 min",
+        "teacher_activity": "Enseña a generar y estructurar artefactos avanzados en NotebookLM: notas de estudio temáticas, matrices comparativas entre autores discrepantes y guías de discusión previas a clase. Explica cómo solicitar el Audio Overview con instrucciones personalizadas.",
+        "student_activity": "1. Genera una nota de estudio estructurada: 'Elabora una tabla comparativa con las variables técnicas, metodologías y conclusiones de las 3 fuentes cargadas'.\n2. Solicita a NotebookLM: 'Genera una guía de discusión para mi próxima clase universitaria con 5 preguntas provocadoras sobre contradicciones entre los autores cargados'.\n3. Genera el Audio Overview de su cuaderno y escucha los primeros minutos tomando notas de los ángulos de análisis planteados.",
+        "resources": "NotebookLM; auriculares personales; fuentes cargadas en el cuaderno.",
+        "assessment": {
+          "criterion": "Calidad analítica de la guía de discusión generada y pertinencia de la tabla comparativa.",
+          "instrument": "Rúbrica de artefactos de estudio estructurados (umbral mínimo 70 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "25 min",
+        "teacher_activity": "Explica la estrategia del 'Aula Invertida' (Flipped Classroom): el estudiante ya no va a la clase a que le cuenten lo que dice el libro, sino a discutir las preguntas difíciles que descubrió en NotebookLM.",
+        "student_activity": "Redacta con sus propias palabras una síntesis de media página integrando lo aprendido del audio y de los textos, cuidando la pulcritud y el rechazo al facilismo del copia y pega.",
+        "resources": "NotebookLM; Bitácora de Aprendizaje.",
+        "assessment": {
+          "criterion": "Originalidad en la redacción, síntesis propia y rigor conceptual.",
+          "instrument": "Evaluación de síntesis personal en bitácora."
+        }
+      }
+    },
+    {
+      "block_id": "BLOQUE-04",
+      "session_title": "Bloque 4: Taller de Aplicación: Protocolo de Estudio de 90 Minutos y Evaluación Capstone (2 Horas)",
+      "learning_outcomes": [
+        "Ejecutar con disciplina y autonomía el Protocolo de 90 Minutos para dominar un tema complejo.",
+        "Elaborar un 'Kit de Repaso Permanente' exportable a Notion y Anki para retención duradera.",
+        "Sustentar en vivo el cuaderno de estudio temático ante la rúbrica terminal Kinal (Theorie und Praxis integrierende Prüfung)."
+      ],
+      "apertura": {
+        "duration": "20 min",
+        "teacher_activity": "Presenta el cronograma del 'Protocolo de 90 Minutos del Método MIT':\n- Minutos 0-15: Curaduría e inmersión inicial (carga de fuentes y 5 conceptos clave).\n- Minutos 15-45: Interrogación profunda y prueba de Feynman.\n- Minutos 45-70: Preguntas de desenmascaramiento y corrección de respuestas.\n- Minutos 70-90: Extracción y armado del Kit de Repaso Permanente.\nRecuerda el valor del 'trabajo bien hecho' como manifestación de servicio profesional.",
+        "student_activity": "Revisa su material, define el tema específico que abordará en la sesión intensiva y ajusta su temporizador de concentración.",
+        "resources": "Guía impresa/digital del Protocolo de 90 Minutos; cronómetro en pantalla.",
+        "assessment": {
+          "criterion": "Disposición metódica y preparación del entorno de estudio sin distracciones.",
+          "instrument": "Lista de cotejo de preparación del entorno."
+        }
+      },
+      "desarrollo": {
+        "duration": "75 min",
+        "teacher_activity": "Supervisa en tiempo real el taller intensivo (estudio supervisado en laboratorio). Atiende dudas metodológicas, asegura el cumplimiento de las fases del protocolo y actúa como evaluador externo.",
+        "student_activity": "Ejecuta de forma autónoma el protocolo de estudio sobre un tema nuevo:\n1. Carga fuentes y extrae el mapa conceptual.\n2. Pasa la prueba de Feynman explicando los principios fundamentales a la IA.\n3. Responde a 3 preguntas de desenmascaramiento y somete sus respuestas a crítica socrática en NotebookLM.\n4. Compila su 'Kit de Repaso Permanente' (resumen de 1 página con conceptos no negociables y 10 preguntas clave listas para Anki/Notion).",
+        "resources": "NotebookLM; computador personal; temporizador.",
+        "assessment": {
+          "criterion": "Autonomía en la ejecución, rigor dialéctico y calidad del Kit de Repaso Permanente.",
+          "instrument": "Rúbrica analítica terminal de desempeño en vivo (&ge;70 pts)."
+        }
+      },
+      "cierre": {
+        "duration": "25 min",
+        "teacher_activity": "Evalúa y califica la sustentación del cuaderno de cada estudiante conforme a la rúbrica terminal. Entrega retroalimentación formativa y preside el cierre del taller destacando la responsabilidad ética del conocimiento adquirido.",
+        "student_activity": "Sustenta en 2 minutos su cuaderno ante el instructor o un compañero evaluador: muestra el mapa conceptual, la prueba de Feynman superada y su kit de repaso. Firma su compromiso de estudio continuo y trabajo bien hecho.",
+        "resources": "Rúbrica terminal Kinal; certificados de acreditación.",
+        "assessment": {
+          "criterion": "Dominio de la herramienta, solidez de razonamiento y expresión oral clara.",
+          "instrument": "Calificación terminal integral del taller (umbral mínimo de suficiencia: 70 puntos)."
+        }
+      }
+    }
+  ],
+  "prompt_bank": {
+    "prompt_1_feynman": "Actúa como un profesor universitario riguroso. Basándote únicamente en las fuentes que he subido, explica qué conceptos nucleares debo dominar absolutamente para poder enseñarle este tema a un estudiante de primer año sin utilizar jerga técnica vacía.",
+    "prompt_2_desenmascaramiento": "Actúa como un evaluador implacable del MIT. Analiza los documentos cargados y genera las 5 preguntas conceptuales más difíciles que desenmascararían a un estudiante que sólo memorizó el texto superficialmente pero no entiende los mecanismos de causa-efecto subyacentes.",
+    "prompt_3_evaluacion_socrática": "A continuación te presento mi respuesta a la pregunta [X]: '[Inserta tu respuesta]'. Evalúa críticamente mi razonamiento con base en las fuentes. Señala con precisión: 1) Aciertos conceptuales; 2) Ambigüedades o errores lógicos; 3) Elementos críticos de las fuentes que omití. Asigna una calificación de 0 a 100 justificando cada deducción de puntos.",
+    "prompt_4_contradicciones_y_relaciones": "Compara las diferentes fuentes cargadas. ¿En qué puntos discrepan los autores o qué matices metodológicos diferencian sus posturas? Elabora una matriz comparativa con citas textuales de cada documento.",
+    "prompt_5_kit_repaso_permanente": "Sintetiza todo el material en un Kit de Repaso Permanente: 1) Los 5 postulados no negociables; 2) Una tabla con las fórmulas/variables clave y su significado conceptual; 3) Diez pares de preguntas y respuestas atómicas formuladas para tarjetas de memoria activa (Active Recall)."
+  }
+}

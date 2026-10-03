@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta de Temario: Fundamentos de la Construcción | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Notification Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-amber-500 text-slate-950 font-bold text-xs uppercase px-2.5 py-1 rounded hover:opacity-80 transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-300 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="hard-hat" class="w-5 h-5 text-amber-400"></i>
+                    Fundamentos de la Construcción
+                </h1>
+            </div>
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <span class="px-2.5 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold">
+                    Fundamentos
+                </span>
+                <a href="Administracion_de_Obras_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    Adm. Obras
+                </a>
+                <a href="AutoCAD_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    AutoCAD 2D&3D
+                </a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_FDC.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-blue-600 font-semibold">Auditoría Curricular & Demanda de Mercado</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular y Modernización de Contenidos
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Análisis técnico del programa <strong>Fundamentos de la Construcción (180 horas)</strong> frente a la demanda real de la industria de la construcción en Guatemala para el ciclo 2026, normativas de seguridad ocupacional (Acuerdo Gub. 229-2014), normas estructurales <strong>AGIES NSE-4</strong>, especificaciones <strong>FHA</strong> y estándares de <strong>CONRED NRD</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Obsoletos / Duplicados)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">11 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Normativas / Técnicas)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">9 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (Demanda GT)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">17 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Fundamentos Vigentes)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-blue-50 text-blue-700">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda Técnica en la Construcción Guatemalteca (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Diagnóstico sustentado en la Cámara Guatemalteca de la Construcción (CGC), Instituto de Capacitación de la Construcción (ICC) y marcos normativos obligatorios.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1: Brecha Laboral -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="users" class="w-4 h-4 text-amber-600"></i>
+                        Escasez Crítica de Mano de Obra Tecnica
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Según la <strong>Cámara Guatemalteca de la Construcción (CGC)</strong>, la falta de personal calificado (maestros de obra, albañiles de primera, supervisores de campo y armadores) es el obstáculo #1 de productividad. Las empresas constructoras reportan que los aspirantes carecen de interpretación ágil de planos modernos y desconocen normas de seguridad.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Fuentes: Reportes Sectoriales CGC / ICC / ConstruYO.
+                    </div>
+                </div>
+
+                <!-- Card 2: Marco Normativo Sísmico y Seguridad -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-red-600"></i>
+                        Cumplimiento Legal y Sísmico Obligatorio
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Toda obra formal en Guatemala está sujeta a auditorías del Ministerio de Trabajo bajo el <strong>Reglamento de Salud y Seguridad Ocupacional (Acuerdo Gub. 229-2014)</strong>. Estructuralmente, la norma <strong>AGIES NSE-4</strong> (Pequeña Vivienda) y <strong>CONRED NRD-1/2/3</strong> exigen confinamiento sísmico riguroso de mampostería y materiales normados por COGUANOR.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Normativas: AGIES NSE-4, CONRED NRD 1-3, Acdo. Gub. 229-2014.
+                    </div>
+                </div>
+
+                <!-- Card 3: Nuevos Sistemas Constructivos -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="layers-3" class="w-4 h-4 text-blue-600"></i>
+                        Industrialización de Materiales en Obra
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El auge inmobiliario (vivienda vertical y desarrollos masivos) ha desplazado métodos lentos por <strong>sistemas livianos (Tablayeso / Durock)</strong>, sistemas de <strong>vigueta pretensada y bovedilla</strong>, formaleta modular, tuberías de <strong>termofusión (PPR)</strong> y mezclas predosificadas de concreto y mortero (Progreso / Mixto Listo).
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Tendencia: Reducción de tiempos, mermas y sismorresistencia.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: PESTAÑA REPORTE ORIGINAL (PROMESA DE VENTA) -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-emerald-50 text-emerald-700">
+                        <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            2. Pestaña "Reporte" Original (Promesa de Venta al Público en General)
+                        </h3>
+                        <p class="text-sm text-slate-500">
+                            Transcripción fiel de la ficha técnica institucional que Kinal publica comercialmente a prospectos y empresas.
+                        </p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full border border-slate-300">
+                    <i data-lucide="lock" class="w-3.5 h-3.5"></i> Formato Original de Venta
+                </span>
+            </div>
+
+            <!-- Ficha Técnica de Venta (Header del Reporte) -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <div class="border-b border-slate-200 pb-4 mb-4 flex flex-wrap justify-between items-start gap-4">
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Nombre del Curso</div>
+                        <h4 class="text-2xl font-bold text-slate-900 text-blue-900">FUNDAMENTOS DE LA CONSTRUCCIÓN</h4>
+                    </div>
+                    <div class="flex gap-6 text-right">
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Duración</div>
+                            <div class="text-lg font-bold text-slate-800">180 Horas</div>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Estructura</div>
+                            <div class="text-lg font-bold text-slate-800">5 Módulos / Año</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-y-4 gap-x-8 text-xs sm:text-sm">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Costos y Beneficios:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Inscripción: <strong>Gratis</strong> | Mensualidades: <strong>Q 350.00</strong><br>
+                            • Observación: Todos los módulos cuentan con práctica intensiva de taller.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido A:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Albañiles, ayudantes de albañil, Maestros de obra, aspirantes a técnicos de la construcción, estudiantes primer ingreso carreras de ingeniería y arquitectura, estudiantes de carreras técnicas en construcción e interesados en aprender sobre el tema.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Sector al que va Dirigido:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Instituciones educativas, Empresas constructoras, Organizaciones de Formación, Gobiernos Locales.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Acreditaciones y Salida Profesional:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Por cada módulo aprobado, el alumno participante recibe una constancia de aprobación.<br>
+                            • Al completar y aprobar los módulos correspondientes del Programa Técnico en Construcción, se emite un cierre de pensum.<br>
+                            • Al cumplir con los requisitos de certificación, el alumno puede aplicar para el diploma técnico en Construcción.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Perfil de Ingreso y Egreso:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            <strong>Ingreso:</strong> Mayor de 18 años con primaria aprobada.<br>
+                            <strong>Egreso:</strong> Capaz de ejecutar e interpretar planos para viviendas de 1 nivel, cuantificar renglones y cotizar materiales, y supervisar procesos constructivos como asistente de un profesional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-slate-200">
+                    <span class="font-bold text-slate-900 text-xs sm:text-sm block mb-2">Competencias Globales Prometidas al Público:</span>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                        <div class="bg-white p-2 rounded border border-slate-200 flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>1. Identificar y utilizar los diferentes instrumentos de dibujo.</span>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-slate-200 flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>2. Dibujar planos de construcción.</span>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-slate-200 flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>3. Cuantificar materiales de construcción.</span>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-slate-200 flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>4. Leer planos de construcción.</span>
+                        </div>
+                        <div class="bg-white p-2 rounded border border-slate-200 flex items-center gap-2 sm:col-span-2 md:col-span-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>5. Utilizar y aplicar los términos técnicos relacionados con la construcción.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-indigo-50 text-indigo-700">
+                            <i data-lucide="git-merge" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Visualización interactiva que resalta exactamente qué eliminar, qué actualizar y qué incorporar según la demanda industrial.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Código de Leyenda Explicativo -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                    <div class="p-3 rounded-lg border border-red-200 bg-red-50 text-red-900 flex items-start gap-2">
+                        <span class="inline-block w-3 h-3 rounded-full bg-red-500 mt-0.5 shrink-0"></span>
+                        <div>
+                            <strong>Color Rojo (Eliminar):</strong> Temas manuales obsoletos (rotulado a mano), prácticas caducas o contenidos duplicados erróneamente.
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-lg border border-yellow-300 bg-yellow-50 text-yellow-900 flex items-start gap-2">
+                        <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mt-0.5 shrink-0"></span>
+                        <div>
+                            <strong>Color Amarillo (Actualizar):</strong> Temas existentes que deben alinearse a normas vigentes (AGIES, FHA, CONRED) y nuevas tecnologías.
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-lg border border-blue-200 bg-blue-50 text-blue-900 flex items-start gap-2">
+                        <span class="inline-block w-3 h-3 rounded-full bg-blue-500 mt-0.5 shrink-0"></span>
+                        <div>
+                            <strong>Color Azul (Nuevo Propuesto):</strong> Competencias altamente demandadas por constructoras en Guatemala (SSO 229-2014, Drywall, etc.).
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-900 flex items-start gap-2">
+                        <span class="inline-block w-3 h-3 rounded-full bg-emerald-500 mt-0.5 shrink-0"></span>
+                        <div>
+                            <strong>Color Verde (Mantener):</strong> Fundamentos constructivos que conservan plena vigencia pedagógica y práctica.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular de Temarios -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 1 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 7)</span>
+                                <span>Duración: ~36 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Introducción al Dibujo Técnico y Constructivo</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Identificar las diferencias entre dibujo técnico y constructivo, interpretar escalas y simbología de obra.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <!-- Temas -->
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Instrumentos de dibujo</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Reorientar de instrumentos de mesa (regla T/rapidógrafos) a <em>Instrumentos de medición y trazo en obra (flexómetro, plomada, nivel, tiralíneas), escalímetro y visualizadores digitales de planos en tablets/celulares</em>.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Escalas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Uso de escalas métricas normalizadas (1:50, 1:100, 1:20, 1:25) e interpretación de medidas reales en el campo.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Tipos de formatos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Formatos estándar de láminas y requisitos de membrete/cajetín exigidos por Municipalidades y FHA.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Rotulado manual</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> En la práctica constructiva contemporánea nadie rotula letras a mano con caligrafía técnica en un restirador. Los planos son generados por computadora. Dedicar horas a caligrafía mecánica es una pérdida de tiempo lectivo valioso.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Alfabeto de líneas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Transformar la teoría del grosor del grafito en <em>Lectura e interpretación de jerarquía visual en planos impresos (líneas de muro, proyección de losas, ejes estructurales y límites de propiedad)</em>.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Diferentes tipos de planos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Juego completo de planos: topográfico, arquitectónico, estructural, hidráulico, sanitario y eléctrico.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Cuantificación de áreas y volúmenes</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cálculo de m² de muros y pisos, m³ de excavación y concreto para zapatas y soleras.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Antropometría y ergonomía</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Vincular directamente a <em>Dimensiones mínimas habitables y alturas reglamentarias según el FHA y ordenanzas de construcción</em>.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Definición de ambientes, asoleamiento y terreno</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Distribución espacial, ventilación cruzada y pendientes naturales del terreno.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. [NUEVO] Introducción a AutoCAD para Lectura Digital de Planos en Obra</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Obligatorio por ley del Ministerio de Trabajo. Competencia digital clave. Permite abrir archivos DWG, navegar entre espacio modelo y papel, activar/desactivar capas (layers), verificar cotas y medidas (Dist) en laptops/tablets de campo. <em>(Nota: La gestión formal del Plan de SSO según Acdo. Gub. 229-2014 se traslada como eje estratégico al curso de Administración de Obras).</em></p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Trazado, Replanteo y Nivelación de Campo</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Es la transición clave del plano a la realidad. Construcción de caballetes/puentes de madera, regla 3-4-5 para escuadra y nivelación con manguera de agua o nivel láser.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 2 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 8 a 15)</span>
+                                <span>Duración: ~36 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Arquitectura, Sistemas Livianos y Acabados</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Dibujar e interpretar planos arquitectónicos, cuadros de vanos, acabados y dominar sistemas livianos modernos.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Planos de arquitectura (Planta amueblada y acotada)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Lectura de muros, cotas a ejes, cotas a rostros y cotas totales, niveles NPT y accesos.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. "Planos de cotas" (como plano independiente)</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> En la práctica profesional no existe un "plano de cotas" separado del plano arquitectónico. El acotado es parte inherente de la planta arquitectónica. Enseñarlo por separado crea desorden conceptual.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Planos de elevaciones (Fachadas)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fachada principal y posterior, alturas de cumbrera, pretiles y vanos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Planos de secciones (Cortes transversales y longitudinales)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cortes para verificación de alturas libres de entrepiso, vigas y desplante.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Planos de acabados</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Incorporar el catálogo guatemalteco de acabados: repello y cernido (vertical/remolineado), monocapa/texturizado listo, pisos cerámicos, porcelanatos, zócalos e impermeabilizantes elastoméricos para terrazas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Planos de ventanas y puertas (Cuadro de Vanos)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Unificar temas 6 y 7 en un <em>Cuadro de Vanos Profesional (ancho, alto, sillar, dintel, perfilería de aluminio/PVC y holguras de instalación)</em>.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Detalle de baños y áreas húmedas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Enchapes, pendientes de ducha hacia resumidero, sellos y ventilación.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. "Estudio de suelos" en Arquitectura</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Error evidente del temario original donde se duplicó "Estudio de suelos" en Arquitectura y en Estructuras. En arquitectura no tiene razón pedagógica; pertenece exclusivamente a Cimentaciones (Módulo 3).</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. [NUEVO] Sistemas Constructivos Livianos (Drywall / Tablayeso y Durock)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Masivamente utilizado en Guatemala para tabiquería interna, cielos falsos y fachadas livianas. Manejo de perfilería galvanizada (canales y postes), fijaciones, cinta y masillado.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. [NUEVO] Normativa CONRED NRD-2 (Rutas de Evacuación y Seguridad)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Exigencia legal en proyectos. Ancho mínimo de puertas de salida, pasillos despejados, gradas normadas y huellas/contrahuellas para prevención de emergencias.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 3 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 16 a 23)</span>
+                                <span>Duración: ~36 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Estructuras, Cimentación y Losas (Sismo-Resistencia AGIES)</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Dibujar e interpretar planos de cimentación, armados sismo-resistentes según AGIES NSE-4 y cuantificar materiales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Plano de cimentación</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Vincular a la norma <strong>AGIES NSE-4</strong> (Pequeña Vivienda): cimiento corrido de concreto ciclópeo, zapatas aisladas y solera de humedad.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Detalles estructurales (Columnas, Vigas y Soleras)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Armado de mampostería confinada con block pómez normado (COGUANOR), estribado cerrado en zonas de confinamiento y pines de anclaje vertical.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Plano de cortes de muro estructural</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Detalles de solera hidrófuga, solera intermedia, solera corona y alturas de modulación de block.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Plano de techos y sistemas de entrepiso</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Incorporar sistemas modernos: losa tradicional maciza, <em>vigueta pretensada y bovedilla (pómez y poliestireno EPS)</em>, losacero y apuntalamiento técnico.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Cuantificación de renglones de trabajo y materiales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cálculo de varillas legítimas/comerciales (#2, #3, #4), alambre de amarre, cemento UGC, agregados y block.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Reconocimiento práctico de suelos para cimentación</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Enfoque de obra: identificación visual de estratos firmes en el altiplano y valles de Guatemala, compactación manual/mecánica y drenaje de zanjas.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. [NUEVO] Tecnología del Concreto en Obra y Mezclas Predosificadas</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Dosificación volumétrica, ensayo de revenimiento (cono de Abrams), relación agua-cemento, aditivos acelerantes/fluidificantes y curado correcto para evitar fisuras.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. [NUEVO] Formaleta Modular y Seguridad en Encofrados</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Manejo de formaleta metálica y tableros fenólicos, desmoldantes, tiempos mínimos de desencofrado y apuntalamiento seguro de losas.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 4 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 24 a 30)</span>
+                                <span>Duración: ~36 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Instalaciones Hidráulicas, Sanitarias y Bombas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Dibujar, interpretar e instalar redes de agua potable (PPR/PVC), drenajes sanitarios, pluviales y tratamiento de aguas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Instalación hidráulica (Agua fría y caliente)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Incorporar <strong>Termofusión (PPR)</strong> y CPVC además de PVC tradicional, presiones nominales y válvulas de paso.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Plano de drenaje pluvial</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Canaletas, bajadas pluviales y pozos de absorción pluvial obligatorios por normas municipales.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Plano de drenaje sanitario y ventilación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Pendientes mínimas (1% - 2%), tubería norma pesada PVC, sifones y columnas de ventilación.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Cisternas de agua y tanques elevados</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Cisternas de concreto impermeabilizado vs tanques plásticos de almacenamiento (Rotoplas), y dimensionamiento según dotación de habitantes.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Biodigestores autolimpiables</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Instalación, extracción de lodos y conexión a pozo de absorción o zanja de infiltración.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Fosas sépticas y normas sanitarias MSPAS</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Requisitos de ubicación y distancias mínimas a linderos y fuentes de agua según el Ministerio de Salud Pública.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Cajas de registro, trampa de grasa y cuantificación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Construcción de medias cañas, tapaderas de concreto, trampas de grasa para cocinas y listado de materiales.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. [NUEVO] Pruebas Hidrostáticas y de Hermeticidad en Obra</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Práctica indispensable antes de fundir pisos. Prueba de presión hidrostática con bomba manual (100 PSI) para detectar fugas ocultas.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. [NUEVO] Equipos Hidroneumáticos y Bombas Domiciliares</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> En Guatemala el suministro por red municipal es intermitente; casi toda vivienda requiere bomba periférica, flotadores automáticos y tanque hidroneumático.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 5 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col lg:col-span-2">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                <span>MÓDULO 5 (Semanas 31 a 38)</span>
+                                <span>Duración: ~36 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Instalaciones Eléctricas, Redes Especiales y Seguridad CNEE/EEGSA</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Dibujar e interpretar planos eléctricos residenciales, acometidas bajo norma EEGSA/Energuate y canalizaciones especiales.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 grid md:grid-cols-2 gap-4">
+
+                            <div class="space-y-2">
+                                <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>1. Plano de fuerza (Tomacorrientes y cargas)</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                    </div>
+                                    <p class="text-slate-700">Circuitos de 120V para tomas de uso general y circuitos dedicados de 240V para calentador y estufa eléctrica.</p>
+                                </div>
+
+                                <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>2. Plano de iluminación</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                    </div>
+                                    <p class="text-slate-700">Circuitos de lámparas, interruptores simples, conmutadores de 3 vías y luminarias LED de bajo consumo.</p>
+                                </div>
+
+                                <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>3. Acometidas eléctricas y diagrama unifilar</span>
+                                        <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                    </div>
+                                    <p class="text-slate-700"><strong>Actualización:</strong> Normas de distribución monofásica/bifásica vigentes de EEGSA y Energuate, base para contador de 7 o 4 terminales y caja de flipones con balanceo de cargas.</p>
+                                </div>
+
+                                <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>4. Instalaciones especiales (Datos, TV y Seguridad)</span>
+                                        <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                    </div>
+                                    <p class="text-slate-700"><strong>Actualización:</strong> Reemplazar cable telefónico antiguo por ductería para cable de red UTP Cat 6, acometida de fibra óptica domiciliar, intercomunicador y previsión para cámaras CCTV.</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>5. Normas técnicas de distribución y puesta a tierra</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                    </div>
+                                    <p class="text-slate-700">Varilla copperweld de puesta a tierra, calibre de cables THHN, ductería conduit PVC y cajas octagonales/rectangulares.</p>
+                                </div>
+
+                                <!-- Nuevos Propuestos -->
+                                <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>6. [NUEVO] Protección GFCI y Seguridad en Áreas Húmedas</span>
+                                        <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                    </div>
+                                    <p class="text-slate-700"><strong>Justificación:</strong> Exigencia crítica de seguridad. Instalación obligatoria de interruptores y tomacorrientes con falla a tierra (GFCI) en baños, pilas, cocinas e intemperie.</p>
+                                </div>
+
+                                <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>7. [NUEVO] Ductería y Canalización Segura en Muros Confinados</span>
+                                        <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                    </div>
+                                    <p class="text-slate-700"><strong>Justificación:</strong> Malas prácticas en obra destruyen la resistencia sísmica al picar columnas o soleras para pasar tubos. Buenas prácticas de ruteo vertical por celdas de block.</p>
+                                </div>
+
+                                <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>8. [NUEVO] Presupuesto Básico y Rendimientos de Mano de Obra</span>
+                                        <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                    </div>
+                                    <p class="text-slate-700"><strong>Justificación:</strong> El perfil de egreso promete "cotizar y comprar materiales". Se enseña integración de precios unitarios básicos, cálculo de jornales y control de desperdicios en obra.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Justificaciones Técnicas y Marco Legal Guatemalteco
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Sustento pedagógico, normativo y operativo de cada cambio propuesto sobre el temario original de Kinal.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Norma / Referente GT</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <!-- Rojo 1 -->
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Rotulado técnico manual en papel</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Práctica obsoleta. La totalidad de planos de ingeniería/arquitectura en Guatemala se imprimen desde AutoCAD o BIM. En obra se requiere rapidez interpretativa, no caligrafía de dibujante.</td>
+                            <td class="p-3 text-slate-500 font-medium">Estándar Digital CGC / BIM Forum GT</td>
+                        </tr>
+                        <!-- Rojo 2 -->
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">"Plano de cotas" (desglosado aparte)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Confusión metodológica. En la práctica no existe un plano exclusivamente de cotas; las cotas pertenecen a la planta arquitectónica acotada. Se unifica en el tema arquitectónico.</td>
+                            <td class="p-3 text-slate-500 font-medium">Práctica Profesional de Dibujo</td>
+                        </tr>
+                        <!-- Rojo 3 -->
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Estudio de suelos en Arquitectura</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Error de duplicación evidente en el Excel original. El estudio del terreno corresponde a la cimentación estructural, no al diseño de arquitectura ni acabados.</td>
+                            <td class="p-3 text-slate-500 font-medium">Corrección de Malla Curricular</td>
+                        </tr>
+                        <!-- Amarillo 1 -->
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Instrumentos de dibujo</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Reemplazar compás/regla T por herramientas de medición de campo (flexómetro, plomada, nivel, cinta métrica, tiralíneas) y visores de planos en PDF/DWG para dispositivos móviles.</td>
+                            <td class="p-3 text-slate-500 font-medium">Digitalización de Obra</td>
+                        </tr>
+                        <!-- Amarillo 2 -->
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Plano de techos y losas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Actualizar la losa tradicional con sistemas prefabricados masivos en Guatemala: vigueta pretensada, bovedilla de pómez y bovedilla de poliestireno (EPS), más livianas y sismorresistentes.</td>
+                            <td class="p-3 text-slate-500 font-medium">AGIES NSE-4 / Prefabricados GT</td>
+                        </tr>
+                        <!-- Amarillo 3 -->
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Instalación hidráulica de agua</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Incorporar termofusión en Polipropileno (PPR) y CPVC para agua caliente, que reducen a cero las fugas comparado con uniones pegadas con solvente PVC tradicional.</td>
+                            <td class="p-3 text-slate-500 font-medium">Normas COGUANOR / FHA</td>
+                        </tr>
+                        <!-- Amarillo 4 -->
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 5</td>
+                            <td class="p-3 font-medium">Acometidas y diagrama unifilar</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Adecuar a las normativas técnicas vigentes de EEGSA y DEOCSA/DEORSA: bases de contador herméticas, tubo galvanizado de bajada y varilla de tierra copperweld obligatoria.</td>
+                            <td class="p-3 text-slate-500 font-medium">Norma Técnica CNEE / EEGSA</td>
+                        </tr>
+                        <!-- Azul 1 -->
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Introducción a AutoCAD (Visualización Digital)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Manejo básico de interfaz de AutoCAD, apertura de planos DWG, navegación y toma de medidas digitales en el sitio de trabajo. La gestión formal de SSO se profundiza en Administración de Obras.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Acuerdo Gubernativo 229-2014 MinTrab</td>
+                        </tr>
+                        <!-- Azul 2 -->
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Sistemas Livianos (Tablayeso / Durock)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Demanda masiva en la construcción vertical comercial y residencial. La industria guatemalteca exige técnicos que dominen el armado de bastidores metálicos y placas de yeso/cemento.</td>
+                            <td class="p-3 text-slate-500 font-medium">Demanda Laboral CGC / ICC</td>
+                        </tr>
+                        <!-- Azul 3 -->
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Tecnología del Concreto y Aditivos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Capacitar en control de calidad en obra: prueba de revenimiento con cono de Abrams, relación agua-cemento, aditivos hidrófugos/acelerantes y vibrado adecuado para evitar fallas estructurales.</td>
+                            <td class="p-3 text-slate-500 font-medium">AGIES NSE-7.1 / Mixto Listo</td>
+                        </tr>
+                        <!-- Azul 4 -->
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Prueba Hidrostática y Hermeticidad</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Garantizar calidad antes del colado de pisos. Prueba de presión hidrostática (100 PSI con bomba manual) para certificar cero fugas en redes de agua potable empotradas.</td>
+                            <td class="p-3 text-slate-500 font-medium">Control de Calidad FHA</td>
+                        </tr>
+                        <!-- Azul 5 -->
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 5</td>
+                            <td class="p-3 font-medium">Protección GFCI en Zonas Húmedas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Protección indispensable para salvar vidas contra descargas eléctricas en baños, pilas y exteriores. Es estándar obligatorio en proyectos certificados por FHA.</td>
+                            <td class="p-3 text-slate-500 font-medium">Código Eléctrico Nacional / FHA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: COMPARATIVA E IMPACTO EN LA PROMESA DE VENTA -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-400">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold">5. Impacto en la Promesa de Venta Institucional de Kinal</h3>
+                    <p class="text-sm text-slate-300">
+                        Cómo esta optimización eleva la empleabilidad de los egresados y el prestigio del programa ante constructoras.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-2">
+                    <div class="text-amber-400 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                        Alineación Laboral Inmediata
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        El estudiante ya no egresa solo con conocimientos de dibujo tradicional en papel; egresa dominando <strong>lectura de planos digitales, sistemas livianos (drywall), normas sísmicas AGIES y seguridad ocupacional</strong>, que es exactamente lo que los maestros de obra e ingenieros residentes exigen en el sitio de trabajo.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-2">
+                    <div class="text-blue-400 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        Cumplimiento Legal y Respaldo Institucional
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Incluir el <strong>Reglamento 229-2014 del Ministerio de Trabajo</strong> y <strong>CONRED NRD-2</strong> transforma la constancia emitida por Kinal en un documento de alto valor corporativo: las empresas constructoras prefieren contratar personal previamente capacitado en seguridad para evitar multas laborales.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-2">
+                    <div class="text-emerald-400 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Optimización de Horas Lectivas (180 hrs)
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Al eliminar horas dedicadas a rotulación caligráfica y temas duplicados, se liberan cerca de <strong>28 horas efectivas</strong> para prácticas de taller en armado de acero sismo-resistente, colocación de termofusión PPR y pruebas hidrostáticas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    
+        <!-- ========================================== -->
+        <!-- SECCIÓN 6: APARTADO DE INNOVACIÓN E INTELIGENCIA ARTIFICIAL (IA) -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">6. Innovación Tecnológica: Inteligencia Artificial en Fundamentos de Obra</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Herramientas emergentes de IA aplicada para técnicos, maestros de obra y supervisores en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="scan" class="w-4 h-4"></i>
+                        Escaneo y Fotogrametría Móvil con IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Uso de sensores LiDAR y cámaras móviles con apps potenciadas por IA (Polycam, Canvas) para escanear habitaciones y zanjas en segundos, generando automáticamente mallas 3D y planos preliminares para verificar dimensiones y niveles en el sitio de trabajo.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        Visión Artificial para Detección de EPP
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Demostración práctica de cámaras de seguridad en obra con algoritmos de visión por computadora que alertan automáticamente cuando un operario ingresa a zonas de riesgo sin casco, chaleco reflectivo o gafas de seguridad, alineado al Acuerdo Gub. 229-2014.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        Asistentes de Obra Basados en LLMs
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Consultas instantáneas mediante modelos de lenguaje (IA) para calcular dosificaciones de mortero/concreto según volumen, resolver dudas de normativas de construcción locales y traducir especificaciones de fichas técnicas de productos químicos (Progreso / Sika).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            Fundación Kinal • Escuela Técnica Superior • Propuesta de Actualización Curricular 2026 • Generado para auditoría pedagógica interna
+        </div>
+    </footer>
+
+    <!-- Interactive Filter Script -->
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = {
+                'all': document.getElementById('btn-all'),
+                'delete': document.getElementById('btn-delete'),
+                'update': document.getElementById('btn-update'),
+                'new': document.getElementById('btn-new'),
+                'keep': document.getElementById('btn-keep')
+            };
+
+            // Reset buttons
+            Object.values(buttons).forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+                }
+            });
+
+            if (buttons[status]) {
+                buttons[status].classList.add('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+            }
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

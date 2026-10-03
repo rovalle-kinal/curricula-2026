@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Maestro: Auditoría Curricular & Ecosistema IA | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f1f5f9; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .glow-border { box-shadow: 0 0 25px rgba(59, 130, 246, 0.15); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Top Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al inicio" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-xs tracking-wider uppercase px-3 py-1 rounded-md shadow-sm hover:opacity-90 transition cursor-pointer">KINAL ETS 2026</a>
+                <span class="text-slate-600 text-sm hidden sm:inline">|</span>
+                <div class="text-slate-200 font-semibold text-sm sm:text-base flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-400"></i>
+                    Dirección Académica & Modernización Curricular
+                </div>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    17 Programas Auditados (100%)
+                </span>
+                <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5 inline mr-1"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 flex-1">
+
+        <!-- Hero Section -->
+        <div class="text-center space-y-4 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Ciclo Académico 2026 • Análisis de Demanda Industrial Guatemala
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                Auditoría Curricular y Ecosistema de Innovación con IA
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+                Modernización integral de los programas técnicos de la Escuela Técnica Superior Kinal frente a las exigencias reales de la industria guatemalteca (CGC, AGIES, CNEE, MinTrab 229-2014, sector automotriz y agroindustrial), complementado con <strong>módulos de Inteligencia Artificial Aplicada</strong> en cada especialidad.
+            </p>
+        </div>
+
+        <!-- Global Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-1">
+                <div class="text-xs uppercase font-bold text-slate-500">Programas Técnicos</div>
+                <div class="text-3xl font-black text-white">20 Cursos</div>
+                <div class="text-xs text-blue-400">Distribuidos en 4 Áreas Industriales</div>
+            </div>
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-1">
+                <div class="text-xs uppercase font-bold text-slate-500">Módulos con IA</div>
+                <div class="text-3xl font-black text-purple-400">20 Módulos</div>
+                <div class="text-xs text-purple-300">60 aplicaciones prácticas de IA</div>
+            </div>
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-1">
+                <div class="text-xs uppercase font-bold text-slate-500">Temas Auditados</div>
+                <div class="text-3xl font-black text-amber-400">1,276 Temas</div>
+                <div class="text-xs text-amber-300">50 Del • 271 Upd • 81 New • 874 Keep</div>
+            </div>
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-1">
+                <div class="text-xs uppercase font-bold text-slate-500">Alineación Normativa</div>
+                <div class="text-3xl font-black text-emerald-400">100% Legal</div>
+                <div class="text-xs text-emerald-300">AGIES, MinTrab 229, CNEE, AWS, ASME</div>
+            </div>
+        </div>
+
+        <!-- Metodología de Código de Color -->
+        <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
+            <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="info" class="w-4 h-4 text-blue-400"></i> Metodología y Código de Color de Auditoría
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-red-950/30 border border-red-900/50 text-red-200">
+                    <strong class="text-red-400 block mb-1">🔴 ROJO (Eliminar)</strong>
+                    Contenidos obsoletos en el mercado actual (ej. rotulado manual a lápiz, render 3D primitivo por CPU, temas eléctricos infiltrados por error).
+                </div>
+                <div class="p-3 rounded-xl bg-yellow-950/30 border border-yellow-900/50 text-yellow-200">
+                    <strong class="text-yellow-400 block mb-1">🟡 AMARILLO (Actualizar)</strong>
+                    Temas existentes que requieren modernización técnica (normas AGIES sísmicas, PPR termofusión, capas AIA, variación de frecuencia).
+                </div>
+                <div class="p-3 rounded-xl bg-blue-950/30 border border-blue-900/50 text-blue-200">
+                    <strong class="text-blue-400 block mb-1">🔵 AZUL (Propuesta Nueva)</strong>
+                    Competencias prioritarias demandadas en Guatemala (Plan de SSO 229-2014, energía solar fotovoltaica, drywall, Navisworks, As-Built).
+                </div>
+                <div class="p-3 rounded-xl bg-purple-950/30 border border-purple-900/50 text-purple-200">
+                    <strong class="text-purple-400 block mb-1">🟣 PÚRPURA (Innovación IA)</strong>
+                    Apartado adicional de herramientas de Inteligencia Artificial generativa, predictiva y de visión computacional aplicadas a cada oficio.
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- ÁREA 1: CONSTRUCCIÓN, TOPOGRAFÍA Y BIM -->
+        <!-- ============================================== -->
+        <div class="space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400"><i data-lucide="hard-hat" class="w-5 h-5"></i></div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">1. Área de Construcción, Topografía y Modelado BIM</h2>
+                    <p class="text-xs text-slate-400">Diseño estructural sísmico (AGIES), gestión de proyectos, BIM colaborativo y carreteras.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- FDC -->
+                <a href="Fundamentos_de_la_Construccion_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] uppercase">180 Horas • 5 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-amber-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition">Fundamentos de la Construcción</h4>
+                        <p class="text-xs text-slate-400 mt-1">Interpretación de planos, normas AGIES NSE-4, sistemas livianos (drywall), PPR termofusión e introducción a AutoCAD.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Visión artificial para EPP y fotogrametría móvil LiDAR.
+                    </div>
+                </a>
+
+                <!-- ADO -->
+                <a href="Administracion_de_Obras_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold text-[10px] uppercase">180 Horas • 4 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition">Administración de Obras</h4>
+                        <p class="text-xs text-slate-400 mt-1">Plan de SSO (Acuerdo Gub. 229-2014), introducción a Revit BIM, Carta Gantt, APU y leyes laborales de Guatemala.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Predicción de retrasos en ruta crítica y bitácoras automáticas.
+                    </div>
+                </a>
+
+                <!-- AutoCAD -->
+                <a href="AutoCAD_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-red-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-bold text-[10px] uppercase">90 Horas • 4 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-red-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-red-300 transition">AutoCAD 2D & 3D</h4>
+                        <p class="text-xs text-slate-400 mt-1">Capas bajo norma AIA, layouts/viewports anotativos, interoperabilidad CAD-BIM, AutoCAD Web/Mobile y planos As-Built.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Autodesk AI Markup Assist y generación de AutoLISP.
+                    </div>
+                </a>
+
+                <!-- Revit Arch -->
+                <a href="Revit_Architecture_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-teal-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 font-bold text-[10px] uppercase">90 Horas • 5 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-teal-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-teal-300 transition">Autodesk Revit Architecture</h4>
+                        <p class="text-xs text-slate-400 mt-1">Estándar BIM Forum GT, familias paramétricas, fases de demolición/nuevo y tablas dinámicas de cómputo métrico.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Renders instantáneos con Veras AI y Dynamo asistido por LLMs.
+                    </div>
+                </a>
+
+                <!-- Revit Str & MEP -->
+                <a href="Revit_Structure_MEP_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-orange-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold text-[10px] uppercase">90 Horas • 6 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-orange-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-orange-300 transition">Revit Structure & MEP</h4>
+                        <p class="text-xs text-slate-400 mt-1">Armado sísmico AGIES, despiece automático de varilla, ruteo hidrosanitario y Clash Detection con Navisworks.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Ruteo generativo de tuberías y matriz de colisiones.
+                    </div>
+                </a>
+
+                <!-- Civil 3D -->
+                <a href="Civil_3D_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase">90 Horas • 4 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-sky-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-sky-300 transition">Autodesk Civil 3D</h4>
+                        <p class="text-xs text-slate-400 mt-1">Diseño vial según manual de la DGC Guatemala, peraltes, nubes de puntos LiDAR de drones y redes de drenaje.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Filtrado de terreno LiDAR y rasante generativa de balance cero.
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- ÁREA 2: ELECTRICIDAD Y AUTOMATIZACIÓN -->
+        <!-- ============================================== -->
+        <div class="space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                <div class="p-2 rounded-lg bg-yellow-500/10 text-yellow-400"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">2. Área de Electricidad Industrial, Electrónica y Automatización</h2>
+                    <p class="text-xs text-slate-400">Distribución de energía, PLCs Siemens S7-1200, instrumentación de procesos y energía solar.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- IEG -->
+                <a href="Instalaciones_Electricas_Generales_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-yellow-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-yellow-300 transition">Instalaciones Eléctricas Generales</h4>
+                        <p class="text-xs text-slate-400 mt-1">Normativa EEGSA/Energuate, malla de tierra con telurómetro, protecciones GFCI y sistemas solares On-Grid.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Termografía predictiva de tableros y balance de cargas inteligente.
+                    </div>
+                </a>
+
+                <!-- CME -->
+                <a href="Controles_y_Maquinas_Electricas_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-yellow-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-yellow-300 transition">Controles y Máquinas Eléctricas</h4>
+                        <p class="text-xs text-slate-400 mt-1">Variadores de frecuencia (VFD), arrancadores suaves, corrección de factor de potencia y megado de motores.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Análisis de firma de corriente (MCSA) para detectar barras rotas.
+                    </div>
+                </a>
+
+                <!-- EI -->
+                <a href="Electronica_Analogica_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-cyan-300 transition">Electrónica Analógica</h4>
+                        <p class="text-xs text-slate-400 mt-1">Fuentes conmutadas (SMPS), amplificadores operacionales 4-20mA, reparación de tarjetas y optoacopladores.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Detección visual de componentes SMD quemados en PCB.
+                    </div>
+                </a>
+
+                <!-- CISP -->
+                <a href="Control_Industrial_Sistemas_Programables_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] uppercase">180 Horas • 3 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-emerald-300 transition">Control Industrial con Sistemas Programables</h4>
+                        <p class="text-xs text-slate-400 mt-1">PLC Siemens S7-1200 en TIA Portal, pantallas táctiles HMI, electroneumática y redes Modbus TCP.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Generación de código Structured Text (ST) con LLMs.
+                    </div>
+                </a>
+
+                <!-- AI -->
+                <a href="Automatizacion_Industrial_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold text-[10px] uppercase">180 Horas • 6 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-indigo-300 transition">Automatización Industrial</h4>
+                        <p class="text-xs text-slate-400 mt-1">Lazos PID de control continuo, transmisores HART (4-20mA), SCADA (Ignition / Node-RED) y redes Profinet.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Visión industrial para control de calidad y PID autónomo.
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- ÁREA 3: MECÁNICA INDUSTRIAL, SOLDADURA Y CALDERAS -->
+        <!-- ============================================== -->
+        <div class="space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                <div class="p-2 rounded-lg bg-red-500/10 text-red-400"><i data-lucide="wrench" class="w-5 h-5"></i></div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">3. Área de Mecánica Industrial, Soldadura y Calderas de Vapor</h2>
+                    <p class="text-xs text-slate-400">Mantenimiento de plantas continuas, calificación de soldadura AWS/ASME y generación de vapor térmico.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- MMI -->
+                <a href="Mantenimiento_Mecanico_Industrial_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-400/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-slate-300 transition">Mantenimiento Mecánico Industrial</h4>
+                        <p class="text-xs text-slate-400 mt-1">Alineación láser de ejes, calentadores de inducción para rodamientos, tribología y detección de fugas por ultrasonido.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Análisis de vibraciones mecánicas IoT y diagnóstico prescriptivo.
+                    </div>
+                </a>
+
+                <!-- SI -->
+                <a href="Soldadura_Industrial_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-red-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-red-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-red-300 transition">Soldadura Industrial</h4>
+                        <p class="text-xs text-slate-400 mt-1">Calificación según AWS D1.1 y ASME IX, procesos GMAW/FCAW pesados, TIG sanitario en acero inoxidable y líquidos penetrantes.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Inspección de cordones por visión artificial y simuladores VR.
+                    </div>
+                </a>
+
+                <!-- CV -->
+                <a href="Calderas_de_Vapor_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] uppercase">180 Horas • 5 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-amber-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition">Calderas de Vapor</h4>
+                        <p class="text-xs text-slate-400 mt-1">Tratamiento químico de agua, quemadores modulantes, retorno de condensados y cumplimiento del Reglamento de Calderas MinTrab.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Optimización de combustión y monitoreo de trampas de vapor.
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- ÁREA 4: TECNOLOGÍA AUTOMOTRIZ Y MOTOCICLETAS -->
+        <!-- ============================================== -->
+        <div class="space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                <div class="p-2 rounded-lg bg-blue-500/10 text-blue-400"><i data-lucide="car" class="w-5 h-5"></i></div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">4. Área de Tecnología Automotriz y Motocicletas</h2>
+                    <p class="text-xs text-slate-400">Diagnóstico computarizado OBD-II, osciloscopio, redes CAN-Bus, vehículos híbridos y motos FI.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- MMG -->
+                <a href="Mecanica_Motores_Gasolina_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-red-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-red-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-red-300 transition">Mecánica de Motores Gasolina</h4>
+                        <p class="text-xs text-slate-400 mt-1">Distribución variable (VVT), probador de fugas de cilindro con manómetro, inyección directa GDI y motores ciclo Atkinson.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Diagnóstico acústico de golpeteo de biela e inspección con boroscopio.
+                    </div>
+                </a>
+
+                <!-- MAA -->
+                <a href="Mecanismos_del_Automovil_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-emerald-300 transition">Mecanismos del Automóvil</h4>
+                        <p class="text-xs text-slate-400 mt-1">Frenos ABS/ESP con ciclado electrónico, dirección eléctrica EPS, cajas automáticas/CVT y alineación 3D láser.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Reconocimiento por imagen de desgaste de neumáticos y calibración SAS.
+                    </div>
+                </a>
+
+                <!-- EMA -->
+                <a href="Electromecanica_Automotriz_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition">Electromecánica Automotriz</h4>
+                        <p class="text-xs text-slate-400 mt-1">Redes multiplexadas CAN-Bus/LIN, alternadores pilotados, baterías AGM y protocolos de seguridad en alta tensión para híbridos.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Decodificación asistida de tramas CAN y diagramas interactivos.
+                    </div>
+                </a>
+
+                <!-- IEA -->
+                <a href="Inyeccion_Electronica_Automotriz_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-purple-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold text-[10px] uppercase">180 Horas • 10 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-purple-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-purple-300 transition">Inyección Electrónica Automotriz</h4>
+                        <p class="text-xs text-slate-400 mt-1">Osciloscopio automotriz de 4 canales, sensores A/F de banda ancha, análisis de Fuel Trims y diésel Common Rail ligero.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Comparación automática de señales de osciloscopio y diagnóstico DTC.
+                    </div>
+                </a>
+
+                <!-- AAA -->
+                <a href="Aire_Acondicionado_Automotriz_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold text-[10px] uppercase">180 Horas • 2 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-cyan-300 transition">Aire Acondicionado Automotriz</h4>
+                        <p class="text-xs text-slate-400 mt-1">Transición a gas R-1234yf, detección de fugas con Nitrógeno UV, compresores de cilindrada variable PWM y HVAC híbrido.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Termografía asistida de condensadores y dosificación por VIN.
+                    </div>
+                </a>
+
+                <!-- MDM -->
+                <a href="Mecanica_de_Motocicletas_Propuesta.html" class="block p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-orange-500/50 hover:bg-slate-800/60 transition group space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold text-[10px] uppercase">180 Horas • 6 Módulos</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-orange-400 transition"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white group-hover:text-orange-300 transition">Mecánica de Motocicletas</h4>
+                        <p class="text-xs text-slate-400 mt-1">Sistemas de inyección electrónica en motos (FI), frenos ABS de rueda, escáner multimarca para 2 ruedas y CVT de scooters.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="bot" class="w-3.5 h-3.5"></i> IA: Diagnóstico por sonido de holgura de punterías y cruce de repuestos.
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-semibold text-slate-400">Fundación Kinal • Escuela Técnica Superior (ETS) • Sistema de Gestión y Auditoría Curricular 2026</p>
+            <p>Portal generado automáticamente para la toma de decisiones académicas, pedagógicas e industriales.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

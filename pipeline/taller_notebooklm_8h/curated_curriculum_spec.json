@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 1,
+  "course_id": "TALLER-NLM-8H",
+  "course_title": "Taller Universitario de Aprendizaje Acelerado con NotebookLM: Método MIT y Tutoría Dialéctica",
+  "stage_name": "Curated Curriculum Specification",
+  "curated_by": "curador_investigador",
+  "total_duration_hours": 8,
+  "reference_sources": [
+    "Video: 'El método MIT para aprender cualquier tema en 90 minutos con NotebookLM' (Migue Baena IA, ref: qVJytQsDUr8)",
+    "Neurociencia del Aprendizaje: Memoria Semántica, Retrieval Practice (Roediger & Karpicke) y la Ilusión de Competencia",
+    "Técnica Feynman de Comprensión Profunda",
+    "Deutscher Qualifikationsrahmen (DQR): Competencia Profesional y Personal (Autonomía)",
+    "Ideario y Normativa de Convivencia y Evaluación de Fundación Kinal"
+  ],
+  "institutional_context": {
+    "institution": "Fundación Kinal",
+    "campus": "Educación Superior / Técnico Universitario (Guatemala)",
+    "mission": "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad.",
+    "core_values": [
+      "Visión cristiana de la vida",
+      "Respeto a la dignidad de la persona",
+      "Espíritu de servicio",
+      "Trabajo bien hecho",
+      "Libertad personal responsable"
+    ],
+    "code_of_conduct": {
+      "academic_integrity": "Rechazo absoluto al facilismo y al copia y pega; la IA se utiliza como tutor y contraparte dialéctica para elevar la exigencia intelectual, no para reemplazar el pensamiento propio.",
+      "device_policy": "Uso de computadoras y dispositivos limitado estrictamente al desarrollo del taller formativo.",
+      "minimum_passing_score": 70
+    }
+  },
+  "pedagogical_and_cognitive_foundations": {
+    "grounded_ai_concept": "Arquitectura de inteligencia artificial que responde únicamente en base a fuentes verificables cargadas por el usuario, eliminando alucinaciones y garantizando citas directas y trazables.",
+    "semantic_memory_vs_rote_memorization": "La memorización aislada de datos o fórmulas es frágil e insuficiente para resolver problemas reales; la memoria semántica construye una red estructurada de significados y relaciones causales.",
+    "illusion_of_competence": "Sesgo cognitivo donde la relectura pasiva y el subrayado crean una falsa sensación de dominio, la cual se derrumba al intentar resolver problemas sin apoyo visual.",
+    "feynman_technique_ai_adaptation": "Explicar un concepto técnico a la IA en términos sencillos; la IA identifica ambigüedades, conceptos no explicados y lagunas lógicas.",
+    "mit_90_minute_method": "Protocolo estructurado de 90 minutos para abordar materias complejas: 1. Curaduría y carga de fuentes; 2. Extracción de pilares conceptuales; 3. Interrogación crítica y prueba de Feynman; 4. Autoevaluación implacable; 5. Síntesis en kit de repaso permanente."
+  },
+  "blocks": [
+    {
+      "block_id": "BLOQUE-01",
+      "title": "Fundamentos de Grounded AI y Superación de la Ilusión de Competencia",
+      "duration_hours": 2,
+      "focus": "Comprender la diferencia entre modelos abiertos y Grounded AI, reconocer la trampa de la relectura pasiva y dominar la curaduría rigurosa de fuentes primarias en NotebookLM.",
+      "topics": [
+        "1.1 Límites de los LLMs tradicionales vs precisión documental de NotebookLM (Grounded AI).",
+        "1.2 Bases neurocientíficas: memoria semántica, recuperación activa y el fin de la ilusión de competencia.",
+        "1.3 Criterios de curaduría académica: selección de fuentes primarias (artículos científicos, libros de texto, notas de clase y diapositivas).",
+        "1.4 Configuración del cuaderno universitario y delimitación estratégica de objetivos de estudio."
+      ]
+    },
+    {
+      "block_id": "BLOQUE-02",
+      "title": "La Técnica Feynman y NotebookLM como Tutor Dialéctico (Método MIT)",
+      "duration_hours": 2,
+      "focus": "Transformar la IA de un mero generador de resúmenes en un tutor implacable que evalúa respuestas, desenmascara lagunas conceptuales y aplica la técnica Feynman.",
+      "topics": [
+        "2.1 De la lectura lineal improductiva a la interrogación analítica activa.",
+        "2.2 Aplicación práctica de la técnica Feynman con NotebookLM: explicar para comprender.",
+        "2.3 Formulación de 'Prompts de Desenmascaramiento': solicitar las preguntas más difíciles que revelan vacíos de razonamiento.",
+        "2.4 Simulación de exámenes orales socráticos: retroalimentación correctiva sobre respuestas del estudiante."
+      ]
+    },
+    {
+      "block_id": "BLOQUE-03",
+      "title": "Síntesis Avanzada, Relaciones Ocultas y Multimodalidad (Audio Overview)",
+      "duration_hours": 2,
+      "focus": "Descubrir patrones y discrepancias entre documentos, generar guías de discusión previas a clase y aprovechar el formato audio para consolidación conceptual.",
+      "topics": [
+        "3.1 Extracción de los 5 conceptos nucleares y detección de patrones y discrepancias entre fuentes.",
+        "3.2 Generación de artefactos de estudio: resúmenes ejecutivos, mapas conceptuales y tablas comparativas con citas verificadas.",
+        "3.3 Uso pedagógico del Audio Overview (Deep Dive Podcasts): pre-escucha reflexiva y consolidación auditiva.",
+        "3.4 Preparación activa para el aula universitaria (Flipped Classroom) y redacción con voz propia evitando el plagio."
+      ]
+    },
+    {
+      "block_id": "BLOQUE-04",
+      "title": "Taller de Aplicación: Protocolo de Estudio de 90 Minutos y Evaluación Capstone",
+      "duration_hours": 2,
+      "focus": "Ejecutar en tiempo real el protocolo de estudio intensivo de 90 minutos sobre un tema universitario real y defender el aprendizaje ante la rúbrica terminal.",
+      "topics": [
+        "4.1 El protocolo paso a paso de 90 minutos: fases de inmersión, diálogo crítico y consolidación.",
+        "4.2 Creación del 'Kit de Repaso Permanente' (extracción para Notion, Anki o bitácora de aprendizaje).",
+        "4.3 Evaluación práctica integrada (Theorie und Praxis integrierende Prüfung): sustentación oral de un cuaderno temático ante rúbrica Kinal (>= 75 pts).",
+        "4.4 Compromiso ético: el trabajo bien hecho y la responsabilidad social del conocimiento técnico."
+      ]
+    }
+  ],
+  "terminal_competencies": [
+    {
+      "code": "CT-NLM-01",
+      "title": "Investigación Crítica y Curaduría Documental Rigurosa",
+      "description": "Configurar cuadernos de estudio con fuentes primarias académicamente válidas, garantizando trazabilidad de citas y eliminando alucinaciones conceptuales."
+    },
+    {
+      "code": "CT-NLM-02",
+      "title": "Interrogación Dialéctica y Dominio mediante Técnica Feynman",
+      "description": "Utilizar NotebookLM como tutor personal crítico mediante prompts de alto orden cognitivo, explicando conceptos complejos con claridad y detectando lagunas propias."
+    },
+    {
+      "code": "CT-NLM-03",
+      "title": "Síntesis No Lineal y Conexión de Patrones Complejos",
+      "description": "Extraer pilares conceptuales y discrepancias entre múltiples textos, produciendo guías de estudio estructuradas y aprovechando el formato multimodal."
+    },
+    {
+      "code": "CT-NLM-04",
+      "title": "Ejecución del Protocolo de Estudio Acelerado y Ética Profesional",
+      "description": "Aplicar de manera autónoma la sesión de 90 minutos para dominar temas universitarios, actuando con apego al trabajo bien hecho y rechazando el atajo del copia y pega."
+    }
+  ]
+}

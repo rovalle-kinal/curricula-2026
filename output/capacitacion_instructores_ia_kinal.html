@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Programa de Capacitación Docente: IA para Instructores de Fundación Kinal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.35;
+      color: #2d3748;
+      background-color: #ffffff;
+      margin: 40px auto;
+      max-width: 1050px;
+      padding: 20px;
+    }
+    h1 {
+      color: #1a365d;
+      font-size: 22pt;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: 13pt;
+      color: #4a5568;
+      margin-top: 0px;
+      font-weight: bold;
+      border-bottom: 2px solid #2b6cb0;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #2b6cb0;
+      font-size: 15pt;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+    }
+    h3 {
+      color: #2d3748;
+      font-size: 12pt;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+    th {
+      background-color: #edf2f7;
+      color: #1a202c;
+      border: 1px solid #cbd5e0;
+      padding: 9px;
+      font-weight: bold;
+      text-align: left;
+    }
+    td {
+      border: 1px solid #cbd5e0;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+    tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+    .callout {
+      background-color: #ebf8ff;
+      border-left: 4px solid #3182ce;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 9.5pt;
+    }
+    .quote-box {
+      background-color: #f7fafc;
+      border-left: 4px solid #4a5568;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-style: italic;
+      color: #2d3748;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 8.5pt;
+      font-weight: bold;
+      border-radius: 3px;
+      background-color: #e2e8f0;
+      color: #2b6cb0;
+    }
+    code {
+      font-family: Consolas, monospace;
+      background-color: #edf2f7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 9pt;
+    }
+    pre {
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: Consolas, monospace;
+      font-size: 9pt;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.3;
+    }
+    ul, ol {
+      margin-top: 6px;
+      margin-bottom: 12px;
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA Y FICHA TÉCNICA -->
+  <h1>PROGRAMA DE CAPACITACIÓN DOCENTE: INTELIGENCIA ARTIFICIAL APLICADA A LA PLANIFICACIÓN Y PRODUCCIÓN DIDÁCTICA TÉCNICA</h1>
+  <div class="subtitle">Especialidad en Herramientas Gratuitas, Planificación Curricular, Material Multimodal y Evaluación Socioformativa Kinal</div>
+
+  <table style="width: 100%;">
+    <tr>
+      <td style="font-weight: bold; width: 28%; background-color: #edf2f7;">Institución / Sede</td>
+      <td><strong>Fundación Kinal</strong> — Dirección Académica / Centro de Formación y Capacitación Docente (Guatemala)</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #edf2f7;">Público Destinatario</td>
+      <td>Instructores y Docentes de Carreras Técnicas (CTs: Mecánica, Electricidad, Soldadura, etc.), Tecnologías de la Información (TICs) y Áreas Comunes</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #edf2f7;">Carga Horaria y Formato</td>
+      <td><strong>12 horas cronológicas/pedagógicas</strong> distribuidas en <strong>3 Sábados intensivos</strong> (4 horas por sesión: 08:00 a 12:00 hrs)</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #edf2f7;">Nivel de Referencia</td>
+      <td>Equivalencia <strong>DQR Nivel 5 - 6</strong> (Perfeccionamiento Docente Técnico, Didáctica Dual en Alternancia y Competencia Metodológica)</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #edf2f7;">Política de Herramientas</td>
+      <td><strong>100% Gratuitas (Cero costo de licenciamiento):</strong> Google Gemini, Google NotebookLM, Microsoft Copilot (DALL-E 3), Gamma App (Free), Canva (Free), ChatGPT (Free)</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #edf2f7;">Nota Mínima Aprobatoria</td>
+      <td><strong>75 puntos sobre 100</strong> en la Evaluación Práctica Integrada (<em>Theorie und Praxis integrierende Prüfung</em>) y entregables</td>
+    </tr>
+  </table>
+
+  <!-- SECCIÓN 1: FUNDAMENTACIÓN INSTITUCIONAL, IDEARIO Y CONVIVENCIA -->
+  <h2>1. Fundamentación Institucional: Ideario, Ética Docente y Normativa de Convivencia Kinal</h2>
+  
+  <p>En concordancia con los principios fundacionales de Fundación Kinal, la tecnología y la Inteligencia Artificial no son fines en sí mismos, sino instrumentos pedagógicos para potenciar la educación integral, la excelencia en el oficio y el desarrollo humano.</p>
+
+  <div class="callout">
+    <strong>Citas Textuales Inmutables de Referencia Institucional y Cualificación:</strong>
+    <div class="quote-box">
+      <strong>Misión de Kinal:</strong> "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad".
+    </div>
+    <div class="quote-box">
+      <strong>Valores de Kinal:</strong> "Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable".
+    </div>
+    <div class="quote-box">
+      <strong>Formación Profesional Dual:</strong> "concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa".
+    </div>
+    <div class="quote-box">
+      <strong>Competencia según DQR:</strong> "the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act".
+    </div>
+  </div>
+
+  <h3>Pilares de Convivencia y Ética Digital para los Instructores de Kinal:</h3>
+  <ul>
+    <li><strong>El Trabajo Bien Hecho (Virtud del Acabado y la Verificación):</strong> La IA generativa actúa como co-piloto del instructor, jamás como sustituto del rigor pedagógico. Cada material, evaluación o plan generado con IA debe pasar por la supervisión crítica del docente para garantizar su precisión técnica y su acabado impecable.</li>
+    <li><strong>Respeto a la Dignidad de la Persona y Protección de Datos:</strong> Bajo la normativa de convivencia institucional y el Acuerdo Ministerial 01-2011, queda estrictamente prohibido introducir nombres de alumnos, identificaciones, calificaciones reales o datos personales en herramientas públicas de IA. Toda actividad de corrección o análisis debe ejecutarse con datos anonimizados.</li>
+    <li><strong>Espíritu de Servicio y Enfoque en la Empleabilidad:</strong> Todo el material producido mediante IA debe apuntar directamente a que los jóvenes y adultos adquieran competencias técnicas prácticas que eleven sus oportunidades de inserción laboral formal en la industria.</li>
+    <li><strong>Uso Responsable y Académico de Dispositivos:</strong> Dentro de las instalaciones y aulas virtuales de Kinal, el uso de herramientas digitales se circunscribe con exclusividad a propósitos formativos y de superación técnica.</li>
+  </ul>
+
+  <!-- SECCIÓN 2: PLANIFICACIÓN MACRO CURRICULAR (3 SÁBADOS) -->
+  <h2>2. Planificación Macro Curricular: Estructura Modular de los 3 Sábados (12 Horas)</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 14%;">Sesión / Duración</th>
+        <th style="width: 26%;">Módulo Formativo</th>
+        <th style="width: 12%;">Distribución Horaria</th>
+        <th style="width: 24%;">Herramientas Gratuitas</th>
+        <th style="width: 24%;">Entregable Evaluativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sábado 1</strong><br>(4 Horas / 240m)<br><span class="badge">Presencial</span></td>
+        <td><strong>Módulo 1:</strong> Fundamentos Éticos Kinal, Prompting Pedagógico y Planificación Curricular en Tres Momentos</td>
+        <td>1.5h Teoría/Método<br>2.5h Taller Práctico</td>
+        <td>Google Gemini<br>ChatGPT Free<br>Microsoft Copilot</td>
+        <td>Plan de clase dosificado en 3 momentos pedagógicos (Apertura, Desarrollo y Cierre) con alineación DQR.</td>
+      </tr>
+      <tr>
+        <td><strong>Sábado 2</strong><br>(4 Horas / 240m)<br><span class="badge">Presencial</span></td>
+        <td><strong>Módulo 2:</strong> Producción Didáctica Multimodal: Slides, Recursos Visuales Técnicos y NotebookLM</td>
+        <td>1.0h Demostración<br>3.0h Producción Digital</td>
+        <td>Gamma App (Free)<br>Canva (Free)<br>NotebookLM<br>Copilot Designer</td>
+        <td>Presentación técnica interactiva en Gamma, set de 2 gráficos técnicos y cuaderno NotebookLM con Audio Overview / guión de video.</td>
+      </tr>
+      <tr>
+        <td><strong>Sábado 3</strong><br>(4 Horas / 240m)<br><span class="badge">Presencial</span></td>
+        <td><strong>Módulo 3:</strong> Actividades Formativas Duales, Evaluación Sumativa y Calificación Asistida</td>
+        <td>1.5h Metodología<br>2.5h Simulación y Capstone</td>
+        <td>Google Gemini<br>NotebookLM<br>Hojas de Cálculo</td>
+        <td>Rúbrica analítica socioformativa (corte en 75 pts), simulación de corrección asistida y sustentación del Kit Integral.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 3: DOSIFICACIÓN DETALLADA DE SECUENCIAS DIDÁCTICAS -->
+  <h2>3. Secuencias Didácticas Detalladas por Sesión</h2>
+
+  <h3>SÁBADO 1: Planificación y Dosificación Curricular en Tres Momentos con IA</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Momento y Tiempo</th>
+        <th style="width: 25%;">Actividad del Facilitador</th>
+        <th style="width: 25%;">Actividad del Instructor Participante</th>
+        <th style="width: 18%;">Herramientas Gratuitas</th>
+        <th style="width: 17%;">Criterio e Instrumento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Apertura / Inicio</strong><br>(30 min)</td>
+        <td>Presenta el Ideario de Kinal frente a la innovación tecnológica. Expone los límites éticos: confidencialidad absoluta de los alumnos y búsqueda del trabajo bien hecho. Formula la pregunta reflexiva: <em>"¿Cómo la IA nos ayuda a servir mejor al estudiante sin perder la cercanía humana?"</em>.</td>
+        <td>Participan en un diálogo reflexivo sobre su gestión docente actual. Firman el compromiso de confidencialidad y ética digital Kinal.</td>
+        <td>Presentación introductoria, Decálogo de Ética IA Kinal.</td>
+        <td>Registro de asistencia y autodiagnóstico de necesidades de planificación.</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 1</strong><br>(90 min)</td>
+        <td>Modela la técnica de <em>Prompt Engineering Pedagógico</em> (Marco RCTRF: Rol, Contexto, Tarea, Restricciones, Formato). Realiza demostración en vivo comparativa entre Gemini, ChatGPT free y Copilot para redactar competencias técnicas según el DQR.</td>
+        <td>Configuran sus cuentas gratuitas. Redactan prompts específicos para su materia técnica (mecánica, electricidad, TICs) y comparan los resultados obtenidos hasta alcanzar precisión técnica.</td>
+        <td>Google Gemini<br>ChatGPT Free<br>Microsoft Copilot</td>
+        <td>Prompt testeado y verificado en laboratorio (sin imprecisiones ni alucinaciones).</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 2</strong><br>(70 min)</td>
+        <td>Guía la estructuración de la matriz de dosificación en los 3 momentos pedagógicos:
+          <ol style="margin: 0; padding-left: 15px;">
+            <li><strong>Apertura:</strong> Caso real de taller y seguridad.</li>
+            <li><strong>Desarrollo:</strong> Método de los 4 pasos AEVO y alternancia dual.</li>
+            <li><strong>Cierre:</strong> Verificación, Berichtsheft y metacognición.</li>
+          </ol>
+        </td>
+        <td>Construyen con asistencia de Gemini o ChatGPT la dosificación de 1 unidad temática de su curso técnico, calculando tiempos, dinámicas y recursos.</td>
+        <td>Plantilla de Dosificación Curricular en Google Docs / Sheets.</td>
+        <td>Matriz de dosificación con tiempos congruentes y los 3 momentos explícitos.</td>
+      </tr>
+      <tr>
+        <td><strong>Cierre / Síntesis</strong><br>(50 min)</td>
+        <td>Coordina una ronda de revisión por pares (<em>Peer Review</em>) basada en el valor del trabajo bien hecho. Resalta la necesidad de revisar cada output de la IA antes de aplicarlo en el aula.</td>
+        <td>Intercambian su dosificación con otro instructor, aplican una lista de cotejo y corrigen áreas de mejora. Guardan su avance en la carpeta compartida.</td>
+        <td>Lista de Cotejo de Dosificación Kinal.</td>
+        <td>Lista de cotejo aprobada con nota igual o mayor a 75 puntos.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>SÁBADO 2: Producción Didáctica Multimodal con Herramientas Gratuitas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Momento y Tiempo</th>
+        <th style="width: 25%;">Actividad del Facilitador</th>
+        <th style="width: 25%;">Actividad del Instructor Participante</th>
+        <th style="width: 18%;">Herramientas Gratuitas</th>
+        <th style="width: 17%;">Criterio e Instrumento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Apertura / Inicio</strong><br>(30 min)</td>
+        <td>Presenta el impacto cognitivo de la imagen y el sonido en la educación técnica. Muestra ejemplos de presentaciones tradicionales saturadas de texto vs. presentaciones interactivas y dinámicas.</td>
+        <td>Identifican una lección técnica compleja de sus cursos que requiera soporte visual o auditivo para mejorar la comprensión de los alumnos.</td>
+        <td>Proyector, ejemplos comparativos de diapositivas técnicas.</td>
+        <td>Selección justificada del contenido a transformar en multimodal.</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 1</strong><br>(75 min)</td>
+        <td>Enseña a transformar la planificación del Sábado 1 en una presentación visual completa utilizando <strong>Gamma App</strong> (aprovechando sus 400 créditos gratuitos iniciales) y plantillas técnicas en <strong>Canva Free</strong>.</td>
+        <td>Importan el temario técnico a Gamma App, eligen una paleta institucional y generan una presentación de 8 a 10 láminas. Ajustan textos técnicos y diagramas de seguridad.</td>
+        <td>Gamma App (Free Tier)<br>Canva (Free)</td>
+        <td>Presentación didáctica exportada y validada según principios de diseño y claridad.</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 2</strong><br>(75 min)</td>
+        <td>Explica el concepto de <em>Grounded AI</em> en <strong>Google NotebookLM</strong> (cero alucinación al anclar a manuales PDF). Demuestra cómo crear un <em>Audio Overview</em> (podcast de inmersión técnica) y cómo generar imágenes industriales con <strong>Copilot Designer</strong> (DALL-E 3 gratuito).</td>
+        <td>Cargan un manual técnico y el Ideario Kinal en NotebookLM. Generan una cápsula de audio y extraen guiones para microvideos. Diseñan 2 imágenes técnicas ilustrativas con Microsoft Copilot.</td>
+        <td>Google NotebookLM<br>Microsoft Copilot (Designer gratuito)</td>
+        <td>Cuaderno configurado con fuentes técnicas + audio/guión + 2 imágenes didácticas.</td>
+      </tr>
+      <tr>
+        <td><strong>Cierre / Síntesis</strong><br>(40 min)</td>
+        <td>Organiza la "Galería Multimodal del Instructor Kinal". Realiza preguntas socráticas sobre la fidelidad de las fuentes cargadas en NotebookLM para prevenir invenciones de la IA.</td>
+        <td>Exponen en 2 minutos su set de materiales multimodales frente a sus compañeros y reciben retroalimentación estética y pedagógica.</td>
+        <td>Proyector / Estaciones de trabajo del laboratorio.</td>
+        <td>Rúbrica de Material Multimodal (Umbral mínimo: 75 puntos).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>SÁBADO 3: Actividades Formativas Duales, Evaluación Sumativa y Calificación Asistida</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Momento y Tiempo</th>
+        <th style="width: 25%;">Actividad del Facilitador</th>
+        <th style="width: 25%;">Actividad del Instructor Participante</th>
+        <th style="width: 18%;">Herramientas Gratuitas</th>
+        <th style="width: 17%;">Criterio e Instrumento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Apertura / Inicio</strong><br>(30 min)</td>
+        <td>Explica la filosofía evaluativa de Kinal: la evaluación es formativa y de servicio, orientada a la superación de la persona. Reitera la norma oficial: la nota mínima aprobatoria es de <strong>75 puntos sobre 100</strong> tanto en cursos como en suficiencias.</td>
+        <td>Debaten sobre el tratamiento pedagógico del alumno con rendimiento inferior a 75 puntos y cómo la retroalimentación oportuna rescata su motivación.</td>
+        <td>Normativa de Evaluación Kinal, Pizarra de discusión.</td>
+        <td>Comprensión del estándar de suficiencia de 75 puntos.</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 1</strong><br>(80 min)</td>
+        <td>Modela la formulación de actividades formativas situadas en el entorno productivo real: Aprendizaje Basado en Problemas (ABP), casos de falla en maquinaria y preguntas situacionales de alto orden cognitivo.</td>
+        <td>Generan con Gemini o ChatGPT un estudio de caso técnico contextualizado en una empresa guatemalteca real y diseñan un banco de 5 preguntas formativas situacionales.</td>
+        <td>Google Gemini<br>ChatGPT Free</td>
+        <td>Caso de estudio técnico y banco de reactivos alineados a la realidad laboral.</td>
+      </tr>
+      <tr>
+        <td><strong>Desarrollo 2</strong><br>(70 min)</td>
+        <td>Enseña a construir rúbricas analíticas socioformativas con 4 niveles de desempeño (Insuficiente &lt;75, Aceptable 75-84, Bueno 85-94, Excelente 95-100). Enseña el protocolo ético de retroalimentación asistida con IA usando respuestas anonimizadas.</td>
+        <td>Construyen una rúbrica analítica completa para una evaluación sumativa práctica. Simulan la corrección de respuestas anonimizadas y generan borradores de retroalimentación constructiva con IA.</td>
+        <td>Google Sheets / Docs<br>Google Gemini<br>ChatGPT Free</td>
+        <td>Rúbrica analítica calibrada con escala institucional y borrador de retroalimentación.</td>
+      </tr>
+      <tr>
+        <td><strong>Cierre / Capstone</strong><br>(40 min)</td>
+        <td>Aplica la Evaluación Práctica Integrada (<em>Theorie und Praxis integrierende Prüfung</em>). Audita el cumplimiento de la política de datos y la coherencia del Kit Didáctico del Instructor.</td>
+        <td>Sustentan su <strong>Kit Didáctico Integral</strong> (Planificación + Diapositivas + Cuaderno NotebookLM + Rúbrica sumativa). Firman su compromiso de aplicación en el ciclo lectivo Kinal.</td>
+        <td>Carpeta digital en Google Drive Kinal.</td>
+        <td>Evaluación Práctica Integrada (Nota mínima requerida: 75 puntos sobre 100).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 4: CAJA DE HERRAMIENTAS GRATUITAS -->
+  <h2>4. Catálogo de Herramientas Gratuitas de IA (Cero Costo)</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 20%;">Herramienta</th>
+        <th style="width: 25%;">Acceso Web</th>
+        <th style="width: 30%;">Aplicación Pedagógica en Kinal</th>
+        <th style="width: 25%;">Ventaja del Plan Gratuito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Google Gemini</strong></td>
+        <td><code>gemini.google.com</code></td>
+        <td>Planificación de secuencias didácticas, redacción de casos de estudio, reactivos situacionales y estructuración de objetivos formativos.</td>
+        <td>100% gratuito e ilimitado con cualquier cuenta de Google institucional o personal; rapidez y ventana amplia de contexto.</td>
+      </tr>
+      <tr>
+        <td><strong>Google NotebookLM</strong></td>
+        <td><code>notebooklm.google.com</code></td>
+        <td>Asistente de lectura y curaduría de manuales técnicos en PDF, reglamentos e Ideario Kinal sin alucinación. Generación de podcasts formativos (<em>Audio Overviews</em>) y guiones de microaprendizaje.</td>
+        <td>100% gratuito. Permite cargar hasta 50 fuentes documentales por cuaderno y cita textualmente las páginas de referencia.</td>
+      </tr>
+      <tr>
+        <td><strong>Microsoft Copilot</strong></td>
+        <td><code>copilot.microsoft.com</code></td>
+        <td>Generación de imágenes técnicas, diagramas de equipos, ilustraciones de seguridad industrial y apoyo en redacción pedagógica.</td>
+        <td>Gratuito con cuenta Microsoft personal o educativa. Incluye generación de imágenes de alta resolución mediante DALL-E 3 sin costo adicional.</td>
+      </tr>
+      <tr>
+        <td><strong>Gamma App</strong></td>
+        <td><code>gamma.app</code></td>
+        <td>Generación automática de presentaciones de diapositivas interactivas a partir de temarios o notas de clase.</td>
+        <td>Plan gratuito que otorga 400 créditos de bienvenida, permitiendo crear múltiples presentaciones completas y exportarlas a PDF o PPTX.</td>
+      </tr>
+      <tr>
+        <td><strong>Canva</strong></td>
+        <td><code>canva.com</code></td>
+        <td>Diseño de infografías técnicas, esquemas de procesos de taller, carteles de seguridad industrial y material visual de apoyo.</td>
+        <td>Plan gratuito muy robusto con miles de plantillas, iconos vectoriales y herramientas de diseño sin coste.</td>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT</strong></td>
+        <td><code>chatgpt.com</code></td>
+        <td>Co-piloto pedagógico para lluvia de ideas didácticas, elaboración de analogías técnicas y diseño de reactivos de evaluación.</td>
+        <td>Acceso gratuito permanente a modelos avanzados (GPT-4o mini / cuota diaria GPT-4o) sin tarjeta de crédito.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 5: BANCO DE PROMPTS MAESTROS -->
+  <h2>5. Banco de Prompts Maestros para Instructores de Kinal</h2>
+
+  <h3>Prompt 1: Dosificación en Tres Momentos y Formación Dual (Gemini / ChatGPT)</h3>
+  <pre>Actúa como un experto en Diseño Curricular para la Educación Técnico-Profesional de Fundación Kinal, alineado al Marco DQR Nivel 5/6 y al Sistema Dual de Formación en Alternancia.
+
+Contexto:
+Imparto la materia de [Insertar especialidad: ej. Controladores Lógicos Programables PLC / Mecánica Automotriz].
+Nivel de los estudiantes: Jóvenes de Carreras Técnicas con alta aspiración laboral y apego a la normativa de convivencia.
+
+Tarea:
+Diseña una secuencia didáctica para una sesión de [Insertar número de horas: ej. 4 horas] sobre el tema: [Insertar tema: ej. Diagnóstico de Fallas en Sensores Inductivos].
+
+Requisitos Obligatorios:
+1. Divide la sesión estrictamente en tres momentos pedagógicos:
+   - Apertura (20% del tiempo): Activación de saberes previos con un problema real de empresa/taller, verificación de normas de seguridad y motivación fundamentada en el valor del trabajo bien hecho.
+   - Desarrollo (60% del tiempo): Práctica guiada con la técnica de los 4 pasos AEVO (El instructor explica y demuestra, el aprendiz imita y explica, el aprendiz ejercita solo, control conjunto), trabajo en equipo y resolución técnica.
+   - Cierre (20% del tiempo): Síntesis metacognitiva, registro en el cuaderno de aprendizaje (Berichtsheft) y autoevaluación contra estándares de calidad técnica.
+2. Presenta el resultado en una tabla con columnas: Momento, Tiempo estimado, Actividad del Docente, Actividad del Estudiante, Recursos y Criterio de Logro.</pre>
+
+  <h3>Prompt 2: Generación de Guión Técnico y Audio Overview en NotebookLM</h3>
+  <pre>(Utilizar dentro de Google NotebookLM tras haber cargado el manual técnico y el Ideario Kinal en el cuaderno):
+
+A partir de las fuentes técnicas cargadas en este cuaderno:
+1. Extrae los 5 principios operativos o procedimientos críticos que todo técnico debe dominar con absoluta precisión para evitar accidentes y garantizar un trabajo bien hecho.
+2. Redacta un guión estructurado de 3 minutos para un microvideo explicativo destinado a estudiantes técnicos, con lenguaje riguroso, claro y motivador.
+3. Genera 3 preguntas dialécticas de desenmascaramiento conceptual para poner a prueba si los estudiantes realmente comprenden el principio de funcionamiento físico/lógico o si solo están memorizando pasos mecánicamente.
+4. Asegúrate de incluir las citas exactas de las fuentes cargadas mediante chips de referencia.</pre>
+
+  <h3>Prompt 3: Rúbrica Analítica Socioformativa con Umbral de 75 Puntos</h3>
+  <pre>Actúa como especialista en evaluación por competencias de Fundación Kinal.
+Diseña una rúbrica analítica para evaluar una práctica sumativa de taller sobre: [Insertar práctica: ej. Instalación y Puesta en Marcha de un Motor Trifásico].
+
+Reglas Institucionales Obligatorias:
+1. La nota mínima de aprobación es estrictamente de 75 puntos sobre 100.
+2. Establece 4 niveles de desempeño claramente diferenciados:
+   - Excelente (95 a 100 puntos): Dominio técnico impecable, autonomía, orden, limpieza y aplicación rigurosa de normas de seguridad.
+   - Bueno (85 a 94 puntos): Ejecución correcta con mínimas imprecisiones resueltas con prontitud; buen acabado.
+   - Aceptable / Suficiencia Mínima (75 a 84 puntos): Cumple con los requisitos funcionales básicos pero requiere supervisión en detalles de acabado o velocidad.
+   - Insuficiente (&lt; 75 puntos - No Aprobado): Fallas críticas de funcionamiento, omisión de normas de seguridad o descuido en el equipo.
+3. Criterios de evaluación a incluir:
+   - Criterio 1: Conocimiento técnico y secuenciación del procedimiento (25%).
+   - Criterio 2: Destreza instrumental y manejo seguro de herramientas/equipos (35%).
+   - Criterio 3: Calidad del acabado y estándar de "Trabajo Bien Hecho" (20%).
+   - Criterio 4: Actitud profesional, orden, limpieza y respeto a las normas de convivencia (20%).
+4. Presenta la rúbrica en formato de tabla para fácil impresión y registro en el cuaderno evaluativo.</pre>
+
+  <!-- SECCIÓN 6: SISTEMA DE EVALUACIÓN Y ACREDITACIÓN -->
+  <h2>6. Sistema de Evaluación y Certificación del Curso Docente</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Componente Evaluativo</th>
+        <th style="width: 15%;">Ponderación</th>
+        <th style="width: 35%;">Descripción del Entregable</th>
+        <th style="width: 25%;">Criterio Institucional</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Entregable Sábado 1</strong></td>
+        <td>20%</td>
+        <td>Plan de clase dosificado en tres momentos pedagógicos (Apertura, Desarrollo, Cierre) para 1 unidad técnica.</td>
+        <td>Rigor metodológico y contextualización en alternancia dual taller-empresa.</td>
+      </tr>
+      <tr>
+        <td><strong>Entregable Sábado 2</strong></td>
+        <td>30%</td>
+        <td>Paquete de Recursos Multimodales: Presentación en Gamma/Canva + Cuaderno NotebookLM con audio/guión + 2 imágenes técnicas en Copilot.</td>
+        <td>Claridad visual, fuentes técnicas validadas sin alucinación y valor del trabajo bien hecho.</td>
+      </tr>
+      <tr>
+        <td><strong>Evaluación Práctica Integrada (Sábado 3)</strong></td>
+        <td>50%</td>
+        <td>Sustentación del <strong>Kit Didáctico Integral del Instructor Kinal</strong>: articulación de la planificación, el material didáctico, la rúbrica analítica y la simulación de retroalimentación asistida con datos anonimizados.</td>
+        <td><strong>Nota Mínima Aprobatoria: 75 puntos sobre 100</strong> (conforme normativa Kinal).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="text-align: center; margin-top: 30px;">
+    <strong>Fundación Kinal — Hacia la Excelencia Técnica y Humana</strong><br>
+    <em>"El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa"</em>
+  </div>
+
+</body>
+</html>

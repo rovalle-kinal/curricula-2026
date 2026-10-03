@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Taller Universitario de Aprendizaje Acelerado con NotebookLM: Método MIT y Tutoría Dialéctica (8 Horas)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.35;
+      color: #2d3748;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 35px;
+      background-color: #ffffff;
+    }
+    h1 {
+      color: #1a365d;
+      font-size: 23pt;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    h2 {
+      color: #2b6cb0;
+      font-size: 15pt;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 6px;
+    }
+    h3 {
+      color: #2d3748;
+      font-size: 11.5pt;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-top: 6px;
+      margin-bottom: 12px;
+      font-size: 10pt;
+      text-align: justify;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+    th {
+      background-color: #edf2f7;
+      color: #2d3748;
+      text-align: left;
+      border: 1px solid #cbd5e0;
+      padding: 8px 10px;
+      font-weight: bold;
+    }
+    td {
+      border: 1px solid #cbd5e0;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+    tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+    .quote-box {
+      background-color: #ebf8ff;
+      border-left: 4px solid #3182ce;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-size: 9.5pt;
+      color: #2b6cb0;
+    }
+    .prompt-card {
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #4a5568;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 9pt;
+      font-family: Consolas, "Courier New", monospace;
+      color: #1a202c;
+      border-radius: 4px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #edf2f7;
+      color: #2d3748;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 8pt;
+    }
+    ol, ul {
+      font-size: 10pt;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SECCIÓN A: PORTADA Y FICHA TÉCNICA DEL TALLER -->
+<h1 style="color: #1a365d; font-family: Arial, sans-serif; font-size: 23pt; margin-bottom: 6px;">TALLER UNIVERSITARIO DE APRENDIZAJE ACELERADO CON NOTEBOOKLM</h1>
+<p style="font-size: 13.5pt; color: #4a5568; margin-top: 0px; font-weight: bold;">El Método MIT y la Tutoría Dialéctica: Memoria Semántica, Técnica Feynman y Superación de la Ilusión de Competencia (8 Horas)</p>
+
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 10pt; margin-top: 20px; margin-bottom: 25px;">
+  <tr style="background-color: #f7fafc;">
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; width: 28%; color: #2d3748;">Institución / Sede</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">Fundación Kinal - Escuela Técnica Superior / Educación Universitaria (Guatemala)</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; color: #2d3748;">Nivel de Referencia</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">Equivalencia DQR Nivel 5 - 6 (Especialización Metodológica, Investigación Rigurosa y Autonomía Intelectual)</td>
+  </tr>
+  <tr style="background-color: #f7fafc;">
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; color: #2d3748;">Duración Total</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">8 horas pedagógicas intensivas (2.5 horas de teoría cognitiva y metodológica + 5.5 horas de laboratorio práctico guiado)</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; color: #2d3748;">Perfil de Ingreso</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">Estudiantes universitarios que enfrentan una alta carga de lecturas técnicas, exámenes de especialidad y proyectos de investigación, con disposición al rigor intelectual y puntualidad estricta.</td>
+  </tr>
+  <tr style="background-color: #f7fafc;">
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; color: #2d3748;">Perfil de Egreso</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">Estudiante capaz de emplear NotebookLM como un tutor socrático implacable, aplicando la técnica Feynman para validar su entendimiento profundo, ejecutando el protocolo de estudio activo de 90 minutos y construyendo kits de repaso permanente con apego estricto al trabajo bien hecho.</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; font-weight: bold; color: #2d3748;">Nota Mínima Aprobatoria</td>
+    <td style="border: 1px solid #cbd5e0; padding: 10px; color: #2d3748;">75 puntos sobre 100 en la sustentación práctica integrada (Theorie und Praxis integrierende Prüfung).</td>
+  </tr>
+</table>
+
+<!-- SECCIÓN 1: FUNDAMENTACIÓN COGNITIVA Y PRINCIPIOS ÉTICOS -->
+<h2>1. Fundamentación Cognitiva y Principios Éticos</h2>
+<p>Basado en la investigación contemporánea sobre neurociencia del aprendizaje y en la metodología viral del creador <strong>Migue Baena IA</strong> (<em>"El método MIT para aprender cualquier tema en 90 minutos con NotebookLM"</em>), este curso ataca directamente la mayor causa de fracaso en la educación superior: <strong>la ilusión de competencia</strong>.</p>
+
+<p>La mayoría de estudiantes pasan horas releyendo textos y subrayando párrafos. Estas actividades activan únicamente el reconocimiento pasivo: el cerebro reconoce el texto al verlo y confunde familiaridad con dominio. Al llegar al examen o intentar resolver problemas sin las notas, la ilusión colapsa. La <strong>memoria semántica</strong>, por el contrario, requiere construir una red de significado profundo, donde cada concepto está conectado con causas, consecuencias y aplicaciones prácticas.</p>
+
+<div class="quote-box">
+  <strong>Principio Fundamental de Grounded AI:</strong><br>
+  NotebookLM no es un chatbot generalista que inventa o alucina información. Es una arquitectura de <em>Inteligencia Artificial Fundamentada (Grounded AI)</em> anclada estrictamente a los documentos que tú subes. Al interrogarlo, no buscas que te haga un resumen facilista, sino que actúe como un tutor crítico que audita tu comprensión y desenmascara tus lagunas conceptuales.
+</div>
+
+<div class="quote-box">
+  <strong>Misión y Valores de Fundación Kinal:</strong><br>
+  <strong>Misión:</strong> "Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad".<br>
+  <strong>Valores Nucleares:</strong> "Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable".
+</div>
+
+<div class="quote-box">
+  <strong>Concepto de Competencia en el DQR:</strong><br>
+  "the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act".
+</div>
+
+<p><strong>Normativa de Convivencia y Ética Digital:</strong> Conforme al reglamento de Kinal, los dispositivos digitales se emplean con fines estrictamente académicos. Se rechaza categóricamente el atajo facilista del 'copia y pega'. La IA en este taller es un instrumento de exigencia y superación personal, orientada a formar profesionales con verdadero dominio técnico y sentido de servicio.</p>
+
+<!-- SECCIÓN 2: TABLA 1 - DOSIFICACIÓN MACROCURRICULAR -->
+<h2>Tabla 1: Planificación Macro Curricular del Taller (8 Horas)</h2>
+
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 9pt; margin-top: 15px; margin-bottom: 25px;">
+  <thead>
+    <tr style="background-color: #edf2f7; color: #2d3748; text-align: left;">
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">Bloque / Módulo</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 10%;">Nivel DQR</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 10%;">Teoría</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 10%;">Práctica</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 25%;">Enfoque Metodológico</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 25%;">Hito Evaluativo Clave</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Bloque 1:</strong> Fundamentos de Grounded AI y Superación de la Ilusión de Competencia</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">DQR 5</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">45 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">75 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Desmontar la trampa de la relectura pasiva y el subrayado; comprender el modelo Grounded AI; curaduría y carga de fuentes primarias rigurosas.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Cuaderno universitario configurado con al menos 3 fuentes primarias validadas (Mínimo: 75 pts).</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Bloque 2:</strong> La Técnica Feynman y NotebookLM como Tutor Dialéctico (Método MIT)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">DQR 5 - 6</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">30 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">90 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Paso de la lectura lineal pasiva a la interrogación analítica; formulación de la prueba de Feynman; prompts que 'desenmascaran' lagunas conceptuales.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Simulación de examen oral con NotebookLM: resolución y corrección de 3 preguntas de desenmascaramiento.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Bloque 3:</strong> Síntesis Avanzada, Relaciones Ocultas y Multimodalidad (Audio Overview)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">DQR 6</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">30 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">90 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Extracción de patrones y contradicciones entre autores; generación de guías para Flipped Classroom; análisis del Audio Overview (podcast) y redacción propia.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Guía de Discusión Previa a Clase con tabla comparativa de variables y citas trazables.</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Bloque 4:</strong> Taller de Aplicación: Protocolo de Estudio de 90 Minutos y Evaluación Capstone</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">DQR 6</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">45 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">75 min</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Ejecución cronometrada del protocolo de 90 minutos para abordar un tema nuevo; armado del Kit de Repaso Permanente; evaluación terminal y ética profesional.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Evaluación integrada (Theorie und Praxis integrierende Prüfung): defensa técnica del cuaderno ante rúbrica Kinal (&ge; 75 pts).</td>
+    </tr>
+    <tr style="background-color: #edf2f7; font-weight: bold;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">TOTALES DEL TALLER</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">DQR 5 - 6</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">2.5 hrs</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">5.5 hrs</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;" colspan="2">8 horas pedagógicas intensivas (Umbral aprobatorio: &ge; 75 puntos)</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECCIÓN 3: TABLA 2 - MICRODISEÑO DE SECUENCIAS DIDÁCTICAS -->
+<h2>Tabla 2: Secuencias Didácticas Detalladas (Microdiseño de Bloques de 2 Horas)</h2>
+
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 8.5pt; margin-top: 15px; margin-bottom: 25px;">
+  <thead>
+    <tr style="background-color: #edf2f7; color: #2d3748; text-align: left;">
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 14%;">Bloque / Fase</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 22%;">Actividad Docente / Tutor</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 22%;">Actividad Participante / Aprendiz</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">Recursos y Entorno</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 22%;">Criterios de Evaluación e Instrumento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- BLOQUE 1 -->
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;" rowspan="3"><strong>Bloque 1:</strong><br>Fundamentos de Grounded AI y Memoria Semántica (2h)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Apertura (20 min):</strong> Plantea el dilema del estudiante: 'Estudié 6 horas releyendo pero en el examen me bloqueo'. Explica la ilusión de competencia y la memoria semántica. Presenta el ideario Kinal (esfuerzo honesto vs facilismo).</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Participa en sondeo interactivo sobre hábitos de estudio; identifica trampas de la relectura pasiva y reflexiona sobre el valor moral del rigor intelectual.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Pizarra técnica; infografía comparativa entre reconocimiento pasivo y memoria semántica.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Autorreflexión crítica sobre hábitos de estudio propios.<br><strong>Instrumento:</strong> Cuestionario diagnóstico de autorregulación.</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Desarrollo (75 min):</strong> Demuestra la diferencia entre LLMs abiertos (alucinaciones) y NotebookLM (anclaje documental estricto). Enseña la jerarquía de fuentes primarias y guía la creación del cuaderno.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Abre NotebookLM, crea su cuaderno universitario para una materia real y carga al menos 3 fuentes primarias (paper científico, capítulo de libro y apuntes). Verifica la trazabilidad haciendo clic en las citas numéricas.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Laboratorio de cómputo; repositorio de PDFs universitarios.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Criterio riguroso en selección y anclaje de fuentes primarias.<br><strong>Instrumento:</strong> Lista de cotejo técnica (&ge;75 pts).</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Cierre (25 min):</strong> Revisa cuadernos en pantalla compartida destacando el orden y la pertinencia de las fuentes. Recuerda la normativa de Kinal sobre el uso exclusivo académico de computadoras.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Registra en su bitácora digital: título del cuaderno, justificación de confiabilidad de las fuentes cargadas y su meta de estudio para el Bloque 2.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; Bitácora de Aprendizaje.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Justificación documental y compromiso ético.<br><strong>Instrumento:</strong> Cotejo de bitácora formativa.</td>
+    </tr>
+
+    <!-- BLOQUE 2 -->
+    <tr style="background-color: #edf2f7;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;" rowspan="3"><strong>Bloque 2:</strong><br>La Técnica Feynman y NotebookLM como Tutor Dialéctico (2h)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Apertura (20 min):</strong> Presenta la Técnica Feynman y la máxima: 'Si no puedes explicarlo de forma sencilla, no lo has entendido de verdad'. Enseña a abandonar la lectura lineal por la interrogación activa.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Intenta explicar en 60 segundos a su compañero un concepto técnico difícil sin recurrir a tecnicismos vacíos; evalúan mutuamente las dificultades de simplificar.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Pizarra interactiva; fragmento de la técnica Feynman.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Reconocimiento de vacíos de razonamiento.<br><strong>Instrumento:</strong> Coevaluación breve entre pares.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Desarrollo (75 min):</strong> Modela el 'Prompt de Feynman' y el 'Prompt de Desenmascaramiento'. Muestra cómo pedir a NotebookLM que critique la explicación del alumno, señalando omisiones y contradicciones con las fuentes.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">En NotebookLM ejecuta: 1) Prompt Feynman para extraer los 3 conceptos nucleares; 2) Escribe su propia explicación del tema y pide a la IA que la evalúe con rigor; 3) Solicita 5 preguntas de desenmascaramiento y las resuelve.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; Banco Oficial de Prompts del Taller.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Capacidad dialéctica para interrogar la IA y asimilar correcciones.<br><strong>Instrumento:</strong> Escala de valoración de diálogo socrático (&ge;75 pts).</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Cierre (25 min):</strong> Modera debate en plenaria: ¿Qué lagunas descubrieron que creían dominar? Enfatiza la humildad intelectual y el valor del trabajo bien hecho frente a la superficialidad.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Documenta en su bitácora las 2 preguntas de desenmascaramiento más retadoras y redacta la respuesta corregida y sustentada con las citas de NotebookLM.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; Bitácora de Aprendizaje.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Corrección conceptual fundamentada con evidencia.<br><strong>Instrumento:</strong> Verificación de respuestas en bitácora.</td>
+    </tr>
+
+    <!-- BLOQUE 3 -->
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;" rowspan="3"><strong>Bloque 3:</strong><br>Síntesis Avanzada, Relaciones Ocultas y Multimodalidad (2h)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Apertura (20 min):</strong> Introduce el 'Pensamiento Sintético No Lineal': entender el panorama completo antes de descender al detalle. Presenta la herramienta de Audio Overview (Deep Dive) de NotebookLM.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Escucha 3 minutos de un Audio Overview pre-generado; identifica cómo los dos presentadores debaten tensiones y contradicciones entre las fuentes.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Sistema de audio; ejemplo de Audio Overview pre-generado.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Comprensión auditiva de tensiones dialécticas complejas.<br><strong>Instrumento:</strong> Preguntas en plenaria.</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Desarrollo (75 min):</strong> Enseña a generar matrices comparativas entre autores discrepantes y guías de discusión para el 'Aula Invertida' (Flipped Classroom). Explica la personalización del Audio Overview.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">1) Genera una tabla comparativa con variables técnicas de sus documentos; 2) Solicita una guía de discusión previa con 5 preguntas provocadoras para su clase universitaria; 3) Genera y escucha su propio Audio Overview tomando notas.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; auriculares personales; fuentes cargadas.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Calidad de la guía de discusión y rigor de la tabla comparativa.<br><strong>Instrumento:</strong> Rúbrica de artefactos de estudio (&ge;75 pts).</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Cierre (25 min):</strong> Enfatiza la estrategia de llegar a la universidad no a ser un espectador pasivo, sino a liderar la discusión académica con las preguntas difíciles descubiertas en NotebookLM.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Redacta con sus propias palabras una síntesis de media página integrando lo aprendido del audio y los textos, rechazando el copia y pega.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; Bitácora de Aprendizaje.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Originalidad y síntesis conceptual con voz propia.<br><strong>Instrumento:</strong> Evaluación de síntesis en bitácora.</td>
+    </tr>
+
+    <!-- BLOQUE 4 -->
+    <tr style="background-color: #edf2f7;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;" rowspan="3"><strong>Bloque 4:</strong><br>Protocolo de 90 Minutos y Evaluación Capstone (2h)</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Apertura (20 min):</strong> Explica el cronograma del 'Protocolo de 90 Minutos del Método MIT' (Inmersión, Feynman, Desenmascaramiento y Kit Permanente). Recuerda la mística del trabajo bien hecho de Kinal.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Revisa las fuentes del tema nuevo que abordará en la sesión intensiva; prepara su entorno de trabajo y activa el cronómetro de foco profundo.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Guía impresa del Protocolo de 90 Minutos; cronómetro visible.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Disposición metódica y disciplina de estudio.<br><strong>Instrumento:</strong> Lista de cotejo de preparación del entorno.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Desarrollo (75 min):</strong> Supervisa en vivo la sesión intensiva en el laboratorio. Atiende dudas metodológicas, asegura el estricto cumplimiento de cada fase y evalúa el proceso autónomo del estudiante.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Ejecuta el protocolo de 90 minutos: 1) Carga fuentes y extrae los 5 pilares; 2) Pasa la prueba de Feynman; 3) Responde a 3 preguntas de desenmascaramiento; 4) Arma su Kit de Repaso Permanente con 10 pares de preguntas y respuestas atómicas.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">NotebookLM; computador personal; temporizador.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Autonomía de ejecución y calidad del Kit de Repaso Permanente.<br><strong>Instrumento:</strong> Rúbrica analítica terminal de desempeño (&ge;75 pts).</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Cierre (25 min):</strong> Califica la sustentación oral del cuaderno de cada aprendiz conforme a la rúbrica terminal. Entrega retroalimentación y preside el cierre del taller enfatizando la responsabilidad del conocimiento.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Sustenta en 2 minutos su cuaderno ante el instructor: demuestra el mapa conceptual, la prueba de Feynman y su kit de repaso. Firma su compromiso de estudio continuo y trabajo bien hecho.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Rúbrica terminal Kinal; certificados de acreditación.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Criterio:</strong> Dominio técnico, solidez conceptual y claridad expositiva.<br><strong>Instrumento:</strong> Calificación terminal integral (&ge;75 pts).</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECCIÓN 4: PROTOCOLO DE LA SESIÓN DE ESTUDIO DE 90 MINUTOS -->
+<h2>4. Protocolo de la Sesión de Estudio de 90 Minutos (Guía Paso a Paso para el Estudiante)</h2>
+<p>Inspirado en la rutina de alto rendimiento de estudiantes del MIT adaptada por Migue Baena, este protocolo permite dominar un tema técnico universitario complejo en una única sesión estructurada:</p>
+
+<ol>
+  <li><strong>Fase 1: Curaduría e Inmersión Inicial (Minutos 0 a 15)</strong>
+    <ul>
+      <li>Crea un cuaderno exclusivo para el tema en NotebookLM.</li>
+      <li>Carga entre 3 y 5 fuentes primarias de alta calidad (no apuntes dispersos de internet).</li>
+      <li>Aplica el <em>Prompt 1 (Feynman y Pilares)</em> para identificar los 5 conceptos nucleares y las relaciones de causa-efecto entre ellos.</li>
+    </ul>
+  </li>
+  <li><strong>Fase 2: Interrogación Profunda y Prueba de Feynman (Minutos 15 a 45)</strong>
+    <ul>
+      <li>Lee los pasajes citados por la herramienta para verificar las fuentes de primera mano.</li>
+      <li>Escribe en el chat tu propia explicación del tema con lenguaje sencillo y solicita a NotebookLM que evalúe tu respuesta señalando errores lógicos o vacíos.</li>
+    </ul>
+  </li>
+  <li><strong>Fase 3: Autoevaluación Implacable y Desenmascaramiento (Minutos 45 a 70)</strong>
+    <ul>
+      <li>Ejecuta el <em>Prompt 2 (Desenmascaramiento)</em> para generar 5 preguntas difíciles sobre contradicciones o excepciones.</li>
+      <li>Responde a las preguntas sin mirar las fuentes y somete tus respuestas a la crítica socrática de NotebookLM mediante el <em>Prompt 3</em>.</li>
+    </ul>
+  </li>
+  <li><strong>Fase 4: Consolidación y Armado del Kit de Repaso Permanente (Minutos 70 a 90)</strong>
+    <ul>
+      <li>Ejecuta el <em>Prompt 5 (Kit de Repaso)</em> para extraer los postulados no negociables y las fórmulas/variables clave.</li>
+      <li>Exporta las 10 preguntas atómicas hacia tu software de repetición espaciada (Anki) o tu segundo cerebro (Notion).</li>
+    </ul>
+  </li>
+</ol>
+
+<!-- SECCIÓN 5: BANCO OFICIAL DE PROMPTS DIALÉCTICOS -->
+<h2>5. Banco Oficial de Prompts Dialécticos y de Desenmascaramiento</h2>
+
+<div class="prompt-card">
+  <strong>PROMPT 1: La Prueba de Feynman y Pilares Conceptuales</strong><br>
+  "Actúa como un profesor universitario riguroso. Basándote únicamente en las fuentes que he subido, explica qué conceptos nucleares debo dominar absolutamente para poder enseñarle este tema a un estudiante de primer año sin utilizar jerga técnica vacía. Elabora además un mapa de relaciones de causa-efecto entre estos conceptos."
+</div>
+
+<div class="prompt-card">
+  <strong>PROMPT 2: Preguntas de Desenmascaramiento (Detectar Lagunas Ocultas)</strong><br>
+  "Actúa como un evaluador implacable del MIT. Analiza los documentos cargados y genera las 5 preguntas conceptuales más difíciles que desenmascararían a un estudiante que sólo memorizó el texto superficialmente pero no entiende los mecanismos de causa-efecto subyacentes ni cómo resolver problemas reales."
+</div>
+
+<div class="prompt-card">
+  <strong>PROMPT 3: Evaluación Socrática de la Respuesta del Estudiante</strong><br>
+  "A continuación te presento mi respuesta a la pregunta técnica [X]: '[Inserta aquí tu respuesta]'. Evalúa críticamente mi razonamiento basándote únicamente en las fuentes cargadas. Señala con precisión: 1) Aciertos conceptuales; 2) Ambigüedades o errores lógicos; 3) Elementos críticos de las fuentes que omití. Asigna una calificación de 0 a 100 justificando cada deducción de puntos."
+</div>
+
+<div class="prompt-card">
+  <strong>PROMPT 4: Contradicciones, Matices y Comparación de Autores</strong><br>
+  "Compara las diferentes fuentes cargadas en este cuaderno. ¿En qué puntos discrepan los autores o qué matices metodológicos diferencian sus posturas? Elabora una matriz comparativa con citas textuales exactas de cada documento."
+</div>
+
+<div class="prompt-card">
+  <strong>PROMPT 5: Kit de Repaso Permanente (Listo para Anki / Notion)</strong><br>
+  "Sintetiza todo el material del cuaderno en un Kit de Repaso Permanente estructurado en: 1) Los 5 postulados no negociables del tema; 2) Una tabla con las fórmulas/variables clave y su significado conceptual; 3) Diez pares de preguntas y respuestas atómicas formuladas bajo el principio del Active Recall para preparar exámenes."
+</div>
+
+<!-- SECCIÓN 6: RÚBRICA INTEGRAL DE EVALUACIÓN TERMINAL -->
+<h2>6. Rúbrica Integral de Evaluación Terminal (Alineada a DQR 5-6 y Modelo Kinal)</h2>
+
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 9pt; margin-top: 15px; margin-bottom: 25px;">
+  <thead>
+    <tr style="background-color: #edf2f7; color: #2d3748; text-align: left;">
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">Dimensión Evaluada</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">Excelente (90 - 100 pts)</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">Satisfactorio (&ge;75 - 89 pts)</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">En Desarrollo (60 - 74 pts)</th>
+      <th style="border: 1px solid #cbd5e0; padding: 8px; font-weight: bold; width: 20%;">No Aprobado (&lt;60 pts)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Competencia Profesional:</strong><br>Curaduría de Fuentes y Grounded AI</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Curaduría impecable de fuentes primarias rigurosas; verificación sistemática de citas trazables; erradicación total de alucinaciones en sus cuadernos de estudio.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Carga fuentes académicas válidas y verifica las citas principales. Demuestra dominio del entorno sin supervisión mayor (&ge;75 pts).</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Utiliza fuentes secundarias poco rigurosas o no verifica las citas de la herramienta; muestra dudas en el manejo del cuaderno.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Incapacidad para seleccionar fuentes confiables; utiliza textos no verificados o presenta alucinaciones sin advertirlo.</td>
+    </tr>
+    <tr style="background-color: #f7fafc;">
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Competencia Metodológica:</strong><br>Técnica Feynman y Protocolo de 90 Minutos</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Aplica con maestría la técnica Feynman simplificando conceptos difíciles; formula prompts de desenmascaramiento implacables y ejecuta con disciplina las 4 fases del protocolo de 90 minutos.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Aplica adecuadamente la técnica Feynman y responde a preguntas de desenmascaramiento corrigiendo sus errores con las fuentes (&ge;75 pts).</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Explicaciones cargadas de tecnicismos confusos; le cuesta ejecutar las fases del protocolo en el tiempo previsto.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Memorización superficial mecánica; incapacidad de explicar los conceptos con palabras propias o de formular preguntas críticas.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;"><strong>Competencia Personal y Ética:</strong><br>Ideario Kinal, Rigor y Trabajo Bien Hecho</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Encarna el principio del 'trabajo bien hecho'. Kit de repaso y bitácora impecables; rechazo total al facilismo del 'copia y pega'; puntualidad perfecta y espíritu de servicio.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Mantiene un registro ordenado y honesto en su bitácora; puntualidad constante y uso estrictamente académico de la tecnología (&ge;75 pts).</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Registros incompletos en el kit de repaso; retardos menores o distracciones en clase que requirieron llamada de atención.</td>
+      <td style="border: 1px solid #cbd5e0; padding: 8px;">Plagio evidente (copia y pega de respuestas generadas por IA sin procesar), faltas a la convivencia o impuntualidad recurrente.</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

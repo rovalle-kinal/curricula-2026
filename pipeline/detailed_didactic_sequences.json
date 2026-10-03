@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 3,
+  "stage_name": "Detailed Didactic Sequences",
+  "generated_by": "dosificador_secuencias",
+  "session_structure": {
+    "standard_duration_minutes": 100,
+    "phases": [
+      {
+        "phase_name": "Apertura / Inicio",
+        "duration_minutes": 20,
+        "pedagogical_focus": "Activación de conocimientos previos, planteamiento de caso técnico contextualizado, estándares de convivencia, puntualidad y ética profesional (ideario Kinal)."
+      },
+      {
+        "phase_name": "Desarrollo / Aplicación",
+        "duration_minutes": 60,
+        "pedagogical_focus": "Ejecución técnica en estación de trabajo, alternancia teoría-práctica bajo lineamientos AEVO, desarrollo de destrezas instrumentales, toma de decisiones y trabajo en equipo."
+      },
+      {
+        "phase_name": "Cierre / Consolidación",
+        "duration_minutes": 20,
+        "pedagogical_focus": "Síntesis reflexiva de resultados de aprendizaje, retroalimentación formativa personalizada, registro en el cuaderno de informes (Berichtsheft) y cotejo con el estándar de trabajo bien hecho."
+      }
+    ]
+  },
+  "exemplary_session": {
+    "session_code": "SES-DQR6-01",
+    "module_reference": "MOD-03: Gestión de Procesos Técnicos Especializados y Calidad",
+    "topic": "Diagnóstico y Optimización de Procesos de Control Numérico y Automatización Industrial",
+    "competence_level": "DQR 6 (Bachelor Professional / Meister)",
+    "learning_outcomes": [
+      "Identificar y analizar desviaciones críticas en parámetros de producción electromecánica.",
+      "Ejecutar protocolos de calibración y corrección con autonomía operativa y rigor instrumental.",
+      "Documentar formalmente las incidencias y soluciones en el Berichtsheft conforme a normas de calidad y respeto al trabajo bien hecho."
+    ],
+    "phases_detail": {
+      "apertura": {
+        "duration": "20 min",
+        "teacher_tutor_activity": "Presenta caso problemático de articulación técnica en el puesto de trabajo con desviación de tolerancia. Contextualiza objetivos del nivel DQR 6 y recuerda estándares de convivencia, puntualidad y trabajo bien hecho según el ideario institucional de Kinal.",
+        "student_apprentice_activity": "Analiza individualmente el caso presentado. Expresa conocimientos previos mediante diálogo guiado sobre soluciones operativas y reflexiona sobre el impacto ético y económico de la precisión técnica.",
+        "resources_and_environment": "Guía técnica de caso impreso/digital; pizarra técnica o pantalla interactiva; Ideario y normativa de Kinal.",
+        "evaluation_criteria_and_instrument": {
+          "criterion": "Disposición reflexiva, razonamiento inicial y comprensión del problema profesional en contexto real.",
+          "instrument": "Registro de participación diagnóstica en lista de cotejo formativa."
+        }
+      },
+      "desarrollo": {
+        "duration": "60 min",
+        "teacher_tutor_activity": "Modela la ejecución del procedimiento de calibración técnica y supervisa el trabajo práctico en taller/laboratorio bajo lineamientos del reglamento de instructores AEVO. Brinda asesoría personalizada orientada a la excelencia en el proceso y la seguridad.",
+        "student_apprentice_activity": "Ejecuta el procedimiento en la estación de trabajo o panel de simulación de procesos. Trabaja en equipo demostrando destrezas instrumentales especializadas, toma de decisiones autónoma y orden riguroso.",
+        "resources_and_environment": "Estaciones de trabajo de taller especializado; instrumentos de medición calibrados; manual de procedimientos técnicos homologados.",
+        "evaluation_criteria_and_instrument": {
+          "criterion": "Precisión metodológica, autonomía operativa en la resolución del problema y aplicación estricta de normas de seguridad.",
+          "instrument": "Escala de valoración de desempeño técnico en puesto de trabajo."
+        }
+      },
+      "cierre": {
+        "duration": "20 min",
+        "teacher_tutor_activity": "Facilita la sesión de síntesis de los resultados de aprendizaje alcanzados. Revisa el registro diario en el cuaderno de informes (Berichtsheft) y asigna la ponderación formativa correspondiente.",
+        "student_apprentice_activity": "Completa la entrada técnica detallada en su cuaderno de informes (Berichtsheft). Evalúa su propio nivel de autonomía alcanzado y su cumplimiento de las normas de convivencia, serenidad y respeto mutuo.",
+        "resources_and_environment": "Cuaderno de informes/evaluación del aprendiz (Berichtsheft); rúbrica de sesión didáctica.",
+        "evaluation_criteria_and_instrument": {
+          "criterion": "Capacidad de autoevaluación reflexiva, pulcritud y rigor en la documentación técnica formal del trabajo ejecutado.",
+          "instrument": "Verificación del Berichtsheft y rúbrica sumativa modular (umbral aprobatorio >= 75 puntos)."
+        }
+      }
+    }
+  },
+  "terminal_rubric_levels": {
+    "dimensions": [
+      {
+        "dimension_name": "Competencia Profesional: Conocimientos y Destrezas Técnicas",
+        "excellent": "Demuestra dominio integral, profundo y crítico de los principios científicos y metodologías especializadas. Resuelve problemas complejos con autonomía total.",
+        "satisfactory": "Aplica adecuadamente los conocimientos y habilidades técnicas requeridas para el puesto de trabajo. Resuelve imprevistos con supervisión menor (>= 75 pts).",
+        "in_development": "Aplica destrezas básicas pero muestra vacíos teóricos o dudas instrumentales en tareas complejas. Requiere apoyo docente constante.",
+        "failed": "Incapacidad de resolver tareas especializadas o fallas operativas graves que contravienen las normas de calidad (< 60 pts)."
+      },
+      {
+        "dimension_name": "Competencia Personal: Autonomía y Responsabilidad",
+        "excellent": "Define, evalúa y estructura procesos laborales de manera autónoma, sostenible y reflexiva, asumiendo liderazgo de equipo.",
+        "satisfactory": "Gestiona con responsabilidad sus propios procesos de trabajo y aprendizaje, cumpliendo metas en tiempos establecidos (>= 75 pts).",
+        "in_development": "Muestra dependencia en la estructuración de su trabajo; le cuesta asumir responsabilidades de forma autónoma.",
+        "failed": "Falta de iniciativa, incumplimiento de actividades y desatención a las metas asignadas en el taller o empresa (< 60 pts)."
+      },
+      {
+        "dimension_name": "Normativa, Ética y Valores Institucionales",
+        "excellent": "Encarna el espíritu de servicio y el trabajo bien hecho. Registro impecable en el Berichtsheft, puntualidad perfecta y máximo respeto a la dignidad humana.",
+        "satisfactory": "Mantiene un trato respetuoso, lenguaje adecuado, asistencia regular puntual y cumplimiento riguroso de normas de convivencia (>= 75 pts).",
+        "in_development": "Inconsistencias menores en puntualidad o en la pulcritud de sus registros de taller. Requiere recordatorios de actitud.",
+        "failed": "Incumplimiento de la normativa de convivencia (faltas de respeto, desorden, uso indebido de dispositivos o impuntualidad recurrente)."
+      }
+    ]
+  }
+}

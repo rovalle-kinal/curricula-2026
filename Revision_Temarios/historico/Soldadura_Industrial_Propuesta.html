@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Soldadura Industrial | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="flame" class="w-5 h-5 text-blue-400"></i>
+                    Soldadura Industrial
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="Mantenimiento_Mecanico_Industrial_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Mant. Mecánico</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white font-bold">SI</span>
+                <a href="Calderas_de_Vapor_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Calderas de Vapor</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_SI.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-blue-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Soldadura Industrial (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Estandarización bajo códigos <strong>AWS D1.1</strong> (Estructuras de Acero) y <strong>ASME Sección IX</strong> (Recipientes y Tuberías a Presión): Procesos SMAW, GMAW, incorporación de GTAW (TIG) Sanitario en Acero Inoxidable 304/316L, simbología AWS A2.4 y Ensayos No Destructivos con Líquidos Penetrantes (PT).
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Reborde / Evaluaciones)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">17 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (AWS D1.1 / E7018 / GMAW)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (TIG Sanitario / WPS / END)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">58 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-blue-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Exigencias de homologación en proyectos de infraestructura metálica (CGC / AGIES), naves industriales, tanques de almacenamiento y plantas agroindustriales en Guatemala.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-600"></i>
+                        Homologación y Calificación AWS D1.1
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Los contratistas de montaje estructural en Guatemala exigen soldadores calificados bajo código AWS D1.1 en posiciones 3G y 4G con electrodo E7018 de bajo hidrógeno para garantizar resistencia sísmica según las normas AGIES NSE-2. El soldador empírico sin certificación queda excluido de obras formales.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="shield" class="w-5 h-5 text-amber-600"></i>
+                        Soldadura Sanitaria TIG en Inoxidable
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Las industrias cervecera, azucarera, láctea y farmacéutica de Guatemala tienen una demanda crítica insatisfecha de soldadores de tubería de acero inoxidable AISI 304/316L mediante proceso GTAW (TIG) con purga de argón para líneas libres de bacterias y con cordones interiores lisos.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="search" class="w-5 h-5 text-emerald-600"></i>
+                        Control de Calidad y Ensayos No Destructivos
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Toda junta de responsabilidad estructural es auditada mediante Ensayos No Destructivos (END). El soldador debe conocer la morfología de defectos comunes (socavaciones, inclusiones de escoria, falta de fusión) y realizar autoinspección visual (VT) y pruebas de líquidos penetrantes (PT).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-blue-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Soldadura Industrial (2025_SI.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas cronológicas distribuidas en 10 Módulos de taller</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma Técnico en Soldadura Industrial</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, disciplina, buena visión y destreza psicomotriz.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Capacitado para organizar y ejecutar técnicamente uniones soldadas mediante procesos Oxi-Gas, SMAW y GMAW según normas técnicas AWS y especificaciones de fabricación.</div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalías Severas Detectadas en el Archivo Original (2025_SI.xlsx)
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Cabeceras con Valores Cero y Marcadores Genéricos:</strong> En el Excel fuente, las cabeceras de los Módulos 1 y 2 tienen el valor numérico <code>0</code>, las fechas de inicio dicen <code>0-enero</code>, y el Módulo 3 se titula textualmente <code>Nombre</code> con indicador de logro <code>Indicador de logro</code>. Esto evidencia una plantilla corrupta o incompleta.</li>
+                    <li><strong>Error en Horario de Jornada Vespertina:</strong> En la hoja <em>Reporte</em>, la jornada vespertina registra erróneamente <em>"Sábados de 08:00 a 12:30 horas"</em> (horario idéntico a la matutina), en lugar de la tarde (13:00 a 17:30 hrs).</li>
+                    <li><strong>Omisión Crítica del Proceso TIG Sanitario:</strong> El pensum no contempla en absoluto el proceso GTAW (TIG) en tuberías sanitarias de acero inoxidable, el servicio técnico mejor remunerado y de mayor demanda en la industria guatemalteca.</li>
+                    <li><strong>Ausencia de Estándares de Calificación WPS/PQR:</strong> El temario se enfoca en ejercicios de taller sin estructurar la preparación del soldador para aprobar pruebas de calificación homologadas por inspectores certificados CWI (Certified Welding Inspector).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-blue-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>79 temas</strong> desglosados en sus 10 módulos oficiales corregidos.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (82)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (4)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (17)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (3)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (58)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Proceso Oxi-Gas (SOA) y Seguridad Ocupacional</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Teoría sobre el proceso SOA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conocimiento sobre el equipo básico de SOA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos de soldadura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de gases.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de llama en el proceso SOA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cómo realizar uniones básicas de soldadura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: Montaje del equipo SOA, ajuste de presiones de gases y graduación de llamas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: Realización de soldadura de reborde.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Técnica Artesanal Obsoleta</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Técnica de hojalatería autógena sin aporte de escasa aplicación en estructuras industriales y montajes metalmecánicos modernos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: Depósito de cordones con material de aporte.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">Oxicorte Manual y Corte por Plasma</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">7 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de oxicorte.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de corte con plasma.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de presiones en el proceso de oxicorte.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de presiones en el proceso de corte con plasma.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: realización de soldadura en unión a tope.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en oxicorte.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">Fundamentos de Soldadura por Arco Eléctrico (SMAW)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Reglas de seguridad para SEA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Teoría sobre SEA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de máquinas de soldar: polaridad, electrodos y amperaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición del arco eléctrico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de electrodos revestidos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Consumibles según AWS A5.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Especificación y preservación en hornos termos de electrodos celulósicos (E6010/E6011) y bajo hidrógeno (E7018) para estructuras sismorresistentes AGIES.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cálculo de amperaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Equipo de protección utilizado.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: montaje del equipo para SEA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: depósito de cordones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: depósito de cordones anchos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+                            <h4 class="font-bold text-slate-900 text-base">Soldadura de Filete en Ángulo (Posiciones 1F y 2F)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Reglas de seguridad para SEA.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Simbología de soldadura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Interpretación de Planos AWS</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Lectura de símbolos normalizados según AWS A2.4 (flecha, línea de referencia, símbolo de bisel, longitud y paso de soldaduras intermitentes).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Posiciones de soldadura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: unión en filete en posición 1F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: unión en filete en posición 2F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cómo se realiza una soldadura de filete.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: preparación de material.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica de SEA: realización de soldadura en ángulo interior en posición 1F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica de SEA: realización de soldadura en ángulo interior en posición 2F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Examen final del módulo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hito de Evaluación Sumativa</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Hito administrativo de evaluación institucional que no constituye un contenido curricular técnico sustantivo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Soldadura a Tope con Bisel en Posición Plana (1G)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad para la práctica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de la soldadura a tope.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cómo se realiza la preparación de los materiales.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diferentes tipos de ángulos para bisel en las piezas a soldar.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Qué es el talón de las piezas a soldar.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cómo se realiza el punteo de las piezas y su separación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ángulo y movimiento del cordón de raíz.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ángulo y movimiento del cordón de presentación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura a tope en I en posición 1G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura a tope con bisel en posición 1G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Calificación de Soldadores y Procedimientos bajo Códigos AWS D1.1 y ASME IX</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Homologación Internacional</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Comprensión y ejecución de especificaciones de procedimiento de soldadura (WPS) y registros de calificación (PQR) para proyectos estructurales e industriales.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">6</span>
+                            <h4 class="font-bold text-slate-900 text-base">Soldadura por Arco en Posición Horizontal y Vertical (2G y 3G)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">5 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad personal.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Posiciones de soldadura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 2G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 3G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Evaluación teórica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hito de Evaluación Sumativa</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Hito administrativo de evaluación institucional que no constituye un contenido curricular técnico sustantivo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">7</span>
+                            <h4 class="font-bold text-slate-900 text-base">Soldadura de Filete en Sobrecabeza y Vertical (3F y 4F)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">4 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 3G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en ángulo interior en posición 3F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Evaluación teórica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hito de Evaluación Sumativa</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Hito administrativo de evaluación institucional que no constituye un contenido curricular técnico sustantivo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">8</span>
+                            <h4 class="font-bold text-slate-900 text-base">Soldaduras Especiales (Acero Inoxidable, Aluminio y Fundición)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos sobre soldaduras especiales.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de electrodos y materiales.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Preparación y cuidados al momento de soldar.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de corrientes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad en la práctica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: realización de soldadura con electrodo de acero inoxidable.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Aleaciones Especiales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Procedimientos metalúrgicos para aceros inoxidables (308L/316L), aleaciones de aluminio con corriente alterna y soldadura de fundición con precalentamiento y electrodo de níquel puro.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: realización de soldadura con electrodo de aluminio.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Aleaciones Especiales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Procedimientos metalúrgicos para aceros inoxidables (308L/316L), aleaciones de aluminio con corriente alterna y soldadura de fundición con precalentamiento y electrodo de níquel puro.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: realización de soldadura con electrodo de hierro fundido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Aleaciones Especiales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Procedimientos metalúrgicos para aceros inoxidables (308L/316L), aleaciones de aluminio con corriente alterna y soldadura de fundición con precalentamiento y electrodo de níquel puro.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Proceso GTAW (TIG) Sanitario en Tubería de Acero Inoxidable (AISI 304/316L)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Soldadura Sanitaria de Alta Pureza</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Técnica de purga de gas argón con presas de papel soluble, pasada de raíz y acabado sanitario según norma 3-A para industrias farmacéuticas y alimentarias.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Ensayos No Destructivos (END): Inspección Visual (VT) y Líquidos Penetrantes (PT)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Control de Calidad y Ensayos</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Criterios de aceptación y rechazo según AWS D1.1 mediante inspección visual con galgas de soldadura y revelado con tintas penetrantes bajo norma ASTM E165.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">9</span>
+                            <h4 class="font-bold text-slate-900 text-base">Proceso Semiautomático GMAW / MAG y Alambres Tubulares</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos sobre MAG.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procesos GMAW / FCAW</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modos de transferencia metálica (cortocircuito, globular, spray), selección de gases (mezclas Ar/CO2) y alambres tubulares autoprotegidos para montaje exterior.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fuentes de poder.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Transferencias metálicas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Gases protectores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procesos GMAW / FCAW</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modos de transferencia metálica (cortocircuito, globular, spray), selección de gases (mezclas Ar/CO2) y alambres tubulares autoprotegidos para montaje exterior.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de material de aporte.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Amperajes (velocidad) y voltaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: montaje del equipo para MAG.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: realización de depósito de cordones con el proceso MAG.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura a tope en I en posición 1G con el proceso MAG.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">10</span>
+                            <h4 class="font-bold text-slate-900 text-base">Aplicaciones Avanzadas en Posiciones Forzadas con GMAW</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">5 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad según ANSI Z49.1</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Alineación estricta con norma ANSI Z49.1 (Seguridad en soldadura, corte y procesos afines), protección de radiación UV con filtros DIN 10-13 y extracción localizada de humos.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Depósito de cordones en diferentes posiciones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 2G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 3G.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Práctica en taller: soldadura en posición 3F.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procedimiento de Soldeo</div>
+                            <p class="text-slate-700 leading-relaxed">Práctica formativa fundamental para el desarrollo de destreza motriz, pulso y control del baño de fusión del soldador.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-blue-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Proceso Oxi-Gas (SOA)</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Prácticas artesanales de soldadura autógena sin aporte (reborde) de nula demanda industrial.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Reorientación hacia oxicorte mecanizado y corte por plasma de alta definición con biselado de chapas.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Soldadura Estructural (SMAW)</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Enfoque empírico en cordones de presentación sin control estricto de humedad en electrodos E7018.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Manejo de hornos portátiles termos según AWS D1.1 para estructuras sismorresistentes (AGIES NSE-2).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Soldadura TIG en Inoxidable</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Ausencia total del proceso GTAW en tubería de acero inoxidable.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Proceso GTAW con purga de gas argón en aceros inoxidables 304L/316L para la industria farmacéutica y alimentaria.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Homologación y Calificación</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Evaluaciones teóricas sin preparación formal para calificación de soldadores.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Interpretación de WPS (especificación de procedimiento) y preparación de probetas para ensayos de doblado guiado según AWS D1.1.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Control de Calidad</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Revisión visual subjetiva del instructor sin galgas de medición normalizadas.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Inspección visual formal (VT) con galgas de socavación y ensayos no destructivos con líquidos penetrantes (PT) bajo ASTM E165.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-blue-500/30 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-blue-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Soldadura Industrial</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        Inspección Visual de Cordones de Soldadura con Visión Artificial
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Cámaras de inspección con modelos de redes neuronales que escanean el cordón de soldadura en tiempo real, midiendo el ancho del cordón, la altura de sobreespesor y alertando de porosidades o socavados milimétricos.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Xiris Weld Vision AI / WeldEye Automated Inspection.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="glasses" class="w-4 h-4"></i>
+                        Simulación de Arco en Realidad Aumentada con Retroalimentación IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Entrenamiento en simuladores de soldadura con algoritmos de IA que miden en microsegundos el ángulo de trabajo, la distancia de arco (arc length) y la velocidad de avance, corrigiendo al aprendiz sin gastar gases ni probetas.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Soldamatic Augmented Training AI / Lincoln VRTEX.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="file-check" class="w-4 h-4"></i>
+                        Generador de Especificaciones de Procedimiento (WPS) con IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Asistente técnico entrenado en las tablas de variables esenciales de AWS D1.1 y ASME IX que calcula la entrada de calor (heat input en kJ/mm), precalentamiento requerido y secuencia de pases de soldadura.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: WeldAssistant Copilot / AWS Code Consultant.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Soldadura Industrial 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

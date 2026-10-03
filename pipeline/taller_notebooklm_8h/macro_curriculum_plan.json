@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pipeline_stage": 2,
+  "stage_name": "Macro Curriculum Plan",
+  "generated_by": "planificador_curricular",
+  "course_metadata": {
+    "title": "Taller Universitario de Aprendizaje Acelerado con NotebookLM: Método MIT y Tutoría Dialéctica",
+    "institution": "Fundación Kinal - Educación Superior / Técnico Universitario (Guatemala)",
+    "level_equivalency": "DQR Nivel 5 - 6 (Especialización Metodológica, Investigación y Autonomía Intelectual)",
+    "total_duration_hours": 8,
+    "theory_hours": 2.5,
+    "hands_on_practice_hours": 5.5,
+    "minimum_passing_score": 70,
+    "admission_profile": "Estudiantes universitarios que requieren procesar altos volúmenes de bibliografía técnica y científica, buscando elevar su rendimiento académico y su capacidad de retención y análisis.",
+    "graduate_profile": "Estudiante con capacidad para transformar NotebookLM en un tutor dialéctico implacable, dominar la técnica Feynman para validar su comprensión, ejecutar sesiones de estudio activo de 90 minutos y construir kits de repaso permanente con rigor ético."
+  },
+  "blocks_distribution": [
+    {
+      "block_id": "BLOQUE-01",
+      "name": "Fundamentos de Grounded AI y Superación de la Ilusión de Competencia",
+      "reference_level": "DQR 5",
+      "theory_hours": 0.75,
+      "practice_hours": 1.25,
+      "total_hours": 2.0,
+      "pedagogical_focus": "Desmontar la trampa de la relectura pasiva y el subrayado; comprender el modelo Grounded AI de NotebookLM (anclaje documental estricto sin alucinaciones); curaduría rigurosa de fuentes primarias.",
+      "milestone_assessment": "Configuración de un cuaderno temático con al menos 3 fuentes académicas validadas y delimitación de objetivos cognitivos (Mínimo: 70 pts)."
+    },
+    {
+      "block_id": "BLOQUE-02",
+      "name": "La Técnica Feynman y NotebookLM como Tutor Dialéctico (Método MIT)",
+      "reference_level": "DQR 5 - 6",
+      "theory_hours": 0.5,
+      "practice_hours": 1.5,
+      "total_hours": 2.0,
+      "pedagogical_focus": "Dejar la lectura lineal pasiva e iniciar la interrogación activa; aplicar la técnica Feynman obligando al estudiante a explicar conceptos con sencillez; uso de prompts que desenmascaran vacíos de razonamiento.",
+      "milestone_assessment": "Simulación interactiva de examen oral con NotebookLM como evaluador crítico: resolución y corrección de 3 preguntas de desenmascaramiento."
+    },
+    {
+      "block_id": "BLOQUE-03",
+      "name": "Síntesis Avanzada, Relaciones Ocultas y Multimodalidad (Audio Overview)",
+      "reference_level": "DQR 6",
+      "theory_hours": 0.5,
+      "practice_hours": 1.5,
+      "total_hours": 2.0,
+      "pedagogical_focus": "Extracción de pilares conceptuales y contradicciones entre autores; generación de guías de discusión previas a clase (Flipped Classroom); análisis crítico del Audio Overview (podcast) y redacción con voz propia.",
+      "milestone_assessment": "Elaboración de una Guía de Discusión Previa a Clase con tabla comparativa de variables y notas con citas textuales trazables."
+    },
+    {
+      "block_id": "BLOQUE-04",
+      "name": "Taller de Aplicación: Protocolo de Estudio de 90 Minutos y Evaluación Capstone",
+      "reference_level": "DQR 6",
+      "theory_hours": 0.75,
+      "practice_hours": 1.25,
+      "total_hours": 2.0,
+      "pedagogical_focus": "Ejecución cronometrada del protocolo de 90 minutos para abordar un tema nuevo; generación del Kit de Repaso Permanente; evaluación terminal y compromiso con la excelencia en el trabajo bien hecho.",
+      "milestone_assessment": "Evaluación integrada (Theorie und Praxis integrierende Prüfung): defensa técnica del cuaderno y resolución de casos en vivo ante rúbrica Kinal (>= 70 pts)."
+    }
+  ],
+  "capstone_evaluation_spec": {
+    "title": "Sustentación de Cuaderno de Estudio Temático y Defensa Dialéctica",
+    "modality": "Theorie und Praxis integrierende Prüfung",
+    "requirements": [
+      "Cuaderno temático estructurado con al menos 3 fuentes primarias rigurosas.",
+      "Evidencia de aplicación de la técnica Feynman (explicación simple validada por la IA).",
+      "Banco de al menos 5 preguntas de desenmascaramiento con respuestas propias corregidas por el tutor.",
+      "Kit de repaso permanente listo para transferir a bitácora de aprendizaje (Berichtsheft) o software de repetición espaciada."
+    ],
+    "passing_score": 70
+  }
+}

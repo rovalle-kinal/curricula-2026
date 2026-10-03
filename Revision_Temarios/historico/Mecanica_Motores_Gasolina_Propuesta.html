@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Mecánica de Motores de Gasolina | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="cog" class="w-5 h-5 text-red-400"></i>
+                    Mecánica de Motores de Gasolina
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-red-600 text-white font-bold">MMG</span>
+                <a href="Mecanismos_del_Automovil_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Mecanismos</a>
+                <a href="Electromecanica_Automotriz_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Electromecánica</a>
+                <a href="Inyeccion_Electronica_Automotriz_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Inyección</a>
+                <a href="Aire_Acondicionado_Automotriz_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Aire Acond.</a>
+                <a href="Mecanica_de_Motocicletas_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Motos</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_MMGM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-red-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Mecánica de Motores de Gasolina (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Alineación con el parque vehicular moderno en Guatemala: Sistemas de Distribución Variable (VVT-i, VTEC, VANOS), diagnóstico diferencial de fugas de cilindro, metrología de culatas para empaques multicapa MLS, apriete angular por deformación plástica (TTY), inyección directa GDI y motores de ciclo Atkinson para vehículos híbridos.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">2 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Platinos / Duplicados)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">7 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (VVT / Fugas / Plastigage)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (VVT / GDI / Atkinson)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">77 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-red-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Realidad técnica en talleres de servicio multimarca, agencias de vehículos y flotas comerciales en Guatemala frente a motores de alta eficiencia y bajas emisiones.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="refresh-cw" class="w-5 h-5 text-red-600"></i>
+                        Sistemas de Sincronización Variable (VVT)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Prácticamente el 100% de los motores de gasolina que ingresan a talleres en Guatemala cuentan con sincronización variable de válvulas (VVT-i de Toyota, i-VTEC de Honda, Dual CVVT de Hyundai/Kia). Los mecánicos cometen graves errores al sincronizar a ojo sin trabadores especiales o al diagnosticar fallas de solenoides de aceite OCV como averías mecánicas mayores.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="ruler" class="w-5 h-5 text-amber-600"></i>
+                        Metrología Rigurosa y Empaques MLS
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Los motores modernos con bloques y culatas de aluminio utilizan empaques de culata metálicos multicapa (MLS) que toleran cero deformación (< 0.05 mm) y exigen rugosidades superficiales de espejo. La práctica empírica de lijar culatas a mano o apretar pernos sin goniómetro angular causa soplado de empaque inmediato.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="zap" class="w-5 h-5 text-emerald-600"></i>
+                        Auge de Motores GDI y Ciclo Atkinson (Híbridos)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Con la masiva importación de vehículos híbridos (Toyota Prius, Corolla Cross, Hyundai Ioniq) y autos con inyección directa de gasolina (GDI), el mecánico debe dominar el retardo en el cierre de la válvula de admisión característico del ciclo Atkinson y los problemas de acumulación de carbón en válvulas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-red-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Mecánica de Motores de Gasolina (2026_MMGM.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas distribuidas en 10 Módulos de taller práctico</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma Técnico en Reparación de Motores de Gasolina</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, destreza manual y vocación por la reparación automotriz.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para diagnosticar, desarmar, evaluar desgastes por metrología, reconstruir y calibrar motores de combustión interna de 4 tiempos a gasolina.</div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Archivo Original (2026_MMGM.xlsx)
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Solapamiento Excesivo con Cursos Especializados:</strong> Los Módulos 7, 8, 9 y 10 (casi el 40% del tiempo) repiten conceptos de electricidad básica, conector OBDII y sistema de combustible que ya forman parte medular de los cursos <em>Electromecánica Automotriz</em> e <em>Inyección Electrónica</em>. Esto resta valiosas horas al mecanizado, metrología y ajuste fino de componentes internos del motor.</li>
+                    <li><strong>Tecnología Anacrónica en Encendido:</strong> Módulo 9 lista <em>"Componentes del encendido convencional"</em>, cuando los distribuidores mecánicos de platinos y condensador no forman parte del parque automotor moderno en Guatemala.</li>
+                    <li><strong>Omisión de la Distribución Variable (VVT) y Motores Híbridos:</strong> El temario original no mencionaba actuadores de fase de levas, válvulas OCV ni la creciente presencia de motores de ciclo Atkinson acoplados a transmisiones híbridas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-red-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>86 temas</strong> desglosados en sus 10 módulos oficiales.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (89)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (2)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (7)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (3)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (77)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Generalidades Aplicadas al Motor de Combustión Interna</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motor de 4 Tiempos</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Partes del motor</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ciclo de trabajo</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Presión de compresión, relación de compresión, cilindrada</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Instrumentos de Medición</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso del vernier</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso del micrómetro</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso del reloj comparador</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso de calibradores de comparación</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y Examen</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">Diagnóstico de Fallas Mecánicas del Motor</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Causas de pérdida de combustión en los cilindros.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Causas de pérdida de compresión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diagnóstico Moderno de Cilindros</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico con probador neumático de fugas de cilindro (Cylinder Leakage Tester) con manómetro diferencial y prueba de compresión relativa con osciloscopio.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Causas de pérdida de vacío en motor de gasolina.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Causas de consumo de aceite.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medición de compresiones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Test de fugas de cilindros.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medición de vacío.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Prueba de Fuga de Cilindros por Presión Diferencial y Compresión Relativa</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diagnóstico No Invasivo</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Localización exacta de fugas hacia válvulas de admisión, escape, anillos o empaque de culata mediante probador neumático y pinza amperimétrica.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">Reacondicionamiento del Sistema de Distribución</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Puesta a tiempo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Distribución Variable (VVT)</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar sincronización de árboles de levas con actuadores electrohidráulicos variables (VVT-i, VTEC, VANOS) y uso de trabadores de calado específicos por marca.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cambio de faja o cadena.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Distribución Variable (VVT)</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar sincronización de árboles de levas con actuadores electrohidráulicos variables (VVT-i, VTEC, VANOS) y uso de trabadores de calado específicos por marca.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Calibración de válvulas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Accionamiento por faja.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Accionamiento por cadena.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Accionamiento por engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tensores hidráulicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tensores mecánicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Guías y poleas auxiliares.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Diagnóstico y Calibración de Sistemas de Distribución Variable (VVT-i, VTEC, VANOS)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tecnología de Distribución Dinámica</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Diagnóstico de válvulas solenoides de control de aceite (OCV), desgaste en piñones variadores de fase y códigos de desfasamiento P0011/P0016.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+                            <h4 class="font-bold text-slate-900 text-base">Reacondicionamiento de la Culata de Motor</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Culata y empaque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metrología de Precisión</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Medición de planitud con regla de precisión y galgas de espesor (< 0.05 mm), rugosidad superficial (Ra) para empaques metálicos multicapa (MLS) y apriete angular con goniómetro (Torque-to-Yield).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Especificaciones de la culata.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metrología de Precisión</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Medición de planitud con regla de precisión y galgas de espesor (< 0.05 mm), rugosidad superficial (Ra) para empaques metálicos multicapa (MLS) y apriete angular con goniómetro (Torque-to-Yield).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Función del eje de levas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Distribución de los motores OHV, OHC, DOHC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Válvulas, guías, sellos, asientos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Empujadores mecánicos .</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Empujadores hidráulicos (buzos).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Reacondicionamiento del Bloque de Cilindros</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Estructura del bloque de cilindros.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cilindros húmedos y secos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Dimensiones del cilindro.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Planicidad del bloque.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Alineación de bancadas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones y comprobaciones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Holgura de lubricación (luz de aceite).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">6</span>
+                            <h4 class="font-bold text-slate-900 text-base">Reacondicionamiento y Ajuste del Cigüeñal, Pistones y Bielas</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Función del cigüeñal.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ajuste de Cojinetes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Medición de holgura de aceite con hilo plástico calibrado (Plastigage), alineación de bancadas y medición de ovalamiento y conicidad con micrómetro de exteriores.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Especificaciones del cigüeñal y bielas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ajuste de Cojinetes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Medición de holgura de aceite con hilo plástico calibrado (Plastigage), alineación de bancadas y medición de ovalamiento y conicidad con micrómetro de exteriores.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cojinetes de motor (tejas).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Biela.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Pistón.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Anillos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones y comprobaciones.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Holgura de lubricación (luz de aceite).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">7</span>
+                            <h4 class="font-bold text-slate-900 text-base">Electricidad Fundamental</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principios de electromagnetismo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Contenido Duplicado</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Teoría física duplicada que corresponde al curso específico de Electromecánica Automotriz; en motores debe priorizarse el ajuste de válvulas y holguras.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Comportamiento de la electricidad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conceptos de electricidad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso del multímetro.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Voltaje disponible.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Caída de voltaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Amperaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Resistencia.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">8</span>
+                            <h4 class="font-bold text-slate-900 text-base">Introducción a Diagnóstico OBDII</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Estructura del conector de diagnóstico OBDII.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ubicación del conector y sus terminales.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones eléctricas al conector OBDII.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Protocolos de diagnóstico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Nomenclatura de un código de falla OBDII.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Códigos de falla por sistemas del automóvil.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Recuperación de códigos de falla.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones eléctricas para abordar fallas básicas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">9</span>
+                            <h4 class="font-bold text-slate-900 text-base">Diagnóstico del Sistema de Encendido</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Comparación de los sistemas de encendido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componentes del encendido convencional.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tecnología de Platinos Obsoleta</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: El encendido por distribuidor convencional y platinos está descontinuado en los vehículos del parque automotriz de Guatemala desde hace 30 años.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principios de operación del sistema de encendido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">funcionamiento de la bobina de encendido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cables y bujías de encendido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Encendido electrónico .</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diseño y operación del encendido electrónico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center">10</span>
+                            <h4 class="font-bold text-slate-900 text-base">Diagnóstico del Sistema de Combustible Gasolina</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Relación de aire/combustible.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Componente del sistema.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Funcionamiento del sistema.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Presiones del sistema.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Circuito eléctrico del sistema.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diagnóstico y corrección de fallas básicas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Repaso y examen.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica de Motores</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento metrológico y reconstructivo indispensable para el ajuste y reacondicionamiento mecánico del bloque, culata y tren alternativo.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Motores de Inyección Directa (GDI) y Motores de Ciclo Atkinson para Vehículos Híbridos</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Eficiencia Térmica e Híbridos</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Particularidades mecánicas de motores GDI de alta compresión, descarbonización química de válvulas de admisión y gestión térmica en motores Atkinson (Toyota Prius/Corolla Hybrid).</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-red-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Distribución y Tiempo</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Sincronización fija tradicional de árbol de levas único o doble sin actuadores dinámicos.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Sistemas de distribución variable continua (VVT-i, VTEC, VANOS), diagnóstico de válvulas OCV y trabadores de bloqueo.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Diagnóstico de Compresión</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Manómetro de compresión simple con motor arrancado que no aísla el punto exacto de fuga.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Prueba neumática de fuga de cilindros por presión diferencial y compresión relativa no invasiva mediante osciloscopio digital.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Metrología de Culata</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Inspección visual y torqueo tradicional en libras-pie con torquímetro de truene.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Medición de planitud y rugosidad Ra para empaques MLS, apriete angular en grados (Torque-to-Yield) y tornillos elásticos nuevos.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Ajuste de Cigüeñal</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Armado empírico según tacto del mecánico al girar la polea.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Verificación micrométrica de huelgo de película de aceite con Plastigage (0.025-0.050 mm) y verificación de holgura axial de bancada.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Nuevas Tecnologías de Motor</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Estudio exclusivo de motores multipunto convencionales MPFI de inyección indirecta.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Motores de inyección directa GDI a alta presión y motores térmicos de ciclo Atkinson acoplados a trenes motrices híbridos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-red-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-red-500/20 text-red-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-red-500/30 text-red-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-red-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Motores de Gasolina</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        Inspección Endoscópica de Cilindros con Visión Artificial
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Videoscopios articulados con IA que reconocen automáticamente rayaduras en la pared del cilindro, depósitos de carbón en válvulas de admisión GDI y huellas de pistoneo sin desmontar la culata.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: Autel MaxiVideo AI / Bosch Borescope Vision.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                        Diagnóstico Acústico de Ruidos de Motor con Redes Neuronales
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Aplicaciones en smartphone que graban el sonido del motor en ralentí y aceleración para diferenciar al instante un taqué hidráulico descargado, golpeteo de pasador de biela o cascabeleo de preignición.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: Engine Sound AI Diagnostic / Škoda Sound Analyser.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-red-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        Asistente RAG para Especificaciones de Torque y Calado OEM
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Copilot de consulta rápida conectado a bases de datos de fabricantes (AllData, Mitchell1, Autodata) para obtener en segundos secuencias exactas de apriete, tolerancias de pistón y diagramas de distribución.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-red-200 font-mono">
+                        Herramienta: Automotive Repair Copilot / Mitchell1 ProDemand AI.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Dirección Académica • Propuesta Curricular Mecánica de Motores de Gasolina 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

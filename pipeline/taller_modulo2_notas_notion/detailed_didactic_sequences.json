@@ -1,0 +1,69 @@
+{
+  "didactic_sequences": [
+    {
+      "block_id": "2.1",
+      "name": "Neurociencia de la Toma de Notas y Criterios de Captura",
+      "apertura_min": 20,
+      "desarrollo_min": 75,
+      "cierre_min": 25,
+      "activities": {
+        "apertura": "Presentación de Mueller & Oppenheimer (2014) sobre la trampa de la copia en laptop vs. procesamiento generativo. Principio del trabajo bien hecho de Kinal.",
+        "desarrollo": "Modelado del semáforo de captura en tiempo real; microclase técnica guiada; aplicación del filtro de señal vs. ruido.",
+        "cierre": "Revisión plenaria de 3 apuntes; coevaluación de la síntesis; registro en bitácora de vicios a corregir."
+      },
+      "evaluation": {
+        "criterion": "Capacidad crítica de discriminación y captura de conceptos nucleares.",
+        "instrument": "Escala de apreciación de apunte preliminar (≥ 70 pts)"
+      }
+    },
+    {
+      "block_id": "2.2",
+      "name": "El Método Cornell y el Ciclo de Auto-recuperación 6R",
+      "apertura_min": 20,
+      "desarrollo_min": 75,
+      "cierre_min": 25,
+      "activities": {
+        "apertura": "Exposición del sistema Cornell del Dr. Walter Pauk; calibración geométrica de la página (70% notas, 30% cues, 5 líneas resumen).",
+        "desarrollo": "Toma de notas en vivo durante seminario técnico; redacción de preguntas de examen en columna izquierda; auto-evaluación tapando las notas; resumen propio.",
+        "cierre": "Supervisión de Active Recall en parejas; explicación del calendario de repaso espaciado (24h - 7d - 30d); coevaluación entre pares."
+      },
+      "evaluation": {
+        "criterion": "Aplicación rigurosa del ciclo 6R de Cornell y síntesis sin plagio.",
+        "instrument": "Rúbrica de evaluación de apunte Cornell (≥ 70 pts)"
+      }
+    },
+    {
+      "block_id": "2.3",
+      "name": "Notion como Segundo Cerebro y Plantilla Interactiva",
+      "apertura_min": 20,
+      "desarrollo_min": 75,
+      "cierre_min": 25,
+      "activities": {
+        "apertura": "Introducción a la arquitectura relacional universitaria en Notion frente al caos de carpetas; orden intelectual y el Berichtsheft dual.",
+        "desarrollo": "Construcción paso a paso de la base de datos de notas vinculada a asignaturas; diseño de la plantilla Cornell con toggles de Active Recall.",
+        "cierre": "Configuración del tablero Kanban por estado de revisión y programación de repasos espaciados en la vista de calendario."
+      },
+      "evaluation": {
+        "criterion": "Dominio instrumental de Notion y diseño interactivo de Active Recall.",
+        "instrument": "Lista de verificación técnica de base de datos (≥ 70 pts)"
+      }
+    },
+    {
+      "block_id": "2.4",
+      "name": "Flujo Híbrido: Notas a Mano, OCR y Capstone Módulo 2",
+      "apertura_min": 20,
+      "desarrollo_min": 75,
+      "cierre_min": 25,
+      "activities": {
+        "apertura": "Fundamentación de la libreta física para cálculo y esquemas libres; estándares de escaneo técnico de Kinal.",
+        "desarrollo": "Digitalización con corrección trapezoidal y contraste; extracción OCR y auditoría manual; configuración de galería visual en Notion.",
+        "cierre": "Sustentación individual en vivo del Segundo Cerebro ante el tutor conforme a la rúbrica terminal analítica."
+      },
+      "evaluation": {
+        "criterion": "Calidad técnica de escaneo, fidelidad OCR, orden de galería y claridad en sustentación.",
+        "instrument": "Rúbrica analítica terminal de desempeño (≥ 70 pts)"
+      }
+    }
+  ],
+  "rubric_passing_score": 70
+}
