@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular: Curso de Administración (TSU 2026) | Fundación Kinal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        .nav-pill:hover { background-color: #0f2d59; color: #ffffff; }
+        @media print { .no-print { display: none !important; } }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Header Corporativo -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-xs uppercase px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Portal TSU
+                </a>
+                <span class="text-slate-600 hidden sm:inline">|</span>
+                <div class="text-white font-bold text-sm sm:text-base flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-amber-400"></i>
+                    Eje Administrativo • Auditoría Curricular TSU 2026
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html#linea-gestion" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold border border-amber-500/30 transition flex items-center gap-1">
+                    <i data-lucide="git-merge" class="w-3.5 h-3.5"></i> Ver Línea de Gestión (Pensum)
+                </a>
+                <a href="../index.html" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                    Portal Maestro
+                </a>
+                <span class="px-2.5 py-1 rounded bg-blue-800 text-amber-300 font-bold flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3 h-3"></i> Auditoría Local
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 flex-1">
+        
+        <!-- Hero del Curso -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
+            <div class="flex flex-wrap justify-between items-start gap-4">
+                <div class="space-y-2 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold border border-blue-200">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> Año Académico Común TSU • 7 Especialidades Técnicas
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Auditoría Curricular Integral: Curso de Administración
+                    </h1>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Revisión pedagógica exhaustiva de los <strong>8 planes de clase (40 sesiones anuales)</strong> desarrollados por el instructor <strong>Sergio J. Ávalos Austria</strong>. Visualización continua de todos los módulos en la misma página: análisis detallado bajo la metodología de 4 colores que distingue qué conservar, qué actualizar con tecnología y contexto guatemalteco, qué agregar de alta demanda industrial y qué depurar por obsolescencia.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-right space-y-1">
+                    <div class="text-xs uppercase font-bold text-slate-500">Carga Formativa Anual</div>
+                    <div class="text-3xl font-black text-blue-900">40 Sesiones</div>
+                    <div class="text-xs text-slate-600 font-medium">8 Módulos • 4 Bimestres (120 Horas)</div>
+                </div>
+            </div>
+
+            <!-- Banner de Vinculación Curricular -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
+                <div class="space-y-1 max-w-2xl">
+                    <div class="flex items-center gap-2 text-blue-900 font-bold text-xs uppercase tracking-wider">
+                        <i data-lucide="link" class="w-4 h-4 text-blue-700"></i>
+                        Vinculación con la Línea de Estudio de Gestión y Supervisión (Pensum TSU)
+                    </div>
+                    <p class="text-xs text-slate-700 leading-relaxed">
+                        Esta auditoría dosificada se encuentra <strong>articulada directamente de 1 a 1 con las 8 asignaturas</strong> del eje de Gestión en el Pensum TSU 2026. Haz clic en los botones dorados de cada módulo para consultar el temario modernizado por unidades temáticas.
+                    </p>
+                </div>
+                <a href="index.html#linea-gestion" class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow-sm shrink-0">
+                    <i data-lucide="eye" class="w-3.5 h-3.5"></i> Explorar Línea de Gestión en Pensum →
+                </a>
+            </div>
+
+            <!-- Badges de Marco Institucional -->
+            <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-blue-600"></i> Marco Académico:
+                </span>
+                <span class="px-2.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 font-medium">DQR Nivel 6</span>
+                <span class="px-2.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200 font-medium">Aval UNIS</span>
+                <span class="px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-medium">Ideario Kinal: Trabajo Bien Hecho</span>
+                <span class="px-2.5 py-0.5 rounded bg-purple-50 text-purple-800 border border-purple-200 font-medium">Nota Mínima Aprobatoria: 75/100</span>
+            </div>
+        </div>
+
+        <!-- Tarjetas de Métricas de la Auditoría -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-xl border border-emerald-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">🟢</div>
+                <div>
+                    <div class="text-2xl font-black text-slate-900">28</div>
+                    <div class="text-xs text-slate-500 font-medium">Temas Útiles (Mantener)</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🟡</div>
+                <div>
+                    <div class="text-2xl font-black text-slate-900">18</div>
+                    <div class="text-xs text-slate-500 font-medium">Temas a Actualizar</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-blue-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">🔵</div>
+                <div>
+                    <div class="text-2xl font-black text-slate-900">16</div>
+                    <div class="text-xs text-slate-500 font-medium">Temas Nuevos (Agregar)</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-red-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-bold text-lg">🔴</div>
+                <div>
+                    <div class="text-2xl font-black text-slate-900">10</div>
+                    <div class="text-xs text-slate-500 font-medium">Temas a Eliminar</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Control: Filtros y Acceso Rápido a Módulos -->
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 sticky top-16 z-40 bg-white/95 backdrop-blur-sm">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-2">
+                        <i data-lucide="filter" class="w-4 h-4 text-blue-600"></i> Filtro Global de Auditoría (Aplica a Todos los Módulos)
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Filtra simultáneamente en los 8 módulos de la página:</p>
+                </div>
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                    <button onclick="filterAuditItems('all')" id="btn-filter-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos (72)</button>
+                    <button onclick="filterAuditItems('keep')" id="btn-filter-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener (28)</button>
+                    <button onclick="filterAuditItems('update')" id="btn-filter-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Actualizar (18)</button>
+                    <button onclick="filterAuditItems('new')" id="btn-filter-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Agregar (16)</button>
+                    <button onclick="filterAuditItems('delete')" id="btn-filter-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Eliminar (10)</button>
+                </div>
+            </div>
+
+            <!-- Acceso Rápido a Módulos (Scroll Rápido) -->
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-2 overflow-x-auto text-xs no-print pb-1">
+                <span class="text-slate-500 font-bold shrink-0 flex items-center gap-1">
+                    <i data-lucide="compass" class="w-3.5 h-3.5"></i> Ir a Módulo:
+                </span>
+                <a href="#modulo-1" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M1. Fundamentos (B1-C2)</a>
+                <a href="#modulo-2" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M2. Planeación (B1-C3)</a>
+                <a href="#modulo-3" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M3. RRHH & SSO (B2-C3)</a>
+                <a href="#modulo-4" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M4. Contabilidad (B2-C2)</a>
+                <a href="#modulo-5" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M5. Servicio al Cliente (B3-C3)</a>
+                <a href="#modulo-6" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M6. Producción (B3-C2)</a>
+                <a href="#modulo-7" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M7. Marketing (B4-C3)</a>
+                <a href="#modulo-8" class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-900 hover:text-white shrink-0 transition font-medium">M8. Calidad (B4-C2)</a>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- CUADRÍCULA CONTINUA DE LOS 8 MÓDULOS (TODOS VISIBLES EN LA MISMA PÁGINA)  -->
+        <!-- ========================================================================= -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-6 h-6 text-blue-600"></i>
+                        Los 8 Módulos del Curso de Administración y su Vínculo al Pensum
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-1">Estructura curricular completa del año lectivo, presentada de forma continua y exhaustiva.</p>
+                </div>
+            </div>
+
+            <!-- Grid de 2 Columnas con los 8 Módulos -->
+            <div class="grid lg:grid-cols-2 gap-8 pt-2">
+
+                <!-- ==================== MÓDULO 1 ==================== -->
+                <div id="modulo-1" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 1 • Clases 1 a 5</span>
+                            <span>Duración: ~15 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 1: Fundamentos de Administración y Liderazgo</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Comprender la función del supervisor como mando medio, delimitar roles con Matriz RACI y diseñar perfiles con IA.
+                        </p>
+                        <!-- Enlace al Temario Modernizado del Curso -->
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b1_fundamentos_administracion" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B1-C2 en Pensum
+                                </a>
+                                <a href="b1_fundamentos_administracion.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. El Supervisor Técnico en la Industria 4.0</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Reorientar de inducción genérica hacia el <em>Rol del supervisor técnico como puente estratégico entre la alta gerencia y la operación de campo</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Debate de la Administración como Ciencia/Arte</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Discusión filosófica del siglo XIX que no aporta herramientas prácticas de resolución de problemas en taller u obra civil.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Las 5 Áreas Funcionales de la Empresa Técnica</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Interconexión entre Operaciones, Finanzas, Recursos Humanos, Mercadotecnia y Dirección en empresas y talleres técnicos.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Proceso Administrativo: Eficacia vs. Eficiencia</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Las fases universales (Planeación, Organización, Integración, Dirección y Control) aplicadas a reducir costos y cumplir plazos.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Planeación Ágil con Tableros Kanban</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Modernizar la planeación estática con <em>Tableros Visuales Kanban (Por Hacer, En Proceso, Bloqueado, Terminado)</em> para órdenes de servicio.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Estructura: "La Estructura Sigue a la Estrategia"</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Diseño de jerarquías, líneas de mando, tramos de control y delimitación formal de autoridad operativa.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>7. Matriz RACI y Redacción de Perfiles con IA</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Delimitación con <em>Matriz RACI (Responsable, Aprobador, Consultado, Informado)</em> y uso de <em>asistentes de IA (Copilot/ChatGPT)</em> para redactar perfiles de puesto técnicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 2 ==================== -->
+                <div id="modulo-2" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 1 • Clases 6 a 10</span>
+                            <span>Duración: ~15 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 2: Planeación Operativa, Control y Métricas OEE</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Aplicar principios de diagnóstico con el Caso Robin Hood, liderar cuadrillas situacionalmente y calcular OEE en planta.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b1_planeacion_control_trabajo" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B1-C3 en Pensum
+                                </a>
+                                <a href="b1_planeacion_control_trabajo.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Diagnóstico Organizacional: Caso Robin Hood</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Estudio del caso Robin Hood para analizar crisis de crecimiento, desalineación estratégica y disciplina en cuadrillas.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Liderazgo Situacional y Feedback 1-on-1</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Reemplazar liderazgo teórico abstracto por <em>Liderazgo Situacional (Hersey & Blanchard)</em> y técnicas de retroalimentación constructiva individual.</p>
+                        </div>
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Comparativa Doctrinaria de Autores de Control</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Pierde tiempo contrastando citas de Terry vs Fayol vs Koontz que no aportan a supervisar procesos reales.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Las 4 Etapas del Control y Fijación de Estándares</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Fijación de estándares (tiempo, costo, calidad y cantidad), medición, comparación y aplicación de acciones correctivas.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Gestión Visual en Planta (Andon) y Ciclo PHVA</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Sustituir "homeostasis organizacional" por <em>Gestión Visual (Andon / semáforos de piso)</em> y ciclo de mejora continua Deming (PHVA).</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Cálculo de OEE (Overall Equipment Effectiveness)</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Medición cuantitativa de la <em>Eficiencia Global de Equipos (Disponibilidad × Rendimiento × Calidad)</em>, estándar internacional de planta.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>7. Carta Gantt Dinámica y Tableros en Excel</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Elaboración de cronogramas dinámicos de órdenes de servicio y seguimiento de ruta crítica en <em>Excel / MS Planner</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 3 ==================== -->
+                <div id="modulo-3" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 2 • Clases 11 a 16</span>
+                            <span>Duración: ~18 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 3: Gestión del Talento, Código de Trabajo y SSO</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Liderar equipos de cuadrilla, realizar entrevistas técnicas y dominar el Código de Trabajo y SSO (Acuerdo 229-2014).
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b2_administracion_rrhh_sso" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B2-C3 en Pensum
+                                </a>
+                                <a href="b2_administracion_rrhh_sso.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Gestión Diaria de Personal de Cuadrilla</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Aterrizar la teoría general de RRHH hacia el <em>rol diario del supervisor</em>: control de asistencia, motivación, prevención de rotación y clima laboral.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Subsistemas de RRHH y Entrevistas Técnicas</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Provisión, aplicación, mantenimiento y desarrollo. Simulación práctica de entrevistas de selección por competencias técnicas.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Inducción Técnica en el Puesto y Evaluación</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Protocolo de inducción para nuevos operarios y diseño de indicadores para evaluación del desempeño en taller.</p>
+                        </div>
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Test Psicométrico Informal de "ADN Organizacional"</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Test no validado y teorías de Dave Ulrich para directores multinacionales. Consume horas requeridas para legislación guatemalteca.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Legislación Laboral Guatemalteca (Código de Trabajo)</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo Crítico)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Tipos de contrato, jornadas (diurna, mixta, nocturna), cálculo de horas extras, pasivo laboral, finiquitos y causales legales de despido (Art. 77).</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Salud y Seguridad Ocupacional (SSO: Acdo. 229-2014)</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo Crítico)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Cumplimiento legal de SSO en Guatemala: Comités Bipartitos, uso y obligatoriedad de EPP, libro de actas e inspecciones del Ministerio de Trabajo.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>7. Relaciones Laborales bajo Valores Kinal</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Resolución pacífica de conflictos de cuadrilla basada en el <em>Respeto a la dignidad inalienable de la persona</em> y la libertad personal responsable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 4 ==================== -->
+                <div id="modulo-4" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 2 • Clases 17 a 20</span>
+                            <span>Duración: ~12 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 4: Herramientas Contables, Costos y Presupuestos</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Interpretar estados financieros, costear operaciones (MOD, MPD, CIF) y calcular el punto de equilibrio en Excel.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b2_herramientas_contables" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B2-C2 en Pensum
+                                </a>
+                                <a href="b2_herramientas_contables.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Contabilidad Financiera para No Contadores</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">La contabilidad como lenguaje de los negocios para evaluar si una orden o cuadrilla genera rentabilidad o pérdidas.</p>
+                        </div>
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Teneduría Manual de Libros y Partidas Dobles a Lápiz</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> El supervisor técnico no es tenedor de libros. Los asientos los procesa el software ERP. Enseñar partidas manuales sobrecarga sin utilidad.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Estructura de Costos Industriales (MOD, MPD, CIF)</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Desglose riguroso de <em>Mano de Obra Directa (MOD), Materia Prima Directa (MPD) y Costos Indirectos de Fabricación (CIF / energía y depreciación)</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Lectura del Balance General y Estado de Resultados</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Interpretación del Estado de Resultados (margen bruto y operativo) y Balance General mediante el ejercicio del <em>Taller Ficticio</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Modelado en Excel del Punto de Equilibrio Operativo</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Cálculo automatizado en <em>Excel del Punto de Equilibrio (unidades y quetzales)</em> para servicios técnicos y talleres.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Cotizaciones Formales (APU) y Marco Tributario SAT</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Estructura de Análisis de Precios Unitarios (APU) y conceptos tributarios de Guatemala: <em>IVA (12%), Pequeño Contribuyente (5%) y Factura Electrónica FEL</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 5 ==================== -->
+                <div id="modulo-5" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 3 • Clases 21 a 27</span>
+                            <span>Duración: ~21 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 5: Servicio al Cliente Técnico y Acuerdos SLA</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Desarrollar cultura de hospitalidad, gestionar clientes internos, redactar acuerdos SLA y resolver reclamos técnicos.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b3_servicio_cliente" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B3-C3 en Pensum
+                                </a>
+                                <a href="b3_servicio_cliente.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Cultura de Servicio y "Soy tu cliente, recuérdame"</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">El servicio y la hospitalidad como ventaja competitiva ética y vocación profesional (Ideario Kinal de espíritu de servicio).</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Cliente Interno vs. Cliente Externo en Planta</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Entender que la cuadrilla o departamento siguiente en la línea es el cliente interno al que no se le deben pasar defectos.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Protocolos de Recepción y Entrega Técnica</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Adaptar de hotelería hacia <em>protocolos de recepción técnica de vehículos, maquinaria u obras</em> (check-in de estado, expectativas y firma).</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Acuerdos de Nivel de Servicio (SLA) y Tiempos TTR</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Redacción de <em>SLAs (Service Level Agreements)</em> con tiempos de respuesta (TTR), disponibilidad pactada y penalizaciones técnicas.</p>
+                        </div>
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Test Informal de "Pecados del Servicio"</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Dinámica anecdótica tipo revista sin rigor técnico ni métricas para resolver garantías o reclamos contractuales.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Manejo de Conflictos Técnicos: Técnica HEAR / LAST</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Protocolos para desescalar clientes inconformes por fallas mecánicas o retrasos mediante la técnica <em>HEAR / LAST</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>7. Métricas Cuantitativas de Servicio: CSAT y NPS</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Medición cuantitativa con <em>Net Promoter Score (NPS)</em> y encuestas <em>CSAT</em> automatizadas al cierre de órdenes de servicio.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>8. Taller de Fidelización y Garantías de Servicio</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Simulación integradora de atención al cliente y políticas claras de garantía de repuestos y mano de obra.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 6 ==================== -->
+                <div id="modulo-6" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 3 • Clases 28 a 30</span>
+                            <span>Duración: ~9 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 6: Métodos de Producción, Lean y Metodología 5S</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Comparar sistemas productivos en la industria de Guatemala, eliminar desperdicios (Mudas) e implementar 5S en taller.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b3_metodos_produccion" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B3-C2 en Pensum
+                                </a>
+                                <a href="b3_metodos_produccion.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Los 4 Sistemas Productivos Universales</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Características, ventajas y limitantes de la producción Artesanal, Por Lotes (Batch), En Serie y Flujo Continuo.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Casos Industriales Reales de Guatemala</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Reemplazar ejemplos de panaderías tradicionales por <em>empresas líderes del país</em> (Cementos Progreso, embotelladoras, autopartes y software).</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Lean Manufacturing y Eliminación de las 7 Mudas</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Identificación de desperdicios en planta: sobreproducción, esperas, transporte, sobreprocesamiento, inventarios, movimientos y defectos.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Metodología 5S y Procedimientos Estandarizados (SOP)</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Implementación de <em>5S en el taller (Seiri, Seiton, Seiso, Seiketsu, Shitsuke)</em> y elaboración de Hojas de Instrucción de Trabajo (SOP).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 7 ==================== -->
+                <div id="modulo-7" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 4 • Clases 31 a 37</span>
+                            <span>Duración: ~21 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 7: Marketing B2B y Propuesta de Valor Comercial</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Diseñar propuestas de valor B2B, gestionar presencia digital técnica y dominar técnicas de venta consultiva.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b4_fundamentos_marketing" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B4-C3 en Pensum
+                                </a>
+                                <a href="b4_fundamentos_marketing.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-delete p-3 rounded text-xs space-y-1" data-category="delete">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Ejemplos de Marketing Masivo de Consumo B2C</span>
+                                <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                            </div>
+                            <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Casos de venta de gaseosas o zapatillas no tienen transferibilidad para técnicos que venden contratos de mantenimiento u obras.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. Las 7 P's del Marketing de Servicios Técnicos</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">El mix ampliado: Producto, Precio, Plaza, Promoción, añadiendo <em>Personas, Procesos y Evidencia Física</em> que definen la confianza técnica.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Propuesta de Valor y Diferenciación por Calidad</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Aprender a no competir por precio bajo (que arruina negocios), sino por cumplimiento, garantía y el <em>Trabajo bien hecho</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Buyer Persona y Buyer Journey en Decisiones B2B</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Comprender los criterios de evaluación de un jefe de mantenimiento, gerente de compras o arquitecto al contratar servicios.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Presencia Digital Profesional para Negocios Técnicos</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Enfocar en herramientas prácticas: <em>Perfil de Empresa en Google (Maps), Catálogo de WhatsApp Business y LinkedIn</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>6. Venta Consultiva B2B y Licitaciones Privadas</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Estructura formal de ofertas comerciales técnico-económicas, términos contractuales y presentación a comités de compra.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>7. Uso de IA para Redacción de Fichas y Argumentarios</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Uso de <em>asistentes de IA (ChatGPT / Claude)</em> para elaborar cartas de presentación ejecutiva, fichas técnicas y respuestas a objeciones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MÓDULO 8 ==================== -->
+                <div id="modulo-8" class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col scroll-mt-36">
+                    <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                        <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                            <span>BIMESTRE 4 • Clases 38 a 40</span>
+                            <span>Duración: ~9 Horas</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Módulo 8: Control y Aseguramiento de Calidad (ISO 9001)</h4>
+                        <p class="text-xs text-slate-300 mt-1">
+                            <strong>Logro esperado:</strong> Dominar el Ciclo Deming, investigar fallas con Ishikawa y Pareto, y aplicar listas de chequeo bajo ISO 9001:2015.
+                        </p>
+                        <div class="mt-3 pt-2.5 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                            <span class="text-slate-400 text-[11px]">Docente: Sergio J. Ávalos Austria</span>
+                            <div class="flex items-center gap-1.5">
+                                <a href="index.html#temario-b4_control_calidad" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold transition shadow-sm">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Temario B4-C2 en Pensum
+                                </a>
+                                <a href="b4_control_calidad.html" class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+                                    Ficha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                        <div class="audit-item item-keep p-3 rounded text-xs space-y-1" data-category="keep">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>1. Diferencia: "Controlar" vs. "Asegurar" la Calidad</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                            </div>
+                            <p class="text-slate-700">Controlar es inspección reactiva final; asegurar es diseñar el proceso para prevenir el error. Alineado al ideario Kinal de hacer las cosas bien desde el inicio.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>2. El Ciclo Deming (PHVA / Planificar-Hacer-Verificar-Actuar)</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Enmarcar las preguntas reflexivas de cultura de calidad bajo la metodología formal estandarizada del <em>Ciclo Deming (PHVA)</em>.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>3. Herramientas Clave: Diagrama de Ishikawa y Pareto</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo Crítico)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Aplicación práctica del <em>Diagrama de Ishikawa (6M)</em> para investigar causa raíz de fallas y el <em>Principio de Pareto (80/20)</em> para priorizar soluciones.</p>
+                        </div>
+
+                        <div class="audit-item item-update p-3 rounded text-xs space-y-1" data-category="update">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>4. Medición Cuantitativa de Costos de No Calidad (COPQ)</span>
+                                <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Actualización:</strong> Medición cuantitativa del <em>Costo de la Mala Calidad (COPQ)</em>: cuánto pierde la empresa por garantías, retrabajos y piezas defectuosas.</p>
+                        </div>
+
+                        <div class="audit-item item-new p-3 rounded text-xs space-y-1" data-category="new">
+                            <div class="flex justify-between items-center font-bold">
+                                <span>5. Introducción a ISO 9001:2015 y Reportes de No Conformidad</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Agregar (Nuevo)</span>
+                            </div>
+                            <p class="text-slate-700"><strong>Nuevo:</strong> Enfoque a procesos de la norma <em>ISO 9001:2015</em>, listas de chequeo de entrega técnica y Reportes de Acción Correctiva (CAPA).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SÍNTESIS DE LA PROPUESTA CURRICULAR: NUEVO TEMARIO DOSIFICADO -->
+        <!-- ========================================================================= -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-indigo-50 text-indigo-700">
+                    <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        Propuesta de Nuevo Temario Dosificado (40 Sesiones Anuales)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Estructura académica moderna vinculada 1 a 1 con las 8 asignaturas de la Línea de Gestión y Supervisión.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Callout de Articulación Curricular -->
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl text-xs space-y-1">
+                <div class="flex items-center gap-2 font-bold text-blue-900 text-sm">
+                    <i data-lucide="git-fork" class="w-4 h-4 text-blue-600"></i>
+                    Matriz de Articulación Curricular entre Auditoría y Asignaturas de Pensum
+                </div>
+                <p class="text-blue-800 leading-relaxed">
+                    Cada módulo de esta propuesta dosificada se enlaza de forma transparente con su correspondiente asignatura en el pensum consolidado del TSU. Haz clic sobre el código del curso para acceder a su temario por unidades, herramientas de software y vinculación con IA.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-white border-b-2 border-amber-400">
+                            <th class="p-3 font-bold w-12 text-center">Bim.</th>
+                            <th class="p-3 font-bold w-16 text-center">Clases</th>
+                            <th class="p-3 font-bold w-60">Asignatura en Pensum (Línea Gestión)</th>
+                            <th class="p-3 font-bold">Módulo Temático Dosificado</th>
+                            <th class="p-3 font-bold">Contenidos Clave Modernizados</th>
+                            <th class="p-3 font-bold w-44">Herramienta / Entregable</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                        <!-- Bimestre 1 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-center text-blue-900" rowspan="2">B1</td>
+                            <td class="p-3 font-semibold text-center bg-slate-50">1 a 5</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b1_fundamentos_administracion" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B1-C2 • Fundamentos de la Administración</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 2 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M1: Fundamentos de Administración y Liderazgo de Mandos Medios</td>
+                            <td class="p-3">El supervisor técnico como enlace estratégico; proceso administrativo; diseño de organigramas y perfiles de puesto; matriz RACI.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">Organigrama + Matriz RACI con IA</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-semibold text-center bg-slate-50">6 a 10</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b1_planeacion_control_trabajo" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B1-C3 • Planeación y Control para el Trabajo</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 3 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M2: Planeación Operativa, Control de Gestión y Métricas OEE</td>
+                            <td class="p-3">Caso Robin Hood; liderazgo situacional y feedback 1-a-1; etapas del control; cálculo de OEE; Carta Gantt en Excel; KPIs de taller.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">Dashboard OEE + Gantt Dinámica</span></td>
+                        </tr>
+
+                        <!-- Bimestre 2 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-center text-blue-900" rowspan="2">B2</td>
+                            <td class="p-3 font-semibold text-center bg-slate-50">11 a 16</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b2_administracion_rrhh_sso" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B2-C3 • Administración de RRHH y SSO</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 3 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M3: Gestión del Talento, Legislación Laboral y SSO (Acuerdo 229-2014)</td>
+                            <td class="p-3">Entrevistas técnicas; Código de Trabajo de Guatemala (jornadas, horas extras, pasivo); Plan SSO, EPP y Comités Bipartitos; Ideario Kinal.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 font-semibold">Cálculo de Planilla + Plan SSO</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-semibold text-center bg-slate-50">17 a 20</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b2_herramientas_contables" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B2-C2 • Herramientas Contables</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 2 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M4: Herramientas Contables, Costos Industriales y Presupuestos</td>
+                            <td class="p-3">Estados financieros básicos (Balance y PyG); estructura de costos MOD/MPD/CIF; punto de equilibrio operativo; cotizaciones SAT (IVA/FEL).</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 font-semibold">Cotizador de Taller en Excel</span></td>
+                        </tr>
+
+                        <!-- Bimestre 3 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-center text-blue-900" rowspan="2">B3</td>
+                            <td class="p-3 font-semibold text-center bg-slate-50">21 a 27</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b3_servicio_cliente" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B3-C3 • Servicio al Cliente Técnico</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 3 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M5: Servicio al Cliente Técnico, Acuerdos SLA y Gestión de Crisis</td>
+                            <td class="p-3">Cultura de hospitalidad; cliente interno vs externo; recepción y entrega técnica; acuerdos SLA con tiempos de respuesta; técnica HEAR/LAST.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Acuerdo SLA + Role-play de Reclamos</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-semibold text-center bg-slate-50">28 a 30</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b3_metodos_produccion" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B3-C2 • Métodos de Producción</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 2 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M6: Métodos de Producción, Lean Manufacturing y Metodología 5S</td>
+                            <td class="p-3">Sistemas artesanal, por lotes, serie y continuo; casos industriales guatemaltecos; las 7 Mudas; implementación de 5S en taller y SOPs.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Auditoría 5S + Ficha SOP Técnica</span></td>
+                        </tr>
+
+                        <!-- Bimestre 4 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-center text-blue-900" rowspan="2">B4</td>
+                            <td class="p-3 font-semibold text-center bg-slate-50">31 a 37</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b4_fundamentos_marketing" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B4-C3 • Fundamentos del Marketing</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 3 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M7: Marketing B2B, Presencia Digital y Propuesta de Valor Comercial</td>
+                            <td class="p-3">De las 4P's a las 7P's de servicios; Google Business Profile, WhatsApp Business y LinkedIn; venta consultiva B2B; licitaciones privadas.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">Portafolio Digital + Oferta Comercial</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-semibold text-center bg-slate-50">38 a 40</td>
+                            <td class="p-3 font-bold">
+                                <a href="index.html#temario-b4_control_calidad" class="text-blue-700 hover:text-blue-900 hover:underline flex items-center gap-1 font-bold">
+                                    <span>B4-C2 • Control de Calidad</span>
+                                    <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+                                </a>
+                                <div class="text-[10px] text-slate-500 font-normal">Período 2 • 13.5h</div>
+                            </td>
+                            <td class="p-3 font-bold text-slate-900">M8: Aseguramiento de la Calidad, Ciclo PHVA e ISO 9001:2015</td>
+                            <td class="p-3">Diferencia control vs aseguramiento; Ciclo Deming; herramientas Ishikawa (6M) y Pareto; costos de no calidad; checklists e ISO 9001.</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">Ishikawa de Taller + Checklist ISO</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Recomendaciones para la Coordinación Académica -->
+        <div class="bg-gradient-to-r from-slate-900 to-blue-950 text-white rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg">
+            <div class="flex items-center gap-3">
+                <i data-lucide="lightbulb" class="w-6 h-6 text-amber-400"></i>
+                <h3 class="text-xl font-bold">Dictamen para la Coordinación Académica y Recomendaciones de Implementación</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-xs text-slate-300">
+                <div class="space-y-2">
+                    <strong class="text-amber-300 text-sm block">1. Respetar el Trabajo Base del Docente</strong>
+                    <p class="leading-relaxed">
+                        El trabajo de Sergio Ávalos tiene una <strong>excelente estructura pedagógica, hilo conductor claro y un compromiso humano admirable</strong>. No se debe descartar, sino <em>potenciar y robustecer</em> incorporando las herramientas tecnológicas y normativas reales.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <strong class="text-amber-300 text-sm block">2. Incorporar el Rigor Legal y de SSO</strong>
+                    <p class="leading-relaxed">
+                        En Guatemala, un supervisor técnico que ignora el <strong>Código de Trabajo</strong> y el <strong>Acuerdo Gubernativo 229-2014 de SSO</strong> expone a la empresa a multas y demandas. Los módulos 3 y 4 deben dedicar sesiones formales a estos temas.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <strong class="text-amber-300 text-sm block">3. Digitalización con IA y Excel Operativo</strong>
+                    <p class="leading-relaxed">
+                        Eliminar la teneduría de libros a mano y sustituirla por <strong>modelado en hojas de cálculo y asistentes de Inteligencia Artificial</strong>, preparando a los egresados para las jefaturas y coordinaciones técnicas del siglo XXI.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-slate-200 font-semibold">Fundación Kinal • Escuela Técnica Superior • Curricula 2026</p>
+            <p>Auditoría Curricular y Dosificación Didáctica • Avalado por Universidad del Istmo (UNIS) • Marco Alemán DQR 6</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivo -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Filtro Global de Ítems de Auditoría por Categoría (Aplica a todos los módulos en la misma página)
+        function filterAuditItems(category) {
+            const items = document.querySelectorAll('.audit-item');
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.classList.remove('hidden');
+                } else if (item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Actualizar estilo visual de botones de filtro
+            const buttons = ['all', 'keep', 'update', 'new', 'delete'];
+            buttons.forEach(b => {
+                const btn = document.getElementById('btn-filter-' + b);
+                if (btn) {
+                    if (b === category) {
+                        btn.classList.add('ring-2', 'ring-offset-1', 'ring-blue-600', 'scale-105');
+                    } else {
+                        btn.classList.remove('ring-2', 'ring-offset-1', 'ring-blue-600', 'scale-105');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

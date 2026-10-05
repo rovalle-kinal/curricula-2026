@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Ética Profesional y Human-in-the-Loop | Dictamen Curricular TSU Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 32px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 6px; }
+        header p { color: #cbd5e1; font-size: 0.98rem; }
+        nav.nav-bar {
+            background: #0b1f3a;
+            padding: 0 40px;
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav.nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.nav-bar a:hover { color: #ffffff; border-bottom-color: var(--kinal-accent); }
+        nav.nav-bar a.active { color: #ffffff; background: rgba(255,255,255,0.06); border-bottom-color: var(--kinal-accent); }
+        main { padding: 40px; }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .analysis-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .analysis-header h3 { font-size: 1.15rem; color: var(--kinal-blue); }
+        .analysis-body { padding: 24px; }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .comp-table th, .comp-table td {
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+        .comp-table th { background: #f1f5f9; color: var(--text-dark); font-weight: 600; }
+
+        .callout-box {
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .callout-yellow { background: var(--color-actualizar-bg); border-left: 4px solid var(--color-actualizar-border); color: var(--color-actualizar-text); }
+        .callout-red { background: var(--color-anular-bg); border-left: 4px solid var(--color-anular-border); color: var(--color-anular-text); }
+        .callout-blue { background: var(--color-nuevo-bg); border-left: 4px solid var(--color-nuevo-border); color: var(--color-nuevo-text); }
+
+        .quote-kinal {
+            background: #f8fafc;
+            border-left: 4px solid var(--kinal-blue);
+            padding: 16px 20px;
+            font-style: italic;
+            color: #334155;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="header-badge">Eje Curricular: Formación Humana y Deontológica</span>
+        <h1>Área de Ética Profesional, Inteligencia Artificial y Human-in-the-Loop</h1>
+        <p>Diagnóstico de 4 asignaturas trimestrales del Técnico Superior Universitario (TSU Kinal). Fusión del ideario inmutable de Fundación Kinal con los desafíos morales de la Industria 4.0: la centralidad de la persona humana, la responsabilidad indelegable del supervisor y el principio <strong>Human-in-the-Loop (HITL)</strong> en la era de los algoritmos.</p>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html">Portal General</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; font-weight: 700;">🗺️ Mapa Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; font-weight: 700;">📚 Temarios por Línea</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; font-weight: 700;">🌟 Nueva Distribución 2026</a>
+        <a href="administracion.html">Administración y Operaciones</a>
+        <a href="matematica.html">Matemática Aplicada</a>
+        <a href="fisica.html">Física y Tecnología (IA)</a>
+        <a href="etica.html" class="active">Ética Profesional y HITL</a>
+    </nav>
+
+    <main>
+        <div class="quote-kinal">
+            <strong>Misión y Valores Fundacionales de Fundación Kinal:</strong><br>
+            <em>"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad."</em><br>
+            <strong>Valores nucleares:</strong> Visión cristiana de la vida • Respeto a la dignidad de la persona • Espíritu de servicio • Trabajo bien hecho • Libertad personal responsable.
+        </div>
+
+        <div class="callout-box callout-blue" style="font-size: 0.95rem;">
+            <strong>El Reto Ético Contemporáneo en el TSU:</strong> En la industria moderna, la tecnología ya no solo amplifica la fuerza física del operario, sino que empieza a tomar decisiones automatizadas mediante algoritmos de Inteligencia Artificial. El supervisor técnico formado en Kinal debe ser un <strong>bastión ético</strong>: defender que la máquina y el software están al servicio de la persona, y nunca a la inversa.
+        </div>
+
+        <!-- I TRIMESTRE: ÉTICA GENERAL 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>I Trimestre • Ética General 1: Antropología, Dignidad y Sentido del Trabajo</h3>
+                <div>
+                    <span class="tag-pill tag-anular">Anular Teoría Abstracta</span>
+                    <span class="tag-pill tag-actualizar">Dignidad de la Persona</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Conceptos Éticos Generales</strong><br>Teorías morales históricas y generalidades sobre "capacidades para ser un buen técnico".</td>
+                            <td><span class="tag-pill tag-anular">Anular</span></td>
+                            <td>
+                                <div class="callout-box callout-red" style="margin: 0 0 8px 0; padding: 8px 12px;">
+                                    <strong>Motivo de anulación:</strong> Tratamiento filosófico desconectado del piso de taller y de las realidades laborales concretas.
+                                </div>
+                                <strong>Sustituir por: El Sentido Trascendente del Trabajo y la Dignidad Humana:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>La persona humana como fin en sí misma, nunca como un simple recurso o costo prescindible en la hoja de producción.</li>
+                                    <li>El trabajo técnico no es un castigo ni una mera transacción económica: es un medio de perfeccionamiento personal, santificación de la vida ordinaria y servicio a la comunidad (pilar Kinal).</li>
+                                    <li>Respeto a las condiciones de trabajo seguras: la integridad física y mental del trabajador por encima de las cuotas de producción.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Inteligencia Emocional y Liderazgo con Espíritu de Servicio:</strong>
+                                Autodominio, gestión de la frustración ante fallas mecánicas bajo presión y erradicación del maltrato o lenguaje denigrante en el taller, promoviendo un ambiente de respeto mutuo y fraternidad profesional.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- II TRIMESTRE: ÉTICA GENERAL 2 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>II Trimestre • Ética General 2: Libertad Personal Responsable y Consecuencias Técnicas</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Responsabilidad Moral</span>
+                    <span class="tag-pill tag-nuevo">Compliance e Integridad</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Normas de Convivencia Básicas</strong><br>Puntualidad, asistencia y respeto reglamentario elemental.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Libertad Personal Responsable y Responsabilidad Técnica:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>La libertad no es hacer lo que apetece, sino comprometerse libremente con el bien y el deber cumplido.</li>
+                                    <li>La responsabilidad civil, penal y moral de las decisiones técnicas: una conexión eléctrica descuidada, un perno mal apretado o una válvula puenteada pueden causar muertes o desastres ecológicos.</li>
+                                    <li>El valor de la veracidad: prohibición de falsificar reportes de inspección o firmar bitácoras de mantenimiento sin haber verificado físicamente el equipo.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Integridad en las Compras y Prevención de la Corrupción:</strong>
+                                Casos prácticos de la industria en Guatemala: comisiones ilegales de proveedores por comprar repuestos genéricos de baja calidad, sobornos para omitir paradas de seguridad y conflicto de intereses. Cultura de transparencia y *Compliance*.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- III TRIMESTRE: ÉTICA PROFESIONAL 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>III Trimestre • Ética Profesional 1: Ética en la Era Digital, Automatización e Inteligencia Artificial</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Transición Justa</span>
+                    <span class="tag-pill tag-nuevo">Ética en IA Industrial</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Deontología Profesional Tradicional</strong><br>Códigos éticos genéricos del ingeniero y del técnico mecánico/electricista.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>La Automatización y el Futuro del Trabajo (Transición Justa):</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>El deber ético de la empresa y del supervisor de capacitar (*reskilling*) al operario manual desplazado por robots o PLCs, facilitando su reubicación en tareas de mayor valor intelectual.</li>
+                                    <li>Evitar la obsolescencia humana forzada: la tecnología debe elevar al ser humano, no degradarlo ni convertirlo en mero apéndice de un sistema automatizado.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="background: #eff6ff;">
+                            <td><strong>Dilemas Morales de la Inteligencia Artificial</strong><br><em>(Requerimiento estratégico Kinal 2026)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Ética en el Uso de la Inteligencia Artificial y Big Data Industrial:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li><strong>Sesgos Algorítmicos en Operaciones:</strong> Riesgo de modelos de Machine Learning entrenados con datos viciados que discriminan personal en evaluaciones de rendimiento o asignación de turnos.</li>
+                                    <li><strong>Privacidad de los Trabajadores y Vigilancia Digital:</strong> Límites éticos de las cámaras con visión artificial, pulseras de telemetría y software de monitoreo de pulsaciones. El derecho a la intimidad y la prohibición del acoso algorítmico.</li>
+                                    <li><strong>Uso Responsable de Modelos Generativos de IA:</strong> Riesgos de alimentar modelos públicos (ChatGPT, Gemini) con planos confidenciales de la empresa, patentes o códigos de PLC. Confidencialidad y secreto industrial.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- IV TRIMESTRE: ÉTICA PROFESIONAL 2 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>IV Trimestre • Ética Profesional 2: Principio Human-in-the-Loop y el "Trabajo Bien Hecho"</h3>
+                <div>
+                    <span class="tag-pill tag-nuevo">Human-in-the-Loop (HITL)</span>
+                    <span class="tag-pill tag-actualizar">El Trabajo Bien Hecho Kinal</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #eff6ff;">
+                            <td><strong>El Principio Human-in-the-Loop (HITL)</strong><br><em>(Requerimiento específico del usuario)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Gobernanza Tecnológica y Supervisión Humana Obligatoria (HITL):</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li><strong>La Responsabilidad Moral Intransferible:</strong> Una máquina, algoritmo o red neuronal no tiene conciencia ni puede ir a prisión. La responsabilidad de toda decisión operativa es 100% del supervisor humano.</li>
+                                    <li><strong>Definición del Principio HITL:</strong> La Inteligencia Artificial es un <em>copiloto</em> analítico, nunca el juez final. Ninguna decisión que involucre seguridad de personas, paradas críticas de planta o sanciones a colaboradores puede ser ejecutada de forma autónoma por un sistema sin validación humana.</li>
+                                    <li><strong>Superación del Sesgo de Automatización (*Automation Bias*):</strong> Educar el juicio crítico para no aceptar ciegamente una recomendación de IA ("el sistema dice que la caldera está bien") cuando los indicios físicos indican una anomalía.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Culminación de Carrera y Ética</strong><br>Reflexiones finales de egreso.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>La Excelencia Moral del "Trabajo Bien Hecho":</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Rechazo radical al facilismo del 'copia y pega' de respuestas de IA en auditorías o memorias técnicas. El valor de la firma profesional como aval de verdad.</li>
+                                    <li>Cuidado del medio ambiente y mayordomía de la creación: manejo de residuos peligrosos (refrigerantes fluorados que dañan la capa de ozono, aceites usados, baterías de litio y chatarra electrónica).</li>
+                                    <li>El egresado del TSU como apóstol del trabajo bien hecho: inspirar a sus operarios a trabajar con pulcritud, exactitud y espíritu de servicio al prójimo.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout-box callout-yellow">
+                    <strong>Conclusión del Dictamen para Ética:</strong> Esta reforma coloca a Fundación Kinal a la vanguardia de la educación superior técnica latinoamericana. Mientras otros programas enseñan ética como un trámite formal, el TSU de Kinal prepara a sus supervisores para ser los <strong>líderes éticos de la Inteligencia Artificial y la automatización</strong> en la industria guatemalteca.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Eje de Ética Profesional y Human-in-the-Loop TSU • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>

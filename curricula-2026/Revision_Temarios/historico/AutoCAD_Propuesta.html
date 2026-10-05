@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: AutoCAD 2D & 3D | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-red-600 text-white font-bold text-xs uppercase px-2.5 py-1 rounded hover:opacity-80 transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="compass" class="w-5 h-5 text-red-400"></i>
+                    AutoCAD 2D & 3D
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="Fundamentos_de_la_Construccion_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    Fundamentos
+                </a>
+                <a href="Administracion_de_Obras_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                    Adm. Obras
+                </a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-red-600 text-white font-bold">
+                    AutoCAD 2D&3D
+                </span>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_AutoCAD.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-red-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: AutoCAD 2D & 3D (90 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Optimización curricular orientada a la alta demanda de dibujantes técnicos en Guatemala: eliminación del renderizado nativo obsoleto en 3D, modernización de capas bajo estándares <strong>AIA / Municipalidades / FHA</strong>, incorporación de <strong>interoperabilidad CAD-BIM (AutoCAD a Revit)</strong>, planos <strong>"As-Built"</strong> y visualización en la nube con <strong>AutoCAD Web/Mobile</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Render 3D Obsoleto)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">8 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Capas AIA, Viewports, 3D)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">6 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (CAD-BIM, As-Built, Cloud)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">14 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Herramientas 2D Clave)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-red-50 text-red-700">
+                    <i data-lucide="monitor" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Técnicos en AutoCAD en Guatemala (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Sustentado en ofertas laborales activas de constructoras y firmas de ingeniería en Guatemala (salarios entre Q4,000 y Q6,000 mensuales).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i>
+                        Alta Demanda de Dibujantes Técnicos Calificados
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El crecimiento continuo del sector de la construcción en Guatemala genera una constante búsqueda de peritos y técnicos dibujantes. Las empresas exigen velocidad en producción de planos, estricto orden de capas, manejo impecable de referencias externas (XREFs) y preparación de láminas para licencias de construcción.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Fuentes: Portales de empleo Guatemala (Computrabajo, BeBee, Ferias MinTrab).
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600"></i>
+                        Obsolescencia del Render en AutoCAD
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        En el mercado guatemalteco contemporáneo <strong>ningún estudio de arquitectura o constructora renderiza con el motor nativo de AutoCAD</strong>. Para infografía 3D se emplean herramientas especializadas (SketchUp, Enscape, Lumion o Revit). Mantener horas de renderizado en AutoCAD resta tiempo para la interoperabilidad digital y la cuantificación.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Tendencia: Del renderizado pesado al modelado constructivo paramétrico.
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="cloud" class="w-4 h-4 text-blue-600"></i>
+                        Interoperabilidad CAD a BIM y Movilidad en Obra
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El plus competitivo más cotizado por los empleadores guatemaltecos es que el dibujante sepa preparar archivos DWG para ser vinculados limpiamente en <strong>Autodesk Revit</strong>, y que utilice <strong>AutoCAD Web/Mobile</strong> para realizar revisiones de planos y levantamiento de planos <strong>"As-Built"</strong> directamente en la obra.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Estándar: Flujos híbridos CAD-BIM y digitalización en sitio.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: PESTAÑA REPORTE ORIGINAL (PROMESA DE VENTA) -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-red-50 text-red-700">
+                        <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                        </h3>
+                        <p class="text-sm text-slate-500">
+                            Ficha oficial en [2025_AutoCAD.xlsx](file:///d:/OneDrive/Software/Antigravity/Cuentas%20Kinal/Programas%20de%20Curso/2025_AutoCAD.xlsx).
+                        </p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full border border-slate-300">
+                    <i data-lucide="lock" class="w-3.5 h-3.5"></i> Ficha Oficial de Venta
+                </span>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <div class="border-b border-slate-200 pb-4 mb-4 flex flex-wrap justify-between items-start gap-4">
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Nombre del Curso</div>
+                        <h4 class="text-2xl font-bold text-slate-900 text-red-900">AUTOCAD 2D & 3D</h4>
+                    </div>
+                    <div class="flex gap-6 text-right">
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Duración</div>
+                            <div class="text-lg font-bold text-slate-800">90 Horas</div>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Estructura</div>
+                            <div class="text-lg font-bold text-slate-800">4 Módulos / Año</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-y-4 gap-x-8 text-xs sm:text-sm">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Inversión y Costos:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            • Inscripción: <strong>Sin costo</strong> | Mensualidades: <strong>Q 550.00</strong><br>
+                            • Acreditación: Diploma y constancias avaladas por ETS Kinal.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido A:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Sectores de Arquitectura, Ingeniería Civil, Mecánica, Construcción, Diseño Industrial y estudiantes que requieran certificar dominio avanzado en AutoCAD.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Promesa de Salida Laboral:</span>
+                        <p class="text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                            Capacidad de elaborar juegos de planos completos arquitectónicos, estructurales, instalaciones y topográficos con estándares profesionales para trámites municipales y ejecución de proyectos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-indigo-50 text-indigo-700">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Comparación analítica tema por tema de los 4 módulos de AutoCAD 2D & 3D.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 1 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-red-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 5)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Fundamentos de Dibujo 2D, Precisión y Capas AIA</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Manejar la interfaz con fluidez, sistemas de coordenadas, herramientas de dibujo de precisión y organización normalizada de capas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Interfaz de usuario, atajos y espacio de trabajo</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración del área gráfica, línea de comandos, atajos rápidos de teclado y barra de estado.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Sistemas de coordenadas (Absolutas, Relativas, Polares)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Ingreso exacto de puntos y distancias angulares en trazo de líneas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Herramientas de precisión (Osnap, Ortho, Polar Tracking)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Puntos finales, puntos medios, intersecciones, perpendiculares y centros geométricos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Comandos de creación y modificación geométrica</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Line, Polyline, Offset, Trim, Extend, Fillet, Mirror, Array, Scale, Stretch.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Organización de Capas según Estándar AIA / Municipalidades</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Estandarización internacional de nombres y colores de capas (A-WALL, A-DOOR, S-COLS, P-SAN, E-POWR) para orden profesional en despachos de ingeniería y arquitectura.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. [NUEVO] AutoCAD Web y AutoCAD Mobile (Nube y Campo)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Acceso a planos DWG desde teléfonos o tablets mediante Autodesk Cloud, toma de medidas digitales en obra y marcación de correcciones en sitio.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 2 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-red-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 6 a 10)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Bloques Dinámicos, XREFs, Láminas y Cuadros de Vanos</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Crear librerías de bloques dinámicos paramétricos, gestionar referencias externas e imprimir láminas con escalas automáticas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Creación y gestión de bloques dinámicos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Puertas y ventanas con parámetros de visibilidad, estiramiento (stretch) y simetría (flip).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Referencias Externas (XREFs) y trabajo colaborativo</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Vinculación de plantas base en proyectos multidisciplinarios (evitar duplicación de archivos).</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Preparación de Láminas (Layouts, Viewports Anotativos y CTB)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Escalas de anotación automática en textos y cotas, configuración de tablas de ploteo (.CTB) normalizadas para líneas nítidas en planos municipales.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. [NUEVO] Extracción de Datos (Data Extraction) para Cuadros de Vanos</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Generación automática de tablas de puertas, ventanas y accesorios enlazadas dinámicamente con Excel, eliminando el conteo manual.</p>
+                            </div>
+
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. [NUEVO] Preparación de Archivos DWG para Interoperabilidad BIM (Revit)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Limpieza técnica (Audit, Purge, Overkill), orígenes compartidos (0,0,0) y preparación del plano CAD para ser insertado como plantilla en Autodesk Revit.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 3 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-red-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 11 a 15)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Planos Técnicos: Estructuras, MEP, Topografía UTM y As-Built</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Desarrollar el juego completo de planos de ingeniería, poligonales UTM y levantamiento de planos conforme a obra.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Planos de cimentación, columnas y detalles de armado</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Planta de zapatas, cimientos corridos, mochetas y cuadro de especificaciones de acero y concreto.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Planos de instalaciones hidrosanitarias (Agua, Drenajes, Sifones)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Simbología normalizada, diámetros de tuberías, isométricos hidrosanitarios y pendientes de drenaje.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Planos de instalaciones eléctricas y cuadro de cargas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Circuitos de iluminación, tomas de fuerza, diagrama unifilar y simbología bajo norma EEGSA.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Topografía: Poligonal Cerrada, Rumbos, Distancias y Coordenadas UTM</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Generación del cuadro de datos técnicos para escrituración de terrenos y licencias municipales según el Registro General de la Propiedad.</p>
+                            </div>
+
+                            <!-- Nuevos Propuestos -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. [NUEVO] Elaboración de Planos "As-Built" (Conforme a Obra)</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Habilidad altamente exigida por constructoras: registrar en CAD los cambios reales ejecutados en obra civil e instalaciones para el cierre formal del proyecto.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- MÓDULO 4 -->
+                    <!-- ============================================== -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-red-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 16 a 20)</span>
+                                <span>Duración: ~22.5 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Modelado Constructivo 3D, Isométricos y Secciones Fugadas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Modelar sólidos 3D constructivos, generar vistas isométricas técnicas, cortes 3D y ensambles sin perder tiempo en renderizados obsoletos.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Espacio 3D y sistemas de coordenadas dinámicas (UCS)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Vistas isométricas, estilo visual conceptual/oculto y orientación del plano de trabajo en 3D.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Sólidos constructivos y operaciones booleanas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Extrude, Presspull, Union, Subtract, Intersect para modelar muros, vigas y zapatas.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Renderizado nativo y mapeo fotorrealista de AutoCAD</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> El motor de renderizado de AutoCAD es lento, de baja calidad visual y está en total desuso en los despachos guatemaltecos. En la práctica se utiliza Revit, SketchUp, Enscape o Lumion.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Modelado complejo de mallas y superficies 3D</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> No genera geometría constructiva sólida ni información aprovechable para planos; recarga los archivos innecesariamente.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Generación de Isométricos Constructivos y Detalles 3D</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Reorientar el 3D para generar <em>detalles de ensamble estructural, cortes 3D fugados y vistas axonométricas explicativas</em> para incluir en las láminas de entrega técnica.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Cambios Curriculares en AutoCAD 2D & 3D
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Sustento de las decisiones para alinear el programa con las mejores prácticas del mercado guatemalteco.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Renderizado nativo con luces y materiales fotométricos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Completamente en desuso en la industria. Las firmas guatemaltecas usan motores especializados (Enscape, Lumion, V-Ray, Revit). Dedicar tiempo a renderizar en AutoCAD es ineficiente.</td>
+                            <td class="p-3 text-slate-500 font-medium">Estándar de la Industria GT</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Gestión de capas (Layers)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Enseñar la norma internacional AIA CAD Layer Guidelines adaptada a trámites de licencias municipales en Guatemala (A-Muros, S-Soleras, E-Circuitos).</td>
+                            <td class="p-3 text-slate-500 font-medium">Norma AIA / Municipalidades</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Configuración de láminas y ploteo</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Viewports anotativos para ajustar escalas sin alterar el tamaño de textos ni cotas, y archivos .CTB normalizados por calibre de plumilla.</td>
+                            <td class="p-3 text-slate-500 font-medium">Práctica Profesional de Dibujo</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Interoperabilidad CAD-BIM (AutoCAD a Revit)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Requisito altamente cotizado: purgado estricto de DWG, origen de coordenadas y estructuración para vinculación como plantilla en Autodesk Revit.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Planos "As-Built" (Conforme a Obra)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Documentación de cambios reales en obra civil e instalaciones. Toda constructora formal exige el juego final As-Built para entrega de proyectos.</td>
+                            <td class="p-3 text-slate-500 font-medium">Cierre Técnico de Obra</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">AutoCAD Web y Mobile en la Nube</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Permite a supervisores y dibujantes revisar planos, medir distancias y hacer anotaciones en obra desde tablets y smartphones sin llevar papel.</td>
+                            <td class="p-3 text-slate-500 font-medium">Transformación Digital</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN E INTELIGENCIA ARTIFICIAL (IA) -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="wand-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: Autodesk AI y Asistentes de Dibujo</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Integración de inteligencia artificial en flujos de diseño asistido por computadora para duplicar la velocidad del dibujante técnico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        Markup Assist & Reconocimiento OCR de Marcas
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Funcionalidad nativa de Autodesk AI que lee fotografías de planos impresos corregidos a mano con lapicero rojo (redlining), interpreta el texto manuscrito y las nubes de revisión, y las convierte automáticamente en objetos vectoriales y textos editables en el archivo DWG.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="code" class="w-4 h-4"></i>
+                        Generación de Rutinas AutoLISP con IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Capacitación para que el dibujante utilice LLMs (como Claude o ChatGPT) para redactar rutinas personalizadas de AutoLISP en lenguaje natural (ej. "rotular automáticamente todas las áreas cerradas" o "exportar coordenadas de postes a tabla"), automatizando tareas repetitivas en segundos.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        Detección Predictiva de Bloques y Capas
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Herramientas de IA que escanean dibujos desordenados y detectan automáticamente geometrías repetitivas para convertirlas en bloques dinámicos estandarizados y clasificar líneas sueltas en sus capas correspondientes de forma asistida.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            Fundación Kinal • Escuela Técnica Superior • Propuesta Curricular AutoCAD 2D & 3D 2026
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = {
+                'all': document.getElementById('btn-all'),
+                'delete': document.getElementById('btn-delete'),
+                'update': document.getElementById('btn-update'),
+                'new': document.getElementById('btn-new'),
+                'keep': document.getElementById('btn-keep')
+            };
+
+            Object.values(buttons).forEach(btn => {
+                if (btn) btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+            });
+
+            if (buttons[status]) buttons[status].classList.add('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Mantenimiento Mecánico Industrial | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="wrench" class="w-5 h-5 text-blue-400"></i>
+                    Mantenimiento Mecánico Industrial
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white font-bold">MMI</span>
+                <a href="Soldadura_Industrial_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Soldadura Ind.</a>
+                <a href="Calderas_de_Vapor_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Calderas de Vapor</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2026_MMIM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-blue-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Mantenimiento Mecánico Industrial (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Modernización integral orientada a paradas de planta, montaje electromecánico y confiabilidad de activos en Guatemala: Alineación Láser de Ejes, Calentamiento Inductivo de Rodamientos, Análisis Vibracional Básico, Sellos Mecánicos en Bombas Centrífugas y Metodología RCM en sistemas CMMS.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Petróleo/Historia/Periféricas)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">14 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Láser/Sellos/CMMS)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">3 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (Láser / Inducción / RCM)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">75 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-blue-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Exigencias técnicas en ingenios azucareros, plantas papeleras, envasadoras de bebidas, cementeras y molinos harineros en Guatemala.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="crosshair" class="w-5 h-5 text-blue-600"></i>
+                        Alineación Láser de Ejes y Poleas
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Más del 50% de las fallas prematuras de rodamientos y acoples en plantas industriales guatemaltecas son causadas por desalineación de ejes. El método tradicional de regla y calibrador de espesores ya no es tolerado en equipos críticos de más de 25 HP; las empresas exigen alineación láser con reporte digital.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="flame" class="w-5 h-5 text-amber-600"></i>
+                        Cero Daño Térmico en Montaje de Cojinetes
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        El calentamiento de rodamientos con soplete de acetileno o baños de aceite sucio degrada la metalurgia del acero cromo y quema los sellos de fábrica. La industria exige el uso estricto de calentadores de inducción electromagnética con control térmico por sonda magnética (máximo 110 °C).
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="clipboard-check" class="w-5 h-5 text-emerald-600"></i>
+                        Gestión Digital con CMMS y Cultura RCM
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Las empresas han migrado las órdenes de trabajo de papel a sistemas computarizados (SAP PM, Maximo, Fracttal). El mecánico debe registrar tiempos de paro, causas de fallo según taxonomía ISO 14224 y calcular indicadores de confiabilidad como el OEE y el MTTR.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-blue-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Mantenimiento Mecánico Industrial (2026_MMIM.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas distribuidas en 10 Módulos cronológicos</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma de Técnico en Mantenimiento Mecánico Industrial</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, destreza manual e interés en maquinaria pesada y mecanismos industriales.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para desmontar, inspeccionar, reparar y alinear bombas, reductores, rodamientos y sistemas de transmisión en plantas manufactureras.</div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Programa Original
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Contenido Petroquímico Fuera de Enfoque:</strong> El Módulo 5 dedica clases teóricas a <em>"El petróleo"</em> y <em>"El proceso de destilación"</em>, conocimientos de refinería que no aportan a la labor del mecánico de planta, quien necesita diagnosticar compatibilidad de grasas con jabón de litio/poliurea y viscosidades ISO VG.</li>
+                    <li><strong>Falta de Metrología Láser en Alineación:</strong> El Módulo 6 se limitaba a métodos tradicionales de alineación de acoples con regla y palpador manual, desfasado de los equipos láser con compensación térmica utilizados en la industria guatemalteca moderna.</li>
+                    <li><strong>Incongruencia en Tipos de Bombas:</strong> El Módulo 7 incluye <em>"Bomba periférica"</em> (equipo doméstico de bajo caudal), restando tiempo al mantenimiento de bombas centrífugas de procesos químicos y de alimentos con sellos mecánicos dobles.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-blue-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>93 temas</strong> desglosados en sus 10 módulos oficiales.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (96)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (4)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (14)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (3)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (75)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Mediciones Mecánicas e Introducción a Elementos Mecánicos</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Teoría del mantenimiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Introducción a los diferentes sistemas de unidades.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conversión de unidades entre diferentes sistemas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Medidas de longitud. Áreas y Volumen, aplicados en la industria.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Instrumentos de precisión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mediciones mecánicas de precisión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conceptos de calor, temperatura, presión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Fundamentos de electricidad, circuitos en serie y paralelo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Instrumento de medicion eléctrica. multímetro. amperímetro.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores electricos, conexión básica, cambio de giro</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">Elementos Mecánicos Simples</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Teoría del hierro y del acero.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Metales utilizados en la industria del mantenimiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Corrosión, tipos y como prevenirla</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Física elemental.  Calculo básico</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principio de transmisión de fuerza.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de la geometría de las fuerzas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de presión y transmisión de fuerza.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de tornillos.  Clasificación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Torque para tornillos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Accesorios, arandelas, roldanas, tuercas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">Elementos Mecánicos de Transmisión (Transmisiones Flexibles)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Movimiento circular.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de velocidad, frecuencia y fuerza.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Poleas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Potencia y transmisión.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Proceso de alineación de poleas y fajas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Transmisión de Precisión</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar alineadores láser magnéticos de poleas y tensiómetros de frecuencia sónicos para evitar sobretensión de fajas y desgaste prematuro de descanseras.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Principio del funcionamiento de las fajas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento de un sistema de transmisión por fajas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conversión de velocidades para un sistema de transmisión por fajas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Aplicación de fajas y poleas en un sistema mecánico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+                            <h4 class="font-bold text-slate-900 text-base">Elementos Mecánicos de Transmisión (Transmisión por Engranajes)</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Engranajes rectos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Formación y tallado de los engranajes (geometría).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tren de engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Alineación de engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Elementos de Máquina</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Inspección de contacto de dientes con azul de Prusia, medición de huelgo (backlash) y lubricación por goteo/inmersión según AGMA.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Esfuerzo en los dientes del engranaje.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Factor de seguridad en los engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Disipación de calor de los engranajes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Engranajes helicoidales, cónicos y tornillo sin fin.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Aplicación de los engranajes y su mantenimiento.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Cadenas de rodillos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Elementos de Máquina</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Inspección de contacto de dientes con azul de Prusia, medición de huelgo (backlash) y lubricación por goteo/inmersión según AGMA.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Lubicación de Maquinaria</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El petróleo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Teoría Petroquímica Excesiva</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Teoría petroquímica abstracta sin impacto práctico en planta; el mecánico requiere dominar tablas de viscosidad ISO VG, compatibilidad de grasas y puntos de goteo.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">El proceso de destilación para la obtención de lubricantes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Teoría Petroquímica Excesiva</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Teoría petroquímica abstracta sin impacto práctico en planta; el mecánico requiere dominar tablas de viscosidad ISO VG, compatibilidad de grasas y puntos de goteo.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Características físicas de los lubricantes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de lubricación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Técnicas de lubricación manual y automática.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Utilización de equipos para lubricación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Lubricantes de uso automotriz.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Lubricantes de uso industrial.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Hidrodinámica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">6</span>
+                            <h4 class="font-bold text-slate-900 text-base">Rodamientos y Acoplamientos Mecánicos, Comunes y Especiales</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de rodamientos (cojinetes).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Instalación correcta de cojinetes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Rodamientos de Alta Exigencia</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Ajustes y tolerancias ISO (h6, js6), montaje por calentamiento inductivo controlado (< 110°C) y desmontaje con extractores mecánicos e hidráulicos sin golpear pistas.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento de cojinetes y problemas de vibración.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Rodamientos de Alta Exigencia</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Ajustes y tolerancias ISO (h6, js6), montaje por calentamiento inductivo controlado (< 110°C) y desmontaje con extractores mecánicos e hidráulicos sin golpear pistas.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Acoplamientos mecánicos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alineación de Ejes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modernizar del reloj comparador manual a sistemas computarizados de alineación láser de ejes con detección de pata coja (soft foot).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de acoplamientos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alineación de Ejes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modernizar del reloj comparador manual a sistemas computarizados de alineación láser de ejes con detección de pata coja (soft foot).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Acoplamientos comunes y especiales.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alineación de Ejes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modernizar del reloj comparador manual a sistemas computarizados de alineación láser de ejes con detección de pata coja (soft foot).</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Técnicas de alineación de rodamientos y acoples.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alineación de Ejes</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Modernizar del reloj comparador manual a sistemas computarizados de alineación láser de ejes con detección de pata coja (soft foot).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Volantes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Alineación Láser de Precisión de Ejes y Detección de Pie Cojo (Soft Foot)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metrología Láser de Montaje</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Uso de alineadores láser inalámbricos con compensación térmica para eliminar vibraciones en trenes motrices y bombas multietapa.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Montaje Térmico de Rodamientos con Calentadores de Inducción</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Montaje de Precisión SKF/FAG</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Desmagnetización automática, control por sonda magnética a 110°C y eliminación total del calentamiento destructivo con soplete o baño de aceite sucio.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">7</span>
+                            <h4 class="font-bold text-slate-900 text-base">Bombas Centrífugas: Operaciones y Mantenimiento</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sistema de bombeo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Turbomaquinaria y Sellado</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico de cavitación (NPSH), inspección de impulsores, balanceo dinámico y reemplazo/armado de sellos mecánicos con caras de carburo de silicio.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bomba centrífuga.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Turbomaquinaria y Sellado</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico de cavitación (NPSH), inspección de impulsores, balanceo dinámico y reemplazo/armado de sellos mecánicos con caras de carburo de silicio.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bomba periférica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Equipo Doméstico</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Las bombas periféricas pequeñas son de uso casero; enfocar las horas en bombas centrífugas de procesos, bombas de cavidad progresiva y bombas de engranajes.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento de la bomba centrífuga y periférica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Turbomaquinaria y Sellado</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diagnóstico de cavitación (NPSH), inspección de impulsores, balanceo dinámico y reemplazo/armado de sellos mecánicos con caras de carburo de silicio.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bombas rotodinámicas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bombas de desplazamiento positivo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bomba hidroneumática.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Manuales de hidráulica.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Otros tipos de bombas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">8</span>
+                            <h4 class="font-bold text-slate-900 text-base">Seguridad Industrial</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">11 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Historia de la seguridad y la revolución industrial.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Historia Teórica</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Reseña histórica prescindible; sustituir directamente por normativas vigentes del Reglamento de SSO (Acuerdo Gub. 229-2014).</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Conceptos críticos de seguridad.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Identificación de condiciones inseguras y actos inseguros.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Prevención de incidentes y accidentes.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso de equipo de protección personal (EPP).</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Seguridad en el trabajo eléctrico.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Bloqueo y etiquetado.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Trabajo en altura.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Uso de extintores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Técnicas de primeros auxilios.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Plan de emergencias.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">9</span>
+                            <h4 class="font-bold text-slate-900 text-base">Administración del Mantenimiento Mecánico</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">8 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición de Mantenimiento Correctivo, Preventivo y Predictivo</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento Centrado en Confiabilidad (RCM)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Los Costos del Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Optimización de Planta</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Programas de Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Ejecución del Programa de Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento y su Relación con Otros Departamentos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center">10</span>
+                            <h4 class="font-bold text-slate-900 text-base">Mantenimiento Productivo Total y Procesos de Manufactura</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Proceso Productivo</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Metodología de las 5S</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mantenimiento Productivo Total (TPM) y su Aplicación</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Diferencias con Otras Metodologías</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Implementar TPM</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">OEE, (Eficiencia Global de equipo) y su Importancia en el Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gestión Digital del Mantenimiento</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Uso de plataformas CMMS/GMAO en tablets móviles para recepción de órdenes de trabajo, control de repuestos y cálculo automático de OEE y MTBF.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Mejores Prácticas del Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mecánica Industrial</div>
+                            <p class="text-slate-700 leading-relaxed">Fundamento mecánico y operativo indispensable para el mantenimiento preventivo en plantas productivas de Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sistemas Computarizados de Gestión de Mantenimiento</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gestión Digital del Mantenimiento</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Uso de plataformas CMMS/GMAO en tablets móviles para recepción de órdenes de trabajo, control de repuestos y cálculo automático de OEE y MTBF.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Mantenimiento Centrado en la Confiabilidad (RCM) y Análisis Causa Raíz (RCA)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ingeniería de Confiabilidad</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Metodología de análisis de modos y efectos de fallas (FMEA), árboles de causas de paro y planes de prevención proactivos para activos críticos.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-blue-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Alineación de Ejes</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Uso exclusivo de regla de pelo y reloj comparador manual susceptible a error de paralelismo.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Sistemas láser de alineación con corrección de pata coja (soft foot) y generación de reporte de tolerancia digital.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Montaje de Rodamientos</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Golpeteo mecánico o calentamiento informal con soplete que destempla las pistas de acero.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Calentadores de inducción electromagnética con control de temperatura a 110 °C y desmagnetización automática.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Lubricación y Tribología</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Clases teóricas sobre extracción de petróleo crudo y procesos de refinación.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Selección de lubricantes bajo tablas ISO VG / NLGI, compatibilidad de espesantes y cálculo de frecuencias de reengrase.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Bombas y Sellado</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Enfoque en bombas periféricas domésticas y prensaestopas tradicionales con fugas continuas.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Bombas centrífugas industriales de procesos, cálculo de NPSH para evitar cavitación y montaje de sellos mecánicos de cartucho.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Gestión del Mantenimiento</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Registros en libretas manuales de papel y mantenimiento puramente correctivo.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Gestión con software CMMS/GMAO en la nube, cálculo de confiabilidad OEE/MTBF y metodología RCM para análisis de fallas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-blue-500/30 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-blue-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Mantenimiento Mecánico</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                        Análisis Predictivo de Vibraciones Mecánicas Asistido por IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Sensores inalámbricos triaxiales acoplados a motores y bombas que transmiten datos a modelos de Machine Learning, identificando desbalance, holguras o falla en pista exterior de rodamientos con semanas de anticipación.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: SKF Enlight AI / Prüftechnik OMNITREND AI.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        Inspección Visual y Detección de Fricción con Cámaras Acústicas IA
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Cámaras de ultrasonido con IA que visualizan en pantalla la procedencia exacta de ruidos de cavitación en tuberías y chirridos de rodamientos no perceptibles al oído humano en entornos ruidosos de fábrica.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Fluke ii910 Acoustic Imager AI.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Asistente RAG para Procedimientos de Desarme y Manuales OEM
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Copilot técnico que analiza planos seccionales y manuales de mantenimiento de reductores Sew-Eurodrive y bombas Goulds, entregando de inmediato torques de apriete, tolerancias de montaje y secuencias seguras de desarme.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Mechanical OEM Copilot / NotebookLM Industrial.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Coordinación Académica • Propuesta Curricular Mantenimiento Mecánico Industrial 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

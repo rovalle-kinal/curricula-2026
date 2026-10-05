@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Aplicada 2 (Ingeniería Económica) (Bimestre 4) | Dictamen Curricular TSU Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 32px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .header-badge-alt {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 12px; }
+        header p { color: #cbd5e1; font-size: 0.98rem; }
+        nav.nav-bar {
+            background: #0b1f3a;
+            padding: 0 40px;
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav.nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 12px 14px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.nav-bar a:hover { color: #ffffff; border-bottom-color: var(--kinal-accent); }
+        nav.nav-bar a.active { color: #ffffff; background: rgba(255,255,255,0.08); border-bottom-color: var(--kinal-accent); }
+        
+        main { padding: 36px 40px; }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .table-dictamen {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .table-dictamen th, .table-dictamen td {
+            padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+            text-align: left;
+        }
+        .table-dictamen th {
+            background: #f8fafc;
+            color: var(--kinal-blue);
+            font-weight: 700;
+        }
+
+        .callout-box {
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 18px 0;
+            font-size: 0.92rem;
+        }
+        .callout-yellow { background: var(--color-actualizar-bg); border-left: 4px solid var(--color-actualizar-border); color: var(--color-actualizar-text); }
+        .callout-red { background: var(--color-anular-bg); border-left: 4px solid var(--color-anular-border); color: var(--color-anular-text); }
+        .callout-blue { background: var(--color-nuevo-bg); border-left: 4px solid var(--color-nuevo-border); color: var(--color-nuevo-text); }
+
+        .proposito-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .proposito-card h3 {
+            color: var(--kinal-blue);
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+        .proposito-card ul {
+            padding-left: 20px;
+            color: var(--text-dark);
+        }
+        .proposito-card li {
+            margin-bottom: 8px;
+        }
+
+        .pagination-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .pagination-bar a {
+            color: var(--kinal-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+        .pagination-bar a:hover {
+            background: var(--kinal-blue);
+            color: #ffffff;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-meta">
+            <span class="header-badge">Bimestre 4</span>
+            <span class="header-badge-alt">Periodo 4 (50 min)</span>
+            <span class="header-badge-alt">Ciencias Exactas Aplicadas</span>
+        </div>
+        <h1><span>🏦</span> Matemática Aplicada 2 (Ingeniería Económica)</h1>
+        <p>Dictamen curricular técnico, pertinencia para mandos medios en Guatemala y propuesta modernizada conforme al ideario de Fundación Kinal.</p>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html">← Menú Principal TSU</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; font-weight: 700;">🗺️ Mapa Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; font-weight: 700;">📚 Temarios por Línea</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; font-weight: 700;">🌟 Nueva Distribución 2026</a>
+        <a href="b1_etica_general_1.html" >Bimestre 1: Ética General 1</a>
+<a href="b1_fundamentos_administracion.html" >Bimestre 1: Fundamentos de la Administración</a>
+<a href="b1_planeacion_control_trabajo.html" >Bimestre 1: Planeación y Control para el Trabajo</a>
+<a href="b1_matematica_basica_1.html" >Bimestre 1: Matemática Básica 1</a>
+<a href="b1_fisica_basica_1.html" >Bimestre 1: Física Básica 1</a>
+<a href="b2_etica_general_2.html" >Bimestre 2: Ética General 2</a>
+<a href="b2_herramientas_contables.html" >Bimestre 2: Herramientas Contables para la Supervisión</a>
+<a href="b2_administracion_rrhh_sso.html" >Bimestre 2: Administración de RRHH y SSO</a>
+<a href="b2_matematica_basica_2.html" >Bimestre 2: Matemática Básica 2</a>
+<a href="b2_fisica_aplicada_1.html" >Bimestre 2: Física Aplicada 1</a>
+<a href="b3_etica_profesional_1.html" >Bimestre 3: Ética Profesional 1</a>
+<a href="b3_metodos_produccion.html" >Bimestre 3: Métodos de Producción</a>
+<a href="b3_servicio_cliente.html" >Bimestre 3: Servicio al Cliente</a>
+<a href="b3_matematica_aplicada_1.html" >Bimestre 3: Matemática Aplicada 1</a>
+<a href="b3_fisica_aplicada_2.html" >Bimestre 3: Física Aplicada 2</a>
+<a href="b4_etica_profesional_2.html" >Bimestre 4: Ética Profesional 2</a>
+<a href="b4_control_calidad.html" >Bimestre 4: Control de Calidad</a>
+<a href="b4_fundamentos_marketing.html" >Bimestre 4: Fundamentos del Marketing</a>
+<a href="b4_matematica_aplicada_2.html" class="active">Bimestre 4: Matemática Aplicada 2 (Ingeniería Económica)</a>
+<a href="b4_fisica_aplicada_3.html" >Bimestre 4: Física Aplicada 3</a>
+
+    </nav>
+
+    <main>
+        <h2 style="color: var(--kinal-blue); margin-bottom: 16px;">Auditoría Curricular y Matriz de Actualización</h2>
+        
+        <table class="table-dictamen">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Dimensión Curricular</th>
+                    <th style="width: 15%;">Dictamen</th>
+                    <th style="width: 60%;">Contenido y Diagnóstico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Contenido Original (Pensum 2026)</strong></td>
+                    <td><span class="tag-pill" style="background:#e2e8f0; color:#334155;">Original</span></td>
+                    <td>Definiciones cualitativas del valor del dinero en el tiempo y fuentes de crédito bancario.</td>
+                </tr>
+                <tr style="background: #fff5f5;">
+                    <td><strong>Lo que vale la pena Anular</strong></td>
+                    <td><span class="tag-pill tag-anular">Anular</span></td>
+                    <td>
+                        <div class="callout-box callout-red" style="margin: 0; padding: 10px 14px;">
+                            <strong>Eliminación justificada:</strong> Teoría monetaria macroeconómica que no incide en la toma de decisiones técnicas de taller.
+                        </div>
+                    </td>
+                </tr>
+                <tr style="background: #fefce8;">
+                    <td><strong>Contenidos a Actualizar</strong></td>
+                    <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                    <td>
+                        <div class="callout-box callout-yellow" style="margin: 0; padding: 10px 14px;">
+                            <strong>Modernización técnica:</strong> Tasas de interés nominales vs. efectivas (TEA), inflación y depreciación de activos fijos según la ley del ISR de Guatemala (línea recta).
+                        </div>
+                    </td>
+                </tr>
+                <tr style="background: #eff6ff;">
+                    <td><strong>Nuevos Conocimientos</strong></td>
+                    <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                    <td>
+                        <div class="callout-box callout-blue" style="margin: 0; padding: 10px 14px;">
+                            <strong>Innovación y Demanda 2026:</strong> Interés Compuesto y Evaluación Financiera de Inversiones: Fórmulas de interés compuesto, valor futuro (VF), valor presente (VP), anualidades y tablas de amortización (método francés y alemán). Evaluación de proyectos de automatización: VPN (Valor Presente Neto), TIR (Tasa Interna de Retorno), Payback y análisis de reemplazo de maquinaria (¿reparar o sustituir?).
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout-box callout-blue">
+            <strong>Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong><br>
+            Para que la gerencia apruebe la compra de un variador de frecuencia o un robot, el supervisor debe demostrar que el VPN es positivo y que el Payback es menor a 18 meses gracias al ahorro eléctrico.
+        </div>
+
+        <div class="proposito-card">
+            <h3>Temario Modernizado Propuesto (Propuesta Curricular Kinal 2026)</h3>
+            <ul>
+                <li>Interés compuesto, tasas nominales vs. efectivas y valor del dinero en el tiempo</li><li>Anualidades y tablas de amortización de préstamos y leasing industrial</li><li>Evaluación de proyectos técnicos: Valor Presente Neto (VPN) y TIR</li><li>Análisis de reemplazo de maquinaria y Costo de Ciclo de Vida del Activo (LCC)</li>
+            </ul>
+        </div>
+
+        <div style="background: #f1f5f9; padding: 18px 24px; border-radius: 8px; font-size: 0.9rem; color: #475569;">
+            <strong>Alineación con el Ideario Kinal:</strong> El curso fomenta el principio del <em>"trabajo bien hecho"</em>, el espíritu de servicio y el rigor técnico. Nota mínima aprobatoria institucional: <strong>&ge; 75 puntos sobre 100</strong>.
+        </div>
+
+        <div class="pagination-bar">
+            <a href="index.html">← Volver al Portal General TSU</a>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Bimestre 4 • Matemática Aplicada 2 (Ingeniería Económica)</span>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Técnico Superior Universitario (TSU) • Convenio Universidad del Istmo (UNIS) • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>

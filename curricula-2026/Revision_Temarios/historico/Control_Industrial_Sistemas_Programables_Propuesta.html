@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Control Industrial con Sistemas Programables | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .item-delete { background-color: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+        .item-update { background-color: #fefce8; border-left: 4px solid #eab308; color: #854d0e; }
+        .item-new { background-color: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+        .item-keep { background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #166534; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="binary" class="w-5 h-5 text-amber-400"></i>
+                    Control Industrial con Sistemas Programables
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="Instalaciones_Electricas_Generales_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Inst. Eléctricas</a>
+                <a href="Controles_y_Maquinas_Electricas_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Controles y Máquinas</a>
+                <a href="Electronica_Analogica_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Electrónica Analógica</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-amber-600 text-white font-bold">CISP</span>
+                <a href="Automatizacion_Industrial_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Automatización Ind.</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_CISPM.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-amber-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Control Industrial con Sistemas Programables (180 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Evolución de sistemas embebidos y controladores lógicos para la automatización de manufactura: Programación en Texto Estructurado (SCL / ST según IEC 61131-3), Interfaces Hombre-Máquina (HMI), Gemelos Digitales con Factory I/O y Circuitos de Paro de Emergencia Categoría 4 (ISO 13849-1).
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">1 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Displays Maker Escolar)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">9 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Siemens S7/TIA Portal/Festo)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (SCL / HMI / ISO 13849)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">15 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 1</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">
+                    Exigencias técnicas en plantas embotelladoras, fábricas de cartón, ingenios y empaques en Guatemala para el control de celdas de trabajo automatizadas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="code" class="w-5 h-5 text-amber-600"></i>
+                        Superación del Ladder Exclusivo (Texto Estructurado)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Aunque el diagrama de contactos (Ladder) sigue vigente para paradas y arranques simples, las máquinas de envasado y paletizado modernas en Guatemala integran recetas de producción, bucles de cálculo matemático y comunicaciones que son inmanejables en Ladder y exigen Texto Estructurado (SCL según norma IEC 61131-3).
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="monitor" class="w-5 h-5 text-blue-600"></i>
+                        Interfaces HMI y Gemelos Virtuales (Factory I/O)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        El técnico de mantenimiento ya no interactúa a ciegas con luces piloto; comisiona pantallas táctiles (Weintek, Siemens KTP) y simula el funcionamiento electromecánico completo con gemelos digitales en 3D antes de transferir el programa a la máquina física, previniendo colisiones costosas.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+                        Seguridad Funcional de Maquinaria (ISO 13849-1)
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Las auditorías de seguridad ocupacional en Guatemala sancionan severamente conectar una parada de emergencia como una simple entrada digital estándar de PLC. Se requiere cableado de seguridad en Categoría 3/4 con relés de seguridad redundantes y válvulas neumáticas de descarga cero energía.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 2</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-amber-600"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div><strong>Programa Académico:</strong> Control Industrial con Sistemas Programables (2025_CISPM.xlsx)</div>
+                <div><strong>Duración Total:</strong> 180 Horas distribuidas en 3 Módulos extensivos de 60 hrs</div>
+                <div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+                <div><strong>Acreditación:</strong> Diploma Técnico en Electrónica Industrial / Sistemas Programables</div>
+                <div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica como mínimo, conocimientos de electrónica analógica y lógica digital.</div>
+                <div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Diseñar sistemas de control y procesos industriales dedicados a la transformación de materias primas mediante sistemas embebidos, PLCs y electroneumática.</div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+                <h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Programa Original
+                </h4>
+                <ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+                    <li><strong>Dependencia de Hardware Maker Escolar:</strong> En el Módulo 1 se incluyen <em>"Pantallas LCD y MAX7219 LED"</em>, componentes diseñados para pasatiempos escolares que carecen de robustez electromagnética industrial (inmunidad EMI) y no se utilizan en tableros de control en plantas guatemaltecas.</li>
+                    <li><strong>Monocultivo de Software CCW:</strong> El Módulo 2 enfoca el PLC únicamente en software CCW (Connected Components Workbench de Allen-Bradley Micro800), marginando la plataforma Siemens TIA Portal S7-1200, que concentra una cuota de mercado industrial dominante en Guatemala.</li>
+                    <li><strong>Aislamiento de la Electroneumática:</strong> El Módulo 3 trata la electroneumática con secuencias básicas sin integrarla a islas de válvulas multipolo ni interfaces de comunicación de bus de campo (IO-Link / Profinet).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 3</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5 text-amber-600"></i>
+                        Distribución Modular y Auditoría Analítica Tema por Tema
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Total de temas auditados en el pensum original: <strong>25 temas</strong> desglosados en sus 3 módulos principales.
+                    </p>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                    <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">Todos (29)</button>
+                    <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition">🔴 Eliminar (1)</button>
+                    <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition">🟡 Actualizar (9)</button>
+                    <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition">🔵 Nuevos (4)</button>
+                    <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition">🟢 Mantener (15)</button>
+                </div>
+            </div>
+
+            <!-- Listado de Módulos y Temas -->
+            <div class="space-y-8">
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-slate-900 text-base">Manejo de Microcontroladores</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Microcontroladores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sistemas Embebidos Industriales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfocar microcontroladores en plataformas de riel DIN con optoacoplamiento (ESP32 Industrial / Controllino) y programación en C/C++ estructurado.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Estructura principal de programación del microcontrolador.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sistemas Embebidos Industriales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfocar microcontroladores en plataformas de riel DIN con optoacoplamiento (ESP32 Industrial / Controllino) y programación en C/C++ estructurado.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Manejo del paquete de software Arduino IDE.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sistemas Embebidos Industriales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfocar microcontroladores en plataformas de riel DIN con optoacoplamiento (ESP32 Industrial / Controllino) y programación en C/C++ estructurado.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Condicionales: if, if else y ciclo for.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Condicionales: switch case, while, do...while.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-delete p-3.5 rounded-lg text-xs space-y-1.5" data-status="delete">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Pantallas LCD y MAX7219 LED.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-red-100 text-red-800">🔴 Eliminar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hardware Maker Escolar</div>
+                            <p class="text-slate-700 leading-relaxed">🔴 Eliminar: Módulos display comerciales de aficionado sin blindaje ni aislamiento galvánico; en plantas reales se utilizan terminales HMI industriales en red Ethernet.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Motores DC, stepper y servo.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Sensores e instrumentación.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Módulo analógico y sensores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Programación en Texto Estructurado (SCL / ST según IEC 61131-3)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Lenguajes Avanzados de Control</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Superar las limitaciones de Ladder para algoritmos matemáticos complejos, recetas y manejo de cadenas de texto y matrices de datos.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-slate-900 text-base">PLC</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">9 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Definición y usos en la industria: ventajas y desventajas del PLC.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Controladores lógicos programables.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Plataformas Líderes en Guatemala</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diversificar más allá de CCW hacia Siemens S7-1200 con TIA Portal V18/V19 y Rockwell Studio 5000, estándar mayoritario en la industria manufacturera local.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Manejo del paquete de software CCW de PLC con programación ladder.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Plataformas Líderes en Guatemala</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Diversificar más allá de CCW hacia Siemens S7-1200 con TIA Portal V18/V19 y Rockwell Studio 5000, estándar mayoritario en la industria manufacturera local.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Funciones básicas: comparaciones y compuertas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Temporizadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Contadores.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Entradas y salidas analógicas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procesamiento de Señales</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Escalamiento matemático riguroso con bloques NORM_X y SCALE_X para señales 4-20mA y 0-10V con filtrado digital contra ruido electromagnético.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Programación secuencial.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Diseño de Interfaces Hombre-Máquina (HMI) Industriales y Simulación Factory I/O</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Visualización y Gemelos Digitales</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Creación de pantallas táctiles Weintek/Siemens con visualización de alarmas operativas, pulsadores y gemelos digitales 3D para validación de procesos.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-slate-900 text-base">Electroneumática con PLC</h4>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium">10 temas analizados</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Generación de aire comprimido.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Manejo del paquete de software FluidSim de FESTO.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Integración Neumática Avanzada</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Control electroneumático de islas de válvulas por bus de campo, gemelo virtual con Factory I/O y métodos paso a paso implementados en PLC.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Tipos de válvulas y actuadores y sus funcionamientos.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Instalaciones neumáticas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Secuencias neumáticas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-keep p-3.5 rounded-lg text-xs space-y-1.5" data-status="keep">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Panel didáctico TP 101 de FESTO.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamento de Control</div>
+                            <p class="text-slate-700 leading-relaxed">Concepto medular en la formación de programadores de automatismos industriales en Guatemala.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Electroneumática.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Integración Neumática Avanzada</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Control electroneumático de islas de válvulas por bus de campo, gemelo virtual con Factory I/O y métodos paso a paso implementados en PLC.</p>
+                        </div>
+
+                        <div class="content-item item-update p-3.5 rounded-lg text-xs space-y-1.5" data-status="update">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">Secuencias electroneumáticas.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-amber-100 text-amber-800">🟡 Actualizar</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Integración Neumática Avanzada</div>
+                            <p class="text-slate-700 leading-relaxed">🟡 Actualizar: Control electroneumático de islas de válvulas por bus de campo, gemelo virtual con Factory I/O y métodos paso a paso implementados en PLC.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Diseño de Interfaces Hombre-Máquina (HMI) Industriales y Simulación Factory I/O</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Visualización y Gemelos Digitales</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Creación de pantallas táctiles Weintek/Siemens con visualización de alarmas operativas, pulsadores y gemelos digitales 3D para validación de procesos.</p>
+                        </div>
+
+                        <div class="content-item item-new p-3.5 rounded-lg text-xs space-y-1.5" data-status="new">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="font-bold text-slate-900">[NUEVO] Relés de Seguridad y Dispositivos de Paro de Emergencia Categoría 4 (ISO 13849-1)</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase whitespace-nowrap bg-blue-100 text-blue-800">🔵 Propuesta Nueva</span>
+                            </div>
+                            <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad en Máquinas</div>
+                            <p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Circuitos de parada de emergencia de doble canal redundante, cortinas de luz de seguridad y válvulas neumáticas de descarga rápida para protección de operarios.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Matriz Comparativa -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 4</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5 text-amber-600"></i>
+                    Matriz Comparativa: Pensum Tradicional vs. Pensum Modernizado 2026
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+                        <tr>
+                            <th class="p-3 border border-slate-200">Eje Temático</th>
+                            <th class="p-3 border border-slate-200 text-red-800 bg-red-50/50">Enfoque Anterior (Obsolescencia / Brechas)</th>
+                            <th class="p-3 border border-slate-200 text-emerald-800 bg-emerald-50/50">Enfoque Modernizado 2026 (Estándar Kinal ETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Lenguajes de Programación</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Enfoque 100% exclusivo en diagrama de escalera (Ladder) básico en CCW.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Programación híbrida: Ladder para control secuencial y Texto Estructurado (SCL / ST) para procesamiento de recetas y cálculos.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Hardware y Microcontroladores</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Tarjetas Arduino de aficionado con cables jumper y displays LCD 1602 no aptos para plantas.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Controladores embebidos industriales en carril DIN con aisladores ópticos, salidas a relé y borneras atornillables.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Visualización Hombre-Máquina</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Monitoreo limitado al parpadeo de LEDs en el controlador físico.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Diseño de pantallas HMI industriales táctiles con registro histórico de eventos, gestión de alarmas y recetas.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Simulación y Gemelos Digitales</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Simulación esquemática 2D aislada en FluidSim sin interacción en tiempo real con el PLC.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Gemelos digitales 3D en Factory I/O comunicados por OPC/Ethernet directamente al PLC para validación antes de arranque.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-900 border border-slate-200">Seguridad Ocupacional en Máquinas</td>
+                            <td class="p-3 text-slate-600 border border-slate-200">Paros de emergencia cableados como entradas digitales simples sin redundancia.</td>
+                            <td class="p-3 text-slate-800 border border-slate-200 font-medium">Norma ISO 13849-1 / Categoría 4: relés de seguridad redundantes de doble canal y corte de potencia neumático certificado.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
+        <section class="bg-gradient-to-r from-amber-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="p-2.5 rounded-lg bg-amber-500/20 text-amber-300">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="bg-amber-500/30 text-amber-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-amber-400/30">Módulo Adicional / Opcional</span>
+                    <h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Sistemas Programables</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="code" class="w-4 h-4"></i>
+                        Generación de Código SCL y Ladder con Copilots de Automatización
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Uso de modelos LLM especializados para generar bloques de función en Texto Estructurado a partir de especificaciones en lenguaje natural, reduciendo en un 50% el tiempo de programación de secuencias lógicas.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Siemens Industrial Copilot / GitHub Copilot for SCL.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                        Detección Predictiva de Fugas y Desgaste Neumático con Machine Learning
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Algoritmos que analizan los tiempos de carrera de actuadores neumáticos y el perfil de presión en las líneas de aire para alertar de fugas microscópicas o atascamientos mecánicos antes de frenar la celda.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Festo AX AI Assistant / InfluxDB Anomaly Detector.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="boxes" class="w-4 h-4"></i>
+                        Gemelos Digitales y Optimización Cinematográfica en Fábrica Virtual
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Simulación de colisiones, cálculo de cuellos de botella y balanceo de líneas mediante gemelos digitales inteligentes que interactúan en tiempo real con el programa cargado en el PLC.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Factory I/O 3D Twin / SIMIT Virtual Commissioning.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Coordinación Académica • Propuesta Curricular Control Industrial con Sistemas Programables 2026
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
