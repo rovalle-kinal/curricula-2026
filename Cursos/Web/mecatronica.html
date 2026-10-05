@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecatrónica Industrial y Fabricación Digital | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .hero-pattern {
+            background: linear-gradient(135deg, #09172e 0%, #0f2d59 50%, #1e3a8a 100%);
+        }
+        .tab-btn.active {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .session-item.active {
+            background-color: #003366;
+            color: #ffffff;
+            border-color: #003366;
+        }
+        .session-item.active span, .session-item.active p {
+            color: #e2e8f0;
+        }
+        .session-item.active .badge-code {
+            background-color: #f59e0b;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cursos
+                </a>
+                <span class="text-slate-600">|</span>
+                <div class="text-slate-200 font-bold text-xs sm:text-sm flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
+                    Mecatrónica Industrial & Fabricación Digital
+                </div>
+            </div>
+            
+            <!-- Quick Download Buttons -->
+            <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-400 hidden sm:inline">Word:</span>
+                <a href="../Mecatrónica/Propuesta_Curso_Mecatronica_Kinal.docx" download class="px-2.5 py-1 rounded bg-blue-900/60 hover:bg-blue-800 text-blue-200 transition font-medium" title="Descargar Propuesta Oficial">
+                    Propuesta
+                </a>
+                <a href="../Mecatrónica/Temario_Curso_Mecatronica_Kinal.docx" download class="px-2.5 py-1 rounded bg-emerald-900/60 hover:bg-emerald-800 text-emerald-200 transition font-medium" title="Descargar Temario Oficial">
+                    Temario
+                </a>
+                <a href="../Mecatrónica/Dosificacion_y_Secuencia_Didactica_Mecatronica_Kinal.docx" download class="px-2.5 py-1 rounded bg-amber-900/60 hover:bg-amber-800 text-amber-200 transition font-medium" title="Descargar Dosificación Oficial">
+                    Dosificación
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Course Banner -->
+    <section class="hero-pattern text-white py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide uppercase">
+                    Especialidad Presencial en Taller
+                </span>
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold">
+                    DQR Nivel 4 - 5
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                    Aprobación: ≥ 75 Pts
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+                Mecatrónica Industrial y Fabricación Digital Aplicada
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-4xl leading-relaxed">
+                Diseño CAD paramétrico 3D, ingeniería inversa, manufactura aditiva FDM, corte láser CO2, fresado CNC, sensórica industrial PNP/NPN, electroneumática y control con PLC Siemens S7-1200 para la automatización de líneas de producción.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Bar Navigation (UNA SOLA PALABRA, SIN NUMERACIÓN) -->
+    <div class="bg-white border-b border-slate-200 sticky top-14 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex space-x-2 sm:space-x-3 py-2.5 overflow-x-auto text-xs font-bold">
+                <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-4 py-2 rounded-xl transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
+                </button>
+                <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
+                </button>
+                <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
+                </button>
+                <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
+                </button>
+                <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 1: PROPUESTA -->
+        <!-- ================================================================== -->
+        <div id="tab-propuesta" class="tab-content space-y-8">
+            
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center font-black">
+                    <i data-lucide="file-badge" class="w-4 h-4"></i>
+                </span>
+                <h3 class="text-xl font-black text-slate-900">
+                    Ficha Técnica Oficial del Programa
+                </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
+                Código: MEC-2026-KINAL
+            </span>
+        </div>
+        <div class="divide-y divide-slate-100">
+            
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nivel Formativo de Referencia:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Equivalencia DQR Nivel 4 - 5 (Cualificación técnica especializada y autonomía operativa)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Duración Total:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">90 horas pedagógicas presenciales (20 sesiones sabatinas de 4.5 horas)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Temporalidad:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">5 meses continuos (Febrero a Junio) — Sábados de 8:00 a 12:30 horas</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Modalidad:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Presencial en Talleres de Fabricación Digital y Automatización Kinal</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Distribución Metodológica:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">25% Fundamentación Técnica / 75% Ejecución Práctica en Maquinaria y Banco</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nota Mínima Aprobatoria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">75 puntos sobre 100 en todas las evaluaciones de módulo y proyecto terminal</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Sede:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Fundación Kinal — Sede Central, Zona 7, Ciudad de Guatemala</dd>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-blue-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
+                    </p>
+                    <div class="pt-2 text-xs font-bold text-blue-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-amber-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="sparkle" class="w-4 h-4"></i> El Principio Rector del «Trabajo Bien Hecho»
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En el taller de Mecatrónica, el trabajo bien hecho se expresa en <strong>precisión dimensional milimétrica</strong> (±0.1 mm), orden estricto en el conexionado eléctrico bajo normativa IEC, enrutamiento estético en ductos ranurados, desbarbado impecable y respeto inquebrantable por las normas de seguridad industrial y protocolos LOTO.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Matriz DQR -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                        Alineación con el Marco Alemán de Cualificaciones (DQR Nivel 4-5)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Desglose de competencias integrales de acción (Handlungskompetenz) desarrolladas a lo largo del programa.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Dimensión DQR</th>
+                                <th class="py-3 px-4">Subdimensión</th>
+                                <th class="py-3 px-4">Evidencia de Desempeño en el Curso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Profesional<br>(Fachkompetenz)</td><td class="py-3 px-4 font-semibold text-blue-900">Conocimientos<br>(Wissen)</td><td class="py-3 px-4 leading-relaxed">Fundamentos cinemáticos de mecanismos, ciencia de polímeros y metales mecanizables, parámetros de corte CNC, física de sensores y lógica de control secuencial.</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Profesional<br>(Fachkompetenz)</td><td class="py-3 px-4 font-semibold text-blue-900">Destrezas<br>(Fertigkeiten)</td><td class="py-3 px-4 leading-relaxed">Modelado CAD paramétrico 3D, programación CAM y Código G, operación segura de láser, impresora 3D y CNC, ensamble mecánico y cableado bajo norma IEC 60617.</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Personal<br>(Personale Kompetenz)</td><td class="py-3 px-4 font-semibold text-blue-900">Competencia Social<br>(Sozialkompetenz)</td><td class="py-3 px-4 leading-relaxed">Trabajo coordinado en equipo en banco de taller, comunicación técnica asertiva, resolución compartida de fallas (troubleshooting) y espíritu de servicio.</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Personal<br>(Personale Kompetenz)</td><td class="py-3 px-4 font-semibold text-blue-900">Autonomía<br>(Selbständigkeit)</td><td class="py-3 px-4 leading-relaxed">Planificación autónoma del flujo de manufactura, verificación dimensional metrológica, apego riguroso al EPP y autoexigencia del &#x27;trabajo bien hecho&#x27;.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Perfiles de Ingreso y Egreso -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm space-y-4">
+                    <h4 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="log-in" class="w-5 h-5 text-blue-700"></i> Perfil de Ingreso
+                    </h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Dirigido a egresados o estudiantes de último año de carreras técnicas de nivel medio (Perito en Electricidad Industrial, Electrónica, Mecánica General o Automotriz), técnicos de mantenimiento industrial y operarios en activo con nociones básicas de taller.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Manejo básico de computación e interés por el diseño 3D.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Conocimiento elemental de circuitos eléctricos (AC/DC).</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Compromiso con las normas de seguridad de taller y uso de EPP.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm space-y-4">
+                    <h4 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="log-out" class="w-5 h-5 text-emerald-700"></i> Perfil de Egreso
+                    </h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        El graduado estará cualificado para diseñar piezas y ensambles en CAD 3D, operar cortadoras láser CO2 e impresoras 3D industriales, mecanizar bancadas en Router CNC, conectar sensórica PNP/NPN y programar rutinas de automatización en PLC Siemens S7-1200.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Autonomía operativa para fabricar fixtures y gabinetes mecánicos.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Diagnóstico sistemático de fallas en sensores, drivers y actuadores.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Cumplimiento estricto de las 5S y estándares internacionales de cableado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Arquitectura de Proyectos por Módulo -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="blocks" class="w-5 h-5 text-blue-700"></i>
+                        Arquitectura Curricular: 5 Módulos y Proyectos Prácticos
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Cada mes el participante construye un componente tangible de la celda mecatrónica final.
+                    </p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Módulo / Mes</th>
+                                <th class="py-3 px-4">Eje Temático Principal</th>
+                                <th class="py-3 px-4">Tecnología Kinal</th>
+                                <th class="py-3 px-4">Proyecto Práctico Tangible</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr><td class="py-3 px-4 font-bold bg-slate-50 text-blue-900">Módulo 1<br>(Febrero)</td><td class="py-3 px-4 font-medium">Diseño CAD 3D, Metrología y Prototipado</td><td class="py-3 px-4">Cortadora Láser CO2 y Metrología</td><td class="py-3 px-4 font-bold text-emerald-800">Gabinete Industrial con Riel DIN y Nido de Sujeción (Fixture)</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-blue-900">Módulo 2<br>(Marzo)</td><td class="py-3 px-4 font-medium">Fabricación Aditiva Avanzada (FDM)</td><td class="py-3 px-4">Granja de Impresoras 3D y Filamentos</td><td class="py-3 px-4 font-bold text-emerald-800">Garra Robótica Articulada con Insertos Térmicos y Engranes</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-blue-900">Módulo 3<br>(Abril)</td><td class="py-3 px-4 font-medium">Mecanizado Sustractivo y Fresado CNC</td><td class="py-3 px-4">Router CNC, CAM y Código G</td><td class="py-3 px-4 font-bold text-emerald-800">Bancada Mecatrónica Plana con Cajeras de Precisión y Guías</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-blue-900">Módulo 4<br>(Mayo)</td><td class="py-3 px-4 font-medium">Sensórica, Actuación y Control de Ejes</td><td class="py-3 px-4">Drivers, Motores a Pasos, Neumática</td><td class="py-3 px-4 font-bold text-emerald-800">Eje Lineal Motorizado con Parada Segura y Cableado Normado</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-blue-900">Módulo 5<br>(Junio)</td><td class="py-3 px-4 font-medium">Integración y Proyecto Capstone Industrial</td><td class="py-3 px-4">Toda la Infraestructura Integrada</td><td class="py-3 px-4 font-bold text-emerald-800">Mini-Celda Mecatrónica Industrial Automatizada (Capstone)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 2: TEMARIO (DISTRIBUCIÓN MODULAR AUDITADA) -->
+        <!-- ================================================================== -->
+        <div id="tab-temario" class="tab-content hidden space-y-8">
+            
+            <!-- Barra Superior de Control y Filtros -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="list-tree" class="w-5 h-5 text-blue-700"></i>
+                        Distribución Modular con Código de Color
+                    </h3>
+                    <p class="text-xs text-slate-500">
+                        Estructura organizada en 5 módulos y 20 temas de taller clasificados por naturaleza técnica y logros esperados.
+                    </p>
+                </div>
+
+                <!-- Botones de Filtro Interactivo -->
+                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                    <button onclick="filterMecaTemario('all')" id="btn-meca-all" class="meca-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos (20)</button>
+                    <button onclick="filterMecaTemario('software')" id="btn-meca-software" class="meca-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🔵 Modelado & Software</button>
+                    <button onclick="filterMecaTemario('control')" id="btn-meca-control" class="meca-filter-btn px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">🟣 Control & Automatización</button>
+                    <button onclick="filterMecaTemario('maquinaria')" id="btn-meca-maquinaria" class="meca-filter-btn px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Maquinaria & Taller</button>
+                    <button onclick="filterMecaTemario('ensamble')" id="btn-meca-ensamble" class="meca-filter-btn px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Manufactura & Ensamble</button>
+                </div>
+            </div>
+
+            <!-- Código de Leyenda Explicativo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/70 text-blue-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-blue-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-blue-900">Color Azul (Modelado & Software):</strong> CAD paramétrico 3D, tolerancias DFM, estrategias CAM, Código G y software laminador FDM.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-purple-200 bg-purple-50/70 text-purple-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-purple-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-purple-900">Color Púrpura (Control & Automatización):</strong> Sensórica industrial PNP/NPN, electroválvulas Festo, diagramas FSM y PLC Siemens S7-1200.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-amber-200 bg-amber-50/70 text-amber-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-amber-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-amber-900">Color Ámbar (Maquinaria & Taller):</strong> Operación de cortadora láser CO2, granja FDM, fresadora CNC y drivers de motores paso a paso.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/70 text-emerald-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-emerald-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-emerald-900">Color Verde (Manufactura & Ensamble):</strong> Prácticas terminales de taller, metrología de tolerancias (±0.1 mm) y celda Capstone integrada.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadrícula Modular de Temarios -->
+            <div class="grid lg:grid-cols-2 gap-8 pt-2">
+                
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 1 (Febrero • Sesiones 1 a 4)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">18 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Diseño CAD 3D, Metrología de Taller y Prototipado con Cortadora Láser</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Dominar el croquizado paramétrico 3D, metrología dimensional de precisión (±0.1 mm) y fabricación de gabinetes industriales mediante corte láser CO2.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
+                        Fundamentos de Mecatrónica Industrial y CAD Paramétrico
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Metrología dimensional aplicada con pie de rey digital y micrómetro de exteriores. Restricciones geométricas, croquizado paramétrico y operaciones de extrusión 3D en Autodesk Fusion 360 / SolidWorks.</p>
+            </div>
+            
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
+                        Ingeniería Inversa y Diseño para Manufactura por Corte Láser (DFM)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Replicación y digitalización dimensional de piezas desgastadas o discontinuadas. Compensación de sangría de corte (kerf), parametrización de potencias por material y diseño de encastres autoblocantes (finger joints).</p>
+            </div>
+            
+            <div class="content-item item-maquinaria p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="maquinaria">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
+                        Operación Segura y Parametrización de Cortadora Láser CO2
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Maquinaria &amp; Taller
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Preparación de vectores por capas (marcado, grabado y corte vectorial en DXF/SVG). Calibración de distancia focal, asistencia de aire y extracción de humos sobre acrílico industrial, Delrin y MDF técnico.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
+                        Fabricación de Gabinetes Mecatrónicos y Evaluación Práctica
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Montaje mecánico y verificación de rigidez estructural de chasis para alojar tarjetas electrónicas y rieles DIN. Verificación de tolerancias de ajuste y entrega del producto terminado del Módulo 1.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 2 (Marzo • Sesiones 5 a 8)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">18 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Fabricación Aditiva Avanzada (Impresión 3D FDM) para Mecanismos Industriales</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Diseñar y manufacturar mecanismos cinemáticos articulados optimizados para manufactura aditiva FDM con polímeros técnicos y tolerancias dinámicas.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
+                        Cinemática Aplicada y Ciencia de Polímeros para FDM
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Cálculo y diseño de engranes rectos, poleas sincrónicas GT2 y levas mecánicas. Propiedades mecánicas y térmicas de filamentos técnicos: PLA+, PETG industrial, ABS, TPU (flexible) y Nylon reforzado.</p>
+            </div>
+            
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
+                        Diseño para Fabricación Aditiva (DFAM) y Parámetros en Laminador
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Orientación de piezas respecto a líneas de esfuerzo para mitigar anisotropía mecánica. Optimización de voladizos (overhangs), puentes y configuración de rellenos estructurales (giroide y cúbico).</p>
+            </div>
+            
+            <div class="content-item item-maquinaria p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="maquinaria">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
+                        Tolerancias Print-in-Place e Integración de Insertos Roscados
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Maquinaria &amp; Taller
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Modelado de tolerancias dinámicas para mecanismos ensamblados en cama (0.2 a 0.4 mm). Instalación de insertos roscados de latón en caliente (heat-set inserts), calibración de flujo y nivelación de camas térmicas.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
+                        Montaje de Subensambles Mecánicos y Evaluación Práctica
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Integración de baleros lineales, ejes rectificados de acero y tornillería métrica. Pruebas de movimiento continuo, lubricación de engranes y evaluación del reto: Garra Robótica Articulada Funcional.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 3 (Abril • Sesiones 9 a 12)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">18 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Mecanizado Sustractivo y Fresado CNC: CAM, Código G y Fabricación de Piezas</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Generar trayectorias de maquinado en software CAM, operar fresadora CNC mediante Código G y verificar dimensionalmente placas base mecatrónicas.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                        Cinemática CNC y Estructura del Código G y M
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Ejes coordenados cartesianos (X, Y, Z), coordenadas de máquina (G53) y de trabajo (G54-G59). Sintaxis de comandos modales de movimiento (G00, G01, G02, G03) y comandos misceláneos de control de husillo (M03, M05).</p>
+            </div>
+            
+            <div class="content-item item-software p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="software">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                        Programación en Software CAM (Estrategias 2.5D y 3D)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Modelado &amp; Software
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Definición de bloque de material (stock), plano de seguridad y origen WCS. Estrategias de planeado, cajeras (pockets), contorneado exterior y cálculo riguroso de avances y RPM (Vc, fz).</p>
+            </div>
+            
+            <div class="content-item item-maquinaria p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="maquinaria">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                        Alistamiento, Montaje de Herramientas y Puesta a Cero en CNC
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Maquinaria &amp; Taller
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Protocolos rigurosos de seguridad en corte sustractivo. Montaje y verificación de excentricidad en boquillas ER con fresas de carburo. Calibración de ceros de pieza (X, Y) y eje Z con sonda electrónica.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                        Mecanizado Práctico, Metrología de Verificación y Evaluación
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Fresado efectivo en banco sobre placas de Delrin (POM) y aluminio mecanizable. Inspección dimensional con micrómetro y escuadra de precisión; desbarbado y acabado de la Bancada Mecatrónica Kinal.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 4 (Mayo • Sesiones 13 a 16)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">18 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Sensórica Industrial, Actuación Electromecánica/Neumática y Control de Ejes</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Integrar sensores industriales PNP/NPN, gobernar motores paso a paso mediante drivers y cablear circuitos electroneumáticos bajo normas Kinal.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-control p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="control">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
+                        Transducción y Sensórica Industrial
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Control &amp; Automatización
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Principio operativo de sensores inductivos, capacitivos y fotoeléctricos (réflex y barrera). Conexión e identificación de salidas a 3 y 4 hilos con lógica PNP vs. NPN y finales de carrera magnéticos Reed.</p>
+            </div>
+            
+            <div class="content-item item-maquinaria p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="maquinaria">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">14</span>
+                        Control de Movimiento con Motores a Pasos y Drivers Industriales
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Maquinaria &amp; Taller
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Curvas de torque vs. velocidad en motores NEMA 17 y NEMA 23. Configuración de dip-switches para microstepping, ajuste de límites de corriente y conexionado de señales de control lógico (PUL, DIR, ENA).</p>
+            </div>
+            
+            <div class="content-item item-control p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="control">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">15</span>
+                        Actuación Electroneumática y Normas de Cableado Kinal
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Control &amp; Automatización
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Electroválvulas de 24 VDC monoestables y biestables, y actuadores neumáticos de simple/doble efecto. Enrutamiento estético en ductos ranurados, peinado de cables con espirales y terminales de ferrul.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">16</span>
+                        Programación de Perfiles de Movimiento y Evaluación Práctica
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Lógica de rampas de aceleración y desaceleración para evitar pérdida de pasos. Integración de parada de emergencia con corte seguro y evaluación: Sistema de Posicionamiento Lineal Motorizado.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 5 (Junio • Sesiones 17 a 20)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">18 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Integración de Celda Mecatrónica, Automatización y Proyecto Capstone Industrial</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Integrar todos los subsistemas en una celda mecatrónica funcional automatizada y demostrar su operación autónoma ante jurado técnico evaluador.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-control p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="control">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">17</span>
+                        Arquitectura de Integración Mecatrónica e Interfaz de Operador
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Control &amp; Automatización
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Diseño de tableros de control con botoneras industriales (arranque, paro, rearme) y luces piloto. Diagramas de flujo y autómatas de estado finito (FSM) para ciclos secuenciales industriales coordinados.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">18</span>
+                        Ensamble Mecánico y Cableado Definitivo de la Celda
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Montaje integral sobre bancada CNC de piezas cinemáticas 3D y gabinetes cortados en láser. Verificación punto a punto de continuidad eléctrica, aislamiento de seguridad y calibración de bandas dentadas.</p>
+            </div>
+            
+            <div class="content-item item-control p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="control">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">19</span>
+                        Puesta en Marcha, Sincronización y Diagnóstico Sistemático (Troubleshooting)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Control &amp; Automatización
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Carga del programa secuencial en el PLC Siemens S7-1200 y pruebas de marcha en vacío (dry run). Protocolos de localización de averías y resolución de fallas inducidas en sensores y actuadores.</p>
+            </div>
+            
+            <div class="content-item item-ensamble p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="ensamble">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">20</span>
+                        Evaluación Terminal Integrada (Capstone) y Clausura
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Manufactura &amp; Ensamble
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Demostración de funcionamiento continuo (mínimo 10 ciclos completos autónomos). Sustentación técnica individual y grupal, revisión de la Bitácora Berichtsheft y acreditación final (umbral ≥ 75 pts).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+            <!-- Maquinaria, Software y EPP -->
+            <div class="grid md:grid-cols-3 gap-6 pt-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="wrench" class="w-4 h-4 text-blue-700"></i> Maquinaria & Equipos Kinal
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• Cortadora Láser CO2 de 80W a 100W con asistencia de aire y chiller.</li>
+                        <li>• Granja de Impresoras 3D FDM industriales (cama ≥ 250×250 mm).</li>
+                        <li>• Router / Fresadora CNC de 3 ejes con control G-Code.</li>
+                        <li>• Banco de neumática y compresor silencioso con unidad FRL.</li>
+                        <li>• Entrenadores modulares con PLC Siemens S7-1200 y fuentes de 24 VDC.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="laptop" class="w-4 h-4 text-emerald-700"></i> Software Utilizado
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• Autodesk Fusion 360 / SolidWorks (CAD paramétrico 3D y CAM).</li>
+                        <li>• RDWorks / LightBurn (Control y corte láser CO2).</li>
+                        <li>• PrusaSlicer / Cura (Laminación aditiva avanzada para FDM).</li>
+                        <li>• Siemens TIA Portal V18 / V19 (Programación Ladder de PLC).</li>
+                        <li>• Festo FluidSIM (Simulación de circuitos electroneumáticos).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-amber-700"></i> EPP y Seguridad Industrial
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• Gafas de seguridad certificadas ANSI Z87.1 (obligatorias).</li>
+                        <li>• Calzado industrial con puntera de protección dieléctrica.</li>
+                        <li>• Cabello recogido y cero uso de joyas o ropa holgada cerca de husillos.</li>
+                        <li>• Tarjetas y candados de consignación LOTO en bancos eléctricos.</li>
+                        <li>• Cumplimiento permanente de limpieza y orden 5S en cada puesto.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
+        <!-- ================================================================== -->
+        <div id="tab-calendario" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-blue-700"></i>
+                        Calendario Cronológico de Taller Sabatino
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa sabatino continuo de 20 semanas (Febrero a Junio) • Sábados de 8:00 a 12:30 horas (4.5h por encuentro).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-blue-900 bg-blue-50 px-3 py-1.5 rounded-xl border border-blue-200">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-blue-700"></i> Talleres Centrales Kinal
+                </div>
+            </div>
+
+            <!-- Grid Mensual de Calendario -->
+            <div class="space-y-6">
+                
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-700"></i> Mes de Febrero (4 Sábados)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">18 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-01</span>
+                        <span class="font-bold text-slate-500">Sábado 1</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Fundamentos mecatrónicos, EPP, metrología y croquis CAD 3D</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Comprender la sinergia mecatrónica, aplicar normas de seguridad de taller Kinal y modelar piezas básicas mediante restricciones geométricas y metrología.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(1)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-02</span>
+                        <span class="font-bold text-slate-500">Sábado 2</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Ingeniería inversa, compensación de corte (kerf) y finger joints</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Replicar piezas industriales existentes y diseñar gabinetes mecatrónicos con juntas mecánicas autoblocantes compensando la sangría de corte (kerf).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(2)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-03</span>
+                        <span class="font-bold text-slate-500">Sábado 3</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Alistamiento, capas de grabado/corte y parametrización láser</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calibrar y operar la cortadora láser CO2 de Kinal bajo normas de seguridad industrial, configurando potencias y velocidades por material.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(3)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-04</span>
+                        <span class="font-bold text-slate-500">Sábado 4</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Ensamble de gabinete, fixture y evaluación práctica M1 (≥ 75 pts)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Fabricar, ensamblar y verificar un gabinete industrial para control mecatrónico con tolerancias mecánicas estrictas según especificación.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(4)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-700"></i> Mes de Marzo (4 Sábados)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">18 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-05</span>
+                        <span class="font-bold text-slate-500">Sábado 1</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Cinemática de engranes, poleas GT2 y ciencia de polímeros</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calcular y diseñar engranajes y transmisiones por banda sincrónica seleccionando el polímero técnico adecuado según esfuerzos dinámicos.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(5)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-06</span>
+                        <span class="font-bold text-slate-500">Sábado 2</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">DFAM, orientación contra líneas de esfuerzo y perfiles en Slicer</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Optimizar geometrías para impresión 3D orientando capas contra líneas de esfuerzo y parametrizando el software laminador industrial.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(6)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-07</span>
+                        <span class="font-bold text-slate-500">Sábado 3</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Tolerancias Print-in-Place, insertos roscados y calibración</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calibrar impresoras 3D, fabricar mecanismos con holguras dinámicas ensamblados en cama e instalar insertos roscados de latón en caliente.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(7)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-08</span>
+                        <span class="font-bold text-slate-500">Sábado 4</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Montaje de garra robótica y evaluación práctica M2 (≥ 75 pts)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ensamblar, ajustar y evaluar una garra robótica articulada de dos dedos con engranes, insertos térmicos y soporte para servomotor.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(8)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-700"></i> Mes de Abril (4 Sábados)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">18 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-09</span>
+                        <span class="font-bold text-slate-500">Sábado 1</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Cinemática CNC, ejes coordenados, Código G y sujeción segura</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identificar los ejes de una fresadora CNC, interpretar la sintaxis de Código G/M y comprender los métodos de sujeción segura de material.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(9)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-10</span>
+                        <span class="font-bold text-slate-500">Sábado 2</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Estrategias CAM: planeado, cajeras, contorneado y taladrado</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Generar trayectorias CAM 2.5D seleccionando herramientas de corte, avances y velocidades acordes al material mecanizable.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(10)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-11</span>
+                        <span class="font-bold text-slate-500">Sábado 3</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Montaje de boquillas ER, fresas de carburo y puesta a cero (WCS)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Montar herramientas en boquillas ER, fijar material con bridas y establecer ceros de pieza (WCS) mediante sonda electrónica en la máquina CNC.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(11)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-12</span>
+                        <span class="font-bold text-slate-500">Sábado 4</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Maquinado de bancada mecatrónica y evaluación M3 (≥ 75 pts)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ejecutar el maquinado real de la bancada mecatrónica, verificar tolerancias geométricas con micrómetro y superar la evaluación del Módulo 3.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(12)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-700"></i> Mes de Mayo (4 Sábados)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">18 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-13</span>
+                        <span class="font-bold text-slate-500">Sábado 1</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Transducción industrial, sensores PNP/NPN y finales de carrera</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Conectar, probar y calibrar sensores discretos industriales de 24 VDC identificando la lógica de conmutación de tres hilos.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(13)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-14</span>
+                        <span class="font-bold text-slate-500">Sábado 2</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Motores a pasos NEMA, drivers industriales y microstepping</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Configurar drivers bipolares industriales (corriente y microstepping) y gobernar motores a pasos NEMA para control de posición preciso.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(14)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-15</span>
+                        <span class="font-bold text-slate-500">Sábado 3</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Electroválvulas neumáticas, ductos ranurados, ferrules y rotulado</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Conectar circuitos electroneumáticos y construir tableros de control estéticos aplicando ferrules, canaletas ranuradas y rotulado alfanumérico.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(15)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-16</span>
+                        <span class="font-bold text-slate-500">Sábado 4</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Rampas trapezoidales, parada segura y evaluación M4 (≥ 75 pts)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Programar rutinas de ciclo continuo para un eje lineal motorizado con rampas de velocidad y superar la evaluación práctica del Módulo 4.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(16)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-700"></i> Mes de Junio (4 Sábados)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">18 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-17</span>
+                        <span class="font-bold text-slate-500">Sábado 1</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Arquitectura de integración, paneles HMI y diagramas FSM</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Diseñar la arquitectura integral de la mini-celda mecatrónica modelando la lógica mediante autómatas de estado finito y tableros de mando.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(17)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-18</span>
+                        <span class="font-bold text-slate-500">Sábado 2</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Ensamble final: bancada CNC, partes 3D, gabinete láser y cables</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ensamblar los subsistemas mecánicos (CNC, 3D, Láser) y ejecutar el conexionado eléctrico definitivo con verificación de continuidad y aislamiento.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(18)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-19</span>
+                        <span class="font-bold text-slate-500">Sábado 3</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Carga de programa, calibración, pruebas en seco y troubleshooting</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Cargar el programa de control secuencial, calibrar tiempos de ciclo y ejecutar protocolos de localización y resolución de averías inducidas.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(19)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-blue-900 text-white">S-20</span>
+                        <span class="font-bold text-slate-500">Sábado 4</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Evaluación Terminal Integrada, defensa pública y clausura</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Demostrar la competencia mecatrónica integral mediante la operación autónoma y defensa técnica del Proyecto Capstone ante jurado evaluador.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-blue-800 font-semibold">Sábado 8:00 a 12:30 hrs</span>
+                    <button onclick="goToSession(20)" class="text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL SIN ALARGAR LA PÁGINA) -->
+        <!-- ================================================================== -->
+        <div id="tab-secuencias" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-blue-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-0.5">
+                        Selecciona una sesión en el panel izquierdo para consultar su microdiseño en 3 momentos (Apertura, Desarrollo y Cierre).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-56">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+                        <input type="text" id="meca-sec-search" oninput="filterMecaList()" placeholder="Buscar sesión..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master-Detail Container -->
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- LISTADO LATERAL (MASTER) -->
+                <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-4 shadow-sm space-y-2">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1 border-b border-slate-100 flex justify-between">
+                        <span>Listado de Sesiones</span>
+                        <span id="meca-count-badge">20 Sesiones</span>
+                    </div>
+                    <div id="meca-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="meca-detail-card">
+                    <!-- Rendered by JS -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
+        <!-- ================================================================== -->
+        <div id="tab-evaluacion" class="tab-content hidden space-y-8">
+            
+            <!-- Esquema Resumen -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-blue-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
+                    </h3>
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
+                        Umbral Mínimo: 75 / 100 Puntos
+                    </span>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Evaluaciones Modulares</div>
+                        <div class="text-3xl font-black text-blue-900">40%</div>
+                        <div class="text-slate-600">4 Proyectos de Taller (10% c/u)</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Proyecto Capstone Final</div>
+                        <div class="text-3xl font-black text-emerald-700">35%</div>
+                        <div class="text-slate-600">Puesta en Marcha de la Celda</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bitácora Berichtsheft</div>
+                        <div class="text-3xl font-black text-purple-700">15%</div>
+                        <div class="text-slate-600">Registro Semanal de Destrezas</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Orden 5S & Seguridad</div>
+                        <div class="text-3xl font-black text-amber-700">10%</div>
+                        <div class="text-slate-600">EPP, LOTO y Trabajo Bien Hecho</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rúbrica Terminal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación Práctica
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación objetiva del desempeño técnico con ponderaciones explícitas y umbral institucional de 75 puntos.
+                        </p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/5">Criterio Técnico</th>
+                                <th class="py-3 px-4 w-1/5 text-emerald-800">Excelente (90 - 100)</th>
+                                <th class="py-3 px-4 w-1/5 text-blue-800">Muy Bueno (80 - 89)</th>
+                                <th class="py-3 px-4 w-1/5 text-amber-800">Aprobado Mínimo (75 - 79)</th>
+                                <th class="py-3 px-4 w-1/5 text-rose-800">No Aprobado (&lt; 75)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Precisión Dimensional y Tolerancias Mecánicas<br>(Peso: 25%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Error dimensional &lt; ±0.1 mm. Encajes perfectos sin holguras ni desalineación.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Error dimensional entre ±0.1 y ±0.2 mm. Ensamble suave con mínimo ajuste.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Error dimensional entre ±0.2 y ±0.3 mm. Requiere ajuste manual leve pero ensambla.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Error &gt; ±0.4 mm. Piezas no encajan o quedan con holguras inaceptables.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Calidad de Acabados y «Trabajo Bien Hecho»<br>(Peso: 25%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Superficies limpias, sin quemaduras en láser ni rebabas en CNC. Piezas 3D sin hilos. Estética industrial sobresaliente.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Bordes limpios con desbarbado correcto. Piezas 3D uniformes y sin deformaciones térmicas visibles.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Acabado aceptable con marcas leves de maquinado o pequeñas rebabas no críticas corregidas en taller.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Piezas sucias, quemadas, con rebabas cortantes o defectos graves de impresión/corte.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Integración Operativa y Funcionamiento<br>(Peso: 25%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Movimiento suave, cinemática 100% coordinada, cero atascos en 10 ciclos continuos. Detección impecable de sensores.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Ciclo continuo completado satisfactoriamente con mínimas vibraciones mecánicas.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">El mecanismo opera y cumple la función pero presenta pequeñas fluctuaciones de velocidad o vibración.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">El mecanismo se traba, no responde a la lógica programada o presenta colisión mecánica.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Seguridad, Cableado IEC y Orden 5S<br>(Peso: 15%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">100% casquillos ferrules aislados, rotulado alfanumérico, canaleta cerrada, uso impecable de EPP y puesto de trabajo pulcro.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Cableado ordenado con ferrules y canalización correcta. Respeto permanente a las normas de seguridad y EPP.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Cableado funcional pero con rotulado incompleto o desorden menor en canaleta corregido durante la sesión.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Conductores desnudos sueltos, omisión de EPP, desorden grave en taller o violación de protocolos LOTO.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Bitácora de Taller (Berichtsheft)<br>(Peso: 10%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Memoria técnica completa, diagramas eléctricos normados, cálculos cinemáticos y firma al día con pulcritud.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Registro técnico claro con esquemas de conexión y descripciones precisas de las actividades prácticas.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Registro con datos esenciales y diagramas básicos pero con redacción esquemática mínima.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Bitácora incompleta, sin diagramas técnicos, con atrasos de registro o datos erróneos.</td>
+    </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bitácora Berichtsheft -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-5 h-5 text-blue-700"></i>
+                            Formato de la Bitácora de Taller («Berichtsheft»)
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Instrumento obligatorio del Sistema Dual para el registro semanal de horas y verificación de competencias.
+                        </p>
+                    </div>
+                    <button onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center gap-1.5">
+                        <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir Bitácora
+                    </button>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-300 space-y-4 text-xs font-mono">
+                    <div class="border-b border-slate-300 pb-3 font-bold text-slate-900 text-center uppercase tracking-wider">
+                        FUNDACIÓN KINAL • REGISTRO SEMANAL DE PRÁCTICA DUAL (BERICHTSHEFT)
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><strong>Estudiante:</strong> ____________________________________</div>
+                        <div><strong>Carné:</strong> ______________</div>
+                        <div><strong>Sesión No.:</strong> _____ | <strong>Fecha:</strong> ____/____/2026</div>
+                        <div><strong>Instructor de Taller:</strong> __________________________</div>
+                    </div>
+                    <div class="space-y-1 pt-2">
+                        <strong>1. Máquinas y Equipos Operados en la Sesión:</strong>
+                        <div class="flex gap-4 text-slate-700 pt-1">
+                            <label><input type="checkbox" disabled> Cortadora Láser CO2</label>
+                            <label><input type="checkbox" disabled> Impresora 3D FDM</label>
+                            <label><input type="checkbox" disabled> Router CNC</label>
+                            <label><input type="checkbox" disabled> Banco Festo</label>
+                            <label><input type="checkbox" disabled> PLC S7-1200</label>
+                        </div>
+                    </div>
+                    <div class="space-y-1 pt-2">
+                        <strong>2. Descripción de la Tarea Técnica Realizada:</strong>
+                        <div class="h-16 border border-slate-300 rounded bg-white p-2 text-slate-400">Espacio para detallar la actividad práctica y mediciones obtenidas...</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 pt-6 text-center">
+                        <div class="border-t border-slate-400 pt-2">Firma del Estudiante</div>
+                        <div class="border-t border-slate-400 pt-2">Visto Bueno Instructor Kinal (Sello/Firma)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-6 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-slate-200">Fundación Kinal • Curso de Mecatrónica Industrial y Fabricación Digital</p>
+                <p class="text-slate-500">Diseño Curricular, Didáctico e Instruccional 2026 | Sistema Dual & DQR 4-5</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:text-amber-400 transition">Catálogo de Cursos</a>
+                <span class="text-slate-700">•</span>
+                <a href="ciberseguridad.html" class="hover:text-amber-400 transition">Ver Ciberseguridad</a>
+                <span class="text-slate-700">•</span>
+                <a href="../../index.html" class="hover:text-amber-400 transition">Portal Maestro</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        const mecaSessions = [{"num": 1, "code": "S-01", "month": "Febrero", "sabado_num": 1, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M1: CAD / Láser", "title": "Fundamentos mecatrónicos, EPP, metrología y croquis CAD 3D", "duration": "4.5 Horas (270 min)", "objective": "Comprender la sinergia mecatrónica, aplicar normas de seguridad de taller Kinal y modelar piezas básicas mediante restricciones geométricas y metrología.", "apertura": "Inducción al taller Kinal, verificación de EPP obligatorio y protocolo 5S. Presentación de un caso real: falla de un soporte en línea embotelladora guatemalteca por mala medición. Activación de conocimientos en unidades milimétricas.", "desarrollo": "Práctica con pie de rey digital y micrómetro sobre muestras industriales. Introducción al software CAD: croquizado 2D paramétrico, cotas, restricciones de simetría/tangencia y operaciones de extrusión y vaciado 3D. Modelado guiado de placa base.", "cierre": "Verificación dimensional de planos en CAD. Apertura de la Bitácora de Taller (Berichtsheft): registro de lecturas de medición. Limpieza del laboratorio bajo criterio 5S y reflexión sobre el trabajo pulcro.", "evidencias": "Calibradores vernier digitales, micrómetros, computadoras con software CAD, proyector.", "equipamiento": "Verificación de plano CAD paramétrico acotado con tolerancia ≤ ±0.1 mm."}, {"num": 2, "code": "S-02", "month": "Febrero", "sabado_num": 2, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M1: CAD / Láser", "title": "Ingeniería inversa, compensación de corte (kerf) y finger joints", "duration": "4.5 Horas (270 min)", "objective": "Replicar piezas industriales existentes y diseñar gabinetes mecatrónicos con juntas mecánicas autoblocantes compensando la sangría de corte (kerf).", "apertura": "Exhibición de piezas plásticas quebradas de plantas de alimentos. Análisis de falla y discusión del concepto de sangría de corte (kerf) en láser CO2 (0.15 - 0.25 mm) y su impacto en el ensamble a presión.", "desarrollo": "Toma de medidas de tarjetas electrónicas y fuentes de poder. Modelado CAD de un gabinete con ranuras y lengüetas (finger joints) y encastres de pestaña a presión (snap-fits). Exportación de croquis limpios a formato vectorial DXF/SVG.", "cierre": "Revisión cruzada entre parejas de estudiantes: verificación de compatibilidad de sangría en ensambles. Registro en la bitácora Berichtsheft sobre cálculo de compensación dimensional.", "evidencias": "Piezas mecánicas muestra, software CAD, guías de diseño de uniones para corte láser.", "equipamiento": "Archivo vectorial DXF estructurado en capas con compensación kerf calculada."}, {"num": 3, "code": "S-03", "month": "Febrero", "sabado_num": 3, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M1: CAD / Láser", "title": "Alistamiento, capas de grabado/corte y parametrización láser", "duration": "4.5 Horas (270 min)", "objective": "Calibrar y operar la cortadora láser CO2 de Kinal bajo normas de seguridad industrial, configurando potencias y velocidades por material.", "apertura": "Charla técnica de seguridad: riesgos ópticos del láser CO2 Clase 4, obligatoriedad del sistema de extracción de gases y asistencia de aire comprimido (air assist). Consignación de seguridad.", "desarrollo": "Importación de archivos DXF al software de control láser (LightBurn/LaserCAD). Configuración de capas: grabado superficial, marcado lineal y corte vectorial. Calibración manual de distancia focal mediante galga de enfoque. Pruebas de corte en acrílico cristal (3 y 5 mm), Delrin y MDF técnico.", "cierre": "Inspección de bordes cortados: descarte de rebabas o quemado excesivo. Registro de parámetros óptimos (velocidad/potencia) en la bitácora de taller. Limpieza de óptica y bandeja de residuos.", "evidencias": "Cortadora Láser CO2 Kinal, extractor de humos, acrílico de 3 mm y 5 mm, MDF técnico, galga focal.", "equipamiento": "Probeta de corte limpia sin quemaduras y verificación de bordes a 90°."}, {"num": 4, "code": "S-04", "month": "Febrero", "sabado_num": 4, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M1: CAD / Láser", "title": "Ensamble de gabinete, fixture y evaluación práctica M1 (≥ 75 pts)", "duration": "4.5 Horas (270 min)", "objective": "Fabricar, ensamblar y verificar un gabinete industrial para control mecatrónico con tolerancias mecánicas estrictas según especificación.", "apertura": "Presentación del reto de evaluación del Módulo 1: fabricación y montaje de gabinete para riel DIN y nido fixture en acrílico/Delrin. Criterios de evaluación y umbral aprobatorio de 75 puntos.", "desarrollo": "Corte de piezas definitivas en la máquina láser Kinal. Desbarbado, retiro de película protectora y ensamble mecánico de paneles. Instalación de bisagras, soportes para riel DIN y orificios para pasamuros y ventiladores. Ajuste mecánico a presión.", "cierre": "Evaluación formal con rúbrica analítica individual. Prueba de rigidez mecánica e inserción de componentes reales. Asignación de nota de módulo y retroalimentación personalizada.", "evidencias": "Cortadora láser, tornillería métrica M3, riel DIN, paneles de acrílico cortados, rúbrica M1.", "equipamiento": "Proyecto Práctico Módulo 1 calificado con rúbrica analítica (Aprobatorio ≥ 75 pts)."}, {"num": 5, "code": "S-05", "month": "Marzo", "sabado_num": 1, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M2: 3D FDM", "title": "Cinemática de engranes, poleas GT2 y ciencia de polímeros", "duration": "4.5 Horas (270 min)", "objective": "Calcular y diseñar engranajes y transmisiones por banda sincrónica seleccionando el polímero técnico adecuado según esfuerzos dinámicos.", "apertura": "Problema industrial: desgaste prematuro de piñones en maquinaria de empaque en Escuintla. Análisis comparativo de materiales plásticos industriales: PLA+, PETG, ABS, Nylon y TPU.", "desarrollo": "Cálculo cinemático de módulo, paso circular y relación de transmisión ($i = Z_1 / Z_2$). Modelado CAD de engranes rectos de perfil involuta y poleas GT2. Análisis de arquitectura de impresoras 3D (CoreXY vs cartesiana) y tipos de extrusión.", "cierre": "Revisión de perfiles de dientes generados en CAD. Registro en la bitácora Berichtsheft sobre propiedades de tracción y flexión de polímeros. Orden y limpieza 5S.", "evidencias": "Computadoras con CAD, muestras físicas de filamentos fracturados por tracción/impacto.", "equipamiento": "Ensamble CAD de tren de engranajes con acoplamiento tangencial correcto."}, {"num": 6, "code": "S-06", "month": "Marzo", "sabado_num": 2, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M2: 3D FDM", "title": "DFAM, orientación contra líneas de esfuerzo y perfiles en Slicer", "duration": "4.5 Horas (270 min)", "objective": "Optimizar geometrías para impresión 3D orientando capas contra líneas de esfuerzo y parametrizando el software laminador industrial.", "apertura": "Demostración de rotura por delaminación de capas en eje Z vs resistencia en plano X-Y (anisotropía). Regla de los 45° para voladizos sin soportes.", "desarrollo": "Uso avanzado de software laminador (PrusaSlicer / Cura / Bambu Studio). Configuración de número de paredes/perímetros, capas sólidas superior/inferior y densidad/patrón de relleno estructural (giroide, cúbico). Generación de soportes orgánicos tipo árbol. Estimación de tiempos de impresión y consumo de filamento en gramos.", "cierre": "Inspección de trayectorias en vista de capas previa a la impresión. Documentación en Berichtsheft de la relación entre densidad de relleno y resistencia mecánica.", "evidencias": "Software laminador, modelos STL de piezas mecánicas, computadoras de taller.", "equipamiento": "Archivo G-code optimizado con cero desperdicio de material y orientación estructural ideal."}, {"num": 7, "code": "S-07", "month": "Marzo", "sabado_num": 3, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M2: 3D FDM", "title": "Tolerancias Print-in-Place, insertos roscados y calibración", "duration": "4.5 Horas (270 min)", "objective": "Calibrar impresoras 3D, fabricar mecanismos con holguras dinámicas ensamblados en cama e instalar insertos roscados de latón en caliente.", "apertura": "Discusión sobre la debilidad de enroscar tornillos directamente en plástico en entornos con vibración industrial. Introducción al uso de insertos térmicos de latón (heat-set inserts).", "desarrollo": "Nivelación de camas térmicas de la granja Kinal y calibración del Z-offset. Impresión de piezas con tolerancia dinámica de 0.2, 0.3 y 0.4 mm para probar articulaciones print-in-place. Uso de cautín termorregulado con punta especial para insertar insertos M3 y M4 en piezas impresas en PETG.", "cierre": "Prueba de torque sobre insertos instalados: verificación de resistencia al barrido. Registro en Berichtsheft de las holguras mínimas efectivas para la máquina Kinal.", "evidencias": "Granja de impresoras 3D Kinal, filamento PETG, cautines con puntas de inserción, insertos de latón.", "equipamiento": "Inserto térmico instalado perfectamente coaxial sin rebabas superficiales."}, {"num": 8, "code": "S-08", "month": "Marzo", "sabado_num": 4, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M2: 3D FDM", "title": "Montaje de garra robótica y evaluación práctica M2 (≥ 75 pts)", "duration": "4.5 Horas (270 min)", "objective": "Ensamblar, ajustar y evaluar una garra robótica articulada de dos dedos con engranes, insertos térmicos y soporte para servomotor.", "apertura": "Presentación de los criterios de evaluación del Módulo 2: suavidad de movimiento, resistencia mecánica al agarre, estética de piezas impresas y tolerancia dimensional.", "desarrollo": "Extracción y post-procesamiento de piezas impresas de la garra. Instalación de baleros en miniatura, pasadores de acero y tornillería métrica. Ensamble de cremallera y piñón actuador. Lubricación con grasa sintética para engranes plásticos y verificación de carrera completa.", "cierre": "Evaluación individual mediante rúbrica analítica (≥ 75 pts). Prueba de agarre de objetos de diferentes geometrías (cilíndricos y prismáticos). Registro final de sesión en la bitácora.", "evidencias": "Piezas impresas en 3D, servomotores, tornillería M3, grasa de teflón, calibradores, rúbrica M2.", "equipamiento": "Proyecto Práctico Módulo 2 evaluado con rúbrica técnica oficial (Aprobatorio ≥ 75 pts)."}, {"num": 9, "code": "S-09", "month": "Abril", "sabado_num": 1, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M3: Fresado CNC", "title": "Cinemática CNC, ejes coordenados, Código G y sujeción segura", "duration": "4.5 Horas (270 min)", "objective": "Identificar los ejes de una fresadora CNC, interpretar la sintaxis de Código G/M y comprender los métodos de sujeción segura de material.", "apertura": "Visita e inspección técnica del Router/Fresadora CNC de Kinal. Riesgos mecánicos de colisión de husillo a altas RPM. Concepto de sistemas de coordenadas: máquina (G53) vs pieza (G54).", "desarrollo": "Análisis de comandos modales G: G00 (avance rápido), G01 (interpolación lineal con avance F), G02/G03 (interpolación circular) y comandos M (M03 giro de husillo, M05 paro, M08 refrigeración). Programación manual guiada de una trayectoria cuadrangular con arcos y simulación en PC.", "cierre": "Detección de errores sintácticos en bloques de código. Registro en la bitácora de taller Berichtsheft sobre precauciones para evitar colisiones en eje Z.", "evidencias": "Router CNC Kinal, simulador de Código G en computadora, tableros de control.", "equipamiento": "Programa manual de Código G simulado sin alertas de colisión ni errores sintácticos."}, {"num": 10, "code": "S-10", "month": "Abril", "sabado_num": 2, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M3: Fresado CNC", "title": "Estrategias CAM: planeado, cajeras, contorneado y taladrado", "duration": "4.5 Horas (270 min)", "objective": "Generar trayectorias CAM 2.5D seleccionando herramientas de corte, avances y velocidades acordes al material mecanizable.", "apertura": "Física del corte de metales y polímeros: cálculo de velocidad de corte ($V_c$), avance por diente ($f_z$) y evacuación de viruta para evitar recalentamiento del cortador.", "desarrollo": "Uso del software CAM (Fusion 360 CAM / VCarve). Definición de dimensiones de bloque bruto (stock). Creación de operaciones: 1) Planeado superior (Face), 2) Cajeras adaptativas (Adaptive Clearing) para vaciados de rodamientos, 3) Contorneado exterior 2D con pestañas de sujeción (tabs), 4) Taladrado ciclado (Peck Drilling). Post-procesamiento a Código G.", "cierre": "Simulación cinemática en CAM con verificación de tiempo de ciclo y colisiones de vástago de herramienta. Registro de cálculos en bitácora Berichtsheft.", "evidencias": "Computadoras con módulo CAM, catálogos técnicos de herramientas de fresado de carburo.", "equipamiento": "Archivo CAM post-procesado con parámetros validados según tipo de material."}, {"num": 11, "code": "S-11", "month": "Abril", "sabado_num": 3, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M3: Fresado CNC", "title": "Montaje de boquillas ER, fresas de carburo y puesta a cero (WCS)", "duration": "4.5 Horas (270 min)", "objective": "Montar herramientas en boquillas ER, fijar material con bridas y establecer ceros de pieza (WCS) mediante sonda electrónica en la máquina CNC.", "apertura": "Protocolo riguroso de seguridad antes de energizar CNC: parada de emergencia accesible, protección visual y auditiva obligatoria, comprobación de ausencia de llaves en husillo.", "desarrollo": "Montaje de boquilla ER y fresa plana de carburo de 2 filos; comprobación de excentricidad (runout). Fijación mecánica de placa de Delrin/aluminio a la mesa de ranuras T con bridas y pernos. Conducción manual por jog de ejes. Determinación de origen X=0, Y=0 con palpador de bordes y calibración electrónica de Z=0 mediante sonda táctil.", "cierre": "Comprobación de alturas de seguridad y prueba de simulación en el aire (Dry Run a Z +20 mm). Registro de coordenadas G54 en bitácora de taller. Orden y limpieza de virutas.", "evidencias": "Router CNC Kinal, boquillas ER, fresas de carburo, bridas de sujeción, sonda Z electrónica.", "equipamiento": "Puesta a punto y ceros de pieza fijados en la máquina CNC con error dimensional < 0.05 mm."}, {"num": 12, "code": "S-12", "month": "Abril", "sabado_num": 4, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M3: Fresado CNC", "title": "Maquinado de bancada mecatrónica y evaluación M3 (≥ 75 pts)", "duration": "4.5 Horas (270 min)", "objective": "Ejecutar el maquinado real de la bancada mecatrónica, verificar tolerancias geométricas con micrómetro y superar la evaluación del Módulo 3.", "apertura": "Inicio de la jornada de evaluación práctica: revisión de condiciones de lubricación por niebla de aire y aspiración de viruta. Criterios de calidad y umbral mínimo de 75 puntos.", "desarrollo": "Ejecución del fresado CNC de la bancada portante con cajeras para baleros y guías lineales. Monitoreo constante del sonido de corte y formación de viruta. Retiro de la pieza, desbarbado manual con raspador de bordes e inspección dimensional de cajeras con micrómetro de interiores.", "cierre": "Calificación analítica individual con rúbrica oficial Kinal. Prueba de ensamble de rodamiento en la cajera mecanizada (ajuste de transición suave H7). Registro final en Berichtsheft.", "evidencias": "Router CNC, material de mecanizado (Delrin/aluminio), micrómetros, fresas, rúbrica M3.", "equipamiento": "Proyecto Práctico Módulo 3 calificado con rúbrica analítica oficial (Aprobatorio ≥ 75 pts)."}, {"num": 13, "code": "S-13", "month": "Mayo", "sabado_num": 1, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M4: Sensórica", "title": "Transducción industrial, sensores PNP/NPN y finales de carrera", "duration": "4.5 Horas (270 min)", "objective": "Conectar, probar y calibrar sensores discretos industriales de 24 VDC identificando la lógica de conmutación de tres hilos.", "apertura": "Falla común en industria guatemalteca: daño de entradas de PLC por cortocircuito al confundir conexiones PNP (sourcing) con NPN (sinking). Análisis de hoja técnica.", "desarrollo": "Práctica de banco con multímetro y fuente de 24 VDC. Identificación de código de colores industrial: Café (+24V), Azul (0V) y Negro (Señal). Cableado y ensayo de detección de: 1) Sensores inductivos ante metales ferrosos y no ferrosos, 2) Sensores capacitivos para nivel de líquidos y polvos, 3) Sensores fotoeléctricos réflex con ajuste de sensibilidad.", "cierre": "Verificación de histéresis de conmutación y conexionado de cargas a relevador de estado sólido. Registro en la bitácora Berichtsheft sobre diagramas de cableado PNP vs NPN.", "evidencias": "Fuentes conmutadas 24 VDC, sensores inductivos/capacitivos/ópticos, multímetros, relevadores.", "equipamiento": "Circuito de detección multisensores operativo sin cortocircuitos ni inversión de polaridad."}, {"num": 14, "code": "S-14", "month": "Mayo", "sabado_num": 2, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M4: Control Ejes", "title": "Motores a pasos NEMA, drivers industriales y microstepping", "duration": "4.5 Horas (270 min)", "objective": "Configurar drivers bipolares industriales (corriente y microstepping) y gobernar motores a pasos NEMA para control de posición preciso.", "apertura": "Problema mecánico: pérdida de pasos y sobrecalentamiento de motores por ajuste erróneo de corriente en líneas automatizadas. Explicación de las curvas de torque-velocidad.", "desarrollo": "Identificación de devanados en motores bipolares de 4 cables (fases A+, A-, B+, B-). Configuración de interruptores DIP en drivers industriales (tipo TB6600/DM542) para corriente nominal y microstepping (1/4, 1/8, 1/16). Cableado de señales lógicas de control: Pulso (PUL), Dirección (DIR) y Habilitación (ENA). Pruebas de movimiento con generador de pulsos.", "cierre": "Medición de temperatura del motor en régimen estacionario y dinámico. Registro en Berichtsheft de la relación entre micropasos y resolución de desplazamiento en milímetros.", "evidencias": "Motores NEMA 17 y NEMA 23, drivers bipolares, fuentes 24 VDC, generadores de señal.", "equipamiento": "Motor a pasos girando a velocidades controladas sin vibraciones excesivas ni pérdida de pasos."}, {"num": 15, "code": "S-15", "month": "Mayo", "sabado_num": 3, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M4: Cableado IEC", "title": "Electroválvulas neumáticas, ductos ranurados, ferrules y rotulado", "duration": "4.5 Horas (270 min)", "objective": "Conectar circuitos electroneumáticos y construir tableros de control estéticos aplicando ferrules, canaletas ranuradas y rotulado alfanumérico.", "apertura": "El ideario Kinal del «trabajo bien hecho» en tableros eléctricos: prohibición de hilos desnudos sueltos. Importancia de la confiabilidad eléctrica para evitar paros no programados.", "desarrollo": "Conexión de electroválvulas neumáticas 5/2 monoestables y biestables a cilindros de doble efecto con silenciadores y reguladores de flujo. Montaje de tablero sobre riel DIN: peinado de cables en canaleta ranurada plástica, uso de ponchadora con terminales tubulares aislados (ferrules), separación de potencia y control, y rotulado de cables según IEC 60617.", "cierre": "Inspección estética y mecánica de tracción en terminales ponchados. Registro en la bitácora Berichtsheft sobre normas de codificación de planos eléctricos industriales.", "evidencias": "Electroválvulas 5/2, cilindros neumáticos, manguera PU, ferrules, ponchadora, canaleta, riel DIN.", "equipamiento": "Tablero eléctrico canalizado con 100% de terminales en ferrules y rotulado alfanumérico."}, {"num": 16, "code": "S-16", "month": "Mayo", "sabado_num": 4, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M4: Control Ejes", "title": "Rampas trapezoidales, parada segura y evaluación M4 (≥ 75 pts)", "duration": "4.5 Horas (270 min)", "objective": "Programar rutinas de ciclo continuo para un eje lineal motorizado con rampas de velocidad y superar la evaluación práctica del Módulo 4.", "apertura": "Inicio de la evaluación práctica del Módulo 4: integración de motor NEMA, husillo con tuerca antibacklash, driver industrial, sensores inductivos de home/límite y parada de emergencia.", "desarrollo": "Programación de la secuencia de movimiento: 1) Rutina de homing al energizar, 2) Ciclo de vaivén automático entre posiciones programadas con rampas de aceleración suaves, 3) Interrupción inmediata y desenergización segura al oprimir botón de paro de emergencia.", "cierre": "Evaluación formal con rúbrica analítica (≥ 75 pts). Verificación de repetibilidad dimensional del carro de transporte. Asignación de notas de módulo y retroalimentación técnica.", "evidencias": "Ejes lineales de prueba, motores a pasos, sensores de fin de carrera, botoneras, rúbrica M4.", "equipamiento": "Proyecto Práctico Módulo 4 evaluado con rúbrica técnica oficial (Aprobatorio ≥ 75 pts)."}, {"num": 17, "code": "S-17", "month": "Junio", "sabado_num": 1, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M5: Integración", "title": "Arquitectura de integración, paneles HMI y diagramas FSM", "duration": "4.5 Horas (270 min)", "objective": "Diseñar la arquitectura integral de la mini-celda mecatrónica modelando la lógica mediante autómatas de estado finito y tableros de mando.", "apertura": "Presentación del Proyecto Capstone Final: Mini-Celda Mecatrónica Automatizada de Clasificación y Manipulación para líneas de producción. Requerimientos de integración total.", "desarrollo": "Diseño de diagramas de estados finitos (FSM) para coordinar: detección de pieza en tolva, avance del eje lineal mecanizado en CNC, sujeción con garra impresa en 3D, y conteo en panel de operador cortado en láser. Cableado de botonera industrial: Pulsador Verde (Start), Rojo (Stop), Selector Manual/Auto, Pilotos y Parada de Emergencia.", "cierre": "Validación lógica del diagrama de estados en pizarra y simulación de contingencias. Registro de la arquitectura global en la bitácora de taller Berichtsheft.", "evidencias": "Controladores industriales/microcontroladores, botoneras de 22 mm, lámparas piloto, pizarra.", "equipamiento": "Diagrama de flujo FSM completo que contempla todas las condiciones de falla y rearme."}, {"num": 18, "code": "S-18", "month": "Junio", "sabado_num": 2, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M5: Ensamble", "title": "Ensamble final: bancada CNC, partes 3D, gabinete láser y cables", "duration": "4.5 Horas (270 min)", "objective": "Ensamblar los subsistemas mecánicos (CNC, 3D, Láser) y ejecutar el conexionado eléctrico definitivo con verificación de continuidad y aislamiento.", "apertura": "Planificación del ensamble por estaciones de trabajo. Verificación de herramientas de precisión y repaso de normas de seguridad previas a la primera energización del sistema.", "desarrollo": "Montaje de la bancada fresada en CNC sobre el chasis cortado en láser. Acoplamiento de la garra articulada impresa en 3D sobre el carro deslizante del eje motorizado. Tendido y fijación de cadenas portacables (drag chains). Cableado de señales de sensores y potencia de actuadores hacia el gabinete central. Verificación punto a punto con multímetro.", "cierre": "Comprobación estática de ausencia de cortocircuitos a tierra y libre movimiento de mecanismos sin roce. Registro del avance de ensamble en la bitácora Berichtsheft.", "evidencias": "Todos los componentes manufacturados, tornillería, cadenas portacables, multímetros, banco.", "equipamiento": "Estructura mecatrónica ensamblada con alineación mecánica rígida y cableado 100% verificado."}, {"num": 19, "code": "S-19", "month": "Junio", "sabado_num": 3, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M5: Puesta Marcha", "title": "Carga de programa, calibración, pruebas en seco y troubleshooting", "duration": "4.5 Horas (270 min)", "objective": "Cargar el programa de control secuencial, calibrar tiempos de ciclo y ejecutar protocolos de localización y resolución de averías inducidas.", "apertura": "Metodología de puesta en marcha industrial: pruebas en vacío (dry run), pruebas paso a paso y marcha automática continua. Protocolo de diagnóstico de fallas (troubleshooting).", "desarrollo": "Carga de rutina secuencial. Calibración de sensibilidad en detección de piezas (metálicas vs no metálicas). Ajuste fino de tiempos de agarre y posicionamiento. Prueba de esfuerzo: simulación por el instructor de averías inducidas (sensor desalineado, corte de señal, atasco simulado); los aprendices aplican aislamiento lógico de fallas con multímetro.", "cierre": "Optimización del tiempo de ciclo total de la celda. Documentación de las fallas resueltas y lecciones aprendidas en la bitácora Berichtsheft. Preparación para la evaluación terminal.", "evidencias": "Celda mecatrónica completa, instrumental de diagnóstico, cronómetro de planta.", "equipamiento": "Resolución autónoma de una falla eléctrica/mecánica inducida en un tiempo inferior a 15 minutos."}, {"num": 20, "code": "S-20", "month": "Junio", "sabado_num": 4, "horario": "Sábado 8:00 a 12:30 hrs", "module": "M5: Capstone", "title": "Evaluación Terminal Integrada, defensa pública y clausura", "duration": "4.5 Horas (270 min)", "objective": "Demostrar la competencia mecatrónica integral mediante la operación autónoma y defensa técnica del Proyecto Capstone ante jurado evaluador.", "apertura": "Instalación de las celdas mecatrónicas en el taller central de Kinal. Bienvenida al jurado evaluador (instructores y directivos técnicos). Explicación de la dinámica de defensa.", "desarrollo": "Ejecución de la Evaluación Terminal Integrada (Theorie und Praxis integrierende Prüfung): cada estudiante/equipo opera su celda en ciclo continuo automático (mínimo 10 ciclos completos sin atasco ni intervención manual). Defensa técnica oral: justificación de selección de materiales, Código G utilizado, tolerancias y lógica de control. Respuesta a preguntas técnicas del jurado.", "cierre": "Revisión final y firma oficial de la Bitácora de Taller (Berichtsheft). Deliberación de notas finales (umbral aprobatorio de 75 puntos). Acto de clausura, balance pedagógico institucional y felicitación a los participantes bajo el ideario de Kinal.", "evidencias": "Celdas mecatrónicas en operación, rúbrica terminal analítica, bitácoras de taller completas.", "equipamiento": "Proyecto Capstone e informe técnico final evaluados y aprobados con nota ≥ 75 / 100 puntos."}];
+        let currentSessionNum = 1;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            
+            const target = document.getElementById('tab-' + tabId);
+            if (target) target.classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+            window.scrollTo({ top: 220, behavior: 'smooth' });
+        }
+
+        function filterMecaTemario(category) {
+            document.querySelectorAll('.meca-filter-btn').forEach(b => {
+                b.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+            });
+            const activeBtn = document.getElementById('btn-meca-' + category);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+            }
+
+            const items = document.querySelectorAll('#tab-temario .content-item');
+            items.forEach(it => {
+                if (category === 'all' || it.getAttribute('data-category') === category) {
+                    it.style.display = 'block';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+        }
+
+        function renderMecaSessionList(list) {
+            const listContainer = document.getElementById('meca-sessions-list');
+            if (!listContainer) return;
+            
+            listContainer.innerHTML = list.map(s => `
+                <div onclick="selectMecaSession(${s.num})" id="meca-list-item-${s.num}" class="session-item p-3 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-slate-100 transition cursor-pointer flex items-center justify-between text-xs ${s.num === currentSessionNum ? 'active' : ''}">
+                    <div class="flex items-center gap-2.5 overflow-hidden">
+                        <span class="badge-code w-7 h-7 rounded-lg bg-blue-900 text-white font-black text-[11px] flex items-center justify-center shrink-0">
+                            ${s.code}
+                        </span>
+                        <div class="truncate">
+                            <span class="text-[10px] uppercase font-bold text-blue-700 block">${s.month}</span>
+                            <div class="font-bold text-slate-900 truncate">${s.title}</div>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderMecaSessionDetail(s) {
+            const detailContainer = document.getElementById('meca-detail-card');
+            if (!detailContainer) return;
+
+            detailContainer.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-100 pb-3">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded-md bg-blue-900 text-white font-black text-xs">${s.code}</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-900 font-bold text-xs border border-blue-200">${s.module}</span>
+                                <span class="text-xs font-bold text-slate-500">${s.month} • Sábado ${s.sabado_num}</span>
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-black text-slate-900 pt-1">${s.title}</h4>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> ${s.duration}
+                        </span>
+                    </div>
+
+                    <!-- Objetivo -->
+                    <div class="p-4 rounded-2xl bg-blue-50/80 border border-blue-100 text-xs space-y-1">
+                        <strong class="text-blue-950 font-bold flex items-center gap-1.5 text-sm">
+                            <i data-lucide="target" class="w-4 h-4 text-blue-700"></i> Objetivo Pedagógico de la Sesión
+                        </strong>
+                        <p class="text-slate-800 leading-relaxed text-xs">${s.objective}</p>
+                    </div>
+
+                    <!-- 3 Momentos -->
+                    <div class="grid md:grid-cols-3 gap-3.5 text-xs pt-1">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-900 text-[10px] flex items-center justify-center font-black">1</span>
+                                Apertura (30 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.apertura}</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] flex items-center justify-center font-black">2</span>
+                                Desarrollo (210 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.desarrollo}</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-amber-100 text-amber-900 text-[10px] flex items-center justify-center font-black">3</span>
+                                Cierre (30 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.cierre}</p>
+                        </div>
+                    </div>
+
+                    <!-- Footer: Evidencias y Equipamiento -->
+                    <div class="grid sm:grid-cols-2 gap-3 pt-3 text-xs border-t border-slate-100">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-slate-500 block">Evidencia de Taller</span>
+                            <div class="text-slate-800 font-medium flex items-start gap-1.5">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span>${s.evidencias}</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-slate-500 block">Equipamiento Kinal</span>
+                            <div class="text-slate-800 font-medium flex items-start gap-1.5">
+                                <i data-lucide="wrench" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+                                <span>${s.equipamiento}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navegación entre sesiones -->
+                    <div class="flex justify-between items-center pt-2">
+                        <button onclick="navigateMecaSession(-1)" ${s.num === 1 ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1 transition">
+                            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Sesión Anterior
+                        </button>
+                        <span class="text-xs font-bold text-slate-400">Sesión ${s.num} de 20</span>
+                        <button onclick="navigateMecaSession(1)" ${s.num === 20 ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1 transition">
+                            Siguiente Sesión <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function selectMecaSession(num) {
+            currentSessionNum = num;
+            document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
+            const activeItem = document.getElementById('meca-list-item-' + num);
+            if (activeItem) activeItem.classList.add('active');
+
+            const s = mecaSessions.find(item => item.num === num);
+            if (s) renderMecaSessionDetail(s);
+        }
+
+        function navigateMecaSession(direction) {
+            const newNum = currentSessionNum + direction;
+            if (newNum >= 1 && newNum <= 20) {
+                selectMecaSession(newNum);
+            }
+        }
+
+        function goToSession(num) {
+            switchTab('secuencias');
+            selectMecaSession(num);
+        }
+
+        function filterMecaList() {
+            const q = document.getElementById('meca-sec-search').value.toLowerCase();
+            const filtered = mecaSessions.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) || 
+                s.objective.toLowerCase().includes(q)
+            );
+            renderMecaSessionList(filtered);
+            document.getElementById('meca-count-badge').innerText = filtered.length + ' Sesiones';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMecaSessionList(mecaSessions);
+            selectMecaSession(1);
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
