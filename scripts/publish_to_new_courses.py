@@ -1,7 +1,7 @@
 """
-Script para publicar el Ecosistema de Nuevos Cursos en el repositorio de GitHub:
+Script para publicar el Ecosistema Completo de 4 Nuevos Cursos en el repositorio de GitHub:
 rovalle-kinal/new-courses
-y activar GitHub Pages para su visualización pública en la web.
+y activar / actualizar GitHub Pages para su visualización pública en la web.
 """
 
 import os
@@ -15,69 +15,55 @@ WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CURSOS_DIR = os.path.join(WORKSPACE_DIR, "Cursos")
 WEB_DIR = os.path.join(CURSOS_DIR, "Web")
 
+# Token retrieval (environment variable)
 TOKEN = os.environ.get("GITHUB_TOKEN", os.environ.get("GH_TOKEN", ""))
 REPO_URL = f"https://rovalle-kinal:{TOKEN}@github.com/rovalle-kinal/new-courses.git" if TOKEN else "https://github.com/rovalle-kinal/new-courses.git"
 CLONE_DIR = os.path.join(os.environ.get("TEMP", "C:/Temp"), "new-courses-repo")
 
 print("1. Limpiando y preparando directorio de clonación...")
 if os.path.exists(CLONE_DIR):
-    shutil.rmtree(CLONE_DIR, ignore_errors=True)
+    subprocess.run(f'cmd /c if exist "{CLONE_DIR}" rd /s /q "{CLONE_DIR}"', shell=True)
 
-print("2. Clonando repositorio vacío de GitHub...")
+print("2. Clonando repositorio de GitHub...")
 subprocess.run([GIT_EXE, "clone", REPO_URL, CLONE_DIR], check=True)
 
 # Configurar identidad de git en el clon
 subprocess.run([GIT_EXE, "config", "user.name", "rovalle-kinal"], cwd=CLONE_DIR, check=True)
 subprocess.run([GIT_EXE, "config", "user.email", "rovalle@kinal.edu.gt"], cwd=CLONE_DIR, check=True)
 
-print("3. Copiando y adaptando archivos para la raíz del repositorio...")
-# Copiar carpetas de Word
-os.makedirs(os.path.join(CLONE_DIR, "Mecatrónica"), exist_ok=True)
-for f in os.listdir(os.path.join(CURSOS_DIR, "Mecatrónica")):
-    if f.endswith(".docx"):
-        shutil.copy2(os.path.join(CURSOS_DIR, "Mecatrónica", f), os.path.join(CLONE_DIR, "Mecatrónica", f))
+print("3. Copiando y adaptando documentos Word de los 4 cursos...")
+course_folders = ["Mecatrónica", "Ciberseguridad", "Automatización", "Cableado_Estructurado"]
+for cfolder in course_folders:
+    src_folder = os.path.join(CURSOS_DIR, cfolder)
+    dst_folder = os.path.join(CLONE_DIR, cfolder)
+    os.makedirs(dst_folder, exist_ok=True)
+    if os.path.exists(src_folder):
+        for f in os.listdir(src_folder):
+            if f.endswith(".docx"):
+                shutil.copy2(os.path.join(src_folder, f), os.path.join(dst_folder, f))
 
-os.makedirs(os.path.join(CLONE_DIR, "Ciberseguridad"), exist_ok=True)
-for f in os.listdir(os.path.join(CURSOS_DIR, "Ciberseguridad")):
-    if f.endswith(".docx"):
-        shutil.copy2(os.path.join(CURSOS_DIR, "Ciberseguridad", f), os.path.join(CLONE_DIR, "Ciberseguridad", f))
+print("4. Adaptando y copiando páginas HTML para la raíz del repositorio...")
+html_files = ["index.html", "mecatronica.html", "ciberseguridad.html", "automatizacion.html", "cableado_estructurado.html"]
 
-# Leer y adaptar index.html
-with open(os.path.join(WEB_DIR, "index.html"), "r", encoding="utf-8") as f:
-    idx_content = f.read()
+for hfile in html_files:
+    src_path = os.path.join(WEB_DIR, hfile)
+    with open(src_path, "r", encoding="utf-8") as f:
+        content = f.read()
 
-# En index.html para new-courses, adaptar rutas a curricula-2026 para los enlaces externos
-idx_content = idx_content.replace('../../index.html', 'https://rovalle-kinal.github.io/curricula-2026/')
-idx_content = idx_content.replace('../../TSU/index.html', 'https://rovalle-kinal.github.io/curricula-2026/TSU/index.html')
-idx_content = idx_content.replace('../../Revision_Temarios/index.html', 'https://rovalle-kinal.github.io/curricula-2026/Revision_Temarios/index.html')
-# Enlaces a Word desde la raíz
-idx_content = idx_content.replace('../Mecatrónica/', 'Mecatrónica/')
-idx_content = idx_content.replace('../Ciberseguridad/', 'Ciberseguridad/')
+    # Adaptar enlaces al Portal Maestro y TSU / Revisión
+    content = content.replace('../../index.html', 'https://rovalle-kinal.github.io/curricula-2026/')
+    content = content.replace('../../TSU/index.html', 'https://rovalle-kinal.github.io/curricula-2026/TSU/index.html')
+    content = content.replace('../../Revision_Temarios/index.html', 'https://rovalle-kinal.github.io/curricula-2026/Revision_Temarios/index.html')
+    
+    # Enlaces relativos a Word desde la raíz del repo
+    content = content.replace('../Mecatrónica/', 'Mecatrónica/')
+    content = content.replace('../Ciberseguridad/', 'Ciberseguridad/')
+    content = content.replace('../Automatización/', 'Automatización/')
+    content = content.replace('../Cableado_Estructurado/', 'Cableado_Estructurado/')
 
-with open(os.path.join(CLONE_DIR, "index.html"), "w", encoding="utf-8") as f:
-    f.write(idx_content)
-
-# Leer y adaptar mecatronica.html
-with open(os.path.join(WEB_DIR, "mecatronica.html"), "r", encoding="utf-8") as f:
-    meca_content = f.read()
-
-meca_content = meca_content.replace('../../index.html', 'https://rovalle-kinal.github.io/curricula-2026/')
-meca_content = meca_content.replace('../Mecatrónica/', 'Mecatrónica/')
-meca_content = meca_content.replace('../Ciberseguridad/', 'Ciberseguridad/')
-
-with open(os.path.join(CLONE_DIR, "mecatronica.html"), "w", encoding="utf-8") as f:
-    f.write(meca_content)
-
-# Leer y adaptar ciberseguridad.html
-with open(os.path.join(WEB_DIR, "ciberseguridad.html"), "r", encoding="utf-8") as f:
-    ciber_content = f.read()
-
-ciber_content = ciber_content.replace('../../index.html', 'https://rovalle-kinal.github.io/curricula-2026/')
-ciber_content = ciber_content.replace('../Mecatrónica/', 'Mecatrónica/')
-ciber_content = ciber_content.replace('../Ciberseguridad/', 'Ciberseguridad/')
-
-with open(os.path.join(CLONE_DIR, "ciberseguridad.html"), "w", encoding="utf-8") as f:
-    f.write(ciber_content)
+    dst_path = os.path.join(CLONE_DIR, hfile)
+    with open(dst_path, "w", encoding="utf-8") as f:
+        f.write(content)
 
 # Crear .nojekyll
 with open(os.path.join(CLONE_DIR, ".nojekyll"), "w", encoding="utf-8") as f:
@@ -92,7 +78,7 @@ Repositorio oficial y portal interactivo para los nuevos programas formativos di
 
 ---
 
-## 📚 Cursos Disponibles
+## 📚 Portafolio de Cursos Disponibles
 
 ### 1. ⚙️ Mecatrónica Industrial y Fabricación Digital Aplicada
 * **Modalidad:** 100% Presencial en Talleres de Fabricación Digital y Automatización Kinal
@@ -118,6 +104,30 @@ Repositorio oficial y portal interactivo para los nuevos programas formativos di
   * [Temario Modular Completo](Ciberseguridad/Temario_Curso_Ciberseguridad_Kinal.docx)
   * [Dosificación y Secuencia Didáctica Sesión a Sesión](Ciberseguridad/Dosificacion_y_Secuencia_Didactica_Ciberseguridad.docx)
 
+### 3. ⚡ Automatización y Control Eléctrico Industrial con PLC y Variadores de Frecuencia (VFD)
+* **Modalidad:** Híbrida Asimétrica (80% Práctica en Bancos Reales / 20% Plataforma Virtual LMS)
+* **Duración:** 120 horas formativas (20 sesiones de 6 horas • 110h de actividad neta de laboratorio)
+* **Nivel:** Equivalencia DQR Nivel 4 - 5
+* **Ejes:** Seguridad eléctrica NFPA 70E / LOTO, control electromagnético con contactores AC-3, variadores de frecuencia comerciales, programación Ladder en TIA Portal (Siemens S7-1200), red PROFINET, pantallas HMI y diagnóstico sistemático de averías.
+* **Proyecto Terminal:** Puesta en Marcha Autónoma de Celda de Embotellado Continuo y Resolución de Averías Inducidas.
+* **Explorar Web:** [automatizacion.html](https://rovalle-kinal.github.io/new-courses/automatizacion.html)
+* **Documentos Word Oficiales:**
+  * [Propuesta Formativa Institucional](Automatización/Propuesta_Curso_Automatizacion_Kinal.docx)
+  * [Temario Modular Completo](Automatización/Temario_Curso_Automatizacion_Kinal.docx)
+  * [Dosificación y Secuencia Didáctica Sesión a Sesión](Automatización/Dosificacion_y_Secuencia_Didactica_Automatizacion_Kinal.docx)
+
+### 4. 🌐 Cableado Estructurado y Redes de Cobre y Fibra Óptica
+* **Modalidad:** Presencial en Laboratorios de Redes de Kinal con apoyo digital en Google Classroom (80% Taller / 20% Plataforma)
+* **Duración:** 80 horas pedagógicas (20 sesiones de 4 horas • 10 semanas • Martes y Jueves)
+* **Nivel:** Equivalencia DQR Nivel 4 - 5
+* **Ejes:** Estándares ANSI/TIA (568, 569, 606, 607), diseño de cuartos de telecomunicaciones TR/ER, curvado de tubería EMT, charolas portacables, montaje y anclaje de racks de 19'' (42U), remate Cat 6A, empalme de fibra óptica por fusión (< 0.05 dB), certificación instrumental Tier 1 con Fluke Networks y elaboración de planos As-Built.
+* **Proyecto Terminal:** Certificación Integral de Rack Departamental, Rotulado TIA-606 y Dossier As-Built.
+* **Explorar Web:** [cableado_estructurado.html](https://rovalle-kinal.github.io/new-courses/cableado_estructurado.html)
+* **Documentos Word Oficiales:**
+  * [Propuesta Formativa Institucional](Cableado_Estructurado/Propuesta_Curso_Cableado_Estructurado_Kinal.docx)
+  * [Temario Modular Completo](Cableado_Estructurado/Temario_Curso_Cableado_Estructurado_Kinal.docx)
+  * [Dosificación y Secuencia Didáctica Sesión a Sesión](Cableado_Estructurado/Dosificacion_y_Secuencia_Didactica_Cableado_Estructurado_Kinal.docx)
+
 ---
 
 ## 🏛️ Ideario Institucional de Fundación Kinal
@@ -125,7 +135,7 @@ Repositorio oficial y portal interactivo para los nuevos programas formativos di
 > *«Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».*
 
 * **Valores:** Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.
-* **Nota Mínima Aprobatoria:** **75 puntos sobre 100** en todas las evaluaciones técnicas y prácticas.
+* **Nota Mínima Aprobatoria:** **75 puntos sobre 100** en todas las comprobaciones técnicas y prácticas.
 
 ---
 
@@ -136,37 +146,15 @@ Repositorio oficial y portal interactivo para los nuevos programas formativos di
 with open(os.path.join(CLONE_DIR, "README.md"), "w", encoding="utf-8") as f:
     f.write(readme_content)
 
-print("4. Realizando commit y push a la rama main de new-courses...")
+print("5. Realizando commit y push a la rama main de new-courses...")
 subprocess.run([GIT_EXE, "add", "."], cwd=CLONE_DIR, check=True)
-subprocess.run([GIT_EXE, "commit", "-m", "Publicación inicial: Ecosistema Web interactivo y documentos Word de Nuevos Cursos en Desarrollo"], cwd=CLONE_DIR, check=True)
-subprocess.run([GIT_EXE, "branch", "-M", "main"], cwd=CLONE_DIR, check=True)
-subprocess.run([GIT_EXE, "push", "-u", "origin", "main"], cwd=CLONE_DIR, check=True)
+subprocess.run([GIT_EXE, "commit", "-m", "feat(courses): agregar páginas web interactivas y documentos de Automatización y Cableado Estructurado"], cwd=CLONE_DIR, check=True)
+subprocess.run([GIT_EXE, "push", "origin", "main"], cwd=CLONE_DIR, check=True)
 
-print("5. Activando / Verificando GitHub Pages en el repositorio...")
-api_url = "https://api.github.com/repos/rovalle-kinal/new-courses/pages"
-req = urllib.request.Request(
-    api_url,
-    data=json.dumps({"source": {"branch": "main", "path": "/"}}).encode("utf-8"),
-    headers={
-        "Authorization": f"token {TOKEN}",
-        "Accept": "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-        "User-Agent": "Python"
-    },
-    method="POST"
-)
-
-try:
-    with urllib.request.urlopen(req) as resp:
-        res_data = json.loads(resp.read().decode())
-        print("GitHub Pages activado exitosamente:", res_data.get("html_url"))
-except urllib.error.HTTPError as e:
-    err_body = e.read().decode()
-    if "already" in err_body.lower():
-        print("GitHub Pages ya se encuentra activado.")
-    else:
-        print(f"Nota en la API de GitHub Pages ({e.code}): {err_body}")
-
-print("\n¡Publicación completada!")
+print("\n¡Publicación completada exitosamente!")
 print("Repositorio: https://github.com/rovalle-kinal/new-courses")
-print("Sitio Web en vivo: https://rovalle-kinal.github.io/new-courses/")
+print("Portal en vivo: https://rovalle-kinal.github.io/new-courses/")
+print("  - Mecatrónica: https://rovalle-kinal.github.io/new-courses/mecatronica.html")
+print("  - Ciberseguridad: https://rovalle-kinal.github.io/new-courses/ciberseguridad.html")
+print("  - Automatización: https://rovalle-kinal.github.io/new-courses/automatizacion.html")
+print("  - Cableado Estructurado: https://rovalle-kinal.github.io/new-courses/cableado_estructurado.html")

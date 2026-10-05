@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización y Control Eléctrico Industrial con PLC y VFD | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .hero-pattern {
+            background: linear-gradient(135deg, #09172e 0%, #172554 50%, #9a3412 100%);
+        }
+        .tab-btn.active {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .session-item.active {
+            background-color: #003366;
+            color: #ffffff;
+            border-color: #003366;
+        }
+        .session-item.active span, .session-item.active p {
+            color: #e2e8f0;
+        }
+        .session-item.active .badge-code {
+            background-color: #f59e0b;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cursos
+                </a>
+                <span class="text-slate-600">|</span>
+                <div class="text-slate-200 font-bold text-xs sm:text-sm flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+                    Automatización & Control Eléctrico Industrial con PLC y VFD
+                </div>
+            </div>
+            
+            <!-- Quick Download Buttons -->
+            <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-400 hidden sm:inline">Word:</span>
+                <a href="../Automatización/Propuesta_Curso_Automatizacion_Kinal.docx" download class="px-2.5 py-1 rounded bg-blue-900/60 hover:bg-blue-800 text-blue-200 transition font-medium" title="Descargar Propuesta Oficial">
+                    Propuesta
+                </a>
+                <a href="../Automatización/Temario_Curso_Automatizacion_Kinal.docx" download class="px-2.5 py-1 rounded bg-emerald-900/60 hover:bg-emerald-800 text-emerald-200 transition font-medium" title="Descargar Temario Oficial">
+                    Temario
+                </a>
+                <a href="../Automatización/Dosificacion_y_Secuencia_Didactica_Automatizacion_Kinal.docx" download class="px-2.5 py-1 rounded bg-amber-900/60 hover:bg-amber-800 text-amber-200 transition font-medium" title="Descargar Dosificación Oficial">
+                    Dosificación
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Course Banner -->
+    <section class="hero-pattern text-white py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-wide uppercase">
+                    Especialidad Práctica en Laboratorios de Potencia
+                </span>
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold">
+                    DQR Nivel 4 - 5
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                    Aprobación: ≥ 75 Pts
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+                Automatización y Control Eléctrico Industrial con PLC y Variadores de Frecuencia (VFD)
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-4xl leading-relaxed">
+                Control electromagnético de potencia, seguridad eléctrica bajo norma NFPA 70E / LOTO, parametrización de variadores de frecuencia comerciales, programación en TIA Portal para PLC Siemens S7-1200, comunicación por red industrial PROFINET y diagnóstico estructurado de fallas en líneas continuas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Bar Navigation (UNA SOLA PALABRA, SIN NUMERACIÓN) -->
+    <div class="bg-white border-b border-slate-200 sticky top-14 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex space-x-2 sm:space-x-3 py-2.5 overflow-x-auto text-xs font-bold">
+                <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-4 py-2 rounded-xl transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
+                </button>
+                <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
+                </button>
+                <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
+                </button>
+                <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
+                </button>
+                <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 1: PROPUESTA -->
+        <!-- ================================================================== -->
+        <div id="tab-propuesta" class="tab-content space-y-8">
+            
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center font-black">
+                    <i data-lucide="file-badge" class="w-4 h-4"></i>
+                </span>
+                <h3 class="text-xl font-black text-slate-900">
+                    Ficha Técnica Oficial del Programa
+                </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
+                Código: AUTO-2026-KINAL
+            </span>
+        </div>
+        <div class="divide-y divide-slate-100">
+            
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nivel Formativo de Referencia:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Equivalencia DQR Nivel 4 - 5 (Competencia técnica especializada y autonomía operativa)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Población Destinataria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Técnicos electricistas, electromecánicos, peritos industriales y supervisores de mantenimiento</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Duración Total:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">120 horas formativas (20 sesiones de 6 horas / 360 min; 110h de actividad neta de laboratorio)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Modalidad de Impartición:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Híbrida Asimétrica: 80% Práctica en Bancos Reales de Kinal (96h) y 20% Plataforma Virtual LMS (24h)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Estructura de Horarios:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Encuentros sabatinos de 1:00 p.m. a 7:00 p.m. o domingos intensivos (adaptado a turnos de planta)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Orientación de Empleabilidad:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Técnico especialista en automatización, electricista de planta, integrador de tableros industriales</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nota Mínima Aprobatoria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">75 puntos sobre 100 en todas las comprobaciones de banco, rúbricas de cableado y proyecto terminal</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Sede Presencial:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Fundación Kinal — Laboratorios de Electrotecnia y Automatización, Sede Central, Zona 7, Ciudad de Guatemala</dd>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-blue-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
+                    </p>
+                    <div class="pt-2 text-xs font-bold text-blue-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-amber-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="sparkle" class="w-4 h-4"></i> El Principio Rector del «Trabajo Bien Hecho»
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En el laboratorio de automatización, el trabajo bien hecho se traduce en <strong>cero cortocircuitos</strong>, peinado pulcro y rotulado estandarizado en ductos ranurados, calibración milimétrica de protecciones térmicas, código Ladder estructurado y trazable, y respeto irrenunciable al protocolo de bloqueo y etiquetado (LOTO) para salvaguardar la vida humana.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Matriz DQR -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                        Alineación con el Marco Alemán de Cualificaciones (DQR Nivel 4-5)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Desglose de competencias integrales de acción (Handlungskompetenz) desarrolladas en banco de potencia.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Dimensión DQR</th>
+                                <th class="py-3 px-4">Subdimensión</th>
+                                <th class="py-3 px-4">Evidencia de Desempeño en el Curso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Conocimiento (Wissen)</td>
+                                <td class="py-3 px-4">Domina las leyes de la electrotecnia trifásica, curvas V/f en VFDs, arquitectura de autómatas programables, comunicaciones PROFINET y normas internacionales (NFPA 70E, NEC, IEC 60617, IEC 61131-3).</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Destrezas (Fertigkeiten)</td>
+                                <td class="py-3 px-4">Monta y cablea tableros con canaleta y riel DIN, comisiona variadores con potenciómetro o lazo 4-20mA, programa secuencias en Ladder (KOP) y aplica aislamiento sistemático de fallas en menos de 60 min.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-emerald-900 bg-emerald-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Autonomía (Selbständigkeit)</td>
+                                <td class="py-3 px-4">Puesta en servicio individual de circuitos y diagnóstico autónomo de averías inducidas en banco de pruebas con multímetro y software, tomando decisiones de intervención seguras.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-emerald-900 bg-emerald-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Competencia Social (Sozialkompetenz)</td>
+                                <td class="py-3 px-4">Trabajo coordinado en equipo de planta para la integración de la celda continua, respeto mutuo, comunicación asertiva y transferencia ordenada del puesto de trabajo según estándares 5S.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 2: TEMARIO (ESTÉTICA DE CONSTRUCCIÓN APARTADO 3) -->
+        <!-- ================================================================== -->
+        <div id="tab-temario" class="tab-content hidden space-y-6">
+            
+            <!-- Barra Superior de Filtros por Categoría -->
+            <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-5 h-5 text-blue-700"></i>
+                            Distribución Modular con Código de Color
+                        </h3>
+                        <p class="text-slate-600 text-xs">
+                            Estructura de 4 módulos formativos divididos por especialidad técnica. Filtra por categoría para enfocar el análisis.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        Total: 20 Contenidos Clave
+                    </span>
+                </div>
+
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                    <button onclick="filterAutoCategory('all')" id="btn-cat-all" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition">
+                        Todos los Temas (20)
+                    </button>
+                    <button onclick="filterAutoCategory('fuerza')" id="btn-cat-fuerza" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition">
+                        ⚡ Fuerza & Maniobra
+                    </button>
+                    <button onclick="filterAutoCategory('vfd')" id="btn-cat-vfd" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 transition">
+                        🔄 Variadores & Motores
+                    </button>
+                    <button onclick="filterAutoCategory('plc')" id="btn-cat-plc" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 transition">
+                        💻 Programación PLC
+                    </button>
+                    <button onclick="filterAutoCategory('redes')" id="btn-cat-redes" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition">
+                        🌐 Redes & Diagnóstico
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula Modular de Temas -->
+            <div class="grid lg:grid-cols-2 gap-6" id="auto-modules-grid">
+                
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 1 (Sesiones 1 a 5 • 30 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">30 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Control Eléctrico Industrial, Mando y Diseño de Tableros de Fuerza</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Construir y verificar en banco físico tableros de control electromagnético con contactores AC-3, enclavamientos, temporizadores y protecciones térmicas bajo normas IEC 60617 y NFPA 70E.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-fuerza p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fuerza">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
+                        Seguridad Eléctrica Ocupacional y Normativa Internacional (NFPA 70E / LOTO)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        ⚡ Fuerza &amp; Maniobra
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Peligros del choque y arco eléctrico (Arc Flash). Procedimiento estricto LOTO (bloqueo/etiquetado), prueba &#x27;Test Before Touch&#x27; y aterramiento según NEC Art. 250.</p>
+            </div>
+            
+            <div class="content-item item-fuerza p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fuerza">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
+                        Simbología y Lectura de Planos Eléctricos Industriales (IEC vs NEMA)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        ⚡ Fuerza &amp; Maniobra
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Esquemas unifilares y multifilares normalizados. Identificación alfanumérica de bornes y aparamenta. Simulación y diseño en CAD eléctrico (CADe SIMU).</p>
+            </div>
+            
+            <div class="content-item item-fuerza p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fuerza">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
+                        Aparamenta Electromecánica de Fuerza y Maniobra (Contactores y Relés)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        ⚡ Fuerza &amp; Maniobra
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Contactores de potencia (categorías AC-1, AC-3), contactos auxiliares instantáneos/temporizados, pulsadores industriales y setas de parada con enclavamiento.</p>
+            </div>
+            
+            <div class="content-item item-fuerza p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fuerza">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
+                        Cálculo, Dimensionamiento y Coordinación de Protecciones de Motor
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        ⚡ Fuerza &amp; Maniobra
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Cálculo de corriente nominal (In) y de arranque (Ia/In) en motores trifásicos. Curvas termomagnéticas B/C/D, relés bimetálicos calibrados al 100% In y guardamotores.</p>
+            </div>
+            
+            <div class="content-item item-fuerza p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fuerza">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
+                        Técnicas Profesionales de Montaje en Riel DIN y Tablero Estrella-Triángulo
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        ⚡ Fuerza &amp; Maniobra
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Peinado simétrico en canaleta ranurada, crimpado de terminales ferrule, segregación de fuerza y control, y arranque temporizado estrella-triángulo (Y-Δ).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 2 (Sesiones 6 a 10 • 30 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">30 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Parametrización, Control y Puesta en Marcha de Variadores de Frecuencia (VFD)</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Comisionar variadores de frecuencia industriales (Siemens/Schneider/WEG), programar rampas, multivelocidades, control analógico 0-10V/4-20mA y frenado dinámico por resistencia.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-vfd p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vfd">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
+                        Topología Electrónica del VFD y Cableado de Potencia Apantallado
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔄 Variadores &amp; Motores
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Etapa rectificadora, bus DC intermedio e inversor IGBT con modulación PWM. Curvas V/f y control vectorial sensorless. Conexión a tierra equipotencial y cables blindados a 360°.</p>
+            </div>
+            
+            <div class="content-item item-vfd p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vfd">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
+                        Puesta en Marcha Rápida y Parametrización en Teclado (BOP)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔄 Variadores &amp; Motores
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Carga de placa de características de motor (kW, V, A, RPM, Hz, cos φ). Rutina de identificación estática (Autotuning) y parametrización de rampas t-acc y t-dec.</p>
+            </div>
+            
+            <div class="content-item item-vfd p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vfd">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
+                        Control Remoto por Terminales Digitales y Modos de Multivelocidad
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔄 Variadores &amp; Motores
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Conexionado PNP (Source) y NPN (Sink) en entradas digitales. Modos de marcha a 2 y 3 hilos, inversión remota de giro y selección de velocidades fijas por código binario.</p>
+            </div>
+            
+            <div class="content-item item-vfd p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vfd">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                        Regulación Analógica Continua (0-10V / 4-20mA) y Calibración
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔄 Variadores &amp; Motores
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Control de velocidad variable con potenciómetro externo de 10 kΩ y lazo de instrumentación 4-20 mA. Calibración de umbrales de frecuencia mínima y máxima.</p>
+            </div>
+            
+            <div class="content-item item-vfd p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vfd">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                        Frenado Dinámico por Resistencia y Diagnóstico de Alarmas
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔄 Variadores &amp; Motores
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Energía regenerativa en bus DC, cálculo y conexión de resistencia de frenado con chopper. Diagnóstico de códigos de falla: sobrecorriente, sobretensión y sobretemperatura.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 3 (Sesiones 11 a 15 • 30 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">30 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Programación y Cableado de Controladores Lógicos Programables (PLC Siemens)</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Desarrollar soluciones de automatización en TIA Portal para PLC Siemens S7-1200 en lenguaje Ladder (KOP), integrando sensores industriales, temporizadores, contadores y señales analógicas.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-plc p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="plc">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                        Arquitectura del PLC Siemens S7-1200 y Cableado de Entradas/Salidas
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💻 Programación PLC
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Fuente de alimentación, CPU 1214C y módulos SM/SB. Cableado de entradas digitales Sink/Source y sensores inductivos/ópticos PNP y NPN. Salidas a relé vs transistor.</p>
+            </div>
+            
+            <div class="content-item item-plc p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="plc">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                        Entorno TIA Portal, Configuración de Red IP y Tabla de Variables
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💻 Programación PLC
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estructura de proyectos TIA Portal, asignación de IP estática en Industrial Ethernet, diagnóstico online y creación de la tabla de variables del autómata (PLC Tags).</p>
+            </div>
+            
+            <div class="content-item item-plc p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="plc">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
+                        Lógica de Contactos Ladder (KOP): Enclavamientos y Flancos
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💻 Programación PLC
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Ciclo de scan (PII/PIQ), compuertas lógicas básicas, bobinas Set (S) y Reset (R), y detección de flancos ascendentes (P_TRIG) y descendentes (N_TRIG).</p>
+            </div>
+            
+            <div class="content-item item-plc p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="plc">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">14</span>
+                        Temporizadores (TON/TOF/TP) y Contadores para Rutinas Secuenciales
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💻 Programación PLC
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estructura IEC_TIMER, predeterminación PT y transcurrido ET. Contadores ascendentes (CTU) y descendentes (CTD) aplicados a líneas de empaque y lotes de producción.</p>
+            </div>
+            
+            <div class="content-item item-plc p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="plc">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">15</span>
+                        Tratamiento de Señales Analógicas (NORM_X / SCALE_X) y Comparadores
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💻 Programación PLC
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Conversión de cuentas digitales (0-27648) a unidades de ingeniería reales. Comparadores numéricos aplicados a control de nivel con histéresis y alarmas.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 4 (Sesiones 16 a 20 • 30 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">30 Horas de Taller</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Integración Automatizada, Redes Industriales y Diagnóstico de Averías</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Integrar el sistema completo PLC-VFD mediante bus PROFINET y control cableado, diseñar pantallas de operador HMI WinCC, resolver averías inducidas y sustentar el examen terminal.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-redes p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="redes">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">16</span>
+                        Integración Cableada de Mando y Consignas de Velocidad PLC-VFD
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🌐 Redes &amp; Diagnóstico
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Gobierno de marcha, paro, sentido de giro y rampas desde salidas digitales y analógicas del PLC hacia las borneras del variador. Verificación de interbloqueos de seguridad.</p>
+            </div>
+            
+            <div class="content-item item-redes p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="redes">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">17</span>
+                        Comunicación Industrial PROFINET: Mapeo de Palabras STW y ZSW
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🌐 Redes &amp; Diagnóstico
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Configuración del variador como dispositivo IO Device en TIA Portal. Transmisión de la palabra de control (STW), de estado (ZSW) y consigna de velocidad hexadecimal (PROFIdrive).</p>
+            </div>
+            
+            <div class="content-item item-redes p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="redes">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">18</span>
+                        Supervisión Operativa en Pantallas Táctiles HMI (WinCC Basic)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🌐 Redes &amp; Diagnóstico
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Diseño en panel Siemens SIMATIC KTP400/KTP700: botones de marcha/paro con confirmación, visualización numérica de RPM, gráficos de barras de corriente y gestión de alarmas.</p>
+            </div>
+            
+            <div class="content-item item-redes p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="redes">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">19</span>
+                        Metodología Estructurada de Diagnóstico de Averías (Troubleshooting)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🌐 Redes &amp; Diagnóstico
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Aislamiento sistemático en 5 capas: alimentación, fuerza, sensórica, lógica de programa y comunicaciones. Uso de tablas de observación (Watch Table) y buffer de la CPU.</p>
+            </div>
+            
+            <div class="content-item item-redes p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="redes">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">20</span>
+                        Evaluación Terminal Práctica de Certificación y Dossier As-Built
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🌐 Redes &amp; Diagnóstico
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Puesta en marcha autónoma de la celda de embotellado continuo y resolución de 2 fallas inducidas en menos de 60 minutos ante el jurado Kinal (umbral ≥ 75 pts).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
+        <!-- ================================================================== -->
+        <div id="tab-calendario" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-amber-600"></i>
+                        Calendario Cronológico de Taller Intensivo
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa de 20 encuentros formativos de 6 horas cada uno (120h totales) organizados en 4 bloques de 5 sesiones.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-amber-900 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-amber-700"></i> Laboratorio de Electrotecnia Kinal
+                </div>
+            </div>
+
+            <!-- Grid de Calendario -->
+            <div class="space-y-6">
+                
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i> Módulo 1: Control Eléctrico y Tableros (5 Encuentros)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">30 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-01</span>
+                        <span class="font-bold text-slate-500">Encuentro 1 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Seguridad eléctrica en planta (NFPA 70E, LOTO) y lectura de planos IEC</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Aplica el protocolo de bloqueo/etiquetado LOTO e interpreta un plano eléctrico unifilar y multifilar identificando aparamenta sin errores.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(1)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-02</span>
+                        <span class="font-bold text-slate-500">Encuentro 2 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Aparamenta de maniobra: contactores AC-3, relés auxiliares y pulsadores</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Cablea un circuito electromagnético de marcha y paro con contactor AC-3, asegurando la autorretención eléctrica y la señalización luminosa correcta.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(2)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-03</span>
+                        <span class="font-bold text-slate-500">Encuentro 3 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Inversión de giro electromagnética con enclavamientos mecánicos y eléctricos</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Construye un circuito de inversión de giro para motor trifásico incorporando enclavamiento eléctrico por contactos auxiliares y mecánico sin riesgo de cortocircuito entre fases.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(3)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-04</span>
+                        <span class="font-bold text-slate-500">Encuentro 4 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Protecciones térmicas, guardamotores y temporizadores neumáticos/electrónicos</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Dimensiona y calibra un guardamotor y relé bimetálico para un motor trifásico, integrando un temporizador para arranque retardado según cálculos de placa.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(4)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-05</span>
+                        <span class="font-bold text-slate-500">Encuentro 5 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Tablero de fuerza completo: arranque estrella-triángulo y bomba alternada</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ensambla y prueba un sistema de arranque estrella-triángulo o bombeo alternado con cableado pulcro en canaleta ranurada, cumpliendo el umbral institucional de 75 puntos.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(5)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i> Módulo 2: Variadores de Frecuencia VFD (5 Encuentros)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">30 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-06</span>
+                        <span class="font-bold text-slate-500">Encuentro 1 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Topología del VFD (rectificador, bus DC, IGBTs PWM) y cableado apantallado</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica los bloques internos del inversor (rectificador, bus DC, IGBT) y ejecuta el cableado de fuerza y tierra apantallada conforme a normas EMC.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(6)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-07</span>
+                        <span class="font-bold text-slate-500">Encuentro 2 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Puesta en marcha en teclado BOP, placa de motor y autotuning de parámetros</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Configura la placa del motor en el panel de control del variador y ejecuta la rutina de identificación de parámetros estáticos (autotuning).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(7)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-08</span>
+                        <span class="font-bold text-slate-500">Encuentro 3 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Control remoto por terminales: marcha 2/3 hilos, inversión y multivelocidades</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Comisiona el control del variador mediante entradas discretas cableadas configurando tabla de 4 velocidades preseleccionadas para una banda transportadora.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(8)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-09</span>
+                        <span class="font-bold text-slate-500">Encuentro 4 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Regulación analógica por potenciómetro 0-10V y lazo de corriente 4-20mA</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calibra la entrada analógica del variador para control suave con potenciómetro externo de 10 kΩ y lazo de corriente industrial de 4-20 mA.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(9)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-10</span>
+                        <span class="font-bold text-slate-500">Encuentro 5 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Frenado dinámico con resistencia, chopper y diagnóstico de códigos de falla</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Dimensiona y conecta una resistencia de frenado dinámico en bornes DC+/B y resuelve códigos de error típicos (OC, OV, OH) en banco de pruebas.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(10)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i> Módulo 3: Programación PLCs Siemens (5 Encuentros)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">30 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-11</span>
+                        <span class="font-bold text-slate-500">Encuentro 1 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Arquitectura del S7-1200, cableado de entradas Sink/Source y sensores NPN/PNP</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Cablea sensores industriales discretos (inductivos, capacitivos, ópticos) a las entradas digitales de una CPU Siemens S7-1200 en modo Sink/Source.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(11)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-12</span>
+                        <span class="font-bold text-slate-500">Encuentro 2 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Entorno TIA Portal, configuración de hardware, IP industrial y tabla de variables</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Crea un proyecto en Siemens TIA Portal, establece comunicación Industrial Ethernet con la CPU y estructura la tabla de variables del proceso.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(12)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-13</span>
+                        <span class="font-bold text-slate-500">Encuentro 3 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Lógica de contactos Ladder (KOP): compuertas, enclavamientos y bobinas Set/Reset</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Desarrolla programas en lenguaje Ladder utilizando contactos NA/NC, bobinas, enclavamientos y detección de flancos para control de secuencias.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(13)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-14</span>
+                        <span class="font-bold text-slate-500">Encuentro 4 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Temporizadores TON/TOF/TP y contadores CTU aplicados a conteo de empaque</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Programa rutinas de llenado temporizado y empaque por cajas utilizando temporizadores TON y contadores CTU validados con sensórica real.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(14)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-15</span>
+                        <span class="font-bold text-slate-500">Encuentro 5 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Entradas analógicas, normalización NORM_X, escalado SCALE_X y comparadores</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Procesa una señal analógica de nivel/presión en el PLC utilizando instrucciones NORM_X y SCALE_X y activa alarmas por comparadores de magnitud.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(15)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i> Módulo 4: Integración & Redes PROFINET (5 Encuentros)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">30 Horas de Taller</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-16</span>
+                        <span class="font-bold text-slate-500">Encuentro 1 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Integración física cableada de mando y velocidad entre salidas PLC y VFD</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Conecta físicamente y sincroniza las salidas del PLC con las entradas de control y velocidad del variador para gobernar un proceso continuo.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(16)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-17</span>
+                        <span class="font-bold text-slate-500">Encuentro 2 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Red industrial PROFINET: configuración IO Device, palabras STW y ZSW</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Configura el variador como esclavo PROFINET IO en TIA Portal y gobierna el motor mediante palabras de control (STW) y estado (ZSW) por bus de datos.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(17)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-18</span>
+                        <span class="font-bold text-slate-500">Encuentro 3 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Diseño de pantallas de supervisión operativa en panel HMI táctil WinCC</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Diseña y descarga una interfaz gráfica HMI en panel SIMATIC KTP con comandos de marcha/paro, visualización de RPM y gestión de alarmas de falla.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(18)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-19</span>
+                        <span class="font-bold text-slate-500">Encuentro 4 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Metodología estructurada de diagnóstico de averías (troubleshooting en 5 pasos)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Aplica el protocolo metódico de 5 pasos para aislar, identificar y corregir fallas inducidas en hardware, cableado y programación en banco real.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(19)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-amber-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-amber-300">S-20</span>
+                        <span class="font-bold text-slate-500">Encuentro 5 de 5</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">EXAMEN DE CERTIFICACIÓN PROFESIONAL: Comisionamiento integral y sustentación</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Demuestra la capacidad integral de acción técnica comisionando la celda integrada continua y sustentando el dossier técnico As-Built (Umbral: ≥75 pts).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-amber-800 font-semibold">6 Horas (360 min)</span>
+                    <button onclick="goToSession(20)" class="text-blue-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL SIN ALARGAR LA PÁGINA) -->
+        <!-- ================================================================== -->
+        <div id="tab-secuencias" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-blue-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-0.5">
+                        Selecciona un encuentro en el panel izquierdo para consultar su microdiseño en 3 momentos (Apertura 30 min, Desarrollo 280 min con Receso de 30 min, Cierre 50 min).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-56">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+                        <input type="text" id="auto-sec-search" oninput="filterAutoList()" placeholder="Buscar sesión..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master-Detail Container -->
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- LISTADO LATERAL (MASTER) -->
+                <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-4 shadow-sm space-y-2">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1 border-b border-slate-100 flex justify-between">
+                        <span>Listado de Sesiones</span>
+                        <span id="auto-count-badge">20 Sesiones</span>
+                    </div>
+                    <div id="auto-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="auto-detail-card">
+                    <!-- Rendered by JS -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
+        <!-- ================================================================== -->
+        <div id="tab-evaluacion" class="tab-content hidden space-y-8">
+            
+            <!-- Esquema Resumen -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-blue-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
+                    </h3>
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
+                        Umbral Mínimo: 75 / 100 Puntos
+                    </span>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Evaluaciones Prácticas de Banco</div>
+                        <div class="text-3xl font-black text-blue-900">40%</div>
+                        <div class="text-slate-600">4 Proyectos de Taller (10% c/u)</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Examen Terminal de Certificación</div>
+                        <div class="text-3xl font-black text-emerald-700">35%</div>
+                        <div class="text-slate-600">Comisionamiento & Troubleshooting</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bitácora Berichtsheft</div>
+                        <div class="text-3xl font-black text-purple-700">15%</div>
+                        <div class="text-slate-600">Registro Semanal Visado</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Orden 5S & Seguridad LOTO</div>
+                        <div class="text-3xl font-black text-amber-700">10%</div>
+                        <div class="text-slate-600">EPP y Trabajo Bien Hecho</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rúbrica Terminal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación Práctica
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación objetiva del desempeño técnico con ponderaciones explícitas y umbral institucional de 75 puntos.
+                        </p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-800 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/4">Criterio Evaluado</th>
+                                <th class="py-3 px-4 w-20 text-center">Ponderación</th>
+                                <th class="py-3 px-4 text-emerald-900">Desempeño Excelente (Trabajo Bien Hecho)</th>
+                                <th class="py-3 px-4 text-rose-900">Desempeño Insuficiente (&lt; 75%)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Seguridad Ocupacional y LOTO</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">20 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Aplica bloqueo LOTO, EPP dieléctrico completo y verificación con multímetro antes de intervenir. Cero faltas de seguridad.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Omite algún paso del protocolo LOTO o usa herramientas inadecuadas (&lt; 15 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Calidad Técnica del Cableado y Ensamble</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">25 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Peinado en canaleta sin cruces forzados, uso de terminales ferrule prensados correctamente y rotulado legible en cada borne.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Cables flojos, falta de ferrules, empalmes o desorden en el peinado (&lt; 19 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Lógica de Funcionamiento y Parametrización</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">30 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">El circuito o programa en PLC/VFD cumple al 100% con la secuencia exigida, rampas, temporizadores y enclavamientos sin fallas.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">El motor no arranca, secuencias invertidas o errores en parámetros básicos (&lt; 23 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Diagnóstico Metódico y Resolución de Averías</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">15 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Aplica aislamiento estructurado por capas y localiza y repara averías inducidas en el tiempo asignado.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Adivina o cambia conexiones al azar sin justificar mediciones técnicas (&lt; 11 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Orden, Limpieza (5S) y Bitácora Berichtsheft</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">10 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Puesto de trabajo impecable al finalizar y registro detallado de la práctica en la bitácora técnica visada.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Herramientas desordenadas, residuos de cable en el piso o bitácora incompleta (&lt; 7.5 pts).</td>
+    </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bitácora Berichtsheft Card -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+            <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                <i data-lucide="clipboard-check" class="w-5 h-5 text-blue-700"></i>
+                Estructura de la Bitácora de Taller («Berichtsheft»)
+            </h4>
+            <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-bold text-xs">Visado Semanal Obligatorio</span>
+        </div>
+        <p class="text-xs text-slate-600">
+            Formato oficial de registro de evidencias técnico-prácticas que cada aprendiz completa al finalizar su turno de laboratorio.
+        </p>
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+            <table class="w-full text-left border-collapse divide-y divide-slate-100">
+                <tbody>
+                    
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Datos Generales:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Estudiante: _______________________ | Carné: _________ | Sesión N°: ____ | Fecha: ________</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Actividad Práctica Ejecutada:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Descripción técnica del circuito montado, programa Ladder descargado o VFD comisionado.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Normas de Seguridad Aplicadas:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Protocolo LOTO verificado, bloqueo físico de disyuntores, uso de EPP y mediciones con multímetro.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Mediciones Técnicas Obtenidas:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Tensión de línea (V), corriente de arranque (Ia), corriente nominal (In), frecuencia (Hz), RPM.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Dificultad Superada («Trabajo Bien Hecho»):</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Registro de averías o dificultades técnicas resueltas durante la sesión y lección aprendida.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Firma del Participante y Vo.Bo. Docente:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Firma Estudiante: ___________________  |  Vo.Bo. Instructor Kinal: ___________________</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-slate-200">Fundación Kinal • Escuela Técnica Superior & Coordinación de Formación Continua</p>
+                <p class="text-slate-500">Diseño Curricular e Instruccional 2026 | Estándares DQR 4-5 & Sistema Dual</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:text-amber-400 transition">Catálogo de Cursos</a>
+                <span class="text-slate-700">•</span>
+                <a href="mecatronica.html" class="hover:text-amber-400 transition">Mecatrónica</a>
+                <span class="text-slate-700">•</span>
+                <a href="ciberseguridad.html" class="hover:text-amber-400 transition">Ciberseguridad</a>
+                <span class="text-slate-700">•</span>
+                <a href="cableado_estructurado.html" class="hover:text-amber-400 transition">Cableado Estructurado</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        const autoSessionsData = [{"num": 1, "code": "S-01", "mod_num": 1, "sesion_bloque": "Encuentro 1 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 1: Control Eléctrico", "title": "Seguridad eléctrica en planta (NFPA 70E, LOTO) y lectura de planos IEC", "duration": "6 Horas (360 min)", "objective": "Aplica el protocolo de bloqueo/etiquetado LOTO e interpreta un plano eléctrico unifilar y multifilar identificando aparamenta sin errores.", "apertura": "Bienvenida, ideario Kinal y valores del trabajo bien hecho. Análisis de caso real de planta: accidente por falta de etiquetado LOTO en una faja transportadora en Villa Nueva.", "desarrollo": "Exposición dialogada de la norma NFPA 70E y categorías de EPP dieléctrico. Demostración práctica de aplicación de candados y aldabas LOTO con verificación multímetro (Test Before Touch). Simbología IEC 60617 en pizarra y software CADe SIMU. Receso (30 min). Práctica guiada: levantamiento y rotulado de componentes en tablero desenergizado.", "cierre": "Inspección de planos elaborados por cada estudiante. Verificación de cero tensión en bornes. Registro de la primera lección en la Bitácora Berichtsheft.", "evidencias": "Kits de bloqueo LOTO, multímetros True-RMS, EPP dieléctrico, manuales de simbología, software CADe SIMU.", "equipamiento": "Protocolo LOTO ejecutado en banco y diagrama unifilar acotado con simbología IEC normalizada.", "producto": "Diagrama y protocolo LOTO"}, {"num": 2, "code": "S-02", "mod_num": 1, "sesion_bloque": "Encuentro 2 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 1: Control Eléctrico", "title": "Aparamenta de maniobra: contactores AC-3, relés auxiliares y pulsadores", "duration": "6 Horas (360 min)", "objective": "Cablea un circuito electromagnético de marcha y paro con contactor AC-3, asegurando la autorretención eléctrica y la señalización luminosa correcta.", "apertura": "Revisión de la bitácora anterior. Pregunta generadora: ¿Por qué no debemos accionar un motor trifásico directamente con un interruptor manual domiciliario?", "desarrollo": "Estudio de las categorías de servicio de contactores (AC-1 vs AC-3). Análisis del arco voltaico en cámara apagachispas. Montaje mecánico de contactores y pulsadores en riel DIN. Práctica de cableado de circuito de control de marcha-paro con memoria por contacto auxiliar 13-14. Receso (30 min). Cableado del circuito de fuerza trifásico con motor acoplado.", "cierre": "Protocolo de energización escalonada supervisada por el instructor. Prueba de pulsadores de marcha verde y paro rojo. Orden y peinado en canaleta. Registro en Berichtsheft.", "evidencias": "Contactores Siemens Sirius / Schneider TeSys, pulsadores NA/NC, luces piloto LED 24V/120V, conductores AWG 14 y 12, pinzas crimpadoras, ferrules.", "equipamiento": "Tablero físico funcional con circuito de marcha-paro y señalización de estado verificado bajo rúbrica.", "producto": "Circuito marcha-paro probado"}, {"num": 3, "code": "S-03", "mod_num": 1, "sesion_bloque": "Encuentro 3 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 1: Control Eléctrico", "title": "Inversión de giro electromagnética con enclavamientos mecánicos y eléctricos", "duration": "6 Horas (360 min)", "objective": "Construye un circuito de inversión de giro para motor trifásico incorporando enclavamiento eléctrico por contactos auxiliares y mecánico sin riesgo de cortocircuito entre fases.", "apertura": "Retroalimentación rápida. Planteamiento del problema en la planta embotelladora: atasco en la faja de botellas que exige retroceso inmediato de la línea.", "desarrollo": "Teoría del campo magnético giratorio e intercambio de fases L1-L2-L3. Demostración del cortocircuito franco si dos contactores de inversión entran en simultáneo. Cableado del doble enclavamiento: mecánico (bloque entre contactores) y eléctrico (contactos NC cruzados 21-22). Receso (30 min). Cableado de fuerza y prueba de giro horario y antihorario en banco de pruebas.", "cierre": "Comprobación de la imposibilidad física de energizar ambos contactores a la vez. Medición de corrientes de arranque en ambos sentidos con pinza amperimétrica. Limpieza y registro en Berichtsheft.", "evidencias": "Tableros de entrenamiento, pares de contactores con enclavamiento mecánico, motores trifásicos 1 HP, pinzas amperimétricas, herramientas de electricista.", "equipamiento": "Circuito de inversión de giro probado bajo tensión con doble enclavamiento y medición de corrientes documentada.", "producto": "Tablero de inversión funcional"}, {"num": 4, "code": "S-04", "mod_num": 1, "sesion_bloque": "Encuentro 4 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 1: Control Eléctrico", "title": "Protecciones térmicas, guardamotores y temporizadores neumáticos/electrónicos", "duration": "6 Horas (360 min)", "objective": "Dimensiona y calibra un guardamotor y relé bimetálico para un motor trifásico, integrando un temporizador para arranque retardado según cálculos de placa.", "apertura": "Análisis de falla: ¿Qué le sucede al devanado de un motor si se pierde una fase durante la producción continua?", "desarrollo": "Cálculo de corriente nominal (In) y factor de servicio (FS). Curvas de disparo térmico clase 10 y clase 20. Conexionado y calibración de relé térmico y guardamotor. Integración de temporizadores electrónicos de retardo a la conexión (ON-Delay). Receso (30 min). Práctica de montaje de circuito de arranque temporizado automático con aviso previo de sirena/baliza.", "cierre": "Simulación manual de disparo térmico (botón Test) y verificación de corte instantáneo de la bobina del contactor. Verificación de tiempos de retardo con cronómetro. Registro en Berichtsheft.", "evidencias": "Relés de sobrecarga bimetálicos, guardamotores magneto-térmicos, temporizadores multirango, balizas acústicas/luminosas, cronómetros.", "equipamiento": "Hoja de cálculo de protecciones según placa de motor y circuito temporizado calibrado operando en tablero.", "producto": "Circuito temporizado calibrado"}, {"num": 5, "code": "S-05", "mod_num": 1, "sesion_bloque": "Encuentro 5 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 1: Control Eléctrico", "title": "Tablero de fuerza completo: arranque estrella-triángulo y bomba alternada", "duration": "6 Horas (360 min)", "objective": "Ensambla y prueba un sistema de arranque estrella-triángulo o bombeo alternado con cableado pulcro en canaleta ranurada, cumpliendo el umbral institucional de 75 puntos.", "apertura": "Presentación del reto evaluativo de cierre de módulo: comisionar el sistema de suministro de agua de la planta con dos motores que alternan servicio.", "desarrollo": "Revisión de esquemas estrella-triángulo: reducción de la corriente de arranque a 1/3 de la nominal. Cableado integral del circuito de 3 contactores (Línea, Triángulo, Estrella) con temporizador de transición. Receso (30 min). Montaje autónomo por parejas aplicando técnicas profesionales de prensado de terminales y peinado.", "cierre": "Evaluación sumativa de Módulo 1 mediante rúbrica analítica Kinal (nota mínima 75/100). Verificación de rotulación, ajuste de borneras con torquímetro y puesta en marcha.", "evidencias": "Tableros industriales completos, 3 contactores por estación, temporizador estrella-triángulo, motores de 6 bornes 220/380V, boyas de nivel.", "equipamiento": "Tablero estrella-triángulo o bombeo alternado evaluado y aprobado en funcionamiento real sin cortocircuitos.", "producto": "Tablero Y-Δ sin cortocircuitos"}, {"num": 6, "code": "S-06", "mod_num": 2, "sesion_bloque": "Encuentro 1 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 2: Variadores VFD", "title": "Topología del VFD (rectificador, bus DC, IGBTs PWM) y cableado apantallado", "duration": "6 Horas (360 min)", "objective": "Identifica los bloques internos del inversor (rectificador, bus DC, IGBT) y ejecuta el cableado de fuerza y tierra apantallada conforme a normas EMC.", "apertura": "Introducción al Módulo 2. Reflexión: limitaciones del arranque directo frente a la necesidad de controlar velocidad precisa en el llenado de líquidos.", "desarrollo": "Fundamentos de modulación por ancho de pulso (PWM) y conmutación de transistores IGBT. Identificación de bornes de potencia (L1-L2-L3, U-V-W, +DC/-DC, PB). Demostración del fenómeno dv/dt y corrientes parásitas en rodamientos. Receso (30 min). Práctica de cableado de fuerza con cable apantallado especial para variadores y conexión de blindaje a masa en 360°.", "cierre": "Medición de resistencia de aislamiento con megóhmetro entre bornes del motor y tierra. Comprobación de orden en el peinado de fuerza vs control. Registro en Berichtsheft.", "evidencias": "Variadores Siemens Sinamics V20 / Schneider ATV320, cable apantallado para variador, prensacables metálicos EMC, megóhmetro digital.", "equipamiento": "Montaje electromecánico del variador en riel DIN y conexión de cables de fuerza y tierra con blindaje verificado.", "producto": "Cableado de fuerza y tierra PE"}, {"num": 7, "code": "S-07", "mod_num": 2, "sesion_bloque": "Encuentro 2 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 2: Variadores VFD", "title": "Puesta en marcha en teclado BOP, placa de motor y autotuning de parámetros", "duration": "6 Horas (360 min)", "objective": "Configura la placa del motor en el panel de control del variador y ejecuta la rutina de identificación de parámetros estáticos (autotuning).", "apertura": "Pregunta inicial: ¿Por qué un variador recién sacado de su caja no debe encenderse sin antes configurar los datos de placa del motor conectado?", "desarrollo": "Navegación por el árbol de parámetros del panel BOP (Basic Operator Panel). Parámetros fundamentales: P0100 (frecuencia 50/60 Hz), P0304 (voltaje), P0305 (corriente), P0307 (potencia), P0310 (frecuencia nominal) y P0311 (RPM). Receso (30 min). Práctica en banco: ejecución del autotuning estático para calibrar la resistencia del estator. Arranque en modo manual local con teclas de flecha.", "cierre": "Verificación del sentido de giro del motor y contraste de la corriente en vacío mostrada en pantalla frente a la pinza amperimétrica. Registro en Berichtsheft.", "evidencias": "Bancos de motores trifásicos, paneles BOP de variadores, pinzas amperimétricas, tacómetros digitales láser.", "equipamiento": "Variador parametrizado con datos reales de placa y motor funcionando en modo local con giro verificado.", "producto": "Motor girando en modo manual"}, {"num": 8, "code": "S-08", "mod_num": 2, "sesion_bloque": "Encuentro 3 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 2: Variadores VFD", "title": "Control remoto por terminales: marcha 2/3 hilos, inversión y multivelocidades", "duration": "6 Horas (360 min)", "objective": "Comisiona el control del variador mediante entradas discretas cableadas configurando tabla de 4 velocidades preseleccionadas para una banda transportadora.", "apertura": "Planteamiento del requerimiento industrial: la máquina necesita velocidad lenta para inspección, velocidad media para enjuague y velocidad alta para llenado.", "desarrollo": "Configuración de macros de aplicación en el variador (conexión a 2 hilos y 3 hilos). Cableado de entradas digitales DI1 (Marcha), DI2 (Inversión), DI3 y DI4 (selección binaria de velocidades). Parametrización de frecuencias fijas (15 Hz, 30 Hz, 45 Hz, 60 Hz). Receso (30 min). Ajuste de rampas de aceleración (t-acc = 3s) y desaceleración (t-dec = 2s).", "cierre": "Prueba de conmutación de velocidades mediante selector de levas externo. Medición de velocidad con tacómetro láser en cada escalón. Registro en Berichtsheft.", "evidencias": "Selectores rotativos de 3 y 4 posiciones, botoneras industriales externas, variadores, tacómetros láser.", "equipamiento": "Sistema de 4 velocidades prefijadas operando por selectores externos con tiempos de rampa verificados.", "producto": "Tabla de 4 velocidades probada"}, {"num": 9, "code": "S-09", "mod_num": 2, "sesion_bloque": "Encuentro 4 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 2: Variadores VFD", "title": "Regulación analógica por potenciómetro 0-10V y lazo de corriente 4-20mA", "duration": "6 Horas (360 min)", "objective": "Calibra la entrada analógica del variador para control suave con potenciómetro externo de 10 kΩ y lazo de corriente industrial de 4-20 mA.", "apertura": "Diferencias prácticas entre señales de tensión (0-10V) y señales de corriente (4-20 mA) en ambientes industriales con alto ruido electromagnético.", "desarrollo": "Conexionado del potenciómetro a la fuente interna de 10VDC del variador. Configuración de parámetros de escalado analógico (frecuencia mínima P1080 = 10 Hz, frecuencia máxima P1082 = 60 Hz). Receso (30 min). Conversión de entrada analógica a lazo de corriente 4-20 mA mediante jumper/switch físico. Conexión de generador de corriente simulando transmisor de presión.", "cierre": "Calibración de la respuesta en frecuencia ante 4 mA (0 Hz / mín) y 20 mA (60 Hz / máx). Detección de pérdida de señal de corriente (falla 4mA loop break). Registro en Berichtsheft.", "evidencias": "Potenciómetros de precisión 10 kΩ, calibradores de proceso de corriente 4-20 mA, cables apantallados de instrumentación, multímetros.", "equipamiento": "Variador respondiendo proporcionalmente a lazo de corriente 4-20 mA y potenciómetro con límites acotados.", "producto": "Control de velocidad continuo"}, {"num": 10, "code": "S-10", "mod_num": 2, "sesion_bloque": "Encuentro 5 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 2: Variadores VFD", "title": "Frenado dinámico con resistencia, chopper y diagnóstico de códigos de falla", "duration": "6 Horas (360 min)", "objective": "Dimensiona y conecta una resistencia de frenado dinámico en bornes DC+/B y resuelve códigos de error típicos (OC, OV, OH) en banco de pruebas.", "apertura": "Caso de estudio: una faja transportadora con botellas derrama producto porque el motor se tarda 15 segundos en detenerse por inercia.", "desarrollo": "Concepto de energía regenerativa y aumento de voltaje en el bus de continua. Cálculo del valor óhmico y potencia de la resistencia de frenado. Conexión en bornes PB/DC+ del chopper integrado. Receso (30 min). Parámetros de frenado por inyección DC y parada rápida (OFF3). Taller de diagnóstico: simulación de fallas de sobrecorriente (F0001) y sobretensión (F0002) y procedimiento de reset.", "cierre": "Evaluación de Módulo 2: Comisionamiento completo de variador ante el instructor en menos de 45 minutos (nota mínima 75/100). Registro en Berichtsheft.", "evidencias": "Resistencias de frenado dinámico disipativas blindadas, cronómetros, generadores de falla simulada.", "equipamiento": "Prueba de parada rápida con frenado dinámico por resistencia y reporte de diagnóstico de fallas superado.", "producto": "Prueba de frenado y fallas"}, {"num": 11, "code": "S-11", "mod_num": 3, "sesion_bloque": "Encuentro 1 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 3: PLCs Siemens", "title": "Arquitectura del S7-1200, cableado de entradas Sink/Source y sensores NPN/PNP", "duration": "6 Horas (360 min)", "objective": "Cablea sensores industriales discretos (inductivos, capacitivos, ópticos) a las entradas digitales de una CPU Siemens S7-1200 en modo Sink/Source.", "apertura": "Inicio del Módulo 3. Análisis: transición del control electromecánico cableado al control lógico programable para flexibilidad total de planta.", "desarrollo": "Estructura del hardware S7-1200 (CPU 1214C DC/DC/DC). Alimentación de 24 VDC y conexión de masa común (1M / 2M). Diferencias de cableado entre sensores PNP (conmutación a positivo) y NPN (conmutación a negativo). Receso (30 min). Cableado práctico de un sensor inductivo para detección de latas metálicas y fotocélula para botellas plásticas a los bornes de entrada del PLC.", "cierre": "Verificación visual del encendido de los LEDs de entrada (DIa .0, .1, .2) al excitar manualmente cada sensor. Cero cortocircuitos. Registro en Berichtsheft.", "evidencias": "PLCs Siemens S7-1200, fuentes de alimentación industriales 24VDC / 5A, sensores inductivos, ópticos difusos, reflectivos y capacitivos.", "equipamiento": "Tablero de PLC con cableado ordenado de sensores de campo y comprobación de activación de LEDs de entrada.", "producto": "Mapeo de sensores comprobado"}, {"num": 12, "code": "S-12", "mod_num": 3, "sesion_bloque": "Encuentro 2 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 3: PLCs Siemens", "title": "Entorno TIA Portal, configuración de hardware, IP industrial y tabla de variables", "duration": "6 Horas (360 min)", "objective": "Crea un proyecto en Siemens TIA Portal, establece comunicación Industrial Ethernet con la CPU y estructura la tabla de variables del proceso.", "apertura": "Pregunta orientadora: ¿Cómo dialoga la computadora de ingeniería con el procesador del autómata en un ambiente industrial ruidoso?", "desarrollo": "Introducción a la interfaz del Totally Integrated Automation (TIA Portal). Creación de proyecto nuevo y configuración de hardware por catálogo o detección automática. Asignación de dirección IP estática en la misma subred. Receso (30 min). Descarga de configuración a la CPU y puesta en modo RUN. Creación de la tabla de variables (PLC Tags) con nombres nemotécnicos estandarizados.", "cierre": "Uso de la función «Parpadear LED» para confirmar la identificación del PLC físico en la red. Verificación de comunicación online sin errores de diagnóstico.", "evidencias": "Laptops con TIA Portal V18/V19 instalado, cables de red Ethernet Cat 6 con conectores industriales RJ45, switches industriales no administrados.", "equipamiento": "Proyecto de TIA Portal online con la CPU real en RUN y tabla de variables de planta debidamente estructurada.", "producto": "Proyecto online y CPU en RUN"}, {"num": 13, "code": "S-13", "mod_num": 3, "sesion_bloque": "Encuentro 3 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 3: PLCs Siemens", "title": "Lógica de contactos Ladder (KOP): compuertas, enclavamientos y bobinas Set/Reset", "duration": "6 Horas (360 min)", "objective": "Desarrolla programas en lenguaje Ladder utilizando contactos NA/NC, bobinas, enclavamientos y detección de flancos para control de secuencias.", "apertura": "Repaso del ciclo de scan del autómata (PII -> Programa -> PIQ). Reto: programar la seguridad de arranque de la faja transportadora con múltiples condiciones.", "desarrollo": "Sintaxis del editor de bloques en el Bloque de Organización principal (OB1). Lógica AND, OR y NOT en peldaños Ladder. Programación de autorretención tradicional vs instrucciones Set (S) y Reset (R). Receso (30 min). Detección de pulsos cortos mediante instrucciones de flanco positivo (P_TRIG) para conteo de productos a alta velocidad.", "cierre": "Prueba del programa descargado en el PLC forzando variables de entrada y observando las salidas a través de la herramienta «Observar bloque» (gafas verdes). Registro en Berichtsheft.", "evidencias": "Software TIA Portal, autómatas S7-1200, botoneras de entrada conectadas, lámparas de salida a 24VDC.", "equipamiento": "Programa Ladder probado online en el PLC con control de arranque seguro y detección de flancos operativos.", "producto": "Semáforo secuencial funcional"}, {"num": 14, "code": "S-14", "mod_num": 3, "sesion_bloque": "Encuentro 4 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 3: PLCs Siemens", "title": "Temporizadores TON/TOF/TP y contadores CTU aplicados a conteo de empaque", "duration": "6 Horas (360 min)", "objective": "Programa rutinas de llenado temporizado y empaque por cajas utilizando temporizadores TON y contadores CTU validados con sensórica real.", "apertura": "Caso de la planta: llenado de botellas durante 4.5 segundos exactos, avance de faja y parada automática al completar una caja de 12 unidades.", "desarrollo": "Estructura de datos del bloque IEC_TIMER en temporizadores TON (retardo a conexión) y TOF (retardo a desconexión). Bloque contador ascendente CTU con valor de preselección (PV). Receso (30 min). Programación de la secuencia cíclica en Ladder: detección de botella por sensor óptico, paro de faja, temporizado de electroválvula de llenado y conteo de caja llena.", "cierre": "Prueba de la rutina en el banco con botellas de muestra. Reseteo del contador al retirar la caja llena. Verificación de robustez ante paradas repentinas. Registro en Berichtsheft.", "evidencias": "Kits de sensores ópticos, bandas transportadoras didácticas miniatura, electroválvulas neumáticas 24VDC, botellas plásticas de prueba.", "equipamiento": "Lógica de llenado y conteo de lotes por empaque funcionando de forma autónoma en el autómata.", "producto": "Estación de conteo por lotes"}, {"num": 15, "code": "S-15", "mod_num": 3, "sesion_bloque": "Encuentro 5 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 3: PLCs Siemens", "title": "Entradas analógicas, normalización NORM_X, escalado SCALE_X y comparadores", "duration": "6 Horas (360 min)", "objective": "Procesa una señal analógica de nivel/presión en el PLC utilizando instrucciones NORM_X y SCALE_X y activa alarmas por comparadores de magnitud.", "apertura": "Reto técnico: ¿Cómo entiende el PLC un valor de temperatura o presión que cambia continuamente entre 0 y 100 grados o 0 y 10 bar?", "desarrollo": "Canales analógicos integrados (IW64 / 0 a 27648 cuentas). Fórmula matemática y bloque de normalización NORM_X (conversión de Int a Real entre 0.0 y 1.0). Bloque de escalado SCALE_X (conversión a unidades de ingeniería). Receso (30 min). Programación de comparadores numéricos (CMP >=, CMP <=) para control de histéresis de arranque y paro de bomba de achique.", "cierre": "Evaluación de Módulo 3: Prueba práctica individual de programación en TIA Portal ante el docente (nota mínima 75/100). Registro en Berichtsheft.", "evidencias": "Potenciómetros 0-10V conectados a entradas analógicas del PLC, transmisores industriales didácticos, TIA Portal.", "equipamiento": "Programa analógico escalado en unidades físicas de ingeniería operando con histéresis y alarmas validadas.", "producto": "Control de nivel por histéresis"}, {"num": 16, "code": "S-16", "mod_num": 4, "sesion_bloque": "Encuentro 1 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 4: Integración y Redes", "title": "Integración física cableada de mando y velocidad entre salidas PLC y VFD", "duration": "6 Horas (360 min)", "objective": "Conecta físicamente y sincroniza las salidas del PLC con las entradas de control y velocidad del variador para gobernar un proceso continuo.", "apertura": "Inicio del Módulo 4. Misión integradora: unir el cerebro de control (PLC) con el músculo de potencia y velocidad (VFD) para la línea continua.", "desarrollo": "Diseño del esquema de interconexión entre salidas a transistor del PLC y entradas digitales del variador (marcha, paro, cambio de giro). Conexión de la salida analógica del PLC (AQ) a la entrada analógica del variador (AI). Receso (30 min). Programación en Ladder de perfiles de aceleración y desaceleración coordinados con las estaciones previas y posteriores.", "cierre": "Puesta en marcha del conjunto PLC-VFD-Motor. Prueba de interbloqueo: la faja solo avanza si la máquina llenadora está lista y no hay fallas térmicas activas. Registro en Berichtsheft.", "evidencias": "Estaciones integradas de PLC S7-1200 acopladas a variadores Sinamics/Schneider, motores trifásicos, cableado de señales.", "equipamiento": "Línea de transporte gobernada en velocidad y sentido por el PLC a través de interconexión física comprobada.", "producto": "Secuencia PLC gobernando VFD"}, {"num": 17, "code": "S-17", "mod_num": 4, "sesion_bloque": "Encuentro 2 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 4: Integración y Redes", "title": "Red industrial PROFINET: configuración IO Device, palabras STW y ZSW", "duration": "6 Horas (360 min)", "objective": "Configura el variador como esclavo PROFINET IO en TIA Portal y gobierna el motor mediante palabras de control (STW) y estado (ZSW) por bus de datos.", "apertura": "Pregunta de planta: ¿Por qué la industria moderna reemplaza 15 cables de cobre de control por un solo cable Ethernet industrial verde?", "desarrollo": "Fundamentos de PROFINET RT (Real-Time). Importación del archivo GSD/GSDML del variador al catálogo de TIA Portal. Configuración de la red y asignación de dispositivo PROFINET. Receso (30 min). Perfil PROFIdrive: desglose bit a bit de la palabra de control STW1 (bits de marcha 047E / 047F) y consigna de velocidad en la palabra NSOLL_A. Lectura de corriente real devuelta por el variador.", "cierre": "Comprobación del tráfico cíclico de datos por bus PROFINET. Monitoreo en tabla de observación de TIA Portal de los telegramas de comunicación. Registro en Berichtsheft.", "evidencias": "Cables PROFINET certificados con blindaje de cobre y conectores RJ45 apantallados, variadores con puerto PROFINET integrado, TIA Portal.", "equipamiento": "Variador comisionado y controlado 100% por red PROFINET enviando consignas y reportando telemetría al PLC.", "producto": "Bus PROFINET enviando consigna"}, {"num": 18, "code": "S-18", "mod_num": 4, "sesion_bloque": "Encuentro 3 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 4: Integración y Redes", "title": "Diseño de pantallas de supervisión operativa en panel HMI táctil WinCC", "duration": "6 Horas (360 min)", "objective": "Diseña y descarga una interfaz gráfica HMI en panel SIMATIC KTP con comandos de marcha/paro, visualización de RPM y gestión de alarmas de falla.", "apertura": "Planteamiento ergonómico: cómo facilitar al operario de planta el control de la celda automatizada sin abrir el tablero eléctrico de alta tensión.", "desarrollo": "Configuración del panel HMI Siemens en el proyecto de TIA Portal (SIMATIC KTP400 / KTP700 Basic). Conexión de variables HMI con marcas y bloques DB del PLC. Diseño de pantalla principal: pulsadores táctiles de mando, lámparas de estado multicolores y visualizador numérico de RPM reales. Receso (30 min). Creación de pantalla de avisos de falla con botón de acuse de recibo y reseteo.", "cierre": "Descarga de la aplicación al panel HMI físico. Prueba de operación completa de la celda desde la pantalla táctil sin tocar botones físicos. Registro en Berichtsheft.", "evidencias": "Paneles HMI táctiles Siemens SIMATIC KTP, software WinCC Basic en TIA Portal, cables Ethernet de comunicación.", "equipamiento": "Interfaz HMI funcional en panel táctil gobernando la celda y mostrando telemetría en tiempo real.", "producto": "Pantalla HMI operando celda"}, {"num": 19, "code": "S-19", "mod_num": 4, "sesion_bloque": "Encuentro 4 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 4: Integración y Redes", "title": "Metodología estructurada de diagnóstico de averías (troubleshooting en 5 pasos)", "duration": "6 Horas (360 min)", "objective": "Aplica el protocolo metódico de 5 pasos para aislar, identificar y corregir fallas inducidas en hardware, cableado y programación en banco real.", "apertura": "Reflexión ética sobre el «trabajo bien hecho»: un técnico profesional no adivina ni cambia piezas a ciegas; aplica un método científico de descarte seguro.", "desarrollo": "Las 5 etapas del troubleshooting industrial: 1. Escuchar al operador y delimitar síntomas, 2. Inspección visual y mediciones básicas de energía, 3. Aislamiento por capas, 4. Corrección de causa raíz, 5. Prueba de confirmación y registro. Receso (30 min). Dinámica de laboratorio: el instructor induce de manera controlada 3 fallas reales en estaciones de trabajo ajenas (falso contacto en borne, cable invertido en 24VDC, contacto negado en Ladder).", "cierre": "Resolución metódica de averías por parejas bajo límite de tiempo (máx. 25 min por avería). Redacción del informe técnico de causa raíz. Registro en Berichtsheft.", "evidencias": "Kits de fallas inducidas, multímetros, trazadores de señal, software TIA Portal con herramientas de diagnóstico online.", "equipamiento": "Informe técnico de diagnóstico y resolución de averías firmado con causa raíz identificada y remediada.", "producto": "Diagnóstico de 3 fallas inducidas"}, {"num": 20, "code": "S-20", "mod_num": 4, "sesion_bloque": "Encuentro 5 de 5", "horario": "Sábados de 13:00 a 19:00 hrs (o Domingos)", "module": "Módulo 4: Integración y Redes", "title": "EXAMEN DE CERTIFICACIÓN PROFESIONAL: Comisionamiento integral y sustentación", "duration": "6 Horas (360 min)", "objective": "Demuestra la capacidad integral de acción técnica comisionando la celda integrada continua y sustentando el dossier técnico As-Built (Umbral: ≥75 pts).", "apertura": "Apertura del examen oficial de certificación. Verificación de condiciones de seguridad LOTO y revisión del estado de los bancos de prueba.", "desarrollo": "Prueba práctica individual de certificación profesional (tiempo límite 120 minutos): el participante recibe el requerimiento de una celda de empaque, debe parametrizar el variador, programar la rutina en PLC S7-1200, verificar el cableado de sensores y poner en marcha el proceso continuo. Receso (30 min). Inducción de 2 averías en tiempo real por parte del tribunal evaluador que deben ser resueltas en menos de 45 minutos.", "cierre": "Sustentación oral del dossier técnico As-Built y entrega de la Bitácora Berichtsheft completa. Calificación final sobre 100 puntos y retroalimentación personalizada.", "evidencias": "Bancos completos de automatización industrial, instrumental calibrado, rúbricas de evaluación institucional Kinal.", "equipamiento": "Acta oficial de evaluación práctica de certificación profesional aprobada (≥ 75 puntos) y dossier técnico entregado.", "producto": "Celda operativa y dossier As-Built"}];
+        let currentAutoSessionId = 1;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            const targetTab = document.getElementById('tab-' + tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetTab && targetBtn) {
+                targetTab.classList.remove('hidden');
+                targetBtn.classList.add('active');
+                targetBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterAutoCategory(cat) {
+            document.querySelectorAll('#tab-temario button[id^="btn-cat-"]').forEach(btn => {
+                btn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-700 transition";
+            });
+
+            const activeBtn = document.getElementById('btn-cat-' + cat);
+            if (activeBtn) {
+                activeBtn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition";
+            }
+
+            const items = document.querySelectorAll('.content-item');
+            items.forEach(it => {
+                if (cat === 'all' || it.getAttribute('data-category') === cat) {
+                    it.style.display = 'block';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+        }
+
+        function renderAutoSessionsList(filteredSessions) {
+            const container = document.getElementById('auto-sessions-list');
+            container.innerHTML = '';
+
+            filteredSessions.forEach(s => {
+                const item = document.createElement('div');
+                item.className = `session-item p-3 rounded-2xl border border-slate-200 cursor-pointer transition flex items-center justify-between text-xs hover:border-blue-900 hover:bg-slate-50 ${s.num === currentAutoSessionId ? 'active' : 'bg-white'}`;
+                item.onclick = () => selectAutoSession(s.num);
+                
+                item.innerHTML = `
+                    <div class="space-y-0.5 pr-2">
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <span class="badge-code px-2 py-0.5 rounded text-[10px] font-black bg-slate-100 text-slate-800">${s.code}</span>
+                            <span class="line-clamp-1 text-slate-900 text-xs">${s.title}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500">${s.module}</div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                `;
+                container.appendChild(item);
+            });
+            lucide.createIcons();
+        }
+
+        function selectAutoSession(num) {
+            currentAutoSessionId = num;
+            const s = autoSessionsData.find(item => item.num === num);
+            if (!s) return;
+
+            document.querySelectorAll('.session-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('bg-white');
+            });
+
+            renderAutoSessionsList(autoSessionsData);
+
+            const detailContainer = document.getElementById('auto-detail-card');
+            detailContainer.innerHTML = `
+                <div class="border-b border-slate-200 pb-5 space-y-2">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 text-amber-400 font-black text-xs tracking-wider">${s.code}</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-900 font-bold text-xs border border-blue-200">${s.module}</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-lg">${s.duration}</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">${s.title}</h3>
+                    <div class="text-xs text-amber-800 font-bold pt-1">
+                        Encuentro Sabatino: ${s.horario}
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/60 rounded-2xl p-4 border border-amber-200 space-y-1">
+                    <div class="text-[11px] uppercase font-black tracking-wider text-amber-900 flex items-center gap-1.5">
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-amber-700"></i> Indicador de Logro / Objetivo Formativo
+                    </div>
+                    <p class="text-slate-800 text-xs leading-relaxed font-medium">${s.objective}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-blue-700"></i> Secuencia Didáctica en Tres Momentos
+                    </h4>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Fase 1: Apertura
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">30 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.apertura}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-blue-50/40 border border-blue-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Fase 2: Desarrollo & Práctica en Banco
+                            </span>
+                            <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">280 Minutos (Receso: 30 min)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.desarrollo}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> Fase 3: Cierre, Evaluación y Orden 5S
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">50 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.cierre}</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50/60 rounded-2xl p-4 border border-emerald-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-emerald-900 flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i> Evidencias & Producto Observable
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.evidencias}</p>
+                    </div>
+
+                    <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-700"></i> Equipamiento & Seguridad LOTO
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.equipamiento}</p>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function filterAutoList() {
+            const q = document.getElementById('auto-sec-search').value.toLowerCase();
+            const filtered = autoSessionsData.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) ||
+                s.module.toLowerCase().includes(q) ||
+                s.objective.toLowerCase().includes(q)
+            );
+            document.getElementById('auto-count-badge').textContent = `${filtered.length} Sesiones`;
+            renderAutoSessionsList(filtered);
+        }
+
+        function goToSession(num) {
+            switchTab('secuencias');
+            selectAutoSession(num);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            selectAutoSession(1);
+        });
+    </script>
+</body>
+</html>

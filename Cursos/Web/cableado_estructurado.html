@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cableado Estructurado y Redes de Cobre y Fibra Óptica | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .hero-pattern {
+            background: linear-gradient(135deg, #082f49 0%, #0f172a 50%, #0f766e 100%);
+        }
+        .tab-btn.active {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .session-item.active {
+            background-color: #003366;
+            color: #ffffff;
+            border-color: #003366;
+        }
+        .session-item.active span, .session-item.active p {
+            color: #e2e8f0;
+        }
+        .session-item.active .badge-code {
+            background-color: #06b6d4;
+            color: #082f49;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cursos
+                </a>
+                <span class="text-slate-600">|</span>
+                <div class="text-slate-200 font-bold text-xs sm:text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-400"></i>
+                    Cableado Estructurado y Redes de Cobre y Fibra Óptica
+                </div>
+            </div>
+            
+            <!-- Quick Download Buttons -->
+            <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-400 hidden sm:inline">Word:</span>
+                <a href="../Cableado_Estructurado/Propuesta_Curso_Cableado_Estructurado_Kinal.docx" download class="px-2.5 py-1 rounded bg-blue-900/60 hover:bg-blue-800 text-blue-200 transition font-medium" title="Descargar Propuesta Oficial">
+                    Propuesta
+                </a>
+                <a href="../Cableado_Estructurado/Temario_Curso_Cableado_Estructurado_Kinal.docx" download class="px-2.5 py-1 rounded bg-emerald-900/60 hover:bg-emerald-800 text-emerald-200 transition font-medium" title="Descargar Temario Oficial">
+                    Temario
+                </a>
+                <a href="../Cableado_Estructurado/Dosificacion_y_Secuencia_Didactica_Cableado_Estructurado_Kinal.docx" download class="px-2.5 py-1 rounded bg-amber-900/60 hover:bg-amber-800 text-amber-200 transition font-medium" title="Descargar Dosificación Oficial">
+                    Dosificación
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Course Banner -->
+    <section class="hero-pattern text-white py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-bold tracking-wide uppercase">
+                    Especialidad Presencial en Laboratorios de Redes
+                </span>
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold">
+                    DQR Nivel 4 - 5
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                    Aprobación: ≥ 75 Pts
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+                Cableado Estructurado y Redes de Cobre y Fibra Óptica
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-4xl leading-relaxed">
+                Planificación de canalizaciones físicas según ANSI/TIA-569, montaje y anclaje de racks de 19 pulgadas (EIA-310), conectorización Cat 6A con mínimo destrenzado, empalme de fibra óptica por fusión con arco voltaico (&lt; 0.05 dB), certificación instrumental Tier 1 con Fluke Networks y rotulado TIA-606.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Bar Navigation (UNA SOLA PALABRA, SIN NUMERACIÓN) -->
+    <div class="bg-white border-b border-slate-200 sticky top-14 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex space-x-2 sm:space-x-3 py-2.5 overflow-x-auto text-xs font-bold">
+                <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-4 py-2 rounded-xl transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
+                </button>
+                <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
+                </button>
+                <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
+                </button>
+                <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
+                </button>
+                <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1.5 shrink-0">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 1: PROPUESTA -->
+        <!-- ================================================================== -->
+        <div id="tab-propuesta" class="tab-content space-y-8">
+            
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center font-black">
+                    <i data-lucide="file-badge" class="w-4 h-4"></i>
+                </span>
+                <h3 class="text-xl font-black text-slate-900">
+                    Ficha Técnica Oficial del Programa
+                </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
+                Código: CABLE-2026-KINAL
+            </span>
+        </div>
+        <div class="divide-y divide-slate-100">
+            
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nivel Formativo de Referencia:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Equivalencia DQR Nivel 4 - 5 (Competencia técnica especializada y autonomía operativa)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Población Destinataria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Técnicos instaladores de redes, soporte IT, electricistas de baja tensión y contratistas de telecomunicaciones</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Duración Total:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">80 horas pedagógicas (20 sesiones de 4 horas / 240 min; 73h 20min de actividad neta de taller)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Modalidad y Régimen:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Presencial en Laboratorios de Redes de Kinal con apoyo digital en Google Classroom (80% Taller / 20% Plataforma)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Estructura de Horarios:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Dos días entre semana (Martes y Jueves de 17:30 a 21:30 hrs), sincronizado con el instructor de TICs</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Orientación de Empleabilidad:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Técnico especialista en cableado estructurado, instalador de fibra óptica, supervisor de infraestructura física</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nota Mínima Aprobatoria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">75 puntos sobre 100 en todas las comprobaciones prácticas de ponchado, fusión y certificación</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Sede Presencial:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Fundación Kinal — Laboratorios de Redes y Telecomunicaciones, Sede Central, Zona 7, Ciudad de Guatemala</dd>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-blue-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
+                    </p>
+                    <div class="pt-2 text-xs font-bold text-blue-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 border-l-4 border-teal-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-teal-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="sparkle" class="w-4 h-4"></i> El Principio Rector del «Trabajo Bien Hecho»
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En infraestructura de telecomunicaciones, el trabajo bien hecho es sinónimo de <strong>estética profesional impecable</strong>: peinado simétrico sin cruces en rack, sujeción exclusiva con cinchos de velcro, respeto estricto a la física del destrenzado (&lt; 13 mm) para evitar paradiafonía (NEXT), cortes perpendiculares con cleaver (&lt; 1°) y etiquetado normalizado indeleble según TIA-606.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Matriz DQR -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                        Alineación con el Marco Alemán de Cualificaciones (DQR Nivel 4-5)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Desglose de competencias integrales de acción (Handlungskompetenz) desarrolladas en infraestructura física de red.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Dimensión DQR</th>
+                                <th class="py-3 px-4">Subdimensión</th>
+                                <th class="py-3 px-4">Evidencia de Desempeño en el Curso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Conocimiento (Wissen)</td>
+                                <td class="py-3 px-4">Domina los estándares ANSI/TIA (568, 569, 606, 607), topologías jerárquicas de cableado, propagación de ondas electromagnéticas a 500 MHz, reflexión óptica en fibras OS2/OM4 y parámetros de certificación Fluke.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Destrezas (Fertigkeiten)</td>
+                                <td class="py-3 px-4">Curva tubería EMT, monta y aploma racks de 19'', conectoriza jacks Keystone Cat 6A, empalma fibras ópticas por fusión (&lt; 0.05 dB), maneja escáneres Fluke DSX e interpreta reflectometría TDNXT/TDR.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-emerald-900 bg-emerald-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Autonomía (Selbständigkeit)</td>
+                                <td class="py-3 px-4">Diagnóstico y corrección metódica e independiente de enlaces defectuosos, cálculo del presupuesto de pérdida óptica y elaboración completa de carpetas técnicas As-Built para entrega al cliente.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-emerald-900 bg-emerald-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Competencia Social (Sozialkompetenz)</td>
+                                <td class="py-3 px-4">Coordinación en cuadrilla de instalación para tendido simultáneo de mazos de cables, seguridad compartida en cuartos de telecomunicaciones, manejo seguro de residuos de fibra de vidrio y orden 5S.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 2: TEMARIO (ESTÉTICA DE CONSTRUCCIÓN APARTADO 3) -->
+        <!-- ================================================================== -->
+        <div id="tab-temario" class="tab-content hidden space-y-6">
+            
+            <!-- Barra Superior de Filtros por Categoría -->
+            <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-5 h-5 text-cyan-700"></i>
+                            Distribución Modular con Código de Color
+                        </h3>
+                        <p class="text-slate-600 text-xs">
+                            Estructura de 4 módulos formativos divididos por especialidad técnica. Filtra por categoría para enfocar el análisis.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        Total: 20 Contenidos Clave
+                    </span>
+                </div>
+
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                    <button onclick="filterCableCategory('all')" id="btn-cable-all" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition">
+                        Todos los Temas (20)
+                    </button>
+                    <button onclick="filterCableCategory('normas')" id="btn-cable-normas" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 transition">
+                        📐 Normas & Espacios
+                    </button>
+                    <button onclick="filterCableCategory('cobre')" id="btn-cable-cobre" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition">
+                        🔌 Cobre & PoE++
+                    </button>
+                    <button onclick="filterCableCategory('fibra')" id="btn-cable-fibra" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 transition">
+                        💡 Fibra & Fusión
+                    </button>
+                    <button onclick="filterCableCategory('certificacion')" id="btn-cable-certificacion" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition">
+                        📊 Certificación & As-Built
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula Modular de Temas -->
+            <div class="grid lg:grid-cols-2 gap-6" id="cable-modules-grid">
+                
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 1 (Sesiones 1 a 5 • 20 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">20 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Normas ANSI/TIA, Espacios y Canalizaciones Físicas (TR, ER, Racks)</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Planificar la topología jerárquica del edificio corporativo, calcular factores de llenado en ductos EMT/charolas según TIA-569 y armar y anclar racks de 19&#x27;&#x27; (42U).
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-normas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="normas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
+                        Normativa Internacional y Subsistemas del Cableado (ANSI/TIA-568-E)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        📐 Normas &amp; Espacios
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estándares ANSI/TIA-568.0-E/1-E e ISO/IEC 11801. Los 6 subsistemas: Área de Trabajo, Horizontal, Backbone, TR, ER y Entrada de Servicios en topología estrella jerárquica.</p>
+            </div>
+            
+            <div class="content-item item-normas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="normas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
+                        Espacios de Telecomunicaciones según ANSI/TIA-569-E (TR y ER)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        📐 Normas &amp; Espacios
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Climatización HVAC (18°C-24°C), control de humedad, iluminación antideslumbrante, pisos ESD, pintura ignífuga en madera terciada y circuitos eléctricos dedicados NEMA 5-20R.</p>
+            </div>
+            
+            <div class="content-item item-normas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="normas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
+                        Canalizaciones Físicas y Tubería Conduit Metálica EMT
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        📐 Normas &amp; Espacios
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Regla de factor de llenado del 40% inicial / 60% futuro. Curvado manual con doblador a 90°, radios mínimos de curvatura y distancias de separación de líneas eléctricas (NFPA 70).</p>
+            </div>
+            
+            <div class="content-item item-normas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="normas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
+                        Charolas Portacables Tipo Canastilla y Bajadas Suaves a Racks
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        📐 Normas &amp; Espacios
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Montaje de charola aérea electrogalvanizada con soportes trapecio y varilla roscada. Accesorios de unión y bajadas en cascada para evitar estrangulamiento de mazos.</p>
+            </div>
+            
+            <div class="content-item item-normas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="normas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
+                        Bastidores de 19 Pulgadas, Gabinetes y Anclaje Antisísmico
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        📐 Normas &amp; Espacios
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estándar EIA-310-D (1U = 44.45 mm). Armado, nivelación de burbuja y anclaje al piso de concreto con taquetes expansivos en rack abierto de 42U y gabinete abatible.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 2 (Sesiones 6 a 10 • 20 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">20 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Cableado de Cobre de Alto Rendimiento (Cat 6 / Cat 6A) y Aterrizaje TIA-607</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Rematar tomas de pared y patch panels de 24 puertos en Cat 6A con destrenzado mínimo (&lt; 13 mm), peinado con velcro e interconectar la barra equipotencial TGB bajo TIA-607.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-cobre p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="cobre">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
+                        Física del Par Trenzado Balanceado (Cat 6A F/UTP) y Rechazo EMI
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🔌 Cobre &amp; PoE++
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Transmisión diferencial a 500 MHz (10 Gbps a 100 m). Estructura apantallada F/UTP, hilo de drenaje y conductores 100% cobre virgen AWG 23 (riesgos de cables CCA fraudulentos).</p>
+            </div>
+            
+            <div class="content-item item-cobre p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="cobre">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
+                        Conectorización de Jacks Keystone Cat 6A bajo Esquema T568B
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🔌 Cobre &amp; PoE++
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Asignación de pines RJ45, desforre sin muescas y remate con herramienta de impacto 110. Regla de oro del destrenzado &lt; 0.5&#x27;&#x27; (13 mm) para evitar paradiafonía (NEXT).</p>
+            </div>
+            
+            <div class="content-item item-cobre p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="cobre">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
+                        Armado de Patch Panels de 24 Puertos y Organización en Rack
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🔌 Cobre &amp; PoE++
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Remate posterior en paneles modulares de 1U, barras de alivio mecánico, distribución balanceada izquierda/derecha y comprobación preliminar de mapa de hilos (wiremap).</p>
+            </div>
+            
+            <div class="content-item item-cobre p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="cobre">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                        Sistema de Puesta a Tierra para Telecomunicaciones (ANSI/TIA-607-D)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🔌 Cobre &amp; PoE++
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Propósito de equipotencialidad. Instalación de barra TGB en rack, conductor BCT de cobre calibre 6 AWG y aterrizaje del blindaje de patch panels con resistencia &lt; 0.1 Ω.</p>
+            </div>
+            
+            <div class="content-item item-cobre p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="cobre">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                        Peinado Prolijo de Mazos con Velcro y Alimentación PoE++
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🔌 Cobre &amp; PoE++
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Peinado con peines de cables guía y sujeción exclusiva con cinchos textiles de velcro (cero aplastamiento). Consideraciones térmicas de PoE++ (IEEE 802.3bt hasta 90W).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 3 (Sesiones 11 a 15 • 20 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">20 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Infraestructura de Fibra Óptica, Conectorización y Empalme por Fusión</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Ejecutar empalmes por fusión con fusionadora de arco voltaico (pérdida &lt; 0.05 dB), horneado de manguitos, acomodo en bandejas ODF y pruebas de continuidad láser VFL.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-fibra p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fibra">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                        Principios de Transmisión Óptica: Monomodo (OS2) vs Multimodo (OM4)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💡 Fibra &amp; Fusión
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Índice de refracción y reflexión interna total. Núcleo de 9 µm (1310/1550 nm) vs 50 µm con láser VCSEL (850/1300 nm). Atenuación intrínseca, macrocurvaturas y seguridad ocular.</p>
+            </div>
+            
+            <div class="content-item item-fibra p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fibra">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                        Preparación y Pelado de Cable Óptico de Estructura Ajustada
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💡 Fibra &amp; Fusión
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Tijeras para corte de Kevlar y peladora de fibra de 3 muescas (chaqueta, búfer 900 µm y recubrimiento 250 µm). Limpieza ultrasuave del vidrio con alcohol isopropílico al 99%.</p>
+            </div>
+            
+            <div class="content-item item-fibra p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fibra">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
+                        Corte de Precisión con Cleaver de Diamante (&lt; 1° de Desviación)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💡 Fibra &amp; Fusión
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Operación de la cortadora de alta precisión, ajuste de longitud de corte (10-16 mm) y verificación microscópica de caras terminales perpendiculares antes de la fusión.</p>
+            </div>
+            
+            <div class="content-item item-fibra p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fibra">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">14</span>
+                        Empalme por Fusión de Fibra Óptica con Arco Voltaico
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💡 Fibra &amp; Fusión
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Alineación automática por ranuras en V (V-Groove) o núcleos (PAS). Fusión de pigtails LC con atenuación estimada &lt; 0.05 dB y horneado térmico de manguitos termocontráctiles.</p>
+            </div>
+            
+            <div class="content-item item-fibra p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fibra">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">15</span>
+                        Montaje en Bandeja Distribuidora ODF de 1U y Verificación VFL
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        💡 Fibra &amp; Fusión
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Ruteo circular de pigtails en casete respetando radio mínimo de 30 mm. Conexión de acopladores dúplex LC y comprobación visual de continuidad con localizador de fallas (VFL 650 nm).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 4 (Sesiones 16 a 20 • 20 Horas)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">20 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Certificación Instrumental con Fluke, Rotulado TIA-606 y Proyecto As-Built</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Certificar enlaces permanentes Cat 6A con certificador Fluke DSX, medir atenuación óptica Tier 1 con OPM, rotular bajo TIA-606 y entregar la carpeta técnica As-Built.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-certificacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="certificacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">16</span>
+                        Certificación Tier 1 de Cobre con Escáner Fluke Networks DSX
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        📊 Certificación &amp; As-Built
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Enlace Permanente (Permanent Link máx. 90 m) vs Canal (Channel máx. 100 m). Calibración de unidades Main/Remote, selección de norma TIA Cat 6A y valor NVP de propagación.</p>
+            </div>
+            
+            <div class="content-item item-certificacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="certificacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">17</span>
+                        Interpretación Diagnóstica de Gráficas de Alta Frecuencia (Fluke)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        📊 Certificación &amp; As-Built
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Wiremap, Insertion Loss, NEXT/PS-NEXT y Return Loss. Localización milimétrica de anomalías mediante reflectometría en el dominio del tiempo (TDNXT y TDR).</p>
+            </div>
+            
+            <div class="content-item item-certificacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="certificacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">18</span>
+                        Certificación Óptica Tier 1 con Medidor de Potencia (OPM) y Fuente
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        📊 Certificación &amp; As-Built
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Método de referencia óptica de 1 puente según TIA-526-14. Cálculo del presupuesto de pérdida admisible (Loss Budget) y verificación de pérdidas totales en dB en ambas ventanas.</p>
+            </div>
+            
+            <div class="content-item item-certificacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="certificacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">19</span>
+                        Administración y Rotulado Normalizado según ANSI/TIA-606-D
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        📊 Certificación &amp; As-Built
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Nomenclatura jerárquica formal (Edificio-Piso-TR-Rack-Panel-Puerto). Rotulación indeleble por transferencia térmica en cables, faceplates y patch panels con etiquetas de vinil.</p>
+            </div>
+            
+            <div class="content-item item-certificacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="certificacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">20</span>
+                        Evaluación Terminal Práctica de Certificación y Dossier As-Built
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        📊 Certificación &amp; As-Built
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Certificación completa de un rack departamental, resolución de 3 enlaces con fallas inducidas, exportación de reportes LinkWare y entrega de planos As-Built (umbral ≥ 75 pts).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
+        <!-- ================================================================== -->
+        <div id="tab-calendario" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-cyan-700"></i>
+                        Calendario Cronológico de Taller Semanal
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa de 10 semanas continuas • 2 sesiones por semana (Martes y Jueves de 17:30 a 21:30 hrs • 4h por encuentro).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-cyan-900 bg-cyan-50 px-3 py-1.5 rounded-xl border border-cyan-200">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-cyan-700"></i> Laboratorio de Redes Kinal
+                </div>
+            </div>
+
+            <!-- Grid de Calendario -->
+            <div class="space-y-6">
+                <div class="grid lg:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 1
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-01</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Normas ANSI/TIA-568, subsistemas y topología jerárquica del edificio corporativo</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica los 6 subsistemas de cableado y traza el esquema en estrella jerárquica para el edificio corporativo de 3 niveles.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(1)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-02</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Espacios de telecomunicaciones según ANSI/TIA-569 (TR, ER, clima, UPS, ESD)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Dimensiona los requerimientos de climatización, energía, UPS, pisos antiestáticos y madera ignífuga para los cuartos de telecomunicaciones.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(2)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 2
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-03</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Tubería conduit EMT: cálculo de factor de llenado (40%) y curvado manual</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calcula la capacidad de tuberías conduit según la regla del 40% inicial de TIA-569 y ejecuta curvas a 90° y monturas con curvador manual.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(3)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-04</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Charolas portacables tipo malla: soportes trapecio y bajadas en cascada a rack</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Instala tramos de charola portacables de hilo electrosoldado con soportes colgantes tipo trapecio y conformación de bajadas suaves hacia racks.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(4)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 3
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-05</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Armado, nivelación, escuadrado y anclaje de rack abierto de 19&#x27;&#x27; (42U) y gabinete</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ensambla, escuadra y ancla al piso un bastidor abierto de 19&#x27;&#x27; (42U) y un gabinete de pared de 12U con nivel de burbuja y torquímetro.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(5)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-06</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Física del cable Cat 6A (F/UTP), código de colores y desforre sin marcar pares</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Diferencia cables UTP, F/UTP y S/FTP y ejecuta el deschaquetado de cable Cat 6A sin rasgar mallas ni mellar el aislamiento de los pares.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(6)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 4
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-07</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Conectorización de tomas de pared (faceplates) con Keystone Jacks Cat 6A (T568B)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Remata módulos Keystone Jack Cat 6A bajo esquema T568B manteniendo el destrenzado menor a 13 mm (0.5 pulgadas) e integrando faceplates.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(7)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-08</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Ponchado de Patch Panel modular de 24 puertos con barra trasera y peinado</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Poncha y peina un patch panel modular apantallado de 24 puertos en 1U utilizando la barra de alivio de tensión trasera sin tensión mecánica.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(8)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 5
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-09</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Sistema de puesta a tierra TIA-607: barra TGB en rack y conductor verde 6 AWG</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Instala la barra secundaria TGB en el rack, conecta el cable verde de cobre 6 AWG y garantiza el drenaje equipotencial de pantallas F/UTP.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(9)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-10</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Tendido y peinado de mazo de 24 cables con peine guía y cinchos de velcro</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Peina un mazo de 24 cables Cat 6A en el rack utilizando peine organizador y cinchos textiles de velcro, validando el mapa de cableado (Wiremap).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(10)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 6
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-11</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Física de la luz en fibra: Monomodo OS2 vs Multimodo OM4 y normas de seguridad</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica fibras Monomodo (OS2) y Multimodo (OM4) y aplica los protocolos de bioseguridad para el manejo seguro de restos de fibra de vidrio.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(11)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-12</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Técnica de pelado en 3 pasos (chaqueta, búfer 900um, acrilato 250um) y limpieza</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ejecuta el pelado secuencial de fibra con pinza de 3 muescas y realiza la limpieza profunda de la fibra desnuda con alcohol isopropílico al 99%.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(12)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 7
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-13</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Corte de precisión con cleaver de diamante (&lt; 1°) y manejo de fusionadora</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Opera la cortadora de precisión obteniendo cortes perpendiculares con ángulo inferior a 1° y configura los parámetros de la fusionadora.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(13)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-14</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Empalme por fusión por arco voltaico con pérdida &lt; 0.05 dB y horneado de manguito</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ejecuta empalmes por fusión entre fibras monomodo OS2 y pigtails LC con atenuación estimada &lt; 0.05 dB y hornea el manguito termocontráctil.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(14)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 8
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-15</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Acomodo en casete de bandeja ODF de 1U, radios de curvatura y prueba VFL láser</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Acomoda los empalmes en el casete de una bandeja ODF de 1U respetando el radio de curvatura (&gt; 30 mm) y prueba continuidad con láser rojo VFL.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(15)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-16</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Certificación de cobre Tier 1 con Fluke DSX: configuración TIA Cat 6A Perm Link</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Configura el analizador Fluke Networks DSX para enlace permanente Cat 6A, calibra adaptadores y ejecuta la certificación de enlaces.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(16)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 9
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-17</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Análisis de parámetros de alta frecuencia: Wiremap, NEXT, Return Loss y causas</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Analiza gráficas de NEXT, Return Loss e Insertion Loss y localiza averías en el dominio del tiempo con herramientas TDNXT y TDR.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(17)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-18</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Certificación óptica Tier 1 con OPM y fuente de luz: cálculo de Loss Budget</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Calcula el presupuesto de pérdida óptica admisible (*Optical Loss Budget*) y mide la atenuación total en dB con fuente de luz y medidor OPM.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(18)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="network" class="w-4 h-4 text-cyan-700"></i> Semana 10
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-19</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Martes (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Administración y rotulado TIA-606-D en cables, paneles y tomas con rotuladora</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Aplica el sistema de identificación alfanumérico TIA-606-D rotulando cables, paneles y faceplates con rotuladora industrial y actualiza planos As-Built.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(19)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-cyan-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-cyan-300">S-20</span>
+                        <span class="font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded">Jueves (17:30 - 21:30)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">EXAMEN DE CERTIFICACIÓN PROFESIONAL: Certificación de rack y dossier As-Built</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Demuestra la capacidad integral de acción técnica certificando la infraestructura de rack, resolviendo averías inducidas y sustentando el dossier técnico (&gt;=75 pts).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(20)" class="text-cyan-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL SIN ALARGAR LA PÁGINA) -->
+        <!-- ================================================================== -->
+        <div id="tab-secuencias" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-cyan-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-0.5">
+                        Selecciona una sesión en el panel izquierdo para consultar su microdiseño en 3 momentos (Apertura 20 min, Desarrollo 180 min con Receso de 20 min, Cierre 40 min).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-56">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+                        <input type="text" id="cable-sec-search" oninput="filterCableList()" placeholder="Buscar sesión..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-600 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master-Detail Container -->
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- LISTADO LATERAL (MASTER) -->
+                <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-4 shadow-sm space-y-2">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1 border-b border-slate-100 flex justify-between">
+                        <span>Listado de Sesiones</span>
+                        <span id="cable-count-badge">20 Sesiones</span>
+                    </div>
+                    <div id="cable-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="cable-detail-card">
+                    <!-- Rendered by JS -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
+        <!-- ================================================================== -->
+        <div id="tab-evaluacion" class="tab-content hidden space-y-8">
+            
+            <!-- Esquema Resumen -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-blue-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
+                    </h3>
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
+                        Umbral Mínimo: 75 / 100 Puntos
+                    </span>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Evaluaciones Prácticas de Taller</div>
+                        <div class="text-3xl font-black text-blue-900">40%</div>
+                        <div class="text-slate-600">4 Prácticas Integradas (10% c/u)</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Examen Terminal de Certificación</div>
+                        <div class="text-3xl font-black text-emerald-700">35%</div>
+                        <div class="text-slate-600">Certificación Rack & As-Built</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bitácora Berichtsheft</div>
+                        <div class="text-3xl font-black text-purple-700">15%</div>
+                        <div class="text-slate-600">Registro Semanal Visado</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bioseguridad & Orden 5S</div>
+                        <div class="text-3xl font-black text-amber-700">10%</div>
+                        <div class="text-slate-600">Residuos de Fibra y EPP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rúbrica Terminal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación Práctica
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación objetiva del desempeño técnico con ponderaciones explícitas y umbral institucional de 75 puntos.
+                        </p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-800 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/4">Criterio Evaluado</th>
+                                <th class="py-3 px-4 w-20 text-center">Ponderación</th>
+                                <th class="py-3 px-4 text-emerald-900">Desempeño Excelente (Trabajo Bien Hecho)</th>
+                                <th class="py-3 px-4 text-rose-900">Desempeño Insuficiente (&lt; 75%)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Seguridad Ocupacional y Bioseguridad en Fibra</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">15 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Uso estricto de EPP dieléctrico, contenedor sellado para restos de fibra de vidrio y cero exposición visual a puertos ópticos.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Omite el uso de gafas, arroja residuos de fibra al suelo o desconoce normas de seguridad (&lt; 11.2 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Calidad Técnica de Conectorización y Peinado</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">30 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Destrenzado &lt; 13 mm, sujeción exclusiva con cinchos de velcro, peinado simétrico en rack y terminación de jacks sin pares abiertos.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Destrenzado excesivo, uso de cinchos plásticos apretados o deformación de conductores (&lt; 22.5 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Preparación, Corte y Fusión de Fibra Óptica</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">20 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Corte perpendicular con cleaver (&lt; 1°), empalme por fusión con atenuación medida &lt; 0.05 dB y horneado de manguito sin burbujas.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Ángulos de corte deficientes, atenuación superior a 0.1 dB o fractura de fibra en casete (&lt; 15 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Certificación Instrumental Fluke y Troubleshooting</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">25 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Configuración exacta de límites TIA, interpretación de gráficas TDNXT/TDR y corrección de fallas inducidas en el tiempo límite.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Incapacidad para interpretar parámetros, modificación indebida de límites o demora excesiva (&lt; 18.7 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Rotulado TIA-606, Orden (5S) y Bitácora Berichtsheft</td>
+        <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">10 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Identificación alfanumérica indeleble en todos los puntos, puesto de trabajo impecable y bitácora técnica al día.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Etiquetado ausente o improvisado con cinta adhesiva, desorden en mesa o bitácora incompleta (&lt; 7.5 pts).</td>
+    </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bitácora Berichtsheft Card -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+            <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                <i data-lucide="clipboard-check" class="w-5 h-5 text-blue-700"></i>
+                Estructura de la Bitácora de Taller («Berichtsheft»)
+            </h4>
+            <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-bold text-xs">Visado Semanal Obligatorio</span>
+        </div>
+        <p class="text-xs text-slate-600">
+            Formato oficial de registro de evidencias técnico-prácticas que cada aprendiz completa al finalizar su turno de laboratorio.
+        </p>
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+            <table class="w-full text-left border-collapse divide-y divide-slate-100">
+                <tbody>
+                    
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Datos Generales:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Estudiante: _______________________ | Carné: _________ | Sesión N°: ____ | Fecha: ________</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Actividad Práctica Ejecutada:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Descripción del enlace permanente Cat 6A ponchado, fusión óptica realizada o rack ensamblado.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Normas Técnicas Aplicadas:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Estándares ANSI/TIA (568, 569, 606, 607) verificados, distancias y radios de curvatura.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Parámetros Instrumentales Medidos:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">NEXT (dB), Return Loss (dB), Longitud (m), Wiremap, Atenuación de Fusión (dB) con Fluke/OPM.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Dificultad Superada («Trabajo Bien Hecho»):</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Registro de averías o dificultades técnicas resueltas durante el encuentro y lección aprendida.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Firma del Participante y Vo.Bo. Docente:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Firma Estudiante: ___________________  |  Vo.Bo. Instructor Kinal: ___________________</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-slate-200">Fundación Kinal • Escuela Técnica Superior & Coordinación de Formación Continua</p>
+                <p class="text-slate-500">Diseño Curricular e Instruccional 2026 | Estándares DQR 4-5 & Sistema Dual</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:text-amber-400 transition">Catálogo de Cursos</a>
+                <span class="text-slate-700">•</span>
+                <a href="mecatronica.html" class="hover:text-amber-400 transition">Mecatrónica</a>
+                <span class="text-slate-700">•</span>
+                <a href="ciberseguridad.html" class="hover:text-amber-400 transition">Ciberseguridad</a>
+                <span class="text-slate-700">•</span>
+                <a href="automatizacion.html" class="hover:text-amber-400 transition">Automatización Industrial</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        const cableSessionsData = [{"num": 1, "code": "S-01", "semana": "Semana 1", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 1: Normas y Canalizaciones", "title": "Normas ANSI/TIA-568, subsistemas y topología jerárquica del edificio corporativo", "duration": "4 Horas (240 min)", "objective": "Identifica los 6 subsistemas de cableado y traza el esquema en estrella jerárquica para el edificio corporativo de 3 niveles.", "apertura": "Presentación del curso, ideario de Kinal y valor del trabajo bien hecho. Planteamiento del caso del Edificio Torre Empresarial (120 usuarios en 3 plantas).", "desarrollo": "Exposición dialogada sobre normas TIA-568.0-E y TIA-568.1-E. Análisis de los 6 subsistemas (Área de Trabajo, Cableado Horizontal, Backbone, TR, ER y EF). Receso (20 min). Taller de diseño: cálculo de longitudes máximas (90 m de enlace permanente + 10 m de patch cords) sobre planos arquitectónicos del edificio.", "cierre": "Revisión de esquemas de distribución principal (MDF) e intermedio (IDF). Preguntas de control y registro de la primera lección en la Bitácora Berichtsheft.", "evidencias": "Planos arquitectónicos del edificio, normas TIA-568 impresas, escalímetros, software de diseño.", "equipamiento": "Diagrama esquemático en estrella jerárquica acotado con distancias y subsistemas identificados.", "producto": "Diagrama en estrella del edificio"}, {"num": 2, "code": "S-02", "semana": "Semana 1", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 1: Normas y Canalizaciones", "title": "Espacios de telecomunicaciones según ANSI/TIA-569 (TR, ER, clima, UPS, ESD)", "duration": "4 Horas (240 min)", "objective": "Dimensiona los requerimientos de climatización, energía, UPS, pisos antiestáticos y madera ignífuga para los cuartos de telecomunicaciones.", "apertura": "Pregunta generadora: ¿Qué ocurre con los switches de red si el cuarto de telecomunicaciones carece de aire acondicionado dedicado y supera los 35°C?", "desarrollo": "Estudio de la norma ANSI/TIA-569-E: rango de temperatura (18°C a 24°C), humedad (30% a 55%), iluminación (> 500 lux) y alimentación eléctrica regulada con UPS. Tratamiento de paredes con madera contrachapada de 3/4 pulgada con retardante de llama. Receso (20 min). Práctica de distribución espacial: maqueta a escala de la ubicación de racks, pasillos de servicio y rutas de entrada.", "cierre": "Verificación de distancias de mantenimiento alrededor del bastidor (mínimo 1 metro al frente y detrás). Registro en Berichtsheft.", "evidencias": "Normas TIA-569, cinta métrica, muestras de madera con pintura ignífuga, formatos de cálculo de BTU de climatización.", "equipamiento": "Ficha técnica de diseño arquitectónico y ambiental del Cuarto de Telecomunicaciones (TR).", "producto": "Ficha técnica de diseño de TR"}, {"num": 3, "code": "S-03", "semana": "Semana 2", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 1: Normas y Canalizaciones", "title": "Tubería conduit EMT: cálculo de factor de llenado (40%) y curvado manual", "duration": "4 Horas (240 min)", "objective": "Calcula la capacidad de tuberías conduit según la regla del 40% inicial de TIA-569 y ejecuta curvas a 90° y monturas con curvador manual.", "apertura": "Análisis de problema en obra: ¿Por qué no se debe jalar cable UTP a través de una tubería llena a más del 60%?", "desarrollo": "Cálculo matemático de área de sección transversal y aplicación de la regla del 40% (reserva del 60% para expansiones). Técnicas de curvado de tubería conduit EMT de 3/4'' y 1'': cálculo de deducción (take-up) para curvas a 90° y monturas de salto de obstáculos. Receso (20 min). Práctica en banco de tubos: doblado manual con hickey/bender y fijación con abrazaderas tipo uña.", "cierre": "Inspección de curvas: ausencia de aplastamiento, arrugas o rebabas cortantes en los extremos del tubo con escariador. Registro en Berichtsheft.", "evidencias": "Tubos conduit EMT 3/4'', curvadores manuales de tubo, niveles de gota, cinta métrica, escariadores de metal.", "equipamiento": "Tramos de tubería EMT doblados a 90° exactos con monturas ejecutadas y escariado verificado.", "producto": "Tramos de EMT doblados a 90°"}, {"num": 4, "code": "S-04", "semana": "Semana 2", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 1: Normas y Canalizaciones", "title": "Charolas portacables tipo malla: soportes trapecio y bajadas en cascada a rack", "duration": "4 Horas (240 min)", "objective": "Instala tramos de charola portacables de hilo electrosoldado con soportes colgantes tipo trapecio y conformación de bajadas suaves hacia racks.", "apertura": "Reflexión técnica: el radio de curvatura en la charola determina si el cable de alta frecuencia mantiene o pierde su certificación.", "desarrollo": "Características de las bandejas portacables tipo malla (canastilla electrozincada): capacidad de carga, ventilación natural y corte de hilos con cizalla angular. Ensamble de curvas horizontales a 90° y bajadas en cascada tipo trompa de elefante. Receso (20 min). Montaje en taller: suspensión con varillas roscadas de 3/8'', fijación trapecio y alineación con tiralíneas.", "cierre": "Comprobación de la continuidad mecánica y eléctrica de la charola. Prueba de ausencia de filos cortantes con cinta de protección plástica. Registro en Berichtsheft.", "evidencias": "Charolas de malla de 100 y 200 mm, varillas roscadas, uniones mecánicas, cizallas angulares, tiralíneas.", "equipamiento": "Módulo de charola aérea suspendida, alineada y con bajada en cascada hacia el bastidor de telecomunicaciones.", "producto": "Charola suspendida y alineada"}, {"num": 5, "code": "S-05", "semana": "Semana 3", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 1: Normas y Canalizaciones", "title": "Armado, nivelación, escuadrado y anclaje de rack abierto de 19'' (42U) y gabinete", "duration": "4 Horas (240 min)", "objective": "Ensambla, escuadra y ancla al piso un bastidor abierto de 19'' (42U) y un gabinete de pared de 12U con nivel de burbuja y torquímetro.", "apertura": "Presentación del reto evaluativo del Módulo 1: garantizar que el esqueleto metálico esté perfectamente aplomado y listo para recibir equipamiento.", "desarrollo": "Estándar EIA-310-D: numeración de Unidades de Rack (RU) de abajo hacia arriba. Ensamble de base, postes verticales y canales superiores. Nivelación de precisión en dos ejes con nivel de burbuja y calzas metálicas. Receso (20 min). Instalación de gabinete abatible de pared con taquetes expansivos y colocación de organizadores horizontales de 1U y 2U.", "cierre": "Evaluación sumativa de Módulo 1 (rúbrica Kinal corte en 75/100). Verificación de solidez estructural, alineación vertical y registro en Berichtsheft.", "evidencias": "Racks abiertos de 19'' (42U), gabinetes de pared de 12U, llaves de tuercas, torquímetros, niveles de burbuja, organizadores tipo pasahilos.", "equipamiento": "Rack de 42U y gabinete de pared ensamblados, aplomados y anclados cumpliendo especificaciones de torque.", "producto": "Rack 42U aplomado y anclado"}, {"num": 6, "code": "S-06", "semana": "Semana 3", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 2: Cobre y Aterrizaje", "title": "Física del cable Cat 6A (F/UTP), código de colores y desforre sin marcar pares", "duration": "4 Horas (240 min)", "objective": "Diferencia cables UTP, F/UTP y S/FTP y ejecuta el deschaquetado de cable Cat 6A sin rasgar mallas ni mellar el aislamiento de los pares.", "apertura": "Inicio del Módulo 2. Pregunta orientadora: ¿Por qué en Cat 6A la cruceta central de plástico (spline) y el blindaje son vitales para alcanzar 500 MHz?", "desarrollo": "Teoría de diafonía exógena (*Alien Crosstalk* - ANEXT) y blindaje F/UTP. Código de colores de los 4 pares trenzados. Diferencias entre cable de cobre sólido (horizontal) y multifilar (patch cords). Receso (20 min). Práctica de desforre: calibración del pelador rotativo de cable, corte de la cubierta exterior sin marcar el foil de aluminio ni el hilo de drenaje.", "cierre": "Inspección de conductores bajo lupa de aumento: cero filamentos cortados o marcados. Registro en la Bitácora Berichtsheft.", "evidencias": "Bobinas de cable Cat 6A F/UTP 23 AWG 100% cobre, peladores rotativos de cable ajustables, lupas técnicas de taller.", "equipamiento": "Muestras de cable Cat 6A desforradas limpiamente con hilo de drenaje y lámina de apantallamiento preservados.", "producto": "Pares desforrados sin muescas"}, {"num": 7, "code": "S-07", "semana": "Semana 4", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 2: Cobre y Aterrizaje", "title": "Conectorización de tomas de pared (faceplates) con Keystone Jacks Cat 6A (T568B)", "duration": "4 Horas (240 min)", "objective": "Remata módulos Keystone Jack Cat 6A bajo esquema T568B manteniendo el destrenzado menor a 13 mm (0.5 pulgadas) e integrando faceplates.", "apertura": "La regla de oro del técnico profesional: cada milímetro de par destrenzado aumenta la pérdida de paradiafonía (NEXT) y degrada la señal.", "desarrollo": "Comparación de esquemas de conexión T568A vs T568B. Técnica de inserción de pares en ranuras IDC (Insulation Displacement Contact). Uso de la herramienta de impacto con cuchilla 110 orientada hacia el exterior para corte simultáneo del excedente. Receso (20 min). Montaje en módulos de pared: colocación de faceplates angulados de 2 y 4 puertos con iconos identificadores.", "cierre": "Verificación de la correcta inserción de cada conductor sin mordeduras dobles. Revisión del destrenzado con regla milimétrica. Registro en Berichtsheft.", "evidencias": "Módulos Keystone Jack Cat 6A apantallados, herramientas de impacto tipo punch down 110, faceplates, reglas milimétricas.", "equipamiento": "Toma de usuario terminada en faceplate con dos Keystone Jacks Cat 6A rematados con destrenzado < 13 mm.", "producto": "Toma de pared Cat 6A rematada"}, {"num": 8, "code": "S-08", "semana": "Semana 4", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 2: Cobre y Aterrizaje", "title": "Ponchado de Patch Panel modular de 24 puertos con barra trasera y peinado", "duration": "4 Horas (240 min)", "objective": "Poncha y peina un patch panel modular apantallado de 24 puertos en 1U utilizando la barra de alivio de tensión trasera sin tensión mecánica.", "apertura": "Caso de estudio: desconexiones aleatorias en una oficina por peso muerto de los cables colgados directamente sobre los pines de los conectores.", "desarrollo": "Distribución de puertos en patch panels de 1U: agrupación en bloques de 6 puertos. Enrutamiento lateral de los mazos hacia la barra trasera de soporte. Fijación individual de cada cable mediante presillas o amarres de alivio de tensión. Receso (20 min). Práctica en banco: ponchado secuencial de los 24 puertos Cat 6A cuidando la simetría y longitud uniforme de los pares.", "cierre": "Inspección visual del reverso del panel: alineación perfecta, sin cruces forzados ni tensión sobre las ranuras IDC. Registro en Berichtsheft.", "evidencias": "Patch panels modulares Cat 6A de 24 puertos de 1U con barra de soporte, herramientas punch down, cortadores al ras.", "equipamiento": "Patch panel modular de 24 puertos rematado íntegramente con barras traseras instaladas y pares alineados.", "producto": "Patch panel de 24p rematado"}, {"num": 9, "code": "S-09", "semana": "Semana 5", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 2: Cobre y Aterrizaje", "title": "Sistema de puesta a tierra TIA-607: barra TGB en rack y conductor verde 6 AWG", "duration": "4 Horas (240 min)", "objective": "Instala la barra secundaria TGB en el rack, conecta el cable verde de cobre 6 AWG y garantiza el drenaje equipotencial de pantallas F/UTP.", "apertura": "Reflexión ética y técnica: una pantalla de cable apantallado que no se aterriza actúa como una antena receptora que empeora el ruido de la red.", "desarrollo": "Estudio de la norma ANSI/TIA-607-D: barras TMGB, TGB y RGB. Calibre de conductores de unión (mínimo 6 AWG de cobre estañado o con aislamiento verde). Limpieza con lija y aplicación de grasa antioxidante en las uniones de cobre con el bastidor. Receso (20 min). Aterrizaje del patch panel apantallado hacia la barra del rack y medición de continuidad eléctrica con multímetro (< 0.1 ohm).", "cierre": "Comprobación de continuidad de masa en todos los puertos del patch panel. Medición de resistencia equipotencial y registro en Berichtsheft.", "evidencias": "Barras de puesta a tierra TGB para rack, zapatas de compresión de dos barrenos, conductor 6 AWG verde, multímetros, grasa antioxidante.", "equipamiento": "Barra TGB montada con zapatas de dos ojos, conductor 6 AWG conectado y continuidad de pantalla verificada.", "producto": "Barra TGB instalada y probada"}, {"num": 10, "code": "S-10", "semana": "Semana 5", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 2: Cobre y Aterrizaje", "title": "Tendido y peinado de mazo de 24 cables con peine guía y cinchos de velcro", "duration": "4 Horas (240 min)", "objective": "Peina un mazo de 24 cables Cat 6A en el rack utilizando peine organizador y cinchos textiles de velcro, validando el mapa de cableado (Wiremap).", "apertura": "El lema del trabajo bien hecho: prohibición estricta de cinchos plásticos de nylon que estrangulen o deformen los conductores de datos.", "desarrollo": "Técnica de peinado con herramienta tipo peine (*cable comb*): eliminación de espirales y cruces internos. Agrupación en mazos simétricos de 12 o 24 cables. Colocación de cinchos de velcro cada 20 a 30 cm manteniendo tensión firme pero no estranguladora. Receso (20 min). Comprobación de continuidad de los 24 enlaces con tester digital: detección de circuitos abiertos, cortocircuitos y pares invertidos.", "cierre": "Evaluación de Módulo 2: Rúbrica de conectorización, peinado y wiremap sin errores (nota mínima 75/100). Registro en Berichtsheft.", "evidencias": "Peines organizadores de cables, rollos de cinta textil de velcro, comprobadores digitales de cableado (wiremap testers).", "equipamiento": "Mazo de 24 cables Cat 6A peinado estéticamente en rack con velcro y reporte de comprobación wiremap 100% OK.", "producto": "Mazo peinado estético con velcro"}, {"num": 11, "code": "S-11", "semana": "Semana 6", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 3: Fibra Óptica", "title": "Física de la luz en fibra: Monomodo OS2 vs Multimodo OM4 y normas de seguridad", "duration": "4 Horas (240 min)", "objective": "Identifica fibras Monomodo (OS2) y Multimodo (OM4) y aplica los protocolos de bioseguridad para el manejo seguro de restos de fibra de vidrio.", "apertura": "Inicio del Módulo 3. Advertencia de seguridad vital: el peligro invisible de los fragmentos de fibra de vidrio y la radiación láser no visible.", "desarrollo": "Teoría óptica: índice de refracción, núcleo, revestimiento (*cladding* de 125 um) y acrilato (250 um). Fibras Monomodo (9 um núcleo / 1310-1550 nm) vs Multimodo (50 um núcleo / 850-1300 nm). Protocolos de seguridad: uso innegociable de gafas de policarbonato, tapete de trabajo negro y contenedor hermético de eliminación. Receso (20 min). Taller de reconocimiento: despiece de cables de estructura ajustada (*tight buffer*) y tubo holgado (*loose tube*).", "cierre": "Revisión de puestos de trabajo con cinta adhesiva para verificar que no queden residuos de fibra sueltos. Registro en Berichtsheft.", "evidencias": "Muestras de cables ópticos OS2 y OM4, gafas de seguridad con protección lateral, tapetes de contraste negros, contenedores de desechos punzocortantes.", "equipamiento": "Muestrario técnico clasificado de cables ópticos y protocolo de seguridad de taller firmado por el estudiante.", "producto": "Muestrario de cables identificado"}, {"num": 12, "code": "S-12", "semana": "Semana 6", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 3: Fibra Óptica", "title": "Técnica de pelado en 3 pasos (chaqueta, búfer 900um, acrilato 250um) y limpieza", "duration": "4 Horas (240 min)", "objective": "Ejecuta el pelado secuencial de fibra con pinza de 3 muescas y realiza la limpieza profunda de la fibra desnuda con alcohol isopropílico al 99%.", "apertura": "Pregunta inicial: ¿Por qué una partícula de polvo de 1 micra puede bloquear totalmente una señal de luz en un núcleo de 9 micras?", "desarrollo": "Ajuste y uso de la peladora de fibra de 3 muescas: muesca 1 para chaqueta exterior (2-3 mm), muesca 2 para búfer (900 um) y muesca 3 para acrilato (250 um). Movimiento recto y uniforme sin quebrar la fibra. Receso (20 min). Técnica de limpieza con toallitas secas sin pelusa empapadas con alcohol isopropílico de alta pureza. Inspección visual preliminar de limpieza.", "cierre": "Comprobación táctil y acústica del chirrido limpio de la fibra desengrasada. Inspección de ausencia de residuos de acrilato. Registro en Berichtsheft.", "evidencias": "Peladoras de fibra óptica de precisión de 3 posiciones, toallitas kimwipes sin pelusa, dispensadores de alcohol isopropílico 99%.", "equipamiento": "Hilos de fibra óptica pelados a 250/125 um y desengrasados sin fracturas ni microfisuras en el cladding.", "producto": "Fibras desnudas listas para corte"}, {"num": 13, "code": "S-13", "semana": "Semana 7", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 3: Fibra Óptica", "title": "Corte de precisión con cleaver de diamante (< 1°) y manejo de fusionadora", "duration": "4 Horas (240 min)", "objective": "Opera la cortadora de precisión obteniendo cortes perpendiculares con ángulo inferior a 1° y configura los parámetros de la fusionadora.", "apertura": "Demostración de física: por qué una tijera o pinza tradicional aplasta y astilla la fibra impidiendo cualquier empalme por fusión.", "desarrollo": "Mecánica del cleaver de disco de diamante: tensión controlada y fractura guiada a 90° exactos. Longitud de corte estandarizada (10 mm a 16 mm). Estructura de la máquina de empalme por fusión: cámaras de alineación por perfil de núcleo (PAS), electrodos y ranuras en V. Receso (20 min). Práctica en banco: colocación de fibras en las guías, verificación del ángulo de corte en pantalla (< 1.0°) y arco de prueba.", "cierre": "Inspección en pantalla de la fusionadora de los ejes X y Y de ambas fibras. Descarte de cortes deficientes con burbujas o labios. Registro en Berichtsheft.", "evidencias": "Cortadoras de precisión de fibra óptica (cleavers), fusionadoras por alineación de núcleo con pantalla LCD, kits de calibración de electrodos.", "equipamiento": "Fibras cortadas a 90° (+/- 0.5°) colocadas en las ranuras en V de la fusionadora listas para arco voltaico.", "producto": "Cortes inspeccionados en cleaver"}, {"num": 14, "code": "S-14", "semana": "Semana 7", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 3: Fibra Óptica", "title": "Empalme por fusión por arco voltaico con pérdida < 0.05 dB y horneado de manguito", "duration": "4 Horas (240 min)", "objective": "Ejecuta empalmes por fusión entre fibras monomodo OS2 y pigtails LC con atenuación estimada < 0.05 dB y hornea el manguito termocontráctil.", "apertura": "El estándar de excelencia del trabajo bien hecho: una fusión profesional debe ser casi invisible en la pantalla de la máquina y tener mínima pérdida.", "desarrollo": "Colocación previa del manguito termo-retráctil (*fusen* con varilla de acero). Ejecución del ciclo automático: descarga de limpieza, arco de fusión principal y prueba mecánica de tracción (tensión de 200g). Estimación matemática de pérdida en dB. Receso (20 min). Transferencia cuidadosa al horno térmico integrado y activación del ciclo de contracción a 180°C durante 30 segundos sin burbujas de aire.", "cierre": "Inspección del manguito enfriado: varilla de acero alineada y fibra protegida sin dobleces. Registro de la atenuación de cada empalme en Berichtsheft.", "evidencias": "Fusionadoras automáticas, manguitos termocontráctiles de 40 y 60 mm, pigtails LC Monomodo OS2, pinzas de transferencia.", "equipamiento": "Conjunto de 4 empalmes por fusión horneados con atenuación estimada individual inferior a 0.05 dB.", "producto": "Fusiones con pérdida < 0.05 dB"}, {"num": 15, "code": "S-15", "semana": "Semana 8", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 3: Fibra Óptica", "title": "Acomodo en casete de bandeja ODF de 1U, radios de curvatura y prueba VFL láser", "duration": "4 Horas (240 min)", "objective": "Acomoda los empalmes en el casete de una bandeja ODF de 1U respetando el radio de curvatura (> 30 mm) y prueba continuidad con láser rojo VFL.", "apertura": "Problema de planta: una fusión perfecta de 0.02 dB se quiebra o atenúa a 5 dB al forzar el cable dentro de la bandeja de empalmes.", "desarrollo": "Estructura de la bandeja distribuidora de fibra óptica (ODF de 1U) para rack de 19''. Ruteo en bucle circular de los tubos holgados y pigtails en el casete de empalmes. Instalación de acopladores dúplex LC en el frontal del panel. Receso (20 min). Práctica de acomodo prolijo con fijación de manguitos en las peinetas plásticas del casete. Prueba de continuidad visual con localizador de fallas (VFL láser rojo de 650 nm).", "cierre": "Evaluación de Módulo 3: Rúbrica de fusión, acomodo en casete ODF y prueba visual de continuidad (nota mínima 75/100). Registro en Berichtsheft.", "evidencias": "Bandejas de fibra ODF de 1U de rack, casetes de empalme, acopladores dúplex LC, localizadores visuales de fallas (VFL láser 650 nm).", "equipamiento": "Bandeja ODF de 1U ensamblada con 4 fusiones acomodadas en casete y emisión de luz roja continua en acopladores LC.", "producto": "Bandeja ODF de 1U con VFL OK"}, {"num": 16, "code": "S-16", "semana": "Semana 8", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 4: Certificación y As-Built", "title": "Certificación de cobre Tier 1 con Fluke DSX: configuración TIA Cat 6A Perm Link", "duration": "4 Horas (240 min)", "objective": "Configura el analizador Fluke Networks DSX para enlace permanente Cat 6A, calibra adaptadores y ejecuta la certificación de enlaces.", "apertura": "Inicio del Módulo 4. ¿Por qué un simple tester de continuidad de Q100 no sirve para certificar una red corporativa de 10 Gigabits?", "desarrollo": "Diferencias entre Enlace Permanente (*Permanent Link* de 90 m con adaptadores de precisión) y Canal (*Channel* de 100 m con patch cords). Configuración en el software del Fluke DSX: selección de norma (TIA Cat 6A Permanent Link), tipo de cable y factor de velocidad de propagación nominal (NVP). Receso (20 min). Conexión de la unidad principal y remota a las tomas de red y ejecución del autotest (tiempo de prueba: 8 segundos).", "cierre": "Interpretación en pantalla del resultado global: «Pass» (Pasa) vs «Fail» (Falla). Guardado de reportes con ID unívoco. Registro en Berichtsheft.", "evidencias": "Certificador Fluke Networks DSX-5000 / DSX-8000 con adaptadores de Enlace Permanente Cat 6A, cables de calibración, software LinkWare.", "equipamiento": "Equipo Fluke configurado y calibrado, con primeras pruebas de enlace permanente guardadas en memoria interna.", "producto": "Equipo Fluke calibrado y listo"}, {"num": 17, "code": "S-17", "semana": "Semana 9", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 4: Certificación y As-Built", "title": "Análisis de parámetros de alta frecuencia: Wiremap, NEXT, Return Loss y causas", "duration": "4 Horas (240 min)", "objective": "Analiza gráficas de NEXT, Return Loss e Insertion Loss y localiza averías en el dominio del tiempo con herramientas TDNXT y TDR.", "apertura": "Reflexión ética sobre la certificación: adulterar o cambiar los límites de prueba en el equipo para lograr un 'Pass' artificial es fraude profesional.", "desarrollo": "Interpretación profunda de parámetros críticos: Paradiafonía cercana (NEXT y PS-NEXT) por exceso de destrenzado; Pérdida de retorno (Return Loss) por aplastamiento o curvatura aguda; Pérdida de inserción por longitud o cable CCA. Receso (20 min). Taller de Troubleshooting: uso del reflectómetro de dominio de tiempo (TDR y TDNXT) para ubicar a qué distancia métrica exacta (ej. a 2.4 metros del jack) ocurrió la falla inducida.", "cierre": "Corrección física del enlace fallido y repetición del test hasta obtener un «Pass» legítimo con margen positivo (> 3 dB). Registro en Berichtsheft.", "evidencias": "Certificadores Fluke DSX con trazas de diagnóstico, enlaces de prueba con fallas inducidas (destrenzado, empalme, cincho plástico apretado).", "equipamiento": "Reporte de diagnóstico técnico con gráficas TDNXT y TDR analizadas y enlace corregido con certificación aprobatoria.", "producto": "Reporte de fallas analizado"}, {"num": 18, "code": "S-18", "semana": "Semana 9", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 4: Certificación y As-Built", "title": "Certificación óptica Tier 1 con OPM y fuente de luz: cálculo de Loss Budget", "duration": "4 Horas (240 min)", "objective": "Calcula el presupuesto de pérdida óptica admisible (*Optical Loss Budget*) y mide la atenuación total en dB con fuente de luz y medidor OPM.", "apertura": "Planteamiento: ¿Cuántos decibelios (dB) de luz es aceptable perder en un enlace troncal de 300 metros con 2 fusiones y 2 conectores LC?", "desarrollo": "Cálculo matemático del Loss Budget según norma TIA-568.3: Atenuación del cable (dB/km) + Conectores (0.75 dB por par) + Empalmes (0.3 dB por fusión). Establecimiento de referencia óptica con método de 1 puente de grado referencia. Receso (20 min). Medición bidireccional de atenuación en 850 nm y 1300 nm (Multimodo) o 1310 nm y 1550 nm (Monomodo). Comparación del valor medido frente al límite calculado.", "cierre": "Verificación de margen positivo (*Headroom* en dB). Registro de mediciones en la Bitácora Berichtsheft.", "evidencias": "Medidores de potencia óptica (OPM), fuentes de luz monomodo y multimodo calibradas, puentes de prueba de referencia (TRC), adaptadores de acoplamiento.", "equipamiento": "Hoja de cálculo de Loss Budget y reporte de certificación Tier 1 de fibra óptica con atenuación total en dB validada.", "producto": "Medición Tier 1 en dB guardada"}, {"num": 19, "code": "S-19", "semana": "Semana 10", "dia": "Martes", "horario": "Martes de 17:30 a 21:30 hrs", "module": "Módulo 4: Certificación y As-Built", "title": "Administración y rotulado TIA-606-D en cables, paneles y tomas con rotuladora", "duration": "4 Horas (240 min)", "objective": "Aplica el sistema de identificación alfanumérico TIA-606-D rotulando cables, paneles y faceplates con rotuladora industrial y actualiza planos As-Built.", "apertura": "El orden es dinero: un técnico de soporte tarda 4 horas en hallar un punto ciego sin rotular vs 30 segundos en una red con estándar TIA-606.", "desarrollo": "Esquema de nomenclatura normalizado: Identificador de piso, cuarto de telecomunicaciones, rack, patch panel y puerto (ej. `1A-TR1-PP01-14` a `1A-WA01-14`). Impresión de etiquetas autolaminadas de vinil para cables y etiquetas de poliéster para puertos de panel y faceplates. Receso (20 min). Levantamiento y actualización de planos arquitectónicos «As-Built» reflejando las rutas de canalización reales.", "cierre": "Inspección de rotulado: legibilidad, alineación recta y resistencia al roce. Revisión de planos y tablas de parcheo (*Patching Schedule*).", "evidencias": "Rotuladoras industriales de transferencia térmica (Brady / Brother / Dymo Industrial), casetes de etiquetas de vinil y poliéster, planos As-Built.", "equipamiento": "Sistema completo de cableado rotulado bajo norma ANSI/TIA-606-D y planos arquitectónicos As-Built actualizados.", "producto": "Rotulado completo industrial"}, {"num": 20, "code": "S-20", "semana": "Semana 10", "dia": "Jueves", "horario": "Jueves de 17:30 a 21:30 hrs", "module": "Módulo 4: Certificación y As-Built", "title": "EXAMEN DE CERTIFICACIÓN PROFESIONAL: Certificación de rack y dossier As-Built", "duration": "4 Horas (240 min)", "objective": "Demuestra la capacidad integral de acción técnica certificando la infraestructura de rack, resolviendo averías inducidas y sustentando el dossier técnico (>=75 pts).", "apertura": "Apertura del examen oficial de certificación técnica. Sorteo de estaciones de trabajo y entrega de pliego de requerimientos corporativos.", "desarrollo": "Prueba práctica individual de certificación profesional (tiempo límite 120 minutos): el estudiante debe certificar los enlaces de cobre y fibra de su bastidor, diagnosticar y corregir 2 fallas inducidas por el tribunal en menos de 45 minutos (ej. par invertido y atenuación excesiva). Receso (20 min). Exportación de la base de datos de enlaces con el software Fluke LinkWare y generación de certificados en PDF.", "cierre": "Sustentación oral del dossier técnico As-Built y entrega de la Bitácora Berichtsheft completa. Calificación final institucional sobre 100 puntos.", "evidencias": "Racks departamentales completos, certificadores Fluke DSX, kits de herramientas, software Fluke LinkWare, actas de evaluación Kinal.", "equipamiento": "Acta oficial de evaluación de certificación técnica aprobada (>= 75 puntos) y dossier técnico As-Built completo entregado.", "producto": "Acta aprobada (>=75 pts) y dossier"}];
+        let currentCableSessionId = 1;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            const targetTab = document.getElementById('tab-' + tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetTab && targetBtn) {
+                targetTab.classList.remove('hidden');
+                targetBtn.classList.add('active');
+                targetBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterCableCategory(cat) {
+            document.querySelectorAll('#tab-temario button[id^="btn-cable-"]').forEach(btn => {
+                btn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-700 transition";
+            });
+
+            const activeBtn = document.getElementById('btn-cable-' + cat);
+            if (activeBtn) {
+                activeBtn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition";
+            }
+
+            const items = document.querySelectorAll('.content-item');
+            items.forEach(it => {
+                if (cat === 'all' || it.getAttribute('data-category') === cat) {
+                    it.style.display = 'block';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+        }
+
+        function renderCableSessionsList(filteredSessions) {
+            const container = document.getElementById('cable-sessions-list');
+            container.innerHTML = '';
+
+            filteredSessions.forEach(s => {
+                const item = document.createElement('div');
+                item.className = `session-item p-3 rounded-2xl border border-slate-200 cursor-pointer transition flex items-center justify-between text-xs hover:border-cyan-800 hover:bg-slate-50 ${s.num === currentCableSessionId ? 'active' : 'bg-white'}`;
+                item.onclick = () => selectCableSession(s.num);
+                
+                item.innerHTML = `
+                    <div class="space-y-0.5 pr-2">
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <span class="badge-code px-2 py-0.5 rounded text-[10px] font-black bg-slate-100 text-slate-800">${s.code}</span>
+                            <span class="line-clamp-1 text-slate-900 text-xs">${s.title}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500">${s.semana} • ${s.dia}</div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                `;
+                container.appendChild(item);
+            });
+            lucide.createIcons();
+        }
+
+        function selectCableSession(num) {
+            currentCableSessionId = num;
+            const s = cableSessionsData.find(item => item.num === num);
+            if (!s) return;
+
+            document.querySelectorAll('.session-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('bg-white');
+            });
+
+            renderCableSessionsList(cableSessionsData);
+
+            const detailContainer = document.getElementById('cable-detail-card');
+            detailContainer.innerHTML = `
+                <div class="border-b border-slate-200 pb-5 space-y-2">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 text-cyan-400 font-black text-xs tracking-wider">${s.code}</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-cyan-50 text-cyan-900 font-bold text-xs border border-cyan-200">${s.module}</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-lg">${s.duration}</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">${s.title}</h3>
+                    <div class="text-xs text-cyan-800 font-bold pt-1">
+                        ${s.semana} • ${s.horario}
+                    </div>
+                </div>
+
+                <div class="bg-cyan-50/60 rounded-2xl p-4 border border-cyan-200 space-y-1">
+                    <div class="text-[11px] uppercase font-black tracking-wider text-cyan-900 flex items-center gap-1.5">
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-cyan-700"></i> Indicador de Logro / Objetivo Formativo
+                    </div>
+                    <p class="text-slate-800 text-xs leading-relaxed font-medium">${s.objective}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-cyan-700"></i> Secuencia Didáctica en Tres Momentos
+                    </h4>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Fase 1: Apertura
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">20 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.apertura}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-cyan-50/40 border border-cyan-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Fase 2: Desarrollo & Práctica de Taller
+                            </span>
+                            <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">180 Minutos (Receso: 20 min)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.desarrollo}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> Fase 3: Cierre, Evaluación y Orden 5S
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">40 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.cierre}</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50/60 rounded-2xl p-4 border border-emerald-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-emerald-900 flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i> Evidencias & Producto Observable
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.evidencias}</p>
+                    </div>
+
+                    <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-700"></i> Equipamiento & Bioseguridad en Fibra
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.equipamiento}</p>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function filterCableList() {
+            const q = document.getElementById('cable-sec-search').value.toLowerCase();
+            const filtered = cableSessionsData.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) ||
+                s.module.toLowerCase().includes(q) ||
+                s.objective.toLowerCase().includes(q)
+            );
+            document.getElementById('cable-count-badge').textContent = `${filtered.length} Sesiones`;
+            renderCableSessionsList(filtered);
+        }
+
+        function goToSession(num) {
+            switchTab('secuencias');
+            selectCableSession(num);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            selectCableSession(1);
+        });
+    </script>
+</body>
+</html>
