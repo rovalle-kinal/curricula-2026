@@ -1,5 +1,5 @@
 """
-Script para publicar el Ecosistema Completo de 4 Nuevos Cursos en el repositorio de GitHub:
+Script para publicar el Ecosistema Completo de 5 Nuevos Cursos en el repositorio de GitHub:
 rovalle-kinal/new-courses
 y activar / actualizar GitHub Pages para su visualización pública en la web.
 """
@@ -31,8 +31,8 @@ subprocess.run([GIT_EXE, "clone", REPO_URL, CLONE_DIR], check=True)
 subprocess.run([GIT_EXE, "config", "user.name", "rovalle-kinal"], cwd=CLONE_DIR, check=True)
 subprocess.run([GIT_EXE, "config", "user.email", "rovalle@kinal.edu.gt"], cwd=CLONE_DIR, check=True)
 
-print("3. Copiando y adaptando documentos Word de los 4 cursos...")
-course_folders = ["Mecatrónica", "Ciberseguridad", "Automatización", "Cableado_Estructurado"]
+print("3. Copiando y adaptando documentos Word de los 5 cursos...")
+course_folders = ["Mecatrónica", "Ciberseguridad", "Automatización", "Cableado_Estructurado", "Inteligencia_Artificial"]
 for cfolder in course_folders:
     src_folder = os.path.join(CURSOS_DIR, cfolder)
     dst_folder = os.path.join(CLONE_DIR, cfolder)
@@ -43,7 +43,7 @@ for cfolder in course_folders:
                 shutil.copy2(os.path.join(src_folder, f), os.path.join(dst_folder, f))
 
 print("4. Adaptando y copiando páginas HTML para la raíz del repositorio...")
-html_files = ["index.html", "mecatronica.html", "ciberseguridad.html", "automatizacion.html", "cableado_estructurado.html"]
+html_files = ["index.html", "mecatronica.html", "ciberseguridad.html", "automatizacion.html", "cableado_estructurado.html", "ia.html"]
 
 for hfile in html_files:
     src_path = os.path.join(WEB_DIR, hfile)
@@ -60,6 +60,7 @@ for hfile in html_files:
     content = content.replace('../Ciberseguridad/', 'Ciberseguridad/')
     content = content.replace('../Automatización/', 'Automatización/')
     content = content.replace('../Cableado_Estructurado/', 'Cableado_Estructurado/')
+    content = content.replace('../Inteligencia_Artificial/', 'Inteligencia_Artificial/')
 
     dst_path = os.path.join(CLONE_DIR, hfile)
     with open(dst_path, "w", encoding="utf-8") as f:
@@ -72,7 +73,7 @@ with open(os.path.join(CLONE_DIR, ".nojekyll"), "w", encoding="utf-8") as f:
 # Crear README.md para GitHub
 readme_content = """# 🚀 Ecosistema de Nuevos Cursos en Desarrollo — Fundación Kinal 2026
 
-Repositorio oficial y portal interactivo para los nuevos programas formativos diseñados para la formación continua, especialización industrial y reconversión técnica laboral bajo los estándares del **Marco Alemán de Cualificaciones (DQR Nivel 4 - 5)** y el **Sistema Dual de Formación en Alternancia**.
+Repositorio oficial y portal interactivo para los nuevos programas formativos diseñados para la formación continua, especialización industrial y reconversión técnica laboral bajo los estándares del **Marco Alemán de Cualificaciones (DQR Nivel 3 - 5)** y el **Sistema Dual de Formación en Alternancia**.
 
 🔗 **Sitio Web Público (GitHub Pages):** [https://rovalle-kinal.github.io/new-courses/](https://rovalle-kinal.github.io/new-courses/)
 
@@ -128,6 +129,18 @@ Repositorio oficial y portal interactivo para los nuevos programas formativos di
   * [Temario Modular Completo](Cableado_Estructurado/Temario_Curso_Cableado_Estructurado_Kinal.docx)
   * [Dosificación y Secuencia Didáctica Sesión a Sesión](Cableado_Estructurado/Dosificacion_y_Secuencia_Didactica_Cableado_Estructurado_Kinal.docx)
 
+### 5. 🧠 Inteligencia Artificial Aplicada, Ingeniería de Prompts y Productividad Ética
+* **Modalidad:** 100% Virtual Sincrónica Interactiva (Microsoft Teams + Kinal.academy / Moodle)
+* **Duración:** 16 horas pedagógicas (1 mes: 8 sesiones nocturnas de 2 horas • Martes y Jueves de 19:00 a 21:00 hrs)
+* **Nivel:** Equivalencia DQR Nivel 3 - 4
+* **Ejes:** Ecosistema LLM multimodelo (ChatGPT, Google Gemini, Copilot, Claude), método RC-TRF de prompts (Rol, Contexto, Tarea, Restricción, Formato), Few-Shot Prompting, automatización de correspondencia laboral y minutas, análisis de PDFs extensos, extracción de tablas para Excel, caza de alucinaciones y privacidad de datos.
+* **Proyecto Terminal:** Asistente Personal de Productividad y Dossier de Prompts Evaluado.
+* **Explorar Web:** [ia.html](https://rovalle-kinal.github.io/new-courses/ia.html)
+* **Documentos Word Oficiales:**
+  * [Propuesta Formativa Institucional](Inteligencia_Artificial/Propuesta_Curso_IA_Kinal.docx)
+  * [Temario Modular Completo](Inteligencia_Artificial/Temario_Curso_IA_Kinal.docx)
+  * [Dosificación y Secuencia Didáctica Sesión a Sesión](Inteligencia_Artificial/Dosificacion_y_Secuencia_Didactica_IA_Kinal.docx)
+
 ---
 
 ## 🏛️ Ideario Institucional de Fundación Kinal
@@ -148,7 +161,7 @@ with open(os.path.join(CLONE_DIR, "README.md"), "w", encoding="utf-8") as f:
 
 print("5. Realizando commit y push a la rama main de new-courses...")
 subprocess.run([GIT_EXE, "add", "."], cwd=CLONE_DIR, check=True)
-subprocess.run([GIT_EXE, "commit", "-m", "feat(courses): agregar páginas web interactivas y documentos de Automatización y Cableado Estructurado"], cwd=CLONE_DIR, check=True)
+subprocess.run([GIT_EXE, "commit", "-m", "feat(courses): integrar curso de Inteligencia Artificial Aplicada con dashboard web y documentos Word"], cwd=CLONE_DIR, check=True)
 subprocess.run([GIT_EXE, "push", "origin", "main"], cwd=CLONE_DIR, check=True)
 
 print("\n¡Publicación completada exitosamente!")
@@ -158,3 +171,4 @@ print("  - Mecatrónica: https://rovalle-kinal.github.io/new-courses/mecatronica
 print("  - Ciberseguridad: https://rovalle-kinal.github.io/new-courses/ciberseguridad.html")
 print("  - Automatización: https://rovalle-kinal.github.io/new-courses/automatizacion.html")
 print("  - Cableado Estructurado: https://rovalle-kinal.github.io/new-courses/cableado_estructurado.html")
+print("  - Inteligencia Artificial: https://rovalle-kinal.github.io/new-courses/ia.html")

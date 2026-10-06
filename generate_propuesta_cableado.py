@@ -137,7 +137,7 @@ def generate_propuesta_doc():
 
     p_tit = doc.add_paragraph()
     style_p(p_tit, space_before=14, space_after=10)
-    r_tit = p_tit.add_run("PLANIFICACIÓN Y PROPUESTA FORMATIVA INSTITUCIONAL:\nAUTOMATIZACIÓN Y CONTROL ELÉCTRICO INDUSTRIAL CON PLC Y VARIADORES DE FRECUENCIA (VFD)")
+    r_tit = p_tit.add_run("PLANIFICACIÓN Y PROPUESTA FORMATIVA INSTITUCIONAL:\nCABLEADO ESTRUCTURADO Y REDES DE COBRE Y FIBRA ÓPTICA")
     r_tit.font.name = "Calibri"
     r_tit.font.size = Pt(18)
     r_tit.font.bold = True
@@ -145,7 +145,7 @@ def generate_propuesta_doc():
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=20)
-    r_sub = p_sub.add_run("Programa de Certificación Técnica Profesional para la Operación, Parametrización y Comisionamiento en Plantas Industriales de Guatemala (120 Horas — 20 Sesiones)")
+    r_sub = p_sub.add_run("Programa de Certificación Técnica Profesional para la Canalización, Conectorización, Fusión y Certificación Instrumental de Telecomunicaciones (80 Horas — 20 Sesiones)")
     r_sub.font.name = "Calibri"
     r_sub.font.size = Pt(11.5)
     r_sub.font.italic = True
@@ -161,13 +161,13 @@ def generate_propuesta_doc():
 
     ficha_data = [
         ("Nivel Formativo de Referencia:", "Equivalencia DQR Nivel 4 - 5 (Competencia técnica especializada y autonomía operativa)"),
-        ("Población Destinataria:", "Técnicos electricistas, electromecánicos, peritos industriales y supervisores de mantenimiento"),
-        ("Duración Total:", "120 horas formativas (20 sesiones de 6 horas / 360 min; 110h de actividad neta de laboratorio)"),
-        ("Modalidad de Impartición:", "Híbrida Asimétrica: 80% Práctica en Bancos Reales de Kinal (96h) y 20% Plataforma Virtual LMS (24h)"),
-        ("Estructura de Horarios:", "Encuentros sabatinos de 1:00 p.m. a 7:00 p.m. o domingos intensivos (adaptado a turnos de planta)"),
-        ("Orientación de Empleabilidad:", "Técnico especialista en automatización, electricista de planta, integrador de tableros industriales"),
-        ("Nota Mínima Aprobatoria:", "75 puntos sobre 100 en todas las comprobaciones de banco, rúbricas de cableado y proyecto terminal"),
-        ("Sede Presencial:", "Fundación Kinal — Laboratorios de Electrotecnia y Automatización, Sede Central, Zona 7, Ciudad de Guatemala")
+        ("Población Destinataria:", "Técnicos instaladores de redes, soporte IT, electricistas de baja tensión y contratistas de telecomunicaciones"),
+        ("Duración Total:", "80 horas pedagógicas (20 sesiones de 4 horas / 240 min; 73h 20min de actividad neta de taller)"),
+        ("Modalidad y Régimen:", "Presencial en Laboratorios de Redes de Kinal con apoyo digital en Kinal.academy (Moodle) (80% Taller / 20% Plataforma)"),
+        ("Estructura de Horarios:", "Dos días entre semana (Martes y Jueves de 17:30 a 21:30 hrs), sincronizado con el instructor de TICs"),
+        ("Orientación de Empleabilidad:", "Técnico especialista en cableado estructurado, instalador de fibra óptica, supervisor de infraestructura física"),
+        ("Nota Mínima Aprobatoria:", "75 puntos sobre 100 en todas las comprobaciones prácticas de ponchado, fusión y certificación"),
+        ("Sede Presencial:", "Fundación Kinal — Laboratorios de Redes y Telecomunicaciones, Sede Central, Zona 7, Ciudad de Guatemala")
     ]
 
     for idx, (label, val) in enumerate(ficha_data):
@@ -201,7 +201,7 @@ def generate_propuesta_doc():
 
     p_id_desc = doc.add_paragraph()
     style_p(p_id_desc, space_before=0, space_after=6)
-    r = p_id_desc.add_run("El diseño formativo de esta certificación técnica se fundamenta de forma irrenunciable en la visión cristiana del trabajo y en los principios pedagógicos e institucionales que caracterizan a Fundación Kinal:")
+    r = p_id_desc.add_run("El diseño formativo de esta certificación técnica se fundamenta de forma irrenunciable en la visión humanística y ética de Fundación Kinal, asegurando que el desarrollo de habilidades técnicas esté sustentado en la honradez profesional y el espíritu de servicio:")
     r.font.name = "Calibri"
     r.font.size = Pt(10.5)
     r.font.color.rgb = COLOR_DARK
@@ -211,30 +211,30 @@ def generate_propuesta_doc():
     add_callout(doc, "«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable».", bold_prefix="Valores Nucleares de Kinal:")
 
     p_et = doc.add_paragraph()
-    style_heading(p_et, "1.1 El Principio del «Trabajo Bien Hecho» en el Control Eléctrico y Automatización Industrial", level=2)
+    style_heading(p_et, "1.1 El Principio del «Trabajo Bien Hecho» en el Cableado Estructurado y Redes de Alta Velocidad", level=2)
 
     p_et_txt = doc.add_paragraph()
     style_p(p_et_txt, space_before=0, space_after=6)
-    r = p_et_txt.add_run("En el ámbito del control eléctrico industrial y la automatización de procesos, la ética profesional y la excelencia operativa trascienden la mera operatividad de una máquina. Una conexión deficiente o un mal dimensionamiento no solo causa pérdidas millonarias por paradas de producción, sino que compromete la integridad física y la vida de los operadores. En este programa, el «trabajo bien hecho» se traduce en exigencias innegociables:\n"
-                          "• Rigor y Estética Profesional en el Cableado: Peinado milimétrico de conductores, uso obligatorio de terminales de compresión (ferrules), rotulado alfanumérico indeleble bajo norma en cada borne y peinado en canaleta ranurada sin cruces desordenados ni cables forzados.\n"
-                          "• Seguridad de Vida y Cero Tolerancia al Descuido: Aplicación estricta de protocolos de Bloqueo y Etiquetado (LOTO), verificación de desenergización con multímetro calibrado antes de cualquier manipulación y cumplimiento exhaustivo de las distancias de seguridad contra arco eléctrico (NFPA 70E).\n"
-                          "• Honestidad y Trazabilidad Técnica: Registro fiel en planos «As-Built» de cada modificación realizada en planta, documentación veraz de fallas y códigos de error, sin ocultar averías ni realizar 'puentes' provisionales inseguros que vulneren las protecciones térmicas o paradas de emergencia.")
+    r = p_et_txt.add_run("En la infraestructura de telecomunicaciones de alta frecuencia (donde las señales eléctricas viajan a 250 MHz en Cat 6 y 500 MHz en Cat 6A), la física no perdona la improvisación. Un milímetro de destrenzado excesivo o un cincho plástico demasiado apretado arruinan la comunicación corporativa. En este programa, el «trabajo bien hecho» se concreta en principios innegociables:\n"
+                          "• Estética, Prolijidad y Respeto a la Física del Cable: Peinado impecable en mazos simétricos de 12 o 24 cables con cinchos textiles de velcro reutilizables (prohibición terminante de cinchos plásticos que estrangulan pares), respeto estricto a los radios mínimos de curvatura (4 veces el diámetro exterior) y cero tensión mecánica en los remates.\n"
+                          "• Integridad, Verdad y Ética en la Certificación Instrumental: Cero tolerancia al maquillaje de reportes de escaneo. El estudiante aprende que alterar los límites de prueba en el certificador Fluke para forzar un 'Pass' falso es una falta ética grave. Todo enlace defectuoso debe ser diagnosticado mediante análisis de causa raíz (NEXT, Return Loss, Insertion Loss) y reconstruido con excelencia.\n"
+                          "• Orden y Trazabilidad según ANSI/TIA-606-D: Rotulado indeleble y normalizado desde el primer momento en ambos extremos del cable, en puertos de patch panel y en tomas de pared (faceplates), evitando el desorden que incrementa exponencialmente los costos operativos de mantenimiento en las empresas.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 2. FUNDAMENTACIÓN TÉCNICA Y CASO TRANSVERSAL DE PLANTA INDUSTRIAL
+    # 2. FUNDAMENTACIÓN TÉCNICA Y CASO TRANSVERSAL DE EDIFICIO CORPORATIVO
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Fundamentación Técnica, Enfoque Pedagógico y Caso Transversal de Planta", level=1)
+    style_heading(h1_2, "2. Fundamentación Técnica, Enfoque Pedagógico y Caso Transversal", level=1)
 
     p_met = doc.add_paragraph()
     style_p(p_met, space_before=0, space_after=6)
-    r = p_met.add_run("A diferencia de capacitaciones tradicionales basadas en pizarrón o diapositivas desarticuladas, este programa adopta un enfoque de ingeniería práctica guiado por el contexto productivo de Guatemala (parques industriales de Mixco, Villa Nueva, Amatitlán, Escuintla y Carretera al Atlántico):\n"
-                      "• Caso Transversal de Planta: Línea Continua de Embotellado y Empaque Automatizado: A lo largo de las 20 sesiones, los participantes desarrollan e integran modularmente el sistema electromecánico y de control de una línea de transporte y envasado. Se inicia con el dimensionamiento del tablero de fuerza y contactores, se prosigue con el control suave de velocidad y torque de bandas transportadoras mediante variadores VFD, se implementa la lógica combinacional y secuencial en PLC con sensórica industrial, culminando en la supervisión y diagnóstico de fallas inducidas en tiempo real.\n"
-                      "• Práctica Directa en Banco Físico Individual y de Pareja: Cada participante trabaja con tableros de grado industrial, equipados con aparamenta real (Schneider / Siemens / ABB), motores trifásicos de inducción acoplados, variadores de frecuencia y autómatas programables Siemens S7-1200 y LOGO!.\n"
-                      "• Metodología de la Acción Completa: Cada sesión reproduce las 6 etapas del método alemán: Informarse, Planificar, Decidir, Realizar, Controlar y Evaluar, desarrollando autonomía técnica y juicio crítico en diagnóstico sistemático.")
+    r = p_met.add_run("El programa responde directamente a las carencias del mercado laboral en Guatemala, donde la mayoría de instaladores opera de manera empírica sin conocer los estándares internacionales ni disponer de instrumental de certificación:\n"
+                      "• Caso Transversal de Edificio Corporativo (Torre Empresarial 3 Niveles): A lo largo de las 20 sesiones, los participantes abordan el diseño e implementación integral de la infraestructura pasiva para un edificio de 3 plantas que alberga 120 puestos de trabajo, telefonía VoIP, puntos de acceso Wi-Fi 6, cámaras de seguridad CCTV IP y control de acceso con tecnología PoE++ (IEEE 802.3bt). El caso abarca la Entrada de Servicios (EF), el Cuarto de Equipos principal (ER), dos Cuartos de Telecomunicaciones (TR), la canalización con charolas y tubería EMT, el tendido horizontal en Cat 6A, el backbone de fibra óptica multimodo/monomodo y el sistema de puesta a tierra TIA-607.\n"
+                      "• Práctica Directa en Racks y Módulos de Taller: Cada estudiante ejecuta el montaje físico en bastidores de 19 pulgadas, conectorización en módulos Keystone Jack, ponchado en patch panels de 24 puertos, preparación y corte de fibra óptica con cleaver de precisión, empalme por fusión mediante arco voltaico y certificación de enlaces permanentes con escáner Fluke Networks.\n"
+                      "• Metodología de la Acción Completa: Se aplica el ciclo pedagógico alemán de 6 fases: Informar, Planificar, Decidir, Ejecutar, Controlar y Valorar, fomentando autonomía operativa y responsabilidad profesional.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
@@ -251,19 +251,19 @@ def generate_propuesta_doc():
 
     p_dqr_txt = doc.add_paragraph()
     style_p(p_dqr_txt, space_before=0, space_after=6)
-    r = p_dqr_txt.add_run("El programa articula las dos dimensiones maestras de competencia del Marco Alemán de Cualificaciones:\n"
+    r = p_dqr_txt.add_run("El programa articula las dimensiones de competencia técnica y humana del marco DQR:\n"
                           "1. Dimensión de Competencia Profesional (Professional Competence):\n"
-                          "   • Conocimientos (Knowledge): Dominio riguroso de leyes eléctricas, diagramas bajo norma IEC 60617 / NEMA, arquitectura interna de PLCs, modulación PWM en variadores y protocolos de comunicación industrial (PROFINET / Modbus RTU).\n"
-                          "   • Destrezas (Skills): Habilidad manual para cableado pulcro de tableros, uso diestro de instrumental (multímetros True-RMS, pinzas amperimétricas, tacómetros digitales), programación en Ladder estructurado y resolución metódica de averías bajo presión temporal.\n"
+                          "   • Conocimientos (Knowledge): Dominio riguroso de la suite de normas ANSI/TIA-568, 569, 606, 607, estándar ISO/IEC 11801, física de propagación de radiofrecuencia en par trenzado y óptica ondulatoria en núcleos de silicio.\n"
+                          "   • Destrezas (Skills): Destreza manual de alta precisión para pelado de cubiertas sin marcar conductores, corte perpendicular de fibra con cleaver a 90° (+/- 0.5 grados), fusión de núcleo con pérdida inferior a 0.05 dB, remate 110 con mínimo destrenzado (< 13 mm) y operación diestra de equipos de certificación Tier 1.\n"
                           "2. Dimensión de Competencia Personal (Personal Competence):\n"
-                          "   • Competencia Social (Social Competence): Trabajo colaborativo en cuadrilla técnica, comunicación asertiva en handover de turnos y reporte claro a jefaturas de planta.\n"
-                          "   • Autonomía (Autonomy): Responsabilidad autónoma para verificar la seguridad de una instalación, reflexividad técnica para justificar elecciones de diseño y apego voluntario a las normas de seguridad ocupacional.")
+                          "   • Competencia Social (Social Competence): Coordinación en cuadrilla para tendido de cables sin torsión, comunicación asertiva con supervisores de obra civil y entrega profesional al cliente.\n"
+                          "   • Autonomía (Autonomy): Capacidad para diagnosticar de forma independiente enlaces fallidos, interpretar gráficas de NEXT y Return Loss en el dominio del tiempo (TDNXT, TDR) y tomar decisiones de rediseño según normativas.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 4. COMPETENCIA GENERAL Y PERFILES DE ENTRADA Y SALIDA
+    # 4. COMPETENCIA GENERAL Y PERFILES DEL PARTICIPANTE
     # =========================================================================
     h1_4 = doc.add_paragraph()
     style_heading(h1_4, "4. Competencia General y Perfiles del Participante", level=1)
@@ -271,7 +271,7 @@ def generate_propuesta_doc():
     p_comp = doc.add_paragraph()
     style_p(p_comp, space_before=0, space_after=6)
     r = p_comp.add_run("Competencia General del Programa:\n"
-                       "El egresado dimensiona, ensambla, cablea, parametriza y programa sistemas de control eléctrico y fuerza para procesos industriales continuos, utilizando contactores, variadores de frecuencia (VFD) y controladores lógicos programables (PLC Siemens S7-1200 / LOGO!), aplicando estrictamente las normativas de seguridad eléctrica (NFPA 70E / NEC), interpretando diagramas bajo norma IEC/NEMA y demostrando un estándar de «trabajo bien hecho», orden y diagnóstico metódico de averías en banco de pruebas real.")
+                       "El egresado planifica, canaliza, tiende, remata, fusiona y certifica sistemas de cableado estructurado en cobre (Cat 6 / Cat 6A) y fibra óptica (Monomodo OS2 / Multimodo OM4), ejecutando el montaje pulcro de racks de 19 pulgadas y cuartos de telecomunicaciones, aterrizaje equipotencial bajo TIA-607, administración documental bajo TIA-606 y diagnóstico instrumental de enlaces con escáneres Fluke Networks, garantizando cero fallas de paradiafonía y cumplimiento del estándar institucional del trabajo bien hecho.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.bold = True
@@ -279,23 +279,23 @@ def generate_propuesta_doc():
 
     p_perfiles = doc.add_paragraph()
     style_p(p_perfiles, space_before=4, space_after=6)
-    r = p_perfiles.add_run("• Perfil de Ingreso: Técnicos electricistas, electromecánicos, peritos en electricidad o electrónica, bachilleres industriales o personal empírico con un mínimo de 1 año de experiencia en mantenimiento de plantas o talleres. Requiere comprensión de circuitos eléctricos básicos (Ley de Ohm, corriente alterna monofásica/trifásica) y manejo elemental de computadora.\n"
-                           "• Perfil de Egreso y Empleabilidad: Técnico especialista capacitado para integrarse de inmediato a departamentos de mantenimiento eléctrico, instrumentación o proyectos en fábricas de alimentos, plásticos, empaques, farmacéuticas y talleres de integración de tableros, con solvencia para intervenir fallas, poner en marcha motores con variador y programar rutinas de automatización en PLC con total apego a normas de seguridad.")
+    r = p_perfiles.add_run("• Perfil de Ingreso: Técnicos de soporte informático, electricistas de baja tensión, instaladores de CCTV y seguridad electrónica, bachilleres o peritos técnicos y profesionales independientes con interés en especializarse en infraestructura de telecomunicaciones. Requiere habilidad manual motriz fina, discriminación visual de colores y conocimientos básicos de computación.\n"
+                           "• Perfil de Egreso y Empleabilidad: Técnico especialista calificado para desempeñarse en empresas integradoras de telecomunicaciones, constructoras de obra corporativa, departamentos de IT corporativos (bancos, multinacionales, data centers) y cuadrillas de despliegue de fibra óptica, con solvencia para entregar proyectos certificados listos para garantía de fabricante de 25 años.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 5. ESTRUCTURA MODULAR Y DOSIFICACIÓN DE LA CARGA HORARIA
+    # 5. ESTRUCTURA MODULAR Y DOSIFICACIÓN DE LA CARGA HORARIA (80 HORAS)
     # =========================================================================
     h1_5 = doc.add_paragraph()
-    style_heading(h1_5, "5. Estructura Modular y Distribución Formativa (120 Horas)", level=1)
+    style_heading(h1_5, "5. Estructura Modular y Distribución Formativa (80 Horas — 20 Sesiones)", level=1)
 
     modulos_data = [
-        ("Módulo 1", "Control Eléctrico Industrial, Mando y Diseño de Tableros de Fuerza", "30 Horas", "5 Sesiones", "Tablero de Fuerza y Mando Ensamble Físico con Inversión de Giro y Estrella-Triángulo"),
-        ("Módulo 2", "Parametrización, Control y Puesta en Marcha de Variadores de Frecuencia (VFD)", "30 Horas", "5 Sesiones", "Puesta en Marcha de VFD con Multivelocidad, Señal 4-20mA y Rampas de Frenado"),
-        ("Módulo 3", "Programación y Cableado de Controladores Lógicos Programables (PLC Siemens)", "30 Horas", "5 Sesiones", "Automatización de Estación de Envasado con Sensores Industriales y PLC S7-1200"),
-        ("Módulo 4", "Integración Automatizada, Redes Industriales y Diagnóstico de Averías", "30 Horas", "5 Sesiones", "Comisionamiento Integral PLC-VFD-HMI y Resolución de Fallas Inducidas en Banco")
+        ("Módulo 1", "Normas ANSI/TIA, Espacios y Canalizaciones Físicas (TR, ER, Racks)", "20 Horas", "5 Sesiones", "Diseño de Espacios, Cálculo de Llenado TIA-569 y Ensamble de Bastidor de 19'' Nivelado"),
+        ("Módulo 2", "Cableado de Cobre de Alto Rendimiento (Cat 6/6A) y Aterrizaje TIA-607", "20 Horas", "5 Sesiones", "Enlace Permanente Cat 6A Rematado en Patch Panel de 24p y Aterrizaje TGB Comprobado"),
+        ("Módulo 3", "Infraestructura de Fibra Óptica, Conectorización y Empalme por Fusión", "20 Horas", "5 Sesiones", "Empalme por Fusión de Fibra Óptica con Pérdida < 0.05 dB y Conectorización LC/SC"),
+        ("Módulo 4", "Certificación Instrumental con Fluke, Rotulado TIA-606 y Proyecto As-Built", "20 Horas", "5 Sesiones", "Certificación Completa Fluke DSX con Reportes PDF, Rotulado TIA-606 y Dossier As-Built")
     ]
 
     tbl_mod = doc.add_table(rows=5, cols=5)
@@ -340,9 +340,10 @@ def generate_propuesta_doc():
 
     p_balance = doc.add_paragraph()
     style_p(p_balance, space_before=8, space_after=6)
-    r = p_balance.add_run("Balance de Modalidad y Distribución del Tiempo Pedagógico:\n"
-                          "• 80% Horas Prácticas en Taller/Laboratorio (96 horas): Cableado directo en tableros, configuración en teclado de variadores, montaje de sensores, descargas de programas a PLC y resolución de averías en banco físico de pruebas.\n"
-                          "• 20% Horas en Plataforma Digital e Interpretación (24 horas): Lectura analítica de manuales técnicos de fabricante (Siemens, Schneider, WEG), diagramación en software CAD eléctrico (CADe SIMU) y cuestionarios previos de seguridad en Kinal.academy (Moodle) institucional.")
+    r = p_balance.add_run("Distribución del Tiempo Pedagógico y Compatibilidad Docente:\n"
+                          "• Duración Exacta:** 80 horas pedagógicas distribuidas en 20 sesiones de 4 horas (240 minutos por encuentro; 220 minutos netos de actividad y 20 minutos de receso).\n"
+                          "• Calendario Entre Semana (2 Días): Impartido en días alternos entre semana (ej. Martes y Jueves de 17:30 a 21:30 hrs), permitiendo que el mismo instructor titular de TICs de Kinal atienda este curso y el de Ciberseguridad sin traslapes ni fatiga pedagógica.\n"
+                          "• Balance Formativo: 80% Práctica en Racks y Módulos de Taller (64 horas) y 20% Normativa, cálculo y diseño en software/plataforma digital (16 horas).")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -351,20 +352,14 @@ def generate_propuesta_doc():
     # 6. ESTRATEGIA DIDÁCTICA EN TALLER Y BITÁCORA BERICHTSHEFT
     # =========================================================================
     h1_6 = doc.add_paragraph()
-    style_heading(h1_6, "6. Estrategia Didáctica en Laboratorio y Bitácora Semanal «Berichtsheft»", level=1)
+    style_heading(h1_6, "6. Estrategia Didáctica en Taller y Bitácora Semanal «Berichtsheft»", level=1)
 
     p_didact = doc.add_paragraph()
     style_p(p_didact, space_before=0, space_after=6)
-    r = p_didact.add_run("Para garantizar la asimilación profunda y la transferencia real al puesto de trabajo, se implementan dos pilares metodológicos:\n"
-                         "1. Método de las 6 Fases de la Acción Completa (Modell der vollständigen Handlung):\n"
-                         "   • Fase 1 - Informar: Análisis del problema de planta y especificaciones técnicas de la máquina.\n"
-                         "   • Fase 2 - Planificar: Diseño de esquemas eléctricos, selección de calibres y asignación de direcciones de I/O.\n"
-                         "   • Fase 3 - Decidir: Validación conjunta con el instructor antes de realizar cualquier conexión física.\n"
-                         "   • Fase 4 - Ejecutar: Montaje mecánico en riel DIN, cableado pulcro y programación en software.\n"
-                         "   • Fase 5 - Controlar: Protocolo de energización escalonada y medición con multímetro de aislamientos y continuidades.\n"
-                         "   • Fase 6 - Valorar: Reflexión sobre dificultades encontradas, tiempos de ejecución y lecciones aprendidas.\n"
-                         "2. Bitácora Semanal de Aprendizaje Berichtsheft (Estándar Dual Alemán):\n"
-                         "   Cada estudiante registra semanalmente: fecha de la práctica, descripción detallada del circuito o rutina programada, normas de seguridad aplicadas, problemas y fallas enfrentadas, y cómo fueron resueltos bajo el criterio del «trabajo bien hecho». Esta bitácora es visada por el instructor y constituye un requisito obligatorio para optar a la certificación final.")
+    r = p_didact.add_run("Para garantizar que la destreza manual se traduzca en calidad de grado industrial, se implementan:\n"
+                         "1. Estaciones de Trabajo por Parejas (Taller Vivo): Cada pareja dispone de un bastidor o sección de rack de 19'', patch panel modular, barra TGB de tierra, tramos de canalización, carretes de cable Cat 6A y bandejas de empalme óptico.\n"
+                         "2. Inspección Escalonada de Calidad: Ningún cable se conecta al switch o se certifica con el Fluke sin antes pasar por la revisión de peinado, radio de curvatura y desforre por parte del instructor.\n"
+                         "3. Bitácora Semanal Berichtsheft: Registro documental individual donde el estudiante anota: fecha, tramo instalado, estándares aplicados, problemas de paradiafonía o atenuación detectados, causa raíz identificada y corrección ejecutada bajo el lema del «trabajo bien hecho».")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
@@ -375,16 +370,17 @@ def generate_propuesta_doc():
     h1_7 = doc.add_paragraph()
     style_heading(h1_7, "7. Sistema de Evaluación Institucional y Criterio de Acreditación", level=1)
 
-    add_callout(doc, "La aprobación de cada módulo formativo y la certificación profesional final requieren alcanzar una calificación mínima de 75 puntos sobre 100 en todas las comprobaciones de banco, listas de cotejo de taller y evaluación de proyecto terminal, de acuerdo con la Normativa de Convivencia y Evaluación de Fundación Kinal.", bold_prefix="Umbral Aprobatorio Institucional Obligatorio:")
+    add_callout(doc, "La acreditación del programa y la entrega del certificado institucional de Fundación Kinal exigen una calificación mínima de 75 puntos sobre 100 en todas las rúbricas de taller, comprobaciones de ponchado y fusión, y en la evaluación del proyecto integrador terminal.", bold_prefix="Umbral Aprobatorio Institucional Obligatorio:")
 
     eval_data = [
-        ("Pruebas Prácticas de Taller y Rúbricas de Ensamble (40%)", "Evaluación continua sesión por sesión del cableado, conexionado, peinado, rotulado y pruebas de funcionamiento de circuitos de fuerza y control sin cortocircuitos."),
-        ("Programación y Comisionamiento en Software / PLC / VFD (30%)", "Evaluación de la lógica estructurada en Ladder, correcta parametrización de variadores, mapeo de señales y comisionamiento de secuencias automáticas."),
-        ("Bitácora Semanal Berichtsheft y Dossier Técnico (10%)", "Revisión quincenal de bitácoras, diagramas 'As-Built' actualizados y hojas de cálculo de calibración de protecciones eléctricas."),
-        ("Proyecto Integrador Terminal y Diagnóstico de Fallas (20%)", "Prueba individual de certificación en banco real: puesta en marcha de un proceso continuo integrado y diagnóstico de 2 fallas inducidas en menos de 60 minutos.")
+        ("Destreza de Canalización, Tendido y Aterrizaje TIA-607 (20%)", "Evaluación del montaje de racks, nivelación, curvatura de tubería EMT, instalación de charolas malla y conexión de barra TGB con conductor 6 AWG."),
+        ("Conectorización y Peinado de Cobre Cat 6/6A (30%)", "Evaluación de remates en jacks y patch panels de 24 puertos: peinado con velcro, desforre sin mallas cortadas, destrenzado < 13 mm y cero pares divididos."),
+        ("Preparación, Corte y Fusión de Fibra Óptica (20%)", "Limpieza de fibra con alcohol isopropílico, corte perpendicular con cleaver (< 1 grado), empalme por fusión con atenuación medida < 0.05 dB y horneado de manguito."),
+        ("Bitácora Berichtsheft y Rotulado TIA-606 (10%)", "Revisión quincenal de bitácoras de taller y etiquetado industrial normalizado en cables, jacks y paneles con rotuladora profesional."),
+        ("Certificación Instrumental Fluke y Proyecto As-Built (20%)", "Prueba terminal individual: certificación Tier 1 con Fluke DSX, diagnóstico de 2 fallas inducidas en menos de 45 min y entrega del dossier As-Built.")
     ]
 
-    tbl_ev = doc.add_table(rows=5, cols=2)
+    tbl_ev = doc.add_table(rows=6, cols=2)
     tbl_ev.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_ev.autofit = False
     tbl_ev.columns[0].width = Inches(2.5)
@@ -424,16 +420,16 @@ def generate_propuesta_doc():
     # 8. INFRAESTRUCTURA Y SEGURIDAD INDUSTRIAL EN KINAL
     # =========================================================================
     h1_8 = doc.add_paragraph()
-    style_heading(h1_8, "8. Equipamiento de Laboratorio y Requerimientos de Seguridad Industrial", level=1)
+    style_heading(h1_8, "8. Equipamiento de Laboratorio y Requerimientos de Seguridad", level=1)
 
     p_infra = doc.add_paragraph()
     style_p(p_infra, space_before=0, space_after=6)
-    r = p_infra.add_run("El programa se imparte íntegramente en los laboratorios de electrotecnia y automatización de Fundación Kinal, dotados de:\n"
-                        "• Estaciones de Trabajo Eléctricas: Módulos con riel DIN, canaleta ranurada, tomas trifásicas de 220V/208V y monofásicas de 120V con protección diferencial GFCI.\n"
-                        "• Aparamenta Industrial: Contactores AC-3 (Siemens Sirius / Schneider TeSys), relés térmicos, guardamotores magneto-térmicos, temporizadores y botoneras de mando industrial.\n"
-                        "• Bancos de Motores y Variadores: Motores trifásicos jaula de ardilla (0.5 a 1.5 HP), variadores de frecuencia de última generación (Siemens Sinamics V20 / Schneider Altivar / Danfoss) con paneles de operación integrados.\n"
-                        "• Controladores Lógicos y Sensórica: PLCs Siemens S7-1200 (CPU 1214C DC/DC/DC) y módulos LOGO! 24RCE con software TIA Portal con licencias académicas, sensores industriales inductivos, fotoeléctricos y capacitivos.\n"
-                        "• Normas de Seguridad Obligatorias: Uso innegociable de calzado de seguridad con puntera dieléctrica, gafas de protección policarbonato, candados y tarjetas LOTO individuales, y prohibición estricta de anillos, relojes metálicos o ropa holgada.")
+    r = p_infra.add_run("El curso se desarrolla en el Laboratorio de Redes y Telecomunicaciones de Fundación Kinal, equipado con:\n"
+                        "• Bastidores de Telecomunicaciones: Racks abiertos de piso de 19'' (42U) y gabinetes de pared abatibles de 12U con organizadores horizontales de 1U y 2U.\n"
+                        "• Aparamenta Pasiva: Patch panels modulares de 24 puertos Cat 6 y Cat 6A apantallados, módulos Keystone Jack RJ45, faceplates de 2 y 4 puertos, bandejas de distribución de fibra óptica (ODF) de 1U con acopladores dúplex LC y SC.\n"
+                        "• Instrumental de Certificación: Certificador Fluke Networks DSX-5000 / DSX-8000 con adaptadores de Enlace Permanente y Canal Cat 6A, medidor de potencia óptica (OPM), fuente de luz calibrada y localizador visual de fallas (VFL láser rojo 650 nm).\n"
+                        "• Equipos de Fusión Óptica: Fusionadoras por alineación de núcleo con electrodos calibrados, cortadoras de precisión con disco de diamante (cleavers) y peladoras de fibra de 3 posiciones.\n"
+                        "• Normas de Seguridad en Taller: Uso obligatorio de gafas de policarbonato con protección lateral al cortar fibra óptica, contenedor sellado para recortes de fibra (prohibido arrojar residuos al piso por riesgo de punción cutánea), guantes de precisión mecánica y tapete negro de trabajo para contraste visual.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -443,14 +439,14 @@ def generate_propuesta_doc():
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Automatización y Control Eléctrico Industrial — Propuesta Curricular Oficial")
+    run_f = footer_p.add_run("Fundación Kinal | Cableado Estructurado y Redes de Cobre/Fibra — Propuesta Curricular Oficial")
     run_f.font.name = "Calibri"
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
 
-    out_dir = os.path.join("Cursos", "Automatización")
+    out_dir = os.path.join("Cursos", "Cableado_Estructurado")
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "Propuesta_Curso_Automatizacion_Kinal.docx")
+    out_path = os.path.join(out_dir, "Propuesta_Curso_Cableado_Estructurado_Kinal.docx")
     doc.save(out_path)
     print(f"Propuesta guardada con éxito en: {out_path}")
 
