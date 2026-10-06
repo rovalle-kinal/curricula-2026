@@ -19,6 +19,7 @@ Este proyecto está dedicado al **Diseño Curricular y Didáctico Técnico-Profe
    - **Misión de Kinal:** *"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad"*.
 3. **Umbral Aprobatorio:** Nota mínima de **75 puntos sobre 100** para cursos regulares y exámenes por suficiencia.
 4. **Cargas Horarias DQR:** DQR 5 ($\ge 400$ hrs), DQR 6 ($\ge 1,200$ hrs), DQR 7 ($\ge 1,600$ hrs).
+5. **Ecosistema Digital y Plataformas Institucionales:** En Fundación Kinal las clases sincrónicas en línea y la plataforma escolar se operan sobre el ecosistema **Microsoft (Microsoft Teams y Microsoft 365)**. La plataforma LMS oficial de gestión de cursos y contenidos virtuales es **Moodle (Kinal.academy)**. No utilizar referencias a Google Meet ni Google Classroom en los programas de Kinal.
 
 ---
 
