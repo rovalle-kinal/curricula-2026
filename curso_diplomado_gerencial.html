@@ -271,246 +271,260 @@
         </div>
 
         <!-- ================================================================== -->
-        <!-- PESTAÑA 2: TEMARIO ANALÍTICO -->
+        <!-- PESTAÑA 2: TEMARIO (DISTRIBUCIÓN MODULAR AUDITADA)                 -->
         <!-- ================================================================== -->
-        <div id="tab-temario" class="tab-content hidden space-y-6">
-            <div class="border-b border-slate-200 pb-4">
-                <span class="text-xs font-bold text-[#EC9123] uppercase tracking-wider">Plan Analítico de Aprendizaje</span>
-                <h3 class="text-2xl font-black text-slate-900 brand-serif">Temario Detallado y Prácticas Directivas</h3>
-                <p class="text-slate-600 text-xs mt-1">4 Semanas consecutivas articulando fundamentos estratégicos, herramientas directivas y talleres vivenciales en campus Kinal.</p>
+        <div id="tab-temario" class="tab-content hidden space-y-8">
+            
+            <!-- Barra Superior de Control y Filtros -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="list-tree" class="w-5 h-5 text-blue-700"></i>
+                        Distribución Modular de Temarios
+                    </h3>
+                    <p class="text-xs text-slate-500">
+                        Estructura organizada en 4 módulos y 12 temas directivos clasificados por naturaleza técnica, logros de aprendizaje e impacto en planta.
+                    </p>
+                </div>
+
+                <!-- Botones de Filtro Interactivo -->
+                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                    <button onclick="filterTalentoTemario('all')" id="btn-talento-all" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos (12)</button>
+                    <button onclick="filterTalentoTemario('diagnostico')" id="btn-talento-diagnostico" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">📊 Diagnóstico & Brechas</button>
+                    <button onclick="filterTalentoTemario('competencias')" id="btn-talento-competencias" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">🎯 Competencias DQR</button>
+                    <button onclick="filterTalentoTemario('factor_humano')" id="btn-talento-factor_humano" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">⭐ Factor Humano Kinal</button>
+                    <button onclick="filterTalentoTemario('inmersion')" id="btn-talento-inmersion" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🏭 Inmersión Presencial</button>
+                </div>
             </div>
 
-            <div class="space-y-6">
+            <!-- Código de Leyenda Explicativo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/70 text-blue-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-blue-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-blue-900">Color Azul (Diagnóstico & ROI):</strong> Radiografía laboral de Guatemala, costos de la no calidad y cálculo financiero del retorno de inversión.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-purple-200 bg-purple-50/70 text-purple-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-purple-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-purple-900">Color Púrpura (Competencias DQR):</strong> Reingeniería de puestos hacia competencias observables y entrevistas técnicas situacionales STAR.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-amber-200 bg-amber-50/70 text-amber-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-amber-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-amber-900">Color Ámbar (Factor Humano):</strong> Valores universales, dignidad en planta, liderazgo sin maltrato y seguridad psicológica.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/70 text-emerald-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-emerald-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-emerald-900">Color Verde (Inmersión & Alianza):</strong> Prácticas vivenciales en campus Kinal, semillero dual y defensa del Proyecto Capstone.
+                    </div>
+                </div>
+            </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-200 pb-4">
-                        <div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#152244] text-[#EC9123] text-[10px] font-black uppercase tracking-wider">
-                                Módulo 1 • Semana 1
-                            </span>
-                            <h4 class="text-lg sm:text-xl font-black text-slate-900 brand-serif mt-1">
-                                La Brecha del Talento Operativo y el Retorno de Inversión del TSU
-                            </h4>
+            <!-- Cuadrícula Modular de Temarios (Tarjetas con Módulo y Temas) -->
+            <div class="grid lg:grid-cols-2 gap-8 pt-2">
+
+                <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                            <span>MÓDULO 1 (Semana 1 • Sesiones 1 a 3)</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Directas (4h Virtual Teams + 4h Sábado 1 Kinal)</span>
                         </div>
-                        <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">
-                            8 Horas Directas (4h Virtual Teams + 4h Sábado 1 Kinal)
-                        </span>
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">La Brecha del Talento Operativo y el Retorno de Inversión del TSU</h4>
+                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Analizar la estructura del empleo técnico industrial guatemalteco, contrastar la baja productividad del operario empírico frente a la solvencia del Técnico Superior Universitario (TSU) y formular un caso de negocio de retorno de inversión (ROI) que justifique la profesionalización de cuadrillas técnicas.
+                        </p>
                     </div>
-
-                    <div class="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200 text-xs text-slate-700 leading-relaxed">
-                        <strong class="text-amber-900">Resultado de Aprendizaje:</strong> Analizar la estructura del empleo técnico industrial guatemalteco, contrastar la baja productividad del operario empírico frente a la solvencia del Técnico Superior Universitario (TSU) y formular un caso de negocio de retorno de inversión (ROI) que justifique la profesionalización de cuadrillas técnicas.
-                    </div>
-
-                    <div class="space-y-3 pt-2">
+                    <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">1</span>
+                        <div class="content-item item-diagnostico p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="diagnostico">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
                                     Radiografía del Empleo Técnico en Guatemala y el 'Síndrome del Operador Empírico'
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200">📊 Diagnóstico & Brechas</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">📊 Diagnóstico & Brechas</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Causas estructurales de la escasez de técnicos calificados en la industria manufacturera, automotriz, eléctrica y constructiva en Guatemala. La trampa del 'aprender sobre la marcha' sin fundamentación técnica: sobrecostos por reprocesos, rotura de maquinaria, accidentes de trabajo y dependencia crítica de mandos medios no formados.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Causas estructurales de la escasez de técnicos calificados en la industria manufacturera, automotriz, eléctrica y constructiva en Guatemala. La trampa del 'aprender sobre la marcha' sin fundamentación técnica: sobrecostos por reprocesos, rotura de maquinaria, accidentes de trabajo y dependencia crítica de mandos medios no formados.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">2</span>
+                        <div class="content-item item-competencias p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="competencias">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
                                     El Técnico Superior Universitario (TSU) y el Marco Alemán DQR (Nivel 5 - 6)
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200">🎯 Competencias DQR</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">🎯 Competencias DQR</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Definición oficial DQR: capacidad y disposición para actuar integralmente con solvencia técnica, social y metodológica. Mapeo del perfil del TSU egresado de Kinal: rigor matemático aplicado, metrología de precisión, lectura de planos normalizados, normativas internacionales y disciplina operativa frente a la intuición empírica.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Definición oficial DQR: capacidad y disposición para actuar integralmente con solvencia técnica, social y metodológica. Mapeo del perfil del TSU egresado de Kinal: rigor matemático aplicado, metrología de precisión, lectura de planos normalizados, normativas internacionales y disciplina operativa frente a la intuición empírica.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">3</span>
+                        <div class="content-item item-inmersion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="inmersion">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
                                     Taller Vivencial e Inmersión de Planta: El Contraste de Competencias (Sábado 1)
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Visita ejecutiva a talleres y laboratorios de alta tecnología de Fundación Kinal (CNC, Automatización Siemens, Redes, Sistemas Automotrices y Construcción). Observación directa de proyectos reales de graduación de aprendices de TSU. Taller de cálculo financiero: Costos Ocultos de la No Calidad (CONC) y modelo cuantitativo de Retorno de Inversión (ROI).</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Visita ejecutiva a talleres y laboratorios de alta tecnología de Fundación Kinal (CNC, Automatización Siemens, Redes, Sistemas Automotrices y Construcción). Observación directa de proyectos reales de graduación de aprendices de TSU. Taller de cálculo financiero: Costos Ocultos de la No Calidad (CONC) y modelo cuantitativo de Retorno de Inversión (ROI).</p>
                         </div>
         
                     </div>
                 </div>
     
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-200 pb-4">
-                        <div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#152244] text-[#EC9123] text-[10px] font-black uppercase tracking-wider">
-                                Módulo 2 • Semana 2
-                            </span>
-                            <h4 class="text-lg sm:text-xl font-black text-slate-900 brand-serif mt-1">
-                                Reclutamiento por Competencias Técnicas y Sistemas de Formación Dual
-                            </h4>
+                <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                            <span>MÓDULO 2 (Semana 2 • Sesiones 4 a 6)</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Directas (4h Virtual Teams + 4h Sábado 2 Kinal)</span>
                         </div>
-                        <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">
-                            8 Horas Directas (4h Virtual Teams + 4h Sábado 2 Kinal)
-                        </span>
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Reclutamiento por Competencias Técnicas y Sistemas de Formación Dual</h4>
+                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Diseñar e implementar procesos de selección técnica basados en evidencias prácticas y entrevistas conductuales (STAR), y formular un esquema de Semillero de Formación Dual en alternancia empresa-escuela que garantice el relevo generacional y reduzca la curva de aprendizaje en planta.
+                        </p>
                     </div>
-
-                    <div class="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200 text-xs text-slate-700 leading-relaxed">
-                        <strong class="text-amber-900">Resultado de Aprendizaje:</strong> Diseñar e implementar procesos de selección técnica basados en evidencias prácticas y entrevistas conductuales (STAR), y formular un esquema de Semillero de Formación Dual en alternancia empresa-escuela que garantice el relevo generacional y reduzca la curva de aprendizaje en planta.
-                    </div>
-
-                    <div class="space-y-3 pt-2">
+                    <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">4</span>
+                        <div class="content-item item-seleccion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="seleccion">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
                                     Reingeniería del Perfil de Puesto Técnico hacia Competencias Demostrables
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">📋 Selección Técnica</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">📋 Selección Técnica</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Superación de los perfiles genéricos tradicionales. Definición de la Matriz de Competencias Operativas: Conocimientos Técnicos DQR, Habilidades Manuales y Metrológicas, y Competencias Metodológicas. Criterios de evaluación técnica objetiva en taller sin sesgos subjetivos.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Superación de los perfiles genéricos tradicionales. Definición de la Matriz de Competencias Operativas: Conocimientos Técnicos DQR, Habilidades Manuales y Metrológicas, y Competencias Metodológicas. Criterios de evaluación técnica objetiva en taller sin sesgos subjetivos.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">5</span>
+                        <div class="content-item item-dual p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="dual">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
                                     Entrevistas Situacionales (STAR) y el Sistema Dual en Alternancia
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200">🔄 Sistema Dual en Alternancia</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">🔄 Sistema Dual en Alternancia</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Estructuración de preguntas técnicas basadas en el método STAR (Situación, Tarea, Acción, Resultado). El modelo dual de alternancia Kinal: el aprender en el proceso del trabajo como base y objetivo de la acción formativa. Roles del Tutor de Empresa y Mentor Técnico de Taller.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Estructuración de preguntas técnicas basadas en el método STAR (Situación, Tarea, Acción, Resultado). El modelo dual de alternancia Kinal: el aprender en el proceso del trabajo como base y objetivo de la acción formativa. Roles del Tutor de Empresa y Mentor Técnico de Taller.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">6</span>
+                        <div class="content-item item-inmersion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="inmersion">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
                                     Laboratorio de Selección Técnica y Evaluación Práctica en Taller Kinal (Sábado 2)
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Simulación en vivo de entrevistas técnicas a aprendices de TSU de último año en el campus Kinal. Aplicación de pruebas de habilidad en laboratorio con uso de instrumentos de medición y rúbricas de calibración. Diseño del Plan Corporativo de Semillero Dual adaptado a las plantas de los gerentes.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Simulación en vivo de entrevistas técnicas a aprendices de TSU de último año en el campus Kinal. Aplicación de pruebas de habilidad en laboratorio con uso de instrumentos de medición y rúbricas de calibración. Diseño del Plan Corporativo de Semillero Dual adaptado a las plantas de los gerentes.</p>
                         </div>
         
                     </div>
                 </div>
     
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-200 pb-4">
-                        <div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#152244] text-[#EC9123] text-[10px] font-black uppercase tracking-wider">
-                                Módulo 3 • Semana 3
-                            </span>
-                            <h4 class="text-lg sm:text-xl font-black text-slate-900 brand-serif mt-1">
-                                Cultura del 'Factor Humano': Valores Laicos, Dignidad y Clima Operativo
-                            </h4>
+                <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                            <span>MÓDULO 3 (Semana 3 • Sesiones 7 a 9)</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Directas (4h Virtual Teams + 4h Sábado 3 Kinal)</span>
                         </div>
-                        <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">
-                            8 Horas Directas (4h Virtual Teams + 4h Sábado 3 Kinal)
-                        </span>
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Cultura del 'Factor Humano': Valores Laicos, Dignidad y Clima Operativo</h4>
+                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Desplegar el modelo del Factor Humano de Fundación Kinal como un sistema formativo basado en valores laicos universales, erradicando el maltrato en planta, previniendo la rotación prematura y fomentando el orgullo del oficio y el estándar del «trabajo bien hecho».
+                        </p>
                     </div>
-
-                    <div class="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200 text-xs text-slate-700 leading-relaxed">
-                        <strong class="text-amber-900">Resultado de Aprendizaje:</strong> Desplegar el modelo del Factor Humano de Fundación Kinal como un sistema formativo basado en valores laicos universales, erradicando el maltrato en planta, previniendo la rotación prematura y fomentando el orgullo del oficio y el estándar del «trabajo bien hecho».
-                    </div>
-
-                    <div class="space-y-3 pt-2">
+                    <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">7</span>
+                        <div class="content-item item-factor_humano p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="factor_humano">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
                                     Antropología del Factor Humano en Kinal y los Cuatro Pilares del Clima Operativo
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">⭐ Factor Humano Kinal</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">⭐ Factor Humano Kinal</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">El Factor Humano en Kinal como formación de virtudes humanas en el trabajo. Traducción empresarial: Respeto estricto a la dignidad del operario, Espíritu de servicio hacia el compañero de cuadrilla, Libertad personal responsable y El trabajo bien hecho como realización personal y fuente de prestigio laboral.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">El Factor Humano en Kinal como formación de virtudes humanas en el trabajo. Traducción empresarial: Respeto estricto a la dignidad del operario, Espíritu de servicio hacia el compañero de cuadrilla, Libertad personal responsable y El trabajo bien hecho como realización personal y fuente de prestigio laboral.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">8</span>
+                        <div class="content-item item-liderazgo p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="liderazgo">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
                                     Liderazgo en Cuadrillas, Seguridad Psicológica y Comunicación Directa
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-900 border border-indigo-200">👥 Liderazgo Operativo</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-indigo-100 text-indigo-900 border border-indigo-200">👥 Liderazgo Operativo</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Desmontando la cultura del capataz intimidatorio y el maltrato verbal en planta. Creación de entornos de seguridad psicológica para reportar errores técnicos y casi-accidentes sin temor a represalias destructivas. Canales formales de escucha y resolución ética de controversias operativas.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Desmontando la cultura del capataz intimidatorio y el maltrato verbal en planta. Creación de entornos de seguridad psicológica para reportar errores técnicos y casi-accidentes sin temor a represalias destructivas. Canales formales de escucha y resolución ética de controversias operativas.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">9</span>
+                        <div class="content-item item-inmersion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="inmersion">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
                                     Clínica Vivencial: Dinámicas de Piso de Planta y el «Trabajo Bien Hecho» (Sábado 3)
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">🏭 Inmersión Presencial Kinal</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Taller interactivo de resolución de dilemas éticos y operativos en planta mediante role-playing directivo. Conversatorio con instructores y capataces experimentados de Kinal sobre disciplina positiva y mentoría. Diseño del Protocolo Corporativo de Cero Tolerancia al Maltrato y Charla de Factor Humano de 10 Minutos.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Taller interactivo de resolución de dilemas éticos y operativos en planta mediante role-playing directivo. Conversatorio con instructores y capataces experimentados de Kinal sobre disciplina positiva y mentoría. Diseño del Protocolo Corporativo de Cero Tolerancia al Maltrato y Charla de Factor Humano de 10 Minutos.</p>
                         </div>
         
                     </div>
                 </div>
     
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-200 pb-4">
-                        <div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#152244] text-[#EC9123] text-[10px] font-black uppercase tracking-wider">
-                                Módulo 4 • Semana 4
-                            </span>
-                            <h4 class="text-lg sm:text-xl font-black text-slate-900 brand-serif mt-1">
-                                Taller Directivo Capstone: Creación y Defensa del Programa Corporativo
-                            </h4>
+                <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                            <span>MÓDULO 4 (Semana 4 • Sesiones 10 a 12)</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Directas (4h Virtual Teams + 4h Sábado 4 Kinal)</span>
                         </div>
-                        <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">
-                            8 Horas Directas (4h Virtual Teams + 4h Sábado 4 Kinal)
-                        </span>
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Taller Directivo Capstone: Creación y Defensa del Programa Corporativo</h4>
+                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Formular, estructurar y defender ante un tribunal evaluador directivo un Plan Integral de Gestión Estratégica del Talento Técnico y Factor Humano, articulando el caso de negocio del TSU, la estrategia de atracción dual y el protocolo de cultura de planta con métricas de retorno de inversión.
+                        </p>
                     </div>
-
-                    <div class="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200 text-xs text-slate-700 leading-relaxed">
-                        <strong class="text-amber-900">Resultado de Aprendizaje:</strong> Formular, estructurar y defender ante un tribunal evaluador directivo un Plan Integral de Gestión Estratégica del Talento Técnico y Factor Humano, articulando el caso de negocio del TSU, la estrategia de atracción dual y el protocolo de cultura de planta con métricas de retorno de inversión.
-                    </div>
-
-                    <div class="space-y-3 pt-2">
+                    <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">10</span>
+                        <div class="content-item item-capstone p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="capstone">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
                                     Metodología de Despliegue Corporativo e Integración del Factor Humano
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200">🚀 Proyecto Capstone</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">🚀 Proyecto Capstone</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Estructura del Proyecto Directivo Capstone: Diagnóstico de la Brecha Operativa en la Empresa, Matriz de Selección por Competencias Demostrables, Plan de Alianza Dual con Kinal y Protocolo de Despliegue del Factor Humano. Cronograma de implantación a 90 y 180 días con matriz de gestión del cambio.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Estructura del Proyecto Directivo Capstone: Diagnóstico de la Brecha Operativa en la Empresa, Matriz de Selección por Competencias Demostrables, Plan de Alianza Dual con Kinal y Protocolo de Despliegue del Factor Humano. Cronograma de implantación a 90 y 180 días con matriz de gestión del cambio.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">11</span>
+                        <div class="content-item item-metricas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="metricas">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
                                     Cuadro de Mando Integral (KPIs), Alianzas Kinal y Preparación de la Defensa
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">📈 Métricas de Retorno (KPIs)</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">📈 Métricas de Retorno (KPIs)</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Definición de indicadores de impacto operativo: reducción de tasa de rotación en cuadrillas (Turnover), incremento de OEE (Overall Equipment Effectiveness), disminución de costos por garantías y reprocesos, e índice de clima laboral en planta. Simulación de defensa ejecutiva con retroalimentación personalizada.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Definición de indicadores de impacto operativo: reducción de tasa de rotación en cuadrillas (Turnover), incremento de OEE (Overall Equipment Effectiveness), disminución de costos por garantías y reprocesos, e índice de clima laboral en planta. Simulación de defensa ejecutiva con retroalimentación personalizada.</p>
                         </div>
         
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-sm transition space-y-1.5">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h5 class="text-xs font-bold text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-black flex items-center justify-center shrink-0">12</span>
+                        <div class="content-item item-inmersion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="inmersion">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
                                     Defensa Directiva Capstone ante el Tribunal de Kinal y Clausura (Sábado 4)
-                                </h5>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">🎓 Defensa & Certificación Kinal</span>
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">🎓 Defensa & Certificación Kinal</span>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed pl-7">Sustentación formal de 15 minutos por participante del Plan Integral ante el Tribunal Directivo de la Escuela Técnica Superior de Fundación Kinal. Deliberación, evaluación bajo rúbrica institucional (aprobación >= 75 puntos) y entrega formal de Certificados Ejecutivos en acto de clausura.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Sustentación formal de 15 minutos por participante del Plan Integral ante el Tribunal Directivo de la Escuela Técnica Superior de Fundación Kinal. Deliberación, evaluación bajo rúbrica institucional (aprobación >= 75 puntos) y entrega formal de Certificados Ejecutivos en acto de clausura.</p>
                         </div>
         
                     </div>
                 </div>
     
-        </div>
+            </div>
         </div>
 
         <!-- ================================================================== -->
@@ -1076,6 +1090,28 @@
             switchTab('secuencias');
             renderTalentoDetail(num);
             document.getElementById('tab-secuencias').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterTalentoTemario(category) {
+            const items = document.querySelectorAll('.content-item');
+            items.forEach(el => {
+                if (category === 'all' || el.getAttribute('data-category') === category) {
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.talento-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            const activeBtn = document.getElementById('btn-talento-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
+                activeBtn.classList.add('bg-slate-900', 'text-white');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
