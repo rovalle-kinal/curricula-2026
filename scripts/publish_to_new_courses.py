@@ -15,8 +15,16 @@ WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CURSOS_DIR = os.path.join(WORKSPACE_DIR, "Cursos")
 WEB_DIR = os.path.join(CURSOS_DIR, "Web")
 
-# Token retrieval (environment variable)
+# Token retrieval (environment variable o desde remoto git de curricula-2026)
 TOKEN = os.environ.get("GITHUB_TOKEN", os.environ.get("GH_TOKEN", ""))
+if not TOKEN:
+    try:
+        remote_url = subprocess.check_output([GIT_EXE, "remote", "get-url", "origin"], cwd=WORKSPACE_DIR).decode().strip()
+        if "@" in remote_url and "ghp_" in remote_url:
+            TOKEN = "ghp_" + remote_url.split("ghp_")[1].split("@")[0]
+    except Exception:
+        pass
+
 REPO_URL = f"https://rovalle-kinal:{TOKEN}@github.com/rovalle-kinal/new-courses.git" if TOKEN else "https://github.com/rovalle-kinal/new-courses.git"
 CLONE_DIR = os.path.join(os.environ.get("TEMP", "C:/Temp"), "new-courses-repo")
 
