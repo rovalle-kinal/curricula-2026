@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Auditoría Curricular y Matriz de Dictámenes (TSU) | Fundación Kinal</title>
+    
+    <!-- Favicon Oficial: Escudo de Kinal -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2322376D'/><path d='M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z' fill='%23EC9123'/><path d='M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z' fill='%23FFD166'/></svg>">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fuentes Oficiales Fundación Kinal -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+        :root {
+            --kinal-navy: #22376D;
+            --kinal-flame: #EC9123;
+            --kinal-navy-dark: #152244;
+            --kinal-night: #0D162C;
+            --kinal-gray-bg: #F8FAFC;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1E293B;
+            background-color: var(--kinal-gray-bg);
+        }
+
+        .brand-serif {
+            font-family: 'Times New Roman', Times, 'Playfair Display', serif;
+        }
+
+        .hero-kinal-gradient {
+            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
+        }
+
+        /* Estilos de tablas de auditoría */
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            margin-bottom: 1rem;
+        }
+        .audit-table th, .audit-table td {
+            padding: 10px 12px;
+            border: 1px solid #E2E8F0;
+            text-align: left;
+        }
+        .audit-table th {
+            background-color: #F8FAFC;
+            font-weight: 700;
+            color: #22376D;
+        }
+        .tag-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .tag-original { background-color: #E2E8F0; color: #475569; }
+        .tag-anular { background-color: #FEE2E2; color: #991B1B; }
+        .tag-actualizar { background-color: #FEF9C3; color: #854D0E; }
+        .tag-nuevo { background-color: #DBEAFE; color: #1E40AF; }
+
+        .callout-red { background-color: #FEF2F2; border-left: 4px solid #DC2626; padding: 8px 12px; border-radius: 6px; }
+        .callout-yellow { background-color: #FEFCE8; border-left: 4px solid #EAB308; padding: 8px 12px; border-radius: 6px; }
+        .callout-blue { background-color: #EFF6FF; border-left: 4px solid #2563EB; padding: 8px 12px; border-radius: 6px; }
+
+        .audit-justificacion {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 4px solid #EC9123;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: #334155;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 767px) {
+            *, *::before, *::after { box-sizing: border-box !important; }
+            html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+            .no-scrollbar::-webkit-scrollbar { display: none !important; }
+            .no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
+        }
+    </style>
+    <script src="assets/auth_gatekeeper.js"></script>
+</head>
+<body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
+
+    <!-- ========================================================= -->
+    <!-- ENCABEZADO FIJO PERMANENTE (SIEMPRE VISIBLE)              -->
+    <!-- ========================================================= -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200">
+        
+        <!-- BARRA INSTITUCIONAL SUPERIOR -->
+        <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                    </span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-slate-300 font-medium hidden sm:inline">
+                        Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
+                    </span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-emerald-400 font-bold flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER CORPORATIVO (SOLO LOGO ETS & BOTONES TODOS BLANCOS) -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-10 w-auto object-contain transition group-hover:opacity-90">
+                </a>
+            </div>
+
+            <!-- Botones de Navegación: TODOS BLANCOS -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs overflow-x-auto no-scrollbar py-1">
+                <a href="tsu.html#malla" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="layers" class="w-4 h-4 text-[#EC9123]"></i> Malla
+                </a>
+                <a href="tsu.html#lineas" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="git-branch" class="w-4 h-4 text-[#EC9123]"></i> Líneas
+                </a>
+                <a href="tsu_auditoria.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="check-square" class="w-4 h-4 text-[#EC9123]"></i> Revisión
+                </a>
+                <a href="index.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+                </a>
+            </nav>
+        </header>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- HERO PRINCIPAL DE REVISIÓN CURRICULAR                     -->
+    <!-- ========================================================= -->
+    <section class="hero-kinal-gradient text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto space-y-6 relative z-10">
+            
+            <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#EC9123] text-xs font-bold tracking-wide uppercase">
+                <span>Evaluación Curricular y Dictamen • 20 Asignaturas • DQR Nivel 6</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight brand-serif text-white">
+                Auditoría Curricular y Matriz de Dictamen (TSU)
+            </h1>
+
+            <p class="text-slate-200 text-sm sm:text-base lg:text-lg max-w-4xl leading-relaxed">
+                Diagnóstico formal comparativo del pensum de Técnico Superior Universitario (TSU) avalado por <strong>Fundación Kinal</strong> y la <strong>Universidad del Istmo (UNIS)</strong>. Análisis sintético de contenidos anulados por obsolescencia, actualizaciones metodológicas a la Industria 4.0, inserción de Inteligencia Artificial y nuevas competencias técnicas para mandos medios en régimen dual.
+            </p>
+
+            <div class="pt-1 text-xs text-slate-300">
+                
+            </div>
+
+            <!-- Métricas Clave de Auditoría -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 text-left">
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Cursos Auditados</div>
+                    <div class="text-2xl sm:text-3xl font-bold brand-serif text-white">20 Cursos</div>
+                    <div class="text-[11px] text-[#EC9123] font-medium">100% Dictaminados</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Nivel Formativo</div>
+                    <div class="text-2xl sm:text-3xl font-bold brand-serif text-white">DQR Nivel 6</div>
+                    <div class="text-[11px] text-emerald-400 font-medium">Mandos Medios Técnicos</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Acreditación Dual</div>
+                    <div class="text-sm font-bold brand-serif text-white">Universidad del Istmo</div>
+                    <div class="text-[11px] text-amber-300 font-medium">Convenio UNIS-Kinal</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Umbral Aprobatorio</div>
+                    <div class="text-2xl sm:text-3xl font-bold brand-serif text-amber-400">≥ 75 Pts</div>
+                    <div class="text-[11px] text-slate-300 font-medium">Exigencia Kinal sobre 100</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO DE LA REVISIÓN CURRICULAR                       -->
+    <!-- ========================================================= -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 flex-1">
+
+        <!-- Barra de Pestañas Bimestrales y Filtros Rápidos -->
+        <div class="bg-white p-4 sm:p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            
+            <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs font-bold text-[#22376D] uppercase tracking-wider">Filtrar por Bimestre:</span>
+                <div class="inline-flex rounded-xl bg-slate-100 p-1 gap-1 text-xs font-bold">
+                    <button class="px-3 py-1.5 rounded-lg bg-[#22376D] text-white shadow-xs transition" id="tab-all" onclick="filterBimestre('all', this)">Todos (20)</button>
+                    <button class="px-3 py-1.5 rounded-lg text-slate-700 hover:bg-white transition" id="tab-1" onclick="filterBimestre('1', this)">B1 (5)</button>
+                    <button class="px-3 py-1.5 rounded-lg text-slate-700 hover:bg-white transition" id="tab-2" onclick="filterBimestre('2', this)">B2 (5)</button>
+                    <button class="px-3 py-1.5 rounded-lg text-slate-700 hover:bg-white transition" id="tab-3" onclick="filterBimestre('3', this)">B3 (5)</button>
+                    <button class="px-3 py-1.5 rounded-lg text-slate-700 hover:bg-white transition" id="tab-4" onclick="filterBimestre('4', this)">B4 (5)</button>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 flex-wrap">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-700">
+                    <i data-lucide="filter" class="w-4 h-4 text-[#EC9123]"></i>
+                    <select id="lineaAuditFilter" onchange="filterLineaAudit(this.value)" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-[#22376D] focus:ring-2 focus:ring-[#22376D] outline-none">
+                        <option value="all">Todas las Líneas Formativas</option>
+                        <option value="linea-etica">🛡️ Formación Humana y Ética (4)</option>
+                        <option value="linea-gestion">📋 Gestión y Supervisión (8)</option>
+                        <option value="linea-matematica">📐 Ciencias Matemáticas y Analítica (4)</option>
+                        <option value="linea-fisica">⚡ Física y Tecnología 4.0 (4)</option>
+                    </select>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleAllCards(true)" class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-[#22376D] hover:bg-slate-50 transition">
+                        Expandir Todo
+                    </button>
+                    <button onclick="toggleAllCards(false)" class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-500 hover:bg-slate-50 transition">
+                        Colapsar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 1. MATRIZ SINTÉTICA COMPARATIVA (TABLA EJECUTIVA) -->
+        <section class="space-y-4">
+            <div class="border-b-2 border-slate-200 pb-3 flex justify-between items-end">
+                <div>
+                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Diagnóstico Sintético</span>
+                    <h2 class="text-2xl font-bold brand-serif text-[#22376D] mt-0.5">
+                        Matriz Ejecutiva de Cambios Curriculares
+                    </h2>
+                </div>
+                <span class="text-xs text-slate-500 font-medium hidden sm:inline">
+                    20 Asignaturas Evaluadas
+                </span>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-x-auto no-scrollbar">
+                <table class="w-full text-left border-collapse text-xs min-w-[900px]">
+                    <thead class="bg-[#152244] text-white border-b-2 border-[#EC9123]">
+                        <tr>
+                            <th class="p-3.5 font-bold w-[12%]">Código</th>
+                            <th class="p-3.5 font-bold w-[28%]">Asignatura y Eje</th>
+                            <th class="p-3.5 font-bold w-[20%] text-red-200">🔴 Anula</th>
+                            <th class="p-3.5 font-bold w-[20%] text-amber-200">🟡 Actualiza</th>
+                            <th class="p-3.5 font-bold w-[20%] text-blue-200">🔵 Nuevas Competencias</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100" id="matrixAuditTbody">
+                        
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="1" data-linea="linea-etica" id="row-audit-b1_etica_general_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B1</span>
+            <span class="font-mono text-slate-600">B1-C1</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🛡️</span> Ética General 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Antropología y Sentido Trascendente del Trabajo</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Teoría abstracta</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Sentido trascendente</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Liderazgo servicial</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="1" data-linea="linea-gestion" id="row-audit-b1_fundamentos_administracion">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B1</span>
+            <span class="font-mono text-slate-600">B1-C2</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>📋</span> Fundamentos de la Administración</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Liderazgo Ágil de Mandos Medios y Coordinación de Equipos</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Memorización biográfica</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Supervisión ágil</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Equipos celulares</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="1" data-linea="linea-gestion" id="row-audit-b1_planeacion_control_trabajo">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B1</span>
+            <span class="font-mono text-slate-600">B1-C3</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>⏱️</span> Planeación y Control para el Trabajo</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Metodología Visual Kanban, Cronogramas Gantt y Eficiencia OEE</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Formatos papel</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Tableros Kanban</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Sistemas ERP</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="1" data-linea="linea-matematica" id="row-audit-b1_matematica_basica_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B1</span>
+            <span class="font-mono text-slate-600">B1-C4</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>📐</span> Matemática Básica 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Aritmética Cuantitativa, Proporcionalidad y Modelado en Hojas de Cálculo</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Aritmética manual</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Modelado Excel</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Álgebra computacional</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="1" data-linea="linea-fisica" id="row-audit-b1_fisica_basica_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B1</span>
+            <span class="font-mono text-slate-600">B1-C5</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>⚖️</span> Física Básica 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Estática, Equilibrio de Fuerzas, Torque, Trabajo y Máquinas Simples</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Fórmulas abstractas</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Cinemática aplicada</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Simuladores virtuales</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="2" data-linea="linea-etica" id="row-audit-b2_etica_general_2">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B2</span>
+            <span class="font-mono text-slate-600">B2-C1</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>⚖️</span> Ética General 2</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Libertad Responsable, Compliance e Integridad Industrial</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Filosofía abstracta</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Cultura de servicio</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Dilemas laborales</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="2" data-linea="linea-gestion" id="row-audit-b2_herramientas_contables">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B2</span>
+            <span class="font-mono text-slate-600">B2-C2</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>💰</span> Herramientas Contables para la Supervisión</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Costos Industriales (MPD-MOD-CIF), Downtime Cost y Presupuestos OPEX</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Teneduría manual</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Costos operativos</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> KPIs financieros</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="2" data-linea="linea-gestion" id="row-audit-b2_administracion_rrhh_sso">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B2</span>
+            <span class="font-mono text-slate-600">B2-C3</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🦺</span> Administración de RRHH y SSO</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Código de Trabajo de Guatemala, Planillas del IGSS y Acuerdo Gubernativo 229-2014</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Trámites burocráticos</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Planillas IGSS</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Seguridad SSO</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="2" data-linea="linea-matematica" id="row-audit-b2_matematica_basica_2">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B2</span>
+            <span class="font-mono text-slate-600">B2-C4</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>📉</span> Matemática Básica 2</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Punto de Equilibrio, Modelado de Funciones y Lógica Booleana</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Factorización manual</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Punto de equilibrio</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Lógica booleana</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="2" data-linea="linea-fisica" id="row-audit-b2_fisica_aplicada_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B2</span>
+            <span class="font-mono text-slate-600">B2-C5</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🧱</span> Física Aplicada 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Física de Materiales, Resistencia Mecánica y Propiedades Térmico-Dieléctricas</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Oleohidráulica pesada</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Resistencia materiales</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Ensayos mecánicos</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="3" data-linea="linea-etica" id="row-audit-b3_etica_profesional_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B3</span>
+            <span class="font-mono text-slate-600">B3-C1</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🤖</span> Ética Profesional 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Automatización, Inteligencia Artificial y la Transición Justa</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Textos obsoletos</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Dignidad laboral</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Transición justa</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="3" data-linea="linea-gestion" id="row-audit-b3_metodos_produccion">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B3</span>
+            <span class="font-mono text-slate-600">B3-C2</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🏭</span> Métodos de Producción</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Lean Manufacturing, Estandarización 5S y Mapeo de Flujo de Valor (VSM)</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Taylorismo rígido</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Manufactura esbelta</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Mantenimiento predictivo</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="3" data-linea="linea-gestion" id="row-audit-b3_servicio_cliente">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B3</span>
+            <span class="font-mono text-slate-600">B3-C3</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🤝</span> Servicio al Cliente</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Gestión de Clientes B2B, Acuerdos SLA y Calidad en Servicios Técnicos</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Atención pasiva</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> CRM industrial</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Experiencia cliente</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="3" data-linea="linea-matematica" id="row-audit-b3_matematica_aplicada_1">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B3</span>
+            <span class="font-mono text-slate-600">B3-C4</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>📊</span> Matemática Aplicada 1</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Estadística Práctica Aplicada, Principio de Pareto y Análisis de Variabilidad</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Estadística teórica</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Análisis variabilidad</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Principio Pareto</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="3" data-linea="linea-fisica" id="row-audit-b3_fisica_aplicada_2">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B3</span>
+            <span class="font-mono text-slate-600">B3-C5</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>⚡</span> Física Aplicada 2</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Energía, Eficiencia Energética, Tarifas Industriales y Sostenibilidad</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Calderas térmicas</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Balances energéticos</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Eficiencia energética</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="4" data-linea="linea-etica" id="row-audit-b4_etica_profesional_2">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B4</span>
+            <span class="font-mono text-slate-600">B4-C1</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🧠</span> Ética Profesional 2</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Principio Human-in-the-Loop (HITL), Juicio Crítico y el Trabajo Bien Hecho</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Discursos abstractos</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Trabajo bien hecho</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Supervisión HITL</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="4" data-linea="linea-gestion" id="row-audit-b4_control_calidad">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B4</span>
+            <span class="font-mono text-slate-600">B4-C2</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🎯</span> Control de Calidad</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Sistemas de Gestión ISO 9001:2015, Metodología Six Sigma (DMAIC) y AMFE</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Inspección tardía</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Ciclo DMAIC</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Visión artificial</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="4" data-linea="linea-gestion" id="row-audit-b4_fundamentos_marketing">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B4</span>
+            <span class="font-mono text-slate-600">B4-C3</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>📈</span> Fundamentos del Marketing</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Business Intelligence (Power BI), Marketing Industrial B2B y Dashboards</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Marketing masivo</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Marketing B2B</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Dashboards PowerBI</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="4" data-linea="linea-matematica" id="row-audit-b4_matematica_aplicada_2">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B4</span>
+            <span class="font-mono text-slate-600">B4-C4</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>🏦</span> Matemática Aplicada 2</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Ingeniería Económica, Interés Compuesto y Evaluación de Inversiones (VPN/TIR)</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Macroeconomía monetaria</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Interés compuesto</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Evaluación VPN/TIR</span>
+    </td>
+    </tr>
+    
+    <tr class="audit-row border-b border-slate-200 hover:bg-slate-50/80 transition" data-bimestre="4" data-linea="linea-fisica" id="row-audit-b4_fisica_aplicada_3">
+        <td class="p-3 text-xs font-bold text-slate-700 whitespace-nowrap">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-100 text-[#22376D] font-extrabold mr-1">B4</span>
+            <span class="font-mono text-slate-600">B4-C5</span>
+        </td>
+        <td class="p-3">
+            
+<div style="font-weight: 700; color: var(--kinal-blue); font-size: 0.9rem;"><span>💻</span> Física Aplicada 3</div>
+<div style="font-size: 0.76rem; color: var(--text-muted);">Sensores Transversales, Instrumentación y Programación Aplicada con Python</div>
+
+        </td>
+        <td class="p-3 text-xs text-red-900 bg-red-50/50 border-l border-red-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Alta tensión</span>
+    </td>
+        <td class="p-3 text-xs text-amber-900 bg-amber-50/50 border-l border-amber-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Sensores transversales</span>
+    </td>
+        <td class="p-3 text-xs text-blue-900 bg-blue-50/50 border-l border-blue-200 font-bold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Programación Python</span>
+    </td>
+    </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2. FICHAS TÉCNICAS DESPLEGABLES DE CADA ASIGNATURA -->
+        <section class="space-y-6">
+            <div class="border-b-2 border-slate-200 pb-3">
+                <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Diagnósticos Quirúrgicos</span>
+                <h2 class="text-2xl font-bold brand-serif text-[#22376D] mt-0.5">
+                    Fichas Técnicas Detalladas de Dictamen Curricular
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                    Haz clic en cualquiera de las 20 fichas para visualizar la fundamentación pedagógica DQR Nivel 6, la justificación de demanda industrial guatemalteca (CIG / AGEXPORT) y la inserción de Inteligencia Artificial.
+                </p>
+            </div>
+
+            <div class="space-y-8" id="cardsAuditContainer">
+
+    <!-- BLOQUE DE LÍNEA FORMATIVA: Línea Formativa 1: Formación Humana y Ética -->
+    <div class="linea-audit-group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" data-linea="linea-etica">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-3">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-blue-50 text-[#22376D] flex items-center justify-center font-black">
+                    <i data-lucide="shield" class="w-5 h-5 text-[#EC9123]"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#152244]">
+                        Línea Formativa 1: Formación Humana y Ética
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Eje Transversal Antropológico, Liderazgo Ético y Deontología Profesional</p>
+                </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-[#22376D] text-xs font-bold border border-slate-200">
+                4 Asignaturas
+            </span>
+        </div>
+
+        <div class="space-y-4">
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b1_etica_general_1" data-bimestre="1" data-linea="linea-etica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b1_etica_general_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B1</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B1-C1
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 1: B1-C1 • Ética General 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Antropología y Sentido Trascendente del Trabajo
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b1_etica_general_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b1_etica_general_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Antropología básica abstracta y conceptos teóricos sobre 'capacidades para ser un buen técnico'.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Discusiones metafísicas teóricas abstractas y casuística de salón sin relación con la planta industrial o el taller.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> El sentido trascendente del trabajo profesional (ideario Kinal): el trabajo como medio de realización personal, perfeccionamiento y servicio. Dignidad inalienable del operario por encima de la producción fabril y el capital.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Inteligencia emocional, comunicación no violenta, liderazgo con espíritu de servicio en la supervisión de piso, templanza y manejo de la presión laboral.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La industria guatemalteca (CIG) señala que la principal causa de despidos y rotación en mandos medios no es la falta de conocimiento técnico, sino las fallas en el trato humano, prepotencia o incapacidad de liderar con serenidad.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b2_etica_general_2" data-bimestre="2" data-linea="linea-etica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b2_etica_general_2')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B2</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B2-C1
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 2: B2-C1 • Ética General 2</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Libertad Responsable, Compliance e Integridad Industrial
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b2_etica_general_2">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b2_etica_general_2">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Normas básicas de convivencia escolar y repaso de reglamentos internos.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Análisis superficial de reglamentos disciplinarios sin dilemas morales de ingeniería.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Libertad personal responsable (valor Kinal): la responsabilidad moral, civil y penal de las firmas técnicas en bitácoras, órdenes de trabajo y planos.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Compliance e Integridad Industrial: Prevención de sobornos de proveedores por repuestos genéricos defectuosos, conflicto de intereses en contrataciones y cultura de seguridad psicológica para reportar incidentes sin temor a represalias.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La corrupción técnica (comisiones clandestinas por compra de repuestos de mala calidad) arriesga vidas y causa pérdidas millonarias. El sello ético Kinal forma mandos medios inquebrantables.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b3_etica_profesional_1" data-bimestre="3" data-linea="linea-etica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b3_etica_profesional_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B3</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B3-C1
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 3: B3-C1 • Ética Profesional 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Automatización, Inteligencia Artificial y la Transición Justa
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b3_etica_profesional_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b3_etica_profesional_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Códigos deontológicos genéricos tradicionales del técnico y reglamentación profesional estática.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Textos teóricos del siglo XIX sin referencia a las tecnologías digitales ni al impacto del software en el empleo.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> La ética de la automatización y el futuro del trabajo: la transición justa. Reentrenamiento de operarios (Reskilling/Upskilling) frente al despido masivo por automatización. La máquina al servicio del ser humano.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Ética en la Inteligencia Artificial Industrial: Detección de sesgos algorítmicos en evaluaciones de desempeño, límites éticos del monitoreo digital de operarios (biometría, cámaras inteligentes) y secreto industrial al usar herramientas de IA generativa.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La adopción de visión artificial y software predictivo en plantas de Guatemala plantea dilemas de privacidad y desplazamiento laboral que el supervisor debe gestionar con criterio humanista.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b4_etica_profesional_2" data-bimestre="4" data-linea="linea-etica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b4_etica_profesional_2')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B4</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B4-C1
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 4: B4-C1 • Ética Profesional 2</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Principio Human-in-the-Loop (HITL), Juicio Crítico y el Trabajo Bien Hecho
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b4_etica_profesional_2">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b4_etica_profesional_2">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Conclusiones generales de carrera y código ético de egreso formal.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Discursos solemnes abstractos sin debate de casos reales de negligencia o impacto tecnológico.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> La excelencia moral del 'trabajo bien hecho' (Kinal): rechazo al facilismo del 'copia y pega' de respuestas de IA en memorias técnicas, veracidad de firmas en peritajes y ética ambiental (gestión de residuos peligrosos y e-waste).
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> El Principio Human-in-the-Loop (HITL) en Operaciones Industriales: La responsabilidad ética y legal jamás se delega en un algoritmo o sistema autónomo. El supervisor humano como tomador de decisiones final en paradas de emergencia, seguridad y sanciones; superación del sesgo de automatización (Automation Bias).
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La inteligencia artificial y los algoritmos no van a la cárcel ni tienen conciencia moral. La ley y la ética exigen que haya siempre un ser humano profesionalmente responsable en el bucle de control.</p>
+</div>
+
+
+        </div>
+    </article>
+
+        </div>
+    </div>
+    <!-- BLOQUE DE LÍNEA FORMATIVA: Línea Formativa 2: Gestión y Supervisión Industrial -->
+    <div class="linea-audit-group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" data-linea="linea-gestion">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-3">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-blue-50 text-[#22376D] flex items-center justify-center font-black">
+                    <i data-lucide="clipboard-list" class="w-5 h-5 text-[#EC9123]"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#152244]">
+                        Línea Formativa 2: Gestión y Supervisión Industrial
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Eje Operativo de Supervisión, Administración Técnica, SSO y Mejora Continua</p>
+                </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-[#22376D] text-xs font-bold border border-slate-200">
+                8 Asignaturas
+            </span>
+        </div>
+
+        <div class="space-y-4">
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b1_fundamentos_administracion" data-bimestre="1" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b1_fundamentos_administracion')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B1</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B1-C2
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 1: B1-C2 • Fundamentos de la Administración</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Liderazgo Ágil de Mandos Medios y Coordinación de Equipos
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b1_fundamentos_administracion">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b1_fundamentos_administracion">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Escuelas clásicas de la administración (Taylor, Fayol, Weber), organigramas piramidales rígidos y manuales de puestos en papel.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Memorización de biografías históricas de la administración y diseño de organigramas estáticos de papel no aplicables a plantas ágiles.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Principios de administración moderna para mandos medios técnicos: estructuras celulares de trabajo, empoderamiento de cuadrillas operativas y rendición de cuentas (Accountability).
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Habilidades de supervisión moderna: delegación efectiva, retroalimentación constructiva (Feedback 1-on-1), gestión de la diversidad generacional en taller y el supervisor como mentor técnico bajo el ideario Kinal.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Las plantas de manufactura en Guatemala requieren supervisores que no sean 'capataces de vigilancia', sino líderes ágiles capaces de alinear los objetivos del turno con los indicadores del negocio.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b1_planeacion_control_trabajo" data-bimestre="1" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b1_planeacion_control_trabajo')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B1</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B1-C3
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 2: B1-C3 • Planeación y Control del Trabajo</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Metodología Visual Kanban, Cronogramas Gantt y Eficiencia OEE
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b1_planeacion_control_trabajo">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b1_planeacion_control_trabajo">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Cronogramas manuales en papel, presupuestos estáticos de gasto y sistemas de control por amonestaciones punitivas.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Gráficas de barras dibujadas a mano en cartulina y control punitivo por memorándums.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Planificación operativa de turnos de trabajo, balanceo de cargas operativas y diagramas de Gantt digitales para paradas de planta y mantenimientos programados.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Gestión visual mediante Tableros Kanban (físicos y digitales: Trello/Notion), cálculo de Eficiencia Global de Equipos (OEE - Overall Equipment Effectiveness = Disponibilidad × Rendimiento × Calidad) y software de gestión de tareas.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Las paradas no programadas en líneas continuas (alimentos, bebidas, plásticos) cuestan miles de quetzales por hora; el supervisor debe dominar la métrica OEE para eliminar las 6 grandes pérdidas de los equipos.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b2_herramientas_contables" data-bimestre="2" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b2_herramientas_contables')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B2</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B2-C2
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 3: B2-C2 • Herramientas Contables para la Supervisión</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Costos Industriales (MPD-MOD-CIF), Downtime Cost y Presupuestos OPEX
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b2_herramientas_contables">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b2_herramientas_contables">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Contabilidad mercantil general (partidas dobles, libros diarios y balances para tiendas de comercio al por menor).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Asientos contables fiscales de partida doble y elaboración de balances generales bancarios no aplicables a un supervisor de taller.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Contabilidad de Costos Industriales: clasificación de costos en Materia Prima Directa (MPD), Mano de Obra Directa (MOD) y Costos Indirectos de Fabricación (CIF).
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Control de Costos de Planta: Cálculo del costo real por hora de máquina parada (Downtime Cost), costeo de órdenes de trabajo de mantenimiento y gestión de presupuestos operativos (OPEX de taller) en Excel.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El supervisor de producción o mantenimiento debe ser capaz de justificar económicamente por qué una parada técnica de 2 horas costó Q50,000 en mermas y salarios no devengados.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b2_administracion_rrhh_sso" data-bimestre="2" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b2_administracion_rrhh_sso')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B2</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B2-C3
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 4: B2-C3 • Administración de Recursos Humanos y SSO</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Código de Trabajo de Guatemala, Planillas del IGSS y Acuerdo Gubernativo 229-2014
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b2_administracion_rrhh_sso">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b2_administracion_rrhh_sso">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Formatos de reclutamiento estándar y botiquín de primeros auxilios general.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Teoría abstracta de psicología industrial y formatos de contratación de oficina sin base legal laboral guatemalteca.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Legislación Laboral de Guatemala: Código de Trabajo (jornadas diurna, mixta y nocturna, horas extras, asuetos y libro de salarios). Liderazgo de cuadrillas operativas y gestión del clima laboral.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Planillas y Cálculo del IGSS en Guatemala + SSO (Acuerdo 229-2014): Estructura salarial, cuota laboral del IGSS (4.83%), cuota patronal (10.67% IGSS + 1% IRTRA + 1% INTECAP = 12.67%), planilla electrónica (IGSS Digital), libro de salarios, cálculo de finiquitos y prestaciones irrenunciables (Bono 14, Aguinaldo, vacaciones, indemnización) y cumplimiento de SSO con Comités Bipartitos y Matriz IPERC.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El supervisor técnico en Guatemala lidera personal directo y debe dominar la legislación laboral, el cálculo de las deducciones del IGSS y el Acuerdo 229-2014 para evitar multas del MINTRAB y accidentes de trabajo.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b3_metodos_produccion" data-bimestre="3" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b3_metodos_produccion')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B3</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B3-C2
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 5: B3-C2 • Métodos de Producción</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Lean Manufacturing, Estandarización 5S y Mapeo de Flujo de Valor (VSM)
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b3_metodos_produccion">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b3_metodos_produccion">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Estudios de tiempos y movimientos con cronómetro tradicional y diagramas de operaciones analíticos (OPC).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Cronometraje punitivo tradicional manual sin participación del operario y formatos estáticos de estudio de métodos.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Balanceo de líneas de ensamble, cálculo de tiempo de ciclo (Takt Time / Cycle Time) y estandarización de procedimientos operativos de trabajo.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Manufactura Esbelta (Lean Manufacturing Aplicado): Identificación y erradicación de los 8 desperdicios industriales (Mudas), Mapeo de Flujo de Valor (VSM - Value Stream Mapping), técnica SMED para cambio rápido de herramientas y talleres Kaizen en piso.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Las multinacionales y exportadoras guatemaltecas (AGEXPORT) exigen estándares de manufactura de clase mundial (WCM) para competir internacionalmente.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b3_servicio_cliente" data-bimestre="3" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b3_servicio_cliente')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B3</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B3-C3
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 6: B3-C3 • Servicio al Cliente</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Gestión de Clientes B2B, Acuerdos SLA y Calidad en Servicios Técnicos
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b3_servicio_cliente">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b3_servicio_cliente">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Protocolos de cortesía telefónica, telemercadeo y atención en mostrador de ventas al menudeo.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Técnicas de venta retail de mostrador, etiqueta telefónica de call center y persuasión comercial al menudeo.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Gestión del Cliente Interno: relación de servicio y colaboración técnica entre el departamento de mantenimiento, ingeniería de planta y producción.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Servicio Técnico Industrial B2B y SLAs: Acuerdos de Nivel de Servicio (Service Level Agreements), gestión de garantías de maquinaria, soporte técnico postventa y espíritu de servicio cristiano-social según Kinal.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El cliente de un supervisor técnico es la gerencia de producción o el cliente corporativo B2B que adquiere maquinaria; la comunicación debe ser técnica y basada en acuerdos de disponibilidad.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b4_control_calidad" data-bimestre="4" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b4_control_calidad')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B4</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B4-C2
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 7: B4-C2 • Control de Calidad</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Sistemas de Gestión ISO 9001:2015, Metodología Six Sigma (DMAIC) y AMFE
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b4_control_calidad">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b4_control_calidad">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Inspección final de piezas por muestreo al término de línea (detección reactiva de defectos a posteriori).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Control reactivo de calidad que se limita a separar producto no conforme al final sin buscar causas raíz.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Sistemas de Gestión de Calidad (ISO 9001:2015) y las 7 herramientas de Ishikawa: Diagrama Causa-Efecto, Diagrama de Pareto 80/20, estratificación y hojas de verificación.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Aseguramiento de Calidad en la Fuente y Metodología Six Sigma (DMAIC): Dispositivos a prueba de errores (Poka-Yoke), auditorías internas de proceso, matrices AMFE (Análisis Modal de Fallos y Efectos) y estandarización para cero defectos.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Las empresas guatemaltecas exportadoras certificadas en ISO exigen mandos medios que dominen herramientas para erradicar defectos en el origen, no inspectores que cuenten piezas dañadas.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b4_fundamentos_marketing" data-bimestre="4" data-linea="linea-gestion">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b4_fundamentos_marketing')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B4</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B4-C3
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 8: B4-C3 • Fundamentos del Marketing</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Business Intelligence (Power BI), Marketing Industrial B2B y Dashboards
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b4_fundamentos_marketing">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b4_fundamentos_marketing">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Las 4 P tradicionales (Producto, Precio, Plaza, Promoción) para productos de consumo masivo de retail.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Publicidad masiva para televisión, volantes o técnicas de venta de mostrador de supermercado. No tienen aplicación para un mando medio técnico.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Marketing Estratégico B2B para Empresas Industriales: cotización de servicios técnicos, propuesta de valor técnica y compras corporativas.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Business Intelligence y Analítica de Operaciones (Power BI): Sustituir el tiempo de publicidad por dashboards industriales en tiempo real que muestren métricas de producción, calidad y costos para la alta gerencia.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El supervisor técnico interactúa con gerencia presentando informes de productividad; dominar Power BI para exponer datos duros de planta es la habilidad más cotizada hoy en Guatemala.</p>
+</div>
+
+
+        </div>
+    </article>
+
+        </div>
+    </div>
+    <!-- BLOQUE DE LÍNEA FORMATIVA: Línea Formativa 3: Ciencias Matemáticas y Analítica Aplicada -->
+    <div class="linea-audit-group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" data-linea="linea-matematica">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-3">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-blue-50 text-[#22376D] flex items-center justify-center font-black">
+                    <i data-lucide="calculator" class="w-5 h-5 text-[#EC9123]"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#152244]">
+                        Línea Formativa 3: Ciencias Matemáticas y Analítica Aplicada
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Eje de Modelado Cuantitativo, Estadística Operativa y Evaluación Financiera</p>
+                </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-[#22376D] text-xs font-bold border border-slate-200">
+                4 Asignaturas
+            </span>
+        </div>
+
+        <div class="space-y-4">
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b1_matematica_basica_1" data-bimestre="1" data-linea="linea-matematica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b1_matematica_basica_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B1</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B1-C4
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 1: B1-C4 • Matemática Básica 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Aritmética Cuantitativa, Proporcionalidad y Modelado en Hojas de Cálculo
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b1_matematica_basica_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b1_matematica_basica_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Jerarquía de operaciones básica, regla de tres simple escolar, fracciones manuales y leyes de exponentes abstractas.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Repaso escolar de primero básico (fracciones manuales heterogéneas, mínimo común múltiplo abstracto sin contexto y regla de tres escolar).
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Aritmética cuantitativa y proporcionalidad técnica: razones, factores de escala en planos y especificaciones, porcentajes de variación relativa y absoluta, y cálculo de márgenes operativos.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Modelado Cuantitativo en Hojas de Cálculo (Excel / Sheets): Automatización de fórmulas con referencias relativas y absolutas ($A$1), validación de datos, funciones condicionales y resolución de sistemas de ecuaciones lineales aplicados a balances de recursos y presupuestos.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El supervisor de mando medio en cualquiera de las 7 especialidades necesita calcular rendimientos, presupuestos paramétricos y variaciones de costos sin errores aritméticos, automatizando sus plantillas de cálculo.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b2_matematica_basica_2" data-bimestre="2" data-linea="linea-matematica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b2_matematica_basica_2')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B2</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B2-C4
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 2: B2-C4 • Matemática Básica 2</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Punto de Equilibrio, Modelado de Funciones y Lógica Booleana
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b2_matematica_basica_2">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b2_matematica_basica_2">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Factorización algebraica tradicional de trinomios, productos notables abstractos y geometría plana básica.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Factorización algebraica manual intensiva sin contexto técnico y curvas de maquinaria no transversales.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Modelado de funciones operativas en hojas de cálculo: funciones lineales aplicadas a cálculo de Punto de Equilibrio (Costos Fijos / Margen de Contribución) y funciones exponenciales para depreciación de activos fijos.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Lógica Matemática, Tablas de Verdad y Algoritmos Básicos: Proposiciones lógicas, compuertas lógicas (AND, OR, NOT, XOR), tablas de verdad, funciones lógicas anidadas en Excel (SI, Y, O, BUSCARV/XLOOKUP) y diagramas de flujo normalizados (ANSI/ISO) para diagramación de procesos.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La toma de decisiones de un supervisor técnico requiere modelar el punto de equilibrio de una operación y dominar la lógica formal booleana que sustenta tanto la formulación en Excel como la programación.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b3_matematica_aplicada_1" data-bimestre="3" data-linea="linea-matematica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b3_matematica_aplicada_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B3</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B3-C4
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 3: B3-C4 • Matemática Aplicada 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Estadística Práctica Aplicada, Principio de Pareto y Análisis de Variabilidad
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b3_matematica_aplicada_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b3_matematica_aplicada_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Cálculo manual de medias, medianas, modas y elaboración de gráficas de barras en papel.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Cálculos matemáticos teóricos complejos de Seis Sigma avanzado, reglas de Western Electric de laboratorio y fórmulas estadísticas abstractas que sobrecargan al estudiante.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Estadística Descriptiva Práctica en Hojas de Cálculo: medidas de tendencia central (media, mediana, moda), medidas de dispersión (desviación estándar, varianza) y percentiles aplicados a datos de tiempos, costos y mediciones en Excel.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Análisis Operativo de Datos y Principio de Pareto (80/20): Tablas de distribución de frecuencias, histogramas, diagramas de Pareto para priorización de problemas/defectos, y diagramas de dispersión con líneas de tendencia lineal simple (R y R²) para proyecciones básicas.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>El supervisor no necesita estadística teórica universitaria pura, sino dominar la analítica descriptiva en Excel y la ley de Pareto para identificar rápidamente el 20% de las causas que generan el 80% de los retrasos o fallas.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b4_matematica_aplicada_2" data-bimestre="4" data-linea="linea-matematica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b4_matematica_aplicada_2')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B4</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B4-C4
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 4: B4-C4 • Matemática Aplicada 2</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Ingeniería Económica, Interés Compuesto y Evaluación de Inversiones (VPN/TIR)
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b4_matematica_aplicada_2">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b4_matematica_aplicada_2">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Definiciones cualitativas del valor del dinero en el tiempo y fuentes de crédito bancario.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Teoría monetaria macroeconómica que no incide en la toma de decisiones técnicas de taller.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Tasas de interés nominales vs. efectivas (TEA), inflación y depreciación de activos fijos según la ley del ISR de Guatemala (línea recta).
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Interés Compuesto y Evaluación Financiera de Inversiones: Fórmulas de interés compuesto, valor futuro (VF), valor presente (VP), anualidades y tablas de amortización (método francés y alemán). Evaluación de proyectos de automatización: VPN (Valor Presente Neto), TIR (Tasa Interna de Retorno), Payback y análisis de reemplazo de maquinaria (¿reparar o sustituir?).
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Para que la gerencia apruebe la compra de un variador de frecuencia o un robot, el supervisor debe demostrar que el VPN es positivo y que el Payback es menor a 18 meses gracias al ahorro eléctrico.</p>
+</div>
+
+
+        </div>
+    </article>
+
+        </div>
+    </div>
+    <!-- BLOQUE DE LÍNEA FORMATIVA: Línea Formativa 4: Física Aplicada y Tecnología 4.0 -->
+    <div class="linea-audit-group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" data-linea="linea-fisica">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-3">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-blue-50 text-[#22376D] flex items-center justify-center font-black">
+                    <i data-lucide="zap" class="w-5 h-5 text-[#EC9123]"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#152244]">
+                        Línea Formativa 4: Física Aplicada y Tecnología 4.0
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Eje de Fundamentos Físicos de Planta, Sensores, Eficiencia y Programación</p>
+                </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-[#22376D] text-xs font-bold border border-slate-200">
+                4 Asignaturas
+            </span>
+        </div>
+
+        <div class="space-y-4">
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b1_fisica_basica_1" data-bimestre="1" data-linea="linea-fisica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b1_fisica_basica_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B1</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B1-C5
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 1: B1-C5 • Física Básica 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Estática, Equilibrio de Fuerzas, Torque, Trabajo y Máquinas Simples
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b1_fisica_basica_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b1_fisica_basica_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Cinemática y dinámica teórica idealizada (tiro parabólico de libro, planos inclinados sin fricción y fórmulas de bachillerato).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Problemas de física idealizada sin rozamiento, memorización de fórmulas abstractas y análisis complejo de vibraciones mecánicas no aplicable a técnicos generales.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Estática y equilibrio de fuerzas: vectores coplanares, diagramas de cuerpo libre, primera condición de equilibrio (sumatoria F = 0) y segunda condición de equilibrio: torque o momento de fuerza (sumatoria M = 0) para estabilidad de estructuras y equipos.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Trabajo, Potencia y Máquinas Simples: Cálculo de trabajo mecánico (W = F·d), potencia (Watts y HP), rendimiento mecánico y aplicaciones de máquinas simples (poleas fijas/móviles, polipastos de izaje, palancas, planos inclinados y fricción real de anclajes).
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Todo mando medio técnico supervisa operaciones de izaje de cargas, fijación de soportes, apriete de pernos o traslado de equipos, donde el equilibrio de fuerzas y la ventaja mecánica son vitales para la seguridad y la integridad física.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b2_fisica_aplicada_1" data-bimestre="2" data-linea="linea-fisica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b2_fisica_aplicada_1')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B2</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B2-C5
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 2: B2-C5 • Física Aplicada 1</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Física de Materiales, Resistencia Mecánica y Propiedades Térmico-Dieléctricas
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b2_fisica_aplicada_1">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b2_fisica_aplicada_1">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Hidrostática básica (principio de Pascal, prensas hidráulicas ideales y vasos comunicantes).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Temarios hiperespecializados de redes hidráulicas complejas, oleohidráulica pesada o cálculos de bombas no aplicables a carreras como desarrollo de software, construcción o telecomunicaciones.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Física de Materiales y Esfuerzos Mecánicos: Tensión, compresión, cortante, flexión y torsión. Ley de Hooke, módulo de Young (elasticidad), límite elástico y coeficiente de seguridad admisible en proyectos técnicos.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Propiedades Físico-Mecánicas, Térmicas y Dieléctricas: Dureza, tenacidad, fatiga de materiales, dilatación térmica lineal y juntas de expansión; propiedades eléctricas de conductores, aislantes y semiconductores, y criterios de prevención de corrosión.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>Todas las especialidades del TSU interactúan con materiales físicos: estructuras de soporte, carcasas de servidores, cables conductores, ductos, chasis o piezas mecánicas. Comprender el esfuerzo, la dilatación y el aislamiento previene fallas catastróficas.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b3_fisica_aplicada_2" data-bimestre="3" data-linea="linea-fisica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b3_fisica_aplicada_2')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B3</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B3-C5
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 3: B3-C5 • Física Aplicada 2</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Energía, Eficiencia Energética, Tarifas Industriales y Sostenibilidad
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b3_fisica_aplicada_2">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b3_fisica_aplicada_2">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Leyes de gases ideales teóricos (PV=nRT) y experimentos escolares de calorimetría de mezclas de agua.</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Termodinámica pesada de calderas industriales pirotubulares, tablas de vapor saturado y ciclos Rankine de plantas térmicas no aplicables a software, construcción, telecom o electrónica.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Física de la Energía y Balances Operativos: Principio de conservación de la energía (Ein = Eout + Pérdidas), formas de energía (térmica, eléctrica, mecánica) y unidades prácticas de energía y potencia (Joules, BTU, kW y kWh).
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Eficiencia Energética, Facturación Eléctrica y Climatización Básica: Cálculo del consumo en kWh y análisis de tarifas eléctricas industriales de Guatemala (EEGSA/ENERGUATE); modos de transferencia de calor y climatización básica (HVAC / enfriamiento de equipos); y fundamentos de energía solar fotovoltaica.
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La energía es el principal costo operativo transversal en cualquier empresa técnica: climatización de cuartos de servidores, consumo de talleres, alimentación de radiobases o edificaciones eficientes.</p>
+</div>
+
+
+        </div>
+    </article>
+<article class="audit-card-block bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition"
+             id="card-b4_fisica_aplicada_3" data-bimestre="4" data-linea="linea-fisica">
+        <div class="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3 cursor-pointer select-none"
+             onclick="toggleCardDetail('b4_fisica_aplicada_3')">
+            <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-[#22376D] text-white text-xs font-black">B4</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold font-mono">
+                    B4-C5
+                </span>
+                <h3 class="text-base font-bold text-[#22376D] brand-serif">Asignatura 4: B4-C5 • Física Aplicada 3</h3>
+                <span class="text-xs text-slate-500 font-normal hidden md:inline">
+                    — Sensores Transversales, Instrumentación y Programación Aplicada con Python
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[#22376D] text-xs font-bold hover:bg-slate-100 transition" id="toggle-btn-b4_fisica_aplicada_3">
+                    Ver Dictamen ▾
+                </span>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4 hidden" id="card-body-b4_fisica_aplicada_3">
+            
+<table class="audit-table">
+<thead>
+<tr>
+<th style="width: 25%;">Dimensión</th>
+<th style="width: 15%;">Dictamen</th>
+<th style="width: 60%;">Contenido y Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contenido Original (Pensum Previo)</strong></td>
+<td><span class="tag-pill tag-original">Original</span></td>
+<td>Leyes de Ohm, Watts y Kirchhoff en circuitos simples de corriente continua (DC).</td>
+</tr>
+<tr class="row-anular">
+<td><strong>Lo que se Anula</strong></td>
+<td><span class="tag-pill tag-anular">Anular</span></td>
+<td>
+<div class="audit-callout callout-red">
+<strong>Motivo de anulación:</strong> Electricidad trifásica pesada especializada de subestaciones y telemetría compleja de vibraciones mecánicas que no aplica transversalmente a todas las especialidades.
+                            </div>
+</td>
+</tr>
+<tr class="row-actualizar">
+<td><strong>Contenidos a Actualizar</strong></td>
+<td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+<td>
+<div class="audit-callout callout-yellow">
+<strong>Modernización:</strong> Fundamentos Físicos de Medición y Sensores Transversales: Principios de transductores para medición de variables físicas (sensores de temperatura, presencia/proximidad, nivel, presión y ópticos); lectura de entradas digitales y señales analógicas escaladas.
+                            </div>
+</td>
+</tr>
+<tr class="row-nuevo">
+<td><strong>Nuevos Conocimientos</strong></td>
+<td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+<td>
+<div class="audit-callout callout-blue">
+<strong>Innovación 2026:</strong> Lógica de Programación Aplicada con Python: Sintaxis práctica de Python para técnicos (variables, condicionales if/else, bucles for/while, funciones), automatización de cálculos repetitivos, procesamiento de archivos de datos (CSV) y generación de gráficos técnicos con librerías estándar (matplotlib).
+                            </div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="audit-justificacion">
+<strong>📈 Justificación y Demanda del Mercado Guatemalteco (CIG / AGEXPORT):</strong>
+<p>La industria moderna 4.0 exige que todo mando medio técnico, sin importar su especialidad, posea pensamiento computacional, sepa interpretar datos de sensores y pueda escribir scripts básicos para automatizar tareas y reportes.</p>
+</div>
+
+
+        </div>
+    </article>
+
+        </div>
+    </div>
+</div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER INSTITUCIONAL (SOLO LOGO BLANCO FUNDACIÓN KINAL)   -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#0D162C] text-white border-t-4 border-[#EC9123] py-12 px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800 pb-8">
+                <div class="flex items-center gap-4">
+                    <img src="assets/fundacion_kinal_blanco.png" alt="Fundación Kinal" class="h-10 sm:h-12 w-auto object-contain">
+                </div>
+                <div class="text-xs text-slate-400 max-w-md text-left md:text-right">
+                    <strong class="text-white block mb-0.5">Fundación Kinal — Escuela Técnica Superior (ETS)</strong>
+                    Auditoría Curricular Oficial del Programa de Técnico Superior Universitario (TSU) con aval de la Universidad del Istmo (UNIS).
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <div>
+                    © 2026 Fundación Kinal. Todos los derechos reservados. Ciudad de Guatemala.
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-slate-400">Ideario: <em>«El trabajo bien hecho»</em></span>
+                    <span>•</span>
+                    <span class="text-[#EC9123]">Aval UNIS-Kinal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica Interactiva de Filtrado y Acordeones -->
+    <script>
+        lucide.createIcons();
+
+        let currentBimestreFilter = 'all';
+        let currentLineaFilter = 'all';
+
+        function filterBimestre(b, btn) {
+            currentBimestreFilter = b;
+
+            // Actualizar estilo pestañas
+            const btns = document.querySelectorAll('#tab-all, #tab-1, #tab-2, #tab-3, #tab-4');
+            btns.forEach(el => {
+                el.classList.remove('bg-[#22376D]', 'text-white', 'shadow-xs');
+                el.classList.add('text-slate-700');
+            });
+            btn.classList.add('bg-[#22376D]', 'text-white', 'shadow-xs');
+            btn.classList.remove('text-slate-700');
+
+            applyCombinedFilter();
+        }
+
+        function filterLineaAudit(l) {
+            currentLineaFilter = l;
+            applyCombinedFilter();
+        }
+
+        function applyCombinedFilter() {
+            // 1. Filtrar filas de la tabla
+            const rows = document.querySelectorAll('.audit-row');
+            rows.forEach(r => {
+                const rB = r.getAttribute('data-bimestre');
+                const rL = r.getAttribute('data-linea');
+                
+                const matchB = (currentBimestreFilter === 'all' || rB === currentBimestreFilter);
+                const matchL = (currentLineaFilter === 'all' || rL === currentLineaFilter);
+
+                r.style.display = (matchB && matchL) ? '' : 'none';
+            });
+
+            // 2. Filtrar tarjetas
+            const cards = document.querySelectorAll('.audit-card-block');
+            cards.forEach(c => {
+                const cB = c.getAttribute('data-bimestre');
+                const cL = c.getAttribute('data-linea');
+
+                const matchB = (currentBimestreFilter === 'all' || cB === currentBimestreFilter);
+                const matchL = (currentLineaFilter === 'all' || cL === currentLineaFilter);
+
+                c.style.display = (matchB && matchL) ? 'block' : 'none';
+            });
+        }
+
+        function toggleCardDetail(cid) {
+            const body = document.getElementById('card-body-' + cid);
+            const btn = document.getElementById('toggle-btn-' + cid);
+            if (!body) return;
+
+            if (body.classList.contains('hidden')) {
+                body.classList.remove('hidden');
+                if (btn) btn.innerHTML = 'Ocultar ▲';
+            } else {
+                body.classList.add('hidden');
+                if (btn) btn.innerHTML = 'Ver Dictamen ▾';
+            }
+        }
+
+        function toggleAllCards(expand) {
+            const bodies = document.querySelectorAll('[id^="card-body-"]');
+            bodies.forEach(b => {
+                const cid = b.id.replace('card-body-', '');
+                const btn = document.getElementById('toggle-btn-' + cid);
+                if (expand) {
+                    b.classList.remove('hidden');
+                    if (btn) btn.innerHTML = 'Ocultar ▲';
+                } else {
+                    b.classList.add('hidden');
+                    if (btn) btn.innerHTML = 'Ver Dictamen ▾';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

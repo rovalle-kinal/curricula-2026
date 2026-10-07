@@ -3,494 +3,755 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecosistema Curricular & Didáctico Kinal 2026 | Portal Maestro</title>
+    <title>Auditoría y Revisión Curricular de Temarios | Escuela Técnica Superior — Fundación Kinal</title>
+    
+    <!-- Favicon Oficial: Escudo de Fundación Kinal -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2322376D'/><path d='M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z' fill='%23EC9123'/><path d='M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z' fill='%23FFD166'/></svg>">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts complementarias para renderizado web fiel a Times y Arial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
-        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #09172e 0%, #0f2d59 50%, #1e3a8a 100%);
+        /* =========================================================
+           IDENTIDAD GRÁFICA OFICIAL — FUNDACIÓN KINAL
+           Manual de Identidad Corporativa:
+           - Títulos: Times New Roman / Times Bold
+           - Complementaria / Lectura: Arial (Regular, Italic, Bold)
+           - Color Azul Kinal: C:100 M:90 Y:30 K:15 -> RGB(34, 55, 109) -> #22376D
+           - Color Llama Kinal: C:5 M:50 Y:100 K:0  -> RGB(236, 145, 35) -> #EC9123
+           ========================================================= */
+        :root {
+            --kinal-blue: #22376D;
+            --kinal-blue-dark: #152244;
+            --kinal-blue-deep: #0D162C;
+            --kinal-blue-light: #2E4A91;
+            --kinal-flame: #EC9123;
+            --kinal-gold: #F5A623;
+            --kinal-gray-8c: #888B8D;
+            --kinal-bg-light: #F8F9FA;
+            --kinal-border: #DDE2E5;
         }
-    </style>
 
-    <!-- ========================================================= -->
-    <!-- KINAL MOBILE ENGINE - ZERO CLIPPING RESPONSIVE SYSTEM      -->
-    <!-- ========================================================= -->
-    <style id="kinal-mobile-responsive-system">
+        body {
+            font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", sans-serif;
+            background-color: var(--kinal-bg-light);
+            color: #1E293B;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografía Corporativa Oficial de Kinal para Títulos */
+        h1, h2, h3, h4, .font-kinal-title, .brand-serif {
+            font-family: "Times New Roman", Times, "Playfair Display", Georgia, serif;
+            letter-spacing: -0.01em;
+        }
+
+        .bg-kinal-blue { background-color: var(--kinal-blue); }
+        .bg-kinal-blue-dark { background-color: var(--kinal-blue-dark); }
+        .text-kinal-blue { color: var(--kinal-blue); }
+        .border-kinal-blue { border-color: var(--kinal-blue); }
+
+        .bg-kinal-flame { background-color: var(--kinal-flame); }
+        .text-kinal-flame { color: var(--kinal-flame); }
+        .border-kinal-flame { border-color: var(--kinal-flame); }
+
+        .hero-kinal-gradient {
+            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
+        }
+
+        /* Código de color auditado institucional */
+        .status-delete { background-color: #FEF2F2; border-left: 4px solid #DC2626; color: #991B1B; }
+        .status-update { background-color: #FEFCE8; border-left: 4px solid #EAB308; color: #854D0E; }
+        .status-new    { background-color: #EFF6FF; border-left: 4px solid #2563EB; color: #1E40AF; }
+        .status-keep   { background-color: #F0FDF4; border-left: 4px solid #16A34A; color: #166534; }
+        .status-ia     { background-color: #FAF5FF; border-left: 4px solid #9333EA; color: #6B21A8; }
+
+        /* Estilos móviles sin desborde */
         @media (max-width: 767px) {
-            /* 1. Box model y contención estricta en 100% viewport */
-            *, *::before, *::after {
-                box-sizing: border-box !important;
-            }
-            html, body {
-                width: 100% !important;
-                max-width: 100vw !important;
-                overflow-x: hidden !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                -webkit-text-size-adjust: 100% !important;
-                touch-action: pan-y pinch-zoom;
-            }
-
-            /* 2. Contenedores fluidos sin desbordes */
-            main, section, header, footer, 
-            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-                box-sizing: border-box !important;
-            }
-
-            /* 3. Tarjetas de cursos (pensums) y contenedores modulares */
-            .grid {
-                width: 100% !important;
-                min-width: 0 !important;
-            }
-            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-                box-sizing: border-box !important;
-            }
-
-            /* 4. Ruptura de palabras y textos para evitar que empujen el ancho */
-            h1, h2, h3, h4, h5, p, span, a, div {
-                overflow-wrap: break-word !important;
-                word-break: break-word !important;
-            }
-
-            /* 5. Scroll horizontal fluido sin barras antiestéticas */
-            .no-scrollbar::-webkit-scrollbar, 
-            nav::-webkit-scrollbar,
-            .overflow-x-auto::-webkit-scrollbar {
-                display: none !important;
-                width: 0 !important;
-                height: 0 !important;
-            }
-            .no-scrollbar, 
-            nav,
-            .overflow-x-auto {
-                -ms-overflow-style: none !important;
-                scrollbar-width: none !important;
-                -webkit-overflow-scrolling: touch !important;
-            }
-
-            /* 6. Ergonomía táctil: botones y controles con altura mínima */
-            .tab-btn, button, select, input[type="text"] {
-                min-height: 42px;
-                touch-action: manipulation;
-            }
-
-            /* 7. Tab Bar y Navegación Horizontal Swipeable */
-            nav.flex.overflow-x-auto, 
-            .tab-nav-wrapper {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                padding-top: 4px !important;
-                padding-bottom: 4px !important;
-            }
-            nav.flex.overflow-x-auto > * {
-                flex-shrink: 0 !important;
-            }
-
-            /* 8. Padding de lectura responsivo en pantallas móviles */
-            main {
-                padding-left: 12px !important;
-                padding-right: 12px !important;
-                padding-top: 14px !important;
-                padding-bottom: 24px !important;
-            }
-            header .max-w-7xl, header .max-w-6xl {
-                padding-left: 12px !important;
-                padding-right: 12px !important;
-                padding-top: 8px !important;
-                padding-bottom: 8px !important;
-            }
-
-            /* 9. Envoltura táctil y cue de desplazamiento para tablas y matrices */
-            .table-responsive-mobile, 
-            .curriculum-grid-container {
-                width: 100% !important;
-                max-width: 100% !important;
-                overflow-x: auto !important;
-                -webkit-overflow-scrolling: touch !important;
-                border-radius: 12px !important;
-            }
-
-            /* 10. Feedback táctil ágil */
-            .tab-btn:active, button:active, .card-hover:active, .area-course-card:active {
-                transform: scale(0.97) !important;
-                transition: transform 0.1s ease !important;
-            }
-
-            /* 11. Botones de descarga de Word apilables o compactos */
-            .btn-doc-group {
-                display: grid !important;
-                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-                gap: 6px !important;
-            }
-            .btn-doc-item {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                justify-content: center !important;
-                padding: 6px 4px !important;
-                font-size: 10px !important;
-                gap: 2px !important;
-                text-align: center !important;
-            }
-        }
-
-        @media (max-width: 1023px) {
-            .session-item {
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
-                transition: all 0.2s ease;
-            }
-            [id$="-detail-card"] {
-                scroll-margin-top: 80px;
-            }
+            *, *::before, *::after { box-sizing: border-box !important; }
+            html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+            .no-scrollbar::-webkit-scrollbar { display: none !important; }
+            .no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         }
     </style>
-
+    <script src="assets/auth_gatekeeper.js"></script>
 </head>
-<body class="antialiased min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
 
-    <!-- Header Corporativo -->
-    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-4">
+    <!-- ========================================================= -->
+    <!-- BARRA INSTITUCIONAL SUPERIOR                              -->
+    <!-- ========================================================= -->
+    <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-3">
-                <span class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-xs tracking-wider uppercase px-2.5 py-1 rounded shadow-sm">
-                    KINAL 2026
+                <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                </span>
+                <span class="text-slate-500">|</span>
+                <span class="text-slate-300 font-medium hidden sm:inline">
+                    Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                </span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-300 font-medium">
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
                 </span>
                 <span class="text-slate-600">|</span>
-                <div class="text-slate-200 font-bold text-sm sm:text-base flex items-center gap-2">
-                    <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-400"></i>
-                    Coordinación Académica & Diseño Curricular
-                </div>
+                <span class="text-emerald-400 font-bold flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                </span>
             </div>
-            <nav class="flex items-center gap-2 sm:gap-3 text-xs">
-                <a href="Cursos/Web/index.html" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black transition flex items-center gap-1 shadow-sm">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Nuevos Cursos
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- HEADER CORPORATIVO (SOLO LOGO ETS & BOTONES 1 PALABRA)     -->
+    <!-- ========================================================= -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-4">
+            
+            <!-- Logotipo de Escuela Técnica Superior (ETS) -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-10 w-auto object-contain transition group-hover:opacity-90">
                 </a>
-                <a href="TSU/index.html" class="px-3 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800 text-amber-300 font-bold transition flex items-center gap-1">
-                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> TSU (3er Año)
+            </div>
+
+            <!-- Navegación y Accesos Directos (1 palabra y mismo color) -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs font-bold">
+                <a href="#areas" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="layers" class="w-4 h-4 text-[#EC9123]"></i> Áreas
                 </a>
-                <a href="Revision_Temarios/index.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition font-medium flex items-center gap-1">
-                    <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Especialidades Técnicas
+                <a href="#auditoria-interactiva" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="check-square" class="w-4 h-4 text-[#EC9123]"></i> Dictámenes
+                </a>
+                <a href="#metodologia" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="file-badge" class="w-4 h-4 text-[#EC9123]"></i> DQR
                 </a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero de Alto Impacto -->
-    <section class="hero-gradient text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-5xl mx-auto text-center space-y-5">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Ciclo Académico 2026 • Marco Alemán DQR 5/6 & Alianza UNIS-Kinal
+    <!-- ========================================================= -->
+    <!-- HERO PRINCIPAL (FONDO AZUL DEGRADADO LIMPIO)              -->
+    <!-- ========================================================= -->
+    <section class="hero-kinal-gradient text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        
+        <div class="max-w-5xl mx-auto space-y-6 relative z-10">
+            
+            <!-- Badge institucional superior -->
+            <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#EC9123] text-xs font-bold tracking-wide uppercase">
+                <span>Escuela Técnica Superior (ETS) • Ciclo Lectivo 2026</span>
             </div>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight text-white">
-                Sistema de Modernización Curricular e Instruccional
+
+            <!-- Título Institucional con tipografía oficial Times -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight brand-serif text-white">
+                Auditoría Curricular y Modernización de Temarios
             </h1>
-            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                Portal central de acceso a los dos grandes pilares pedagógicos de Fundación Kinal: 
-                el <strong>Año Académico del TSU (Técnico Superior Universitario)</strong> y la <strong>Auditoría Curricular de Especialidades Técnicas de Taller (ETS)</strong> con integración transversal de Inteligencia Artificial.
+
+            <p class="text-slate-200 text-sm sm:text-base lg:text-lg max-w-3xl leading-relaxed">
+                Revisión integral de los programas formativos técnicos de taller frente a la demanda real de los sectores productivos de Guatemala, alineados a los estándares de la <strong>Formación Profesional Dual en Alternancia</strong>, el <strong>Marco DQR</strong> y el ideario de Fundación Kinal.
             </p>
 
+            <!-- Cita Doctrinal y Formativa -->
+            <div class="pt-2 text-xs text-slate-300">
+                
+            </div>
+
             <!-- Métricas Clave Consolidadas -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-4xl mx-auto text-left">
-                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10 space-y-1">
-                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Total Asignaturas</div>
-                    <div class="text-3xl font-black text-white">40 Cursos</div>
-                    <div class="text-[11px] text-amber-300">20 TSU + 20 Especialidades</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-6 text-left">
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Cursos de Taller</div>
+                    <div class="text-3xl font-bold brand-serif text-white">20 Programas</div>
+                    <div class="text-[11px] text-[#EC9123] font-medium">4 Grandes Áreas ETS</div>
                 </div>
-                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10 space-y-1">
-                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Carga Presencial</div>
-                    <div class="text-3xl font-black text-white">3,510 hrs</div>
-                    <div class="text-[11px] text-emerald-300">270h TSU + 3,240h Talleres</div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Carga Práctica</div>
+                    <div class="text-3xl font-bold brand-serif text-white">3,240 Horas</div>
+                    <div class="text-[11px] text-emerald-400 font-medium">100% Taller Especializado</div>
                 </div>
-                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10 space-y-1">
-                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Ecosistema IA</div>
-                    <div class="text-3xl font-black text-purple-300">80 Módulos</div>
-                    <div class="text-[11px] text-purple-200">Visión, LLMs, IoT y Simulación</div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
+                    <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Módulos con IA</div>
+                    <div class="text-3xl font-bold brand-serif text-[#EC9123]">20 Módulos</div>
+                    <div class="text-[11px] text-purple-200 font-medium">Transversal Tecnológica</div>
                 </div>
-                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10 space-y-1">
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
                     <div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Aprobación Mínima</div>
-                    <div class="text-3xl font-black text-amber-400">75 Pts</div>
-                    <div class="text-[11px] text-slate-300">Regla Estricta + Inglés A2</div>
+                    <div class="text-3xl font-bold brand-serif text-amber-400">≥ 75 Pts</div>
+                    <div class="text-[11px] text-slate-300 font-medium">Exigencia Kinal sobre 100</div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Selector Principal de Pilares Formativos -->
+    <!-- ========================================================= -->
+    <!-- CONTENIDO PRINCIPAL                                       -->
+    <!-- ========================================================= -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 flex-1">
-        
-        <div class="text-center space-y-2 max-w-2xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Selecciona la Dimensión Curricular a Explorar
-            </h2>
-            <p class="text-slate-500 text-sm">
-                Accede a la troncal universitaria de tercer año o ingresa directamente a las auditorías técnicas por especialidad.
-            </p>
-        </div>
 
-        <div class="grid lg:grid-cols-2 gap-8">
+        <!-- ===================================================== -->
+        <!-- SECCIÓN 1: LAS 4 ÁREAS TÉCNICAS AUDITADAS             -->
+        <!-- ===================================================== -->
+        <section id="areas" class="space-y-8 scroll-mt-24">
             
-            <!-- PILAR 1: TSU (AÑO ACADÉMICO) -->
-            <div class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-600 p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between space-y-6 group">
-                <div class="space-y-5">
-                    <div class="flex justify-between items-start">
-                        <span class="px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-900 font-extrabold text-xs uppercase tracking-wider border border-blue-200">
-                            Año Académico 3er Año • UNIS / Kinal
-                        </span>
-                        <div class="w-12 h-12 rounded-2xl bg-blue-900 text-white flex items-center justify-center group-hover:scale-105 transition shadow-sm">
-                            <i data-lucide="graduation-cap" class="w-6 h-6 text-amber-400"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-900 transition">
-                            Técnico Superior Universitario (TSU)
-                        </h3>
-                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
-                            Troncal académica y transversal de gestión técnica e industrial para los graduados de Kinal que cursan el 3er año universitario avalado por la Universidad del Istmo (UNIS).
-                        </p>
-                    </div>
-
-                    <!-- Componentes Clave TSU -->
-                    <div class="space-y-2.5 pt-2 text-xs">
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                            <span><strong>Mapa Curricular & Red SVG:</strong> Matriz 4x4 y grafo de prerrequisitos interactivo en tiempo real.</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                            <span><strong>4 Líneas Formativas:</strong> Administración Industrial, Ética Integral, Física y Matemática Aplicada (20 asignaturas).</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                            <span><strong>Auditoría & Dictamen TSU:</strong> Contenidos anulados, modernizaciones y justificaciones laborales CIG.</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                            <span><strong>Operación Bimestral:</strong> Dosificación en 4 bimestres con 5 períodos diarios de 50 minutos.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-slate-100 space-y-2">
-                    <a href="TSU/index.html" class="w-full py-3.5 px-6 rounded-2xl bg-blue-900 hover:bg-blue-800 text-white font-extrabold text-sm shadow-md transition flex items-center justify-center gap-2">
-                        Explorar Año Académico del TSU <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
-                    </a>
-                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                        <a href="TSU/temarios_por_linea.html" class="py-2.5 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 font-bold text-xs transition flex items-center justify-center gap-1.5 border border-blue-200 text-center">
-                            <i data-lucide="book-open" class="w-4 h-4 text-blue-600"></i> Temarios por Línea
-                        </a>
-                        <a href="TSU/auditoria_curricular.html" class="py-2.5 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs transition flex items-center justify-center gap-1.5 border border-amber-200 text-center">
-                            <i data-lucide="scale" class="w-4 h-4 text-amber-600"></i> Auditoría & Matriz
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PILAR 2: ESPECIALIDADES TÉCNICAS (ETS) -->
-            <div class="bg-white rounded-3xl border-2 border-slate-200 hover:border-amber-500 p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between space-y-6 group">
-                <div class="space-y-5">
-                    <div class="flex justify-between items-start">
-                        <span class="px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold text-xs uppercase tracking-wider border border-amber-200">
-                            Escuela Técnica Superior (ETS) • 3,240 Horas
-                        </span>
-                        <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center group-hover:scale-105 transition shadow-sm">
-                            <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-amber-800 transition">
-                            Auditoría de Especialidades Técnicas
-                        </h3>
-                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
-                            Revisión curricular integral de los 20 programas técnicos de especialidad en taller, auditados individualmente con código de color (Eliminar, Actualizar, Nuevos, Mantener) e Inteligencia Artificial.
-                        </p>
-                    </div>
-
-                    <!-- Componentes Clave ETS -->
-                    <div class="space-y-2.5 pt-2 text-xs">
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-amber-600 shrink-0"></i>
-                            <span><strong>1,276 Temas Auditados:</strong> Desglose analítico tema por tema con filtros interactivos.</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-amber-600 shrink-0"></i>
-                            <span><strong>Demanda Industrial Guatemala:</strong> Salarios reales (Q4,000 - Q8,000), normas AGIES, CNEE y MinTrab 229.</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-amber-600 shrink-0"></i>
-                            <span><strong>Ecosistema con IA:</strong> 60 casos prácticos de visión artificial, IoT, LLMs y simuladores.</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-amber-600 shrink-0"></i>
-                            <span><strong>Fichas Oficiales ("Reporte"):</strong> Horarios, costos, jornadas y perfiles de egreso oficiales.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-slate-100">
-                    <a href="Revision_Temarios/index.html" class="w-full py-3.5 px-6 rounded-2xl bg-amber-600 hover:bg-amber-700 text-slate-950 font-extrabold text-sm shadow-md transition flex items-center justify-center gap-2">
-                        Explorar Hub de Especialidades Técnicas <i data-lucide="arrow-right" class="w-4 h-4 text-slate-950"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- PILAR 3 / PORTAFOLIO: NUEVOS CURSOS TÉCNICOS EN DESARROLLO -->
-        <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 rounded-3xl p-8 text-white shadow-lg border border-blue-900/50 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div class="space-y-3 max-w-3xl">
-                <div class="flex flex-wrap items-center gap-2">
-                    <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider">
-                        Nuevo Portafolio 2026
-                    </span>
-                    <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 font-bold text-xs">
-                        Marco Alemán DQR 4-5 • Formación Continua
-                    </span>
-                </div>
-                <h3 class="text-2xl sm:text-3xl font-black text-white">
-                    Programas Formativos en Desarrollo: Mecatrónica y Ciberseguridad
-                </h3>
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    Accede a la plataforma web de los nuevos cursos para consultar de forma visual y gráfica sus <strong>Propuestas Formativas Institucionales</strong>, <strong>Temarios Modulares</strong>, <strong>Dosificaciones Didácticas Sesión a Sesión</strong> (40 sesiones completas) y rúbricas terminales sincronizadas con sus documentos oficiales en Word.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-1 text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-white/10 text-slate-200">Mecatrónica Industrial (90h Presencial)</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white/10 text-slate-200">Ciberseguridad & TI (80h Híbrida)</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white/10 text-slate-200">Aprobación ≥ 75 Pts</span>
-                </div>
-            </div>
-            <div class="shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5 w-full md:w-auto">
-                <a href="Cursos/Web/index.html" class="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 text-center">
-                    <i data-lucide="layout-grid" class="w-4 h-4"></i> Explorar Cursos en Web
-                </a>
-                <div class="flex gap-2">
-                    <a href="Cursos/Web/mecatronica.html" class="flex-1 px-3 py-2 rounded-xl bg-blue-900/60 hover:bg-blue-800 text-blue-200 font-bold text-xs text-center border border-blue-500/30 transition">
-                        Mecatrónica
-                    </a>
-                    <a href="Cursos/Web/ciberseguridad.html" class="flex-1 px-3 py-2 rounded-xl bg-indigo-900/60 hover:bg-indigo-800 text-indigo-200 font-bold text-xs text-center border border-indigo-500/30 transition">
-                        Ciberseguridad
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Acceso Directo a las 4 Áreas Técnicas -->
-        <div class="space-y-6 pt-4">
-            <div class="border-b border-slate-200 pb-3 flex flex-wrap justify-between items-end gap-2">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 border-b-2 border-slate-200 pb-4">
                 <div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
-                        Acceso Directo a las 4 Áreas Técnicas Industriales
-                    </h3>
-                    <p class="text-xs text-slate-500 mt-1">Consulta la auditoría curricular completa de cada especialidad técnica.</p>
+                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Especialidades Técnicas de Taller</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold brand-serif text-[#22376D] mt-1">
+                        Distribución de Áreas y Programas Formativos
+                    </h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
+                        Selecciona un área técnica para consultar su diagnóstico de demanda industrial, auditoría curricular y los módulos de especialización.
+                    </p>
                 </div>
-                <a href="Revision_Temarios/index.html" class="text-xs text-blue-700 font-bold hover:underline flex items-center gap-1">
-                    Ver vista resumen de las 4 áreas <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full bg-[#22376D]/10 text-[#22376D] font-bold text-xs border border-[#22376D]/20">
+                        20 Especialidades Activas
+                    </span>
+                </div>
+            </div>
+
+            <!-- Grilla de las 4 Áreas Principales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- ÁREA 1: CONSTRUCCIÓN, TOPOGRAFÍA Y BIM -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#22376D] transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#22376D]/10 text-[#22376D] font-bold text-xs uppercase tracking-wider border border-[#22376D]/20">
+                                6 Cursos • 720 Horas Presenciales
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#EC9123] flex items-center justify-center font-bold">
+                                <i data-lucide="hard-hat" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#22376D]">
+                                Construcción, Topografía y Modelado BIM
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                                Modernización orientada al estándar sísmico AGIES NSE-4, administración de obras bajo el Plan SSO Acuerdo Gubernativo 229-2014, metodología BIM Forum Guatemala, interoperabilidad CAD-BIM, Navisworks clash detection y diseño vial con Civil 3D y LiDAR.
+                            </p>
+                        </div>
+                        
+                        <!-- Listado de Cursos del Área -->
+                        <div class="space-y-1.5 pt-2 border-t border-slate-100">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Cursos de la Especialidad:</div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                <div class="flex items-center gap-1.5">• Fundamentos Construcción (180h)</div>
+                                <div class="flex items-center gap-1.5">• Administración Obras (180h)</div>
+                                <div class="flex items-center gap-1.5">• AutoCAD 2D & 3D (90h)</div>
+                                <div class="flex items-center gap-1.5">• Revit Architecture (90h)</div>
+                                <div class="flex items-center gap-1.5">• Revit Structure & MEP (90h)</div>
+                                <div class="flex items-center gap-1.5">• Autodesk Civil 3D (90h)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-medium">
+                            <strong>Normas:</strong> AGIES NSE-4 • SSO 229-2014 • BIM Forum GT
+                        </span>
+                        <a href="construccion.html" class="px-4 py-2 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-1 shadow-sm">
+                            Ver Temarios <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ÁREA 2: ELECTRICIDAD, ELECTRÓNICA Y AUTOMATIZACIÓN -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#22376D] transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#22376D]/10 text-[#22376D] font-bold text-xs uppercase tracking-wider border border-[#22376D]/20">
+                                5 Cursos • 900 Horas Presenciales
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#22376D] flex items-center justify-center font-bold">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#22376D]">
+                                Electricidad Industrial, Electrónica y Automatización
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                                Formación alineada a los pliegos tarifarios de EEGSA y Energuate, medición de resistividad de puesta a tierra con telurómetro, generación solar fotovoltaica On-Grid (CNEE-186-2008), control con VFD, PLC Siemens S7-1200 en TIA Portal y redes Profinet.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-1.5 pt-2 border-t border-slate-100">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Cursos de la Especialidad:</div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                <div class="flex items-center gap-1.5">• Instalaciones Eléctricas (180h)</div>
+                                <div class="flex items-center gap-1.5">• Controles y Máquinas (180h)</div>
+                                <div class="flex items-center gap-1.5">• Automatización Industrial (180h)</div>
+                                <div class="flex items-center gap-1.5">• Electrónica Industrial (180h)</div>
+                                <div class="flex items-center gap-1.5">• Energía Solar On-Grid (180h)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-medium">
+                            <strong>Normas:</strong> CNEE 186-2008 • NFPA 70E • Siemens TIA
+                        </span>
+                        <a href="electricidad.html" class="px-4 py-2 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-1 shadow-sm">
+                            Ver Temarios <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ÁREA 3: MECÁNICA INDUSTRIAL, SOLDADURA Y CALDERAS -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#22376D] transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#22376D]/10 text-[#22376D] font-bold text-xs uppercase tracking-wider border border-[#22376D]/20">
+                                3 Cursos • 540 Horas Presenciales
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 text-[#22376D] flex items-center justify-center font-bold">
+                                <i data-lucide="wrench" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#22376D]">
+                                Mecánica Industrial, Soldadura y Calderas de Vapor
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                                Mantenimiento predictivo con alineación láser de ejes y análisis de vibraciones IoT, calificación de procedimientos y soldadores según códigos AWS D1.1 y ASME Sección IX (GMAW, FCAW, TIG inoxidable) y operación de calderas bajo el Reglamento del MinTrab.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-1.5 pt-2 border-t border-slate-100">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Cursos de la Especialidad:</div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                <div class="flex items-center gap-1.5">• Mantenimiento Mecánico (180h)</div>
+                                <div class="flex items-center gap-1.5">• Soldadura Industrial AWS (180h)</div>
+                                <div class="flex items-center gap-1.5">• Calderas de Vapor (180h)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-medium">
+                            <strong>Normas:</strong> AWS D1.1 • ASME Sec. IX • Reglamento Calderas
+                        </span>
+                        <a href="mecanica.html" class="px-4 py-2 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-1 shadow-sm">
+                            Ver Temarios <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ÁREA 4: MECÁNICA AUTOMOTRIZ Y MOTOCICLETAS -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#22376D] transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#22376D]/10 text-[#22376D] font-bold text-xs uppercase tracking-wider border border-[#22376D]/20">
+                                6 Cursos • 1,080 Horas Presenciales
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-700 flex items-center justify-center font-bold">
+                                <i data-lucide="car" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold brand-serif text-[#22376D]">
+                                Mecánica Automotriz y Motocicletas
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                                Diagnóstico computarizado avanzado en protocolos CAN-Bus e ISO 14229, inyección directa GDI y Common Rail Diésel, osciloscopio automotriz, mecánica de motocicletas 4T/2T con inyección electrónica EFI y servicio a sistemas R-134a/R-1234yf de climatización.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-1.5 pt-2 border-t border-slate-100">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Cursos de la Especialidad:</div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                <div class="flex items-center gap-1.5">• Mecanismos del Automóvil (180h)</div>
+                                <div class="flex items-center gap-1.5">• Motores a Gasolina (180h)</div>
+                                <div class="flex items-center gap-1.5">• Inyección Electrónica (180h)</div>
+                                <div class="flex items-center gap-1.5">• Electricidad Automotriz (180h)</div>
+                                <div class="flex items-center gap-1.5">• Mecánica de Motos (180h)</div>
+                                <div class="flex items-center gap-1.5">• Aire Acondicionado Auto (180h)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-medium">
+                            <strong>Normas:</strong> SAE J1939 • OBD-II / CAN • EPA 609
+                        </span>
+                        <a href="automotriz.html" class="px-4 py-2 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-1 shadow-sm">
+                            Ver Temarios <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        
+        <!-- ===================================================== -->
+        <!-- SECCIÓN TSU: TÉCNICO SUPERIOR UNIVERSITARIO 3ER AÑO   -->
+        <!-- ===================================================== -->
+        <section id="tsu" class="space-y-8 scroll-mt-36">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 border-b-2 border-slate-200 pb-4">
+                <div>
+                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Educación Superior Técnica • Aval UNIS</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold brand-serif text-[#22376D] mt-1">
+                        Técnico Superior Universitario (TSU) — 3er Año
+                    </h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-3xl leading-relaxed">
+                        Programa de tercer año universitario avalado por la <strong>Universidad del Istmo (UNIS)</strong> y <strong>Fundación Kinal</strong>. Estructurado en 4 bimestres intensivos con 16 asignaturas modulares que combinan gestión operativa, ciencias aplicadas, ética profesional y formación dual en alternancia.
+                    </p>
+                </div>
+                <a href="tsu.html" class="px-5 py-2.5 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-2 shadow-sm whitespace-nowrap">
+                    Portal TSU Completo <i data-lucide="arrow-right" class="w-4 h-4 text-[#EC9123]"></i>
                 </a>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- 4 Tarjetas de Líneas Curriculares del TSU -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 
-                <!-- Área 1 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-amber-500 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-[#22376D] transition flex flex-col justify-between space-y-3">
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 font-bold text-[10px] uppercase">6 Cursos • 720h</span>
-                            <i data-lucide="hard-hat" class="w-5 h-5 text-amber-600"></i>
+                        <div class="w-9 h-9 rounded-lg bg-blue-50 text-[#22376D] flex items-center justify-center font-bold">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-base text-slate-900">Construcción & BIM</h4>
+                        <h3 class="font-bold text-base brand-serif text-[#22376D]">Gestión y Administración</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Fundamentos, Adm. de Obras, AutoCAD 2D/3D, Revit Architecture, Revit Structure & MEP, Civil 3D.
+                            Fundamentos de administración, SSO Acuerdo 229-2014, costos contables, calidad total y marketing industrial.
                         </p>
                     </div>
-                    <a href="Revision_Temarios/construccion.html" class="block w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition">
-                        Ver Área Construcción →
-                    </a>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-[#EC9123] font-bold">
+                        8 Asignaturas Modulares
+                    </div>
                 </div>
 
-                <!-- Área 2 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-yellow-500 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-[#22376D] transition flex flex-col justify-between space-y-3">
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-full bg-yellow-50 text-yellow-800 font-bold text-[10px] uppercase">5 Cursos • 900h</span>
-                            <i data-lucide="zap" class="w-5 h-5 text-yellow-600"></i>
+                        <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-base text-slate-900">Electricidad & Automatización</h4>
+                        <h3 class="font-bold text-base brand-serif text-[#22376D]">Matemáticas Aplicadas</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Instalaciones Eléctricas, Controles y Máquinas, Electrónica Analógica, PLC Siemens S7-1200, Automatización SCADA.
+                            Álgebra lineal, trigonometría técnica, cálculo diferencial e integral aplicado al modelado de ingeniería.
                         </p>
                     </div>
-                    <a href="Revision_Temarios/electricidad.html" class="block w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition">
-                        Ver Área Electricidad →
-                    </a>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-[#EC9123] font-bold">
+                        4 Asignaturas Modulares
+                    </div>
                 </div>
 
-                <!-- Área 3 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-red-500 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-[#22376D] transition flex flex-col justify-between space-y-3">
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-full bg-red-50 text-red-800 font-bold text-[10px] uppercase">3 Cursos • 540h</span>
-                            <i data-lucide="wrench" class="w-5 h-5 text-red-600"></i>
+                        <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold">
+                            <i data-lucide="activity" class="w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-base text-slate-900">Mecánica & Soldadura</h4>
+                        <h3 class="font-bold text-base brand-serif text-[#22376D]">Física Técnica</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Mantenimiento Mecánico Industrial, Soldadura Calificada (AWS/ASME), Calderas de Vapor (MinTrab).
+                            Mecánica vectorial, cinemática, termodinámica de procesos industriales, electromagnetismo y ondas.
                         </p>
                     </div>
-                    <a href="Revision_Temarios/mecanica.html" class="block w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition">
-                        Ver Área Mecánica →
-                    </a>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-[#EC9123] font-bold">
+                        4 Asignaturas Modulares
+                    </div>
                 </div>
 
-                <!-- Área 4 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-[#22376D] transition flex flex-col justify-between space-y-3">
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-800 font-bold text-[10px] uppercase">6 Cursos • 1,080h</span>
-                            <i data-lucide="car" class="w-5 h-5 text-blue-600"></i>
+                        <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center font-bold">
+                            <i data-lucide="scale" class="w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-base text-slate-900">Automotriz & Motocicletas</h4>
+                        <h3 class="font-bold text-base brand-serif text-[#22376D]">Ética y Deontología</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Motores Gasolina VVT, Mecanismos ABS/ESP, Electromecánica CAN-Bus, Inyección Electrónica, HVAC R-1234yf, Motos FI.
+                            Antropología, bioética, responsabilidad social corporativa y toma de decisiones éticas profesionales.
                         </p>
                     </div>
-                    <a href="Revision_Temarios/automotriz.html" class="block w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition">
-                        Ver Área Automotriz →
-                    </a>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-[#EC9123] font-bold">
+                        4 Asignaturas Modulares
+                    </div>
                 </div>
 
             </div>
-        </div>
+
+            <!-- Malla Resumen de los 4 Bimestres -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-3">
+                    <h3 class="text-lg sm:text-xl font-bold brand-serif text-[#22376D] flex items-center gap-2">
+                        <i data-lucide="calendar-days" class="w-5 h-5 text-[#EC9123]"></i> Distribución Bimestral del 3er Año
+                    </h3>
+                    <span class="text-xs text-slate-500 font-semibold">Exigencia de Aprobación Kinal: ≥ 75 Pts / 100</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2.5">
+                        <div class="flex justify-between items-center font-bold text-[#22376D] border-b border-slate-200 pb-1.5">
+                            <span>Bimestre 1</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Enero - Marzo</span>
+                        </div>
+                        <ul class="space-y-1.5 text-slate-700">
+                            <li>• Fundamentos de Administración</li>
+                            <li>• Planeación y Control del Trabajo</li>
+                            <li>• Matemática Básica 1</li>
+                            <li>• Física Básica 1</li>
+                            <li>• Ética General 1</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2.5">
+                        <div class="flex justify-between items-center font-bold text-[#22376D] border-b border-slate-200 pb-1.5">
+                            <span>Bimestre 2</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Marzo - Mayo</span>
+                        </div>
+                        <ul class="space-y-1.5 text-slate-700">
+                            <li>• Administración de RRHH y SSO</li>
+                            <li>• Herramientas Contables</li>
+                            <li>• Matemática Básica 2</li>
+                            <li>• Física Aplicada 1</li>
+                            <li>• Ética General 2</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2.5">
+                        <div class="flex justify-between items-center font-bold text-[#22376D] border-b border-slate-200 pb-1.5">
+                            <span>Bimestre 3</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Junio - Agosto</span>
+                        </div>
+                        <ul class="space-y-1.5 text-slate-700">
+                            <li>• Métodos de Producción</li>
+                            <li>• Servicio al Cliente</li>
+                            <li>• Matemática Aplicada 1</li>
+                            <li>• Física Aplicada 2</li>
+                            <li>• Ética Profesional 1</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2.5">
+                        <div class="flex justify-between items-center font-bold text-[#22376D] border-b border-slate-200 pb-1.5">
+                            <span>Bimestre 4</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Agosto - Octubre</span>
+                        </div>
+                        <ul class="space-y-1.5 text-slate-700">
+                            <li>• Control de Calidad</li>
+                            <li>• Fundamentos de Marketing</li>
+                            <li>• Matemática Aplicada 2</li>
+                            <li>• Física Aplicada 3</li>
+                            <li>• Ética Profesional 2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-200 flex flex-wrap justify-between items-center gap-3">
+                    <div class="text-xs text-slate-500">
+                        <strong>Título Otorgado:</strong> Técnico Superior Universitario con mención de especialidad • <strong>Aval Académico:</strong> Universidad del Istmo (UNIS)
+                    </div>
+                    <a href="tsu.html" class="px-4 py-2 rounded-xl bg-[#22376D] hover:bg-[#152244] text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+                        Ver Malla Curricular y Auditoría TSU <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-[#EC9123]"></i>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+        
+
+        <!-- ===================================================== -->
+        <!-- SECCIÓN 2: VISOR INTERACTIVO DE AUDITORÍA CURRICULAR  -->
+        <!-- ===================================================== -->
+        <section id="auditoria-interactiva" class="space-y-6 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-24">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-4">
+                <div>
+                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Muestra Interactiva de Dictámenes</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold brand-serif text-[#22376D] mt-0.5">
+                        Matriz de Cambios Curriculares e Inteligencia Artificial
+                    </h2>
+                </div>
+                
+                <!-- Filtros Interactivos de Auditoría -->
+                <div class="flex flex-wrap gap-1.5 text-xs font-bold">
+                    <button onclick="filtrarEstado('todos')" id="btn-filtro-todos" class="px-3 py-1.5 rounded-lg bg-[#22376D] text-white transition ring-2 ring-offset-2 ring-[#22376D]">Todos</button>
+                    <button onclick="filtrarEstado('delete')" id="btn-filtro-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Eliminar</button>
+                    <button onclick="filtrarEstado('update')" id="btn-filtro-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Actualizar</button>
+                    <button onclick="filtrarEstado('new')" id="btn-filtro-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🔵 Nuevo</button>
+                    <button onclick="filtrarEstado('keep')" id="btn-filtro-keep" class="px-3 py-1.5 rounded-lg bg-green-100 text-green-800 hover:bg-green-200 transition">🟢 Mantener</button>
+                    <button onclick="filtrarEstado('ia')" id="btn-filtro-ia" class="px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">🟣 IA</button>
+                </div>
+            </div>
+
+            <!-- Listado de Tarjetas de Auditoría -->
+            <div id="dictamenes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                
+                <div class="dictamen-card status-delete p-4 rounded-2xl border transition" data-status="delete">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-red-700">🔴 Eliminar</span>
+                        <span class="text-slate-500 font-semibold">Construcción</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Cálculo Manual con Tablas Tradicionales</h4>
+                    <p class="text-xs text-slate-600 mt-1">Se sustituyen las hojas manuales por modelado estructural automatizado y hojas de cálculo dinámicas AGIES.</p>
+                </div>
+
+                <div class="dictamen-card status-update p-4 rounded-2xl border transition" data-status="update">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-amber-700">🟡 Actualizar</span>
+                        <span class="text-slate-500 font-semibold">Electricidad</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Medición de Puesta a Tierra</h4>
+                    <p class="text-xs text-slate-600 mt-1">Actualizado a telurómetro digital de 4 picas bajo norma IEEE 81 y resolución CNEE-186-2008.</p>
+                </div>
+
+                <div class="dictamen-card status-new p-4 rounded-2xl border transition" data-status="new">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-blue-700">🔵 Nuevo</span>
+                        <span class="text-slate-500 font-semibold">Construcción</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Metodología BIM Forum Guatemala & Clash Detection</h4>
+                    <p class="text-xs text-slate-600 mt-1">Detección de colisiones interdisciplinarias con Navisworks Manage y Revit Structure/MEP.</p>
+                </div>
+
+                <div class="dictamen-card status-ia p-4 rounded-2xl border transition" data-status="ia">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-purple-700">🟣 IA Aplicada</span>
+                        <span class="text-slate-500 font-semibold">Mecánica</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Análisis Predictivo de Vibraciones con IA</h4>
+                    <p class="text-xs text-slate-600 mt-1">Detección temprana de holguras y fallas en rodamientos industriales usando modelos de aprendizaje automático.</p>
+                </div>
+
+                <div class="dictamen-card status-update p-4 rounded-2xl border transition" data-status="update">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-amber-700">🟡 Actualizar</span>
+                        <span class="text-slate-500 font-semibold">Automotriz</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Inyección Electrónica GDI & Common Rail</h4>
+                    <p class="text-xs text-slate-600 mt-1">Migración a sistemas de alta presión piezoeléctricos con escaneo y osciloscopio en tiempo real.</p>
+                </div>
+
+                <div class="dictamen-card status-keep p-4 rounded-2xl border transition" data-status="keep">
+                    <div class="flex justify-between items-start text-xs">
+                        <span class="font-bold uppercase tracking-wider text-green-700">🟢 Mantener</span>
+                        <span class="text-slate-500 font-semibold">Transversal</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900 mt-1">Seguridad Ocupacional SSO Acuerdo 229-2014</h4>
+                    <p class="text-xs text-slate-600 mt-1">Se consolida como práctica obligatoria en todos los talleres de formación dual y presencial.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- SECCIÓN 3: MARCO INSTITUCIONAL & PEDAGÓGICO           -->
+        <!-- ===================================================== -->
+        <section id="metodologia" class="bg-gradient-to-br from-[#152244] to-[#22376D] text-white rounded-3xl p-8 sm:p-10 shadow-lg space-y-8 scroll-mt-24">
+            
+            <div class="border-b border-white/20 pb-4 flex flex-wrap justify-between items-end gap-3">
+                <div>
+                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Pilares Pedagógicos y Doctrinales</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold brand-serif text-white mt-1">
+                        Marco Institucional de Fundación Kinal
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                
+                <div class="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <h3 class="text-lg font-bold brand-serif text-[#EC9123] flex items-center gap-2">
+                        <i data-lucide="compass" class="w-5 h-5"></i> Misión y Valores Institucionales
+                    </h3>
+                    <p>
+                        <strong>Misión de Kinal:</strong> <em>«Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad.»</em>
+                    </p>
+                    <p>
+                        <strong>Valores de Kinal:</strong> <em>«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.»</em>
+                    </p>
+                    <p class="text-slate-300">
+                        La labor formativa se realiza dentro de un espíritu cristiano cuya formación doctrinal y espiritual está confiada a la <strong>Prelatura del Opus Dei</strong>, institución de la Iglesia Católica.
+                    </p>
+                </div>
+
+                <div class="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <h3 class="text-lg font-bold brand-serif text-[#EC9123] flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i> Formación Dual y Marco Alemán (DQR)
+                    </h3>
+                    <p>
+                        <strong>Formación Profesional Dual:</strong> <em>«concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa.»</em>
+                    </p>
+                    <p>
+                        <strong>Competencia según DQR:</strong> <em>«the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act.»</em>
+                    </p>
+                    <p class="text-amber-300 font-semibold">
+                        • Umbral de Aprobación Kinal: Calificación mínima de 75 puntos sobre 100.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
-    <!-- Footer Institucional -->
-    <footer class="bg-slate-950 text-white border-t border-slate-800 py-10 text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center sm:text-left sm:flex sm:justify-between sm:items-center">
-            <div class="space-y-1">
-                <p class="font-bold text-white text-sm">Fundación Kinal • Coordinación Académica & Curricular</p>
-                <p>Sistema Integral de Diseño Curricular, Auditoría Técnica y Didáctica Dual • Ciclo 2026</p>
+    <!-- ========================================================= -->
+    <!-- FOOTER INSTITUCIONAL (SOLO LOGO FUNDACIÓN KINAL BLANCO)   -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#0D162C] text-white border-t-4 border-[#EC9123] py-12 px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800 pb-8">
+                <div class="flex items-center gap-4">
+                    <img src="assets/fundacion_kinal_blanco.png" alt="Fundación Kinal" class="h-10 sm:h-12 w-auto object-contain">
+                </div>
+                <div class="text-xs text-slate-400 max-w-md text-left md:text-right">
+                    <strong class="text-white block mb-0.5">Fundación Kinal — Escuela Técnica Superior (ETS)</strong>
+                    Servicios de capacitación técnica y tecnológica dirigidos a empresas y personas individuales para desarrollar competencias laborales al mejor nivel.
+                </div>
             </div>
-            <div class="text-slate-500 text-[11px] space-y-0.5">
-                <p>Alineado a los estándares DQR 5/6 y al marco legal del trabajo y educación técnica en Guatemala.</p>
-                <p>Nota mínima de aprobación: 75/100 | Nivel de inglés: A2 (ELASH II).</p>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <div>
+                    © 2026 Fundación Kinal. Todos los derechos reservados. Ciudad de Guatemala.
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-slate-400">Ideario: <em>«El trabajo bien hecho»</em></span>
+                    <span>•</span>
+                    <span class="text-[#EC9123]">Aval UNIS-Kinal</span>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts Interactivos -->
     <script>
         lucide.createIcons();
+
+        function filtrarEstado(estado) {
+            const cards = document.querySelectorAll('.dictamen-card');
+            cards.forEach(card => {
+                if (estado === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = (card.getAttribute('data-status') === estado) ? 'block' : 'none';
+                }
+            });
+
+            // Resaltar botón activo
+            const botones = ['todos', 'delete', 'update', 'new', 'keep', 'ia'];
+            botones.forEach(btnId => {
+                const b = document.getElementById('btn-filtro-' + btnId);
+                if (b) {
+                    if (btnId === estado) {
+                        b.classList.add('ring-2', 'ring-offset-2', 'ring-[#22376D]');
+                    } else {
+                        b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#22376D]');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>

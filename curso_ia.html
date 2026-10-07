@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2322376D'/><path d='M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z' fill='%23EC9123'/><path d='M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z' fill='%23FFD166'/></svg>">
+    <title>Inteligencia Artificial Aplicada y Productividad Ética | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        h1, h2, h3, h4, .font-heading, .brand-serif { font-family: 'Times New Roman', Times, serif; }
+        .hero-kinal-gradient {
+            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
+        }
+        .tab-btn.active {
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        .session-item.active {
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            border-color: #22376D !important;
+        }
+        .session-item.active span, .session-item.active p {
+            color: #e2e8f0 !important;
+        }
+        .session-item.active .badge-code {
+            background-color: #EC9123 !important;
+            color: #0D162C !important;
+            font-weight: 800 !important;
+        }
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- KINAL MOBILE ENGINE - ZERO CLIPPING RESPONSIVE SYSTEM      -->
+    <!-- ========================================================= -->
+    <style id="kinal-mobile-responsive-system">
+        @media (max-width: 767px) {
+            /* 1. Box model y contención estricta en 100% viewport */
+            *, *::before, *::after {
+                box-sizing: border-box !important;
+            }
+            html, body {
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-text-size-adjust: 100% !important;
+                touch-action: pan-y pinch-zoom;
+            }
+
+            /* 2. Contenedores fluidos sin desbordes */
+            main, section, header, footer, 
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Tarjetas de cursos (pensums) y contenedores modulares */
+            .grid {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Ruptura de palabras y textos para evitar que empujen el ancho */
+            h1, h2, h3, h4, h5, p, span, a, div {
+                overflow-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+
+            /* 5. Scroll horizontal fluido sin barras antiestéticas */
+            .no-scrollbar::-webkit-scrollbar, 
+            nav::-webkit-scrollbar,
+            .overflow-x-auto::-webkit-scrollbar {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+            .no-scrollbar, 
+            nav,
+            .overflow-x-auto {
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            /* 6. Ergonomía táctil: botones y controles con altura mínima */
+            .tab-btn, button, select, input[type="text"] {
+                min-height: 42px;
+                touch-action: manipulation;
+            }
+
+            /* 7. Tab Bar y Navegación Horizontal Swipeable */
+            nav.flex.overflow-x-auto, 
+            .tab-nav-wrapper {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
+            }
+            nav.flex.overflow-x-auto > * {
+                flex-shrink: 0 !important;
+            }
+
+            /* 8. Padding de lectura responsivo en pantallas móviles */
+            main {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 14px !important;
+                padding-bottom: 24px !important;
+            }
+            header .max-w-7xl, header .max-w-6xl {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
+
+            /* 9. Envoltura táctil y cue de desplazamiento para tablas y matrices */
+            .table-responsive-mobile, 
+            .curriculum-grid-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 12px !important;
+            }
+
+            /* 10. Feedback táctil ágil */
+            .tab-btn:active, button:active, .card-hover:active, .area-course-card:active {
+                transform: scale(0.97) !important;
+                transition: transform 0.1s ease !important;
+            }
+
+            /* 11. Botones de descarga de Word apilables o compactos */
+            .btn-doc-group {
+                display: grid !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 6px !important;
+            }
+            .btn-doc-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 6px 4px !important;
+                font-size: 10px !important;
+                gap: 2px !important;
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .session-item {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: all 0.2s ease;
+            }
+            [id$="-detail-card"] {
+                scroll-margin-top: 80px;
+            }
+        }
+    </style>
+
+    <script src="assets/auth_gatekeeper.js"></script>
+</head>
+<body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
+
+        <!-- ========================================================= -->
+    <!-- ENCABEZADO FIJO PERMANENTE UNIFICADO                      -->
+    <!-- ========================================================= -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200">
+        
+        <!-- BARRA INSTITUCIONAL SUPERIOR -->
+        <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                    </span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-slate-300 font-medium hidden sm:inline">
+                        Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
+                    </span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-emerald-400 font-bold flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER CORPORATIVO (LOGO ETS & BOTONES DE NAVEGACIÓN PRINCIPAL) -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex flex-wrap justify-between items-center gap-3 border-b border-slate-100">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-9 w-auto object-contain transition group-hover:opacity-90">
+                </a>
+            </div>
+
+            <!-- Botones Principales: Inicio y Vuelta a Cursos Nuevos -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs">
+                <a href="cursos_nuevos.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200" title="Volver al catálogo de cursos nuevos">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-[#EC9123]"></i> Nuevos
+                </a>
+                <a href="index.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+                </a>
+            </nav>
+        </header>
+
+        <!-- SUB-BARRA INTEGRADA DE PESTAÑAS DEL CURSO (UNIFICADA CON EL ENCABEZADO) -->
+        <div class="bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-2 py-2 overflow-x-auto no-scrollbar text-xs font-bold">
+                    <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-3.5 py-1.5 rounded-lg transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
+                    </button>
+                    <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
+                    </button>
+                    <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
+                    </button>
+                    <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
+                    </button>
+                    <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Hero Course Banner -->
+    <section class="hero-kinal-gradient relative overflow-hidden text-white py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-bold tracking-wide uppercase">
+                    Modalidad Virtual Sincrónica (Teams + Kinal.academy)
+                </span>
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold">
+                    DQR Nivel 3 - 4
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                    Aprobación: ≥ 75 Pts
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight brand-serif">
+                Inteligencia Artificial Aplicada, Ingeniería de Prompts y Productividad Ética
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-4xl leading-relaxed">
+                Dominio práctico de herramientas de IA generativa (ChatGPT, Google Gemini, Copilot, Claude), ingeniería de prompts mediante el método estructurado RC-TRF (Rol, Contexto, Tarea, Restricción, Formato), automatización de tareas de oficina y negocio, detección de alucinaciones y ética con centralidad en la persona.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 1: PROPUESTA -->
+        <!-- ================================================================== -->
+        <div id="tab-propuesta" class="tab-content space-y-8">
+            
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-purple-50 text-purple-900 flex items-center justify-center font-black">
+                    <i data-lucide="file-badge" class="w-4 h-4"></i>
+                </span>
+                <h3 class="text-xl font-black text-slate-900">
+                    Ficha Técnica Oficial del Programa
+                </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-900 text-xs font-bold border border-purple-200">
+                Código: IA-2026-KINAL
+            </span>
+        </div>
+        <div class="divide-y divide-slate-100">
+            
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nivel Formativo de Referencia:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Equivalencia DQR Nivel 3 - 4 (Habilitación operativa, autonomía de criterio y aplicación práctica)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Población Destinataria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Jóvenes y adultos sin formación especializada interesados en potenciar su productividad personal y laboral</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Duración Total:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">16 horas pedagógicas (1 mes calendario: 8 sesiones de 2 horas / 120 min; 15h de actividad neta)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Modalidad y Formato:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Virtual Sincrónica Interactiva (Microsoft Teams + Plataforma Kinal.academy / Moodle)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Estructura de Horarios:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Dos noches entre semana (Martes y Jueves de 19:00 a 21:00 hrs), adaptado al público activo</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Eje Metodológico Central:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Ingeniería de prompts estructurada, aplicaciones reales en oficina/negocio y uso ético centrado en la persona</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nota Mínima Aprobatoria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">75 puntos sobre 100 en actividades aplicadas, verificación crítica y proyecto integrador</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Sede / Plataforma:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Fundación Kinal — Aulas Virtuales Microsoft Teams y Portal Kinal.academy</dd>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-blue-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
+                    </p>
+                    <div class="pt-2 text-xs font-bold text-blue-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-purple-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="sparkle" class="w-4 h-4"></i> El Principio del «Trabajo Bien Hecho» en la Era de la IA
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En Fundación Kinal, la inteligencia artificial no sustituye el ingenio ni el corazón humano: <strong>los potencia</strong>. El trabajo bien hecho implica que la persona mantiene el criterio final, la empatía y la responsabilidad ética, aplicando una regla de oro irrenunciable: <em>«Nunca firmes, envíes ni presentes un texto generado por IA que tú mismo no hayas leído, comprendido y verificado críticamente»</em>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Matriz DQR -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                        Alineación con el Marco Alemán de Cualificaciones (DQR Nivel 3-4)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Desglose de competencias integrales de acción (Handlungskompetenz) para la habilitación tecnológica y autonomía operativa.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Dimensión DQR</th>
+                                <th class="py-3 px-4">Subdimensión</th>
+                                <th class="py-3 px-4">Evidencia de Desempeño en el Curso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Conocimiento (Wissen)</td>
+                                <td class="py-3 px-4">Comprende la naturaleza probabilística de los LLMs, ventanas de contexto, arquitectura de los principales modelos (ChatGPT, Gemini, Copilot, Claude) y principios de privacidad de datos.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-blue-900 bg-blue-50/50">Competencia Profesional (Fachkompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Destrezas (Fertigkeiten)</td>
+                                <td class="py-3 px-4">Formula prompts estructurados con la fórmula RC-TRF, aplica técnicas Few-Shot y Cadena de Pensamiento, extrae resúmenes ejecutivos de PDFs y convierte datos desordenados en tablas limpias para Excel.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-purple-900 bg-purple-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Autonomía (Selbständigkeit)</td>
+                                <td class="py-3 px-4">Construye de forma independiente su Asistente Personal de Productividad y catálogo de prompts maestros adaptados a su trabajo real, auditando críticamente la veracidad de los resultados.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-purple-900 bg-purple-50/50">Competencia Personal (Personale Kompetenz)</td>
+                                <td class="py-3 px-4 font-bold">Competencia Social y Ética</td>
+                                <td class="py-3 px-4">Aplica principios de anonimización de datos sensibles de clientes y empresa, respeta la propiedad intelectual y cultiva una comunicación profesional cálida y empática en sus mensajes asistidos por IA.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 2: TEMARIO (ESTÉTICA DE CONSTRUCCIÓN APARTADO 3) -->
+        <!-- ================================================================== -->
+        <div id="tab-temario" class="tab-content hidden space-y-6">
+            
+            <!-- Barra Superior de Filtros por Categoría -->
+            <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-5 h-5 text-purple-700"></i>
+                            Distribución Modular con Código de Color
+                        </h3>
+                        <p class="text-slate-600 text-xs">
+                            Estructura de 4 módulos formativos divididos por áreas clave. Filtra por categoría para enfocar el estudio.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        Total: 12 Contenidos Clave
+                    </span>
+                </div>
+
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                    <button onclick="filterIaCategory('all')" id="btn-ia-all" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition">
+                        Todos los Temas (12)
+                    </button>
+                    <button onclick="filterIaCategory('fundamentos')" id="btn-ia-fundamentos" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 transition">
+                        🧠 Fundamentos & Modelos LLM
+                    </button>
+                    <button onclick="filterIaCategory('prompts')" id="btn-ia-prompts" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 transition">
+                        ✍️ Ingeniería de Prompts (RC-TRF)
+                    </button>
+                    <button onclick="filterIaCategory('aplicacion')" id="btn-ia-aplicacion" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition">
+                        💼 Oficina & Productividad
+                    </button>
+                    <button onclick="filterIaCategory('etica')" id="btn-ia-etica" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition">
+                        🛡️ Ética, Privacidad & Verificación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula Modular de Temas -->
+            <div class="grid lg:grid-cols-2 gap-6" id="ia-modules-grid">
+                
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 1 (Semana 1 • Sesiones 1 y 2)</span>
+                    <span class="px-2 py-0.5 rounded bg-purple-900/60 text-purple-200 border border-purple-400/30 text-[11px] font-bold">4 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Descubriendo la IA: Fundamentos y Primeros Pasos Prácticos</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Comprender el funcionamiento operativo de los modelos generativos y navegar con fluidez en ChatGPT, Gemini y Copilot, configurando su espacio de trabajo digital sin barreras técnicas.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-fundamentos p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fundamentos">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
+                        Fundamentos de la IA Generativa sin Tecnicismos
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🧠 Fundamentos &amp; Modelos LLM
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">De la búsqueda tradicional a la conversación inteligente. Cómo piensa un modelo de lenguaje (LLM): predicción probabilística de palabras y ventanas de contexto explicadas con metáforas cotidianas. Alcances reales vs expectativas infundadas.</p>
+            </div>
+            
+            <div class="content-item item-fundamentos p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fundamentos">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
+                        El Ecosistema Actual de Herramientas Gratuitas
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🧠 Fundamentos &amp; Modelos LLM
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Panorama comparativo: ChatGPT (GPT-4o mini), Google Gemini, Microsoft Copilot y Claude. Puntos fuertes de cada uno: razonamiento, búsqueda web en vivo y ofimática. Creación de perfiles seguros y navegación por la interfaz.</p>
+            </div>
+            
+            <div class="content-item item-fundamentos p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="fundamentos">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
+                        Primeras Interacciones y Dinámicas de Descubrimiento
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🧠 Fundamentos &amp; Modelos LLM
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">El &#x27;Explicador Universal&#x27; (técnica ELI5). Lluvia de ideas guiada para situaciones cotidianas. Superación de la respuesta genérica: por qué preguntas vagas producen respuestas vacías. Autodiagnóstico de necesidades laborales.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 2 (Semana 2 • Sesiones 3 y 4)</span>
+                    <span class="px-2 py-0.5 rounded bg-purple-900/60 text-purple-200 border border-purple-400/30 text-[11px] font-bold">4 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Ingeniería de Prompts: El Arte de Instruir con Precisión (Método RC-TRF)</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Diseñar prompts de alto impacto utilizando la estructura Rol, Contexto, Tarea, Restricción y Formato, aplicando técnicas de refinamiento iterativo y ejemplos para obtener respuestas profesionales.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-prompts p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="prompts">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
+                        La Estructura Maestra del Prompt (Método RC-TRF)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        ✍️ Ingeniería de Prompts (RC-TRF)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Desglose de los 5 elementos de la fórmula RC-TRF: Rol profesional asignado, Contexto y antecedentes, Tarea con verbo de acción, Restricciones estrictas y Formato visual de salida. Comparativa de resultados antes vs después.</p>
+            </div>
+            
+            <div class="content-item item-prompts p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="prompts">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
+                        Técnicas de Precisión y Aprendizaje con Ejemplos (Few-Shot Prompting)
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        ✍️ Ingeniería de Prompts (RC-TRF)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Zero-Shot vs Few-Shot Prompting: enseñar tu propio estilo mediante 1 o 2 ejemplos. Cadena de pensamiento (&#x27;Piensa paso a paso&#x27;). Delimitadores de contenido con comillas triples (&quot;&quot;&quot;) y asignación precisa de tono y voz.</p>
+            </div>
+            
+            <div class="content-item item-prompts p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="prompts">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
+                        Diálogo Iterativo y Biblioteca de Prompts Reutilizables
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        ✍️ Ingeniería de Prompts (RC-TRF)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">La conversación como proceso de esculpido: repreguntar y ajustar sin reiniciar el chat (&#x27;Hazlo 30% más conciso&#x27;, &#x27;Añade una llamada a la acción&#x27;). Creación de una biblioteca personal de plantillas maestras reutilizables.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 3 (Semana 3 • Sesiones 5 y 6)</span>
+                    <span class="px-2 py-0.5 rounded bg-purple-900/60 text-purple-200 border border-purple-400/30 text-[11px] font-bold">4 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Casos Reales en la Oficina, Negocio y Vida Profesional</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Aplicar herramientas de IA para redactar correspondencia profesional, resumir informes extensos, extraer datos a tablas y estructurar planes de trabajo cotidianos en minutos.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-aplicacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="aplicacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
+                        Comunicación Corporativa y Atención al Cliente
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        💼 Oficina &amp; Productividad
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Redacción de correos difíciles en minutos (cobranza cordial, felicitaciones, justificación de retrasos). Mensajes asertivos para WhatsApp Business y redes comerciales. Minutas de reunión a partir de notas desordenadas o audios.</p>
+            </div>
+            
+            <div class="content-item item-aplicacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="aplicacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
+                        Síntesis, Análisis de Documentos Extensos y Extracción de Datos
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        💼 Oficina &amp; Productividad
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Carga y consulta de archivos PDF y reglamentos densos. Preguntas directas a documentos. Conversión de texto libre desordenado en tablas comparativas estructuradas listas para copiar y pegar en Microsoft Excel o Google Sheets.</p>
+            </div>
+            
+            <div class="content-item item-aplicacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="aplicacion">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                        Planificación, Creatividad y Productividad Operativa
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        💼 Oficina &amp; Productividad
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estructuración de listas de verificación (checklists) operativas para eventos o inventarios. Lluvia de ideas para promociones y campañas de temporada. Guiones para presentaciones laborales y resolución de retos contra reloj.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 4 (Semana 4 • Sesiones 7 y 8)</span>
+                    <span class="px-2 py-0.5 rounded bg-purple-900/60 text-purple-200 border border-purple-400/30 text-[11px] font-bold">4 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Ética, Privacidad, Caza de Alucinaciones y Proyecto Integrador</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Auditar críticamente los contenidos generados detectando sesgos y alucinaciones, proteger la privacidad de datos sensibles y construir un asistente personal de productividad evaluado con rúbrica institucional (&gt;= 75 pts).
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-etica p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="etica">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                        Caza de Alucinaciones, Verificación y Pensamiento Crítico
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🛡️ Ética, Privacidad &amp; Verificación
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Por qué la IA alucina: naturaleza probabilística frente a verdad fáctica. La regla de oro de Kinal: &#x27;Nunca firmes ni envíes un texto de IA que tú mismo no hayas verificado&#x27;. Técnicas de contraste de fuentes y detección de sesgos.</p>
+            </div>
+            
+            <div class="content-item item-etica p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="etica">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                        Privacidad, Ciberseguridad e Higiene de Datos Personales
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🛡️ Ética, Privacidad &amp; Verificación
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Datos que NUNCA deben compartirse con una IA pública (DPI, contraseñas, tarjetas, estados financieros). Técnicas de anonimización con marcadores de posición ([Cliente A], [Monto X]). Desactivación de historiales de entrenamiento.</p>
+            </div>
+            
+            <div class="content-item item-etica p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="etica">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                        Proyecto Integrador: Mi Asistente Personal de Productividad y Cierre
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🛡️ Ética, Privacidad &amp; Verificación
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Diseño de un Prompt de Sistema (&#x27;System Prompt&#x27;) maestro personalizado a la ocupación real del estudiante. Demostración en vivo de resolución de una tarea laboral compleja en &lt; 5 minutos. Evaluación con rúbrica Kinal (&gt;= 75 pts).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
+        <!-- ================================================================== -->
+        <div id="tab-calendario" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-purple-700"></i>
+                        Calendario Cronológico de Encuentros Virtuales
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa de 4 semanas (1 mes calendario) • 2 sesiones nocturnas por semana (Martes y Jueves de 19:00 a 21:00 hrs • 2h por encuentro).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-purple-900 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200">
+                    <i data-lucide="video" class="w-4 h-4 text-purple-700"></i> Microsoft Teams & Kinal.academy
+                </div>
+            </div>
+
+            <!-- Grid de Calendario -->
+            <div class="space-y-6">
+                <div class="grid lg:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-purple-700"></i> Semana 1 (Módulo 1)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (4 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-01</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Martes (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Qué es la IA generativa, cómo piensa un LLM y primer diálogo efectivo</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Comprende la naturaleza de los modelos de lenguaje y ejecuta con éxito su primera interacción guiada para resolver una duda cotidiana.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(1)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-02</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Jueves (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Comparativa en vivo: ChatGPT, Gemini, Copilot y Claude; configuración segura</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Compara las fortalezas de los 4 grandes modelos gratuitos y configura su perfil de trabajo personal con medidas básicas de privacidad.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(2)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-purple-700"></i> Semana 2 (Módulo 2)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (4 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-03</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Martes (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">La fórmula maestra del prompt: Rol, Contexto, Tarea, Restricción y Formato</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Aplica la fórmula Rol, Contexto, Tarea, Restricción y Formato para transformar peticiones vagas en instrucciones de alto rendimiento.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(3)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-04</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Jueves (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Técnicas avanzadas: Ejemplos (Few-Shot), Cadena de Pensamiento y refinamiento</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Enseña su propio estilo a la IA proporcionando ejemplos previos y refina respuestas mediante repreguntas sin reiniciar la conversación.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(4)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-purple-700"></i> Semana 3 (Módulo 3)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (4 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-05</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Martes (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Comunicación profesional: correos difíciles, WhatsApp Business y minutas</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Redacta correspondencia laboral asertiva, mensajes comerciales empáticos y minutas de reunión a partir de notas desordenadas.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(5)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-06</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Jueves (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Síntesis de documentos extensos (PDFs) y conversión de datos a tablas de Excel</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Extrae resúmenes ejecutivos de documentos densos y convierte texto no estructurado en tablas limpias listas para copiar en Excel.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(6)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-purple-700"></i> Semana 4 (Módulo 4)
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (4 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-07</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Martes (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Caza de alucinaciones, verificación de hechos, privacidad y ética de Kinal</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Audita textos generados detectando datos inventados y aplica protocolos estrictos de privacidad y anonimización de información confidencial.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(7)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-purple-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-purple-300">S-08</span>
+                        <span class="font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded">Jueves (19:00 - 21:00)</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">PROYECTO INTEGRADOR: Mi Asistente Personal de Productividad y Sustentación</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Construye y sustenta en vivo su sistema de prompts maestros personalizados para su actividad real, cumpliendo con la rúbrica institucional (&gt;= 75 pts).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">2 Horas (120 min)</span>
+                    <button onclick="goToSession(8)" class="text-purple-700 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL SIN ALARGAR LA PÁGINA) -->
+        <!-- ================================================================== -->
+        <div id="tab-secuencias" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-purple-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-0.5">
+                        Selecciona una sesión en el panel izquierdo para consultar su microdiseño en 3 momentos (Apertura 15 min, Desarrollo & Taller 90 min, Cierre & Reto 15 min).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-56">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+                        <input type="text" id="ia-sec-search" oninput="filterIaList()" placeholder="Buscar sesión..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-600 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master-Detail Container -->
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- LISTADO LATERAL (MASTER) -->
+                <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-4 shadow-sm space-y-2">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1 border-b border-slate-100 flex justify-between">
+                        <span>Listado de Sesiones</span>
+                        <span id="ia-count-badge">8 Sesiones</span>
+                    </div>
+                    <div id="ia-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="ia-detail-card">
+                    <!-- Rendered by JS -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
+        <!-- ================================================================== -->
+        <div id="tab-evaluacion" class="tab-content hidden space-y-8">
+            
+            <!-- Esquema Resumen -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-purple-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
+                    </h3>
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
+                        Umbral Mínimo: 75 / 100 Puntos
+                    </span>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Talleres & Retos Prácticos</div>
+                        <div class="text-3xl font-black text-purple-900">40%</div>
+                        <div class="text-slate-600">Resolución de Casos en Vivo</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Proyecto Integrador</div>
+                        <div class="text-3xl font-black text-emerald-700">25%</div>
+                        <div class="text-slate-600">Asistente Personal Evaluado</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Pensamiento Crítico</div>
+                        <div class="text-3xl font-black text-blue-900">20%</div>
+                        <div class="text-slate-600">Caza de Alucinaciones</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bitácora de Prompts & Ética</div>
+                        <div class="text-3xl font-black text-amber-700">15%</div>
+                        <div class="text-slate-600">Catálogo Personal y Privacidad</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rúbrica Terminal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-purple-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación Práctica
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación objetiva del desempeño técnico con ponderaciones explícitas y umbral institucional de 75 puntos.
+                        </p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-800 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/4">Criterio Evaluado</th>
+                                <th class="py-3 px-4 w-20 text-center">Ponderación</th>
+                                <th class="py-3 px-4 text-emerald-900">Desempeño Excelente (Trabajo Bien Hecho)</th>
+                                <th class="py-3 px-4 text-rose-900">Desempeño Insuficiente (&lt; 75%)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Estructura de Prompts (Método RC-TRF)</td>
+        <td class="py-3 px-4 text-purple-950 font-bold bg-purple-50/20 border-r border-slate-200 align-top text-center">30 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Define con precisión Rol, Contexto, Tarea, Restricciones y Formato de salida. Usa lenguaje claro y delimitadores efectivos.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Prompts vagos, sin restricciones claras o que generan respuestas genéricas sin estructura (&lt; 22.5 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Pensamiento Crítico y Verificación</td>
+        <td class="py-3 px-4 text-purple-950 font-bold bg-purple-50/20 border-r border-slate-200 align-top text-center">25 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Audita minuciosamente las respuestas, detecta posibles alucinaciones y verifica datos antes de considerarlos definitivos.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Acepta y copia las respuestas de la IA sin revisar ni comprobar exactitud fáctica (&lt; 18.7 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Aplicación Real y Ahorro de Tiempo</td>
+        <td class="py-3 px-4 text-purple-950 font-bold bg-purple-50/20 border-r border-slate-200 align-top text-center">20 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">El asistente resuelve un problema o tarea laboral/personal concreta, demostrando ahorro medible de tiempo y esfuerzo.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">El ejercicio es puramente teórico o desconectado de la actividad práctica del participante (&lt; 15 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Privacidad, Ética y Lado Humano</td>
+        <td class="py-3 px-4 text-purple-950 font-bold bg-purple-50/20 border-r border-slate-200 align-top text-center">15 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Demuestra respeto a la confidencialidad de datos (anonimización) y aporta calidez humana y empatía a la comunicación.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Incluye datos sensibles en prompts o entrega textos fríos con tono robótico evidente (&lt; 11.2 pts).</td>
+    </tr>
+    
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Dossier de Prompts y Bitácora</td>
+        <td class="py-3 px-4 text-purple-950 font-bold bg-purple-50/20 border-r border-slate-200 align-top text-center">10 Puntos</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Presenta su catálogo de prompts ordenado, documentado y listo para ser reutilizado en su trabajo diario.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Presentación desordenada, incompleta o sin justificación de uso (&lt; 7.5 pts).</td>
+    </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bitácora de Prompts Card -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+            <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                <i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>
+                Estructura de la Bitácora de Prompts & Reflexión Ética
+            </h4>
+            <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-900 font-bold text-xs">Portafolio Reutilizable</span>
+        </div>
+        <p class="text-xs text-slate-600">
+            Formato oficial de registro de plantillas de prompts de alto impacto, refinamiento iterativo y verificación crítica que cada estudiante compila a lo largo del curso.
+        </p>
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+            <table class="w-full text-left border-collapse divide-y divide-slate-100">
+                <tbody>
+                    
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Datos del Estudiante:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Nombre: _______________________ | Carné: _________ | Sesión: ____ | Fecha: ________</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Objetivo del Prompt:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Propósito laboral o personal (ej. &#x27;Redacción de cotizaciones para clientes de ferretería&#x27;).</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Texto del Prompt Estructurado (RC-TRF):</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Rol asignado, contexto, instrucción clara, restricciones delimitadas y formato de salida.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Resultado Obtenido y Refinamiento:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Respuesta de la IA y ajustes aplicados en segunda iteración para alcanzar excelencia.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Verificación Crítica Realizada:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Datos comprobados, corrección de posibles alucinaciones y aporte del toque humano.</td>
+        </tr>
+        
+        <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top text-xs w-1/3">Firma del Participante y Vo.Bo. Docente:</td>
+            <td class="py-2.5 px-4 text-slate-700 align-top text-xs leading-relaxed">Firma Estudiante: ___________________  |  Vo.Bo. Instructor Kinal: ___________________</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+        <!-- ========================================================= -->
+    <!-- PIE DE PÁGINA INSTITUCIONAL                               -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#0D162C] text-slate-400 py-10 border-t border-[#152244] text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="assets/fundacion_kinal_blanco.png" alt="Fundación Kinal" class="h-10 sm:h-12 w-auto object-contain">
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="font-bold text-slate-200 text-sm">Escuela Técnica Superior (ETS) • Fundación Kinal</p>
+                    <p class="text-slate-400 text-xs mt-0.5">Centro de Excelencia Técnica y Tecnológica • Ciclo Lectivo 2026</p>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+                <p class="text-slate-500">
+                    &copy; 2026 Fundación Kinal. Todos los derechos reservados. Formación Técnica bajo estándares del Marco Alemán de Cualificaciones (DQR).
+                </p>
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="index.html" class="hover:text-[#EC9123] transition">Inicio</a>
+                    <span>•</span>
+                    <a href="tsu.html" class="hover:text-[#EC9123] transition">TSU</a>
+                    <span>•</span>
+                    <a href="cursos_nuevos.html" class="text-[#EC9123] font-bold">Cursos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        const iaSessionsData = [{"num": 1, "code": "S-01", "mod_num": 1, "semana": "Semana 1", "dia": "Martes", "horario": "Martes de 19:00 a 21:00 hrs", "module": "Módulo 1", "title": "Qué es la IA generativa, cómo piensa un LLM y primer diálogo efectivo", "duration": "2 Horas (120 min)", "objective": "Comprende la naturaleza de los modelos de lenguaje y ejecuta con éxito su primera interacción guiada para resolver una duda cotidiana.", "apertura": "Bienvenida, presentación del curso, ideario de Kinal y visión positiva: la IA como copiloto que potencia nuestras capacidades humanas. Pregunta disparadora: ¿En qué tarea repetitiva de tu semana te gustaría tener un asistente personal?", "desarrollo": "Exposición dialogada sobre cómo funciona un modelo de lenguaje (predicción inteligente de texto explicada con analogías sencillas, sin fórmulas). Demostración en vivo de interacción. Pausa activa (10 min). Taller práctico individual: técnica del 'Explicador Universal' (pedir a la IA que explique un tema complejo a tres públicos distintos: un niño, un estudiante y un cliente).", "cierre": "Puesta en común voluntaria en el aula virtual de los resultados más sorprendentes. Registro de la primera lección en la Bitácora de Aprendizaje y asignación del reto personal.", "evidencias": "Primer diálogo guiado y autodiagnóstico", "equipamiento": "Computadora o teléfono con navegador web, acceso a ChatGPT / Gemini, aula virtual Microsoft Teams."}, {"num": 2, "code": "S-02", "mod_num": 1, "semana": "Semana 1", "dia": "Jueves", "horario": "Jueves de 19:00 a 21:00 hrs", "module": "Módulo 1", "title": "Comparativa en vivo: ChatGPT, Gemini, Copilot y Claude; configuración segura", "duration": "2 Horas (120 min)", "objective": "Compara las fortalezas de los 4 grandes modelos gratuitos y configura su perfil de trabajo personal con medidas básicas de privacidad.", "apertura": "Retroalimentación del reto de la Sesión 1. Pregunta reflexiva: ¿Por qué una herramienta nos da respuestas más creativas y otra busca mejor en internet?", "desarrollo": "Presentación comparativa en vivo: ChatGPT (claridad y lógica), Gemini (integración con Google y actualidad), Copilot (búsqueda web estructurada) y Claude (calidez de redacción y textos largos). Pausa activa (10 min). Práctica guiada simultánea: los participantes abren dos herramientas en paralelo y envían la misma consulta para contrastar estilos, velocidad y enfoque.", "cierre": "Consolidación de conclusiones: elaboración de un cuadro mental sobre cuándo conviene usar cada herramienta. Registro en la Bitácora de Aprendizaje.", "evidencias": "Entorno multimodelo configurado", "equipamiento": "Cuentas gratuitas en Google Gemini, ChatGPT y Microsoft Copilot, computadora o smartphone."}, {"num": 3, "code": "S-03", "mod_num": 2, "semana": "Semana 2", "dia": "Martes", "horario": "Martes de 19:00 a 21:00 hrs", "module": "Módulo 2", "title": "La fórmula maestra del prompt: Rol, Contexto, Tarea, Restricción y Formato", "duration": "2 Horas (120 min)", "objective": "Aplica la fórmula Rol, Contexto, Tarea, Restricción y Formato para transformar peticiones vagas en instrucciones de alto rendimiento.", "apertura": "Dinámica de apertura: 'El teléfono descompuesto digital'. Se muestra cómo una orden vaga genera un texto genérico e inútil vs cómo un prompt bien estructurado genera oro en polvo.", "desarrollo": "Desglose paso a paso de la fórmula RC-TRF con ejemplos de la vida real (oficina, comercio, estudio). Demostración del instructor transformando un prompt deficiente. Pausa activa (10 min). Taller en vivo por parejas o individual: redacción de 3 prompts aplicando rigurosamente los 5 componentes para resolver situaciones laborales concretas.", "cierre": "Comparativa en pantalla compartida del 'antes y después' de los textos obtenidos. Reflexión sobre cómo la claridad humana condiciona la calidad de la IA. Registro en bitácora.", "evidencias": "3 prompts estructurados con método RC-TRF", "equipamiento": "Plantilla digital del Método RC-TRF, procesador de texto o notas del celular, ChatGPT / Gemini."}, {"num": 4, "code": "S-04", "mod_num": 2, "semana": "Semana 2", "dia": "Jueves", "horario": "Jueves de 19:00 a 21:00 hrs", "module": "Módulo 2", "title": "Técnicas avanzadas: Ejemplos (Few-Shot), Cadena de Pensamiento y refinamiento", "duration": "2 Horas (120 min)", "objective": "Enseña su propio estilo a la IA proporcionando ejemplos previos y refina respuestas mediante repreguntas sin reiniciar la conversación.", "apertura": "Reflexión de apertura: la IA es como un nuevo colaborador en la oficina; para que redacte como nosotros queremos, debemos mostrarle ejemplos de nuestro trabajo.", "desarrollo": "Explicación de Few-Shot Prompting (dar 1 o 2 ejemplos del formato deseado antes de pedir la tarea). La técnica de la 'Cadena de Pensamiento' ('Piensa paso a paso'). Pausa activa (10 min). Práctica guiada: proceso de esculpido conversacional: ajustar tono, reducir longitud en un 30% y solicitar opciones alternativas en la misma conversación.", "cierre": "Creación de la 'Caja de Herramientas de Prompts': guardado de las mejores fórmulas en un documento personal reutilizable. Registro en bitácora.", "evidencias": "Prompt con ejemplos y biblioteca personal", "equipamiento": "Modelos generativos (ChatGPT, Gemini, Claude), guía de comandos de refinamiento, plantilla de biblioteca de prompts."}, {"num": 5, "code": "S-05", "mod_num": 3, "semana": "Semana 3", "dia": "Martes", "horario": "Martes de 19:00 a 21:00 hrs", "module": "Módulo 3", "title": "Comunicación profesional: correos difíciles, WhatsApp Business y minutas", "duration": "2 Horas (120 min)", "objective": "Redacta correspondencia laboral asertiva, mensajes comerciales empáticos y minutas de reunión a partir de notas desordenadas.", "apertura": "Apertura: ¿Cuánto tiempo perdemos al día redactando correos complicados o buscando las palabras diplomáticas adecuadas para responder a un reclamo?", "desarrollo": "Casos prácticos de comunicación: 1. Correo de cobranza formal pero cordial; 2. Respuesta empática a cliente insatisfecho en WhatsApp Business; 3. Solicitud de cotización a proveedores. Pausa activa (10 min). Ejercicio práctico: dictar notas desordenadas de una reunión simulada y pedir a la IA que elabore un acta formal con compromisos, fechas y responsables.", "cierre": "Lectura y validación crítica de los textos: verificar que el tono suene humano, cálido y auténtico, no robótico. Registro en bitácora.", "evidencias": "Borrador de correo difícil y minuta lista", "equipamiento": "Borradores de notas de reunión ficticia, situaciones de servicio al cliente, herramientas de IA."}, {"num": 6, "code": "S-06", "mod_num": 3, "semana": "Semana 3", "dia": "Jueves", "horario": "Jueves de 19:00 a 21:00 hrs", "module": "Módulo 3", "title": "Síntesis de documentos extensos (PDFs) y conversión de datos a tablas de Excel", "duration": "2 Horas (120 min)", "objective": "Extrae resúmenes ejecutivos de documentos densos y convierte texto no estructurado en tablas limpias listas para copiar en Excel.", "apertura": "Problema cotidiano: recibir un documento de 25 páginas (reglamento, cotización larga, informe) y necesitar los 3 puntos clave en 5 minutos.", "desarrollo": "Técnicas para cargar y consultar archivos en Gemini y ChatGPT. Formulación de preguntas de extracción precisa ('¿Cuáles son los plazos máximos de entrega según este texto?'). Pausa activa (10 min). Taller de datos: tomar un párrafo con datos dispersos (precios, clientes, fechas) y solicitar su conversión inmediata a tabla de filas y columnas lista para Excel.", "cierre": "Demostración de copia y pegado directo en hojas de cálculo sin descuadre de formato. Reflexión sobre el ahorro de tiempo operativo. Registro en bitácora.", "evidencias": "Resumen ejecutivo y tabla para Excel", "equipamiento": "Documentos de muestra en PDF (manuales, reglamentos breves), hojas de cálculo (Excel / Google Sheets), IA con carga de archivos."}, {"num": 7, "code": "S-07", "mod_num": 4, "semana": "Semana 4", "dia": "Martes", "horario": "Martes de 19:00 a 21:00 hrs", "module": "Módulo 4", "title": "Caza de alucinaciones, verificación de hechos, privacidad y ética de Kinal", "duration": "2 Horas (120 min)", "objective": "Audita textos generados detectando datos inventados y aplica protocolos estrictos de privacidad y anonimización de información confidencial.", "apertura": "Apertura con el ideario de Kinal: el valor del 'trabajo bien hecho' exige verdad y honradez. Un texto con datos falsos destruye la confianza profesional.", "desarrollo": "Por qué ocurren las alucinaciones: la naturaleza matemática predictiva del modelo. Estrategias activas de verificación: pedir fuentes, contrastar con documentos oficiales y desconfiar de cifras no verificadas. Pausa activa (10 min). Taller de privacidad: qué datos NUNCA subir a la nube (DPI, contraseñas, salarios) y técnica de anonimización (uso de marcadores como '[Empresa X]').", "cierre": "Ejercicio de detección de 'trampas': los estudiantes auditan un texto con 3 alucinaciones inducidas y redactan el informe corregido. Registro en bitácora.", "evidencias": "Ejercicio de detección de alucinaciones", "equipamiento": "Textos con alucinaciones inducidas, lista de verificación de privacidad de datos, plataforma Kinal."}, {"num": 8, "code": "S-08", "mod_num": 4, "semana": "Semana 4", "dia": "Jueves", "horario": "Jueves de 19:00 a 21:00 hrs", "module": "Módulo 4", "title": "PROYECTO INTEGRADOR: Mi Asistente Personal de Productividad y Sustentación", "duration": "2 Horas (120 min)", "objective": "Construye y sustenta en vivo su sistema de prompts maestros personalizados para su actividad real, cumpliendo con la rúbrica institucional (>= 75 pts).", "apertura": "Apertura de la sesión de clausura: consolidación del viaje formativo. De no animarse a usar IA a convertirse en directores estratégicos de su propio copiloto digital.", "desarrollo": "Presentación y sustentación individual o por parejas del Proyecto Integrador: cada participante demuestra en vivo cómo su asistente personal resuelve una tarea de su trabajo o negocio real en menos de 5 minutos, aplicando el método RC-TRF y verificación crítica. Pausa activa (10 min). Rondas de retroalimentación docente y entre compañeros.", "cierre": "Evaluación sumativa mediante rúbrica analítica Kinal (nota mínima 75/100). Mensaje de cierre institucional sobre la primacía de la persona sobre la técnica y entrega de constancias.", "evidencias": "Asistente personal evaluado (>= 75 pts)", "equipamiento": "Proyectos integradores de los estudiantes, rúbrica institucional de evaluación, Microsoft Teams."}];
+        let currentIaSessionId = 1;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            const targetTab = document.getElementById('tab-' + tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetTab && targetBtn) {
+                targetTab.classList.remove('hidden');
+                targetBtn.classList.add('active');
+                targetBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterIaCategory(cat) {
+            document.querySelectorAll('#tab-temario button[id^="btn-ia-"]').forEach(btn => {
+                btn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-700 transition";
+            });
+
+            const activeBtn = document.getElementById('btn-ia-' + cat);
+            if (activeBtn) {
+                activeBtn.className = "px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition";
+            }
+
+            const items = document.querySelectorAll('.content-item');
+            items.forEach(it => {
+                if (cat === 'all' || it.getAttribute('data-category') === cat) {
+                    it.style.display = 'block';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+        }
+
+        function renderIaSessionsList(filteredSessions) {
+            const container = document.getElementById('ia-sessions-list');
+            container.innerHTML = '';
+
+            filteredSessions.forEach(s => {
+                const item = document.createElement('div');
+                item.className = `session-item p-3 rounded-2xl border border-slate-200 cursor-pointer transition flex items-center justify-between text-xs hover:border-purple-800 hover:bg-slate-50 ${s.num === currentIaSessionId ? 'active' : 'bg-white'}`;
+                item.onclick = () => selectIaSession(s.num);
+                
+                item.innerHTML = `
+                    <div class="space-y-0.5 pr-2">
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <span class="badge-code px-2 py-0.5 rounded text-[10px] font-black bg-slate-100 text-slate-800">${s.code}</span>
+                            <span class="line-clamp-1 text-slate-900 text-xs">${s.title}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500">${s.semana} • ${s.dia}</div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                `;
+                container.appendChild(item);
+            });
+            lucide.createIcons();
+        }
+
+        function selectIaSession(num) {
+            // [Mobile Engine]: Auto-scroll a detalle en pantallas móviles
+            if (window.innerWidth < 1024) {
+                setTimeout(function() {
+                    const card = document.getElementById('ia-detail-card');
+                    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 60);
+            }
+            currentIaSessionId = num;
+            const s = iaSessionsData.find(item => item.num === num);
+            if (!s) return;
+
+            document.querySelectorAll('.session-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('bg-white');
+            });
+
+            renderIaSessionsList(iaSessionsData);
+
+            const detailContainer = document.getElementById('ia-detail-card');
+            detailContainer.innerHTML = `
+                <div class="border-b border-slate-200 pb-5 space-y-2">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 text-purple-400 font-black text-xs tracking-wider">${s.code}</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-purple-50 text-purple-900 font-bold text-xs border border-purple-200">${s.module}</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-lg">${s.duration}</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">${s.title}</h3>
+                    <div class="text-xs text-purple-800 font-bold pt-1">
+                        ${s.semana} • ${s.horario} (Aula Virtual Microsoft Teams)
+                    </div>
+                </div>
+
+                <div class="bg-purple-50/60 rounded-2xl p-4 border border-purple-200 space-y-1">
+                    <div class="text-[11px] uppercase font-black tracking-wider text-purple-900 flex items-center gap-1.5">
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-purple-700"></i> Indicador de Logro / Objetivo Formativo
+                    </div>
+                    <p class="text-slate-800 text-xs leading-relaxed font-medium">${s.objective}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-purple-700"></i> Secuencia Didáctica en Tres Momentos
+                    </h4>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Fase 1: Apertura & Motivación
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">15 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.apertura}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-purple-50/40 border border-purple-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-purple-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Fase 2: Desarrollo & Taller Guiado en Vivo
+                            </span>
+                            <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">90 Minutos (Interacción Sincrónica)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.desarrollo}</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> Fase 3: Cierre, Verificación & Reto Semanal
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">15 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${s.cierre}</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50/60 rounded-2xl p-4 border border-emerald-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-emerald-900 flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i> Evidencias & Producto Observable
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.evidencias}</p>
+                    </div>
+
+                    <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-purple-700"></i> Recursos Digitales & Plataformas
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${s.equipamiento}</p>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function filterIaList() {
+            const q = document.getElementById('ia-sec-search').value.toLowerCase();
+            const filtered = iaSessionsData.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) ||
+                s.module.toLowerCase().includes(q) ||
+                s.objective.toLowerCase().includes(q)
+            );
+            document.getElementById('ia-count-badge').textContent = `${filtered.length} Sesiones`;
+            renderIaSessionsList(filtered);
+        }
+
+        function goToSession(num) {
+            switchTab('secuencias');
+            selectIaSession(num);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            selectIaSession(1);
+        });
+    </script>
+
+    <!-- Mobile Master-Detail Interaction Helper -->
+    <script>
+        (function() {
+            window.kinalScrollToDetail = function(detailId) {
+                if (window.innerWidth < 1024) {
+                    const el = document.getElementById(detailId) || document.querySelector('[id$="-detail-card"]');
+                    if (el) {
+                        setTimeout(function() {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 50);
+                    }
+                }
+            };
+        })();
+    </script>
+
+</body>
+</html>

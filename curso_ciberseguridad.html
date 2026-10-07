@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2322376D'/><path d='M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z' fill='%23EC9123'/><path d='M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z' fill='%23FFD166'/></svg>">
+    <title>Ciberseguridad y Fundamentos de Seguridad | Kinal 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        h1, h2, h3, h4, .font-heading, .brand-serif { font-family: 'Times New Roman', Times, serif; }
+        .hero-kinal-gradient {
+            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
+        }
+        .tab-btn.active {
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        .session-item.active {
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            border-color: #22376D !important;
+        }
+        .session-item.active span, .session-item.active p {
+            color: #e2e8f0 !important;
+        }
+        .session-item.active .badge-code {
+            background-color: #EC9123 !important;
+            color: #0D162C !important;
+            font-weight: 800 !important;
+        }
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- KINAL MOBILE ENGINE - ZERO CLIPPING RESPONSIVE SYSTEM      -->
+    <!-- ========================================================= -->
+    <style id="kinal-mobile-responsive-system">
+        @media (max-width: 767px) {
+            /* 1. Box model y contención estricta en 100% viewport */
+            *, *::before, *::after {
+                box-sizing: border-box !important;
+            }
+            html, body {
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-text-size-adjust: 100% !important;
+                touch-action: pan-y pinch-zoom;
+            }
+
+            /* 2. Contenedores fluidos sin desbordes */
+            main, section, header, footer, 
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Tarjetas de cursos (pensums) y contenedores modulares */
+            .grid {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Ruptura de palabras y textos para evitar que empujen el ancho */
+            h1, h2, h3, h4, h5, p, span, a, div {
+                overflow-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+
+            /* 5. Scroll horizontal fluido sin barras antiestéticas */
+            .no-scrollbar::-webkit-scrollbar, 
+            nav::-webkit-scrollbar,
+            .overflow-x-auto::-webkit-scrollbar {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+            .no-scrollbar, 
+            nav,
+            .overflow-x-auto {
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            /* 6. Ergonomía táctil: botones y controles con altura mínima */
+            .tab-btn, button, select, input[type="text"] {
+                min-height: 42px;
+                touch-action: manipulation;
+            }
+
+            /* 7. Tab Bar y Navegación Horizontal Swipeable */
+            nav.flex.overflow-x-auto, 
+            .tab-nav-wrapper {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
+            }
+            nav.flex.overflow-x-auto > * {
+                flex-shrink: 0 !important;
+            }
+
+            /* 8. Padding de lectura responsivo en pantallas móviles */
+            main {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 14px !important;
+                padding-bottom: 24px !important;
+            }
+            header .max-w-7xl, header .max-w-6xl {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
+
+            /* 9. Envoltura táctil y cue de desplazamiento para tablas y matrices */
+            .table-responsive-mobile, 
+            .curriculum-grid-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 12px !important;
+            }
+
+            /* 10. Feedback táctil ágil */
+            .tab-btn:active, button:active, .card-hover:active, .area-course-card:active {
+                transform: scale(0.97) !important;
+                transition: transform 0.1s ease !important;
+            }
+
+            /* 11. Botones de descarga de Word apilables o compactos */
+            .btn-doc-group {
+                display: grid !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 6px !important;
+            }
+            .btn-doc-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 6px 4px !important;
+                font-size: 10px !important;
+                gap: 2px !important;
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .session-item {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: all 0.2s ease;
+            }
+            [id$="-detail-card"] {
+                scroll-margin-top: 80px;
+            }
+        }
+    </style>
+
+    <script src="assets/auth_gatekeeper.js"></script>
+</head>
+<body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
+
+        <!-- ========================================================= -->
+    <!-- ENCABEZADO FIJO PERMANENTE UNIFICADO                      -->
+    <!-- ========================================================= -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200">
+        
+        <!-- BARRA INSTITUCIONAL SUPERIOR -->
+        <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                    </span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-slate-300 font-medium hidden sm:inline">
+                        Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
+                    </span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-emerald-400 font-bold flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER CORPORATIVO (LOGO ETS & BOTONES DE NAVEGACIÓN PRINCIPAL) -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex flex-wrap justify-between items-center gap-3 border-b border-slate-100">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-9 w-auto object-contain transition group-hover:opacity-90">
+                </a>
+            </div>
+
+            <!-- Botones Principales: Inicio y Vuelta a Cursos Nuevos -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs">
+                <a href="cursos_nuevos.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200" title="Volver al catálogo de cursos nuevos">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-[#EC9123]"></i> Nuevos
+                </a>
+                <a href="index.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+                </a>
+            </nav>
+        </header>
+
+        <!-- SUB-BARRA INTEGRADA DE PESTAÑAS DEL CURSO (UNIFICADA CON EL ENCABEZADO) -->
+        <div class="bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-2 py-2 overflow-x-auto no-scrollbar text-xs font-bold">
+                    <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-3.5 py-1.5 rounded-lg transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
+                    </button>
+                    <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
+                    </button>
+                    <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
+                    </button>
+                    <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
+                    </button>
+                    <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Hero Course Banner -->
+    <section class="hero-kinal-gradient relative overflow-hidden text-white py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold tracking-wide uppercase">
+                    Modalidad Híbrida (80% Virtual / 20% Presencial)
+                </span>
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold">
+                    DQR Nivel 4 - 5
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                    Aprobación: ≥ 75 Pts
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight brand-serif">
+                Ciberseguridad y Fundamentos de Seguridad de la Información
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-4xl leading-relaxed">
+                Protección integral de infraestructuras corporativas, gestión de identidad y accesos (IAM), cifrado y firma digital, respuesta inicial a incidentes en SOC/SIEM, gestión de vulnerabilidades y cumplimiento de estándares internacionales (ISO 27001, SOC 2, HIPAA).
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 1: PROPUESTA -->
+        <!-- ================================================================== -->
+        <div id="tab-propuesta" class="tab-content space-y-8">
+            
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
+            
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center font-black">
+                    <i data-lucide="file-badge" class="w-4 h-4"></i>
+                </span>
+                <h3 class="text-xl font-black text-slate-900">
+                    Ficha Técnica Oficial del Programa
+                </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
+                Código: CIBER-2026-KINAL
+            </span>
+        </div>
+        <div class="divide-y divide-slate-100">
+            
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nivel Formativo de Referencia:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Equivalencia DQR Nivel 4 - 5 (Competencia técnica especializada y autonomía operativa)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Población Destinataria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Jóvenes y adultos desempleados de 18 a 45 años con conocimientos previos de informática</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Duración Total:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">80 horas pedagógicas (20 sesiones de 4 horas / 240 min; 73h 20min de actividad neta)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Modalidad Híbrida:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">80% Virtual (16 sesiones / 64 horas) y 20% Presencial (4 sesiones / 16 horas en Kinal)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Estructura de Horarios:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Por convenir institucionalmente (secuencia por sesiones, sin imponer días u horas fijas)</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Orientación de Empleabilidad:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Soporte técnico, operación tecnológica y funciones iniciales de apoyo a seguridad</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Nota Mínima Aprobatoria:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">75 puntos sobre 100 en todas las comprobaciones, productos y proyecto integrador</dd>
+        </div>
+        
+        <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
+            <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Sede Presencial:</dt>
+            <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Fundación Kinal — Laboratorios de Cómputo y Redes, Sede Central, Zona 7, Ciudad de Guatemala</dd>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-indigo-50 border-l-4 border-indigo-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-indigo-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
+                    </p>
+                    <div class="pt-2 text-xs font-bold text-indigo-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-amber-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="sparkle" class="w-4 h-4"></i> El «Trabajo Bien Hecho» en Seguridad de la Información
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En ciberseguridad, el «trabajo bien hecho» demanda <strong>rigor en la asignación de controles</strong> (alcance, responsable y evidencia comprobable), <strong>trazabilidad y verdad en los registros de auditoría</strong> sin alterar evidencias, y confidencialidad cotidiana estricta en el manejo de credenciales y datos sensibles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Fundamentación y Enfoque Pedagógico -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-4">
+                <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                    <i data-lucide="compass" class="w-5 h-5 text-indigo-700"></i>
+                    Fundamentación Técnica y Enfoque Constructivo (No Explotativo)
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-indigo-950 font-bold block text-sm">Caso Práctico Transversal</strong>
+                        <p class="text-slate-600 leading-relaxed">
+                            Una empresa ficticia evoluciona durante los 8 módulos con sus estaciones de trabajo, servidores locales, base de datos y servicios en nube, permitiendo aplicar cada control en un contexto corporativo verosímil.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-emerald-950 font-bold block text-sm">Enfoque Defensivo</strong>
+                        <p class="text-slate-600 leading-relaxed">
+                            Las actividades se enfocan en leer configuraciones, interpretar logs, diseñar matrices RBAC y auditar cumplimientos, sin exigir ataques intrusivos ni herramientas de explotación destructiva.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-purple-950 font-bold block text-sm">Empleabilidad Inmediata</strong>
+                        <p class="text-slate-600 leading-relaxed">
+                            Prepara a los participantes para roles de soporte técnico con criterio de seguridad, operadores de consola SOC Nivel 1 y auxiliares de cumplimiento y auditoría de TI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matriz DQR -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-indigo-700"></i>
+                        Alineación con el Marco Alemán de Cualificaciones (DQR Nivel 4-5)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Desglose de competencias integrales de acción técnica y personal según el marco europeo.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Dimensión DQR</th>
+                                <th class="py-3 px-4">Subdimensión</th>
+                                <th class="py-3 px-4">Evidencia de Desempeño en el Programa</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Profesional<br>(Fachkompetenz)</td><td class="py-3 px-4 font-semibold text-indigo-900">Conocimientos<br>(Wissen)</td><td class="py-3 px-4 leading-relaxed">Arquitectura de sistemas/nube, protocolos web (HTTP/TLS), marcos de autenticación (SAML/OAuth), ciclo de vulnerabilidades (CVE/CVSS) y estándares normativos (ISO 27001, PCI DSS, SOC, HIPAA).</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Profesional<br>(Fachkompetenz)</td><td class="py-3 px-4 font-semibold text-indigo-900">Destrezas<br>(Fertigkeiten)</td><td class="py-3 px-4 leading-relaxed">Diagramación de flujos de sistemas, construcción de matrices RBAC, diseño de controles verificables, correlación de logs en SIEM, lectura de avisos de seguridad y redacción de SOPs.</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Personal<br>(Personale Kompetenz)</td><td class="py-3 px-4 font-semibold text-indigo-900">Competencia Social<br>(Sozialkompetenz)</td><td class="py-3 px-4 leading-relaxed">Capacidad de comunicación asertiva entre el área técnica y las áreas usuarias, fundamentación de decisiones ante comités de cambio y reporte oportuno y sereno de incidentes.</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50">Competencia Personal<br>(Personale Kompetenz)</td><td class="py-3 px-4 font-semibold text-indigo-900">Autonomía<br>(Selbständigkeit)</td><td class="py-3 px-4 leading-relaxed">Criterio técnico independiente para evaluar riesgos, responsabilidad en la custodia de accesos, autoinspección de calidad técnica y adhesión inquebrantable a la ética digital.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Perfiles de Ingreso y Egreso -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm space-y-4">
+                    <h4 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="log-in" class="w-5 h-5 text-indigo-700"></i> Perfil de Ingreso
+                    </h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Jóvenes y adultos desempleados de 18 a 45 años con conocimientos previos de informática básica, peritos en computación, estudiantes de ingeniería o técnicos en redes que deseen reconvertirse al sector de seguridad digital.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Manejo fluido del sistema operativo y navegación en red.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Capacidad analítica y hábito de lectura técnica.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Ética comprobada y respeto por la privacidad de la información.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm space-y-4">
+                    <h4 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="log-out" class="w-5 h-5 text-emerald-700"></i> Perfil de Egreso
+                    </h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        El graduado será capaz de diagnosticar debilidades en entornos de TI, redactar políticas y procedimientos SOP, estructurar matrices de control de acceso RBAC, analizar eventos en consolas de monitoreo y responder metódicamente a incidentes.
+                    </p>
+                    <ul class="text-xs space-y-2 text-slate-700">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Interpretación solvente de boletines CVE y métricas CVSS.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Mapeo de controles frente a estándares ISO 27001, SOC 2 y HIPAA.</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i> Comunicación asertiva entre el área técnica y la administración.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Arquitectura Curricular: 8 Módulos -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="blocks" class="w-5 h-5 text-indigo-700"></i>
+                        Arquitectura Curricular: 8 Módulos Formativos (80 Horas)
+                    </h3>
+                    <p class="text-slate-600 text-xs">
+                        Distribución horaria y áreas formativas del programa.
+                    </p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4">Módulo</th>
+                                <th class="py-3 px-4">Área de Formación</th>
+                                <th class="py-3 px-4">Carga Horaria</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 1</td><td class="py-3 px-4 font-medium">Sistemas y gestión informática para la seguridad</td><td class="py-3 px-4 font-black text-slate-900">12 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 2</td><td class="py-3 px-4 font-medium">Identidad y control de acceso en aplicaciones</td><td class="py-3 px-4 font-black text-slate-900">12 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 3</td><td class="py-3 px-4 font-medium">Diseño de controles y responsabilidades</td><td class="py-3 px-4 font-black text-slate-900">8 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 4</td><td class="py-3 px-4 font-medium">Seguridad de comunicaciones web y APIs</td><td class="py-3 px-4 font-black text-slate-900">12 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 5</td><td class="py-3 px-4 font-medium">Ciclo de vida y gestión de vulnerabilidades</td><td class="py-3 px-4 font-black text-slate-900">12 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 6</td><td class="py-3 px-4 font-medium">Documentación y gestión del riesgo de seguridad</td><td class="py-3 px-4 font-black text-slate-900">8 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 7</td><td class="py-3 px-4 font-medium">Estándares, regulaciones e informes de aseguramiento</td><td class="py-3 px-4 font-black text-slate-900">8 h</td></tr><tr><td class="py-3 px-4 font-bold bg-slate-50 text-indigo-900">Módulo 8</td><td class="py-3 px-4 font-medium">Higiene digital y respuesta inicial a incidentes</td><td class="py-3 px-4 font-black text-slate-900">8 h</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 2: TEMARIO (DISTRIBUCIÓN MODULAR AUDITADA) -->
+        <!-- ================================================================== -->
+        <div id="tab-temario" class="tab-content hidden space-y-8">
+            
+            <!-- Barra Superior de Control y Filtros -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-indigo-700"></i>
+                        Distribución Modular con Código de Color
+                    </h3>
+                    <p class="text-xs text-slate-500">
+                        Estructura organizada en 8 módulos formativos clasificados por disciplina de seguridad, logros esperados y temas analizados.
+                    </p>
+                </div>
+
+                <!-- Botones de Filtro Interactivo -->
+                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                    <button onclick="filterCiberTemario('all')" id="btn-ciber-all" class="ciber-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos (20)</button>
+                    <button onclick="filterCiberTemario('sistemas')" id="btn-ciber-sistemas" class="ciber-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🔵 Sistemas & Redes TI</button>
+                    <button onclick="filterCiberTemario('identidad')" id="btn-ciber-identidad" class="ciber-filter-btn px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">🟣 Identidad & Acceso (IAM)</button>
+                    <button onclick="filterCiberTemario('operaciones')" id="btn-ciber-operaciones" class="ciber-filter-btn px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Operaciones & SOC</button>
+                    <button onclick="filterCiberTemario('gobierno')" id="btn-ciber-gobierno" class="ciber-filter-btn px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Gobierno & Cumplimiento</button>
+                </div>
+            </div>
+
+            <!-- Código de Leyenda Explicativo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/70 text-blue-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-blue-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-blue-900">Color Azul (Sistemas & Redes TI):</strong> Tríada CIA, infraestructura de red, principios ITIL, criptografía simétrica/asimétrica y PKI/TLS.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-purple-200 bg-purple-50/70 text-purple-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-purple-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-purple-900">Color Púrpura (Identidad & Acceso - IAM):</strong> Autenticación multifactor (MFA), ciclo de vida de sesiones, SSO federado (SAML/OAuth) y matrices RBAC.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-amber-200 bg-amber-50/70 text-amber-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-amber-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-amber-900">Color Ámbar (Operaciones & Diagnóstico SOC):</strong> Inspección de tráfico web, gestión de vulnerabilidades CVE/CVSS, ventanas de parches y respuesta a incidentes.
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/70 text-emerald-950 flex items-start gap-2.5">
+                    <span class="inline-block w-3 h-3 rounded-full bg-emerald-600 mt-0.5 shrink-0"></span>
+                    <div>
+                        <strong class="text-emerald-900">Color Verde (Gobierno & Cumplimiento):</strong> Principio de menor privilegio, redacción de SOPs, estándares PCI-DSS, HIPAA, SOC 2 y sustentación del Expediente.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadrícula Modular de Temarios -->
+            <div class="grid lg:grid-cols-2 gap-8 pt-2">
+                
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 1 (Sesiones 1 a 3)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">12 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Sistemas y Gestión Informática para la Seguridad</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Representar componentes, flujos de red y dependencias de infraestructura aplicando la tríada CIA y estándares ITIL en la empresa del caso transversal.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">1</span>
+                        Fundamentos de Seguridad de la Información y Tríada CIA
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Confidencialidad, integridad y disponibilidad aplicadas al negocio. Identificación de activos de información, niveles de criticidad y construcción de la Matriz CIA en la empresa ficticia.</p>
+            </div>
+            
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">2</span>
+                        Soporte Técnico, Principios ITIL y Gestión de Servicios
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Clasificación de incidentes, solicitudes de servicio y problemas. Registro trazable de eventos, gestión de cambios autorizados y documentación de tickets de soporte técnico con criterio defensivo.</p>
+            </div>
+            
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">3</span>
+                        Arquitectura de Sistemas, Topología de Red y Flujos de Datos
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Diagramación de servidores, terminales de usuario, dispositivos de borde y servicios SaaS. Segmentación de red (LAN vs. DMZ) e identificación de puntos únicos de falla (SPOF).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 2 (Sesiones 4 a 6)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">12 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Identidad y Control de Acceso en Aplicaciones y Sistemas</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Diseñar esquemas de autenticación robustos, políticas de contraseñas, doble factor (MFA) y matrices de acceso basado en roles (RBAC).
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-identidad p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="identidad">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">4</span>
+                        Autenticación, Validación y Ciclo de Vida de la Sesión
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Identidad &amp; Acceso (IAM)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Factores de autenticación (conocimiento, posesión, inherencia). Almacenamiento seguro de tokens y credenciales, fijación de sesiones, tiempos de expiración y cierre seguro de conexiones.</p>
+            </div>
+            
+            <div class="content-item item-identidad p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="identidad">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">5</span>
+                        Autenticación Multifactor (MFA) y Políticas de Contraseñas
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Identidad &amp; Acceso (IAM)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Configuración de MFA basado en TOTP y llaves de seguridad FIDO2. Mitigación de fatiga de MFA, directrices de longitud y aleatoriedad, y restricciones de bloqueo de cuenta.</p>
+            </div>
+            
+            <div class="content-item item-identidad p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="identidad">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">6</span>
+                        Single Sign-On (SSO), Protocolos Federados y Matriz RBAC
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">
+                        🟣 Identidad &amp; Acceso (IAM)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Conceptos de LDAP, Active Directory, SAML y OAuth 2.0 / OpenID Connect. Elaboración de la Matriz RBAC para altas, traslados departamentales y bajas de personal (Offboarding).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 3 (Sesiones 7 a 8)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Diseño de Controles y Responsabilidades de Seguridad</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Formular controles operacionales con alcance explícito, responsable asignado, procedimiento de ejecución y evidencia comprobable de cumplimiento.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">7</span>
+                        Principio de Menor Privilegio y Segregación de Funciones
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Justificación técnica de privilegios administrativos mínimos. Eliminación de accesos compartidos y separación de funciones entre desarrollo, operación y auditoría en el caso empresarial.</p>
+            </div>
+            
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
+                        Diseño y Asignación de Controles Operacionales Auditables
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Estructura formal de controles: alcance, custodio del control, frecuencia de ejecución, métrica de eficacia y registro de evidencia verificable para auditorías internas.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 4 (Sesiones 9 a 11)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">12 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Seguridad de Comunicaciones Web y Protección de APIs</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Analizar protocolos criptográficos, transporte seguro TLS/HTTPS, inspeccionar tráfico con Wireshark y verificar la protección de endpoints web.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                        Criptografía Aplicada, Algoritmos, Claves y Funciones Hash
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Cifrado simétrico (AES-256) vs. asimétrico (RSA/ECC). Funciones resumen unidireccionales (SHA-256, SHA-3) para integridad de datos, firma digital y no repudio.</p>
+            </div>
+            
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                        Arquitectura PKI y Certificados Digitales TLS/HTTPS
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Jerarquía de autoridades certificadoras (CA), emisión de certificados x509, ciclo de vida y revocación (CRL/OCSP). Verificación de la negociación de cifrado en el navegador.</p>
+            </div>
+            
+            <div class="content-item item-operaciones p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="operaciones">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                        Inspección de Tráfico y Seguridad en el Recorrido Web
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Operaciones &amp; Diagnóstico (SOC)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Inspección pasiva de paquetes con Wireshark, análisis de encabezados HTTP seguros (HSTS, Content Security Policy) y verificación de autenticación en endpoints de APIs REST.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 5 (Sesiones 12 a 14)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">12 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Ciclo de Vida y Gestión de Vulnerabilidades</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Interpretar avisos CVE y puntuación CVSS, priorizar remediaciones y gestionar actualizaciones sin generar disrupción en las operaciones de negocio.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-sistemas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="sistemas">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                        Gestión del Ciclo de Vida de Hardware y Sistemas Obsoletos
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">
+                        🔵 Sistemas &amp; Redes TI
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Control de fin de soporte (EOL/EOS) en conmutadores, servidores y sistemas operativos. Evaluación de riesgos de continuidad operativa y justificación de reemplazo tecnológico.</p>
+            </div>
+            
+            <div class="content-item item-operaciones p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="operaciones">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
+                        Gestión de Actualizaciones y Parches en Ambientes de Prueba
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Operaciones &amp; Diagnóstico (SOC)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Metodología de pruebas en entornos de laboratorio o staging antes del despliegue en producción. Ventanas de mantenimiento, procedimientos de reversión (rollback) y respaldo previo.</p>
+            </div>
+            
+            <div class="content-item item-operaciones p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="operaciones">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">14</span>
+                        Interpretación de Avisos CVE y Puntuación CVSS v3/v4
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Operaciones &amp; Diagnóstico (SOC)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Lectura de boletines oficiales de vulnerabilidades del NIST NVD. Desglose del vector de ataque CVSS (red, complejidad, privilegios, interacción) y formulación de planes de mitigación temporal.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 6 (Sesiones 15 a 16)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Documentación, Políticas y Gestión del Riesgo de Seguridad</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Redactar políticas organizacionales claras, procedimientos operativos estándar (SOP) ejecutables y solicitudes formales de excepción técnica.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">15</span>
+                        Estructura Documental y Redacción de Políticas de Seguridad
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Jerarquía normativa organizacional: políticas marco, directrices técnicas, estándares y procedimientos. Redacción sin ambigüedades de reglas de uso aceptable y control de accesos.</p>
+            </div>
+            
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">16</span>
+                        Procedimientos Operativos Estándar (SOP) y Solicitudes de Excepción
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Elaboración de guías de ejecución paso a paso verificables. Gestión de excepciones autorizadas de seguridad con justificación de negocio, controles compensatorios y fecha de caducidad.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 7 (Sesiones 17 a 18)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Estándares Internacionales, Regulaciones e Informes de Aseguramiento</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Mapear controles frente a marcos internacionales de cumplimiento (PCI-DSS, HIPAA, ISO 27001, SOC 2) y preparar auditorías formales de TI.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">17</span>
+                        Estándar PCI-DSS y Protección de Datos de Medios de Pago
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Delimitación del entorno de datos del tarjetahabiente (CDE). Requisitos esenciales de segmentación, cifrado de transmisiones, controles de acceso físico y monitoreo de redes.</p>
+            </div>
+            
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">18</span>
+                        Regulación HIPAA (ePHI) e Informes SOC 1 y SOC 2
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Reglas de privacidad y seguridad de información de salud. Principios de servicios de confianza AICPA (Seguridad, Disponibilidad, Integridad, Confidencialidad) y lectura de reportes SOC Tipo II.</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
+                <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
+                    <span>MÓDULO 8 (Sesiones 19 a 20)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">8 Horas Pedagógicas</span>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Higiene Digital, Respuesta Inicial a Incidentes y Cierre del Caso Transversal</h4>
+                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                    <strong class="text-amber-300">Logro esperado:</strong> Reconocer vectores de ingeniería social, aplicar protocolos iniciales de contención de incidentes y sustentar el Expediente Terminal del caso transversal.
+                </p>
+            </div>
+            <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
+                
+            <div class="content-item item-operaciones p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="operaciones">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">19</span>
+                        Concientización en Seguridad, Phishing y Respuesta a Incidentes
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">
+                        🟡 Operaciones &amp; Diagnóstico (SOC)
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Identificación de señales de correo fraudulento e ingeniería social. Procedimiento de aislamiento de estaciones comprometidas, reporte inmediato y preservación de registros.</p>
+            </div>
+            
+            <div class="content-item item-gobierno p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="gobierno">
+                <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                    <span class="text-slate-900 text-sm flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">20</span>
+                        Consolidación y Sustentación del Expediente de Seguridad
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">
+                        🟢 Gobierno &amp; Cumplimiento
+                    </span>
+                </div>
+                <p class="text-slate-600 leading-relaxed pl-7">Presentación y defensa técnica del portafolio terminal: Matriz CIA, diseño RBAC, políticas SOP, informe de gestión de vulnerabilidades y lecciones aprendidas ante el jurado Kinal (≥ 75 pts).</p>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+
+            <!-- Laboratorios y Herramientas -->
+            <div class="grid md:grid-cols-3 gap-6 pt-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="terminal" class="w-4 h-4 text-indigo-700"></i> Entornos & Sistemas
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• Máquinas virtuales Linux (Ubuntu Server / Debian) para inspección.</li>
+                        <li>• Estaciones de trabajo Windows con perfiles de usuario estándar.</li>
+                        <li>• Directorio de usuarios y simulación de LDAP / Keycloak.</li>
+                        <li>• Entornos SaaS simulados para configuración de MFA y SSO.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="activity" class="w-4 h-4 text-emerald-700"></i> Herramientas de Análisis
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• Wireshark (Captura e inspección pedagógica de paquetes de red).</li>
+                        <li>• OpenVAS / Greenbone (Escaneo controlado de vulnerabilidades).</li>
+                        <li>• OpenSearch / Graylog / Wazuh (Correlación y visualización de logs).</li>
+                        <li>• OpenSSL (Generación de certificados x509 y pares de claves).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                    <h4 class="font-black text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="file-check-2" class="w-4 h-4 text-amber-700"></i> Marcos Normativos
+                    </h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li>• ISO/IEC 27001:2022 (Controles organizacionales, físicos y tecnológicos).</li>
+                        <li>• AICPA SOC 1 y SOC 2 (Criterios de servicios de confianza).</li>
+                        <li>• Estándar PCI-DSS v4.0 (Protección de datos de tarjetahabientes).</li>
+                        <li>• Regulación HIPAA / HITECH (Seguridad y privacidad de ePHI).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
+        <!-- ================================================================== -->
+        <div id="tab-calendario" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-indigo-700"></i>
+                        Calendario de Encuentros y Cronograma Formativo
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa híbrido de 10 semanas (20 sesiones de 4 horas) • 80% Virtual (16 sesiones) y 20% Presencial en Kinal (4 sesiones).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-indigo-900 bg-indigo-50 px-3 py-1.5 rounded-xl border border-indigo-200">
+                    <i data-lucide="shield" class="w-4 h-4 text-indigo-700"></i> Formato Híbrido 80/20
+                </div>
+            </div>
+
+            <!-- Grid Semanal de Calendario -->
+            <div class="space-y-6">
+                <div class="grid lg:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 1
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-01</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">🏢 Presencial en Kinal</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Fundamentos de seguridad: tríada CIA, activos, riesgos y clasificación</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Distingue confidencialidad, integridad y disponibilidad en un caso laboral de la empresa ficticia.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(1)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-02</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Gestión de soporte ITIL: incidentes, solicitudes, cambios y SLAs</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Clasifica una solicitud de servicio y documenta su atención con responsables y evidencia.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(2)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 2
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-03</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Redes, servidores, modelos IaaS/PaaS/SaaS y responsabilidad compartida</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Lee y dibuja un diagrama básico explicando dependencias y límites de responsabilidad.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(3)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-04</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Autenticación, validación, creación de sesión, expiración y revocación</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Reconstruye el inicio, validación y cierre de una sesión, señalando quién valida cada paso.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(4)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 3
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-05</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Autenticación multifactor (MFA), enrolamiento, fricción y phishing</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Compara factores y describe un procedimiento de enrolamiento y recuperación.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(5)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-06</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">SSO, federación, protocolos (SAML, LDAP, OAuth/OIDC) y matriz RBAC</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Ubica protocolos (SAML, LDAP, OAuth, OIDC) y construye una matriz simple de roles y permisos.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(6)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 4
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-07</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Mínimo privilegio, delimitación de alcance, fronteras y Zero Trust</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Justifica cada permiso y redacta inclusiones, exclusiones y dependencias de un control.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(7)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-08</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">🏢 Presencial en Kinal</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Segregación de funciones, matriz RACI, telemetría y lectura en SIEM</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Lee registros básicos y correlaciona eventos para reconstruir un proceso, separando hechos de hipótesis.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(8)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 5
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-09</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Criptografía: simétrica, asimétrica, hashes, firmas y gestión de claves</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Distingue cifrado, hash y firma digital y explica el papel de la custodia de claves.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(9)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-10</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Protocolos HTTP vs HTTPS, handshake TLS y certificados X.509</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Describe el establecimiento conceptual de una conexión HTTPS e inspecciona un certificado.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(10)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 6
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-11</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Cadena de CAs, proxies, componentes de red y seguridad en APIs REST</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica componentes del recorrido web y propone controles básicos sobre un endpoint de API.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(11)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-12</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Ciclo de vida de hardware (EOL/EOS) y gestión de servicios SaaS</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Define un ciclo de vida de hardware y establece compromisos de seguridad con proveedores SaaS.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(12)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 7
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-13</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Mantenimiento de servidores, parches de SO y software/dependencias</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Propone actualización o retiro según soporte y gestiona ventanas de cambios con plan de reversión.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(13)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-14</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">🏢 Presencial en Kinal</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Lectura de avisos CVE/CVSS, tratamiento y remediación de protocolos</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Interpreta un aviso CVE/CVSS y formula una acción técnica verificable para el activo afectado.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(14)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 8
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-15</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Jerarquía documental: políticas de seguridad corporativas y estándares</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Redacta una regla de política con alcance, responsable y forma de verificar su cumplimiento.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(15)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-16</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Procedimientos SOP, evaluación de riesgos y aceptación temporal</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Describe un SOP ejecutable y formula una solicitud de aceptación temporal para autoridad competente.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(16)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 9
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-17</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Estándar PCI DSS (CDE) e ISO/IEC 27001 (SGSI y SoA)</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica datos de pago, delimita el entorno CDE y relaciona riesgos con los requisitos de ISO 27001.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(17)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-18</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Regulación HIPAA (ePHI) e informes de aseguramiento SOC 1 y SOC 2</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Reconoce cuándo aplica HIPAA y distingue el objeto de un informe SOC 1 vs SOC 2 (Tipo I y Tipo II).</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(18)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-indigo-700"></i> Semana 10
+                </h4>
+                <span class="text-xs font-bold text-slate-500">2 Sesiones (8 Horas)</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-19</span>
+                        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px]">💻 Virtual Síncrona</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Higiene digital, protección cotidiana, ingeniería social y phishing</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Identifica señales de ingeniería social, documenta un evento y ejecuta reporte inicial sin alterar evidencia.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(19)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-600 hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-[11px]">
+                        <span class="font-black px-2 py-0.5 rounded bg-indigo-900 text-white">S-20</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">🏢 Presencial en Kinal</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-xs leading-snug">Proyecto Integrador: consolidación de expediente, defensa y clausura</h5>
+                    <p class="text-[11px] text-slate-500 line-clamp-2">Sustenta un conjunto coherente de controles con alcance, responsables y evidencias ante jurado evaluador.</p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 font-semibold">4 Horas (240 min)</span>
+                    <button onclick="goToSession(20)" class="text-indigo-600 font-bold hover:underline flex items-center gap-0.5">
+                        Ver Secuencia →
+                    </button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL SIN ALARGAR LA PÁGINA) -->
+        <!-- ================================================================== -->
+        <div id="tab-secuencias" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-indigo-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-0.5">
+                        Selecciona una sesión en el panel izquierdo para consultar su microdiseño en 3 momentos (Apertura, Desarrollo y Cierre).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-56">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+                        <input type="text" id="ciber-sec-search" oninput="filterCiberList()" placeholder="Buscar sesión..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master-Detail Container -->
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- LISTADO LATERAL (MASTER) -->
+                <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-4 shadow-sm space-y-2">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1 border-b border-slate-100 flex justify-between">
+                        <span>Listado de Sesiones</span>
+                        <span id="ciber-count-badge">20 Sesiones</span>
+                    </div>
+                    <div id="ciber-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="ciber-detail-card">
+                    <!-- Rendered by JS -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================================================== -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
+        <!-- ================================================================== -->
+        <div id="tab-evaluacion" class="tab-content hidden space-y-8">
+            
+            <!-- Esquema Resumen -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-indigo-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
+                    </h3>
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
+                        Umbral Mínimo: 75 / 100 Puntos
+                    </span>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Expediente del Caso</div>
+                        <div class="text-3xl font-black text-indigo-900">40%</div>
+                        <div class="text-slate-600">Entregable Terminal Integrado</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Talleres Prácticos</div>
+                        <div class="text-3xl font-black text-emerald-700">30%</div>
+                        <div class="text-slate-600">Laboratorios y Diagramación</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Comprobaciones Teóricas</div>
+                        <div class="text-3xl font-black text-purple-700">15%</div>
+                        <div class="text-slate-600">Evaluaciones de Criterio Técnico</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Bitácora & Asistencia</div>
+                        <div class="text-3xl font-black text-amber-700">15%</div>
+                        <div class="text-slate-600">Registro Dual y 100% Presencial</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rúbrica Terminal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-indigo-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación (Normativa Kinal)
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación de criterios conceptuales, precisión en controles, diagnóstico de riesgos y trazabilidad.
+                        </p>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/5">Criterio Evaluado</th>
+                                <th class="py-3 px-4 w-1/5 text-emerald-800">Excelente (90 - 100)</th>
+                                <th class="py-3 px-4 w-1/5 text-blue-800">Muy Bueno (80 - 89)</th>
+                                <th class="py-3 px-4 w-1/5 text-amber-800">Aprobado Mínimo (75 - 79)</th>
+                                <th class="py-3 px-4 w-1/5 text-rose-800">No Aprobado (&lt; 75)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Corrección Conceptual y Distinción de Funciones<br>(Peso: 25%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Distingue con total precisión identidad, acceso, transporte, hashing y cifrado sin confundir conceptos.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Distingue las funciones técnicas principales con mínimas precisiones requeridas en clase.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Comprensión básica de funciones pero requiere aclaración menor en protocolos o factores MFA.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Confunde autenticación con autorización, o hash con cifrado reversible de manera crítica.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Alcance Explícito y Coherencia Documental<br>(Peso: 20%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Delimita claramente qué cubre cada control y mantiene coherencia total entre diagramas, flujos y políticas.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Delimitación clara del alcance con coherencia adecuada entre los documentos del expediente.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Alcance delimitado pero con ambigüedades menores en límites con servicios de terceros.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Propone &#x27;aplica a todo&#x27; sin inventario verificable o presenta documentos desarticulados e incoherentes.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Controles y Tratamiento de Riesgos Justificados<br>(Peso: 25%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Justifica de forma técnica y operativa cada control, escenario de riesgo y mitigación propuesta.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Justificación técnica sólida para la mayoría de controles y riesgos evaluados.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Propone controles pertinentes pero su justificación técnica de riesgo residual es esquemática.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Controles arbitrarios sin sustento de riesgo o acepta riesgos sin autoridad ni compensaciones.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Responsables y Evidencia de Trazabilidad<br>(Peso: 20%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Asigna roles RACI explícitos y define evidencias verificables (logs, tickets, hashes) para cada control.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Asigna responsables claros y describe evidencias observables suficientes para auditoría.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Indica responsables pero las evidencias propuestas son genéricas o de difícil verificación.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Controles sin responsable asignado o carentes de evidencia de comprobación y cierre.</td>
+    </tr>
+
+    <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">Claridad en la Presentación y Respuestas<br>(Peso: 10%)</td>
+        <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">Defensa técnica serena, fluida, profesional y respuestas precisas que demuestran dominio del caso.</td>
+        <td class="py-3 px-4 text-blue-950 bg-blue-50/30 border-r border-slate-200 align-top">Presentación clara y respuestas acertadas a las preguntas del panel evaluador.</td>
+        <td class="py-3 px-4 text-amber-950 bg-amber-50/30 border-r border-slate-200 align-top font-medium">Exposición entendible pero con dudas menores al justificar decisiones ante preguntas del jurado.</td>
+        <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">Incapaz de explicar el expediente presentado o evade responder sobre las evidencias técnicas.</td>
+    </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Expediente de Seguridad del Caso Transversal -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="folder-lock" class="w-5 h-5 text-indigo-700"></i>
+                            Estructura del Expediente de Seguridad del Caso Transversal
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Portafolio de evidencias construido por el aprendiz durante las 20 sesiones del programa.
+                        </p>
+                    </div>
+                    <button onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center gap-1.5">
+                        <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir Portafolio
+                    </button>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-300 space-y-4 text-xs font-mono">
+                    <div class="border-b border-slate-300 pb-3 font-bold text-slate-900 text-center uppercase tracking-wider">
+                        FUNDACIÓN KINAL • EXPEDIENTE TERMINAL DE SEGURIDAD EMPRESARIAL
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><strong>Estudiante:</strong> ____________________________________</div>
+                        <div><strong>Carné:</strong> ______________</div>
+                        <div><strong>Organización Simulada:</strong> Distribuidora Médica S.A.</div>
+                        <div><strong>Instructor Evaluador:</strong> __________________________</div>
+                    </div>
+                    <div class="space-y-2 pt-2 text-slate-800">
+                        <strong>Componentes Documentales Auditables:</strong>
+                        <ul class="space-y-1.5 list-disc pl-5">
+                            <li><strong>Artefacto 1:</strong> Inventario de Activos Críticos y Matriz de Tríada CIA (Confidencialidad, Integridad, Disponibilidad).</li>
+                            <li><strong>Artefacto 2:</strong> Matriz de Control de Accesos Basado en Roles (RBAC) y Políticas de Contraseñas / MFA.</li>
+                            <li><strong>Artefacto 3:</strong> Procedimiento Operativo Estándar (SOP) para el ciclo de vida de credenciales y altas/bajas de personal.</li>
+                            <li><strong>Artefacto 4:</strong> Informe de Evaluación de Vulnerabilidades CVE/CVSS y Plan de Mitigación sin Explotación.</li>
+                            <li><strong>Artefacto 5:</strong> Procedimiento de Notificación y Escalación de Incidentes de Seguridad.</li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 pt-6 text-center">
+                        <div class="border-t border-slate-400 pt-2">Firma del Aprendiz</div>
+                        <div class="border-t border-slate-400 pt-2">Evaluación Terminal Kinal (Nota: _____ / 100)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+        <!-- ========================================================= -->
+    <!-- PIE DE PÁGINA INSTITUCIONAL                               -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#0D162C] text-slate-400 py-10 border-t border-[#152244] text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="assets/fundacion_kinal_blanco.png" alt="Fundación Kinal" class="h-10 sm:h-12 w-auto object-contain">
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="font-bold text-slate-200 text-sm">Escuela Técnica Superior (ETS) • Fundación Kinal</p>
+                    <p class="text-slate-400 text-xs mt-0.5">Centro de Excelencia Técnica y Tecnológica • Ciclo Lectivo 2026</p>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+                <p class="text-slate-500">
+                    &copy; 2026 Fundación Kinal. Todos los derechos reservados. Formación Técnica bajo estándares del Marco Alemán de Cualificaciones (DQR).
+                </p>
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="index.html" class="hover:text-[#EC9123] transition">Inicio</a>
+                    <span>•</span>
+                    <a href="tsu.html" class="hover:text-[#EC9123] transition">TSU</a>
+                    <span>•</span>
+                    <a href="cursos_nuevos.html" class="text-[#EC9123] font-bold">Cursos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        const ciberSessions = [{"num": 1, "code": "S-01", "semana": "Semana 1", "modalidad": "Presencial en Sede Kinal", "is_presencial": true, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 1: Sistemas y TI", "title": "Fundamentos de seguridad: tríada CIA, activos, riesgos y clasificación", "duration": "4 Horas (240 min)", "objective": "Distingue confidencialidad, integridad y disponibilidad en un caso laboral de la empresa ficticia.", "apertura": "Presentación del curso, reglas de convivencia e ideario de Kinal. Planteamiento del caso de la empresa ficticia: fuga de información de clientes por correo.", "desarrollo": "Exposición dialogada sobre la tríada CIA, amenazas y riesgos. Ejercicio guiado: inventario inicial de activos de la empresa ficticia y clasificación en pública, interna, confidencial y restringida.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Puesta en común de clasificaciones. Registro en la Bitácora Berichtsheft sobre impacto de pérdida de integridad. Preguntas de verificación.", "evidencias": "Computadora, navegador, plantilla de inventario de activos, caso de estudio.", "equipamiento": "Ficha de clasificación de activos con justificación de confidencialidad, integridad y disponibilidad."}, {"num": 2, "code": "S-02", "semana": "Semana 1", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 1: Sistemas y TI", "title": "Gestión de soporte ITIL: incidentes, solicitudes, cambios y SLAs", "duration": "4 Horas (240 min)", "objective": "Clasifica una solicitud de servicio y documenta su atención con responsables y evidencia.", "apertura": "Caso laboral: caída de servidor de facturación a fin de mes. Debate sobre impacto vs urgencia y diferencia entre falla técnica e incidente de seguridad.", "desarrollo": "Principios ITIL aplicados al soporte: valor, colaboración y visibilidad. Flujo de mesa de servicio: solicitud, incidente, problema y cambio. Ejercicio: redacción de un ticket formal con SLA y escalamiento.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión de tickets en parejas. Registro en Berichtsheft sobre criterios de escalamiento. Reflexión ética sobre el compromiso de servicio.", "evidencias": "Plantilla de ticket de mesa de servicio, guía ITIL de Fundación Kinal.", "equipamiento": "Ticket de mesa de servicio documentado con categoría, impacto, urgencia, responsable y evidencia de resolución."}, {"num": 3, "code": "S-03", "semana": "Semana 2", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 1: Sistemas y TI", "title": "Redes, servidores, modelos IaaS/PaaS/SaaS y responsabilidad compartida", "duration": "4 Horas (240 min)", "objective": "Lee y dibuja un diagrama básico explicando dependencias y límites de responsabilidad.", "apertura": "Pregunta detonante: ¿si se cae el servicio SaaS de correo, de quién es la culpa? Discusión de responsabilidades.", "desarrollo": "Análisis de servidores locales, virtuales, switches y enlaces WAN. Modelos IaaS, PaaS y SaaS. Ejercicio: diagramación lógica del sistema de la empresa ficticia delimitando qué gestiona la empresa y qué el proveedor.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Inspección de diagramas de arquitectura. Registro en Berichtsheft de la matriz de responsabilidad compartida. Cierre del Módulo 1.", "evidencias": "Herramienta de diagramación (Draw.io / Lucidchart), ejemplos de arquitecturas cloud.", "equipamiento": "Diagrama completo del sistema de la empresa ficticia con equipos, red, servidor y SaaS con delimitación de alcance."}, {"num": 4, "code": "S-04", "semana": "Semana 2", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 2: Identidad y Acceso", "title": "Autenticación, validación, creación de sesión, expiración y revocación", "duration": "4 Horas (240 min)", "objective": "Reconstruye el inicio, validación y cierre de una sesión, señalando quién valida cada paso.", "apertura": "Caso real: usuario que dejó sesión abierta en equipo compartido y sufrió suplantación de identidad en sistema contable.", "desarrollo": "Fases: identificación, prueba, validación, sesión, expiración y revocación. Roles del usuario, aplicación e IdP. Ejercicio: diagramar el ciclo de sesión distinguiendo que autenticar no otorga permiso universal.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión de flujos de sesión. Registro en Berichtsheft sobre directivas de expiración por inactividad. Verificación de comprensión.", "evidencias": "Diagramas de flujo de sesión, navegador web con consola de desarrollador (inspección de cookies de sesión sin credenciales reales).", "equipamiento": "Flujo secuencial de ciclo de sesión documentado con eventos de expiración y revocación."}, {"num": 5, "code": "S-05", "semana": "Semana 3", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 2: Identidad y Acceso", "title": "Autenticación multifactor (MFA), enrolamiento, fricción y phishing", "duration": "4 Horas (240 min)", "objective": "Compara factores y describe un procedimiento de enrolamiento y recuperación.", "apertura": "Demostración de ataque de fatiga de MFA (MFA bombing) y por qué dos contraseñas no son dos factores.", "desarrollo": "Análisis de factores: conocimiento, posesión e inherencia. Comparación de OTP, apps autenticadoras, push y llaves FIDO2. Ejercicio: redactar el procedimiento de enrolamiento y recuperación de factor perdido.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Evaluación de procedimientos de recuperación. Registro en Berichtsheft sobre controles compensatorios ante pérdida de token.", "evidencias": "Aplicaciones autenticadoras de ejemplo, guías de enrolamiento MFA.", "equipamiento": "Procedimiento operativo de enrolamiento y recuperación de MFA con controles sobre excepciones."}, {"num": 6, "code": "S-06", "semana": "Semana 3", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 2: Identidad y Acceso", "title": "SSO, federación, protocolos (SAML, LDAP, OAuth/OIDC) y matriz RBAC", "duration": "4 Horas (240 min)", "objective": "Ubica protocolos (SAML, LDAP, OAuth, OIDC) y construye una matriz simple de roles y permisos.", "apertura": "Dilema operativo: renuncia de un empleado clave con acceso a 10 sistemas SaaS. Riesgos de no tener SSO centralizado.", "desarrollo": "Conceptos de SSO, SAML, LDAP, OAuth 2.0 y OIDC. Bearer tokens y flujo PKCE sin código. Matriz RBAC: usuario, grupo, rol y acción. Ejercicio: construir matriz RBAC y resolver baja inmediata de usuario.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Inspección de matrices RBAC. Registro en Berichtsheft sobre revocación de tokens. Cierre formal del Módulo 2.", "evidencias": "Plantilla de matriz RBAC, diagramas de flujo OAuth/SAML.", "equipamiento": "Matriz de roles y permisos RBAC y procedimiento de baja inmediata con revocación de sesiones."}, {"num": 7, "code": "S-07", "semana": "Semana 4", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 3: Controles y Resp.", "title": "Mínimo privilegio, delimitación de alcance, fronteras y Zero Trust", "duration": "4 Horas (240 min)", "objective": "Justifica cada permiso y redacta inclusiones, exclusiones y dependencias de un control.", "apertura": "Discusión de la frase 'dar acceso total para que no dé problemas'. Consecuencias de roles genéricos excesivos.", "desarrollo": "Principio de menor privilegio y regla deny by default. Separación de cuenta diaria y administrativa. Pilares de Zero Trust: verificación explícita y contexto. Ejercicio: definir el alcance y fronteras de un control.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión de redacción de controles: verificar que indiquen dónde actúan y su evidencia. Registro en Berichtsheft.", "evidencias": "Estándar NIST SP 800-207, plantilla de especificación de control.", "equipamiento": "Ficha de diseño de control con alcance delimitado, exclusiones y justificación de mínimo privilegio."}, {"num": 8, "code": "S-08", "semana": "Semana 4", "modalidad": "Presencial en Sede Kinal", "is_presencial": true, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 3: Controles y Resp.", "title": "Segregación de funciones, matriz RACI, telemetría y lectura en SIEM", "duration": "4 Horas (240 min)", "objective": "Lee registros básicos y correlaciona eventos para reconstruir un proceso, separando hechos de hipótesis.", "apertura": "Presentación de un caso de fraude interno por autoaprobación de compras. Importancia de la segregación de funciones.", "desarrollo": "Matriz RACI. Introducción a logs y SIEM: marcas de tiempo UTC, actor, origen, recurso, acción y resultado. Lectura práctica de registros de ejemplo: intentos fallidos 4625 seguidos de 4624, regla deny de firewall y error nómina.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Construcción de la línea de tiempo del evento. Registro en Berichtsheft sobre la diferencia entre hecho e hipótesis. Cierre del Módulo 3.", "evidencias": "Registros de logs ficticios normalizados, plantilla de matriz RACI, visor de logs.", "equipamiento": "Reconstrucción documentada de un incidente a partir de logs correlacionados y ticket de solicitud."}, {"num": 9, "code": "S-09", "semana": "Semana 5", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 4: Comunicaciones Web", "title": "Criptografía: simétrica, asimétrica, hashes, firmas y gestión de claves", "duration": "4 Horas (240 min)", "objective": "Distingue cifrado, hash y firma digital y explica el papel de la custodia de claves.", "apertura": "Caso real: filtración de base de datos con contraseñas en texto claro vs contraseñas hasheadas con salt.", "desarrollo": "Texto claro, algoritmo y clave. Cifrado simétrico (AES) vs asimétrico (RSA). Integridad con SHA-256. Demostración práctica con CyberChef: cálculo de hashes y cifrado. Aclaración: hash no es cifrado reversible.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Comprobación de conceptos criptográficos. Registro en Berichtsheft sobre algoritmos recomendados vs obsoletos.", "evidencias": "Herramienta web CyberChef, generadores de hash, ejemplos de pares de claves.", "equipamiento": "Tabla comparativa de primitivas criptográficas con casos de uso en tránsito y en reposo."}, {"num": 10, "code": "S-10", "semana": "Semana 5", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 4: Comunicaciones Web", "title": "Protocolos HTTP vs HTTPS, handshake TLS y certificados X.509", "duration": "4 Horas (240 min)", "objective": "Describe el establecimiento conceptual de una conexión HTTPS e inspecciona un certificado.", "apertura": "¿El candado verde en el navegador garantiza que el sitio web no es una estafa? Análisis crítico.", "desarrollo": "Estructura HTTP (métodos, códigos de estado, cabeceras). Negociación TLS: autenticación de servidor y acuerdo de claves. Estructura del certificado X.509: dominio (SAN), emisor, vigencia y clave pública.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Inspección guiada de certificados de sitios web autorizados. Registro en Berichtsheft sobre advertencias de certificados vencidos.", "evidencias": "Navegador web, visor de certificados X.509, capturas de handshake TLS en Wireshark.", "equipamiento": "Ficha de análisis de un certificado digital identificando emisor, vigencia, SAN y validez."}, {"num": 11, "code": "S-11", "semana": "Semana 6", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 4: Comunicaciones Web", "title": "Cadena de CAs, proxies, componentes de red y seguridad en APIs REST", "duration": "4 Horas (240 min)", "objective": "Identifica componentes del recorrido web y propone controles básicos sobre un endpoint de API.", "apertura": "Trazado del viaje de un paquete desde el navegador hasta la base de datos de un banco.", "desarrollo": "Jerarquía de CAs (raíz, intermedia). Funciones de DNS, router, firewall y proxy (directo e inverso). Inspección de metadatos y terminación TLS. Seguridad en APIs: endpoints, tokens Bearer, Rate Limiting.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Construcción del diagrama de recorrido web y ficha de control de API. Registro en Berichtsheft. Cierre del Módulo 4.", "evidencias": "Herramienta de diagramación, ejemplos de peticiones HTTP a APIs REST ficticias.", "equipamiento": "Diagrama de recorrido web completo y especificación de controles sobre un endpoint de API expuesto."}, {"num": 12, "code": "S-12", "semana": "Semana 6", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 5: Vulnerabilidades", "title": "Ciclo de vida de hardware (EOL/EOS) y gestión de servicios SaaS", "duration": "4 Horas (240 min)", "objective": "Define un ciclo de vida de hardware y establece compromisos de seguridad con proveedores SaaS.", "apertura": "Caso laboral: conmutador de red de 10 años que deja de recibir parches de seguridad (End of Support).", "desarrollo": "Etapas del hardware: adquisición, operación, mantenimiento, EOL y retiro seguro. Gestión de servicios SaaS: seguimiento de notas de versión, fechas de deprecación y exportación de datos al cancelar contrato.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión de planes de ciclo de vida. Registro en Berichtsheft sobre borrado seguro y disposición de discos.", "evidencias": "Plantilla de inventario de ciclo de vida de hardware y contratos SaaS de ejemplo.", "equipamiento": "Plan de ciclo de vida de activos con fechas EOL/EOS y estrategia de retiro seguro documentada."}, {"num": 13, "code": "S-13", "semana": "Semana 7", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 5: Vulnerabilidades", "title": "Mantenimiento de servidores, parches de SO y software/dependencias", "duration": "4 Horas (240 min)", "objective": "Propone actualización o retiro según soporte y gestiona ventanas de cambios con plan de reversión.", "apertura": "Caso real: actualización de servidor que dejó inoperativa la base de datos contable por falta de plan de reversión.", "desarrollo": "Versiones de SO y estado de soporte. Gestión de cambios de parches: inventario, respaldo comprobado, pruebas en staging, ventana de mantenimiento y rollback. Software: bibliotecas y dependencias compartidas.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Simulación de un plan de ventana de parcheo. Registro en Berichtsheft sobre requisitos de aprobación previa.", "evidencias": "Procedimiento estándar de gestión de cambios (ITIL), plantilla de plan de marcha atrás.", "equipamiento": "Plan de aplicación de parches de servidor con verificación de respaldo y procedimiento de rollback."}, {"num": 14, "code": "S-14", "semana": "Semana 7", "modalidad": "Presencial en Sede Kinal", "is_presencial": true, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 5: Vulnerabilidades", "title": "Lectura de avisos CVE/CVSS, tratamiento y remediación de protocolos", "duration": "4 Horas (240 min)", "objective": "Interpreta un aviso CVE/CVSS y formula una acción técnica verificable para el activo afectado.", "apertura": "Lectura guiada de un boletín de seguridad real de fabricante (ej. vulnerabilidad en servidor web o biblioteca).", "desarrollo": "Estructura del CVE, métricas CVSS (base vs severidad real según exposición). Opciones de tratamiento: parche, mitigación temporal, ajuste de configuración o retiro. Caso TLS 1.0 como protocolo obsoleto.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Elaboración del plan de tratamiento para el aviso asignado. Registro en Berichtsheft. Cierre del Módulo 5.", "evidencias": "Base de datos NIST NVD, avisos oficiales de seguridad de Microsoft y Apache.", "equipamiento": "Ficha de tratamiento de vulnerabilidad CVE con severidad CVSS, mitigación justificada y prueba de validación."}, {"num": 15, "code": "S-15", "semana": "Semana 8", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 6: Documentación", "title": "Jerarquía documental: políticas de seguridad corporativas y estándares", "duration": "4 Horas (240 min)", "objective": "Redacta una regla de política con alcance, responsable y forma de verificar su cumplimiento.", "apertura": "Análisis de políticas redactadas de forma ambigua ('los usuarios deben ser cuidadosos') y por qué no funcionan.", "desarrollo": "Pirámide documental: políticas, estándares, SOPs y guías. Elementos mandatorios: propósito, alcance explícito, reglas obligatorias, responsables, excepciones y aprobación. Ejercicio: redactar política de accesos.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión cruzada de políticas entre estudiantes. Registro en Berichtsheft sobre control de versiones y aprobaciones.", "evidencias": "Plantilla institucional de política de seguridad de la información.", "equipamiento": "Documento formal de Política de Control de Accesos con alcance, responsables y métricas de verificación."}, {"num": 16, "code": "S-16", "semana": "Semana 8", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 6: Documentación", "title": "Procedimientos SOP, evaluación de riesgos y aceptación temporal", "duration": "4 Horas (240 min)", "objective": "Describe un SOP ejecutable y formula una solicitud de aceptación temporal para autoridad competente.", "apertura": "Caso de estudio: servidor antiguo no actualizable que soporta una línea crítica de manufactura.", "desarrollo": "Estructura de SOP: pasos secuenciales, roles y criterio de cierre. Matriz de riesgos: impacto, probabilidad, riesgo inherente y residual. Solicitud de aceptación de riesgo: motivo, controles compensatorios y vigencia.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Inspección de SOPs y solicitudes de aceptación. Registro en Berichtsheft. Cierre formal del Módulo 6.", "evidencias": "Plantilla de SOP (Procedimiento Operativo Estándar), matriz de evaluación de riesgos.", "equipamiento": "SOP de baja de usuarios y formato de solicitud de aceptación temporal de riesgo debidamente justificado."}, {"num": 17, "code": "S-17", "semana": "Semana 9", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 7: Estándares", "title": "Estándar PCI DSS (CDE) e ISO/IEC 27001 (SGSI y SoA)", "duration": "4 Horas (240 min)", "objective": "Identifica datos de pago, delimita el entorno CDE y relaciona riesgos con los requisitos de ISO 27001.", "apertura": "¿Toda empresa que acepta pagos con tarjeta debe certificarse en PCI DSS? Análisis de aplicabilidad.", "desarrollo": "PCI DSS: protección de datos de tarjetahabiente, Entorno de Datos del Titular (CDE) y segmentación. ISO/IEC 27001:2022: estructura del SGSI, liderazgo, evaluación de riesgos, SoA y mejora continua (2h cada tema).\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Comparación de objetivos entre estándar técnico (PCI) y norma de gestión (ISO). Registro en Berichtsheft.", "evidencias": "Estándar PCI DSS v4.0 (resumen), norma ISO/IEC 27001:2022 (estructura de cláusulas y controles Anexo A).", "equipamiento": "Matriz comparativa de aplicabilidad entre PCI DSS e ISO 27001 para la empresa ficticia."}, {"num": 18, "code": "S-18", "semana": "Semana 9", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 7: Estándares", "title": "Regulación HIPAA (ePHI) e informes de aseguramiento SOC 1 y SOC 2", "duration": "4 Horas (240 min)", "objective": "Reconoce cuándo aplica HIPAA y distingue el objeto de un informe SOC 1 vs SOC 2 (Tipo I y Tipo II).", "apertura": "Caso de empresa guatemalteca de software que brinda soporte a clínicas en EE.UU.: obligaciones de HIPAA y SOC.", "desarrollo": "HIPAA: datos de salud protegidos (ePHI), salvaguardas administrativas, físicas y técnicas. Informes SOC: SOC 1 (financiero) vs SOC 2 (servicios de confianza); Tipo I (a una fecha) vs Tipo II (período de eficacia).\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Lectura guiada de extractos de un informe SOC 2 ficticio: opinión del auditor y excepciones. Registro en Berichtsheft. Cierre M7.", "evidencias": "Guía de la regla de seguridad de HIPAA, ejemplos de informes SOC 2 con datos simulados.", "equipamiento": "Ficha de análisis de aplicabilidad de HIPAA y criterios de interpretación de un informe SOC 2 Tipo II."}, {"num": 19, "code": "S-19", "semana": "Semana 10", "modalidad": "Virtual Síncrona", "is_presencial": false, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 8: Higiene e Incidentes", "title": "Higiene digital, protección cotidiana, ingeniería social y phishing", "duration": "4 Horas (240 min)", "objective": "Identifica señales de ingeniería social, documenta un evento y ejecuta reporte inicial sin alterar evidencia.", "apertura": "Simulación de correo electrónico fraudulento urgente solicitando cambio de cuenta bancaria de proveedor.", "desarrollo": "Higiene digital: contraseñas, MFA y bloqueo de pantalla. Ingeniería social: phishing, smishing, vishing y quishing. Señales de alarma y verificación out-of-band. Protocolo de reporte inicial: qué, cuándo, quién y acciones.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Simulación de llenado de reporte de incidente de seguridad. Registro en Berichtsheft. Preparación para sesión final.", "evidencias": "Muestras de correos phishing simulados, formato de reporte de incidentes de seguridad.", "equipamiento": "Reporte formal de incidente de seguridad por intento de phishing con cadena de custodia inicial."}, {"num": 20, "code": "S-20", "semana": "Semana 10", "modalidad": "Presencial en Sede Kinal", "is_presencial": true, "horario": "Encuentro de 4 Horas (240 min)", "module": "Módulo 8: Higiene e Incidentes", "title": "Proyecto Integrador: consolidación de expediente, defensa y clausura", "duration": "4 Horas (240 min)", "objective": "Sustenta un conjunto coherente de controles con alcance, responsables y evidencias ante jurado evaluador.", "apertura": "Apertura de la jornada final de evaluación. Presentación de los criterios de la rúbrica y bienvenida a autoridades de Kinal.", "desarrollo": "Sustentación individual y por células del Expediente de Seguridad del Caso Transversal (diagramas, RBAC, logs, ciclo de vida, políticas, SOPs, riesgos y respuesta). Ronda de preguntas técnicas de justificación.\n[Incluye Receso Formativo de 20 min intermedio]", "cierre": "Revisión final y firma oficial de la Bitácora Berichtsheft. Deliberación y entrega de notas finales (aprobatorio ≥ 75 pts). Acto de clausura y reflexión final sobre los valores de servicio y trabajo bien hecho.", "evidencias": "Expedientes de seguridad completos, rúbrica analítica del proyecto, bitácoras de taller Berichtsheft.", "equipamiento": "Expediente de Seguridad del Caso aprobado y sustentado con nota mínima de suficiencia (≥ 75 / 100 puntos)."}];
+        let currentSessionNum = 1;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            
+            const target = document.getElementById('tab-' + tabId);
+            if (target) target.classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+            window.scrollTo({ top: 220, behavior: 'smooth' });
+        }
+
+        function filterCiberTemario(category) {
+            document.querySelectorAll('.ciber-filter-btn').forEach(b => {
+                b.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+            });
+            const activeBtn = document.getElementById('btn-ciber-' + category);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+            }
+
+            const items = document.querySelectorAll('#tab-temario .content-item');
+            items.forEach(it => {
+                if (category === 'all' || it.getAttribute('data-category') === category) {
+                    it.style.display = 'block';
+                } else {
+                    it.style.display = 'none';
+                }
+            });
+        }
+
+        function renderCiberSessionList(list) {
+            const listContainer = document.getElementById('ciber-sessions-list');
+            if (!listContainer) return;
+            
+            listContainer.innerHTML = list.map(s => `
+                <div onclick="selectCiberSession(${s.num})" id="ciber-list-item-${s.num}" class="session-item p-3 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-slate-100 transition cursor-pointer flex items-center justify-between text-xs ${s.num === currentSessionNum ? 'active' : ''}">
+                    <div class="flex items-center gap-2.5 overflow-hidden">
+                        <span class="badge-code w-7 h-7 rounded-lg bg-indigo-900 text-white font-black text-[11px] flex items-center justify-center shrink-0">
+                            ${s.code}
+                        </span>
+                        <div class="truncate">
+                            <span class="text-[10px] uppercase font-bold text-indigo-700 block">${s.semana}</span>
+                            <div class="font-bold text-slate-900 truncate">${s.title}</div>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderCiberSessionDetail(s) {
+            const detailContainer = document.getElementById('ciber-detail-card');
+            if (!detailContainer) return;
+
+            const badgeMod = s.is_presencial ? 
+                '<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-bold text-xs">🏢 Presencial en Kinal</span>' : 
+                '<span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-800 font-bold text-xs border border-indigo-200">💻 Virtual Síncrona</span>';
+
+            detailContainer.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-100 pb-3">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded-md bg-indigo-900 text-white font-black text-xs">${s.code}</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-900 font-bold text-xs border border-indigo-200">${s.module}</span>
+                                ${badgeMod}
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-black text-slate-900 pt-1">${s.title}</h4>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> ${s.duration}
+                        </span>
+                    </div>
+
+                    <!-- Objetivo -->
+                    <div class="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-100 text-xs space-y-1">
+                        <strong class="text-indigo-950 font-bold flex items-center gap-1.5 text-sm">
+                            <i data-lucide="target" class="w-4 h-4 text-indigo-700"></i> Objetivo Pedagógico de la Sesión
+                        </strong>
+                        <p class="text-slate-800 leading-relaxed text-xs">${s.objective}</p>
+                    </div>
+
+                    <!-- 3 Momentos -->
+                    <div class="grid md:grid-cols-3 gap-3.5 text-xs pt-1">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-900 text-[10px] flex items-center justify-center font-black">1</span>
+                                Apertura (30 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.apertura}</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] flex items-center justify-center font-black">2</span>
+                                Desarrollo (180 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.desarrollo}</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="flex items-center gap-1.5 font-black text-slate-900 text-xs">
+                                <span class="w-5 h-5 rounded-full bg-amber-100 text-amber-900 text-[10px] flex items-center justify-center font-black">3</span>
+                                Cierre (30 min)
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-[11px]">${s.cierre}</p>
+                        </div>
+                    </div>
+
+                    <!-- Footer: Evidencias y Equipamiento -->
+                    <div class="grid sm:grid-cols-2 gap-3 pt-3 text-xs border-t border-slate-100">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-slate-500 block">Producto Observable</span>
+                            <div class="text-slate-800 font-medium flex items-start gap-1.5">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span>${s.evidencias}</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-slate-500 block">Entorno / Caso Transversal</span>
+                            <div class="text-slate-800 font-medium flex items-start gap-1.5">
+                                <i data-lucide="shield" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i>
+                                <span>${s.equipamiento}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navegación entre sesiones -->
+                    <div class="flex justify-between items-center pt-2">
+                        <button onclick="navigateCiberSession(-1)" ${s.num === 1 ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1 transition">
+                            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Anterior
+                        </button>
+                        <span class="text-xs font-bold text-slate-400">Sesión ${s.num} de 20</span>
+                        <button onclick="navigateCiberSession(1)" ${s.num === 20 ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1 transition">
+                            Siguiente <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function selectCiberSession(num) {
+            // [Mobile Engine]: Auto-scroll a detalle en pantallas móviles
+            if (window.innerWidth < 1024) {
+                setTimeout(function() {
+                    const card = document.getElementById('ciber-detail-card');
+                    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 60);
+            }
+            currentSessionNum = num;
+            document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
+            const activeItem = document.getElementById('ciber-list-item-' + num);
+            if (activeItem) activeItem.classList.add('active');
+
+            const s = ciberSessions.find(item => item.num === num);
+            if (s) renderCiberSessionDetail(s);
+        }
+
+        function navigateCiberSession(direction) {
+            const newNum = currentSessionNum + direction;
+            if (newNum >= 1 && newNum <= 20) {
+                selectCiberSession(newNum);
+            }
+        }
+
+        function goToSession(num) {
+            switchTab('secuencias');
+            selectCiberSession(num);
+        }
+
+        function filterCiberList() {
+            const q = document.getElementById('ciber-sec-search').value.toLowerCase();
+            const filtered = ciberSessions.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) || 
+                s.objective.toLowerCase().includes(q)
+            );
+            renderCiberSessionList(filtered);
+            document.getElementById('ciber-count-badge').innerText = filtered.length + ' Sesiones';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCiberSessionList(ciberSessions);
+            selectCiberSession(1);
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- Mobile Master-Detail Interaction Helper -->
+    <script>
+        (function() {
+            window.kinalScrollToDetail = function(detailId) {
+                if (window.innerWidth < 1024) {
+                    const el = document.getElementById(detailId) || document.querySelector('[id$="-detail-card"]');
+                    if (el) {
+                        setTimeout(function() {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 50);
+                    }
+                }
+            };
+        })();
+    </script>
+
+</body>
+</html>
