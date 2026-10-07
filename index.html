@@ -85,36 +85,36 @@
 <body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
 
     <!-- ========================================================= -->
-    <!-- BARRA INSTITUCIONAL SUPERIOR                              -->
+    <!-- ENCABEZADO FIJO PERMANENTE (SIEMPRE VISIBLE)              -->
     <!-- ========================================================= -->
-    <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center gap-3">
-                <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
-                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
-                </span>
-                <span class="text-slate-500">|</span>
-                <span class="text-slate-300 font-medium hidden sm:inline">
-                    Ideario Institucional: <em>«El trabajo bien hecho»</em>
-                </span>
-            </div>
-            <div class="flex items-center gap-4 text-slate-300 font-medium">
-                <span class="flex items-center gap-1.5">
-                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
-                </span>
-                <span class="text-slate-600">|</span>
-                <span class="text-emerald-400 font-bold flex items-center gap-1">
-                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
-                </span>
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200">
+        
+        <!-- BARRA INSTITUCIONAL SUPERIOR -->
+        <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                    </span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-slate-300 font-medium hidden sm:inline">
+                        Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
+                    </span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-emerald-400 font-bold flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ========================================================= -->
-    <!-- HEADER CORPORATIVO (SOLO LOGO ETS & BOTONES 1 PALABRA)     -->
-    <!-- ========================================================= -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-4">
+        <!-- HEADER CORPORATIVO (SOLO LOGO ETS & BOTONES TODOS BLANCOS) -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-wrap justify-between items-center gap-3">
             
             <!-- Logotipo de Escuela Técnica Superior (ETS) -->
             <div class="flex items-center">
@@ -123,20 +123,27 @@
                 </a>
             </div>
 
-            <!-- Navegación y Accesos Directos (1 palabra y mismo color) -->
-            <nav class="flex items-center gap-2 sm:gap-3 text-xs font-bold">
-                <a href="#areas" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
+            <!-- Navegación y Accesos Directos (Botones todos blancos, Inicio al final a la derecha) -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs overflow-x-auto no-scrollbar py-1 font-bold">
+                <a href="#areas" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border border-slate-200">
                     <i data-lucide="layers" class="w-4 h-4 text-[#EC9123]"></i> Áreas
                 </a>
-                <a href="#auditoria-interactiva" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
-                    <i data-lucide="check-square" class="w-4 h-4 text-[#EC9123]"></i> Dictámenes
-                </a>
-                <a href="#metodologia" class="px-3.5 py-2 rounded-lg bg-[#22376D] hover:bg-[#152244] text-white transition flex items-center gap-1.5 shadow-sm">
+                <a href="#metodologia" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border border-slate-200">
                     <i data-lucide="file-badge" class="w-4 h-4 text-[#EC9123]"></i> DQR
                 </a>
+                <a href="tsu.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border border-slate-200">
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-[#EC9123]"></i> TSU
+                </a>
+                <a href="cursos_nuevos.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border border-slate-200">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-[#EC9123]"></i> Nuevos
+                </a>
+                <a href="index.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border border-slate-200">
+                    <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+                </a>
             </nav>
-        </div>
-    </header>
+        </header>
+
+    </div>
 
     <!-- ========================================================= -->
     <!-- HERO PRINCIPAL (FONDO AZUL DEGRADADO LIMPIO)              -->
@@ -561,92 +568,7 @@
         
 
         <!-- ===================================================== -->
-        <!-- SECCIÓN 2: VISOR INTERACTIVO DE AUDITORÍA CURRICULAR  -->
-        <!-- ===================================================== -->
-        <section id="auditoria-interactiva" class="space-y-6 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-24">
-            
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-4">
-                <div>
-                    <span class="text-xs font-bold text-[#EC9123] tracking-widest uppercase">Muestra Interactiva de Dictámenes</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold brand-serif text-[#22376D] mt-0.5">
-                        Matriz de Cambios Curriculares e Inteligencia Artificial
-                    </h2>
-                </div>
-                
-                <!-- Filtros Interactivos de Auditoría -->
-                <div class="flex flex-wrap gap-1.5 text-xs font-bold">
-                    <button onclick="filtrarEstado('todos')" id="btn-filtro-todos" class="px-3 py-1.5 rounded-lg bg-[#22376D] text-white transition ring-2 ring-offset-2 ring-[#22376D]">Todos</button>
-                    <button onclick="filtrarEstado('delete')" id="btn-filtro-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Eliminar</button>
-                    <button onclick="filtrarEstado('update')" id="btn-filtro-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Actualizar</button>
-                    <button onclick="filtrarEstado('new')" id="btn-filtro-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🔵 Nuevo</button>
-                    <button onclick="filtrarEstado('keep')" id="btn-filtro-keep" class="px-3 py-1.5 rounded-lg bg-green-100 text-green-800 hover:bg-green-200 transition">🟢 Mantener</button>
-                    <button onclick="filtrarEstado('ia')" id="btn-filtro-ia" class="px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">🟣 IA</button>
-                </div>
-            </div>
-
-            <!-- Listado de Tarjetas de Auditoría -->
-            <div id="dictamenes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                
-                <div class="dictamen-card status-delete p-4 rounded-2xl border transition" data-status="delete">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-red-700">🔴 Eliminar</span>
-                        <span class="text-slate-500 font-semibold">Construcción</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Cálculo Manual con Tablas Tradicionales</h4>
-                    <p class="text-xs text-slate-600 mt-1">Se sustituyen las hojas manuales por modelado estructural automatizado y hojas de cálculo dinámicas AGIES.</p>
-                </div>
-
-                <div class="dictamen-card status-update p-4 rounded-2xl border transition" data-status="update">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-amber-700">🟡 Actualizar</span>
-                        <span class="text-slate-500 font-semibold">Electricidad</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Medición de Puesta a Tierra</h4>
-                    <p class="text-xs text-slate-600 mt-1">Actualizado a telurómetro digital de 4 picas bajo norma IEEE 81 y resolución CNEE-186-2008.</p>
-                </div>
-
-                <div class="dictamen-card status-new p-4 rounded-2xl border transition" data-status="new">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-blue-700">🔵 Nuevo</span>
-                        <span class="text-slate-500 font-semibold">Construcción</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Metodología BIM Forum Guatemala & Clash Detection</h4>
-                    <p class="text-xs text-slate-600 mt-1">Detección de colisiones interdisciplinarias con Navisworks Manage y Revit Structure/MEP.</p>
-                </div>
-
-                <div class="dictamen-card status-ia p-4 rounded-2xl border transition" data-status="ia">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-purple-700">🟣 IA Aplicada</span>
-                        <span class="text-slate-500 font-semibold">Mecánica</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Análisis Predictivo de Vibraciones con IA</h4>
-                    <p class="text-xs text-slate-600 mt-1">Detección temprana de holguras y fallas en rodamientos industriales usando modelos de aprendizaje automático.</p>
-                </div>
-
-                <div class="dictamen-card status-update p-4 rounded-2xl border transition" data-status="update">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-amber-700">🟡 Actualizar</span>
-                        <span class="text-slate-500 font-semibold">Automotriz</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Inyección Electrónica GDI & Common Rail</h4>
-                    <p class="text-xs text-slate-600 mt-1">Migración a sistemas de alta presión piezoeléctricos con escaneo y osciloscopio en tiempo real.</p>
-                </div>
-
-                <div class="dictamen-card status-keep p-4 rounded-2xl border transition" data-status="keep">
-                    <div class="flex justify-between items-start text-xs">
-                        <span class="font-bold uppercase tracking-wider text-green-700">🟢 Mantener</span>
-                        <span class="text-slate-500 font-semibold">Transversal</span>
-                    </div>
-                    <h4 class="font-bold text-sm text-slate-900 mt-1">Seguridad Ocupacional SSO Acuerdo 229-2014</h4>
-                    <p class="text-xs text-slate-600 mt-1">Se consolida como práctica obligatoria en todos los talleres de formación dual y presencial.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ===================================================== -->
-        <!-- SECCIÓN 3: MARCO INSTITUCIONAL & PEDAGÓGICO           -->
+        <!-- SECCIÓN 2: MARCO INSTITUCIONAL & PEDAGÓGICO           -->
         <!-- ===================================================== -->
         <section id="metodologia" class="bg-gradient-to-br from-[#152244] to-[#22376D] text-white rounded-3xl p-8 sm:p-10 shadow-lg space-y-8 scroll-mt-24">
             
@@ -670,9 +592,6 @@
                     </p>
                     <p>
                         <strong>Valores de Kinal:</strong> <em>«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.»</em>
-                    </p>
-                    <p class="text-slate-300">
-                        La labor formativa se realiza dentro de un espíritu cristiano cuya formación doctrinal y espiritual está confiada a la <strong>Prelatura del Opus Dei</strong>, institución de la Iglesia Católica.
                     </p>
                 </div>
 
@@ -728,30 +647,6 @@
     <!-- Scripts Interactivos -->
     <script>
         lucide.createIcons();
-
-        function filtrarEstado(estado) {
-            const cards = document.querySelectorAll('.dictamen-card');
-            cards.forEach(card => {
-                if (estado === 'todos') {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = (card.getAttribute('data-status') === estado) ? 'block' : 'none';
-                }
-            });
-
-            // Resaltar botón activo
-            const botones = ['todos', 'delete', 'update', 'new', 'keep', 'ia'];
-            botones.forEach(btnId => {
-                const b = document.getElementById('btn-filtro-' + btnId);
-                if (b) {
-                    if (btnId === estado) {
-                        b.classList.add('ring-2', 'ring-offset-2', 'ring-[#22376D]');
-                    } else {
-                        b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#22376D]');
-                    }
-                }
-            });
-        }
     </script>
 </body>
 </html>
