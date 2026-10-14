@@ -11,7 +11,7 @@ def set_cell_background(cell, fill_hex):
     shd = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{fill_hex}"/>')
     tcPr.append(shd)
 
-def set_cell_margins(cell, top=80, bottom=80, left=100, right=100):
+def set_cell_margins(cell, top=70, bottom=70, left=90, right=90):
     tcPr = cell._element.get_or_add_tcPr()
     tcMar = parse_xml(
         f'<w:tcMar {nsdecls("w")}>'
@@ -46,7 +46,7 @@ def add_callout(doc, text, bold_prefix="", fill_hex="F7FAFC", border_color="0033
     
     cell = tbl.cell(0, 0)
     set_cell_background(cell, fill_hex)
-    set_cell_margins(cell, top=130, bottom=130, left=180, right=130)
+    set_cell_margins(cell, top=120, bottom=120, left=180, right=120)
     
     tcPr = cell._element.get_or_add_tcPr()
     borders = parse_xml(
@@ -78,8 +78,7 @@ def add_callout(doc, text, bold_prefix="", fill_hex="F7FAFC", border_color="0033
     r_txt.font.color.rgb = RGBColor(45, 55, 72)
     
     p_post = doc.add_paragraph()
-    p_post.paragraph_format.space_before = Pt(0)
-    p_post.paragraph_format.space_after = Pt(6)
+    style_p(p_post, space_before=0, space_after=6)
 
 def style_heading(p, text, level=1, color=RGBColor(0, 51, 102)):
     p.paragraph_format.keep_with_next = True
@@ -105,7 +104,7 @@ def style_p(p, space_before=0, space_after=6, line_spacing=1.15):
     p.paragraph_format.space_after = Pt(space_after)
     p.paragraph_format.line_spacing = line_spacing
 
-def generate_propuesta():
+def generate_propuesta_doc():
     doc = docx.Document()
     
     for section in doc.sections:
@@ -138,7 +137,7 @@ def generate_propuesta():
 
     p_tit = doc.add_paragraph()
     style_p(p_tit, space_before=14, space_after=10)
-    r_tit = p_tit.add_run("PROPUESTA FORMATIVA INSTITUCIONAL:\nCURSO DE FUNDAMENTOS DE CIBERSEGURIDAD Y OPERACIONES SOC")
+    r_tit = p_tit.add_run("PLANIFICACIÓN Y PROPUESTA FORMATIVA INSTITUCIONAL:\nCIBERSEGURIDAD Y FUNDAMENTOS DE SEGURIDAD DE LA INFORMACIÓN")
     r_tit.font.name = "Calibri"
     r_tit.font.size = Pt(20)
     r_tit.font.bold = True
@@ -146,7 +145,7 @@ def generate_propuesta():
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=20)
-    r_sub = p_sub.add_run("Capacitación Híbrida para la Reconversión Laboral y Empleabilidad Inmediata en el Ecosistema Tecnológico de Guatemala (80 Horas)")
+    r_sub = p_sub.add_run("Programa de Capacitación Híbrida para la Reconversión Laboral y Empleabilidad Inmediata en el Sector Tecnológico de Guatemala (80 Horas — 20 Sesiones)")
     r_sub.font.name = "Calibri"
     r_sub.font.size = Pt(11.5)
     r_sub.font.italic = True
@@ -163,19 +162,19 @@ def generate_propuesta():
     ficha_data = [
         ("Nivel Formativo de Referencia:", "Equivalencia DQR Nivel 4 - 5 (Competencia técnica especializada y autonomía operativa)"),
         ("Población Destinataria:", "Jóvenes y adultos desempleados de 18 a 45 años con conocimientos previos de informática"),
-        ("Duración Total:", "80 horas pedagógicas totales"),
-        ("Modalidad Híbrida:", "80% Virtual (64 horas sincrónicas/laboratorios) / 20% Presencial (16 horas prácticas en Kinal)"),
-        ("Estructura de Horarios:", "Por convenir (Sesiones virtuales de 3 horas, 2 días entre semana; sesiones presenciales de 8 horas los sábados). Sin fechas fijas."),
-        ("Enfoque Laboral Central:", "Inserción laboral inmediata como Analista SOC Junior / Técnico de Soporte en Ciberseguridad"),
-        ("Nota Mínima Aprobatoria:", "75 puntos sobre 100 en todas las evaluaciones de taller, proyectos y examen terminal"),
-        ("Sede Presencial:", "Fundación Kinal — Laboratorios de Redes y Cómputo, Sede Central, Zona 7, Ciudad de Guatemala")
+        ("Duración Total:", "80 horas pedagógicas (20 sesiones de 4 horas / 240 min; 73h 20min de actividad neta)"),
+        ("Modalidad Híbrida:", "80% Virtual (16 sesiones / 64 horas) y 20% Presencial (4 sesiones / 16 horas en Kinal)"),
+        ("Estructura de Horarios:", "Por convenir institucionalmente (secuencia por sesiones, sin imponer días u horas fijas)"),
+        ("Orientación de Empleabilidad:", "Soporte técnico, operación tecnológica y funciones iniciales de apoyo a seguridad"),
+        ("Nota Mínima Aprobatoria:", "75 puntos sobre 100 en todas las comprobaciones, productos y proyecto integrador"),
+        ("Sede Presencial:", "Fundación Kinal — Laboratorios de Cómputo y Redes, Sede Central, Zona 7, Ciudad de Guatemala")
     ]
 
     for idx, (label, val) in enumerate(ficha_data):
         row = tbl_ficha.rows[idx]
         set_cell_background(row.cells[0], "F7FAFC")
-        set_cell_margins(row.cells[0], top=70, bottom=70, left=90, right=90)
-        set_cell_margins(row.cells[1], top=70, bottom=70, left=90, right=90)
+        set_cell_margins(row.cells[0], top=65, bottom=65, left=90, right=90)
+        set_cell_margins(row.cells[1], top=65, bottom=65, left=90, right=90)
         
         p0 = row.cells[0].paragraphs[0]
         style_p(p0, space_before=0, space_after=0)
@@ -195,14 +194,14 @@ def generate_propuesta():
     doc.add_page_break()
 
     # =========================================================================
-    # 1. MARCO FILOSÓFICO E IDEARIO DE KINAL: ÉTICA DIGITAL Y TRABAJO BIEN HECHO
+    # 1. MARCO FILOSÓFICO E IDEARIO DE KINAL: ÉTICA Y EL TRABAJO BIEN HECHO
     # =========================================================================
     h1_1 = doc.add_paragraph()
     style_heading(h1_1, "1. Marco Filosófico e Ideario Institucional de Fundación Kinal", level=1)
 
     p_id_desc = doc.add_paragraph()
     style_p(p_id_desc, space_before=0, space_after=6)
-    r = p_id_desc.add_run("En el campo de la ciberseguridad, la solvencia técnica es inseparable de la rectitud moral y la confiabilidad personal. La capacitación en defensa de infraestructuras informáticas exige de los estudiantes una adhesión irrestricta a los principios que sustentan a Fundación Kinal:")
+    r = p_id_desc.add_run("El diseño formativo se cimenta en la visión humanística y ética de Fundación Kinal, garantizando que el aprendizaje técnico esté indisolublemente ligado a la responsabilidad personal, la honradez y el servicio a la comunidad:")
     r.font.name = "Calibri"
     r.font.size = Pt(10.5)
     r.font.color.rgb = COLOR_DARK
@@ -212,40 +211,39 @@ def generate_propuesta():
     add_callout(doc, "«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable».", bold_prefix="Valores Nucleares de Kinal:")
 
     p_et = doc.add_paragraph()
-    style_heading(p_et, "1.1 El Principio del «Trabajo Bien Hecho» y la Ética Profesional en Ciberdefensa", level=2)
+    style_heading(p_et, "1.1 El Principio del «Trabajo Bien Hecho» Aplicado a la Seguridad de la Información", level=2)
 
     p_et_txt = doc.add_paragraph()
     style_p(p_et_txt, space_before=0, space_after=6)
-    r = p_et_txt.add_run("El «trabajo bien hecho» en la seguridad de la información se traduce en disciplina técnica, minuciosidad y sigilo profesional:\n"
-                          "• Cero negligencia en configuraciones: Cada directiva de seguridad, regla de firewall o parámetro de autenticación debe aplicarse con precisión exhaustiva, evitando configuraciones por defecto o 'atajos' inseguros.\n"
-                          "• Documentación rigurosa de incidentes: El analista debe levantar reportes claros, fidedignos y con evidencia verificable (hashes SHA-256, marcas temporales UTC, capturas de tráfico intactas) preservando la cadena de custodia.\n"
-                          "• Acuerdo de Confidencialidad y Uso Ético (NDA Didáctico): Cada participante suscribe al inicio del curso un compromiso formal de no utilizar las herramientas de análisis de vulnerabilidades fuera de los entornos controlados de laboratorio, entendiendo que el conocimiento técnico está puesto al servicio del bien común y la protección de la sociedad.")
+    r = p_et_txt.add_run("En este programa, el principio rector del «trabajo bien hecho» se manifiesta en estándares profesionales innegociables:\n"
+                          "• Rigor en la asignación de controles: Un control no es una declaración abstracta; debe contener alcance explícito, responsable asignado, procedimiento de ejecución y evidencia verificable de cumplimiento.\n"
+                          "• Trazabilidad y verdad en los registros: Separar hechos comprobables de meras hipótesis técnicas al analizar eventos en SIEM o servidores, preservando la exactitud de fechas, actores y resultados sin alterar evidencias.\n"
+                          "• Confidencialidad y protección cotidiana de datos: Cero tolerancia a compartir credenciales o anotarlas en lugares visibles; uso estricto de cuentas individuales y canales aprobados desde la primera sesión.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 2. DEMANDA LABORAL EN GUATEMALA Y ENFOQUE EN EMPLEABILIDAD INMEDIATA
+    # 2. FUNDAMENTACIÓN, ENFOQUE PEDAGÓGICO Y CASO TRANSVERSAL
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Demanda del Mercado Laboral Guatemalteco y Empleabilidad Inmediata", level=1)
+    style_heading(h1_2, "2. Fundamentación Técnica, Enfoque Pedagógico y Caso Transversal", level=1)
 
-    p_mkt = doc.add_paragraph()
-    style_p(p_mkt, space_before=0, space_after=6)
-    r = p_mkt.add_run("Una investigación reciente sobre las ofertas de empleo en Guatemala revela una escasez aguda de perfiles operativos en ciberseguridad. Las empresas demandan cada vez más personal junior capaz de incorporarse de inmediato a turnos de monitoreo y soporte técnico de seguridad:\n"
-                      "• Sectores Contratantes en Guatemala: El sistema bancario y financiero nacional (Banco Industrial, Banrural, BAC Credomatic, BAM, G&T Continental), las empresas de telecomunicaciones (Tigo, Claro), firmas de servicios administrados de seguridad SOC (Devel Security, Cyberseg, S-Cube), cadenas de retail y empresas de BPO con servicios tecnológicos hacia Estados Unidos y Latinoamérica.\n"
-                      "• Puesto de Entrada Más Demandado: Analista de Centro de Operaciones de Seguridad (Analista SOC Nivel 1) y Técnico de Soporte en Ciberseguridad y Hardening.\n"
-                      "• Nivel Salarial Promedio: Las vacantes de entrada para técnicos con destrezas prácticas comprobadas oscilan entre Q6,000.00 y Q9,000.00 mensuales, ofreciendo una vía concreta y rápida de superación socioeconómica para personas actualmente desempleadas.\n"
-                      "• Competencias de Empleabilidad Priorizadas: Triaje rápido de alertas en plataformas SIEM, lectura e interpretación de logs en Windows/Linux, filtrado de tráfico en firewalls, análisis de correos phishing y aplicación de medidas de contención inmediata.")
+    p_met = doc.add_paragraph()
+    style_p(p_met, space_before=0, space_after=6)
+    r = p_met.add_run("A diferencia de propuestas puramente teóricas o cursos desarticulados de herramientas ofensivas, este programa adopta un enfoque constructivo orientado a la realidad laboral de las organizaciones en Guatemala:\n"
+                      "• Caso Práctico Transversal de Empresa Ficticia: Cada sesión conecta un concepto técnico con una situación laboral concreta a través de una empresa ficticia que cuenta con estaciones de trabajo, red local, un servidor corporativo, una aplicación web y servicios SaaS. El mismo caso se amplía progresivamente durante los 8 módulos, evitando ejercicios aislados o controles descontextualizados.\n"
+                      "• Enfoque de Análisis y Verificación (No Explotativo): Las actividades prácticas se centran en leer, comparar, representar, justificar y documentar. Las demostraciones se ejecutan sobre escenarios autorizados y datos simulados, sin exigir explotación de vulnerabilidades ni ataques intrusivos.\n"
+                      "• Delimitación Profesional del Alcance: El curso forma el criterio técnico para interpretar sistemas, dialogar con proveedores, diseñar salvaguardas y escalar incidentes; no acredita especialización en pentesting, auditoría avanzada ni ingeniería de redes.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 3. MARCO DQR Y FORMACIÓN EN ALTERNANCIA (SISTEMA DUAL)
+    # 3. MARCO DQR Y SISTEMA DUAL DE APRENDIZAJE
     # =========================================================================
     h1_3 = doc.add_paragraph()
-    style_heading(h1_3, "3. Marco Alemán de Cualificaciones (DQR Nivel 4-5) y Metodología Dual", level=1)
+    style_heading(h1_3, "3. Marco Alemán de Cualificaciones (DQR Nivel 4-5) y Enfoque Dual", level=1)
 
     add_callout(doc, "«concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa».", bold_prefix="Definición de Formación Profesional Dual:")
 
@@ -262,7 +260,7 @@ def generate_propuesta():
     hdr_dqr = tbl_dqr.rows[0]
     for c in hdr_dqr.cells:
         set_cell_background(c, "003366")
-    for idx, text in enumerate(["Dimensión DQR", "Subdimensión", "Evidencia Operativa en el Curso"]):
+    for idx, text in enumerate(["Dimensión DQR", "Subdimensión", "Evidencia de Desempeño en el Programa"]):
         p = hdr_dqr.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
         r = p.add_run(text)
@@ -272,10 +270,10 @@ def generate_propuesta():
         r.font.color.rgb = RGBColor(255, 255, 255)
 
     dqr_items = [
-        ("Competencia Profesional\n(Fachkompetenz)", "Conocimientos\n(Wissen)", "Arquitectura de protocolos TCP/IP, modelos de defensa perimetral, funcionamiento de malware, directivas GPO/Linux y marcos de respuesta NIST SP 800-61."),
-        ("Competencia Profesional\n(Fachkompetenz)", "Destrezas\n(Fertigkeiten)", "Configuración de firewalls, inspección de paquetes en Wireshark, correlación de logs en Wazuh SIEM, bastionado de servidores y análisis de correos phishing."),
-        ("Competencia Personal\n(Personale Kompetenz)", "Competencia Social\n(Sozialkompetenz)", "Comunicación técnica serena y clara durante incidentes críticos, trabajo coordinado en células Blue Team y elaboración de informes para gerencia."),
-        ("Competencia Personal\n(Personale Kompetenz)", "Autonomía\n(Selbständigkeit)", "Criterio analítico para distinguir falsos positivos de intrusiones reales, apego ético incondicional y autoexigencia bajo el principio del 'trabajo bien hecho'.")
+        ("Competencia Profesional\n(Fachkompetenz)", "Conocimientos\n(Wissen)", "Arquitectura de sistemas/nube, protocolos web (HTTP/TLS), marcos de autenticación (SAML/OAuth), ciclo de vulnerabilidades (CVE/CVSS) y estándares normativos (ISO 27001, PCI DSS, SOC, HIPAA)."),
+        ("Competencia Profesional\n(Fachkompetenz)", "Destrezas\n(Fertigkeiten)", "Diagramación de flujos de sistemas, construcción de matrices RBAC, diseño de controles verificables, correlación de logs en SIEM, lectura de avisos de seguridad y redacción de SOPs."),
+        ("Competencia Personal\n(Personale Kompetenz)", "Competencia Social\n(Sozialkompetenz)", "Capacidad de comunicación asertiva entre el área técnica y las áreas usuarias, fundamentación de decisiones ante comités de cambio y reporte oportuno y sereno de incidentes."),
+        ("Competencia Personal\n(Personale Kompetenz)", "Autonomía\n(Selbständigkeit)", "Criterio técnico independiente para evaluar riesgos, responsabilidad en la custodia de accesos, autoinspección de calidad técnica y adhesión inquebrantable a la ética digital.")
     ]
 
     for idx, (dim, sub, evid) in enumerate(dqr_items, start=1):
@@ -285,7 +283,7 @@ def generate_propuesta():
                 set_cell_background(c, "F7FAFC")
         for c_idx, val in enumerate([dim, sub, evid]):
             cell = row.cells[c_idx]
-            set_cell_margins(cell, top=70, bottom=70, left=80, right=80)
+            set_cell_margins(cell, top=65, bottom=65, left=75, right=75)
             p = cell.paragraphs[0]
             style_p(p, space_before=0, space_after=0)
             r = p.add_run(val)
@@ -296,7 +294,7 @@ def generate_propuesta():
     doc.add_page_break()
 
     # =========================================================================
-    # 4. PERFILES DE INGRESO Y EGRESO
+    # 4. PERFILES INSTITUCIONALES DE INGRESO Y EGRESO
     # =========================================================================
     h1_4 = doc.add_paragraph()
     style_heading(h1_4, "4. Perfiles de Ingreso y Egreso Institucional", level=1)
@@ -305,7 +303,7 @@ def generate_propuesta():
     style_heading(p_ing, "4.1 Perfil de Ingreso", level=2)
     p_ing_txt = doc.add_paragraph()
     style_p(p_ing_txt, space_before=0, space_after=6)
-    r = p_ing_txt.add_run("Dirigido a jóvenes y adultos desempleados de 18 a 45 años con conocimientos previos en informática, administración básica de sistemas o redes, motivados a reconvertirse laboralmente hacia la ciberdefensa con compromiso ético y disciplina.")
+    r = p_ing_txt.add_run("Dirigido a personas de 18 a 45 años desempleadas con conocimientos previos de informática que buscan fortalecer su preparación para funciones iniciales de soporte, operación tecnológica y apoyo a seguridad de la información. Se requiere manejo básico de computadora, navegador, archivos y documentos; no se requiere programación ni administración avanzada de redes.")
     r.font.name = "Calibri"
     r.font.size = Pt(10.5)
     r.font.color.rgb = COLOR_DARK
@@ -314,38 +312,38 @@ def generate_propuesta():
     style_heading(p_egr, "4.2 Perfil de Egreso", level=2)
     p_egr_txt = doc.add_paragraph()
     style_p(p_egr_txt, space_before=0, space_after=12)
-    r = p_egr_txt.add_run("El egresado opera como Analista SOC Junior o Técnico de Ciberseguridad, capaz de monitorear telemetría, realizar triaje de alertas de seguridad, aplicar hardening en Windows y Linux, analizar amenazas de malware o phishing y ejecutar contención básica de incidentes.")
+    r = p_egr_txt.add_run("El egresado interpreta sistemas, redes y servicios digitales delimitando fronteras y riesgos; diseña controles de identidad y acceso bajo mínimo privilegio; analiza la protección del transporte web; correlaciona eventos en SIEM; gestiona el ciclo de vida de vulnerabilidades; redacta políticas y SOPs ejecutables; y reporta señales de incidentes bajo las mejores prácticas de la industria y los valores de Kinal.")
     r.font.name = "Calibri"
     r.font.size = Pt(10.5)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 5. ESTRUCTURA MODULAR, MODALIDAD HÍBRIDA Y PROYECTOS POR MÓDULO
+    # 5. ARQUITECTURA CURRICULAR Y ESTRUCTURA MODULAR (8 MÓDULOS / 80 HORAS)
     # =========================================================================
     h1_5 = doc.add_paragraph()
-    style_heading(h1_5, "5. Arquitectura Curricular y Modalidad Híbrida (80 Horas)", level=1)
+    style_heading(h1_5, "5. Arquitectura Curricular y Distribución Modular (80 Horas — 20 Sesiones)", level=1)
 
     p_mod_desc = doc.add_paragraph()
     style_p(p_mod_desc, space_before=0, space_after=6)
-    r = p_mod_desc.add_run("El programa distribuye sus 80 horas en un 80% virtual (64 horas de clases sincrónicas y laboratorios guiados) y un 20% presencial (16 horas de talleres intensivos en 2 sábados de 8 horas en Kinal):")
+    r = p_mod_desc.add_run("Las 80 horas corresponden a 20 encuentros de 240 minutos (con 20 minutos de receso por encuentro, sumando 73h 20min de actividad formativa efectiva). El programa se distribuye en 8 módulos especializados:")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
-    tbl_mods = doc.add_table(rows=6, cols=5)
+    tbl_mods = doc.add_table(rows=9, cols=5)
     tbl_mods.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_mods.autofit = False
-    tbl_mods.columns[0].width = Inches(1.1)
-    tbl_mods.columns[1].width = Inches(1.8)
-    tbl_mods.columns[2].width = Inches(1.2)
-    tbl_mods.columns[3].width = Inches(1.8)
-    tbl_mods.columns[4].width = Inches(0.6)
+    tbl_mods.columns[0].width = Inches(0.9)
+    tbl_mods.columns[1].width = Inches(2.2)
+    tbl_mods.columns[2].width = Inches(0.6)
+    tbl_mods.columns[3].width = Inches(0.9)
+    tbl_mods.columns[4].width = Inches(1.9)
     set_table_borders(tbl_mods, color="CBD5E0", sz="4")
 
     hdr_m = tbl_mods.rows[0]
     for c in hdr_m.cells:
         set_cell_background(c, "003366")
-    headers_m = ["Módulo", "Eje Formativo Central", "Distribución Híbrida", "Proyecto Práctico Evaluado (≥ 75 pts)", "Total"]
+    headers_m = ["Módulo", "Área de Formación", "Horas", "Sesiones", "Evidencia Principal del Módulo"]
     for idx, text in enumerate(headers_m):
         p = hdr_m.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
@@ -356,126 +354,58 @@ def generate_propuesta():
         r.font.color.rgb = RGBColor(255, 255, 255)
 
     mods_data = [
-        ("Módulo 1", "Redes Seguras y Arquitectura de Ciberdefensa", "12h Virtuales\n4h Presenciales*", "Auditoría de tráfico con Wireshark y configuración de reglas de firewall perimetral", "16 h"),
-        ("Módulo 2", "Hardening de S.O., Identidad y Accesos", "12h Virtuales\n4h Presenciales*", "Plantilla de bastionado seguro (GPO / scripts) verificada con escáner de cumplimiento", "16 h"),
-        ("Módulo 3", "Operaciones SOC y Monitoreo SIEM", "16h Virtuales\n(Intensivo SIEM)", "Despliegue de agentes Wazuh, triaje de alertas y elaboración de tickets formales", "16 h"),
-        ("Módulo 4", "Detección de Amenazas y Vulnerabilidades", "12h Virtuales\n4h Presenciales**", "Informe técnico de análisis de phishing y plan de remediación de vulnerabilidades", "16 h"),
-        ("Módulo 5", "Respuesta a Incidentes y Reto Capstone", "12h Virtuales\n4h Presenciales**", "Proyecto Capstone: Simulación de crisis SOC (Blue Team), contención y defensa oral", "16 h")
+        ("Módulo 1", "Sistemas y gestión informática para la seguridad", "12 h", "Sesiones 1-3", "Diagrama del sistema con equipos, red, servidor, SaaS y registro de incidente."),
+        ("Módulo 2", "Identidad y control de acceso en aplicaciones", "12 h", "Sesiones 4-6", "Flujo de sesión local/federado, matriz RBAC y procedimiento de baja de usuario."),
+        ("Módulo 3", "Diseño de controles y responsabilidades", "8 h", "Sesiones 7-8", "Diseño de acceso temporal, roles separados y reconstrucción con ticket y logs SIEM."),
+        ("Módulo 4", "Seguridad de comunicaciones web y APIs", "12 h", "Sesiones 9-11", "Trazado del recorrido web, revisión de certificados y petición de API segura."),
+        ("Módulo 5", "Ciclo de vida y gestión de vulnerabilidades", "12 h", "Sesiones 12-14", "Plan de ciclo de vida de inventario y tratamiento justificado de aviso CVE real."),
+        ("Módulo 6", "Documentación y gestión del riesgo de seguridad", "8 h", "Sesiones 15-16", "Política de accesos, SOP de baja, evaluación de riesgo y solicitud de aceptación."),
+        ("Módulo 7", "Estándares, regulaciones e informes de aseguramiento", "8 h", "Sesiones 17-18", "Comparativa de aplicabilidad entre PCI DSS, ISO 27001, HIPAA y SOC 1/2."),
+        ("Módulo 8", "Higiene digital y respuesta inicial a incidentes", "8 h", "Sesiones 19-20", "Reporte de phishing, preservación y sustentación del Expediente de Seguridad.")
     ]
 
-    for idx, (m, eje, dist, proy, tot) in enumerate(mods_data, start=1):
+    for idx, (m, a, h, s, e) in enumerate(mods_data, start=1):
         row = tbl_mods.rows[idx]
         if idx % 2 == 1:
             for c in row.cells:
                 set_cell_background(c, "F7FAFC")
-        for c_idx, val in enumerate([m, eje, dist, proy, tot]):
+        for c_idx, val in enumerate([m, a, h, s, e]):
             cell = row.cells[c_idx]
-            set_cell_margins(cell, top=60, bottom=60, left=70, right=70)
+            set_cell_margins(cell, top=55, bottom=55, left=65, right=65)
             p = cell.paragraphs[0]
             style_p(p, space_before=0, space_after=0)
             r = p.add_run(val)
             r.font.name = "Calibri"
             r.font.size = Pt(8.5)
             r.font.color.rgb = COLOR_DARK
-            if c_idx in [0, 4]:
+            if c_idx in [0, 2]:
                 r.font.bold = True
 
-    p_note_pres = doc.add_paragraph()
-    style_p(p_note_pres, space_before=4, space_after=12)
-    r = p_note_pres.add_run("* Las 4h presenciales del Módulo 1 y las 4h presenciales del Módulo 2 se integran en el Sábado Presencial 1 (8 horas de taller en Kinal).\n"
-                           "** Las 4h presenciales del Módulo 4 y las 4h presenciales del Módulo 5 se integran en el Sábado Presencial 2 (8 horas de taller y Capstone en Kinal).")
-    r.font.name = "Calibri"
-    r.font.size = Pt(8.5)
-    r.font.italic = True
-    r.font.color.rgb = COLOR_SECONDARY
-
     # =========================================================================
-    # 6. ECOSISTEMA DE HERRAMIENTAS, SOFTWARE LIBRE Y PRECIOS
+    # 6. ESQUEMA DE EVALUACIÓN Y EXPEDIENTE DEL CASO (UMBRAL ≥ 75 PUNTOS)
     # =========================================================================
     h1_6 = doc.add_paragraph()
-    style_heading(h1_6, "6. Ecosistema de Herramientas Open Source y Cisco (Precios y Licenciamiento)", level=1)
-
-    p_her_desc = doc.add_paragraph()
-    style_p(p_her_desc, space_before=0, space_after=6)
-    r = p_her_desc.add_run("El curso optimiza la inversión institucional utilizando un 90% de herramientas Open Source de nivel corporativo, articuladas con la membresía gratuita de Fundación Kinal como Cisco Networking Academy:")
-    r.font.name = "Calibri"
-    r.font.size = Pt(10)
-    r.font.color.rgb = COLOR_DARK
-
-    tbl_her = doc.add_table(rows=8, cols=4)
-    tbl_her.alignment = WD_TABLE_ALIGNMENT.CENTER
-    tbl_her.autofit = False
-    tbl_her.columns[0].width = Inches(1.8)
-    tbl_her.columns[1].width = Inches(1.5)
-    tbl_her.columns[2].width = Inches(1.4)
-    tbl_her.columns[3].width = Inches(1.8)
-    set_table_borders(tbl_her, color="CBD5E0", sz="4")
-
-    hdr_h = tbl_her.rows[0]
-    for c in hdr_h.cells:
-        set_cell_background(c, "003366")
-    headers_h = ["Herramienta Tecnológica", "Tipo / Licencia", "Costo Mensual / Anual", "Función en el Programa"]
-    for idx, text in enumerate(headers_h):
-        p = hdr_h.cells[idx].paragraphs[0]
-        style_p(p, space_before=0, space_after=0)
-        r = p.add_run(text)
-        r.font.name = "Calibri"
-        r.font.size = Pt(9)
-        r.font.bold = True
-        r.font.color.rgb = RGBColor(255, 255, 255)
-
-    her_data = [
-        ("Wazuh SIEM & XDR", "Open Source (GPL)", "$0.00 / mes (Gratuito)", "Recolección de logs, correlación y triaje de alertas de seguridad"),
-        ("Wireshark & tcpdump", "Open Source (GPL)", "$0.00 / mes (Gratuito)", "Inspección profunda de paquetes y auditoría de protocolos de red"),
-        ("Greenbone (OpenVAS)", "Open Source", "$0.00 / mes (Gratuito)", "Escaneo de vulnerabilidades y evaluación de parches de seguridad"),
-        ("Oracle VirtualBox / VMs", "Open Source (GPL)", "$0.00 / mes (Gratuito)", "Montaje de laboratorios virtuales aislados (Kali, Ubuntu, Windows)"),
-        ("Cisco Packet Tracer", "Cisco NetAcad", "$0.00 / mes (Gratuito)", "Simulación de topologías de red, switches, routers y firewalls ASA"),
-        ("Cisco Snort IDS/IPS", "Cisco Talos (GPL)", "$0.00 / mes (Gratuito)", "Detección de intrusiones basada en firmas de tráfico de red"),
-        ("Cisco Modeling Labs (CML)\n[Herramienta Opcional]", "Cisco Comercial", "$199.00 USD / año\n(~$16.58 USD / mes)", "Emulación avanzada para instructor (no requerida para alumnos)")
-    ]
-
-    for idx, (nom, tip, cos, fun) in enumerate(her_data, start=1):
-        row = tbl_her.rows[idx]
-        if idx % 2 == 1:
-            for c in row.cells:
-                set_cell_background(c, "F7FAFC")
-        for c_idx, val in enumerate([nom, tip, cos, fun]):
-            cell = row.cells[c_idx]
-            set_cell_margins(cell, top=60, bottom=60, left=70, right=70)
-            p = cell.paragraphs[0]
-            style_p(p, space_before=0, space_after=0)
-            r = p.add_run(val)
-            r.font.name = "Calibri"
-            r.font.size = Pt(8.5)
-            r.font.color.rgb = COLOR_DARK
-            if c_idx == 0:
-                r.font.bold = True
-
-    # =========================================================================
-    # 7. ESQUEMA DE EVALUACIÓN Y ACREDITACIÓN INSTITUCIONAL (KINAL)
-    # =========================================================================
-    h1_7 = doc.add_paragraph()
-    style_heading(h1_7, "7. Esquema de Evaluación y Acreditación (Umbral ≥ 75 Puntos)", level=1)
+    style_heading(h1_6, "6. Esquema de Evaluación Institucional y Expediente del Caso", level=1)
 
     p_ev_desc = doc.add_paragraph()
     style_p(p_ev_desc, space_before=0, space_after=6)
-    r = p_ev_desc.add_run("Para acreditar el curso y obtener el diploma de certificación técnica emitido por Fundación Kinal, el estudiante debe obtener una nota mínima de 75 puntos sobre 100, demostrando solvencia teórica y competencia operativa en incidentes reales:")
+    r = p_ev_desc.add_run("El sistema de evaluación exige explicar por qué se propone cada control y cómo se comprobaría su resultado operativo. Conforme a las normas de Fundación Kinal, la nota mínima de suficiencia técnica es de 75 puntos sobre 100:")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
-    tbl_ev = doc.add_table(rows=7, cols=3)
+    tbl_ev = doc.add_table(rows=4, cols=3)
     tbl_ev.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_ev.autofit = False
-    tbl_ev.columns[0].width = Inches(2.3)
+    tbl_ev.columns[0].width = Inches(2.2)
     tbl_ev.columns[1].width = Inches(1.1)
-    tbl_ev.columns[2].width = Inches(3.1)
+    tbl_ev.columns[2].width = Inches(3.2)
     set_table_borders(tbl_ev, color="CBD5E0", sz="4")
 
     hdr_ev = tbl_ev.rows[0]
     for c in hdr_ev.cells:
         set_cell_background(c, "003366")
-    for idx, text in enumerate(["Rubro Evaluativo", "Ponderación", "Criterio de Suficiencia Técnica (≥ 75 pts)"]):
+    for idx, text in enumerate(["Componente Evaluativo", "Ponderación", "Evidencia y Criterio de Verificación"]):
         p = hdr_ev.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
         r = p.add_run(text)
@@ -484,21 +414,18 @@ def generate_propuesta():
         r.font.bold = True
         r.font.color.rgb = RGBColor(255, 255, 255)
 
-    eval_items = [
-        ("Proyecto Práctico Módulo 1 (Redes)", "15%", "Captura de paquetes en Wireshark y configuración correcta de reglas en firewall"),
-        ("Proyecto Práctico Módulo 2 (Hardening)", "15%", "Auditoría LinPEAS sin vulnerabilidades críticas y aplicación de directivas GPO"),
-        ("Proyecto Práctico Módulo 3 (SIEM)", "15%", "Triaje de 5 alertas de seguridad en Wazuh con tickets debidamente documentados"),
-        ("Proyecto Práctico Módulo 4 (Threats)", "15%", "Análisis de cabeceras de correo phishing y reporte de escaneo de vulnerabilidades"),
-        ("Proyecto Capstone / CTF (Módulo 5)", "25%", "Simulación de sala de crisis: contención de intrusión, preservación y sustentación oral"),
-        ("Bitácora Berichtsheft y Ética Kinal", "15%", "Entrega semanal de bitácora técnica, asistencia puntual y cumplimiento del NDA")
+    ev_items = [
+        ("Comprobaciones de aprendizaje", "20%", "Respuestas breves, interpretación de flujos y defensa de decisiones técnicas."),
+        ("Productos de los módulos", "40%", "Diagramas de arquitectura, matrices RBAC, fichas y documentos revisados."),
+        ("Proyecto integrador (Expediente)", "40%", "Expediente de seguridad del caso transversal y sustentación oral final.")
     ]
 
-    for idx, (rub, pond, crit) in enumerate(eval_items, start=1):
+    for idx, (comp, pond, crit) in enumerate(ev_items, start=1):
         row = tbl_ev.rows[idx]
         if idx % 2 == 1:
             for c in row.cells:
                 set_cell_background(c, "F7FAFC")
-        for c_idx, val in enumerate([rub, pond, crit]):
+        for c_idx, val in enumerate([comp, pond, crit]):
             cell = row.cells[c_idx]
             set_cell_margins(cell, top=60, bottom=60, left=70, right=70)
             p = cell.paragraphs[0]
@@ -510,30 +437,43 @@ def generate_propuesta():
             if c_idx in [0, 1]:
                 r.font.bold = True
 
-    # =========================================================================
-    # 8. ESTRATEGIA DE EMPLEABILIDAD INMEDIATA
-    # =========================================================================
-    h1_8 = doc.add_paragraph()
-    style_heading(h1_8, "8. Estrategia de Inserción Laboral y Articulación Institucional", level=1)
-
-    p_emp = doc.add_paragraph()
-    style_p(p_emp, space_before=0, space_after=6)
-    r = p_emp.add_run("Para maximizar la inserción laboral de los estudiantes desempleados (18 a 45 años), el programa articula tres mecanismos directos:\n"
-                      "1. Bolsa de Empleo de Fundación Kinal: Vinculación directa de los egresados con empresas aliadas en el sector financiero, telecomunicaciones y empresas de seguridad gestionada (MSSP) que buscan analistas de monitoreo 24/7.\n"
-                      "2. Portafolio de Casos Prácticos (Write-ups): Cada alumno compila durante el curso una bitácora técnica demostrable en GitHub/LinkedIn con los reportes de incidentes resueltos, demostrando experiencia técnica real a los reclutadores.\n"
-                      "3. Simulación de Entrevistas Técnicas: Talleres de preparación para pruebas de contratación (preguntas técnicas sobre protocolos, comandos de Linux, lectura de logs y escenarios de contingencia bajo presión).")
+    p_exp = doc.add_paragraph()
+    style_p(p_exp, space_before=8, space_after=4)
+    r = p_exp.add_run("Contenido del Expediente de Seguridad del Caso Transversal (Entregable Terminal):")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
-    r.font.color.rgb = COLOR_DARK
+    r.font.bold = True
+    r.font.color.rgb = COLOR_PRIMARY
+
+    exp_items = [
+        "Alcance del sistema y clasificación de información; diagrama con componentes, datos y dependencias.",
+        "Flujo de autenticación y sesión; matriz de roles y permisos (RBAC); alta, cambio y baja de usuarios.",
+        "Asignación de responsabilidades y registro trazable de solicitud, aprobación, ejecución y cierre.",
+        "Recorrido web y ficha de certificados; controles básicos sobre una API.",
+        "Inventario con ciclo de vida; hallazgo de vulnerabilidad y plan de tratamiento con verificación.",
+        "Política de accesos y SOP de baja; evaluación de riesgo y solicitud de aceptación temporal.",
+        "Referencia de cumplimiento justificada y evidencia requerida; reporte formal de comunicación sospechosa."
+    ]
+    for e in exp_items:
+        p_e = doc.add_paragraph()
+        style_p(p_e, space_before=1, space_after=2)
+        p_e.paragraph_format.left_indent = Inches(0.2)
+        r_b = p_e.add_run("• ")
+        r_b.font.bold = True
+        r_b.font.color.rgb = COLOR_PRIMARY
+        r_t = p_e.add_run(e)
+        r_t.font.name = "Calibri"
+        r_t.font.size = Pt(9.5)
+        r_t.font.color.rgb = COLOR_DARK
 
     section = doc.sections[0]
     footer = section.footer
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Propuesta Formativa Oficial — Fundamentos de Ciberseguridad")
+    run_f = footer_p.add_run("Fundación Kinal | Ciberseguridad y Fundamentos de Seguridad de la Información — Propuesta Oficial")
     run_f.font.name = "Calibri"
-    run_f.font.size = Pt(9)
+    run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
 
     out_dir = os.path.join("Cursos", "Ciberseguridad")
@@ -543,4 +483,4 @@ def generate_propuesta():
     print(f"Propuesta guardada con éxito en: {out_path}")
 
 if __name__ == "__main__":
-    generate_propuesta()
+    generate_propuesta_doc()
