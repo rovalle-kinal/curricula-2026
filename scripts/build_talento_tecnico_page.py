@@ -29,30 +29,27 @@ for r in prop_doc.tables[5].rows[1:]:
     modulos_prop_rows.append([c.text.strip() for c in r.cells])
 
 # Componentes de evaluación
-eval_prop_rows = []
-for r in prop_doc.tables[7].rows[1:]:
-    eval_prop_rows.append([c.text.strip() for c in r.cells])
+eval_prop_rows = [
+    ["Participación en Sesiones y Aporte al Diálogo", "25 Puntos", "Asistencia mínima 80% y aporte constructivo en mesas de vinculación directiva"],
+    ["Descriptor por Competencias e Inducción", "25 Puntos", "Descriptor técnico por competencias demostrables y plan de onboarding"],
+    ["Protocolo de Factor Humano y Charlas", "25 Puntos", "Directrices de cero maltrato y catálogo de 5 micro-charlas de valores"],
+    ["Ficha Diagnóstica de Necesidades Industriales", "25 Puntos", "Levantamiento riguroso de competencias y tecnologías demandadas"]
+]
 
 # Dosificación cronológica (Tabla 1)
 cron_rows = []
 for r in dos_doc.tables[1].rows[1:]:
     cron_rows.append([c.text.strip() for c in r.cells])
 
-# 12 Sesiones didácticas (Tablas 2 a 13)
+# 6 Encuentros didácticos (Tablas 2 a 7)
 sessions = []
-for idx in range(2, 14):
+num_sessions = len(cron_rows)
+for idx in range(2, 2 + num_sessions):
     t = dos_doc.tables[idx]
     s_num = idx - 1
     t1_row = cron_rows[s_num - 1] if (s_num - 1) < len(cron_rows) else ["", "", "", ""]
     
     # Rows in session table:
-    # R0: Módulo y Duración
-    # R1: Objetivo Específico
-    # R2: Apertura
-    # R3: Desarrollo
-    # R4: Cierre
-    # R5: Recursos y Plataformas
-    # R6: Entregable y Evidencia
     mod_dur = t.rows[0].cells[1].text.strip()
     obj = t.rows[1].cells[1].text.strip()
     ap = t.rows[2].cells[1].text.strip()
@@ -61,28 +58,24 @@ for idx in range(2, 14):
     eq = t.rows[5].cells[1].text.strip()
     evi = t.rows[6].cells[1].text.strip()
     
-    mod_name = t1_row[1] if len(t1_row) > 1 else f"Módulo {((s_num-1)//3)+1}"
-    title_short = t1_row[2] if len(t1_row) > 2 else f"Sesión {s_num}"
+    enc_name = t1_row[0] if len(t1_row) > 0 else f"Encuentro {s_num}"
+    mod_name = t1_row[1] if len(t1_row) > 1 else f"Eje {s_num}"
+    title_short = t1_row[2] if len(t1_row) > 2 else f"Encuentro {s_num}"
     prod_obs = t1_row[3] if len(t1_row) > 3 else evi
     
-    mod_num = ((s_num - 1) // 3) + 1
-    ses_in_mod = ((s_num - 1) % 3) + 1
-    
-    semana_str = f"Semana {mod_num}"
-    if ses_in_mod == 1:
-        tipo_str = "Virtual Teams (Martes 19:00 - 21:00)"
-        dur_str = "2 Horas (120 min)"
-    elif ses_in_mod == 2:
-        tipo_str = "Virtual Teams (Jueves 19:00 - 21:00)"
-        dur_str = "2 Horas (120 min)"
-    else:
-        tipo_str = f"Presencial Campus Kinal (Sábado {mod_num} Consecutivo 8:00 - 12:00)"
+    if "Presencial" in enc_name:
         dur_str = "4 Horas (240 min)"
+        tipo_str = "Presencial Campus Kinal (8:30 a 12:30)"
+        semana_str = "Jornada Especial"
+    else:
+        dur_str = "2 Horas (120 min)"
+        tipo_str = "Virtual Teams (19:00 a 21:00)"
+        semana_str = f"Semana {s_num - 1}"
 
     sessions.append({
         "num": s_num,
-        "code": f"S-{s_num:02d}",
-        "mod_num": mod_num,
+        "code": f"E-{s_num:02d}",
+        "mod_num": s_num,
         "module": mod_name,
         "title": title_short,
         "duration": dur_str,
@@ -97,142 +90,168 @@ for idx in range(2, 14):
         "producto_obs": prod_obs
     })
 
-# Rúbrica analítica (Tabla 15 de dosificación)
+# Rúbrica analítica (Tabla 9 de dosificación)
 rubrica_rows = []
-for r in dos_doc.tables[15].rows[1:]:
+for r in dos_doc.tables[9].rows[1:]:
     rubrica_rows.append([c.text.strip() for c in r.cells])
 
 # Temario analítico detallado
 temario_modules = [
     {
         "num": 1,
-        "semana": "Semana 1",
-        "title": "La Brecha del Talento Operativo y el Retorno de Inversión del TSU",
-        "hours": "8 Horas Directas (4h Virtual Teams + 4h Sábado 1 Kinal)",
-        "logro": "Analizar la estructura del empleo técnico industrial guatemalteco, contrastar la baja productividad del operario empírico frente a la solvencia del Técnico Superior Universitario (TSU) y formular un caso de negocio de retorno de inversión (ROI) que justifique la profesionalización de cuadrillas técnicas.",
+        "semana": "Jornada Presencial Especial 1",
+        "title": "Apertura Institucional, Presentación de la Iniciativa y Recorrido Técnico",
+        "hours": "4 Horas (Campus Kinal)",
+        "logro": "Conocer la visión formativa integral de Kinal, recorrer los laboratorios de última tecnología del TSU y establecer redes de contacto directivo en la primera mesa de diálogo sobre empleo técnico.",
         "topics": [
             {
                 "num": 1,
-                "title": "Radiografía del Empleo Técnico en Guatemala y el 'Síndrome del Operador Empírico'",
-                "cat": "diagnostico",
-                "cat_name": "📊 Diagnóstico & Brechas",
+                "title": "Inauguración y Presentación de la Iniciativa de Vinculación",
+                "cat": "vinculacion",
+                "cat_name": "🤝 Vinculación Kinal",
                 "cat_badge": "bg-blue-100 text-blue-900 border border-blue-200",
-                "desc": "Causas estructurales de la escasez de técnicos calificados en la industria manufacturera, automotriz, eléctrica y constructiva en Guatemala. La trampa del 'aprender sobre la marcha' sin fundamentación técnica: sobrecostos por reprocesos, rotura de maquinaria, accidentes de trabajo y dependencia crítica de mandos medios no formados."
+                "desc": "Propósito institucional del programa: generar un espacio de diálogo con las empresas para identificar oportunidades de mejora y conocer las competencias demandadas por el sector productivo."
             },
             {
                 "num": 2,
-                "title": "El Técnico Superior Universitario (TSU) y el Marco Alemán DQR (Nivel 5 - 6)",
-                "cat": "competencias",
-                "cat_name": "🎯 Competencias DQR",
-                "cat_badge": "bg-purple-100 text-purple-900 border border-purple-200",
-                "desc": "Definición oficial DQR: capacidad y disposición para actuar integralmente con solvencia técnica, social y metodológica. Mapeo del perfil del TSU egresado de Kinal: rigor matemático aplicado, metrología de precisión, lectura de planos normalizados, normativas internacionales y disciplina operativa frente a la intuición empírica."
-            },
-            {
-                "num": 3,
-                "title": "Taller Vivencial e Inmersión de Planta: El Contraste de Competencias (Sábado 1)",
+                "title": "Inmersión Vivencial: Recorrido Guiado por Laboratorios de Alta Tecnología TSU",
                 "cat": "inmersion",
                 "cat_name": "🏭 Inmersión Presencial Kinal",
                 "cat_badge": "bg-amber-100 text-amber-900 border border-amber-200",
-                "desc": "Visita ejecutiva a talleres y laboratorios de alta tecnología de Fundación Kinal (CNC, Automatización Siemens, Redes, Sistemas Automotrices y Construcción). Observación directa de proyectos reales de graduación de aprendices de TSU. Taller de cálculo financiero: Costos Ocultos de la No Calidad (CONC) y modelo cuantitativo de Retorno de Inversión (ROI)."
+                "desc": "Visita a los Laboratorios de Automatización Siemens, Robótica, Mecatrónica CNC y Redes. Demostraciones en vivo por aprendices de último año de TSU: calibración, diagnóstico y comisionamiento."
+            },
+            {
+                "num": 3,
+                "title": "Mesa de Diálogo 1: Panorama del Empleo Técnico y Desafío del 'Missing Middle'",
+                "cat": "diagnostico",
+                "cat_name": "📊 Diagnóstico & Brechas",
+                "cat_badge": "bg-indigo-100 text-indigo-900 border border-indigo-200",
+                "desc": "Diagnóstico compartido sobre la escasez crítica de mandos medios técnicos calificados y levantamiento preliminar de inquietudes empresariales."
             }
         ]
     },
     {
         "num": 2,
-        "semana": "Semana 2",
-        "title": "Reclutamiento por Competencias Técnicas y Sistemas de Formación Dual",
-        "hours": "8 Horas Directas (4h Virtual Teams + 4h Sábado 2 Kinal)",
-        "logro": "Diseñar e implementar procesos de selección técnica basados en evidencias prácticas y entrevistas conductuales (STAR), y formular un esquema de Semillero de Formación Dual en alternancia empresa-escuela que garantice el relevo generacional y reduzca la curva de aprendizaje en planta.",
+        "semana": "Semana 1 (Virtual)",
+        "title": "Manejo y Desarrollo de Personal Técnico",
+        "hours": "2 Horas (Microsoft Teams)",
+        "logro": "Aplicar metodologías para la atracción, inducción técnica acelerada y fidelización de personal operativo, mitigando los costos ocultos por rotación y acelerando la curva de productividad.",
         "topics": [
             {
                 "num": 4,
-                "title": "Reingeniería del Perfil de Puesto Técnico hacia Competencias Demostrables",
+                "title": "Atracción y Reclutamiento Efectivo de Talento Operativo",
                 "cat": "seleccion",
                 "cat_name": "📋 Selección Técnica",
                 "cat_badge": "bg-emerald-100 text-emerald-900 border border-emerald-200",
-                "desc": "Superación de los perfiles genéricos tradicionales. Definición de la Matriz de Competencias Operativas: Conocimientos Técnicos DQR, Habilidades Manuales y Metrológicas, y Competencias Metodológicas. Criterios de evaluación técnica objetiva en taller sin sesgos subjetivos."
+                "desc": "Traducción de perfiles burocráticos a matrices de competencias observables (saber, hacer y ser). Redacción de ofertas atractivas para técnicos jóvenes."
             },
             {
                 "num": 5,
-                "title": "Entrevistas Situacionales (STAR) y el Sistema Dual en Alternancia",
-                "cat": "dual",
-                "cat_name": "🔄 Sistema Dual en Alternancia",
-                "cat_badge": "bg-blue-100 text-blue-900 border border-blue-200",
-                "desc": "Estructuración de preguntas técnicas basadas en el método STAR (Situación, Tarea, Acción, Resultado). El modelo dual de alternancia Kinal: el aprender en el proceso del trabajo como base y objetivo de la acción formativa. Roles del Tutor de Empresa y Mentor Técnico de Taller."
-            },
-            {
-                "num": 6,
-                "title": "Laboratorio de Selección Técnica y Evaluación Práctica en Taller Kinal (Sábado 2)",
-                "cat": "inmersion",
-                "cat_name": "🏭 Inmersión Presencial Kinal",
-                "cat_badge": "bg-amber-100 text-amber-900 border border-amber-200",
-                "desc": "Simulación en vivo de entrevistas técnicas a aprendices de TSU de último año en el campus Kinal. Aplicación de pruebas de habilidad en laboratorio con uso de instrumentos de medición y rúbricas de calibración. Diseño del Plan Corporativo de Semillero Dual adaptado a las plantas de los gerentes."
+                "title": "Curva de Aprendizaje, Inducción Técnica Acelerada y Retención",
+                "cat": "gestion",
+                "cat_name": "📈 Gestión de Personal",
+                "cat_badge": "bg-purple-100 text-purple-900 border border-purple-200",
+                "desc": "Costos ocultos de la rotación temprana de operarios. Procesos de onboarding técnico en 30-60-90 días y planes de desarrollo operativo."
             }
         ]
     },
     {
         "num": 3,
-        "semana": "Semana 3",
-        "title": "Cultura del 'Factor Humano': Valores Laicos, Dignidad y Clima Operativo",
-        "hours": "8 Horas Directas (4h Virtual Teams + 4h Sábado 3 Kinal)",
-        "logro": "Desplegar el modelo del Factor Humano de Fundación Kinal como un sistema formativo basado en valores laicos universales, erradicando el maltrato en planta, previniendo la rotación prematura y fomentando el orgullo del oficio y el estándar del «trabajo bien hecho».",
+        "semana": "Semana 2 (Virtual)",
+        "title": "Liderazgo y Factor Humano en Cuadrillas",
+        "hours": "2 Horas (Microsoft Teams)",
+        "logro": "Desplegar protocolos de liderazgo humanista en plantas y talleres, erradicando el maltrato verbal y autoritarismo, y fortaleciendo la dignidad, la seguridad psicológica y el orgullo por el trabajo bien hecho.",
         "topics": [
             {
-                "num": 7,
-                "title": "Antropología del Factor Humano en Kinal y los Cuatro Pilares del Clima Operativo",
+                "num": 6,
+                "title": "La Filosofía del Factor Humano de Fundación Kinal y sus 4 Pilares",
                 "cat": "factor_humano",
                 "cat_name": "⭐ Factor Humano Kinal",
                 "cat_badge": "bg-amber-100 text-amber-900 border border-amber-200",
-                "desc": "El Factor Humano en Kinal como formación de virtudes humanas en el trabajo. Traducción empresarial: Respeto estricto a la dignidad del operario, Espíritu de servicio hacia el compañero de cuadrilla, Libertad personal responsable y El trabajo bien hecho como realización personal y fuente de prestigio laboral."
+                "desc": "La persona en el centro de la producción: Respeto a la Dignidad, El Trabajo Bien Hecho (orden 5S, custodia de maquinaria y precisión moral), Espíritu de Servicio y Libertad Responsable."
             },
             {
-                "num": 8,
-                "title": "Liderazgo en Cuadrillas, Seguridad Psicológica y Comunicación Directa",
+                "num": 7,
+                "title": "Erradicación del Maltrato en Cuadrillas y Seguridad Psicológica",
                 "cat": "liderazgo",
                 "cat_name": "👥 Liderazgo Operativo",
                 "cat_badge": "bg-indigo-100 text-indigo-900 border border-indigo-200",
-                "desc": "Desmontando la cultura del capataz intimidatorio y el maltrato verbal en planta. Creación de entornos de seguridad psicológica para reportar errores técnicos y casi-accidentes sin temor a represalias destructivas. Canales formales de escucha y resolución ética de controversias operativas."
-            },
-            {
-                "num": 9,
-                "title": "Clínica Vivencial: Dinámicas de Piso de Planta y el «Trabajo Bien Hecho» (Sábado 3)",
-                "cat": "inmersion",
-                "cat_name": "🏭 Inmersión Presencial Kinal",
-                "cat_badge": "bg-amber-100 text-amber-900 border border-amber-200",
-                "desc": "Taller interactivo de resolución de dilemas éticos y operativos en planta mediante role-playing directivo. Conversatorio con instructores y capataces experimentados de Kinal sobre disciplina positiva y mentoría. Diseño del Protocolo Corporativo de Cero Tolerancia al Maltrato y Charla de Factor Humano de 10 Minutos."
+                "desc": "Superación de la cultura del capataz y maltrato verbal. Creación de seguridad psicológica para que los técnicos reporten fallas y averías inmediatamente sin temor a represalias."
             }
         ]
     },
     {
         "num": 4,
-        "semana": "Semana 4",
-        "title": "Taller Directivo Capstone: Creación y Defensa del Programa Corporativo",
-        "hours": "8 Horas Directas (4h Virtual Teams + 4h Sábado 4 Kinal)",
-        "logro": "Formular, estructurar y defender ante un tribunal evaluador directivo un Plan Integral de Gestión Estratégica del Talento Técnico y Factor Humano, articulando el caso de negocio del TSU, la estrategia de atracción dual y el protocolo de cultura de planta con métricas de retorno de inversión.",
+        "semana": "Semana 3 (Virtual)",
+        "title": "Fortalecimiento de Competencias Técnicas y Formación Dual",
+        "hours": "2 Horas (Microsoft Teams)",
+        "logro": "Identificar la cualificación DQR 5-6 del Técnico Superior Universitario (TSU) y formular esquemas de semilleros duales escuela-empresa con tutores de planta (Ausbilder).",
+        "topics": [
+            {
+                "num": 8,
+                "title": "Estándares DQR 5-6 y el Retorno de Inversión (ROI) del TSU",
+                "cat": "competencias",
+                "cat_name": "🎯 Competencias DQR",
+                "cat_badge": "bg-purple-100 text-purple-900 border border-purple-200",
+                "desc": "Correspondencia DQR Nivel 6 (Meister). Comparativa entre Ingeniero, TSU y Operario empírico. Modelado del ROI: ahorro por menor MTTR, menor merma y estabilidad en el cargo."
+            },
+            {
+                "num": 9,
+                "title": "Modelos de Co-Formación Dual Escuela-Empresa y el Tutor Ausbilder",
+                "cat": "dual",
+                "cat_name": "🔄 Sistema Dual en Alternancia",
+                "cat_badge": "bg-blue-100 text-blue-900 border border-blue-200",
+                "desc": "Aprender en el proceso de trabajo como base y objetivo formativo. Estructuración de semilleros duales y el rol del tutor de planta en la transferencia de destrezas."
+            }
+        ]
+    },
+    {
+        "num": 5,
+        "semana": "Semana 4 (Virtual)",
+        "title": "Desarrollo de Mandos Medios y Necesidades Actuales de la Industria",
+        "hours": "2 Horas (Microsoft Teams)",
+        "logro": "Equipar a supervisores de primera línea con herramientas de gestión operativa y resolución de conflictos, correlacionando el factor humano con KPIs de negocio (OEE, SSO y merma).",
         "topics": [
             {
                 "num": 10,
-                "title": "Metodología de Despliegue Corporativo e Integración del Factor Humano",
-                "cat": "capstone",
-                "cat_name": "🚀 Proyecto Capstone",
-                "cat_badge": "bg-purple-100 text-purple-900 border border-purple-200",
-                "desc": "Estructura del Proyecto Directivo Capstone: Diagnóstico de la Brecha Operativa en la Empresa, Matriz de Selección por Competencias Demostrables, Plan de Alianza Dual con Kinal y Protocolo de Despliegue del Factor Humano. Cronograma de implantación a 90 y 180 días con matriz de gestión del cambio."
+                "title": "El Desarrollo del Supervisor de Primera Línea y 'Charlas de 10 Minutos'",
+                "cat": "liderazgo",
+                "cat_name": "👥 Liderazgo Operativo",
+                "cat_badge": "bg-indigo-100 text-indigo-900 border border-indigo-200",
+                "desc": "El mando medio como puente entre la gerencia y el piso. Comunicación asertiva, retroalimentación constructiva y diseño de micro-charlas de valores antes del turno."
             },
             {
                 "num": 11,
-                "title": "Cuadro de Mando Integral (KPIs), Alianzas Kinal y Preparación de la Defensa",
+                "title": "Demandas de Industria 4.0, KPIs Operativos y Ficha Diagnóstica",
                 "cat": "metricas",
-                "cat_name": "📈 Métricas de Retorno (KPIs)",
+                "cat_name": "📈 Métricas & Industria 4.0",
                 "cat_badge": "bg-emerald-100 text-emerald-900 border border-emerald-200",
-                "desc": "Definición de indicadores de impacto operativo: reducción de tasa de rotación en cuadrillas (Turnover), incremento de OEE (Overall Equipment Effectiveness), disminución de costos por garantías y reprocesos, e índice de clima laboral en planta. Simulación de defensa ejecutiva con retroalimentación personalizada."
-            },
+                "desc": "Nuevas tecnologías (automatización, IoT y ciberseguridad industrial), correlación con OEE y SSO, y diligenciamiento de la ficha de diagnóstico empresarial."
+            }
+        ]
+    },
+    {
+        "num": 6,
+        "semana": "Jornada Presencial Especial 2",
+        "title": "Diálogo Industria-Academia, Diplomas y Reconocimientos Institucionales",
+        "hours": "4 Horas (Campus Kinal)",
+        "logro": "Participar en la plenaria de síntesis de necesidades del sector empresarial, recibir el diploma de participación institucional y el reconocimiento corporativo para su empresa.",
+        "topics": [
             {
                 "num": 12,
-                "title": "Defensa Directiva Capstone ante el Tribunal de Kinal y Clausura (Sábado 4)",
+                "title": "Mesa Redonda Plenaria: Necesidades y Demandas del Sector Empresarial",
+                "cat": "vinculacion",
+                "cat_name": "🤝 Vinculación Kinal",
+                "cat_badge": "bg-blue-100 text-blue-900 border border-blue-200",
+                "desc": "Sistematización de hallazgos del diálogo: retroalimentación a directores de carrera de Kinal para afinar competencias de egresados de TSU."
+            },
+            {
+                "num": 13,
+                "title": "Acto Solemne de Clausura: Diplomas de Participación y Reconocimientos",
                 "cat": "inmersion",
-                "cat_name": "🎓 Defensa & Certificación Kinal",
+                "cat_name": "🎓 Entrega de Diplomas & Clausura",
                 "cat_badge": "bg-amber-100 text-amber-900 border border-amber-200",
-                "desc": "Sustentación formal de 15 minutos por participante del Plan Integral ante el Tribunal Directivo de la Escuela Técnica Superior de Fundación Kinal. Deliberación, evaluación bajo rúbrica institucional (aprobación >= 75 puntos) y entrega formal de Certificados Ejecutivos en acto de clausura."
+                "desc": "Entrega protocolaria de Diplomas de Participación a los representantes empresariales y Reconocimientos Institucionales a empresas aliadas, seguido de brindis de honor."
             }
         ]
     }

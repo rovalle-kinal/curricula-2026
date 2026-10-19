@@ -3,8 +3,8 @@ import docx
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.oxml import OxmlElement, parse_xml
-from docx.oxml.ns import qn, nsdecls
+from docx.oxml import parse_xml
+from docx.oxml.ns import nsdecls
 
 def set_cell_background(cell, fill_hex):
     tcPr = cell._element.get_or_add_tcPr()
@@ -118,7 +118,7 @@ def generate_dosificacion_doc():
     # =========================================================================
     p_inst = doc.add_paragraph()
     style_p(p_inst, space_before=0, space_after=2)
-    r_inst = p_inst.add_run("FUNDACIÓN KINAL — ESCUELA TÉCNICA SUPERIOR")
+    r_inst = p_inst.add_run("FUNDACIÓN KINAL — DIRECCIÓN DE VINCULACIÓN EMPRESARIAL")
     r_inst.font.name = "Calibri"
     r_inst.font.size = Pt(11)
     r_inst.font.bold = True
@@ -126,65 +126,52 @@ def generate_dosificacion_doc():
 
     p_tit = doc.add_paragraph()
     style_p(p_tit, space_before=0, space_after=4)
-    r_tit = p_tit.add_run("DOSIFICACIÓN DIDÁCTICA Y SECUENCIACIÓN PEDAGÓGICA:\nDIPLOMADO DE CERTIFICACIÓN GERENCIAL EN GESTIÓN ESTRATÉGICA DEL TALENTO TÉCNICO")
+    r_tit = p_tit.add_run("DOSIFICACIÓN DIDÁCTICA Y SECUENCIACIÓN OPERATIVA:\nPROGRAMA EJECUTIVO EN GESTIÓN DEL TALENTO TÉCNICO, LIDERAZGO Y FACTOR HUMANO")
     r_tit.font.name = "Calibri"
-    r_tit.font.size = Pt(17)
+    r_tit.font.size = Pt(16)
     r_tit.font.bold = True
     r_tit.font.color.rgb = COLOR_PRIMARY
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=10)
-    r_sub = p_sub.add_run("Cronograma Pedagógico Sesión por Sesión | 4 Semanas Intensivas Consecutivas | Modalidad Híbrida Ejecutiva (12 Sesiones Directas: 8 Virtuales Teams + 4 Sábados Consecutivos en Kinal)")
+    r_sub = p_sub.add_run("Cronograma Pedagógico Encuentro por Encuentro | 1 Mes de Duración | Modalidad Híbrida Ejecutiva (6 Encuentros: 2 Jornadas Presenciales Especiales en Kinal + 4 Sesiones Virtuales Semanales en Teams)")
     r_sub.font.name = "Calibri"
     r_sub.font.size = Pt(10.5)
     r_sub.font.italic = True
     r_sub.font.color.rgb = COLOR_SECONDARY
 
     add_callout(doc, 
-        "«El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa». Las 32 horas de contacto directo se organizan en 4 semanas continuas e intensivas (1 mes), articulando 8 sesiones virtuales sincrónicas de 2 horas en Microsoft Teams (Martes y Jueves de 19:00 a 21:00 hrs) y 4 talleres presenciales vivenciales de 4 horas en el campus de Fundación Kinal (4 Sábados consecutivos sin interrupción, de 8:00 a 12:00 hrs). El programa capacita a directores de RRHH, gerentes generales y reclutadores para capitalizar el valor del Técnico Superior Universitario (TSU) y desplegar la cultura del «Factor Humano» y el «trabajo bien hecho» en sus cuadrillas operativas. Nota mínima aprobatoria institucional: 75 puntos sobre 100.",
+        "«El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa». Las 16 horas de contacto directo se estructuran a lo largo de un mes mediante 4 sesiones virtuales semanales de 2 horas en Microsoft Teams y 2 jornadas presenciales especiales de 4 horas en el campus de Fundación Kinal (Jornada Inicial de Apertura y Jornada de Cierre con Entrega de Diplomas y Reconocimientos). El programa genera un espacio de diálogo bidireccional industria-academia para identificar oportunidades de mejora y dotar a los líderes de equipos de herramientas prácticas en manejo de personal, liderazgo humanista y desarrollo de mandos medios. Umbral aprobatorio institucional: 75 puntos sobre 100.",
         bold_prefix="Organización Pedagógica Dual e Ideario Kinal:")
 
     # =========================================================================
-    # 1. MATRIZ GENERAL CRONOLÓGICA DE LAS 12 SESIONES (4 SEMANAS CONSECUTIVAS)
+    # 1. MATRIZ GENERAL CRONOLÓGICA DE LOS 6 ENCUENTROS
     # =========================================================================
     h1_1 = doc.add_paragraph()
-    style_heading(h1_1, "1. Matriz General de Dosificación Cronológica (4 Semanas Consecutivas — 12 Sesiones)", level=1)
+    style_heading(h1_1, "1. Matriz General de Dosificación Cronológica (1 Mes — 6 Encuentros)", level=1)
 
     sesiones_info = [
-        # SEMANA 1
-        ("Sem. 1 / S1 (Virt)", "Mód. 1: Brecha del TSU", "Radiografía del empleo técnico en Guatemala y costos del 'Missing Middle'", "Mapa de pérdidas operativas por rotación"),
-        ("Sem. 1 / S2 (Virt)", "Mód. 1: Brecha del TSU", "Anatomía del TSU: competencias DQR 5-6 frente a ingenieros y bachilleres", "Matriz comparativa de roles y modelo de ROI"),
-        ("Sem. 1 / S3 (Pres)", "Mód. 1: Taller Kinal 1", "SÁBADO 1 KINAL: Inmersión en laboratorios TSU y disección de parada de planta", "Business Case de TSU validado in situ"),
-        
-        # SEMANA 2
-        ("Sem. 2 / S4 (Virt)", "Mód. 2: Reclutamiento Dual", "Reingeniería de perfiles técnicos: de requisitos a competencias demostrables", "Perfil de puesto basado en competencias"),
-        ("Sem. 2 / S5 (Virt)", "Mód. 2: Reclutamiento Dual", "Entrevistas técnicas situacionales STAR y Sistema Dual (Ausbilder en planta)", "Guía de entrevista situacional y esquema dual"),
-        ("Sem. 2 / S6 (Pres)", "Mód. 2: Taller Kinal 2", "SÁBADO 2 KINAL: Auditoría de competencias en vivo y diseño del semillero", "Plan de Semillero Dual empresarial"),
-        
-        # SEMANA 3
-        ("Sem. 3 / S7 (Virt)", "Mód. 3: Factor Humano", "Antropología del trabajo de Kinal y los 4 Pilares del Trabajo Bien Hecho", "Diagnóstico de clima y código de excelencia"),
-        ("Sem. 3 / S8 (Virt)", "Mód. 3: Factor Humano", "Erradicación del maltrato en cuadrillas, liderazgo empático y canales éticos", "Protocolo de tolerancia cero al maltrato"),
-        ("Sem. 3 / S9 (Pres)", "Mód. 3: Taller Kinal 3", "SÁBADO 3 KINAL: Laboratorio de liderazgo y 'Charlas de 10 min de Factor Humano'", "Catálogo de 5 charlas operativas de valores"),
-        
-        # SEMANA 4
-        ("Sem. 4 / S10 (Virt)", "Mód. 4: Proyecto Capstone", "Metodología de despliegue corporativo e integración en inducción/desempeño", "Cronograma de implementación corporativa"),
-        ("Sem. 4 / S11 (Virt)", "Mód. 4: Proyecto Capstone", "Cuadro de Mando Integral (KPIs: OEE, SSO, retención), Kinal y ensayo previo", "Dashboard de KPIs y borrador final Capstone"),
-        ("Sem. 4 / S12 (Pres)", "Mód. 4: Taller Kinal 4", "SÁBADO 4 KINAL: DEFENSA CAPSTONE ANTE TRIBUNAL, GRADUACIÓN Y CLAUSURA", "Plan Capstone sustentado (>= 75 Pts)")
+        ("Jornada Especial 1 (Presencial)", "Apertura e Inmersión Kinal", "Apertura institucional, presentación de la iniciativa, networking y recorrido por laboratorios TSU", "Ficha diagnóstica inicial de expectativas y necesidades"),
+        ("Sem. 1 / Sesión Virtual 1", "Manejo de Personal", "Atracción, reclutamiento técnico, inducción acelerada y reducción de costos por rotación ('Missing Middle')", "Descriptor de puesto técnico por competencias demostrables"),
+        ("Sem. 2 / Sesión Virtual 2", "Liderazgo y Factor Humano", "Antropología de Kinal, los 4 pilares operativos, erradicación del maltrato en planta y seguridad psicológica", "Código de convivencia operativa y protocolo cero maltrato"),
+        ("Sem. 3 / Sesión Virtual 3", "Competencias y Formación Dual", "Marco DQR 5-6, retorno de inversión (ROI) del TSU y esquemas de co-formación dual escuela-empresa", "Propuesta de semillero técnico dual y perfil de tutor Ausbilder"),
+        ("Sem. 4 / Sesión Virtual 4", "Mandos Medios y Demanda Industrial", "Desarrollo del supervisor de primera línea, medición de KPIs (OEE, SSO) y demandas de Industria 4.0", "Catálogo de 5 micro-charlas de valores y borrador de diagnóstico"),
+        ("Jornada Especial 2 (Presencial)", "Diálogo Industria y Clausura", "Plenaria de diálogo Kinal-Empresas, consolidación de necesidades técnicas y humanas, entrega de diplomas y reconocimientos", "Diplomas oficiales entregados y acuerdos de vinculación")
     ]
 
     tbl_matriz = doc.add_table(rows=len(sesiones_info) + 1, cols=4)
     tbl_matriz.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_matriz.autofit = False
-    tbl_matriz.columns[0].width = Inches(1.2)
-    tbl_matriz.columns[1].width = Inches(1.6)
-    tbl_matriz.columns[2].width = Inches(2.3)
+    tbl_matriz.columns[0].width = Inches(1.4)
+    tbl_matriz.columns[1].width = Inches(1.5)
+    tbl_matriz.columns[2].width = Inches(2.2)
     tbl_matriz.columns[3].width = Inches(1.4)
     set_table_borders(tbl_matriz, color="CBD5E0", sz="4")
 
     hdr_m = tbl_matriz.rows[0]
     for c in hdr_m.cells:
         set_cell_background(c, "003366")
-    headers_mat = ["Sesión / Formato", "Módulo / Eje", "Contenido Central del Encuentro", "Producto Observable"]
+    headers_mat = ["Encuentro / Formato", "Eje Temático", "Contenido Central del Encuentro", "Producto Observable"]
     for idx, text in enumerate(headers_mat):
         p = hdr_m.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
@@ -196,9 +183,9 @@ def generate_dosificacion_doc():
 
     for idx, (ses, mod, cont, prod) in enumerate(sesiones_info, start=1):
         row = tbl_matriz.rows[idx]
-        if "Pres" in ses:
+        if "Presencial" in ses:
             for c in row.cells:
-                set_cell_background(c, "EBF8FF")  # Resaltado azul claro para sábados presenciales consecutivos
+                set_cell_background(c, "EBF8FF")  # Resaltado azul para jornadas presenciales especiales
         elif idx % 2 == 1:
             for c in row.cells:
                 set_cell_background(c, "F7FAFC")
@@ -211,136 +198,84 @@ def generate_dosificacion_doc():
             r.font.name = "Calibri"
             r.font.size = Pt(8)
             r.font.color.rgb = COLOR_DARK
-            if c_idx in [0, 3] or "Pres" in ses:
+            if c_idx in [0, 3] or "Presencial" in ses:
                 r.font.bold = True
 
     doc.add_page_break()
 
     # =========================================================================
-    # 2. MICRODISEÑO DIDÁCTICO DETALLADO SESIÓN POR SESIÓN (12 SESIONES)
+    # 2. MICRODISEÑO DIDÁCTICO DETALLADO DE LOS 6 ENCUENTROS
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Microdiseño Didáctico Detallado por Sesión (12 Encuentros)", level=1)
+    style_heading(h1_2, "2. Microdiseño Didáctico Detallado por Encuentro (6 Jornadas)", level=1)
 
     p_micro_intro = doc.add_paragraph()
     style_p(p_micro_intro, space_before=0, space_after=8)
-    r = p_micro_intro.add_run("Cada una de las 12 sesiones cuenta con dosificación temporal estricta: 2 horas (120 min) para sesiones virtuales en Microsoft Teams y 4 horas (240 min) para talleres presenciales vivenciales en Fundación Kinal (4 Sábados consecutivos sin interrupciones):")
+    r = p_micro_intro.add_run("A continuación se desglosa la secuencia metodológica de cada encuentro formativo: 4 horas para las 2 jornadas presenciales especiales en campus Kinal y 2 horas para las 4 sesiones virtuales semanales en Microsoft Teams:")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
 
     sesiones_detalladas = [
-        # SEMANA 1
-        ("Sesión 1 (Virtual Teams — Martes)", "Módulo 1: Brecha del TSU y Retorno de Inversión", 
-         "Radiografía del Talento Operativo en Guatemala y Costos del 'Missing Middle'",
-         "Identifica los costos invisibles de rotación y mala asignación técnica en su empresa mediante un mapa de pérdidas operativas.",
-         "Apertura (15 min): Encuadre ejecutivo y pregunta detonante: '¿Cuánto le cuesta a su empresa un supervisor técnico vacante durante 3 meses?'. Reflexión sobre las fallas comunes en la industria.",
-         "Desarrollo (90 min con pausa activa de 10 min): Exposición sobre el 'Missing Middle' en Guatemala. Comparativa de rotación entre industrias. Trabajo en salas de Teams: costeo de rotación e incidencias operativas en las empresas de los participantes.",
-         "Cierre (15 min): Plenaria de hallazgos, síntesis metodológica y asignación de la lectura directiva del Módulo 1 en Kinal.academy.",
-         "Microsoft Teams, salas privadas de Teams, Kinal.academy, plantilla de pérdidas operativas.",
-         "Borrador del mapa de pérdidas operativas y costos ocultos de rotación.", "2 Horas (120 min)"),
+        # ENCUENTRO 1
+        ("Jornada Presencial Especial 1 (Campus Kinal)", "Apertura Institucional e Inmersión Técnica",
+         "Inauguración de la Iniciativa de Vinculación, Networking Directivo y Recorrido por Talleres TSU",
+         "Conoce en profundidad la propuesta formativa integral de Kinal, establece vínculos de diálogo directivo y comprueba in situ la capacidad de los laboratorios de educación técnica superior.",
+         "Apertura (30 min): Recepción protocolaria de los representantes empresariales en el Auditorio Ejecutivo de Fundación Kinal. Palabras de bienvenida a cargo de la Dirección de Vinculación y Dirección General. Encuadre del propósito del programa y dinámica de presentación de empresas participantes.",
+         "Desarrollo (180 min con pausa activa de 20 min): Recorrido inmersivo guiado por los complejos de formación técnica: Laboratorios de Automatización Industrial y PLCs Siemens, Robótica, Mecatrónica CNC, Redes y Telecomunicaciones, Electrónica y Talleres de Mecánica. Estudiantes de último año de TSU realizan demostraciones operativas en vivo. Mesa de trabajo preliminar: diálogo abierto sobre la disponibilidad de personal técnico calificado y los desafíos del 'Missing Middle' en las empresas.",
+         "Cierre (30 min): Plenaria de síntesis de la jornada, instrucciones para el acceso al aula virtual en Kinal.academy y la plataforma Microsoft Teams, y brindis de café de bienvenida.",
+         "Campus Fundación Kinal (Auditorio Ejecutivo y Complejo de Laboratorios TSU), guías impresas, estación de café.",
+         "Ficha diagnóstica preliminar de expectativas empresariales y registro formal de participación.", "4 Horas (240 min)"),
 
-        ("Sesión 2 (Virtual Teams — Jueves)", "Módulo 1: Brecha del TSU y Retorno de Inversión",
-         "El Técnico Superior Universitario (TSU), Marco DQR 5-6 y Modelado del ROI",
-         "Diferencia las competencias DQR 5-6 del TSU frente a ingenieros y bachilleres, y formula el modelo financiero de retorno de inversión.",
-         "Apertura (15 min): Sondeo interactivo: '¿Por qué los ingenieros renuncian a los puestos de supervisión de planta?'. Presentación de objetivos.",
-         "Desarrollo (90 min con pausa activa de 10 min): Estructura del TSU de Kinal (3 años, 1,500+ horas prácticas). Correspondencia DQR nivel 6 (Meister). Modelado del ROI: ahorro por reducción de MTTR, menor merma y retención a largo plazo.",
-         "Cierre (15 min): Conclusiones sobre la complementariedad operativa (Ingeniero vs TSU vs Operario) y consigna para la visita presencial del Sábado 1.",
-         "Microsoft Teams, presentación ejecutiva DQR, calculadora de ROI en Excel, Kinal.academy.",
-         "Matriz comparativa de 3 perfiles técnicos y cálculo inicial del ROI.", "2 Horas (120 min)"),
+        # ENCUENTRO 2
+        ("Sesión Virtual 1 (Semana 1 — Microsoft Teams)", "Manejo y Desarrollo de Personal Técnico",
+         "Atracción, Inducción Técnica Acelerada y Retención de Talento Operativo",
+         "Aplica técnicas contemporáneas para el reclutamiento por competencias y la estructuración de procesos de inducción que mitiguen la rotación prematura en planta.",
+         "Apertura (15 min): Bienvenida en Teams y pregunta detonante: '¿Cuánto le cuesta realmente a su organización la rotación de un técnico en los primeros 90 días?'. Discusión en el chat interactivo.",
+         "Desarrollo (90 min con pausa de 10 min): Exposición interactiva: por qué fracasan los perfiles de puesto tradicionales en el ámbito operativo. Metodología de descriptores por competencias demostrables (saber, saber hacer y saber ser). Estructuración de la curva de aprendizaje en 30-60-90 días. Trabajo en salas privadas de Teams: rediseño de un perfil técnico crítico para la empresa.",
+         "Cierre (15 min): Socialización de perfiles mejorados, conclusiones ejecutivas y asignación de la lectura sobre Factor Humano en Kinal.academy.",
+         "Microsoft Teams, salas grupales de Teams, Kinal.academy, plantilla de descriptores de puesto.",
+         "Descriptor de puesto técnico por competencias demostrables y esquema de inducción acelerada.", "2 Horas (120 min)"),
 
-        ("Sesión 3 (Presencial Sábado 1 Kinal)", "Módulo 1: Brecha del TSU y Retorno de Inversión",
-         "SÁBADO 1 KINAL: Inmersión en Laboratorios TSU y Disección de Paradas de Planta",
-         "Comprueba en campo la solvencia técnica del TSU de Kinal y valida el Business Case de ahorro operativo de su organización.",
-         "Apertura (30 min): Bienvenida por autoridades de Fundación Kinal en Auditorio Ejecutivo. Café de networking entre directores y gerentes.",
-         "Desarrollo (180 min con pausa de 20 min): Recorrido guiado por Laboratorios TSU (Automatización Siemens, Redes y Mecatrónica). Los estudiantes de último año ejecutan demostraciones en vivo. Mesa redonda 'Disección de una parada de planta': análisis de casos reales de downtime.",
-         "Cierre (30 min): Síntesis ejecutiva, retroalimentación in situ del facilitador de Kinal y entrega del Business Case M1.",
-         "Campus Kinal (Auditorio y Complejo de Laboratorios TSU), guías de análisis de caso, refrigerio.",
-         "Business Case del TSU validado con datos operacionales de planta.", "4 Horas (240 min)"),
+        # ENCUENTRO 3
+        ("Sesión Virtual 2 (Semana 2 — Microsoft Teams)", "Liderazgo y Factor Humano en Cuadrillas",
+         "Dignidad en el Trabajo, el Principio del «Trabajo Bien Hecho» y Erradicación del Maltrato",
+         "Formula políticas y protocolos de liderazgo humanista para erradicar el maltrato en cuadrillas de taller y promover la excelencia y seguridad psicológica.",
+         "Apertura (15 min): Presentación del video testimonial: 'El sello del técnico de Kinal en la industria'. Reflexión sobre el trabajo como ámbito de dignidad y servicio.",
+         "Desarrollo (90 min con pausa de 10 min): La filosofía del Factor Humano de Fundación Kinal y sus 4 pilares: Respeto a la Dignidad, Trabajo Bien Hecho (orden 5S, custodia de maquinaria y precisión moral), Espíritu de Servicio y Libertad Responsable. Análisis del caso: 'El costo oculto de la supervisión autoritaria en planta'. Cómo generar seguridad psicológica para que los operarios reporten averías e incidentes inmediatamente sin temor a represalias.",
+         "Cierre (15 min): Síntesis de buenas prácticas de liderazgo, pautas para el protocolo de cero maltrato y preparación del siguiente eje en Kinal.academy.",
+         "Microsoft Teams, pizarras digitales, casos de estudio industrial de Kinal, Kinal.academy.",
+         "Borrador de Código de Convivencia Operativa y Protocolo de Tolerancia Cero al Maltrato en Planta.", "2 Horas (120 min)"),
 
-        # SEMANA 2
-        ("Sesión 4 (Virtual Teams — Martes)", "Módulo 2: Reclutamiento por Competencias y Formación Dual",
-         "Reingeniería del Perfil Técnico: De Requisitos a Competencias Demostrables",
-         "Transforma descriptores de puesto burocráticos en matrices de competencias operativas observables y niveles de autonomía técnica.",
-         "Apertura (15 min): Revisión de un perfil de puesto tradicional 'real': análisis de incongruencias y requisitos irrelevantes.",
-         "Desarrollo (90 min con pausa activa de 10 min): Metodología de redacción de competencias por resultados de aprendizaje (saber, saber hacer, saber ser). Definición de niveles de autonomía en planta. Taller en Teams: reescritura de un puesto técnico crítico.",
-         "Cierre (15 min): Socialización de matrices mejoradas y asignación de la lectura sobre el Sistema Dual alemán en Kinal.academy.",
-         "Microsoft Teams, pizarras colaborativas Miro/Teams, Kinal.academy, guía de redacción DQR.",
-         "Descriptor de puesto técnico transformado a competencias demostrables.", "2 Horas (120 min)"),
+        # ENCUENTRO 4
+        ("Sesión Virtual 3 (Semana 3 — Microsoft Teams)", "Fortalecimiento de Competencias Técnicas y Formación Dual",
+         "Estándares Internacionales (DQR 5-6), el Valor del TSU y Semilleros de Formación Dual",
+         "Comprende la correspondencia de cualificaciones del Técnico Superior Universitario y diseña esquemas de semilleros duales con tutores de empresa (Ausbilder).",
+         "Apertura (15 min): Sondeo interactivo: '¿Ha experimentado la frustración de contratar a un ingeniero para operar una máquina y que renuncie a los 6 meses?'. Debate inicial.",
+         "Desarrollo (90 min con pausa de 10 min): Marco Alemán de Cualificaciones (DQR Niveles 5 y 6 / Meister). Comparativa de perfiles: Ingeniero (diseño y estrategia) vs TSU (supervisión, programación de PLCs y resolución de averías en campo) vs Operario empírico. Modelado del Retorno de Inversión (ROI): ahorro por reducción de MTTR y merma. Fundamentos del Sistema Dual en alternancia y el rol del tutor en planta (*Ausbilder*).",
+         "Cierre (15 min): Pautas para la articulación de convenios de semilleros de aprendizaje con Fundación Kinal y consignas de trabajo.",
+         "Microsoft Teams, calculadora de ROI en Excel, matriz comparativa DQR, Kinal.academy.",
+         "Propuesta conceptual de semillero técnico dual y perfil del tutor empresarial de planta.", "2 Horas (120 min)"),
 
-        ("Sesión 5 (Virtual Teams — Jueves)", "Módulo 2: Reclutamiento por Competencias y Formación Dual",
-         "Entrevistas Situacionales (STAR) y el Sistema Dual Escuela-Empresa (Ausbilder)",
-         "Diseña guías de entrevista situacional con método STAR y estructura un modelo de aprendizaje dual con tutores en planta.",
-         "Apertura (15 min): Discusión guiada: '¿Por qué los tests psicométricos de oficina no predicen la destreza de un técnico en una avería?'.",
-         "Desarrollo (90 min con pausa activa de 10 min): Técnica STAR adaptada al entorno técnico. Elaboración de rúbricas objetivas de evaluación. Fundamentos del Sistema Dual: alternancia formativa, marco legal y el rol del mentor Ausbilder en planta.",
-         "Cierre (15 min): Síntesis de buenas prácticas de reclutamiento y preparación para el panel de simulación del Sábado 2 en Kinal.",
-         "Microsoft Teams, formato de entrevista STAR técnica, lecturas de formación dual, Kinal.academy.",
-         "Guía de entrevista técnica situacional y borrador de rotación dual.", "2 Horas (120 min)"),
+        # ENCUENTRO 5
+        ("Sesión Virtual 4 (Semana 4 — Microsoft Teams)", "Desarrollo de Mandos Medios y Necesidades Actuales",
+         "Herramientas para Supervisores de Primera Línea, KPIs Operativos y Demandas de la Industria",
+         "Estructura un plan de fortalecimiento para mandos medios que vincule el factor humano con indicadores de productividad (OEE) y consolida la ficha de diagnóstico empresarial.",
+         "Apertura (15 min): Encuadre: el supervisor de taller como articulador clave entre la estrategia gerencial y el piso operativo.",
+         "Desarrollo (90 min con pausa de 10 min): Habilidades formativas para mandos medios: comunicación asertiva, retroalimentación correctiva sin humillar y manejo de conflictos en equipo. Diseño de 'Las Charlas de 10 Minutos de Factor Humano' antes de arrancar el turno. Nuevas tendencias tecnológicas (Industria 4.0, IoT y automatización) y su impacto en las destrezas requeridas. Revisión de la Ficha Diagnóstica de Necesidades de la Industria.",
+         "Cierre (15 min): Instrucciones protocolarias para la Jornada Presencial de Cierre, entrega de diplomas y reconocimientos en campus Kinal.",
+         "Microsoft Teams, guía de micro-charlas de valores, formato de diagnóstico de necesidades, Kinal.academy.",
+         "Ficha de Diagnóstico de Necesidades Industriales completada y catálogo de 5 micro-charlas de Factor Humano.", "2 Horas (120 min)"),
 
-        ("Sesión 6 (Presencial Sábado 2 Kinal)", "Módulo 2: Reclutamiento por Competencias y Formación Dual",
-         "SÁBADO 2 KINAL: Auditoría de Competencias en Vivo y Diseño del Semillero Dual",
-         "Aplica entrevistas situacionales a estudiantes de TSU, audita pruebas técnicas en banco y co-diseña un semillero dual para su empresa.",
-         "Apertura (20 min): Encuadre metodológico en sala ejecutiva y asignación de roles para el panel de selección.",
-         "Desarrollo (190 min con pausa de 20 min): Dinámica en dos bloques: 1) Panel de entrevistas técnicas reales con estudiantes de último año de TSU. 2) Auditoría en laboratorio: los gerentes observan y califican con rúbricas una prueba práctica de comisionamiento de circuito en tiempo real. Taller de co-diseño de convenios duales.",
-         "Cierre (30 min): Plenaria de reflexiones: contrastar la percepción teórica con la competencia demostrada por los jóvenes técnicos de Kinal.",
-         "Auditorio y Laboratorios Kinal, rúbricas impresas, expedientes de aprendices TSU, refrigerio.",
-         "Plan de Semillero Dual empresarial y rúbricas de auditoría técnica diligenciadas.", "4 Horas (240 min)"),
-
-        # SEMANA 3
-        ("Sesión 7 (Virtual Teams — Martes)", "Módulo 3: Cultura del Factor Humano en la Industria",
-         "Antropología del Trabajo de Kinal y los Cuatro Pilares del Trabajo Bien Hecho",
-         "Fundamenta la cultura del Factor Humano en valores laicos universales y formula el código de excelencia operativa para su empresa.",
-         "Apertura (15 min): Presentación del video testimonial: 'El técnico de Kinal en la industria'. Discusión sobre el valor intrínseco del trabajo.",
-         "Desarrollo (90 min con pausa activa de 10 min): La filosofía humanista de Kinal: el trabajo como servicio y perfeccionamiento personal. Los 4 pilares: Respeto a la Dignidad, Trabajo Bien Hecho (5S, precisión moral), Servicio y Libertad Responsable. Ejercicio: diagnóstico de brechas culturales en planta.",
-         "Cierre (15 min): Reflexión grupal y pautas para el protocolo de erradicación del maltrato en Kinal.academy.",
-         "Microsoft Teams, presentaciones multimedia, Kinal.academy, guía de los 4 pilares de Kinal.",
-         "Diagnóstico de clima operativo y borrador del Código del Trabajo Bien Hecho.", "2 Horas (120 min)"),
-
-        ("Sesión 8 (Virtual Teams — Jueves)", "Módulo 3: Cultura del Factor Humano en la Industria",
-         "Erradicación del Maltrato en Cuadrillas, Liderazgo Empático y Canales Éticos",
-         "Estructura protocolos de cero tolerancia al maltrato en planta, seguridad psicológica y canales seguros de reporte ético (Whistleblowing).",
-         "Apertura (15 min): Análisis de caso: 'El capataz agresivo que nadie despide porque saca la producción'. Discusión sobre los costos ocultos del maltrato.",
-         "Desarrollo (90 min con pausa activa de 10 min): Transformación del liderazgo técnico: de la intimidación al liderazgo de servicio. Seguridad psicológica como requisito de SSO y productividad. Diseño de políticas de tolerancia cero al maltrato y canales seguros de denuncia ética.",
-         "Cierre (15 min): Conclusiones y preparación para el Laboratorio de Liderazgo del Sábado 3 en Kinal.",
-         "Microsoft Teams, estudio de caso ético, modelo de canal ético, Kinal.academy.",
-         "Protocolo corporativo de erradicación del maltrato y canales de denuncia.", "2 Horas (120 min)"),
-
-        ("Sesión 9 (Presencial Sábado 3 Kinal)", "Módulo 3: Cultura del Factor Humano en la Industria",
-         "SÁBADO 3 KINAL: Laboratorio de Liderazgo y 'Charlas de 10 Minutos de Factor Humano'",
-         "Resuelve dilemas éticos reales de planta mediante dramatizaciones y diseña un catálogo de charlas operativas de Factor Humano.",
-         "Apertura (20 min): Encuadre del taller vivencial de liderazgo en Auditorio Kinal.",
-         "Desarrollo (190 min con pausa de 20 min): Role-playing de resolución de dilemas éticos (presión para omitir protocolos de seguridad, encubrimiento de piezas defectuosas, maltrato verbal a un operario nuevo). Taller práctico: diseño y simulación en vivo de las 'Charlas de 10 minutos de Factor Humano' para el arranque de turno.",
-         "Cierre (30 min): Retroalimentación de los instructores de Factor Humano de Kinal y afinación de los entregables individuales.",
-         "Auditorio Kinal, dinámicas teatrales y guías de dilemas éticos, Kinal.academy, refrigerio.",
-         "Catálogo de 5 micro-charlas operativas de Factor Humano para su empresa.", "4 Horas (240 min)"),
-
-        # SEMANA 4
-        ("Sesión 10 (Virtual Teams — Martes)", "Módulo 4: Creación y Defensa del Proyecto Capstone",
-         "Metodología de Despliegue Corporativo e Integración en Inducción y Desempeño",
-         "Estructura el plan integral de despliegue de Factor Humano en su organización, vinculándolo a procesos de inducción y evaluación.",
-         "Apertura (15 min): Presentación de la estructura final obligatoria del Proyecto Directivo Capstone.",
-         "Desarrollo (90 min con pausa activa de 10 min): Ruta de despliegue: diagnóstico de planta, sensibilización de mandos medios, plan piloto y escalamiento. Integración de valores en la inducción de personal operativo y en la evaluación semestral. Pautas para el cuadro de mando integral.",
-         "Cierre (15 min): Aclaración de dudas metodológicas y calendarización de la sustentación del Sábado 4.",
-         "Microsoft Teams, plantilla oficial del Proyecto Directivo Capstone, Kinal.academy.",
-         "Plan de despliegue corporativo estructurado por fases y cronograma.", "2 Horas (120 min)"),
-
-        ("Sesión 11 (Virtual Teams — Jueves)", "Módulo 4: Creación y Defensa del Proyecto Capstone",
-         "Cuadro de Mando Integral (KPIs), Alianzas con Kinal y Ensayo Previo en Teams",
-         "Define indicadores de impacto (OEE, SSO, retención) y realiza el ensayo de su sustentación oral con retroalimentación formativa.",
-         "Apertura (15 min): Revisión de las métricas clave de éxito directivo (OEE, tasa de accidentes, índice de rotación voluntaria).",
-         "Desarrollo (90 min con pausa activa de 10 min): Construcción del Dashboard de Talento Técnico. Ecosistema de vinculación con Kinal (convenios marco, acceso a bolsa de trabajo, homologación). Salas privadas de Teams: ensayo de presentación ejecutiva (pitch de 10 min) entre pares y retroalimentación de facilitadores.",
-         "Cierre (15 min): Pautas protocolares finales para la Defensa Capstone del Sábado 4 en Kinal.",
-         "Microsoft Teams, salas privadas de ensayo, rúbrica de sustentación oral, Kinal.academy.",
-         "Dashboard de KPIs de talento técnico y diapositivas finales del Capstone.", "2 Horas (120 min)"),
-
-        ("Sesión 12 (Presencial Sábado 4 Kinal)", "Módulo 4: Creación y Defensa del Proyecto Capstone",
-         "SÁBADO 4 KINAL: DEFENSA CAPSTONE ANTE TRIBUNAL, GRADUACIÓN Y CLAUSURA",
-         "Sustenta con solvencia directiva su Plan Integral de Talento y Factor Humano ante el tribunal institucional, obteniendo la certificación Kinal.",
-         "Apertura (20 min): Instalación del Tribunal Evaluador Directivo conformado por autoridades de Fundación Kinal y líderes empresariales.",
-         "Desarrollo (180 min con pausa de 20 min): Rondas individuales de sustentación oral (15 min de exposición + 5 min de preguntas del tribunal). Calificación con la Rúbrica Analítica Institucional (Umbral aprobatorio: nota mínima de 75 puntos sobre 100).",
-         "Cierre (40 min): Deliberación del tribunal, proclamación de resultados, acto protocolario de entrega de diplomas de certificación y brindis de honor de networking directivo.",
-         "Auditorio Ejecutivo Kinal, equipamiento audiovisual, actas de evaluación, pergaminos de certificación, cóctel.",
-         "Proyecto Directivo Capstone defendido con éxito y certificación gerencial obtenida (>= 75 Pts).", "4 Horas (240 min)")
+        # ENCUENTRO 6
+        ("Jornada Presencial Especial 2 (Campus Kinal)", "Diálogo Industria-Academia, Reconocimientos y Clausura",
+         "Mesa Redonda Plenaria Kinal-Empresas, Entrega de Diplomas y Reconocimientos Institucionales",
+         "Participa activamente en la sistematización de demandas formativas de la industria y recibe el diploma de participación y reconocimiento corporativo de Fundación Kinal.",
+         "Apertura (20 min): Bienvenida protocolaria en Auditorio Ejecutivo por el Consejo Directivo y Directores Académicos de Kinal.",
+         "Desarrollo (190 min con pausa de 20 min): Mesa Redonda Plenaria: 'Construyendo el futuro de la educación técnica en Guatemala'. Presentación de los hallazgos consolidados de las fichas diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector industrial. Diálogo abierto con las autoridades de Kinal para la retroalimentación de planes de estudio y actualización de carreras. Firma de compromisos y convenios marco de vinculación (bolsa de empleo y semilleros duales).",
+         "Cierre (30 min): Acto solemne de clausura: Entrega de Diplomas de Participación a los representantes empresariales y entrega de Reconocimientos Empresariales Especiales a las empresas aliadas. Brindis de honor y networking directivo.",
+         "Auditorio Ejecutivo de Kinal, actas de evaluación, diplomas oficiales encuadernados, placas de reconocimiento empresarial, cóctel.",
+         "Diplomas de Participación y Reconocimientos Empresariales oficialmente entregados (Acreditación institucional >= 75 Pts).", "4 Horas (240 min)")
     ]
 
     for ses_nom, eje_nom, tema_nom, obj_esp, act_ap, act_des, act_cie, rec_did, prod_obs, dur_txt in sesiones_detalladas:
@@ -355,7 +290,7 @@ def generate_dosificacion_doc():
         set_table_borders(tbl_s, color="CBD5E0", sz="4")
 
         s_rows = [
-            ("Módulo y Duración:", f"{eje_nom}  |  {dur_txt}"),
+            ("Eje y Duración:", f"{eje_nom}  |  {dur_txt}"),
             ("Objetivo Específico:", obj_esp),
             ("Secuencia Didáctica — Apertura:", act_ap),
             ("Secuencia Didáctica — Desarrollo:", act_des),
@@ -366,7 +301,7 @@ def generate_dosificacion_doc():
 
         for r_idx, (etiq, cont) in enumerate(s_rows):
             row = tbl_s.rows[r_idx]
-            if "Presencial" in ses_nom or "SÁBADO" in ses_nom:
+            if "Presencial" in ses_nom or "Jornada" in ses_nom:
                 set_cell_background(row.cells[0], "EBF8FF")
             else:
                 set_cell_background(row.cells[0], "F7FAFC")
@@ -396,23 +331,23 @@ def generate_dosificacion_doc():
     doc.add_page_break()
 
     # =========================================================================
-    # 3. INSTRUMENTOS INSTITUCIONALES DE EVALUACIÓN Y RÚBRICA CAPSTONE
+    # 3. INSTRUMENTOS DE EVALUACIÓN, RÚBRICA Y FICHA DIAGNÓSTICA
     # =========================================================================
     h1_3 = doc.add_paragraph()
-    style_heading(h1_3, "3. Instrumentos de Evaluación Ejecutiva y Rúbrica Capstone", level=1)
+    style_heading(h1_3, "3. Instrumentos de Acreditación, Rúbrica y Ficha Diagnóstica de la Industria", level=1)
 
     add_callout(doc,
-        "La certificación gerencial emitida por Fundación Kinal exige alcanzar una calificación mínima de 75 puntos sobre 100 en la evaluación continua de entregables y en la defensa del Proyecto Directivo Capstone ante el tribunal institucional.",
-        bold_prefix="Criterio de Evaluación y Umbral de Aprobación:")
+        "Para recibir el Diploma de Participación Individual y el Reconocimiento Empresarial Institucional de Fundación Kinal, el representante debe cumplir con un mínimo del 80% de asistencia sincrónica y alcanzar una calificación mínima de 75 puntos sobre 100 en la entrega de sus productos aplicativos y participación en el diálogo de vinculación.",
+        bold_prefix="Requisitos de Acreditación Institucional:")
 
     p_rub = doc.add_paragraph()
-    style_heading(p_rub, "3.1 Rúbrica Analítica de Certificación para el Proyecto Directivo Capstone (100 Puntos)", level=2)
+    style_heading(p_rub, "3.1 Rúbrica Analítica de Acreditación y Participación Ejecutiva (100 Puntos)", level=2)
 
     rubrica_data = [
-        ("Diagnóstico Estratégico y Business Case del TSU", "25 Puntos", "Demuestra con datos cuantitativos el ROI de incorporar perfiles TSU frente a la rotación de ingenieros y fallas de operarios empíricos.", "Diagnóstico superficial sin datos de costos o desconectado de la realidad operativa de la empresa (< 18.7 pts)."),
-        ("Diseño del Perfil por Competencias y Semillero Dual", "25 Puntos", "Descriptor riguroso por competencias demostrables y plan estructurado de semillero dual con perfiles de tutores en planta.", "Descripción genérica de requisitos burocráticos sin esquema de rotación dual medible (< 18.7 pts)."),
-        ("Despliegue del Factor Humano y Erradicación del Maltrato", "25 Puntos", "Propone políticas claras de cero tolerancia al maltrato en planta, seguridad psicológica y diseña 5 micro-charlas operativas de valores.", "Planteamiento abstracto de valores sin protocolos contra el maltrato ni aplicación práctica en cuadrillas (< 18.7 pts)."),
-        ("Viabilidad de Implementación, KPIs y Sustentación", "25 Puntos", "Presenta un cronograma realista, dashboard de indicadores (OEE, SSO, retención) y defiende su propuesta con solvencia directiva.", "Incoherencia entre metas y recursos, ausencia de métricas de negocio o sustentación deficiente (< 18.7 pts).")
+        ("Participación en Sesiones y Aporte al Diálogo", "25 Puntos", "Participa activamente en las 2 jornadas presenciales y sesiones en Teams, compartiendo la realidad operativa y desafíos de su organización.", "Inasistencia injustificada o participación pasiva sin retroalimentación al diálogo (< 18.7 pts)."),
+        ("Descriptor por Competencias y Plan de Inducción", "25 Puntos", "Redacta un descriptor técnico riguroso basado en competencias demostrables (saber, hacer, ser) y esquema de onboarding acelerado.", "Descriptor genérico basado en requisitos burocráticos sin criterios de evaluación técnica (< 18.7 pts)."),
+        ("Protocolo de Factor Humano y Charlas Operativas", "25 Puntos", "Propone directrices claras de cero tolerancia al maltrato en planta, seguridad psicológica y diseña 5 micro-charlas de valores.", "Planteamiento abstracto sin aplicación práctica a las dinámicas de taller o cuadrilla (< 18.7 pts)."),
+        ("Ficha de Diagnóstico de Necesidades Industriales", "25 Puntos", "Aporta información detallada sobre las tecnologías emergentes, competencias técnicas y humanas demandadas en su sector para retroalimentar a Kinal.", "Ficha incompleta, superficial o sin datos sobre las brechas reales de cualificación técnica (< 18.7 pts).")
     ]
 
     tbl_rub = doc.add_table(rows=5, cols=4)
@@ -454,22 +389,22 @@ def generate_dosificacion_doc():
                 r.font.bold = True
 
     p_bf = doc.add_paragraph()
-    style_heading(p_bf, "3.2 Ficha Ejecutiva del Plan de Implementación de Factor Humano", level=2)
+    style_heading(p_bf, "3.2 Ficha Diagnóstica: Levantamiento de Necesidades Actuales de la Industria", level=2)
 
     tbl_b_fmt = doc.add_table(rows=6, cols=2)
     tbl_b_fmt.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_b_fmt.autofit = False
-    tbl_b_fmt.columns[0].width = Inches(2.2)
-    tbl_b_fmt.columns[1].width = Inches(4.3)
+    tbl_b_fmt.columns[0].width = Inches(2.3)
+    tbl_b_fmt.columns[1].width = Inches(4.2)
     set_table_borders(tbl_b_fmt, color="CBD5E0", sz="4")
 
     formato_data = [
-        ("Datos del Gerente y Empresa:", "Participante: _______________________ | Cargo: ________________ | Empresa: ________________"),
-        ("Línea Operativa Piloto:", "Área técnica seleccionada (ej. 'Línea de envasado 2' / 'Taller de mantenimiento electromecánico')."),
-        ("Problema de Clima / Técnico Detectado:", "Diagnóstico inicial de rotación, paradas de línea o estilo de supervisión en cuadrilla."),
-        ("Acción de Factor Humano Aplicada:", "Protocolo de liderazgo respetuoso implementado y micro-charlas de valores programadas."),
-        ("Resultado e Impacto Medido:", "Variación en OEE, reducción de quejas por maltrato, ausentismo o índice de accidentes SSO."),
-        ("Firmas de Acreditación:", "Firma Gerente: ___________________  |  Vo.Bo. Tribunal Kinal: ___________________")
+        ("Datos de la Empresa y Representante:", "Empresa: _______________________________ | Sector Productivo: _______________________\nRepresentante: ___________________________ | Cargo Directivo: _________________________"),
+        ("Competencias Técnicas más Escasas:", "Principales dificultades técnicas observadas al contratar personal operativo (PLCs, calibración, mecánica, redes, etc.): __________________________________________________________________"),
+        ("Brechas en Mandos Medios y Factor Humano:", "Habilidades humanas y de liderazgo más necesarias en supervisores de planta (comunicación, respeto, trabajo bien hecho, etc.): _______________________________________________"),
+        ("Tecnologías Emergentes en su Planta:", "Nuevas maquinarias, protocolos o tecnologías a incorporar en los próximos 1-3 años (Industria 4.0, IoT, robótica, etc.): _____________________________________________________"),
+        ("Modalidad de Vinculación de Interés:", "[  ] Semilleros de Formación Dual    [  ] Pasantías TSU    [  ] Bolsa de Empleo Kinal    [  ] Capacitación a la medida"),
+        ("Validación y Entrega:", "Firma Representante Empresarial: _________________ | Vo.Bo. Dirección Vinculación Kinal: _________________")
     ]
 
     for idx, (campo, lineas) in enumerate(formato_data):
@@ -498,16 +433,16 @@ def generate_dosificacion_doc():
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Diplomado Gerencial en Gestión del Talento Técnico — Dosificación Oficial (4 Semanas Consecutivas)")
+    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación en Talento Técnico — Dosificación Oficial")
     run_f.font.name = "Calibri"
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
 
-    out_dir = os.path.join("Cursos", "Talento_Tecnico")
-    os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "Dosificacion_y_Secuencia_Didactica_Talento_Tecnico_Kinal.docx")
-    doc.save(out_path)
-    print(f"Dosificación guardada con éxito en: {out_path}")
+    for out_dir in [os.path.join("Cursos", "Talento_Tecnico"), "Talento_Tecnico"]:
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "Dosificacion_y_Secuencia_Didactica_Talento_Tecnico_Kinal.docx")
+        doc.save(out_path)
+        print(f"Dosificación guardada con éxito en: {out_path}")
 
 if __name__ == "__main__":
     generate_dosificacion_doc()

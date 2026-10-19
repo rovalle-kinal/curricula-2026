@@ -71,33 +71,36 @@ def add_callout(doc, text, bold_prefix="", fill_hex="F7FAFC", border_color="0033
         r_pre.font.bold = True
         r_pre.font.color.rgb = RGBColor(0, 51, 102)
         
-    r_txt = p.add_run(text)
-    r_txt.font.name = "Calibri"
-    r_txt.font.size = Pt(10)
-    r_txt.font.italic = True
-    r_txt.font.color.rgb = RGBColor(45, 55, 72)
+    r = p.add_run(text)
+    r.font.name = "Calibri"
+    r.font.size = Pt(10)
+    r.font.italic = True
+    r.font.color.rgb = RGBColor(45, 55, 72)
     
-    p_post = doc.add_paragraph()
-    style_p(p_post, space_before=0, space_after=6)
+    p_after = doc.add_paragraph()
+    p_after.paragraph_format.space_before = Pt(0)
+    p_after.paragraph_format.space_after = Pt(4)
 
-def style_heading(p, text, level=1, color=RGBColor(0, 51, 102)):
+def style_heading(p, text, level=1):
     p.paragraph_format.keep_with_next = True
     r = p.add_run(text)
     r.font.name = "Calibri"
     r.font.bold = True
-    r.font.color.rgb = color
     if level == 1:
         p.paragraph_format.space_before = Pt(16)
         p.paragraph_format.space_after = Pt(6)
         r.font.size = Pt(15)
+        r.font.color.rgb = RGBColor(0, 51, 102)
     elif level == 2:
         p.paragraph_format.space_before = Pt(12)
         p.paragraph_format.space_after = Pt(4)
-        r.font.size = Pt(13)
+        r.font.size = Pt(12.5)
+        r.font.color.rgb = RGBColor(0, 51, 102)
     elif level == 3:
         p.paragraph_format.space_before = Pt(8)
         p.paragraph_format.space_after = Pt(2)
         r.font.size = Pt(11)
+        r.font.color.rgb = RGBColor(74, 85, 104)
 
 def style_p(p, space_before=0, space_after=6, line_spacing=1.15):
     p.paragraph_format.space_before = Pt(space_before)
@@ -121,7 +124,7 @@ def generate_propuesta_doc():
     # PORTADA INSTITUCIONAL
     # =========================================================================
     p_inst = doc.add_paragraph()
-    style_p(p_inst, space_before=20, space_after=2)
+    style_p(p_inst, space_before=15, space_after=2)
     r_inst = p_inst.add_run("FUNDACIÓN KINAL")
     r_inst.font.name = "Calibri"
     r_inst.font.size = Pt(14)
@@ -129,25 +132,25 @@ def generate_propuesta_doc():
     r_inst.font.color.rgb = COLOR_PRIMARY
 
     p_esc = doc.add_paragraph()
-    style_p(p_esc, space_before=0, space_after=20)
-    r_esc = p_esc.add_run("Escuela Técnica Superior — Centro de Desarrollo Empresarial y Formación Continua")
+    style_p(p_esc, space_before=0, space_after=18)
+    r_esc = p_esc.add_run("Dirección de Vinculación Empresarial — Escuela Técnica Superior")
     r_esc.font.name = "Calibri"
     r_esc.font.size = Pt(11)
     r_esc.font.color.rgb = COLOR_SECONDARY
 
     p_tit = doc.add_paragraph()
-    style_p(p_tit, space_before=14, space_after=10)
-    r_tit = p_tit.add_run("PLANIFICACIÓN Y PROPUESTA FORMATIVA INSTITUCIONAL:\nDIPLOMADO DE CERTIFICACIÓN GERENCIAL EN GESTIÓN ESTRATÉGICA DEL TALENTO TÉCNICO")
+    style_p(p_tit, space_before=10, space_after=8)
+    r_tit = p_tit.add_run("PROPUESTA FORMATIVA Y MODELO DE VINCULACIÓN EMPRESARIAL:\nPROGRAMA EJECUTIVO EN GESTIÓN DEL TALENTO TÉCNICO, LIDERAZGO Y FACTOR HUMANO")
     r_tit.font.name = "Calibri"
-    r_tit.font.size = Pt(17)
+    r_tit.font.size = Pt(16)
     r_tit.font.bold = True
     r_tit.font.color.rgb = COLOR_PRIMARY
 
     p_sub = doc.add_paragraph()
-    style_p(p_sub, space_before=0, space_after=20)
-    r_sub = p_sub.add_run("Programa Ejecutivo Híbrido para la Alta Dirección y Líderes de Talento: Capitalizando el Valor del Técnico Superior Universitario (TSU), la Formación Dual y la Cultura del Factor Humano (4 Semanas Intensivas Consecutivas)")
+    style_p(p_sub, space_before=0, space_after=18)
+    r_sub = p_sub.add_run("Iniciativa Institucional de Diálogo y Fortalecimiento para Líderes de Equipos y Mandos Medios frente a las Demandas Actuales de la Industria (1 Mes de Duración | Modalidad Virtual Semanal + 2 Jornadas Presenciales Especiales)")
     r_sub.font.name = "Calibri"
-    r_sub.font.size = Pt(11.5)
+    r_sub.font.size = Pt(11)
     r_sub.font.italic = True
     r_sub.font.color.rgb = COLOR_SECONDARY
 
@@ -155,26 +158,26 @@ def generate_propuesta_doc():
     tbl_ficha = doc.add_table(rows=8, cols=2)
     tbl_ficha.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_ficha.autofit = False
-    tbl_ficha.columns[0].width = Inches(2.2)
-    tbl_ficha.columns[1].width = Inches(4.3)
+    tbl_ficha.columns[0].width = Inches(2.3)
+    tbl_ficha.columns[1].width = Inches(4.2)
     set_table_borders(tbl_ficha, color="CBD5E0", sz="6")
 
     ficha_data = [
-        ("Nivel Formativo de Referencia:", "Equivalencia DQR Nivel 6 - 7 (Dirección estratégica de talento, diseño organizacional y liderazgo)"),
-        ("Población Destinataria:", "Gerentes Generales, Gerentes de Talento Humano / RRHH, Reclutadores y Gerentes de Operaciones/Planta"),
-        ("Duración Total:", "32 horas directas sincrónicas/presenciales (40 horas formativas totales en 4 semanas consecutivas intensivas)"),
-        ("Modalidad Híbrida Ejecutiva:", "Híbrido: 16h Virtual Sincrónico (Microsoft Teams) + 16h Presencial (4 Sábados consecutivos en Kinal) + Kinal.academy"),
-        ("Estructura de Horarios:", "Martes y Jueves (19:00 a 21:00 hrs en Teams) y 4 Sábados consecutivos (8:00 a 12:00 hrs en campus Kinal)"),
-        ("Ejes Estratégicos del Programa:", "Valor del TSU en la industria, reclutamiento por competencias, modelos de formación dual y Factor Humano"),
-        ("Nota Mínima Aprobatoria:", "75 puntos sobre 100 en análisis de casos, auditoría de competencias y Proyecto Directivo Capstone"),
+        ("Naturaleza del Programa:", "Iniciativa de vinculación empresarial y fortalecimiento directivo en gestión del talento operativo"),
+        ("Población Destinataria:", "Representantes empresariales: Gerentes Generales, Gerentes de Operaciones/Planta, Directores de Talento Humano / RRHH, Reclutadores y Mandos Medios con equipos a su cargo"),
+        ("Duración Total:", "1 mes de duración (4 semanas) | 16 horas de contacto directo sincrónico/presencial + 4 horas de autodiagnóstico empresarial (20 horas formativas ejecutivas totales)"),
+        ("Modalidad Híbrida Ejecutiva:", "Híbrida: 1 sesión virtual semanal de 2 horas en Microsoft Teams (8h virtuales) + 2 jornadas presenciales especiales en campus Kinal (8h presenciales)"),
+        ("Jornadas Presenciales Especiales:", "1) Sesión Inicial de Apertura y Presentación de la Iniciativa (Kinal) | 2) Jornada de Cierre, Diálogo Industria-Academia y Entrega de Diplomas y Reconocimientos (Kinal)"),
+        ("Ejes Temáticos Centrales:", "Manejo y desarrollo de personal, Liderazgo y factor humano, Fortalecimiento de competencias técnicas, Desarrollo de mandos medios, Necesidades actuales de la industria"),
+        ("Acreditación y Reconocimiento:", "Diploma de Participación Institucional y Reconocimiento Empresarial otorgado por Fundación Kinal a la empresa y a su representante (Aprobación >= 75 pts)"),
         ("Sede Presencial:", "Fundación Kinal — Auditorio Ejecutivo y Complejo de Talleres y Laboratorios TSU, Zona 7, Ciudad de Guatemala")
     ]
 
     for idx, (label, val) in enumerate(ficha_data):
         row = tbl_ficha.rows[idx]
         set_cell_background(row.cells[0], "F7FAFC")
-        set_cell_margins(row.cells[0], top=65, bottom=65, left=90, right=90)
-        set_cell_margins(row.cells[1], top=65, bottom=65, left=90, right=90)
+        set_cell_margins(row.cells[0], top=60, bottom=60, left=80, right=80)
+        set_cell_margins(row.cells[1], top=60, bottom=60, left=80, right=80)
         
         p0 = row.cells[0].paragraphs[0]
         style_p(p0, space_before=0, space_after=0)
@@ -197,11 +200,11 @@ def generate_propuesta_doc():
     # 1. MARCO FILOSÓFICO E IDEARIO DE KINAL: LA PERSONA EN EL CENTRO
     # =========================================================================
     h1_1 = doc.add_paragraph()
-    style_heading(h1_1, "1. Marco Filosófico e Ideario Institucional de Fundación Kinal", level=1)
+    style_heading(h1_1, "1. Marco Institucional e Ideario de Fundación Kinal", level=1)
 
     p_id_desc = doc.add_paragraph()
     style_p(p_id_desc, space_before=0, space_after=6)
-    r = p_id_desc.add_run("Este diplomado gerencial se sustenta en la visión humanística del trabajo de Fundación Kinal, la cual postula que la rentabilidad y la eficiencia operativa de una organización son fruto directo de la dignidad, la formación integral y el cuidado de las personas que la integran:")
+    r = p_id_desc.add_run("Fundación Kinal impulsa esta iniciativa directiva sustentada en su vocación histórica de servicio a la sociedad guatemalteca, integrando la excelencia técnica y operativa con el cultivo permanente de los valores humanos fundamentales:")
     r.font.name = "Calibri"
     r.font.size = Pt(10.5)
     r.font.color.rgb = COLOR_DARK
@@ -211,51 +214,49 @@ def generate_propuesta_doc():
     add_callout(doc, "«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable».", bold_prefix="Valores Nucleares de Kinal:")
 
     p_et = doc.add_paragraph()
-    style_heading(p_et, "1.1 El Factor Humano: La Rama Formativa que Transforma la Cultura Productiva", level=2)
+    style_heading(p_et, "1.1 El Factor Humano: La Columna Vertebral de la Cultura Operativa", level=2)
 
     p_et_txt = doc.add_paragraph()
     style_p(p_et_txt, space_before=0, space_after=6)
-    r = p_et_txt.add_run("En la tradición formativa de Kinal, el **Factor Humano** no es un módulo accesorio ni una charla motivacional pasajera; es la columna vertebral que acompaña a cada técnico y profesional a lo largo de toda su trayectoria. En este diplomado, los líderes empresariales descubren cómo trasladar esta filosofía a sus propias organizaciones a través de valores laicos pero profundamente humanos:\n"
-                          "• Respeto Irrenunciable a la Dignidad de la Persona: Desterrar de manera definitiva el maltrato verbal, el autoritarismo, el sarcasmo y los climas hostiles en cuadrillas de planta y taller. Reconocer que el operario técnico merece un liderazgo justo, formador y empático.\n"
-                          "• El Principio del «Trabajo Bien Hecho»: La excelencia técnica cotidiana entendida como deber moral y profesional: orden estricto (5S), custodia impecable de la maquinaria, veracidad absoluta en registros de calidad y orgullo por la obra bien terminada.\n"
-                          "• Libertad Personal Responsable y Autonomía: Fomentar colaboradores maduros que actúan por convicción y profesionalismo, sin requerir supervisores policíacos detrás de ellos.\n"
-                          "• Espíritu de Servicio y Solidaridad: La cooperación interdepartamental genuina para derribar los silos entre operaciones, mantenimiento, recursos humanos y dirección general.")
+    r = p_et_txt.add_run("En Fundación Kinal, el **Factor Humano** es una rama de formación humana laica y universal que acompaña a todos los procesos formativos y de vinculación con la empresa. En este programa para representantes empresariales, el Factor Humano se traduce en directrices operativas concretas:\n"
+                          "• Respeto Irrenunciable a la Dignidad de la Persona: Desterrar en forma definitiva el maltrato verbal, el autoritarismo, el sarcasmo y los climas hostiles en cuadrillas de planta y taller. Reconocer que los operarios y mandos medios merecen un liderazgo justo, formador y empático.\n"
+                          "• El Principio del «Trabajo Bien Hecho»: La calidad cotidiana entendida como estándar ético y deber profesional: orden riguroso (5S), custodia celosa de la maquinaria, veracidad absoluta en registros de calidad y orgullo por la obra bien terminada.\n"
+                          "• Libertad Personal Responsable: Fomentar colaboradores maduros y autónomos que actúan por convicción técnica y moral, reduciendo la necesidad de supervisión policiaca.\n"
+                          "• Espíritu de Servicio y Solidaridad: La cooperación activa entre departamentos (producción, mantenimiento y calidad) para superar silos organizacionales.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 2. FUNDAMENTACIÓN TÉCNICA: EL DILEMA DEL TALENTO Y EL VALOR DEL TSU
+    # 2. FUNDAMENTACIÓN: VINCULACIÓN EMPRESARIAL Y DIÁLOGO BIDIRECCIONAL
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Fundamentación Estratégica: El Retorno de Inversión del TSU", level=1)
+    style_heading(h1_2, "2. Fundamentación Estratégica: Vinculación y Diálogo Industria-Academia", level=1)
 
     p_met = doc.add_paragraph()
     style_p(p_met, space_before=0, space_after=6)
-    r = p_met.add_run("La industria guatemalteca sufre una paradoja crónica en su gestión operativa: gasta sumas millonarias en maquinaria de última generación (Industria 4.0, PLCs, redes, robótica), pero tropieza sistemáticamente al seleccionar al personal que debe operarla y mantenerla:\n"
-                      "• El Error de la Subcualificación: Asignar líneas automatizadas a personal con formación básica empírica o bachilleres sin especialización técnica superior. El resultado es mantenimiento reactivo destructivo, paradas de planta no programadas y mermas intolerables por falta de método analítico de diagnóstico.\n"
-                      "• El Error de la Sobrecualificación: Contratar ingenieros universitarios recién graduados para puestos de supervisión de línea o mantenimiento directo. El resultado es frustración inmediata: el ingeniero busca diseño o gestión de oficina, rechaza el trabajo de campo en el taller, percibe el puesto como transitorio y renuncia a los 6 u 8 meses, disparando los costos de rotación.\n"
-                      "• La Solución Estratégica: El Técnico Superior Universitario (TSU): El grado TSU de Kinal (3 años de educación técnica superior y universitaria, con más de 1,500 horas de prácticas de banco, laboratorios y plantas piloto) representa el 'eslabón perdido' de la productividad nacional. Equivale exactamente al *Meister* (Maestro Técnico) o *Techniker* del sistema alemán (DQR Niveles 5-6): domina la física y el cálculo aplicado, resuelve averías complejas en campo y posee la formación humana para liderar cuadrillas operativas con estabilidad a largo plazo.")
+    r = p_met.add_run("Esta iniciativa responde a una necesidad sentida y compartida entre el sector industrial y la educación técnica superior:\n"
+                      "• Conocer de Primera Mano las Necesidades Actuales de la Industria: Las tecnologías operativas (automatización, IoT industrial, redes, robótica y manufactura) evolucionan con rapidez. Kinal abre este espacio de diálogo para identificar exactamente qué competencias técnicas y humanas demandan hoy las empresas más dinámicas.\n"
+                      "• Fortalecer a los Profesionales que Lideran Equipos de Trabajo: Muchos supervisores de taller y mandos medios ascienden por sus destrezas técnicas pero carecen de herramientas formales para el manejo de personal, la resolución constructiva de conflictos y el liderazgo motivador.\n"
+                      "• Superar el Dilema del Talento Técnico (Sub vs Sobrecualificación): El sector industrial suele oscilar entre contratar operarios empíricos que no dominan diagnóstico analítico o ingenieros universitarios que se frustran en el trabajo de piso y rotan a los pocos meses. El programa visibiliza el rol del **Técnico Superior Universitario (TSU)** como solución de alto impacto y estabilidad a largo plazo.\n"
+                      "• Retroalimentación para la Formación de Estudiantes y Egresados: El diálogo directo con los gerentes permite a Kinal afinar sus mallas curriculares, garantizando que los graduandos salgan al mercado con el perfil exacto que el aparato productivo nacional requiere.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 3. MARCO ALEMÁN DQR Y SISTEMA DUAL DE APRENDIZAJE
+    # 3. MARCO DE CUALIFICACIONES Y SISTEMA DUAL
     # =========================================================================
     h1_3 = doc.add_paragraph()
-    style_heading(h1_3, "3. Marco Alemán de Cualificaciones (DQR) y Formación Dual en la Empresa", level=1)
+    style_heading(h1_3, "3. Marco Alemán DQR y Formación Profesional Dual en Alternancia", level=1)
 
     add_callout(doc, "«concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa».", bold_prefix="Definición de Formación Profesional Dual:")
 
-    add_callout(doc, "«the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act».", bold_prefix="Concepto de Competencia en el DQR:")
+    add_callout(doc, "«the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act».", bold_prefix="Concepto de Competencia según el DQR:")
 
     p_dqr_txt = doc.add_paragraph()
     style_p(p_dqr_txt, space_before=0, space_after=6)
-    r = p_dqr_txt.add_run("El diplomado enseña a los gerentes a incorporar los estándares duales en sus propias plantas:\n"
-                          "1. Co-Formación en Alternancia: Pasar de la postura pasiva ('esperar a ver qué me envía la academia') a la postura dual activa, donde la empresa se convierte en un centro de aprendizaje estructurado mediante semilleros técnicos y pasantías planificadas.\n"
-                          "2. El Tutor Empresarial (Ausbilder): Formar a los jefes de taller y supervisores de línea como mentores técnicos capaces de transferir conocimientos sin egoísmos y guiar al joven en su integración cultural.\n"
-                          "3. Evaluación por Resultados de Aprendizaje: Sustituir los filtros basados únicamente en diplomas de papel por pruebas situacionales donde se evidencia la *capacidad integral de acción técnica*.")
+    r = p_dqr_txt.add_run("El programa comparte con los líderes empresariales cómo los estándares duales alemanes (DQR Niveles 5 y 6 / Meister) se aterrizan con éxito en Guatemala a través de convenios de aprendizaje, tutores empresariales (*Ausbilder*) y semilleros de talento en la propia planta.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
@@ -264,12 +265,12 @@ def generate_propuesta_doc():
     # 4. COMPETENCIA GENERAL Y PERFILES DE ENTRADA Y SALIDA
     # =========================================================================
     h1_4 = doc.add_paragraph()
-    style_heading(h1_4, "4. Competencia General y Perfiles del Participante", level=1)
+    style_heading(h1_4, "4. Competencia General y Perfil de los Participantes", level=1)
 
     p_comp = doc.add_paragraph()
     style_p(p_comp, space_before=0, space_after=6)
     r = p_comp.add_run("Competencia General del Programa:\n"
-                       "El participante formula e implementa estrategias integrales de atracción, evaluación, fidelización y desarrollo de talento técnico operativo en su organización, capitalizando las competencias del Técnico Superior Universitario (TSU) y el modelo de formación dual, diseñando programas internos de Factor Humano basados en valores laicos universales para erradicar el maltrato en planta y elevar la productividad y seguridad laboral con el estándar del «trabajo bien hecho».")
+                       "El participante aplica herramientas directivas contemporáneas para el manejo, desarrollo y liderazgo de personal técnico y mandos medios, integrando la cultura del Factor Humano y el estándar del «trabajo bien hecho» en sus cuadrillas operativas, y participa activamente en el diálogo de vinculación industria-academia para identificar y fortalecer las competencias técnicas y humanas demandadas por el sector productivo.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.bold = True
@@ -277,39 +278,48 @@ def generate_propuesta_doc():
 
     p_perfiles = doc.add_paragraph()
     style_p(p_perfiles, space_before=4, space_after=6)
-    r = p_perfiles.add_run("• Perfil de Ingreso: Gerentes Generales, Directores de Recursos Humanos / Talento Humano, Gerentes de Planta, Jefes de Reclutamiento, Gerentes de Mantenimiento y líderes de operaciones en empresas del sector manufacturero, agroindustrial, telecomunicaciones, energía, servicios técnicos y construcción en Guatemala.\n"
-                           "• Perfil de Egreso: Líder estratégico certificado capaz de estructurar matrices de competencias operativas precisas, reducir drásticamente el costo de rotación técnica, establecer semilleros duales con Fundación Kinal y liderar programas de Factor Humano que humanicen los procesos productivos.")
+    r = p_perfiles.add_run("• Perfil de Ingreso: Representantes de empresas con responsabilidad sobre equipos de trabajo: Gerentes Generales, Gerentes de Operaciones, Planta o Mantenimiento, Directores/Gerentes de Talento Humano y Recursos Humanos, Reclutadores Técnicos y Supervisores Generales de sectores como manufactura, agroindustria, plásticos, alimentos, telecomunicaciones, energía y servicios técnicos.\n"
+                            "• Perfil de Egreso: Líder empresarial actualizado con visión integral del talento técnico, capaz de liderar a sus mandos medios con empatía y exigencia profesional, erradicar el maltrato en planta, estructurar semilleros de aprendizaje y vincular a su organización en alianzas estratégicas de empleabilidad con Fundación Kinal.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 5. ESTRUCTURA MODULAR Y DOSIFICACIÓN HORARIA (4 SEMANAS CONSECUTIVAS)
+    # 5. ESTRUCTURA FORMATIVA Y CALENDARIO OFICIAL (1 MES)
     # =========================================================================
     h1_5 = doc.add_paragraph()
-    style_heading(h1_5, "5. Estructura Modular y Distribución Formativa (4 Semanas Consecutivas)", level=1)
+    style_heading(h1_5, "5. Estructura Formativa Oficial (1 Mes de Duración | Híbrido Ejecutivo)", level=1)
+
+    p_est_desc = doc.add_paragraph()
+    style_p(p_est_desc, space_before=0, space_after=6)
+    r = p_est_desc.add_run("El programa ha sido diseñado para maximizar el aprovechamiento del tiempo de los ejecutivos y representantes empresariales, articulando **1 sesión semanal virtual** a lo largo de un mes con **2 jornadas presenciales especiales** en las instalaciones de Fundación Kinal:")
+    r.font.name = "Calibri"
+    r.font.size = Pt(10)
+    r.font.color.rgb = COLOR_DARK
 
     modulos_data = [
-        ("Módulo 1 (Semana 1)", "El Valor del TSU y la Radiografía del Talento Operativo en Guatemala", "8 Horas", "2 Virtuales (4h) + Sábado 1 Kinal (4h)", "Diagnóstico de Brechas Operativas y Caso de Negocio (ROI del TSU)"),
-        ("Módulo 2 (Semana 2)", "Reclutamiento por Competencias Técnicas y Sistemas de Formación Dual", "8 Horas", "2 Virtuales (4h) + Sábado 2 Kinal (4h)", "Descriptor por Competencias Demostrables y Plan Semillero Dual"),
-        ("Módulo 3 (Semana 3)", "Cultura del Factor Humano: Valores Laicos, Dignidad y Clima Operativo", "8 Horas", "2 Virtuales (4h) + Sábado 3 Kinal (4h)", "Protocolo de Erradicación del Maltrato y Charla de Factor Humano"),
-        ("Módulo 4 (Semana 4)", "Diseño e Implementación del Programa Corporativo (Proyecto Capstone)", "8 Horas", "2 Virtuales (4h) + Sábado 4 Kinal (4h)", "Plan Integral de Talento y Factor Humano Evaluado (>= 75 Pts)")
+        ("Jornada Especial 1 (Presencial)", "Apertura Institucional, Presentación de la Iniciativa y Recorrido por Talleres de Kinal", "4 Horas", "Presencial en Campus Kinal (Sábado o Mañana Ejecutiva)", "Encuadre de Vinculación y Diagnóstico Preliminar de Expectativas"),
+        ("Semana 1 / Sesión Virtual 1", "Manejo y Desarrollo de Personal Técnico: Retención, 'Missing Middle' y Curva de Aprendizaje", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Mapa de Brechas Operativas y Plan de Inducción Técnica"),
+        ("Semana 2 / Sesión Virtual 2", "Liderazgo y Factor Humano: Dignidad, Trabajo Bien Hecho y Erradicación del Maltrato", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Código de Convivencia Operativa y Protocolo Cero Maltrato"),
+        ("Semana 3 / Sesión Virtual 3", "Fortalecimiento de Competencias Técnicas: Estándares DQR 5-6, TSU y Formación Dual", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Matriz de Competencias Operativas y Esquema de Rotación Dual"),
+        ("Semana 4 / Sesión Virtual 4", "Desarrollo de Mandos Medios y Necesidades Actuales de la Industria", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Plan de Fortalecimiento de Supervisores y Métricas Operativas (OEE/SSO)"),
+        ("Jornada Especial 2 (Presencial)", "Plenaria de Diálogo Industria-Academia, Entrega de Diplomas y Reconocimientos", "4 Horas", "Presencial en Campus Kinal (Sábado o Mañana Ejecutiva)", "Consolidado de Demandas Técnicas y Diplomas Oficiales Entregados")
     ]
 
-    tbl_mod = doc.add_table(rows=5, cols=5)
+    tbl_mod = doc.add_table(rows=7, cols=5)
     tbl_mod.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_mod.autofit = False
-    tbl_mod.columns[0].width = Inches(1.1)
-    tbl_mod.columns[1].width = Inches(2.1)
-    tbl_mod.columns[2].width = Inches(0.8)
+    tbl_mod.columns[0].width = Inches(1.3)
+    tbl_mod.columns[1].width = Inches(2.2)
+    tbl_mod.columns[2].width = Inches(0.7)
     tbl_mod.columns[3].width = Inches(1.1)
-    tbl_mod.columns[4].width = Inches(1.4)
+    tbl_mod.columns[4].width = Inches(1.2)
     set_table_borders(tbl_mod, color="CBD5E0", sz="4")
 
     hdr_mod = tbl_mod.rows[0]
     for c in hdr_mod.cells:
         set_cell_background(c, "003366")
-    headers_mod_txt = ["Módulo / Semana", "Nombre de la Unidad Formativa", "Horas", "Sesiones", "Producto Terminal del Módulo"]
+    headers_mod_txt = ["Encuentro / Modalidad", "Nombre del Módulo / Actividad", "Horas", "Formato / Plataforma", "Producto Observable"]
     for idx, text in enumerate(headers_mod_txt):
         p = hdr_mod.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
@@ -321,111 +331,95 @@ def generate_propuesta_doc():
 
     for idx, (m_id, m_nom, m_hrs, m_ses, m_prod) in enumerate(modulos_data, start=1):
         row = tbl_mod.rows[idx]
-        if idx % 2 == 1:
+        if "Presencial" in m_id or "Jornada" in m_id:
+            for c in row.cells:
+                set_cell_background(c, "EBF8FF")
+        elif idx % 2 == 1:
             for c in row.cells:
                 set_cell_background(c, "F7FAFC")
         for c_idx, val in enumerate([m_id, m_nom, m_hrs, m_ses, m_prod]):
             cell = row.cells[c_idx]
-            set_cell_margins(cell, top=55, bottom=55, left=65, right=65)
+            set_cell_margins(cell, top=50, bottom=50, left=60, right=60)
             p = cell.paragraphs[0]
             style_p(p, space_before=0, space_after=0)
             r = p.add_run(val)
             r.font.name = "Calibri"
             r.font.size = Pt(8.5)
             r.font.color.rgb = COLOR_DARK
-            if c_idx in [0, 2]:
+            if c_idx in [0, 2] or "Presencial" in m_id:
                 r.font.bold = True
 
     p_balance = doc.add_paragraph()
     style_p(p_balance, space_before=8, space_after=6)
-    r = p_balance.add_run("Balance de la Modalidad Híbrida Ejecutiva (4 Semanas Intensivas Consecutivas):\n"
-                          "• Ritmo Continuo sin Interrupciones: 4 semanas calendario consecutivas de inmersión ejecutiva.\n"
-                          "• 16 Horas Virtuales Sincrónicas en Microsoft Teams: 8 sesiones nocturnas de 2 horas (Martes y Jueves de 19:00 a 21:00 hrs) dedicadas al marco conceptual, herramientas directivas y análisis de casos.\n"
-                          "• 16 Horas Presenciales en Kinal (4 Sábados Consecutivos sin sábados de por medio): 4 sábados consecutivos de 4 horas (8:00 a 12:00 hrs) con inmersión en talleres y laboratorios de TSU, networking directivo y sustentación.\n"
-                          "• Plataforma LMS Kinal.academy (Moodle): Alojamiento de lecturas ejecutivas, rúbricas y entrega del Proyecto Capstone.")
+    r = p_balance.add_run("Balance de la Carga Horaria y Formativa:\n"
+                          "• 8 Horas Presenciales Vivenciales (2 Jornadas Especiales en Kinal): Jornada Inicial de Apertura (4h) para presentar la iniciativa, networking y recorrido de laboratorios; Jornada de Cierre (4h) para plenaria de diálogo industria-academia, entrega solemne de diplomas y reconocimientos, y cóctel de vinculación.\n"
+                          "• 8 Horas Virtuales Sincrónicas en Microsoft Teams: 4 sesiones semanales de 2 horas (1 sesión por semana) dedicadas a herramientas de gestión, liderazgo, factor humano y mandos medios.\n"
+                          "• 4 Horas de Autodiagnóstico en Kinal.academy (Moodle): Ficha de levantamiento de necesidades de cualificación y plan de mejora operativa.\n"
+                          "• Total: 20 Horas Formativas Ejecutivas.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 6. ESTRATEGIA DIDÁCTICA Y PROYECTO DIRECTIVO CAPSTONE
+    # 6. LOS 5 EJES TEMÁTICOS Y ESPACIOS DE DIÁLOGO
     # =========================================================================
     h1_6 = doc.add_paragraph()
-    style_heading(h1_6, "6. Estrategia Pedagógica Ejecutiva e Inmersión Vivencial", level=1)
+    style_heading(h1_6, "6. Articulación de los 5 Ejes Temáticos del Programa", level=1)
 
-    p_didact = doc.add_paragraph()
-    style_p(p_didact, space_before=0, space_after=6)
-    r = p_didact.add_run("El programa adopta un enfoque andragógico directivo basado en tres pilares:\n"
-                         "1. Método del Caso Industrial: Discusión guiada de situaciones reales de empresas guatemaltecas (conflictos de cuadrilla, accidentes por descuido, rotación crítica de técnicos, reclutamiento fallido).\n"
-                         "2. Inmersión Vivencial en Laboratorios de Kinal (4 Sábados Consecutivos): Durante cada sábado consecutivo, los gerentes recorren los laboratorios de automatización, mecatrónica, redes, ciberseguridad y manufactura, dialogando directamente con estudiantes de TSU que exponen sus proyectos finales. Esto desmitifica de forma palpable la capacidad técnica y madurez de los graduandos.\n"
-                         "3. Proyecto Directivo Capstone: Cada gerente participante desarrolla a lo largo de las 4 semanas el 'Plan de Talento Técnico y Cultura del Factor Humano' aplicable directamente a su empresa real, con asesoría individualizada de expertos de Kinal.")
+    ejes = [
+        ("1. Manejo y Desarrollo de Personal", 
+         "Métodos modernos de atracción, onboarding e inducción técnica. Identificación temprana de talento operativo, diseño de curvas de aprendizaje y reducción de la rotación en líneas de producción y talleres."),
+        ("2. Liderazgo y Factor Humano", 
+         "La filosofía del Factor Humano de Fundación Kinal aplicada a cuadrillas: dignidad de la persona, erradicación del maltrato verbal y autoritarismo, fomento del «trabajo bien hecho» y desarrollo de seguridad psicológica."),
+        ("3. Fortalecimiento de Competencias Técnicas", 
+         "Mapeo de cualificaciones bajo el Marco Alemán DQR 5-6. Demostración práctica del valor del Técnico Superior Universitario (TSU) y estructuración de semilleros duales escuela-empresa."),
+        ("4. Desarrollo de Mandos Medios", 
+         "Herramientas formativas para supervisores, jefes de taller y jefes de turno: comunicación asertiva, resolución de conflictos de equipo, liderazgo pedagógico en el puesto (*Ausbilder*) y medición de KPIs (OEE, SSO)."),
+        ("5. Necesidades Actuales de la Industria y Vinculación Bidireccional", 
+         "Espacios formales de diálogo estructurado donde las empresas participantes comparten con las autoridades de Kinal sus requerimientos inmediatos y futuros en tecnología, automatización y destrezas humanas.")
+    ]
+
+    for e_tit, e_desc in ejes:
+        p_e = doc.add_paragraph()
+        style_p(p_e, space_before=2, space_after=4)
+        p_e.paragraph_format.left_indent = Inches(0.2)
+        r_b = p_e.add_run(f"• {e_tit}: ")
+        r_b.font.name = "Calibri"
+        r_b.font.size = Pt(9.5)
+        r_b.font.bold = True
+        r_b.font.color.rgb = COLOR_PRIMARY
+        r_d = p_e.add_run(e_desc)
+        r_d.font.name = "Calibri"
+        r_d.font.size = Pt(9.5)
+        r_d.font.color.rgb = COLOR_DARK
+
+    # =========================================================================
+    # 7. ACREDITACIÓN, DIPLOMAS Y RECONOCIMIENTOS EMPRESARIALES
+    # =========================================================================
+    h1_7 = doc.add_paragraph()
+    style_heading(h1_7, "7. Acreditación Institucional, Diplomas y Reconocimientos", level=1)
+
+    p_acred = doc.add_paragraph()
+    style_p(p_acred, space_before=0, space_after=6)
+    r = p_acred.add_run("En la Jornada Presencial de Cierre en campus Kinal se realizará un acto protocolario especial con dos distinciones oficiales:\n"
+                        "1. Diploma de Participación Individual: Otorgado al representante empresarial que cumplió con el 80% de asistencia a las sesiones sincrónicas y la entrega de su ficha diagnóstica (con nota mínima aprobatoria institucional de 75/100 puntos).\n"
+                        "2. Reconocimiento Empresarial Institucional: Galardón emitido por Fundación Kinal a la empresa participante, acreditándola como «Empresa Aliada en la Vinculación Técnica y Formación del Talento Humano», con acceso prioritario a la Bolsa de Egresados y convenios de formación dual.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 7. SISTEMA DE EVALUACIÓN Y UMBRAL APROBATORIO INSTITUCIONAL
-    # =========================================================================
-    h1_7 = doc.add_paragraph()
-    style_heading(h1_7, "7. Sistema de Evaluación Institucional y Criterio de Certificación", level=1)
-
-    add_callout(doc, "La obtención de la certificación ejecutiva emitida por Fundación Kinal exige alcanzar una calificación mínima de 75 puntos sobre 100 en la evaluación continua de casos y en la defensa del Proyecto Directivo Capstone en el Sábado 4 consecutivo, conforme a la normativa de evaluación institucional.", bold_prefix="Umbral Aprobatorio Institucional Obligatorio:")
-
-    eval_data = [
-        ("Participación en Casos y Foros Directivos en Teams (25%)", "Aportes fundamentados en el análisis de dilemas de contratación, casos de rotación y dinámicas de grupo en sesiones virtuales."),
-        ("Talleres Presenciales e Inmersión en Laboratorios Kinal (25%)", "Asistencia activa a los 4 sábados consecutivos en campus Kinal, auditoría de competencias en bancos reales y ejercicios de rol directivo."),
-        ("Diseño de Herramientas de Factor Humano (20%)", "Elaboración de matrices de reclutamiento por competencias y protocolos de charlas de Factor Humano para mandos medios."),
-        ("Defensa del Proyecto Directivo Capstone (30%)", "Presentación oral y escrita del Plan Integral de Talento Técnico y Factor Humano para su empresa ante el comité evaluador de Kinal en el Sábado 4.")
-    ]
-
-    tbl_ev = doc.add_table(rows=5, cols=2)
-    tbl_ev.alignment = WD_TABLE_ALIGNMENT.CENTER
-    tbl_ev.autofit = False
-    tbl_ev.columns[0].width = Inches(2.7)
-    tbl_ev.columns[1].width = Inches(3.8)
-    set_table_borders(tbl_ev, color="CBD5E0", sz="4")
-
-    hdr_ev = tbl_ev.rows[0]
-    for c in hdr_ev.cells:
-        set_cell_background(c, "003366")
-    for idx, text in enumerate(["Componente de Evaluación", "Criterio de Desempeño y Evidencia"]):
-        p = hdr_ev.cells[idx].paragraphs[0]
-        style_p(p, space_before=0, space_after=0)
-        r = p.add_run(text)
-        r.font.name = "Calibri"
-        r.font.size = Pt(8.5)
-        r.font.bold = True
-        r.font.color.rgb = RGBColor(255, 255, 255)
-
-    for idx, (comp, crit) in enumerate(eval_data, start=1):
-        row = tbl_ev.rows[idx]
-        if idx % 2 == 1:
-            for c in row.cells:
-                set_cell_background(c, "F7FAFC")
-        for c_idx, val in enumerate([comp, crit]):
-            cell = row.cells[c_idx]
-            set_cell_margins(cell, top=55, bottom=55, left=65, right=65)
-            p = cell.paragraphs[0]
-            style_p(p, space_before=0, space_after=0)
-            r = p.add_run(val)
-            r.font.name = "Calibri"
-            r.font.size = Pt(8.5)
-            r.font.color.rgb = COLOR_DARK
-            if c_idx == 0:
-                r.font.bold = True
-
-    # =========================================================================
-    # 8. ECOSISTEMA DIGITAL Y ESPACIOS FÍSICOS
+    # 8. PLATAFORMAS TECNOLÓGICAS E INFRAESTRUCTURA
     # =========================================================================
     h1_8 = doc.add_paragraph()
-    style_heading(h1_8, "8. Ecosistema Digital Institucional y Espacios Físicos", level=1)
+    style_heading(h1_8, "8. Ecosistema Digital e Infraestructura Institucional", level=1)
 
     p_infra = doc.add_paragraph()
     style_p(p_infra, space_before=0, space_after=6)
     r = p_infra.add_run("En cumplimiento de los estándares institucionales de Fundación Kinal:\n"
-                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las 8 sesiones nocturnas interactivas, con canales dedicados para análisis de casos y repositorio de grabaciones.\n"
-                        "• Plataforma LMS Oficial: Kinal.academy (Moodle) para la gestión académica, descarga de lecturas de liderazgo, rúbricas de evaluación y entrega formal del Proyecto Capstone.\n"
-                        "• Instalaciones Presenciales en Kinal: Auditorio con soporte multimedia, salas de trabajo ejecutivo y recorrido guiado por los talleres de TSU (Laboratorios de Automatización Siemens, Mecatrónica CNC, Electrónica y Redes) durante los 4 sábados consecutivos.")
+                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las 4 sesiones semanales interactivas, con salas para dinámicas grupales y grabación de respaldo.\n"
+                        "• Plataforma LMS Oficial: Kinal.academy (Moodle) para la gestión del material de lectura, instrumentos de autodiagnóstico y levantamiento de necesidades de la industria.\n"
+                        "• Instalaciones Presenciales en Kinal: Auditorio Ejecutivo climatizado con soporte audiovisual de alta fidelidad, salas de coworking directivo y visita inmersiva a los Laboratorios de Automatización Siemens, Mecatrónica CNC, Electrónica, Redes y Talleres Industriales.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -435,16 +429,17 @@ def generate_propuesta_doc():
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Diplomado de Certificación Gerencial en Gestión del Talento Técnico — Propuesta Oficial")
+    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación en Talento Técnico y Factor Humano — Propuesta Oficial")
     run_f.font.name = "Calibri"
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
 
-    out_dir = os.path.join("Cursos", "Talento_Tecnico")
-    os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "Propuesta_Diplomado_Talento_Tecnico_Kinal.docx")
-    doc.save(out_path)
-    print(f"Propuesta guardada con éxito en: {out_path}")
+    # Guardar en ambas ubicaciones para total consistencia
+    for out_dir in [os.path.join("Cursos", "Talento_Tecnico"), "Talento_Tecnico"]:
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "Propuesta_Diplomado_Talento_Tecnico_Kinal.docx")
+        doc.save(out_path)
+        print(f"Propuesta guardada con éxito en: {out_path}")
 
 if __name__ == "__main__":
     generate_propuesta_doc()
