@@ -118,7 +118,7 @@ def generate_temario_doc():
     # ==========================================
     title_p = doc.add_paragraph()
     style_p(title_p, space_before=0, space_after=4)
-    run_title = title_p.add_run("Programa Ejecutivo de Vinculación y Gestión Estratégica del Talento Técnico")
+    run_title = title_p.add_run("Programa Ejecutivo de Vinculación y Liderazgo: Gestión del Talento Técnico y Mandos Medios")
     run_title.font.name = "Calibri"
     run_title.font.size = Pt(18)
     run_title.font.bold = True
@@ -133,7 +133,7 @@ def generate_temario_doc():
     run_sub.font.color.rgb = COLOR_SECONDARY
 
     add_callout(doc, 
-        "«the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act». El programa promueve un espacio de diálogo bidireccional entre la industria y Fundación Kinal para compartir herramientas de liderazgo, manejo de personal y mandos medios, integrando el Factor Humano y conociendo de primera mano las necesidades técnicas y humanas que demanda actualmente el sector productivo.", 
+        "«the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act». El programa promueve un espacio de diálogo bidireccional entre la industria y Fundación Kinal para capacitar a los líderes de equipos en manejo de personal, liderazgo humanista, competencias técnicas y mandos medios, integrando el Factor Humano y conociendo de primera mano las necesidades técnicas y humanas que demanda actualmente el sector empresarial.", 
         bold_prefix="Definición de Competencia DQR e Ideario Kinal:")
 
     # ==========================================
@@ -144,26 +144,26 @@ def generate_temario_doc():
 
     p_cg = doc.add_paragraph()
     style_p(p_cg, space_before=0, space_after=6)
-    r = p_cg.add_run("Competencia General:\n"
-                     "El participante implementa metodologías efectivas para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, aplicando la cultura del Factor Humano y los estándares de excelencia del «trabajo bien hecho», participando en mesas de diálogo industria-academia para alinear las competencias del talento técnico con las necesidades actuales del mercado productivo.")
+    r = p_cg.add_run("Competencia General del Programa:\n"
+                     "El participante implementa metodologías gerenciales efectivas para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, aplicando la cultura del Factor Humano y los estándares de excelencia del «trabajo bien hecho», participando en mesas de diálogo industria-academia para alinear las competencias del talento técnico con las necesidades actuales del mercado productivo.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.bold = True
     r.font.color.rgb = COLOR_PRIMARY
 
     mod_comps = [
-        ("Jornada Presencial Especial 1: Apertura e Inmersión en Kinal", 
-         "Conoce la visión formativa integral de Kinal, recorre los laboratorios de última tecnología del TSU y establece redes de contacto directivo en la primera mesa de diálogo sobre empleo técnico."),
+        ("Jornada Presencial Especial 1: Apertura y Diálogo Inicial sobre Necesidades Industriales", 
+         "Conoce la visión formativa de Kinal, recorre las instalaciones y centros de formación técnica y participa en la primera mesa de diálogo sobre las necesidades actuales del sector empresarial."),
         ("Eje 1: Manejo y Desarrollo de Personal Técnico (Sesión Virtual 1)", 
-         "Aplica metodologías para la atracción, inducción técnica acelerada y fidelización de personal operativo, mitigando los costos ocultos por rotación y el fenómeno del 'Missing Middle'."),
+         "Aplica metodologías contemporáneas para la atracción, reclutamiento por competencias, inducción técnica acelerada (onboarding en 30-60-90 días) y planes de desarrollo para mitigar la rotación prematura."),
         ("Eje 2: Liderazgo y Factor Humano en Cuadrillas (Sesión Virtual 2)", 
-         "Despliega protocolos de liderazgo humanista en plantas y talleres, erradicando el maltrato verbal y autoritarismo, y fortaleciendo la dignidad, la seguridad psicológica y el orgullo por el trabajo bien hecho."),
-        ("Eje 3: Fortalecimiento de Competencias Técnicas y Formación Dual (Sesión Virtual 3)", 
-         "Identifica la cualificación DQR 5-6 del Técnico Superior Universitario (TSU) y formula esquemas de semilleros duales escuela-empresa con tutores de planta (Ausbilder)."),
-        ("Eje 4: Desarrollo de Mandos Medios y Necesidades Actuales (Sesión Virtual 4)", 
-         "Equipa a supervisores de primera línea con herramientas de gestión operativa y resolución de conflictos, correlacionando el factor humano con KPIs de negocio (OEE, SSO y merma)."),
-        ("Jornada Presencial Especial 2: Diálogo Industria-Academia y Clausura", 
-         "Participa en la plenaria de síntesis de necesidades del sector empresarial, recibe el diploma de participación institucional y el reconocimiento corporativo para su empresa.")
+         "Despliega protocolos de liderazgo humanista en plantas y talleres, erradicando el maltrato verbal y autoritarismo, y fortaleciendo la dignidad de la persona, la seguridad psicológica y el orgullo por el «trabajo bien hecho»."),
+        ("Eje 3: Fortalecimiento de Competencias Técnicas (Sesión Virtual 3)", 
+         "Estructura matrices de competencias operativas observables (saber, hacer y ser), diseña pruebas de evaluación práctica en puesto y articula esquemas de aprendizaje continuo en la empresa."),
+        ("Eje 4: Desarrollo de Mandos Medios (Sesión Virtual 4)", 
+         "Equipa a supervisores de primera línea y jefes de taller con habilidades de comunicación asertiva, retroalimentación constructiva, resolución de conflictos de cuadrilla y micro-charlas operativas de valores."),
+        ("Jornada Presencial Especial 2: Plenaria de Necesidades Industriales, Diplomas y Reconocimientos", 
+         "Participa en la sistematización final de competencias demandadas por la industria, formaliza acuerdos de vinculación y recibe el diploma de participación y reconocimiento corporativo de Kinal.")
     ]
 
     for m_tit, m_desc in mod_comps:
@@ -181,7 +181,7 @@ def generate_temario_doc():
         r_d.font.color.rgb = COLOR_DARK
 
     # ==========================================
-    # 2. TEMARIO ANALÍTICO DETALLADO (1 MES — 6 ENCUENTROS)
+    # 2. TEMARIO ANALÍTICO DETALLADO POR ENCUENTRO
     # ==========================================
     h1_2 = doc.add_paragraph()
     style_heading(h1_2, "2. Temario Analítico Detallado por Encuentro", level=1)
@@ -190,24 +190,23 @@ def generate_temario_doc():
     # ENCUENTRO 1: JORNADA PRESENCIAL DE APERTURA
     # -------------------------------------------------------------
     h2_e1 = doc.add_paragraph()
-    style_heading(h2_e1, "JORNADA PRESENCIAL ESPECIAL 1: APERTURA INSTITUCIONAL Y RECORRIDO TÉCNICO (4 Horas en Campus Kinal)", level=2)
+    style_heading(h2_e1, "JORNADA PRESENCIAL ESPECIAL 1: APERTURA INSTITUCIONAL Y DIÁLOGO SOBRE NECESIDADES DE LA INDUSTRIA (4 Horas en Campus Kinal)", level=2)
 
     temas_e1 = [
-        ("1.1 Sesión Plenaria de Apertura y Presentación de la Iniciativa", [
+        ("1.1 Apertura Institucional y Presentación de la Iniciativa", [
             "Bienvenida protocolaria por autoridades de Fundación Kinal y presentación del propósito del programa de vinculación empresarial.",
-            "La misión formativa de Kinal: 65 años promoviendo la dignificación de la persona a través del trabajo técnico de excelencia.",
-            "Dinámica de networking directivo: presentación de las empresas participantes y sectores productivos representados."
+            "La misión formativa de Kinal: 65 años promoviendo la educación integral y el trabajo técnico de excelencia.",
+            "Dinámica de networking directivo: presentación de los representantes empresariales y sectores productivos participantes."
         ]),
-        ("1.2 Inmersión Vivencial: Recorrido Guiado por Laboratorios de Alta Tecnología TSU", [
-            "Visita a los Laboratorios de Automatización Industrial y PLCs Siemens, Robótica y Mecatrónica CNC.",
-            "Demostraciones en vivo a cargo de estudiantes de último año de TSU: calibración, diagnóstico analítico y comisionamiento.",
-            "Recorrido por los centros de redes, electrónica aplicada, manufactura y tecnologías de información.",
-            "Evidencia empírica de la madurez técnica y disciplina operativa del perfil TSU."
+        ("1.2 Recorrido Guiado por Complejos de Formación Técnica y Laboratorios", [
+            "Visita a los laboratorios de automatización industrial, PLCs, robótica, mecatrónica CNC, electrónica aplicada y redes.",
+            "Observación directa de talleres técnicos en operación: disciplina, orden, seguridad y metodologías formativas prácticas.",
+            "Demostraciones operativas de calibración, diagnóstico y comisionamiento técnico."
         ]),
-        ("1.3 Mesa de Diálogo 1: Panorama Actual del Empleo Técnico en Guatemala", [
-            "Diagnóstico compartido sobre la disponibilidad de personal técnico calificado en la industria guatemalteca.",
-            "El dilema del 'Missing Middle': la brecha insatisfecha de mandos medios técnicos entre operarios básicos e ingenieros.",
-            "Levantamiento preliminar de inquietudes y expectativas de los representantes empresariales."
+        ("1.3 Mesa de Diálogo 1: Necesidades Actuales de la Industria y Expectativas Empresariales", [
+            "Espacio abierto de diálogo entre gerentes y directores de Kinal: principales desafíos en la gestión de personal técnico.",
+            "Identificación de brechas de cualificación: habilidades técnicas y humanas más difíciles de encontrar en el mercado.",
+            "Levantamiento preliminar de la Ficha Diagnóstica de Necesidades de la Industria."
         ])
     ]
 
@@ -234,14 +233,14 @@ def generate_temario_doc():
 
     temas_e2 = [
         ("2.1 Atracción y Reclutamiento Efectivo de Talento Operativo", [
-            "Por qué las descripciones tradicionales de puesto fracasan al contratar personal de taller y planta.",
-            "Traducción de perfiles burocráticos a matrices de competencias observables: saber, saber hacer y saber ser.",
-            "Redacción de ofertas atractivas y canales idóneos para conectar con jóvenes técnicos calificados."
+            "Por qué fracasan los descriptores de puesto tradicionales en las áreas técnicas y operativas.",
+            "Diseño de matrices de selección por competencias demostrables (saber conceptual, destreza manual y actitud de seguridad).",
+            "Estrategias de redacción y canales efectivos para atraer personal técnico comprometido."
         ]),
-        ("2.2 Curva de Aprendizaje, Inducción Técnica y Reducción de Rotación", [
-            "El costo oculto de la rotación temprana: pérdida de conocimiento de planta, retrabajos y paradas no planificadas.",
-            "Estructuración de procesos de onboarding técnico acelerado: cómo lograr que un nuevo técnico sea productivo y seguro en 30 días.",
-            "Diseño de planes de desarrollo y crecimiento operativo dentro de la empresa para fidelizar al colaborador."
+        ("2.2 Inducción Técnica Acelerada (Onboarding en 30-60-90 Días) y Reducción de Rotación", [
+            "Análisis de los costos ocultos de la rotación temprana en plantas y talleres: mermas, retrabajos y pérdida de tiempo de supervisión.",
+            "Estructuración de planes de inducción técnica paso a paso: seguridad operativa, conocimiento de maquinaria y procedimientos estándar.",
+            "Diseño de rutas de desarrollo y crecimiento técnico dentro de la empresa para fidelizar al colaborador operativo."
         ])
     ]
 
@@ -269,14 +268,14 @@ def generate_temario_doc():
     temas_e3 = [
         ("3.1 La Filosofía del Factor Humano de Fundación Kinal", [
             "La persona en el centro de los procesos productivos: el trabajo como medio de realización y servicio social.",
-            "Los 4 Pilares Operativos: Respeto a la Dignidad, Trabajo Bien Hecho, Espíritu de Servicio y Libertad Responsable.",
-            "El «Trabajo Bien Hecho»: orden 5S, custodia de herramientas, veracidad en bitácoras y rigor profesional."
+            "Los 4 Pilares Operativos: Respeto a la Dignidad, El Trabajo Bien Hecho, Espíritu de Servicio y Libertad Responsable.",
+            "El principio del «Trabajo Bien Hecho»: orden y pulcritud (5S), custodia celosa de herramientas, tolerancias exactas y rigor profesional."
         ]),
-        ("3.2 Erradicación del Maltrato en Cuadrillas y Seguridad Psicológica", [
-            "Superación de la cultura del capataz: erradicación del maltrato verbal, el sarcasmo y el autoritarismo en planta.",
+        ("3.2 Erradicación del Maltrato en Cuadrillas y Desarrollo de Seguridad Psicológica", [
+            "Superación de la cultura del capataz: erradicación tajante del maltrato verbal, los gritos, el sarcasmo y el autoritarismo en planta.",
             "Inteligencia emocional aplicada a la supervisión bajo presión de paradas de línea o emergencias operativas.",
-            "Seguridad psicológica: cómo lograr que los colaboradores reporten averías y cuasi-accidentes inmediatamente sin temor a represalias.",
-            "Diseño de canales éticos y códigos de convivencia respetuosa en áreas operativas."
+            "Seguridad psicológica en el trabajo: cómo lograr que los operarios reporten fallas, averías y cuasi-accidentes de inmediato sin temor a represalias.",
+            "Establecimiento de códigos de convivencia respetuosa y canales éticos de escucha en áreas operativas."
         ])
     ]
 
@@ -299,18 +298,18 @@ def generate_temario_doc():
     # ENCUENTRO 4: SESIÓN VIRTUAL 3
     # -------------------------------------------------------------
     h2_e4 = doc.add_paragraph()
-    style_heading(h2_e4, "SESIÓN VIRTUAL 3: FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS Y FORMACIÓN DUAL (2 Horas en Teams)", level=2)
+    style_heading(h2_e4, "SESIÓN VIRTUAL 3: FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS (2 Horas en Microsoft Teams)", level=2)
 
     temas_e4 = [
-        ("4.1 Estándares Internacionales (DQR 5-6) y el Retorno de Inversión del TSU", [
-            "El Marco Alemán de Cualificaciones (DQR): niveles 5 y 6 (Maestro Técnico / Meister, Bachelor Professional y TSU).",
-            "La trampa de la subcualificación (operarios empíricos sin diagnóstico analítico) vs sobrecualificación (ingenieros frustrados en piso).",
-            "Análisis financiero del ROI del TSU: reducción del tiempo medio de reparación (MTTR), disponibilidad de línea y estabilidad laboral."
+        ("4.1 Mapeo y Diseño de Matrices de Competencias Operativas", [
+            "Definición y estandarización de competencias técnicas de planta bajo marcos internacionales (DQR).",
+            "Desglose de competencias operativas: saber (conocimiento normativo y físico), saber hacer (destreza manual e instrumental) y saber ser (seguridad y orden).",
+            "Diseño de instrumentos objetivos para auditar el nivel técnico real del personal operativo en piso."
         ]),
-        ("4.2 Modelos de Co-Formación Dual Escuela-Empresa", [
-            "El concepto oficial de la Formación Dual: aprender en el proceso de trabajo como base y objetivo formativo.",
-            "Estructuración de convenios de semilleros técnicos y pasantías planificadas.",
-            "El rol del Tutor Empresarial (*Ausbilder*): pedagogía del trabajo y método de 4 pasos para enseñar tareas operativas."
+        ("4.2 Evaluación Práctica en Puesto y Esquemas de Aprendizaje en la Empresa", [
+            "Diseño de pruebas prácticas en banco de trabajo: evaluación de lectura de planos, resolución lógica de fallas y uso de instrumentos.",
+            "Estructuración de semilleros internos de formación y pasantías técnicas planificadas.",
+            "El rol del mentor técnico de taller (*Ausbilder*): pedagogía del trabajo y el método de 4 pasos para enseñar tareas operativas en el puesto."
         ])
     ]
 
@@ -333,18 +332,18 @@ def generate_temario_doc():
     # ENCUENTRO 5: SESIÓN VIRTUAL 4
     # -------------------------------------------------------------
     h2_e5 = doc.add_paragraph()
-    style_heading(h2_e5, "SESIÓN VIRTUAL 4: DESARROLLO DE MANDOS MEDIOS Y NECESIDADES ACTUALES (2 Horas en Teams)", level=2)
+    style_heading(h2_e5, "SESIÓN VIRTUAL 4: DESARROLLO DE MANDOS MEDIOS (2 Horas en Microsoft Teams)", level=2)
 
     temas_e5 = [
-        ("5.1 El Desarrollo Integral del Mando Medio en la Industria", [
-            "El supervisor como eslabón crítico: articulación entre los objetivos estratégicos de la gerencia y la realidad del piso.",
-            "Habilidades de comunicación asertiva, retroalimentación constructiva y gestión de caracteres difíciles.",
-            "Diseño de 'Charlas de 10 minutos de Factor Humano': reflexiones breves de valores y seguridad al iniciar el turno."
+        ("5.1 El Rol Estratégico del Supervisor y Mando Medio en la Industria", [
+            "El supervisor de primera línea como puente clave: articulación entre los objetivos estratégicos de la gerencia y el piso de planta.",
+            "Herramientas de comunicación asertiva, retroalimentación correctiva sin humillar y manejo constructivo de conflictos en cuadrillas.",
+            "Diseño y ejecución de 'Las Charlas de 10 Minutos de Factor Humano': reflexiones breves de valores y seguridad al iniciar el turno."
         ]),
-        ("5.2 Necesidades Tecnológicas Emergentes y Medición de Impacto", [
-            "Demandas actuales de la Industria 4.0: automatización, ciberseguridad industrial, sensores IoT y mantenimiento predictivo.",
-            "Vincular el Factor Humano con indicadores duros de negocio: OEE (Overall Equipment Effectiveness), tasas de accidentabilidad (SSO) y merma.",
-            "Preparación de la ficha de diagnóstico empresarial para la jornada plenaria de cierre."
+        ("5.2 Medición de Impacto del Factor Humano en la Operación", [
+            "Correlación demostrable entre liderazgo respetuoso y KPIs de negocio: reducción del índice de accidentabilidad (SSO), mermas y retrabajos.",
+            "Monitoreo de la eficiencia global de equipos (OEE) mediante el compromiso y la disciplina operativa de la cuadrilla.",
+            "Preparación de la Ficha Diagnóstica de Necesidades Industriales para la jornada presencial de cierre."
         ])
     ]
 
@@ -367,22 +366,22 @@ def generate_temario_doc():
     # ENCUENTRO 6: JORNADA PRESENCIAL DE CIERRE
     # -------------------------------------------------------------
     h2_e6 = doc.add_paragraph()
-    style_heading(h2_e6, "JORNADA PRESENCIAL ESPECIAL 2: DIÁLOGO INDUSTRIA-ACADEMIA, DIPLOMAS Y RECONOCIMIENTOS (4 Horas en Kinal)", level=2)
+    style_heading(h2_e6, "JORNADA PRESENCIAL ESPECIAL 2: DIÁLOGO INDUSTRIA-ACADEMIA, DIPLOMAS Y RECONOCIMIENTOS (4 Horas en Campus Kinal)", level=2)
 
     temas_e6 = [
-        ("6.1 Mesa Redonda Plenaria: Demandas Actuales del Sector Empresarial", [
-            "Sistematización de hallazgos: qué competencias técnicas y humanas demandan prioritariamente las empresas participantes.",
-            "Identificación de brechas de formación y retroalimentación directa a los directores de carrera de Fundación Kinal.",
-            "Estrategias conjuntas para fortalecer la empleabilidad y pertinencia de los estudiantes y egresados de TSU."
+        ("6.1 Mesa Redonda Plenaria: Sistematización de las Necesidades Actuales de la Industria", [
+            "Consolidación de las fichas diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector productivo guatemalteco.",
+            "Retroalimentación directa a directores de carrera y autoridades de Kinal para afinar los planes de estudio y actualización de carreras.",
+            "Oportunidades de mejora y pertinencia formativa para responder a la transformación tecnológica de las empresas."
         ]),
-        ("6.2 Acuerdos de Vinculación y Rutas de Cooperación Empresa-Kinal", [
-            "Mecanismos de acceso directo y prioritario a la Bolsa de Egresados de Kinal.",
-            "Oportunidades de convenios de semilleros duales y pasantías especializadas.",
+        ("6.2 Acuerdos de Vinculación y Rutas de Cooperación Kinal-Empresas", [
+            "Mecanismos de acceso prioritario y directo a la Bolsa de Egresados y banco de talentos de Kinal.",
+            "Oportunidades de convenios de semilleros técnicos, pasantías y formación dual escuela-empresa.",
             "Certificación de competencias laborales de colaboradores de planta en instalaciones de Kinal."
         ]),
-        ("6.3 Acto Solemne de Clausura y Entrega de Distinciones", [
-            "Entrega de Diplomas Institucionales de Participación a los representantes de las empresas.",
-            "Entrega de Reconocimientos Empresariales Especiales a las empresas aliadas participantes.",
+        ("6.3 Acto Solemne de Clausura y Entrega de Distinciones Institucionales", [
+            "Entrega de Diplomas de Participación Individual a los representantes empresariales.",
+            "Entrega de Reconocimientos Empresariales Especiales a las empresas participantes como aliadas estratégicas de la educación técnica.",
             "Brindis de honor y networking directivo de vinculación."
         ])
     ]
@@ -409,11 +408,11 @@ def generate_temario_doc():
     style_heading(h1_3, "3. Fuentes Bibliográficas y Documentos de Apoyo", level=1)
 
     referencias = [
-        ("BIBB / DQR:", "German Qualifications Framework for Lifelong Learning (DQR) — Niveles 5 y 6 (Meister y Formación Dual)."),
-        ("OIT / Cinterfor:", "Formación Profesional Dual y Vinculación Escuela-Empresa en América Latina: Hacia un Diálogo Social Técnico."),
+        ("BIBB / DQR:", "German Qualifications Framework for Lifelong Learning (DQR) — Competencias y Formación Técnica Aplicada."),
+        ("OIT / Cinterfor:", "Formación Profesional y Vinculación Escuela-Empresa en América Latina: Diálogo Social y Competencias Laborales."),
         ("Fundación Kinal:", "Ideario Institucional: El Trabajo como Vocación y Servicio a la Persona Humana."),
-        ("Fundación Kinal:", "Perfil del Egresado del Técnico Superior Universitario (TSU) y Modelos de Formación en Alternancia."),
-        ("Fundación Kinal:", "Manual de Factor Humano: Liderazgo y Trabajo Bien Hecho en Cuadrillas Técnicas.")
+        ("Fundación Kinal:", "Manual de Factor Humano: Liderazgo y Trabajo Bien Hecho en Cuadrillas Técnicas."),
+        ("Fundación Kinal:", "Guía de Vinculación Empresarial y Perfiles Técnicos Ocupacionales.")
     ]
 
     for org, det in referencias:
@@ -435,7 +434,7 @@ def generate_temario_doc():
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación en Talento Técnico — Temario Oficial")
+    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación y Liderazgo — Temario Oficial")
     run_f.font.name = "Calibri"
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
