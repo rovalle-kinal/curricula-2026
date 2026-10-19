@@ -11,16 +11,14 @@ def set_cell_background(cell, fill_hex):
     shd = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{fill_hex}"/>')
     tcPr.append(shd)
 
-def set_cell_margins(cell, top=70, bottom=70, left=90, right=90):
+def set_cell_margins(cell, top=60, bottom=60, left=80, right=80):
     tcPr = cell._element.get_or_add_tcPr()
-    tcMar = parse_xml(
-        f'<w:tcMar {nsdecls("w")}>'
-        f'<w:top w:w="{top}" w:type="dxa"/>'
-        f'<w:bottom w:w="{bottom}" w:type="dxa"/>'
-        f'<w:left w:w="{left}" w:type="dxa"/>'
-        f'<w:right w:w="{right}" w:type="dxa"/>'
-        f'</w:tcMar>'
-    )
+    tcMar = parse_xml(f'<w:tcMar {nsdecls("w")}>'
+                      f'<w:top w:w="{top}" w:type="dxa"/>'
+                      f'<w:left w:w="{left}" w:type="dxa"/>'
+                      f'<w:bottom w:w="{bottom}" w:type="dxa"/>'
+                      f'<w:right w:w="{right}" w:type="dxa"/>'
+                      f'</w:tcMar>')
     tcPr.append(tcMar)
 
 def set_table_borders(table, color="CBD5E0", sz="4"):
@@ -30,29 +28,29 @@ def set_table_borders(table, color="CBD5E0", sz="4"):
             f'<w:tblBorders {nsdecls("w")}>'
             f'<w:top w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>'
             f'<w:bottom w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>'
-            f'<w:insideH w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>'
-            f'<w:insideV w:val="none"/>'
             f'<w:left w:val="none"/>'
             f'<w:right w:val="none"/>'
+            f'<w:insideH w:val="single" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+            f'<w:insideV w:val="none"/>'
             f'</w:tblBorders>'
         )
         tblPr[0].append(borders)
 
-def add_callout(doc, text, bold_prefix="", fill_hex="F7FAFC", border_color="003366"):
-    tbl = doc.add_table(rows=1, cols=1)
-    tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
-    tbl.autofit = False
-    tbl.columns[0].width = Inches(6.5)
+def add_callout(doc, text, bold_prefix=""):
+    table = doc.add_table(rows=1, cols=1)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+    table.columns[0].width = Inches(6.5)
     
-    cell = tbl.cell(0, 0)
-    set_cell_background(cell, fill_hex)
-    set_cell_margins(cell, top=120, bottom=120, left=180, right=120)
+    cell = table.cell(0, 0)
+    set_cell_background(cell, "F7FAFC")
+    set_cell_margins(cell, top=100, bottom=100, left=140, right=140)
     
     tcPr = cell._element.get_or_add_tcPr()
     borders = parse_xml(
         f'<w:tcBorders {nsdecls("w")}>'
-        f'<w:left w:val="single" w:sz="24" w:space="0" w:color="{border_color}"/>'
         f'<w:top w:val="none"/>'
+        f'<w:left w:val="single" w:sz="24" w:space="0" w:color="003366"/>'
         f'<w:bottom w:val="none"/>'
         f'<w:right w:val="none"/>'
         f'</w:tcBorders>'
@@ -63,23 +61,18 @@ def add_callout(doc, text, bold_prefix="", fill_hex="F7FAFC", border_color="0033
     p.paragraph_format.space_before = Pt(0)
     p.paragraph_format.space_after = Pt(0)
     p.paragraph_format.line_spacing = 1.15
-    
     if bold_prefix:
         r_pre = p.add_run(bold_prefix + " ")
         r_pre.font.name = "Calibri"
-        r_pre.font.size = Pt(10)
+        r_pre.font.size = Pt(9.5)
         r_pre.font.bold = True
         r_pre.font.color.rgb = RGBColor(0, 51, 102)
-        
     r = p.add_run(text)
     r.font.name = "Calibri"
-    r.font.size = Pt(10)
+    r.font.size = Pt(9.5)
     r.font.italic = True
     r.font.color.rgb = RGBColor(45, 55, 72)
-    
-    p_after = doc.add_paragraph()
-    p_after.paragraph_format.space_before = Pt(0)
-    p_after.paragraph_format.space_after = Pt(4)
+    doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
 def style_heading(p, text, level=1):
     p.paragraph_format.keep_with_next = True
@@ -87,22 +80,22 @@ def style_heading(p, text, level=1):
     r.font.name = "Calibri"
     r.font.bold = True
     if level == 1:
-        p.paragraph_format.space_before = Pt(16)
+        p.paragraph_format.space_before = Pt(14)
         p.paragraph_format.space_after = Pt(6)
-        r.font.size = Pt(15)
+        r.font.size = Pt(14)
         r.font.color.rgb = RGBColor(0, 51, 102)
     elif level == 2:
-        p.paragraph_format.space_before = Pt(12)
+        p.paragraph_format.space_before = Pt(11)
         p.paragraph_format.space_after = Pt(4)
-        r.font.size = Pt(12.5)
+        r.font.size = Pt(11.5)
         r.font.color.rgb = RGBColor(0, 51, 102)
     elif level == 3:
         p.paragraph_format.space_before = Pt(8)
         p.paragraph_format.space_after = Pt(2)
-        r.font.size = Pt(11)
+        r.font.size = Pt(10)
         r.font.color.rgb = RGBColor(74, 85, 104)
 
-def style_p(p, space_before=0, space_after=6, line_spacing=1.15):
+def style_p(p, space_before=0, space_after=4, line_spacing=1.15):
     p.paragraph_format.space_before = Pt(space_before)
     p.paragraph_format.space_after = Pt(space_after)
     p.paragraph_format.line_spacing = line_spacing
@@ -111,8 +104,8 @@ def generate_propuesta_doc():
     doc = docx.Document()
     
     for section in doc.sections:
-        section.top_margin = Inches(1.0)
-        section.bottom_margin = Inches(1.0)
+        section.top_margin = Inches(0.9)
+        section.bottom_margin = Inches(0.9)
         section.left_margin = Inches(1.0)
         section.right_margin = Inches(1.0)
 
@@ -120,27 +113,20 @@ def generate_propuesta_doc():
     COLOR_SECONDARY = RGBColor(74, 85, 104)    # Gris pizarra
     COLOR_DARK = RGBColor(26, 32, 44)         # Texto oscuro
 
-    # =========================================================================
-    # PORTADA INSTITUCIONAL
-    # =========================================================================
+    # ==========================================
+    # ENCABEZADO INSTITUCIONAL
+    # ==========================================
     p_inst = doc.add_paragraph()
-    style_p(p_inst, space_before=15, space_after=2)
-    r_inst = p_inst.add_run("FUNDACIÓN KINAL")
+    style_p(p_inst, space_before=0, space_after=2)
+    r_inst = p_inst.add_run("FUNDACIÓN KINAL — DIRECCIÓN DE VINCULACIÓN EMPRESARIAL")
     r_inst.font.name = "Calibri"
-    r_inst.font.size = Pt(14)
+    r_inst.font.size = Pt(11)
     r_inst.font.bold = True
     r_inst.font.color.rgb = COLOR_PRIMARY
 
-    p_esc = doc.add_paragraph()
-    style_p(p_esc, space_before=0, space_after=18)
-    r_esc = p_esc.add_run("Dirección de Vinculación Empresarial — Centro de Desarrollo Gerencial y Técnico")
-    r_esc.font.name = "Calibri"
-    r_esc.font.size = Pt(11)
-    r_esc.font.color.rgb = COLOR_SECONDARY
-
     p_tit = doc.add_paragraph()
-    style_p(p_tit, space_before=10, space_after=8)
-    r_tit = p_tit.add_run("PROPUESTA FORMATIVA INSTITUCIONAL:\nPROGRAMA EJECUTIVO DE VINCULACIÓN Y LIDERAZGO: GESTIÓN DEL TALENTO TÉCNICO Y MANDOS MEDIOS")
+    style_p(p_tit, space_before=0, space_after=4)
+    r_tit = p_tit.add_run("PROPUESTA FORMATIVA Y DE VINCULACIÓN EMPRESARIAL:\nPROGRAMA EJECUTIVO DE VINCULACIÓN Y LIDERAZGO: GESTIÓN DEL TALENTO TÉCNICO Y MANDOS MEDIOS")
     r_tit.font.name = "Calibri"
     r_tit.font.size = Pt(16)
     r_tit.font.bold = True
@@ -148,7 +134,7 @@ def generate_propuesta_doc():
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=18)
-    r_sub = p_sub.add_run("Capacitación Gerencial y Diálogo Estratégico para Representantes de Empresas: Manejo de Personal, Liderazgo, Factor Humano, Fortalecimiento de Competencias y Validación Técnica a Nivel Superior (1 Mes de Duración | Modalidad Virtual Semanal + 2 Jornadas Presenciales Especiales)")
+    r_sub = p_sub.add_run("Capacitación Gerencial y Diálogo Estratégico para Representantes de Empresas: Liderazgo y Factor Humano, Manejo de Personal, Mandos Medios y Validación Técnica Superior (Total: 8 Horas | 4 Sesiones de 2 Horas: 2 Presenciales en Kinal + 2 Virtuales en Teams)")
     r_sub.font.name = "Calibri"
     r_sub.font.size = Pt(11)
     r_sub.font.italic = True
@@ -165,10 +151,10 @@ def generate_propuesta_doc():
     ficha_data = [
         ("Naturaleza del Programa:", "Capacitación gerencial e iniciativa de vinculación empresarial de Fundación Kinal"),
         ("Población Destinataria:", "Gerentes Generales, Gerentes de Operaciones/Planta/Mantenimiento, Directores y Gerentes de Talento Humano / RRHH, Reclutadores y Mandos Medios con equipos a su cargo"),
-        ("Duración Total:", "1 mes de duración (4 semanas) | 16 horas de contacto sincrónico/presencial + 4 horas de autodiagnóstico empresarial (20 horas formativas ejecutivas totales)"),
-        ("Modalidad Híbrida Ejecutiva:", "Híbrida: 1 sesión virtual semanal de 2 horas en Microsoft Teams (8h virtuales) + 2 jornadas presenciales especiales en campus Kinal (8h presenciales)"),
-        ("Organización Curricular:", "6 Módulos Temáticos (Un módulo por sesión: Módulo 1 en Apertura, Módulos 2 a 5 en Virtuales, Módulo 6 en Cierre) con una Actividad Formativa Evaluable por sesión"),
-        ("Ejes Temáticos Oficiales:", "Manejo y desarrollo de personal, Liderazgo y factor humano, Fortalecimiento de competencias técnicas y validación TSU, Desarrollo de mandos medios, y Necesidades actuales de la industria"),
+        ("Duración Total:", "Total: 8 Horas Formativas Ejecutivas de Contacto Directo (4 sesiones de 2 horas)"),
+        ("Modalidad Híbrida Ejecutiva:", "Híbrida: Sesión 1 Presencial en Kinal (2h), Sesión 2 Virtual en Teams (2h), Sesión 3 Virtual en Teams (2h) y Sesión 4 Presencial de Cierre en Kinal (2h)"),
+        ("Organización Curricular:", "4 Módulos Temáticos (Un módulo por sesión: Módulo 1 Presencial, Módulos 2 y 3 Virtuales, Módulo 4 Presencial de Cierre) con una Actividad Formativa Evaluable por sesión"),
+        ("Temas Oficiales Abordados:", "Factor humano y liderazgo, Manejo y desarrollo de personal, Mandos medios, Fortalecimiento de competencias técnicas y validación TSU, y Necesidades actuales de la industria"),
         ("Acreditación y Reconocimiento:", "Diploma de Participación Individual y Reconocimiento Empresarial Institucional otorgado por Fundación Kinal a la empresa y a su representante (Aprobación >= 75 pts)"),
         ("Sede Presencial:", "Fundación Kinal — Auditorio Ejecutivo y Complejo de Talleres y Laboratorios de Formación Técnica, Zona 7, Ciudad de Guatemala")
     ]
@@ -218,11 +204,11 @@ def generate_propuesta_doc():
 
     p_et_txt = doc.add_paragraph()
     style_p(p_et_txt, space_before=0, space_after=6)
-    r = p_et_txt.add_run("En Fundación Kinal, el **Factor Humano** es una rama de formación humana laica y universal que acompaña a todos los procesos formativos y de vinculación con la empresa. En este programa para líderes empresariales, el Factor Humano se traduce en herramientas gerenciales concretas:\n"
+    r = p_et_txt.add_run("En Fundación Kinal, el **Factor Humano** es una rama de formación humana laica y universal que acompaña a todos los procesos formativos y de vinculación con la empresa. En este programa para líderes empresariales, el Factor Humano se traduce en herramientas gerenciales concretas impartidas desde la primera sesión presencial:\n"
                           "• Respeto Irrenunciable a la Dignidad de la Persona: Desterrar en forma definitiva el maltrato verbal, el autoritarismo, el sarcasmo y los climas hostiles en cuadrillas de planta y taller. Reconocer que los operarios y mandos medios merecen un liderazgo justo, formador y empático.\n"
                           "• El Principio del «Trabajo Bien Hecho»: La calidad cotidiana entendida como estándar ético y deber profesional: orden riguroso (5S), custodia celosa de la maquinaria, veracidad absoluta en bitácoras de calidad y orgullo por el oficio bien desempeñado.\n"
                           "• Libertad Personal Responsable: Desarrollar colaboradores maduros y autónomos que actúan por convicción técnica y moral, reduciendo la necesidad de supervisión policiaca.\n"
-                          "• Espíritu de Servicio y Solidaridad: La cooperación activa entre departamentos (producción, mantenimiento y calidad) para derribar silos organizacionales y construir un clima de colaboración genuina.")
+                          "• Espíritu de Servicio y Solidaridad: La cooperación activa entre áreas (producción, mantenimiento y calidad) para derribar silos organizacionales y construir un clima de colaboración genuina.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
@@ -253,7 +239,7 @@ def generate_propuesta_doc():
     p_comp = doc.add_paragraph()
     style_p(p_comp, space_before=0, space_after=6)
     r = p_comp.add_run("Competencia General del Programa:\n"
-                       "El participante formula e implementa estrategias gerenciales para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, incorporando la cultura del Factor Humano y el estándar del «trabajo bien hecho», y utiliza los criterios del Técnico Superior Universitario (TSU) como marco de validación y fortalecimiento de competencias técnicas a nivel superior para responder a las necesidades actuales de la industria.")
+                       "El participante formula e implementa estrategias gerenciales para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, incorporando la cultura del Factor Humano y el estándar del «trabajo bien hecho», y utiliza los criterios del Técnico Superior Universitario (TSU) como marco de validación y fortalecimiento de competencias técnicas a nivel superior para responder con calidad y rigor a las necesidades actuales de la industria.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.bold = True
@@ -271,25 +257,23 @@ def generate_propuesta_doc():
     # 4. ESTRUCTURA MODULAR: UN MÓDULO POR SESIÓN CON ACTIVIDAD EVALUABLE
     # =========================================================================
     h1_4 = doc.add_paragraph()
-    style_heading(h1_4, "4. Estructura Curricular: Un Módulo por Sesión y Actividades Evaluables", level=1)
+    style_heading(h1_4, "4. Estructura Curricular: Un Módulo por Sesión y Actividades Evaluables (Total 8 Horas)", level=1)
 
     p_est_desc = doc.add_paragraph()
     style_p(p_est_desc, space_before=0, space_after=6)
-    r = p_est_desc.add_run("El programa se organiza en **6 Módulos Formativos (un módulo por sesión)**, cada uno dotado de una **Actividad Formativa Evaluable** que asegura la transferencia inmediata de herramientas gerenciales a la empresa:")
+    r = p_est_desc.add_run("El programa se organiza en **4 Módulos Formativos (un módulo por sesión de 2 horas)**, cada uno dotado de una **Actividad Formativa Evaluable** (25 puntos cada una, sumando 100 puntos totales) que asegura la transferencia inmediata de herramientas gerenciales a la empresa:")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     modulos_data = [
-        ("Módulo 1 (Presencial)", "Apertura Institucional, Presentación de la Iniciativa y Diagnóstico de Necesidades Industriales", "4 Horas", "Presencial en Campus Kinal", "Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas"),
-        ("Módulo 2 (Virtual 1)", "Manejo y Desarrollo de Personal Técnico: Atracción, Inducción Acelerada y Retención", "2 Horas", "Virtual Sincrónico (Teams)", "Descriptor de Puesto por Competencias y Plan de Onboarding (30-60-90 Días)"),
-        ("Módulo 3 (Virtual 2)", "Liderazgo y Factor Humano en Cuadrillas: Dignidad, Trabajo Bien Hecho y Cero Maltrato", "2 Horas", "Virtual Sincrónico (Teams)", "Código de Convivencia Operativa y Protocolo de Seguridad Psicológica"),
-        ("Módulo 4 (Virtual 3)", "Fortalecimiento de Competencias Técnicas: El Nivel Técnico Superior (TSU) como Respaldo", "2 Horas", "Virtual Sincrónico (Teams)", "Matriz de Validación Técnica de Planta bajo Estándar de Competencias TSU"),
-        ("Módulo 5 (Virtual 4)", "Desarrollo de Mandos Medios: Supervisión de Primera Línea, Feedback y Charlas de Valores", "2 Horas", "Virtual Sincrónico (Teams)", "Plan de Coaching para Supervisores y Catálogo de 5 Micro-Charlas de Factor Humano"),
-        ("Módulo 6 (Presencial)", "Plenaria de Diálogo Industria-Academia, Acuerdos de Vinculación y Clausura", "4 Horas", "Presencial en Campus Kinal", "Sustentación Plenaria del Plan de Acción y Entrega de Diplomas Oficiales")
+        ("Módulo 1 (Presencial 1)", "Apertura Institucional, Liderazgo y Factor Humano en Cuadrillas de Trabajo", "2 Horas", "Presencial en Campus Kinal", "Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Maltrato (25 Pts)"),
+        ("Módulo 2 (Virtual 1)", "Manejo de Personal Técnico y Desarrollo de Mandos Medios en Planta", "2 Horas", "Virtual Sincrónico (Teams)", "Descriptor por Competencias, Plan Onboarding 30-60-90 y 3 Micro-Charlas de Factor Humano (25 Pts)"),
+        ("Módulo 3 (Virtual 2)", "Fortalecimiento y Validación de Competencias: Nivel Técnico Superior (TSU)", "2 Horas", "Virtual Sincrónico (Teams)", "Guía de Evaluación Práctica en Puesto y Matriz de Validación Técnica bajo Estándar TSU (25 Pts)"),
+        ("Módulo 4 (Presencial 2)", "Sistematización de Demandas Industriales, Acuerdos de Vinculación y Clausura", "2 Horas", "Presencial en Campus Kinal", "Sustentación Plenaria de la Ficha Diagnóstica y Firma de Acuerdos de Vinculación (25 Pts)")
     ]
 
-    tbl_mod = doc.add_table(rows=7, cols=5)
+    tbl_mod = doc.add_table(rows=5, cols=5)
     tbl_mod.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_mod.autofit = False
     tbl_mod.columns[0].width = Inches(1.3)
@@ -302,7 +286,7 @@ def generate_propuesta_doc():
     hdr_mod = tbl_mod.rows[0]
     for c in hdr_mod.cells:
         set_cell_background(c, "003366")
-    headers_mod_txt = ["Módulo / Formato", "Nombre del Módulo", "Horas", "Modalidad / Plataforma", "Actividad Formativa Evaluable"]
+    headers_mod_txt = ["Módulo / Sesión", "Nombre del Módulo", "Horas", "Modalidad / Plataforma", "Actividad Formativa Evaluable"]
     for idx, text in enumerate(headers_mod_txt):
         p = hdr_mod.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
@@ -334,11 +318,10 @@ def generate_propuesta_doc():
 
     p_balance = doc.add_paragraph()
     style_p(p_balance, space_before=8, space_after=6)
-    r = p_balance.add_run("Balance Formativo:\n"
-                          "• 8 Horas Presenciales Vivenciales (Módulos 1 y 6 en Campus Kinal): Apertura institucional, inmersión en talleres técnicos, mesas de diálogo industria-academia, acuerdos de vinculación y entrega solemne de diplomas y reconocimientos.\n"
-                          "• 8 Horas Virtuales Sincrónicas en Microsoft Teams (Módulos 2 a 5): 4 sesiones semanales de 2 horas dedicadas a herramientas gerenciales en manejo de personal, liderazgo humanista, competencias técnicas nivel superior (TSU) y mandos medios.\n"
-                          "• 4 Horas de Autodiagnóstico en Kinal.academy (Moodle): Consolidación de instrumentos de gestión técnica y plan de acción empresarial.\n"
-                          "• Total: 20 Horas Formativas Ejecutivas.")
+    r = p_balance.add_run("Balance Formativo (Total: 8 Horas):\n"
+                          "• 4 Horas Presenciales Vivenciales en Campus Kinal (Sesiones 1 y 4 de 2h cada una): Apertura institucional, inmersión en Factor Humano y liderazgo, diálogo industria-academia, acuerdos de vinculación y entrega solemne de diplomas y reconocimientos.\n"
+                          "• 4 Horas Virtuales Sincrónicas en Microsoft Teams (Sesiones 2 y 3 de 2h cada una): Metodologías para atracción de talento técnico, desarrollo de mandos medios, matrices de competencias operativas y validación técnica a nivel superior (TSU).\n"
+                          "• Plataforma LMS de Apoyo: Kinal.academy (Moodle) para la descarga de plantillas y entrega de actividades evaluables.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -353,7 +336,7 @@ def generate_propuesta_doc():
     style_p(p_metod, space_before=0, space_after=6)
     r = p_metod.add_run("El programa aplica un modelo andragógico dinámico diseñado para la alta dirección y líderes de área:\n"
                         "1. Dinámica de Casos Gerenciales: Discusión de escenarios reales de planta (retrasos de producción, supervisores autoritarios, resistencia al reporte de averías, curvas lentas de adaptación técnica).\n"
-                        "2. Entregables Prácticos por Módulo: Cada sesión culmina con una herramienta técnica directamente aplicable en la empresa del participante (descriptores, protocolos, matrices y micro-charlas).\n"
+                        "2. Entregables Prácticos por Módulo: Cada sesión de 2 horas culmina con una herramienta técnica directamente aplicable en la empresa del participante (descriptores, protocolos, matrices y micro-charlas).\n"
                         "3. Espacios Formales de Diálogo Industria-Academia: Intercambio bidireccional donde los gerentes aportan retroalimentación crítica sobre las demandas actuales de cualificación técnica.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
@@ -367,8 +350,8 @@ def generate_propuesta_doc():
 
     p_acred = doc.add_paragraph()
     style_p(p_acred, space_before=0, space_after=6)
-    r = p_acred.add_run("En el Módulo 6 (Jornada Presencial de Cierre) en campus Kinal se realizará la ceremonia de clausura con dos acreditaciones oficiales:\n"
-                        "1. Diploma de Participación Individual: Otorgado al representante empresarial que cumplió con el 80% de asistencia a las sesiones sincrónicas y la entrega de sus actividades formativas (nota mínima aprobatoria de 75/100 puntos).\n"
+    r = p_acred.add_run("En el Módulo 4 (Sesión Presencial de Cierre) en campus Kinal se realizará la ceremonia de clausura con dos acreditaciones oficiales:\n"
+                        "1. Diploma de Participación Individual: Otorgado al representante empresarial que cumplió con el 80% de asistencia y la aprobación de las 4 actividades formativas evaluables (nota mínima institucional de 75/100 puntos).\n"
                         "2. Reconocimiento Empresarial Institucional: Galardón otorgado por Fundación Kinal a la empresa participante, acreditándola como «Empresa Aliada en la Vinculación Técnica y Formación del Talento Humano».")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
@@ -383,9 +366,9 @@ def generate_propuesta_doc():
     p_infra = doc.add_paragraph()
     style_p(p_infra, space_before=0, space_after=6)
     r = p_infra.add_run("En cumplimiento de los estándares institucionales de Fundación Kinal:\n"
-                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las sesiones virtuales semanales, con salas de trabajo grupal y repositorio de grabaciones.\n"
+                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las sesiones virtuales 2 y 3, con salas de trabajo grupal y repositorio de grabaciones.\n"
                         "• Plataforma LMS Oficial: Kinal.academy (Moodle) para la descarga de lecturas, plantillas gerenciales y entrega de actividades evaluables.\n"
-                        "• Instalaciones Presenciales en Kinal: Auditorio Ejecutivo climatizado con soporte multimedia, salas de trabajo directivo y recorrido por los talleres y laboratorios de formación técnica.")
+                        "• Instalaciones Presenciales en Kinal: Auditorio Ejecutivo climatizado para las sesiones presenciales 1 (Apertura y Factor Humano) y 4 (Sistematización y Clausura).")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -395,7 +378,7 @@ def generate_propuesta_doc():
     footer_p = footer.paragraphs[0]
     style_p(footer_p, space_before=0, space_after=0)
     footer_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación y Liderazgo — Propuesta Oficial")
+    run_f = footer_p.add_run("Fundación Kinal | Programa Ejecutivo de Vinculación y Liderazgo — Propuesta Oficial (8 Horas)")
     run_f.font.name = "Calibri"
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
