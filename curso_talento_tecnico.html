@@ -88,7 +88,7 @@
                         <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta Formativa
                     </button>
                     <button onclick="switchTab('temario')" id="btn-tab-temario" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="list-checks" class="w-3.5 h-3.5"></i> Temario Analítico (5 Ejes)
+                        <i data-lucide="list-checks" class="w-3.5 h-3.5"></i> Temario Analítico (6 Módulos)
                     </button>
                     <button onclick="switchTab('calendario')" id="btn-tab-calendario" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
                         <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario (6 Encuentros)
@@ -184,13 +184,13 @@
                     </div>
     
                     <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
-                        <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Jornadas Presenciales Especiales:</dt>
-                        <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">1) Sesión Inicial de Apertura, Presentación de la Iniciativa y Diálogo (Kinal) | 2) Jornada de Cierre, Plenaria de Necesidades Industriales y Entrega de Diplomas y Reconocimientos (Kinal)</dd>
+                        <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Organización Curricular:</dt>
+                        <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">6 Módulos Temáticos (Un módulo por sesión: Módulo 1 en Apertura, Módulos 2 a 5 en Virtuales, Módulo 6 en Cierre) con una Actividad Formativa Evaluable por sesión</dd>
                     </div>
     
                     <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
-                        <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Los 5 Ejes Temáticos Oficiales:</dt>
-                        <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">1. Manejo y desarrollo de personal | 2. Liderazgo y factor humano | 3. Fortalecimiento de competencias técnicas | 4. Desarrollo de mandos medios | 5. Necesidades actuales de la industria</dd>
+                        <dt class="font-bold text-slate-900 text-xs sm:col-span-1">Ejes Temáticos Oficiales:</dt>
+                        <dd class="text-slate-700 text-xs sm:col-span-2 mt-0.5 sm:mt-0 leading-relaxed">Manejo y desarrollo de personal, Liderazgo y factor humano, Fortalecimiento de competencias técnicas y validación TSU, Desarrollo de mandos medios, y Necesidades actuales de la industria</dd>
                     </div>
     
                     <div class="py-3 sm:grid sm:grid-cols-3 sm:gap-4 flex flex-col">
@@ -233,36 +233,74 @@
                 </div>
             </div>
 
-            <!-- Estructura de los 5 Ejes -->
+            <!-- Estructura Curricular Modular -->
             <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-                <h3 class="text-lg font-black text-slate-900 brand-serif flex items-center gap-2 border-b border-slate-200 pb-3">
-                    <i data-lucide="layers" class="w-5 h-5 text-[#22376D]"></i> Los 5 Ejes Temáticos del Programa
-                </h3>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-3">
+                    <h3 class="text-lg font-black text-slate-900 brand-serif flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-[#22376D]"></i> Estructura Curricular: Un Módulo por Sesión y 6 Actividades Evaluables
+                    </h3>
+                    <span class="text-xs font-bold text-slate-500">6 Módulos • 6 Sesiones • 100 Pts Totales</span>
+                </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 text-[10px] font-black uppercase">Eje 1 • Virtual</span>
-                        <h4 class="font-bold text-sm text-slate-900 leading-snug">Manejo y Desarrollo de Personal</h4>
-                        <p class="text-xs text-slate-600">Atracción por competencias, curvas de aprendizaje en 30-60-90 días y reducción de la rotación temprana en cuadrillas.</p>
+                    <div class="p-4 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-900 text-white text-[10px] font-black uppercase">Módulo 1 • Presencial Kinal (4h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Necesidades Actuales de la Industria y Diagnóstico Operativo</h4>
+                            <p class="text-xs text-slate-600">Apertura institucional, inmersión en talleres y mesa de diálogo sobre brechas y perfiles demandados.</p>
+                        </div>
+                        <div class="pt-2 border-t border-blue-200/60 text-[11px] font-bold text-blue-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-blue-700"></i> Matriz Diagnóstica de Planta (15 Pts)
+                        </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-black uppercase">Eje 2 • Virtual</span>
-                        <h4 class="font-bold text-sm text-slate-900 leading-snug">Liderazgo y Factor Humano</h4>
-                        <p class="text-xs text-slate-600">Dignidad de la persona, erradicación del maltrato verbal en taller, seguridad psicológica y el estándar del trabajo bien hecho.</p>
+                    <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-purple-900 text-white text-[10px] font-black uppercase">Módulo 2 • Virtual Teams (2h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Manejo y Desarrollo de Personal Técnico en Planta</h4>
+                            <p class="text-xs text-slate-600">Atracción por competencias, curvas de adaptación en 30-60-90 días y retención de talento operativo.</p>
+                        </div>
+                        <div class="pt-2 border-t border-purple-200/60 text-[11px] font-bold text-purple-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-purple-700"></i> Descriptor y Plan Onboarding (15 Pts)
+                        </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[10px] font-black uppercase">Eje 3 • Virtual</span>
-                        <h4 class="font-bold text-sm text-slate-900 leading-snug">Fortalecimiento de Competencias Técnicas</h4>
-                        <p class="text-xs text-slate-600">Mapeo de matrices operativas (saber, hacer, ser), evaluación práctica en puesto y esquemas de aprendizaje continuo.</p>
+                    <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-900 text-white text-[10px] font-black uppercase">Módulo 3 • Virtual Teams (2h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Liderazgo y Factor Humano en Cuadrillas de Trabajo</h4>
+                            <p class="text-xs text-slate-600">Dignidad de la persona, erradicación del maltrato en planta, seguridad psicológica y trabajo bien hecho.</p>
+                        </div>
+                        <div class="pt-2 border-t border-amber-200/60 text-[11px] font-bold text-amber-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-amber-700"></i> Código Convivencia y Cero Maltrato (15 Pts)
+                        </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-900 text-[10px] font-black uppercase">Eje 4 • Virtual</span>
-                        <h4 class="font-bold text-sm text-slate-900 leading-snug">Desarrollo de Mandos Medios</h4>
-                        <p class="text-xs text-slate-600">El supervisor como articulador clave, comunicación asertiva, micro-charlas operativas de valores y métricas OEE/SSO.</p>
+                    <div class="p-4 rounded-2xl bg-cyan-50/60 border border-cyan-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-cyan-900 text-white text-[10px] font-black uppercase">Módulo 4 • Virtual Teams (2h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Fortalecimiento y Validación de Competencias: Nivel TSU</h4>
+                            <p class="text-xs text-slate-600">El Técnico Superior Universitario como respaldo objetivo, matrices operativas y evaluación en puesto.</p>
+                        </div>
+                        <div class="pt-2 border-t border-cyan-200/60 text-[11px] font-bold text-cyan-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-cyan-700"></i> Evaluación Práctica y Validación TSU (20 Pts)
+                        </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 sm:col-span-2 lg:col-span-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] font-black uppercase">Eje 5 • 2 Jornadas Presenciales Especiales</span>
-                        <h4 class="font-bold text-sm text-slate-900 leading-snug">Necesidades Actuales de la Industria (Espacio de Diálogo)</h4>
-                        <p class="text-xs text-slate-600">Mesas de diálogo bidireccional en campus Kinal (Apertura y Cierre) para identificar oportunidades de mejora, conocer la demanda empresarial y entregar reconocimientos institucionales.</p>
+                    <div class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-900 text-white text-[10px] font-black uppercase">Módulo 5 • Virtual Teams (2h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Desarrollo de Mandos Medios y Supervisión de Primera Línea</h4>
+                            <p class="text-xs text-slate-600">El supervisor como articulador clave, feedback asertivo, micro-charlas de valores y KPIs (OEE/SSO).</p>
+                        </div>
+                        <div class="pt-2 border-t border-indigo-200/60 text-[11px] font-bold text-indigo-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-indigo-700"></i> Plan Coaching y 5 Micro-Charlas (15 Pts)
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-900 text-white text-[10px] font-black uppercase">Módulo 6 • Presencial Kinal (4h)</span>
+                            <h4 class="font-bold text-sm text-slate-900 leading-snug">Sistematización de Demandas, Acuerdos y Clausura</h4>
+                            <p class="text-xs text-slate-600">Mesa Redonda Plenaria industria-academia, acuerdos de cooperación técnica y entrega de diplomas.</p>
+                        </div>
+                        <div class="pt-2 border-t border-emerald-200/60 text-[11px] font-bold text-emerald-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-emerald-700"></i> Sustentación Plenaria y Acuerdos (20 Pts)
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,10 +317,10 @@
                 <div class="space-y-1">
                     <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
                         <i data-lucide="list-tree" class="w-5 h-5 text-blue-700"></i>
-                        Temario Analítico de los 6 Encuentros
+                        Temario Analítico de los 6 Módulos Oficiales
                     </h3>
                     <p class="text-xs text-slate-500">
-                        Estructurado en torno a los 5 ejes oficiales: Manejo de personal, Liderazgo y factor humano, Competencias técnicas, Mandos medios y Necesidades de la industria.
+                        Organización modular (un módulo por sesión): 4 sesiones virtuales sincrónicas en Teams + 2 jornadas presenciales especiales en Campus Kinal, con una actividad evaluable por módulo.
                     </p>
                 </div>
 
@@ -291,7 +329,7 @@
                     <button onclick="filterTalentoTemario('all')" id="btn-talento-all" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
                     <button onclick="filterTalentoTemario('gestion')" id="btn-talento-gestion" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">📈 Manejo de Personal</button>
                     <button onclick="filterTalentoTemario('factor_humano')" id="btn-talento-factor_humano" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">⭐ Factor Humano</button>
-                    <button onclick="filterTalentoTemario('competencias')" id="btn-talento-competencias" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🎯 Competencias Técnicas</button>
+                    <button onclick="filterTalentoTemario('competencias')" id="btn-talento-competencias" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🎯 Competencias & TSU</button>
                     <button onclick="filterTalentoTemario('liderazgo')" id="btn-talento-liderazgo" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition">👥 Mandos Medios</button>
                     <button onclick="filterTalentoTemario('vinculacion')" id="btn-talento-vinculacion" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🤝 Diálogo Industria-Kinal</button>
                 </div>
@@ -301,15 +339,18 @@
             <div class="grid lg:grid-cols-2 gap-8 pt-2">
 
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 1 • Jornada Presencial Especial 1</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 1 • Jornada Presencial Especial 1 (Campus Kinal)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">4 Horas (Campus Kinal)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Apertura Institucional y Diálogo sobre Necesidades de la Industria</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
-                            <strong class="text-amber-300">Logro esperado:</strong> Conocer la visión formativa integral de Kinal, recorrer las instalaciones y centros de formación técnica y participar en el diagnóstico inicial sobre las necesidades de cualificación del sector empresarial.
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 1: Necesidades Actuales de la Industria y Diagnóstico del Talento Operativo</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Conocer la visión formativa integral de Kinal, recorrer las instalaciones y laboratorios de formación técnica y formalizar el diagnóstico inicial sobre las necesidades de cualificación y brechas operativas en el sector productivo.
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas de Planta (15 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
@@ -350,15 +391,18 @@
                 </div>
     
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 2 • Semana 1 (Virtual Teams)</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 2 • Semana 1 (Sesión Virtual Teams)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">2 Horas (Microsoft Teams)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Eje 1: Manejo y Desarrollo de Personal Técnico</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
-                            <strong class="text-amber-300">Logro esperado:</strong> Aplicar metodologías contemporáneas para la atracción, reclutamiento por competencias, inducción técnica acelerada (onboarding en 30-60-90 días) y planes de desarrollo para mitigar la rotación prematura.
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 2: Manejo y Desarrollo de Personal Técnico en Planta</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Aplicar metodologías contemporáneas para la atracción, selección por competencias demostrables e inducción técnica acelerada (onboarding en 30-60-90 días) para mitigar la rotación prematura y acortar la curva de aprendizaje operativo.
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Descriptor de Puesto Técnico por Competencias Demostrables y Plan de Onboarding en 30-60-90 Días (15 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
@@ -388,15 +432,18 @@
                 </div>
     
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 3 • Semana 2 (Virtual Teams)</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 3 • Semana 2 (Sesión Virtual Teams)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">2 Horas (Microsoft Teams)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Eje 2: Liderazgo y Factor Humano en Cuadrillas</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 3: Liderazgo y Factor Humano en Cuadrillas de Trabajo</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
                             <strong class="text-amber-300">Logro esperado:</strong> Desplegar protocolos de liderazgo humanista en plantas y talleres, erradicando el maltrato verbal y autoritarismo, y fortaleciendo la dignidad de la persona, la seguridad psicológica y el orgullo por el «trabajo bien hecho».
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Maltrato (15 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
@@ -426,15 +473,18 @@
                 </div>
     
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 4 • Semana 3 (Virtual Teams)</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 4 • Semana 3 (Sesión Virtual Teams)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">2 Horas (Microsoft Teams)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Eje 3: Fortalecimiento de Competencias Técnicas</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
-                            <strong class="text-amber-300">Logro esperado:</strong> Estructurar matrices de competencias operativas observables (saber, hacer y ser), diseñar pruebas de evaluación práctica en puesto y articular esquemas de aprendizaje continuo en la empresa.
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 4: Fortalecimiento y Validación de Competencias: Nivel Técnico Superior (TSU)</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Estructurar matrices de competencias operativas observables (saber, hacer y ser), diseñar pruebas de evaluación práctica en puesto y articular el nivel Técnico Superior (TSU) como el mecanismo institucional de validación técnica y respaldo objetivo para la industria.
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Guía de Evaluación Práctica y Matriz de Validación Técnica bajo Estándar TSU (20 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
@@ -442,20 +492,31 @@
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
                                     <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">8</span>
-                                    Mapeo y Diseño de Matrices de Competencias Operativas
+                                    Mapeo y Estandarización de Competencias Operativas de Planta
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-purple-100 text-purple-900 border border-purple-200">🎯 Competencias Técnicas</span>
                             </div>
-                            <p class="text-slate-600 leading-relaxed pl-7">Estandarización de competencias técnicas de planta bajo marcos internacionales (DQR). Desglose de competencias: saber normativo, destreza instrumental y actitud de seguridad en piso.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Definición y estructuración de competencias de planta bajo marcos internacionales (DQR). Desglose tridimensional: saber analítico/normativo, saber hacer instrumental y saber ser ético/operativo.</p>
+                        </div>
+        
+                        <div class="content-item item-competencias p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="competencias">
+                            <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
+                                <span class="text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
+                                    El Técnico Superior Universitario (TSU) como Mecanismo de Validación y Respaldo Industrial
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">🎓 Validación Técnica TSU</span>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed pl-7">El TSU como mecanismo riguroso de validación de competencias técnicas y respaldo objetivo para la industria, destacando la relevancia de las competencias a nivel superior en el área técnica para garantizar la fiabilidad operativa y la supervisión rigurosa.</p>
                         </div>
         
                         <div class="content-item item-evaluacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="evaluacion">
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">9</span>
-                                    Evaluación Práctica en Puesto y Esquemas de Aprendizaje Continuo
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
+                                    Evaluación Práctica en Puesto y Transferencia de Habilidades
                                 </span>
-                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">🛠️ Evaluación en Puesto</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">🛠️ Evaluación en Puesto</span>
                             </div>
                             <p class="text-slate-600 leading-relaxed pl-7">Diseño de pruebas prácticas en banco de trabajo (lectura de planos, calibración y diagnóstico). Esquemas de semilleros internos y el rol del mentor técnico (Ausbilder) en planta.</p>
                         </div>
@@ -464,23 +525,26 @@
                 </div>
     
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 5 • Semana 4 (Virtual Teams)</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 5 • Semana 4 (Sesión Virtual Teams)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">2 Horas (Microsoft Teams)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Eje 4: Desarrollo de Mandos Medios</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
-                            <strong class="text-amber-300">Logro esperado:</strong> Equipar a supervisores de primera línea y jefes de taller con habilidades de comunicación asertiva, retroalimentación constructiva, resolución de conflictos de cuadrilla y micro-charlas operativas de valores.
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 5: Desarrollo de Mandos Medios y Supervisión de Primera Línea</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Equipar a supervisores de primera línea y jefes de taller con habilidades de comunicación asertiva, retroalimentación formativa, resolución de conflictos de cuadrilla y micro-charlas operativas de Factor Humano vinculadas a KPIs (OEE/SSO).
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Plan de Coaching para Mandos Medios y Catálogo de 5 Micro-Charlas de Factor Humano (15 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
                         <div class="content-item item-liderazgo p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="liderazgo">
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">10</span>
-                                    El Rol Estratégico del Supervisor y 'Charlas de 10 Minutos'
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
+                                    El Rol Estratégico del Supervisor y 'Charlas de 10 Minutos de Factor Humano'
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-indigo-100 text-indigo-900 border border-indigo-200">👥 Mandos Medios</span>
                             </div>
@@ -490,8 +554,8 @@
                         <div class="content-item item-metricas p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="metricas">
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">11</span>
-                                    Medición de Impacto del Factor Humano en la Operación (KPIs)
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
+                                    Medición de Impacto del Factor Humano en Indicadores Operativos (KPIs)
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-900 border border-emerald-200">📈 Métricas Operativas</span>
                             </div>
@@ -502,34 +566,37 @@
                 </div>
     
                 <div class="bg-white rounded-2xl border border-slate-300 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
-                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-1">
-                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold mb-1 gap-2">
-                            <span>ENCUENTRO 6 • Jornada Presencial Especial 2</span>
+                    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center text-xs text-amber-400 font-semibold gap-2">
+                            <span>MÓDULO 6 • Jornada Presencial Especial 2 (Campus Kinal)</span>
                             <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-200 border border-blue-400/30 text-[11px] font-bold">4 Horas (Campus Kinal)</span>
                         </div>
-                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Eje 5: Plenaria de Necesidades Industriales, Diplomas y Clausura</h4>
-                        <p class="text-xs text-slate-300 pt-1 leading-relaxed">
-                            <strong class="text-amber-300">Logro esperado:</strong> Participar en la sistematización final de competencias demandadas por la industria, formalizar acuerdos de vinculación y recibir el diploma de participación y reconocimiento corporativo de Kinal.
+                        <h4 class="text-base sm:text-lg font-bold text-white leading-snug">Módulo 6: Sistematización de Demandas Industriales, Acuerdos de Vinculación y Clausura</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong class="text-amber-300">Logro esperado:</strong> Participar en la sistematización plenaria de demandas formativas de la industria, formalizar acuerdos de cooperación institucional y recibir el diploma de participación y reconocimiento corporativo de Kinal.
                         </p>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Actividad Evaluable: Sustentación Plenaria del Plan de Acción Empresarial y Firma de Acuerdos de Vinculación (20 Pts)
+                        </div>
                     </div>
                     <div class="p-4 sm:p-5 divide-y divide-slate-100 flex-1 space-y-2.5 bg-slate-50/50">
     
                         <div class="content-item item-vinculacion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="vinculacion">
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">12</span>
-                                    Mesa Redonda Plenaria: Sistematización de Necesidades Actuales de la Industria
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
+                                    Mesa Redonda Plenaria: Sistematización de Demandas Actuales de la Industria
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 border border-blue-200">🤝 Diálogo Industria-Kinal</span>
                             </div>
-                            <p class="text-slate-600 leading-relaxed pl-7">Consolidación de las fichas diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector productivo para retroalimentar la formación de estudiantes y egresados de Kinal.</p>
+                            <p class="text-slate-600 leading-relaxed pl-7">Consolidación de las matrices diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector productivo para retroalimentar la formación en carreras técnicas y del nivel Técnico Superior.</p>
                         </div>
         
                         <div class="content-item item-inmersion p-3.5 rounded-xl text-xs space-y-1.5 transition border border-slate-200/90 bg-white hover:bg-slate-50 shadow-sm" data-category="inmersion">
                             <div class="flex flex-wrap justify-between items-center gap-1.5 font-bold">
                                 <span class="text-slate-900 text-sm flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">13</span>
-                                    Acto Solemne de Clausura: Diplomas de Participación y Reconocimientos
+                                    <span class="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center shrink-0">14</span>
+                                    Acto Solemne de Clausura: Diplomas de Participación y Reconocimientos Institucionales
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200">🎓 Entrega de Diplomas & Clausura</span>
                             </div>
@@ -565,7 +632,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-01</span>
                             <span class="font-bold text-slate-500">Jornada Presencial Especial</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Apertura institucional, presentación de la iniciativa, networking y Mesa de Diálogo 1: Necesidades de la industria y expectativas</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Apertura institucional, presentación de iniciativa, networking, recorrido técnico y Mesa de Diálogo 1 sobre brechas operativas</h5>
                         <p class="text-[11px] text-slate-500">Presencial Campus Kinal (8:30 a 12:30)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -582,7 +649,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-02</span>
                             <span class="font-bold text-slate-500">Semana 1</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Atracción por competencias, onboarding técnico acelerado (30-60-90 días), curvas de aprendizaje y reducción de rotación</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Atracción por competencias, descriptores operativos rigurosos, onboarding acelerado (30-60-90 días) y reducción de rotación</h5>
                         <p class="text-[11px] text-slate-500">Virtual Teams (19:00 a 21:00)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -599,7 +666,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-03</span>
                             <span class="font-bold text-slate-500">Semana 2</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Antropología de Kinal, los 4 pilares operativos, erradicación del maltrato en planta y fomento de seguridad psicológica</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Filosofía del Factor Humano, los 4 pilares operativos de Kinal, erradicación del maltrato en planta y fomento de seguridad psicológica</h5>
                         <p class="text-[11px] text-slate-500">Virtual Teams (19:00 a 21:00)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -616,7 +683,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-04</span>
                             <span class="font-bold text-slate-500">Semana 3</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Mapeo de matrices de competencias operativas (saber, hacer, ser), evaluación práctica en puesto y aprendizaje continuo</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Mapeo de matrices técnicas operativas (saber, hacer, ser), el TSU como mecanismo de validación y respaldo industrial, y evaluación en puesto</h5>
                         <p class="text-[11px] text-slate-500">Virtual Teams (19:00 a 21:00)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -633,7 +700,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-05</span>
                             <span class="font-bold text-slate-500">Semana 4</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Herramientas para supervisores de primera línea, retroalimentación asertiva, micro-charlas de valores y KPIs (OEE/SSO)</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Herramientas para supervisores de piso, retroalimentación asertiva, micro-charlas de valores de inicio de turno e impacto en KPIs (OEE/SSO)</h5>
                         <p class="text-[11px] text-slate-500">Virtual Teams (19:00 a 21:00)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -650,7 +717,7 @@
                             <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">E-06</span>
                             <span class="font-bold text-slate-500">Jornada Presencial Especial</span>
                         </div>
-                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Mesa Redonda Plenaria: Sistematización de necesidades de la industria, entrega solemne de diplomas y reconocimientos a empresas</h5>
+                        <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">Mesa Redonda Plenaria: Sistematización de demandas de la industria, convenios de cooperación técnica y entrega solemne de diplomas y distinciones</h5>
                         <p class="text-[11px] text-slate-500">Presencial Campus Kinal (8:30 a 12:30)</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
@@ -728,27 +795,39 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
 
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
-                        <div class="text-slate-500 font-bold uppercase text-[10px]">Participación en Sesiones y Mesas de Diálogo</div>
-                        <div class="text-3xl font-black text-[#22376D]">25%</div>
-                        <div class="text-slate-600">Asistencia mínima 80% y aporte constructivo en mesas de vinculación directiva</div>
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 1: Matriz Diagnóstica y Brechas</div>
+                        <div class="text-3xl font-black text-[#22376D]">15 Pts</div>
+                        <div class="text-slate-600">Puestos operativos críticos, desfases de cualificación y tecnologías emergentes</div>
                     </div>
     
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
-                        <div class="text-slate-500 font-bold uppercase text-[10px]">Descriptor por Competencias y Plan de Inducción</div>
-                        <div class="text-3xl font-black text-[#22376D]">25%</div>
-                        <div class="text-slate-600">Descriptor técnico por competencias demostrables y plan de onboarding acelerado</div>
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 2: Descriptor y Onboarding 30-60-90</div>
+                        <div class="text-3xl font-black text-[#22376D]">15 Pts</div>
+                        <div class="text-slate-600">Descriptor por competencias demostrables y plan de inducción técnica acelerada</div>
                     </div>
     
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
-                        <div class="text-slate-500 font-bold uppercase text-[10px]">Protocolo de Factor Humano y Micro-Charlas</div>
-                        <div class="text-3xl font-black text-[#22376D]">25%</div>
-                        <div class="text-slate-600">Directrices de cero maltrato y catálogo de 5 micro-charlas de valores</div>
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 3: Código Convivencia y Cero Maltrato</div>
+                        <div class="text-3xl font-black text-[#22376D]">15 Pts</div>
+                        <div class="text-slate-600">Protocolo de seguridad psicológica, reporte de fallas sin temor y cero maltrato</div>
                     </div>
     
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
-                        <div class="text-slate-500 font-bold uppercase text-[10px]">Ficha Diagnóstica de Necesidades Industriales</div>
-                        <div class="text-3xl font-black text-[#22376D]">25%</div>
-                        <div class="text-slate-600">Levantamiento riguroso de competencias y tecnologías demandadas por la empresa</div>
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 4: Evaluación Práctica y Validación TSU</div>
+                        <div class="text-3xl font-black text-[#22376D]">20 Pts</div>
+                        <div class="text-slate-600">Prueba práctica en banco y validación técnica bajo el estándar del Técnico Superior (TSU)</div>
+                    </div>
+    
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 5: Plan Coaching y 5 Micro-Charlas</div>
+                        <div class="text-3xl font-black text-[#22376D]">15 Pts</div>
+                        <div class="text-slate-600">Liderazgo de mandos medios y micro-charlas de valores vinculadas a KPIs OEE/SSO</div>
+                    </div>
+    
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+                        <div class="text-slate-500 font-bold uppercase text-[10px]">Módulo 6: Sustentación Plenaria y Acuerdos</div>
+                        <div class="text-3xl font-black text-[#22376D]">20 Pts</div>
+                        <div class="text-slate-600">Sustentación del plan de acción empresarial y convenios de vinculación institucional</div>
                     </div>
     
                 </div>
@@ -778,31 +857,45 @@
                         <tbody class="divide-y divide-slate-200 border-b border-slate-200">
 
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 font-bold text-slate-900">Participación en Sesiones y Mesas de Diálogo</td>
-                                <td class="p-3 font-extrabold text-[#22376D] text-center">25 Puntos</td>
-                                <td class="p-3 text-slate-700">Participa activamente en las 2 jornadas presenciales y sesiones en Teams, aportando datos de la realidad operativa y participando en el diálogo.</td>
-                                <td class="p-3 text-slate-500">Inasistencia injustificada o participación pasiva sin retroalimentación al diálogo (&lt; 18.7 pts).</td>
+                                <td class="p-3 font-bold text-slate-900">Módulo 1: Matriz Diagnóstica de Necesidades y Brechas</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">15 Puntos</td>
+                                <td class="p-3 text-slate-700">Identifica con precisión puestos críticos, desfases de cualificación operativa y tecnologías emergentes de su planta.</td>
+                                <td class="p-3 text-slate-500">Diagnóstico genérico o superficial sin datos específicos de la realidad técnica de planta (&lt; 11.2 pts).</td>
                             </tr>
     
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 font-bold text-slate-900">Descriptor por Competencias y Plan de Inducción</td>
-                                <td class="p-3 font-extrabold text-[#22376D] text-center">25 Puntos</td>
-                                <td class="p-3 text-slate-700">Redacta un descriptor técnico riguroso basado en competencias demostrables (saber, hacer, ser) y esquema de onboarding acelerado.</td>
-                                <td class="p-3 text-slate-500">Descriptor genérico basado en requisitos burocráticos sin criterios de evaluación técnica (&lt; 18.7 pts).</td>
+                                <td class="p-3 font-bold text-slate-900">Módulo 2: Descriptor por Competencias y Plan Onboarding</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">15 Puntos</td>
+                                <td class="p-3 text-slate-700">Estructura un descriptor técnico riguroso por competencias observables (saber, hacer, ser) y plan de inducción a 30-60-90 días.</td>
+                                <td class="p-3 text-slate-500">Descriptor tradicional burocrático sin desglose de destrezas operativas ni curva de adaptación (&lt; 11.2 pts).</td>
                             </tr>
     
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 font-bold text-slate-900">Protocolo de Factor Humano y Micro-Charlas</td>
-                                <td class="p-3 font-extrabold text-[#22376D] text-center">25 Puntos</td>
-                                <td class="p-3 text-slate-700">Propone directrices claras de cero tolerancia al maltrato en planta, seguridad psicológica y diseña 5 micro-charlas de valores.</td>
-                                <td class="p-3 text-slate-500">Planteamiento abstracto sin aplicación práctica a las dinámicas de taller o cuadrilla (&lt; 18.7 pts).</td>
+                                <td class="p-3 font-bold text-slate-900">Módulo 3: Código de Convivencia y Protocolo Cero Maltrato</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">15 Puntos</td>
+                                <td class="p-3 text-slate-700">Establece normas claras de seguridad psicológica, canales de reporte de averías sin temor y erradicación del maltrato en cuadrilla.</td>
+                                <td class="p-3 text-slate-500">Directrices teóricas sin aplicabilidad directa a las dinámicas y tensiones del taller operativo (&lt; 11.2 pts).</td>
                             </tr>
     
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 font-bold text-slate-900">Ficha Diagnóstica de Necesidades Industriales</td>
-                                <td class="p-3 font-extrabold text-[#22376D] text-center">25 Puntos</td>
-                                <td class="p-3 text-slate-700">Aporta información detallada sobre las tecnologías emergentes, competencias técnicas y humanas demandadas en su sector para retroalimentar a Kinal.</td>
-                                <td class="p-3 text-slate-500">Ficha incompleta, superficial o sin datos sobre las brechas reales de cualificación técnica (&lt; 18.7 pts).</td>
+                                <td class="p-3 font-bold text-slate-900">Módulo 4: Guía de Evaluación Práctica y Validación TSU</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">20 Puntos</td>
+                                <td class="p-3 text-slate-700">Diseña una prueba práctica en banco de trabajo y utiliza el estándar Técnico Superior (TSU) como mecanismo de validación técnica rigurosa.</td>
+                                <td class="p-3 text-slate-500">Evaluación teórica tradicional sin pruebas de destreza manual o sin respaldo de competencias de nivel superior (&lt; 15.0 pts).</td>
+                            </tr>
+    
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-slate-900">Módulo 5: Plan de Coaching y 5 Micro-Charlas de Factor Humano</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">15 Puntos</td>
+                                <td class="p-3 text-slate-700">Diseña 5 micro-charlas operativas de valores para inicio de turno vinculadas a KPIs medibles (OEE, reducción de accidentes SSO y merma).</td>
+                                <td class="p-3 text-slate-500">Charlas desvinculadas de la operación diaria o sin conexión con la mejora de indicadores de planta (&lt; 11.2 pts).</td>
+                            </tr>
+    
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-slate-900">Módulo 6: Sustentación Plenaria y Acuerdos de Vinculación</td>
+                                <td class="p-3 font-extrabold text-[#22376D] text-center">20 Puntos</td>
+                                <td class="p-3 text-slate-700">Sustenta con solvencia el plan de acción en la mesa plenaria, aporta retroalimentación crítica a Kinal y formaliza acuerdos de vinculación.</td>
+                                <td class="p-3 text-slate-500">Participación pasiva en la plenaria sin aportes significativos a la vinculación escuela-empresa (&lt; 15.0 pts).</td>
                             </tr>
     
                         </tbody>
@@ -834,7 +927,7 @@
 
     <!-- Interactive Logic (Tabs, Filtering & Master-Detail) -->
     <script>
-        const TALENTO_SESSIONS = [{"num": 1, "code": "E-01", "mod_num": 1, "module": "Apertura y Diálogo Inicial", "title": "Apertura institucional, presentación de la iniciativa, networking y Mesa de Diálogo 1: Necesidades de la industria y expectativas", "duration": "4 Horas (240 min)", "tipo": "Presencial Campus Kinal (8:30 a 12:30)", "semana": "Jornada Presencial Especial", "objective": "Conoce la visión formativa integral de Kinal, establece redes de contacto directivo y participa en el diagnóstico inicial sobre las necesidades de cualificación técnica en las empresas.", "apertura": "Apertura (30 min): Recepción protocolaria de los representantes empresariales en el Auditorio Ejecutivo de Fundación Kinal. Palabras de bienvenida a cargo de la Dirección de Vinculación y Dirección General. Encuadre de los objetivos del programa y dinámica de presentación de empresas participantes.", "desarrollo": "Desarrollo (180 min con pausa activa de 20 min): Recorrido guiado por los talleres y laboratorios técnicos de Kinal (automatización, robótica, mecatrónica, electrónica y redes). Observación de metodologías de aprendizaje práctico. Mesa de Diálogo 1: conversatorio abierto entre gerentes y autoridades de Kinal sobre los principales retos en la gestión de personal operativo y las brechas de competencias más críticas en la industria.", "cierre": "Cierre (30 min): Plenaria de síntesis de la jornada, entrega de la Ficha Diagnóstica de Necesidades Industriales, encuadre para las sesiones en Microsoft Teams y Kinal.academy, y café de networking.", "evidencias": "Ficha diagnóstica preliminar de necesidades y registro formal de participación.", "equipamiento": "Campus Fundación Kinal (Auditorio Ejecutivo y Complejo de Laboratorios Técnicos), guías impresas, estación de café.", "producto_obs": "Ficha diagnóstica preliminar de necesidades y registro"}, {"num": 2, "code": "E-02", "mod_num": 2, "module": "Manejo y Desarrollo de Personal", "title": "Atracción por competencias, onboarding técnico acelerado (30-60-90 días), curvas de aprendizaje y reducción de rotación", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 1", "objective": "Aplica técnicas contemporáneas para el reclutamiento operativo basado en competencias y estructura planes de inducción técnica acelerada que mitiguen la rotación temprana.", "apertura": "Apertura (15 min): Bienvenida en Teams y pregunta detonante: '¿Cuánto le cuesta realmente a su organización la rotación de un colaborador técnico en los primeros 90 días?'. Discusión en el chat interactivo.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Por qué fracasan los descriptores de puesto tradicionales en piso operativo. Diseño de matrices de competencias demostrables (saber, saber hacer y saber ser). Estructuración de la curva de aprendizaje en 30-60-90 días. Taller en salas de Teams: rediseño de un puesto técnico crítico para la empresa del participante.", "cierre": "Cierre (15 min): Socialización de matrices mejoradas, conclusiones ejecutivas y asignación de la lectura sobre Factor Humano en Kinal.academy.", "evidencias": "Descriptor de puesto técnico por competencias demostrables y esquema de inducción acelerada.", "equipamiento": "Microsoft Teams, salas grupales de Teams, Kinal.academy, plantilla de descriptores de puesto.", "producto_obs": "Descriptor de puesto técnico por competencias y plan de inducción"}, {"num": 3, "code": "E-03", "mod_num": 3, "module": "Liderazgo y Factor Humano", "title": "Antropología de Kinal, los 4 pilares operativos, erradicación del maltrato en planta y fomento de seguridad psicológica", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 2", "objective": "Formula políticas y protocolos de liderazgo humanista para erradicar el maltrato en cuadrillas de taller y promover la excelencia y seguridad psicológica en las operaciones.", "apertura": "Apertura (15 min): Presentación del video testimonial: 'El valor de la persona en el trabajo técnico'. Reflexión sobre el trabajo como ámbito de dignidad y servicio.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): La filosofía del Factor Humano de Fundación Kinal y sus 4 pilares: Respeto a la Dignidad, Trabajo Bien Hecho (orden 5S, custodia de maquinaria y precisión moral), Espíritu de Servicio y Libertad Responsable. Análisis del caso: 'El costo oculto de la supervisión autoritaria en planta'. Cómo generar seguridad psicológica para que los operarios reporten averías e incidentes inmediatamente sin temor a represalias.", "cierre": "Cierre (15 min): Síntesis de buenas prácticas de liderazgo, pautas para el protocolo de cero maltrato y preparación del siguiente eje en Kinal.academy.", "evidencias": "Borrador de Código de Convivencia Operativa y Protocolo de Tolerancia Cero al Maltrato en Planta.", "equipamiento": "Microsoft Teams, pizarras digitales, casos de estudio industrial de Kinal, Kinal.academy.", "producto_obs": "Código de convivencia operativa y protocolo cero maltrato"}, {"num": 4, "code": "E-04", "mod_num": 4, "module": "Fortalecimiento de Competencias", "title": "Mapeo de matrices de competencias operativas (saber, hacer, ser), evaluación práctica en puesto y aprendizaje continuo", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 3", "objective": "Diseña instrumentos objetivos para mapear y evaluar competencias técnicas operativas en el puesto de trabajo y estructura esquemas de aprendizaje continuo en la empresa.", "apertura": "Apertura (15 min): Sondeo interactivo: '¿Cómo evalúa hoy en día si un operario realmente domina la calibración o diagnóstico de una máquina antes de asignarle la línea?'. Debate inicial.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Mapeo de matrices de competencias operativas bajo estándares internacionales. Diseño de pruebas de evaluación práctica en banco de trabajo (lectura de diagramas, uso de instrumentos y diagnóstico lógico de fallas). Esquemas de aprendizaje continuo en planta y el rol del mentor técnico (*Ausbilder*) para la transferencia de habilidades en el puesto.", "cierre": "Cierre (15 min): Pautas para la aplicación del instrumento de evaluación técnica en sus plantas y consignas de trabajo.", "evidencias": "Matriz de competencias técnicas operativas y esquema de capacitación en puesto de trabajo.", "equipamiento": "Microsoft Teams, matriz de competencias en Excel, guía de pruebas prácticas, Kinal.academy.", "producto_obs": "Matriz de competencias técnicas operativas de planta"}, {"num": 5, "code": "E-05", "mod_num": 5, "module": "Desarrollo de Mandos Medios", "title": "Herramientas para supervisores de primera línea, retroalimentación asertiva, micro-charlas de valores y KPIs (OEE/SSO)", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 4", "objective": "Estructura un plan de fortalecimiento para mandos medios que vincule el liderazgo con indicadores operativos (OEE, SSO) y consolida la Ficha Diagnóstica de Necesidades Industriales.", "apertura": "Apertura (15 min): Encuadre: el supervisor de taller como puente crítico entre la dirección estratégica y el piso operativo.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Habilidades formativas para mandos medios: comunicación asertiva, retroalimentación correctiva sin humillar y manejo constructivo de conflictos en cuadrillas. Diseño y ejecución de 'Las Charlas de 10 Minutos de Factor Humano' antes de iniciar el turno. Correlación entre factor humano y KPIs de negocio (OEE, tasa de accidentes SSO y merma). Revisión final de la Ficha Diagnóstica de Necesidades Industriales.", "cierre": "Cierre (15 min): Instrucciones protocolarias para la Jornada Presencial de Cierre, entrega de diplomas y reconocimientos en campus Kinal.", "evidencias": "Catálogo de 5 micro-charlas de Factor Humano y Ficha Diagnóstica de Necesidades Industriales completada.", "equipamiento": "Microsoft Teams, guía de micro-charlas de valores, formato de diagnóstico de necesidades, Kinal.academy.", "producto_obs": "Catálogo de 5 micro-charlas de Factor Humano y ficha diagnóstica"}, {"num": 6, "code": "E-06", "mod_num": 6, "module": "Plenaria y Clausura", "title": "Mesa Redonda Plenaria: Sistematización de necesidades de la industria, entrega solemne de diplomas y reconocimientos a empresas", "duration": "4 Horas (240 min)", "tipo": "Presencial Campus Kinal (8:30 a 12:30)", "semana": "Jornada Presencial Especial", "objective": "Participa activamente en la sistematización de demandas formativas de la industria y recibe el diploma de participación y reconocimiento corporativo de Fundación Kinal.", "apertura": "Apertura (20 min): Bienvenida protocolaria en Auditorio Ejecutivo por el Consejo Directivo y Directores Académicos de Kinal.", "desarrollo": "Desarrollo (190 min con pausa de 20 min): Mesa Redonda Plenaria: 'Construyendo el futuro de la educación técnica en Guatemala'. Presentación de los hallazgos consolidados de las fichas diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector industrial. Diálogo abierto con las autoridades de Kinal para la retroalimentación de planes de estudio y actualización de carreras. Firma de compromisos y convenios marco de vinculación (bolsa de empleo y semilleros formativos).", "cierre": "Cierre (30 min): Acto solemne de clausura: Entrega de Diplomas de Participación Individual a los representantes empresariales y entrega de Reconocimientos Empresariales Especiales a las empresas aliadas. Brindis de honor y networking directivo.", "evidencias": "Diplomas de Participación y Reconocimientos Empresariales oficialmente entregados (Acreditación institucional >= 75 Pts).", "equipamiento": "Auditorio Ejecutivo de Kinal, actas de evaluación, diplomas oficiales encuadernados, placas de reconocimiento empresarial, cóctel.", "producto_obs": "Diplomas oficiales entregados y acuerdos de vinculación"}];
+        const TALENTO_SESSIONS = [{"num": 1, "code": "E-01", "mod_num": 1, "module": "Necesidades Actuales de la Industria y Diagnóstico del Talento Operativo", "title": "Apertura institucional, presentación de iniciativa, networking, recorrido técnico y Mesa de Diálogo 1 sobre brechas operativas", "duration": "4 Horas (240 min)", "tipo": "Presencial Campus Kinal (8:30 a 12:30)", "semana": "Jornada Presencial Especial", "objective": "Conoce la visión formativa integral de Kinal, establece redes de contacto directivo y formaliza el diagnóstico inicial sobre las necesidades de cualificación y brechas técnicas operativas en las empresas.", "apertura": "Apertura (30 min): Recepción protocolaria de los representantes empresariales en el Auditorio Ejecutivo de Fundación Kinal. Palabras de bienvenida a cargo de la Dirección de Vinculación y Dirección General. Encuadre de los objetivos del programa y dinámica de networking ejecutivo entre sectores productivos.", "desarrollo": "Desarrollo (180 min con pausa activa de 20 min): Recorrido guiado por los talleres y laboratorios técnicos de Kinal (automatización, robótica, mecatrónica CNC, electrónica y redes). Observación de metodologías de aprendizaje práctico. Mesa de Diálogo 1: conversatorio abierto entre gerentes y autoridades de Kinal sobre los principales retos en la gestión de personal operativo y las brechas de competencias más críticas en la industria.", "cierre": "Cierre (30 min): Plenaria de síntesis de la jornada, encuadre para la plataforma Microsoft Teams y Kinal.academy, y entrega de pautas para la Matriz Diagnóstica.", "evidencias": "Actividad Formativa Evaluable 1: Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas de Planta (identificación de puestos operativos críticos y tecnologías emergentes). Ponderación: 15 Puntos.", "equipamiento": "Campus Fundación Kinal (Auditorio Ejecutivo y Complejo de Laboratorios Técnicos), guías impresas, estación de café.", "producto_obs": "Actividad 1: Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas de Planta (15 Pts)"}, {"num": 2, "code": "E-02", "mod_num": 2, "module": "Manejo y Desarrollo de Personal Técnico en Planta", "title": "Atracción por competencias, descriptores operativos rigurosos, onboarding acelerado (30-60-90 días) y reducción de rotación", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 1", "objective": "Aplica técnicas contemporáneas para el reclutamiento operativo basado en competencias demostrables y estructura planes de inducción técnica acelerada que mitiguen la rotación temprana.", "apertura": "Apertura (15 min): Bienvenida en Teams y pregunta detonante: '¿Cuánto le cuesta realmente a su organización la rotación de un colaborador técnico en los primeros 90 días?'. Discusión en el chat interactivo.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Por qué fracasan los descriptores de puesto tradicionales en piso operativo. Diseño de matrices de competencias demostrables (saber, saber hacer y saber ser). Estructuración de la curva de aprendizaje en 30-60-90 días. Taller en salas de Teams: rediseño de un puesto técnico crítico para la empresa del participante.", "cierre": "Cierre (15 min): Socialización de matrices mejoradas en plenaria, conclusiones ejecutivas y pautas para subir el entregable a Kinal.academy.", "evidencias": "Actividad Formativa Evaluable 2: Descriptor de Puesto Técnico por Competencias Demostrables y Plan de Onboarding Operativo en 30-60-90 Días. Ponderación: 15 Puntos.", "equipamiento": "Microsoft Teams, salas grupales de Teams, Kinal.academy, plantilla de descriptores de puesto.", "producto_obs": "Actividad 2: Descriptor de Puesto Técnico por Competencias y Plan de Onboarding 30-60-90 Días (15 Pts)"}, {"num": 3, "code": "E-03", "mod_num": 3, "module": "Liderazgo y Factor Humano en Cuadrillas de Trabajo", "title": "Filosofía del Factor Humano, los 4 pilares operativos de Kinal, erradicación del maltrato en planta y fomento de seguridad psicológica", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 2", "objective": "Formula políticas y protocolos de liderazgo humanista para erradicar el maltrato en cuadrillas de taller y promover la excelencia y seguridad psicológica en las operaciones.", "apertura": "Apertura (15 min): Presentación del video testimonial institucional: 'El valor de la persona en el trabajo técnico'. Reflexión grupal sobre el trabajo como ámbito de dignidad y servicio.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): La filosofía del Factor Humano de Fundación Kinal y sus 4 pilares: Respeto a la Dignidad, Trabajo Bien Hecho (orden 5S, custodia de maquinaria y precisión moral), Espíritu de Servicio y Libertad Responsable. Análisis del caso: 'El costo oculto de la supervisión autoritaria en planta'. Cómo generar seguridad psicológica para que los operarios reporten averías e incidentes inmediatamente sin temor a represalias.", "cierre": "Cierre (15 min): Síntesis de buenas prácticas de liderazgo, pautas para el protocolo de cero maltrato y consignas en Kinal.academy.", "evidencias": "Actividad Formativa Evaluable 3: Borrador de Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Tolerancia al Maltrato en Planta. Ponderación: 15 Puntos.", "equipamiento": "Microsoft Teams, pizarras digitales, casos de estudio industrial de Kinal, Kinal.academy.", "producto_obs": "Actividad 3: Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Maltrato (15 Pts)"}, {"num": 4, "code": "E-04", "mod_num": 4, "module": "Fortalecimiento y Validación de Competencias: Nivel Técnico Superior (TSU)", "title": "Mapeo de matrices técnicas operativas (saber, hacer, ser), el TSU como mecanismo de validación y respaldo industrial, y evaluación en puesto", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 3", "objective": "Diseña instrumentos objetivos para mapear y evaluar competencias técnicas operativas y articula el nivel Técnico Superior (TSU) como mecanismo de validación rigurosa y respaldo para la industria.", "apertura": "Apertura (15 min): Sondeo interactivo: '¿Cómo evalúa hoy en día si un técnico domina el diagnóstico analítico de un PLC o sistema electromecánico antes de asignarle la línea crítica?'.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Mapeo de competencias operativas bajo estándares internacionales (DQR). El Técnico Superior Universitario (TSU) como mecanismo riguroso de validación de competencias técnicas: acreditación de capacidades superiores en diagnóstico, interpretación de diagramas y cálculo aplicado. Por qué la industria requiere el respaldo del nivel superior técnico para cerrar la brecha entre ingeniería y piso de planta. Diseño de pruebas prácticas en banco de trabajo y el rol del mentor técnico (*Ausbilder*) para la transferencia en el puesto.", "cierre": "Cierre (15 min): Presentación de la matriz de validación técnica de planta y asignación del entregable en Kinal.academy.", "evidencias": "Actividad Formativa Evaluable 4: Guía de Evaluación Práctica y Matriz de Validación Técnica de Planta bajo el Estándar de Competencias del Técnico Superior (TSU). Ponderación: 20 Puntos.", "equipamiento": "Microsoft Teams, marco curricular TSU Kinal, matriz de competencias técnicas en Excel, Kinal.academy.", "producto_obs": "Actividad 4: Guía de Evaluación Práctica y Matriz de Validación Técnica bajo Estándar TSU (20 Pts)"}, {"num": 5, "code": "E-05", "mod_num": 5, "module": "Desarrollo de Mandos Medios y Supervisión de Primera Línea", "title": "Herramientas para supervisores de piso, retroalimentación asertiva, micro-charlas de valores de inicio de turno e impacto en KPIs (OEE/SSO)", "duration": "2 Horas (120 min)", "tipo": "Virtual Teams (19:00 a 21:00)", "semana": "Semana 4", "objective": "Estructura un plan de fortalecimiento para mandos medios que vincule el liderazgo formativo con indicadores operativos (OEE, SSO) y consolida el plan de acción empresarial.", "apertura": "Apertura (15 min): Encuadre: el supervisor de taller como puente crítico entre la dirección estratégica y el piso operativo.", "desarrollo": "Desarrollo (90 min con pausa de 10 min): Habilidades formativas para mandos medios: comunicación asertiva, retroalimentación correctiva sin humillar y manejo constructivo de conflictos en cuadrillas. Diseño y ejecución de 'Las Charlas de 10 Minutos de Factor Humano' antes de iniciar el turno. Correlación entre factor humano y KPIs de negocio (OEE, tasa de accidentes SSO y merma). Consolidación final de la propuesta de mejora técnica para la jornada de clausura.", "cierre": "Cierre (15 min): Instrucciones protocolarias para la Jornada Presencial de Cierre, sustentación de planes y entrega de distinciones en campus Kinal.", "evidencias": "Actividad Formativa Evaluable 5: Plan de Coaching para Mandos Medios y Catálogo de 5 Micro-Charlas de Factor Humano para el Inicio de Turno (vinculadas a KPIs OEE/SSO). Ponderación: 15 Puntos.", "equipamiento": "Microsoft Teams, guía de micro-charlas de valores, formato de consolidación de plan de acción, Kinal.academy.", "producto_obs": "Actividad 5: Plan de Coaching para Mandos Medios y Catálogo de 5 Micro-Charlas de Factor Humano (15 Pts)"}, {"num": 6, "code": "E-06", "mod_num": 6, "module": "Sistematización de Demandas, Acuerdos de Vinculación y Clausura", "title": "Mesa Redonda Plenaria: Sistematización de demandas de la industria, convenios de cooperación técnica y entrega solemne de diplomas y distinciones", "duration": "4 Horas (240 min)", "tipo": "Presencial Campus Kinal (8:30 a 12:30)", "semana": "Jornada Presencial Especial", "objective": "Participa activamente en la sustentación del plan de acción empresarial, la retroalimentación de planes curriculares de Kinal y recibe el diploma de participación y reconocimiento corporativo.", "apertura": "Apertura (20 min): Bienvenida protocolaria en Auditorio Ejecutivo por el Consejo Directivo y Directores Académicos de Fundación Kinal.", "desarrollo": "Desarrollo (190 min con pausa de 20 min): Mesa Redonda Plenaria: 'Construyendo la Pertinencia Técnica de Guatemala'. Sustentación ejecutiva de los planes de acción y matrices diagnósticas por parte de los representantes empresariales. Diálogo abierto con las autoridades de Kinal para la retroalimentación de planes de estudio del nivel Técnico Superior y carreras técnicas. Formalización de acuerdos de cooperación institucional (bolsa de empleo prioritaria, semilleros y pasantías).", "cierre": "Cierre (30 min): Acto solemne de clausura: Entrega de Diplomas de Participación Individual a los representantes empresariales y entrega de Reconocimientos Empresariales Especiales a las empresas aliadas. Brindis de honor y networking directivo.", "evidencias": "Actividad Formativa Evaluable 6: Sustentación Plenaria del Plan de Acción Empresarial y Firma de Acuerdos de Vinculación Institucional. Ponderación: 20 Puntos.", "equipamiento": "Auditorio Ejecutivo de Kinal, actas de evaluación, diplomas oficiales encuadernados, placas de reconocimiento empresarial, cóctel.", "producto_obs": "Actividad 6: Sustentación Plenaria del Plan de Acción Empresarial y Firma de Acuerdos de Vinculación (20 Pts)"}];
         let currentTalentoIndex = 0;
 
         function switchTab(tabId) {

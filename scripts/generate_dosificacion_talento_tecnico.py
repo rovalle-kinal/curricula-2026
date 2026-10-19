@@ -87,12 +87,12 @@ def style_heading(p, text, level=1):
     elif level == 2:
         p.paragraph_format.space_before = Pt(10)
         p.paragraph_format.space_after = Pt(4)
-        r.font.size = Pt(11.5)
+        r.font.size = Pt(11)
         r.font.color.rgb = RGBColor(0, 51, 102)
     elif level == 3:
-        p.paragraph_format.space_before = Pt(6)
+        p.paragraph_format.space_before = Pt(7)
         p.paragraph_format.space_after = Pt(2)
-        r.font.size = Pt(10)
+        r.font.size = Pt(9.5)
         r.font.color.rgb = RGBColor(74, 85, 104)
 
 def style_p(p, space_before=0, space_after=4, line_spacing=1.15):
@@ -113,9 +113,9 @@ def generate_dosificacion_doc():
     COLOR_SECONDARY = RGBColor(74, 85, 104)    # Gris pizarra
     COLOR_DARK = RGBColor(26, 32, 44)         # Texto oscuro
 
-    # =========================================================================
+    # ==========================================
     # ENCABEZADO INSTITUCIONAL
-    # =========================================================================
+    # ==========================================
     p_inst = doc.add_paragraph()
     style_p(p_inst, space_before=0, space_after=2)
     r_inst = p_inst.add_run("FUNDACIÓN KINAL — DIRECCIÓN DE VINCULACIÓN EMPRESARIAL")
@@ -134,46 +134,46 @@ def generate_dosificacion_doc():
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=10)
-    r_sub = p_sub.add_run("Cronograma Pedagógico Encuentro por Encuentro | 1 Mes de Duración | Modalidad Híbrida Ejecutiva (6 Encuentros: 2 Jornadas Presenciales Especiales en Kinal + 4 Sesiones Virtuales Semanales en Teams)")
+    r_sub = p_sub.add_run("Cronograma Pedagógico Encuentro por Encuentro | 1 Mes de Duración | Organización Modular: Un Módulo por Sesión (6 Módulos / 6 Sesiones / 6 Actividades Evaluables)\nModalidad Híbrida: 2 Jornadas Presenciales Especiales en Campus Kinal (8h) + 4 Sesiones Virtuales Semanales en Microsoft Teams (8h)")
     r_sub.font.name = "Calibri"
-    r_sub.font.size = Pt(10.5)
+    r_sub.font.size = Pt(10)
     r_sub.font.italic = True
     r_sub.font.color.rgb = COLOR_SECONDARY
 
     add_callout(doc, 
-        "«El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa». Las 16 horas de contacto directo sincrónico y presencial se estructuran a lo largo de un mes mediante 4 sesiones virtuales semanales de 2 horas en Microsoft Teams y 2 jornadas presenciales especiales de 4 horas en el campus de Fundación Kinal (Jornada Inicial de Apertura y Jornada de Cierre con Entrega de Diplomas y Reconocimientos). El programa genera un espacio formal de diálogo bidireccional industria-academia para identificar necesidades reales y dotar a los líderes de herramientas gerenciales en manejo de personal, liderazgo humanista, competencias operativas y desarrollo de mandos medios. Umbral aprobatorio institucional: 75 puntos sobre 100.",
-        bold_prefix="Organización Pedagógica Dual e Ideario Kinal:")
+        "«El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa». Las 16 horas de contacto sincrónico y presencial se organizan estrictamente en 6 Módulos Formativos (un módulo por sesión): 4 sesiones virtuales semanales de 2 horas en Microsoft Teams y 2 jornadas presenciales especiales de 4 horas en el campus de Fundación Kinal (Apertura y Clausura con entrega de Diplomas y Reconocimientos). Cada módulo integra una Actividad Formativa Evaluable orientada a la aplicación directa en la empresa. El programa articula el Factor Humano y consolida el Técnico Superior Universitario (TSU) como mecanismo riguroso de validación de competencias técnicas para la industria. Umbral aprobatorio institucional: 75 puntos sobre 100.",
+        bold_prefix="Organización Pedagógica Modular e Ideario Kinal:")
 
     # =========================================================================
     # 1. MATRIZ GENERAL CRONOLÓGICA DE LOS 6 ENCUENTROS
     # =========================================================================
     h1_1 = doc.add_paragraph()
-    style_heading(h1_1, "1. Matriz General de Dosificación Cronológica (1 Mes — 6 Encuentros)", level=1)
+    style_heading(h1_1, "1. Matriz General de Dosificación Modular (1 Mes — 6 Módulos / 6 Sesiones)", level=1)
 
     sesiones_info = [
-        ("Jornada Especial 1 (Presencial)", "Apertura y Diálogo Inicial", "Apertura institucional, presentación de la iniciativa, networking y Mesa de Diálogo 1: Necesidades de la industria y expectativas", "Ficha diagnóstica preliminar de necesidades y registro"),
-        ("Sem. 1 / Sesión Virtual 1", "Manejo y Desarrollo de Personal", "Atracción por competencias, onboarding técnico acelerado (30-60-90 días), curvas de aprendizaje y reducción de rotación", "Descriptor de puesto técnico por competencias y plan de inducción"),
-        ("Sem. 2 / Sesión Virtual 2", "Liderazgo y Factor Humano", "Antropología de Kinal, los 4 pilares operativos, erradicación del maltrato en planta y fomento de seguridad psicológica", "Código de convivencia operativa y protocolo cero maltrato"),
-        ("Sem. 3 / Sesión Virtual 3", "Fortalecimiento de Competencias", "Mapeo de matrices de competencias operativas (saber, hacer, ser), evaluación práctica en puesto y aprendizaje continuo", "Matriz de competencias técnicas operativas de planta"),
-        ("Sem. 4 / Sesión Virtual 4", "Desarrollo de Mandos Medios", "Herramientas para supervisores de primera línea, retroalimentación asertiva, micro-charlas de valores y KPIs (OEE/SSO)", "Catálogo de 5 micro-charlas de Factor Humano y ficha diagnóstica"),
-        ("Jornada Especial 2 (Presencial)", "Plenaria y Clausura", "Mesa Redonda Plenaria: Sistematización de necesidades de la industria, entrega solemne de diplomas y reconocimientos a empresas", "Diplomas oficiales entregados y acuerdos de vinculación")
+        ("Módulo 1\n(Presencial 1 • 4h)", "Necesidades Actuales de la Industria y Diagnóstico del Talento Operativo", "Apertura institucional, presentación de iniciativa, networking, recorrido técnico y Mesa de Diálogo 1 sobre brechas operativas", "Actividad 1: Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas de Planta (15 Pts)"),
+        ("Módulo 2\n(Virtual 1 • 2h)", "Manejo y Desarrollo de Personal Técnico en Planta", "Atracción por competencias, descriptores operativos rigurosos, onboarding acelerado (30-60-90 días) y reducción de rotación", "Actividad 2: Descriptor de Puesto Técnico por Competencias y Plan de Onboarding 30-60-90 Días (15 Pts)"),
+        ("Módulo 3\n(Virtual 2 • 2h)", "Liderazgo y Factor Humano en Cuadrillas de Trabajo", "Filosofía del Factor Humano, los 4 pilares operativos de Kinal, erradicación del maltrato en planta y fomento de seguridad psicológica", "Actividad 3: Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Maltrato (15 Pts)"),
+        ("Módulo 4\n(Virtual 3 • 2h)", "Fortalecimiento y Validación de Competencias: Nivel Técnico Superior (TSU)", "Mapeo de matrices técnicas operativas (saber, hacer, ser), el TSU como mecanismo de validación y respaldo industrial, y evaluación en puesto", "Actividad 4: Guía de Evaluación Práctica y Matriz de Validación Técnica bajo Estándar TSU (20 Pts)"),
+        ("Módulo 5\n(Virtual 4 • 2h)", "Desarrollo de Mandos Medios y Supervisión de Primera Línea", "Herramientas para supervisores de piso, retroalimentación asertiva, micro-charlas de valores de inicio de turno e impacto en KPIs (OEE/SSO)", "Actividad 5: Plan de Coaching para Mandos Medios y Catálogo de 5 Micro-Charlas de Factor Humano (15 Pts)"),
+        ("Módulo 6\n(Presencial 2 • 4h)", "Sistematización de Demandas, Acuerdos de Vinculación y Clausura", "Mesa Redonda Plenaria: Sistematización de demandas de la industria, convenios de cooperación técnica y entrega solemne de diplomas y distinciones", "Actividad 6: Sustentación Plenaria del Plan de Acción Empresarial y Firma de Acuerdos de Vinculación (20 Pts)")
     ]
 
-    tbl_matriz = doc.add_table(rows=len(sesiones_info) + 1, cols=4)
-    tbl_matriz.alignment = WD_TABLE_ALIGNMENT.CENTER
-    tbl_matriz.autofit = False
-    tbl_matriz.columns[0].width = Inches(1.4)
-    tbl_matriz.columns[1].width = Inches(1.5)
-    tbl_matriz.columns[2].width = Inches(2.2)
-    tbl_matriz.columns[3].width = Inches(1.4)
-    set_table_borders(tbl_matriz, color="CBD5E0", sz="4")
+    tbl_cron = doc.add_table(rows=7, cols=4)
+    tbl_cron.alignment = WD_TABLE_ALIGNMENT.CENTER
+    tbl_cron.autofit = False
+    tbl_cron.columns[0].width = Inches(1.3)
+    tbl_cron.columns[1].width = Inches(1.8)
+    tbl_cron.columns[2].width = Inches(2.0)
+    tbl_cron.columns[3].width = Inches(1.4)
+    set_table_borders(tbl_cron, color="CBD5E0", sz="4")
 
-    hdr_m = tbl_matriz.rows[0]
-    for c in hdr_m.cells:
+    hdr = tbl_cron.rows[0]
+    for c in hdr.cells:
         set_cell_background(c, "003366")
-    headers_mat = ["Encuentro / Formato", "Eje Temático", "Contenido Central del Encuentro", "Producto Observable"]
-    for idx, text in enumerate(headers_mat):
-        p = hdr_m.cells[idx].paragraphs[0]
+    headers_txt = ["Módulo / Sesión", "Eje / Tema Principal", "Contenidos y Metodología Clave", "Actividad Formativa Evaluable"]
+    for idx, text in enumerate(headers_txt):
+        p = hdr.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
         r = p.add_run(text)
         r.font.name = "Calibri"
@@ -182,10 +182,10 @@ def generate_dosificacion_doc():
         r.font.color.rgb = RGBColor(255, 255, 255)
 
     for idx, (ses, mod, cont, prod) in enumerate(sesiones_info, start=1):
-        row = tbl_matriz.rows[idx]
+        row = tbl_cron.rows[idx]
         if "Presencial" in ses:
             for c in row.cells:
-                set_cell_background(c, "EBF8FF")  # Resaltado azul para jornadas presenciales especiales
+                set_cell_background(c, "EBF8FF")
         elif idx % 2 == 1:
             for c in row.cells:
                 set_cell_background(c, "F7FAFC")
@@ -204,83 +204,89 @@ def generate_dosificacion_doc():
     doc.add_page_break()
 
     # =========================================================================
-    # 2. MICRODISEÑO DIDÁCTICO DETALLADO DE LOS 6 ENCUENTROS
+    # 2. MICRODISEÑO DIDÁCTICO DETALLADO DE LOS 6 MÓDULOS
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Microdiseño Didáctico Detallado por Encuentro (6 Jornadas)", level=1)
+    style_heading(h1_2, "2. Microdiseño Didáctico Detallado por Módulos (6 Encuentros Formativos)", level=1)
 
     p_micro_intro = doc.add_paragraph()
     style_p(p_micro_intro, space_before=0, space_after=8)
-    r = p_micro_intro.add_run("A continuación se desglosa la secuencia metodológica de cada encuentro formativo: 4 horas para las 2 jornadas presenciales especiales en campus Kinal y 2 horas para las 4 sesiones virtuales semanales en Microsoft Teams:")
+    r = p_micro_intro.add_run("A continuación se desglosa la secuencia metodológica detallada para cada uno de los 6 Módulos Formativos (un módulo por sesión: 4 horas para las 2 jornadas presenciales en campus Kinal y 2 horas para las 4 sesiones virtuales semanales en Microsoft Teams):")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
 
     sesiones_detalladas = [
-        # ENCUENTRO 1
-        ("Jornada Presencial Especial 1 (Campus Kinal)", "Apertura y Diálogo sobre Necesidades Industriales",
+        # MÓDULO 1
+        ("Módulo 1: Necesidades Actuales de la Industria y Diagnóstico del Talento Operativo", 
+         "Jornada Presencial Especial 1 (Campus Kinal)  |  4 Horas (240 min)",
          "Apertura Institucional, Presentación de la Iniciativa y Mesa de Diálogo 1: Necesidades de la Industria",
-         "Conoce la visión formativa integral de Kinal, establece redes de contacto directivo y participa en el diagnóstico inicial sobre las necesidades de cualificación técnica en las empresas.",
-         "Apertura (30 min): Recepción protocolaria de los representantes empresariales en el Auditorio Ejecutivo de Fundación Kinal. Palabras de bienvenida a cargo de la Dirección de Vinculación y Dirección General. Encuadre de los objetivos del programa y dinámica de presentación de empresas participantes.",
-         "Desarrollo (180 min con pausa activa de 20 min): Recorrido guiado por los talleres y laboratorios técnicos de Kinal (automatización, robótica, mecatrónica, electrónica y redes). Observación de metodologías de aprendizaje práctico. Mesa de Diálogo 1: conversatorio abierto entre gerentes y autoridades de Kinal sobre los principales retos en la gestión de personal operativo y las brechas de competencias más críticas en la industria.",
-         "Cierre (30 min): Plenaria de síntesis de la jornada, entrega de la Ficha Diagnóstica de Necesidades Industriales, encuadre para las sesiones en Microsoft Teams y Kinal.academy, y café de networking.",
+         "Conoce la visión formativa integral de Kinal, establece redes de contacto directivo y formaliza el diagnóstico inicial sobre las necesidades de cualificación y brechas técnicas operativas en las empresas.",
+         "Apertura (30 min): Recepción protocolaria de los representantes empresariales en el Auditorio Ejecutivo de Fundación Kinal. Palabras de bienvenida a cargo de la Dirección de Vinculación y Dirección General. Encuadre de los objetivos del programa y dinámica de networking ejecutivo entre sectores productivos.",
+         "Desarrollo (180 min con pausa activa de 20 min): Recorrido guiado por los talleres y laboratorios técnicos de Kinal (automatización, robótica, mecatrónica CNC, electrónica y redes). Observación de metodologías de aprendizaje práctico. Mesa de Diálogo 1: conversatorio abierto entre gerentes y autoridades de Kinal sobre los principales retos en la gestión de personal operativo y las brechas de competencias más críticas en la industria.",
+         "Cierre (30 min): Plenaria de síntesis de la jornada, encuadre para la plataforma Microsoft Teams y Kinal.academy, y entrega de pautas para la Matriz Diagnóstica.",
          "Campus Fundación Kinal (Auditorio Ejecutivo y Complejo de Laboratorios Técnicos), guías impresas, estación de café.",
-         "Ficha diagnóstica preliminar de necesidades y registro formal de participación.", "4 Horas (240 min)"),
+         "Actividad Formativa Evaluable 1: Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas de Planta (identificación de puestos operativos críticos y tecnologías emergentes). Ponderación: 15 Puntos."),
 
-        # ENCUENTRO 2
-        ("Sesión Virtual 1 (Semana 1 — Microsoft Teams)", "Manejo y Desarrollo de Personal Técnico",
+        # MÓDULO 2
+        ("Módulo 2: Manejo y Desarrollo de Personal Técnico en Planta", 
+         "Sesión Virtual 1 (Semana 1 — Microsoft Teams)  |  2 Horas (120 min)",
          "Atracción por Competencias, Inducción Técnica Acelerada (Onboarding) y Reducción de Rotación",
-         "Aplica técnicas contemporáneas para el reclutamiento operativo basado en competencias y estructura planes de inducción técnica acelerada que mitiguen la rotación temprana.",
+         "Aplica técnicas contemporáneas para el reclutamiento operativo basado en competencias demostrables y estructura planes de inducción técnica acelerada que mitiguen la rotación temprana.",
          "Apertura (15 min): Bienvenida en Teams y pregunta detonante: '¿Cuánto le cuesta realmente a su organización la rotación de un colaborador técnico en los primeros 90 días?'. Discusión en el chat interactivo.",
          "Desarrollo (90 min con pausa de 10 min): Por qué fracasan los descriptores de puesto tradicionales en piso operativo. Diseño de matrices de competencias demostrables (saber, saber hacer y saber ser). Estructuración de la curva de aprendizaje en 30-60-90 días. Taller en salas de Teams: rediseño de un puesto técnico crítico para la empresa del participante.",
-         "Cierre (15 min): Socialización de matrices mejoradas, conclusiones ejecutivas y asignación de la lectura sobre Factor Humano en Kinal.academy.",
+         "Cierre (15 min): Socialización de matrices mejoradas en plenaria, conclusiones ejecutivas y pautas para subir el entregable a Kinal.academy.",
          "Microsoft Teams, salas grupales de Teams, Kinal.academy, plantilla de descriptores de puesto.",
-         "Descriptor de puesto técnico por competencias demostrables y esquema de inducción acelerada.", "2 Horas (120 min)"),
+         "Actividad Formativa Evaluable 2: Descriptor de Puesto Técnico por Competencias Demostrables y Plan de Onboarding Operativo en 30-60-90 Días. Ponderación: 15 Puntos."),
 
-        # ENCUENTRO 3
-        ("Sesión Virtual 2 (Semana 2 — Microsoft Teams)", "Liderazgo y Factor Humano en Cuadrillas",
+        # MÓDULO 3
+        ("Módulo 3: Liderazgo y Factor Humano en Cuadrillas de Trabajo", 
+         "Sesión Virtual 2 (Semana 2 — Microsoft Teams)  |  2 Horas (120 min)",
          "Dignidad en el Trabajo, el Principio del «Trabajo Bien Hecho» y Erradicación del Maltrato",
          "Formula políticas y protocolos de liderazgo humanista para erradicar el maltrato en cuadrillas de taller y promover la excelencia y seguridad psicológica en las operaciones.",
-         "Apertura (15 min): Presentación del video testimonial: 'El valor de la persona en el trabajo técnico'. Reflexión sobre el trabajo como ámbito de dignidad y servicio.",
+         "Apertura (15 min): Presentación del video testimonial institucional: 'El valor de la persona en el trabajo técnico'. Reflexión grupal sobre el trabajo como ámbito de dignidad y servicio.",
          "Desarrollo (90 min con pausa de 10 min): La filosofía del Factor Humano de Fundación Kinal y sus 4 pilares: Respeto a la Dignidad, Trabajo Bien Hecho (orden 5S, custodia de maquinaria y precisión moral), Espíritu de Servicio y Libertad Responsable. Análisis del caso: 'El costo oculto de la supervisión autoritaria en planta'. Cómo generar seguridad psicológica para que los operarios reporten averías e incidentes inmediatamente sin temor a represalias.",
-         "Cierre (15 min): Síntesis de buenas prácticas de liderazgo, pautas para el protocolo de cero maltrato y preparación del siguiente eje en Kinal.academy.",
+         "Cierre (15 min): Síntesis de buenas prácticas de liderazgo, pautas para el protocolo de cero maltrato y consignas en Kinal.academy.",
          "Microsoft Teams, pizarras digitales, casos de estudio industrial de Kinal, Kinal.academy.",
-         "Borrador de Código de Convivencia Operativa y Protocolo de Tolerancia Cero al Maltrato en Planta.", "2 Horas (120 min)"),
+         "Actividad Formativa Evaluable 3: Borrador de Código de Convivencia Operativa y Protocolo de Seguridad Psicológica y Cero Tolerancia al Maltrato en Planta. Ponderación: 15 Puntos."),
 
-        # ENCUENTRO 4
-        ("Sesión Virtual 3 (Semana 3 — Microsoft Teams)", "Fortalecimiento de Competencias Técnicas",
-         "Mapeo de Matrices de Competencias Operativas, Evaluación Práctica y Aprendizaje Continuo",
-         "Diseña instrumentos objetivos para mapear y evaluar competencias técnicas operativas en el puesto de trabajo y estructura esquemas de aprendizaje continuo en la empresa.",
-         "Apertura (15 min): Sondeo interactivo: '¿Cómo evalúa hoy en día si un operario realmente domina la calibración o diagnóstico de una máquina antes de asignarle la línea?'. Debate inicial.",
-         "Desarrollo (90 min con pausa de 10 min): Mapeo de matrices de competencias operativas bajo estándares internacionales. Diseño de pruebas de evaluación práctica en banco de trabajo (lectura de diagramas, uso de instrumentos y diagnóstico lógico de fallas). Esquemas de aprendizaje continuo en planta y el rol del mentor técnico (*Ausbilder*) para la transferencia de habilidades en el puesto.",
-         "Cierre (15 min): Pautas para la aplicación del instrumento de evaluación técnica en sus plantas y consignas de trabajo.",
-         "Microsoft Teams, matriz de competencias en Excel, guía de pruebas prácticas, Kinal.academy.",
-         "Matriz de competencias técnicas operativas y esquema de capacitación en puesto de trabajo.", "2 Horas (120 min)"),
+        # MÓDULO 4
+        ("Módulo 4: Fortalecimiento y Validación de Competencias Técnicas: El Nivel Técnico Superior (TSU) como Respaldo Industrial", 
+         "Sesión Virtual 3 (Semana 3 — Microsoft Teams)  |  2 Horas (120 min)",
+         "Mapeo de Competencias de Planta, el TSU como Mecanismo de Validación y Evaluación Práctica en Puesto",
+         "Diseña instrumentos objetivos para mapear y evaluar competencias técnicas operativas y articula el nivel Técnico Superior (TSU) como mecanismo de validación rigurosa y respaldo para la industria.",
+         "Apertura (15 min): Sondeo interactivo: '¿Cómo evalúa hoy en día si un técnico domina el diagnóstico analítico de un PLC o sistema electromecánico antes de asignarle la línea crítica?'.",
+         "Desarrollo (90 min con pausa de 10 min): Mapeo de competencias operativas bajo estándares internacionales (DQR). El Técnico Superior Universitario (TSU) como mecanismo riguroso de validación de competencias técnicas: acreditación de capacidades superiores en diagnóstico, interpretación de diagramas y cálculo aplicado. Por qué la industria requiere el respaldo del nivel superior técnico para cerrar la brecha entre ingeniería y piso de planta. Diseño de pruebas prácticas en banco de trabajo y el rol del mentor técnico (*Ausbilder*) para la transferencia en el puesto.",
+         "Cierre (15 min): Presentación de la matriz de validación técnica de planta y asignación del entregable en Kinal.academy.",
+         "Microsoft Teams, marco curricular TSU Kinal, matriz de competencias técnicas en Excel, Kinal.academy.",
+         "Actividad Formativa Evaluable 4: Guía de Evaluación Práctica y Matriz de Validación Técnica de Planta bajo el Estándar de Competencias del Técnico Superior (TSU). Ponderación: 20 Puntos."),
 
-        # ENCUENTRO 5
-        ("Sesión Virtual 4 (Semana 4 — Microsoft Teams)", "Desarrollo de Mandos Medios",
+        # MÓDULO 5
+        ("Módulo 5: Desarrollo de Mandos Medios y Supervisión de Primera Línea", 
+         "Sesión Virtual 4 (Semana 4 — Microsoft Teams)  |  2 Horas (120 min)",
          "Herramientas para Supervisores de Primera Línea, Feedback Asertivo y Micro-Charlas de Valores",
-         "Estructura un plan de fortalecimiento para mandos medios que vincule el liderazgo con indicadores operativos (OEE, SSO) y consolida la Ficha Diagnóstica de Necesidades Industriales.",
+         "Estructura un plan de fortalecimiento para mandos medios que vincule el liderazgo formativo con indicadores operativos (OEE, SSO) y consolida el plan de acción empresarial.",
          "Apertura (15 min): Encuadre: el supervisor de taller como puente crítico entre la dirección estratégica y el piso operativo.",
-         "Desarrollo (90 min con pausa de 10 min): Habilidades formativas para mandos medios: comunicación asertiva, retroalimentación correctiva sin humillar y manejo constructivo de conflictos en cuadrillas. Diseño y ejecución de 'Las Charlas de 10 Minutos de Factor Humano' antes de iniciar el turno. Correlación entre factor humano y KPIs de negocio (OEE, tasa de accidentes SSO y merma). Revisión final de la Ficha Diagnóstica de Necesidades Industriales.",
-         "Cierre (15 min): Instrucciones protocolarias para la Jornada Presencial de Cierre, entrega de diplomas y reconocimientos en campus Kinal.",
-         "Microsoft Teams, guía de micro-charlas de valores, formato de diagnóstico de necesidades, Kinal.academy.",
-         "Catálogo de 5 micro-charlas de Factor Humano y Ficha Diagnóstica de Necesidades Industriales completada.", "2 Horas (120 min)"),
+         "Desarrollo (90 min con pausa de 10 min): Habilidades formativas para mandos medios: comunicación asertiva, retroalimentación correctiva sin humillar y manejo constructivo de conflictos en cuadrillas. Diseño y ejecución de 'Las Charlas de 10 Minutos de Factor Humano' antes de iniciar el turno. Correlación entre factor humano y KPIs de negocio (OEE, tasa de accidentes SSO y merma). Consolidación final de la propuesta de mejora técnica para la jornada de clausura.",
+         "Cierre (15 min): Instrucciones protocolarias para la Jornada Presencial de Cierre, sustentación de planes y entrega de distinciones en campus Kinal.",
+         "Microsoft Teams, guía de micro-charlas de valores, formato de consolidación de plan de acción, Kinal.academy.",
+         "Actividad Formativa Evaluable 5: Plan de Coaching para Mandos Medios y Catálogo de 5 Micro-Charlas de Factor Humano para el Inicio de Turno (vinculadas a KPIs OEE/SSO). Ponderación: 15 Puntos."),
 
-        # ENCUENTRO 6
-        ("Jornada Presencial Especial 2 (Campus Kinal)", "Plenaria Industria-Academia y Clausura",
+        # MÓDULO 6
+        ("Módulo 6: Sistematización de Demandas Industriales, Acuerdos de Vinculación y Clausura", 
+         "Jornada Presencial Especial 2 (Campus Kinal)  |  4 Horas (240 min)",
          "Mesa Redonda Plenaria: Sistematización de Necesidades Industriales, Diplomas y Reconocimientos",
-         "Participa activamente en la sistematización de demandas formativas de la industria y recibe el diploma de participación y reconocimiento corporativo de Fundación Kinal.",
-         "Apertura (20 min): Bienvenida protocolaria en Auditorio Ejecutivo por el Consejo Directivo y Directores Académicos de Kinal.",
-         "Desarrollo (190 min con pausa de 20 min): Mesa Redonda Plenaria: 'Construyendo el futuro de la educación técnica en Guatemala'. Presentación de los hallazgos consolidados de las fichas diagnósticas: qué competencias técnicas y humanas demanda prioritariamente el sector industrial. Diálogo abierto con las autoridades de Kinal para la retroalimentación de planes de estudio y actualización de carreras. Firma de compromisos y convenios marco de vinculación (bolsa de empleo y semilleros formativos).",
+         "Participa activamente en la sustentación del plan de acción empresarial, la retroalimentación de planes curriculares de Kinal y recibe el diploma de participación y reconocimiento corporativo.",
+         "Apertura (20 min): Bienvenida protocolaria en Auditorio Ejecutivo por el Consejo Directivo y Directores Académicos de Fundación Kinal.",
+         "Desarrollo (190 min con pausa de 20 min): Mesa Redonda Plenaria: 'Construyendo la Pertinencia Técnica de Guatemala'. Sustentación ejecutiva de los planes de acción y matrices diagnósticas por parte de los representantes empresariales. Diálogo abierto con las autoridades de Kinal para la retroalimentación de planes de estudio del nivel Técnico Superior y carreras técnicas. Formalización de acuerdos de cooperación institucional (bolsa de empleo prioritaria, semilleros y pasantías).",
          "Cierre (30 min): Acto solemne de clausura: Entrega de Diplomas de Participación Individual a los representantes empresariales y entrega de Reconocimientos Empresariales Especiales a las empresas aliadas. Brindis de honor y networking directivo.",
          "Auditorio Ejecutivo de Kinal, actas de evaluación, diplomas oficiales encuadernados, placas de reconocimiento empresarial, cóctel.",
-         "Diplomas de Participación y Reconocimientos Empresariales oficialmente entregados (Acreditación institucional >= 75 Pts).", "4 Horas (240 min)")
+         "Actividad Formativa Evaluable 6: Sustentación Plenaria del Plan de Acción Empresarial y Firma de Acuerdos de Vinculación Institucional. Ponderación: 20 Puntos.")
     ]
 
-    for ses_nom, eje_nom, tema_nom, obj_esp, act_ap, act_des, act_cie, rec_did, prod_obs, dur_txt in sesiones_detalladas:
+    for mod_nom, ses_form, tema_nom, obj_esp, act_ap, act_des, act_cie, rec_did, prod_obs in sesiones_detalladas:
         p_tit = doc.add_paragraph()
-        style_heading(p_tit, f"{ses_nom} — {tema_nom}", level=2)
+        style_heading(p_tit, mod_nom, level=2)
 
         tbl_s = doc.add_table(rows=7, cols=2)
         tbl_s.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -290,18 +296,18 @@ def generate_dosificacion_doc():
         set_table_borders(tbl_s, color="CBD5E0", sz="4")
 
         s_rows = [
-            ("Eje y Duración:", f"{eje_nom}  |  {dur_txt}"),
+            ("Formato y Duración:", ses_form),
             ("Objetivo Específico:", obj_esp),
             ("Secuencia Didáctica — Apertura:", act_ap),
             ("Secuencia Didáctica — Desarrollo:", act_des),
             ("Secuencia Didáctica — Cierre:", act_cie),
             ("Recursos y Plataformas:", rec_did),
-            ("Entregable y Evidencia:", prod_obs)
+            ("Actividad Formativa Evaluable:", prod_obs)
         ]
 
         for r_idx, (etiq, cont) in enumerate(s_rows):
             row = tbl_s.rows[r_idx]
-            if "Presencial" in ses_nom or "Jornada" in ses_nom:
+            if "Presencial" in ses_form:
                 set_cell_background(row.cells[0], "EBF8FF")
             else:
                 set_cell_background(row.cells[0], "F7FAFC")
@@ -331,38 +337,40 @@ def generate_dosificacion_doc():
     doc.add_page_break()
 
     # =========================================================================
-    # 3. INSTRUMENTOS DE EVALUACIÓN, RÚBRICA Y FICHA DIAGNÓSTICA
+    # 3. INSTRUMENTOS DE EVALUACIÓN Y RÚBRICA MODULAR (100 PUNTOS)
     # =========================================================================
     h1_3 = doc.add_paragraph()
-    style_heading(h1_3, "3. Instrumentos de Acreditación, Rúbrica y Ficha Diagnóstica de la Industria", level=1)
+    style_heading(h1_3, "3. Instrumentos de Acreditación, Rúbrica Modular y Matriz Diagnóstica", level=1)
 
     add_callout(doc,
-        "Para recibir el Diploma de Participación Individual y el Reconocimiento Empresarial Institucional de Fundación Kinal, el representante debe cumplir con un mínimo del 80% de asistencia sincrónica y alcanzar una calificación mínima de 75 puntos sobre 100 en la entrega de sus productos aplicativos y participación en las mesas de diálogo.",
+        "Para hacerse acreedor al Diploma de Participación Individual y al Reconocimiento Empresarial Institucional de Fundación Kinal, el representante debe cumplir con un mínimo del 80% de asistencia sincrónica y alcanzar una calificación mínima de 75 puntos sobre 100 en el consolidado de las 6 actividades formativas evaluables del programa.",
         bold_prefix="Requisitos de Acreditación Institucional:")
 
     p_rub = doc.add_paragraph()
-    style_heading(p_rub, "3.1 Rúbrica Analítica de Acreditación y Participación Ejecutiva (100 Puntos)", level=2)
+    style_heading(p_rub, "3.1 Rúbrica Analítica de las 6 Actividades Formativas Evaluables (100 Puntos Totales)", level=2)
 
     rubrica_data = [
-        ("Participación en Sesiones y Mesas de Diálogo", "25 Puntos", "Participa activamente en las 2 jornadas presenciales y sesiones en Teams, aportando datos de la realidad operativa y participando en el diálogo.", "Inasistencia injustificada o participación pasiva sin retroalimentación al diálogo (< 18.7 pts)."),
-        ("Descriptor por Competencias y Plan de Inducción", "25 Puntos", "Redacta un descriptor técnico riguroso basado en competencias demostrables (saber, hacer, ser) y esquema de onboarding acelerado.", "Descriptor genérico basado en requisitos burocráticos sin criterios de evaluación técnica (< 18.7 pts)."),
-        ("Protocolo de Factor Humano y Micro-Charlas", "25 Puntos", "Propone directrices claras de cero tolerancia al maltrato en planta, seguridad psicológica y diseña 5 micro-charlas de valores.", "Planteamiento abstracto sin aplicación práctica a las dinámicas de taller o cuadrilla (< 18.7 pts)."),
-        ("Ficha Diagnóstica de Necesidades Industriales", "25 Puntos", "Aporta información detallada sobre las tecnologías emergentes, competencias técnicas y humanas demandadas en su sector para retroalimentar a Kinal.", "Ficha incompleta, superficial o sin datos sobre las brechas reales de cualificación técnica (< 18.7 pts).")
+        ("Módulo 1: Matriz Diagnóstica de Necesidades y Brechas", "15 Puntos", "Identifica con precisión puestos críticos, desfases de cualificación operativa y tecnologías emergentes de su planta.", "Diagnóstico genérico o superficial sin datos específicos de la realidad técnica de planta (< 11.2 pts)."),
+        ("Módulo 2: Descriptor por Competencias y Plan Onboarding", "15 Puntos", "Estructura un descriptor técnico riguroso por competencias observables (saber, hacer, ser) y plan de inducción a 30-60-90 días.", "Descriptor tradicional burocrático sin desglose de destrezas operativas ni curva de adaptación (< 11.2 pts)."),
+        ("Módulo 3: Código de Convivencia y Protocolo Cero Maltrato", "15 Puntos", "Establece normas claras de seguridad psicológica, canales de reporte de averías sin temor y erradicación del maltrato en cuadrilla.", "Directrices teóricas sin aplicabilidad directa a las dinámicas y tensiones del taller operativo (< 11.2 pts)."),
+        ("Módulo 4: Guía de Evaluación Práctica y Validación TSU", "20 Puntos", "Diseña una prueba práctica en banco de trabajo y utiliza el estándar Técnico Superior (TSU) como mecanismo de validación técnica rigurosa.", "Evaluación teórica tradicional sin pruebas de destreza manual o sin respaldo de competencias de nivel superior (< 15.0 pts)."),
+        ("Módulo 5: Plan de Coaching y 5 Micro-Charlas de Factor Humano", "15 Puntos", "Diseña 5 micro-charlas operativas de valores para inicio de turno vinculadas a KPIs medibles (OEE, reducción de accidentes SSO y merma).", "Charlas desvinculadas de la operación diaria o sin conexión con la mejora de indicadores de planta (< 11.2 pts)."),
+        ("Módulo 6: Sustentación Plenaria y Acuerdos de Vinculación", "20 Puntos", "Sustenta con solvencia el plan de acción en la mesa plenaria, aporta retroalimentación crítica a Kinal y formaliza acuerdos de vinculación.", "Participación pasiva en la plenaria sin aportes significativos a la vinculación escuela-empresa (< 15.0 pts).")
     ]
 
-    tbl_rub = doc.add_table(rows=5, cols=4)
+    tbl_rub = doc.add_table(rows=7, cols=4)
     tbl_rub.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl_rub.autofit = False
     tbl_rub.columns[0].width = Inches(1.8)
-    tbl_rub.columns[1].width = Inches(1.0)
-    tbl_rub.columns[2].width = Inches(2.2)
+    tbl_rub.columns[1].width = Inches(0.9)
+    tbl_rub.columns[2].width = Inches(2.3)
     tbl_rub.columns[3].width = Inches(1.5)
     set_table_borders(tbl_rub, color="CBD5E0", sz="4")
 
     hdr_r = tbl_rub.rows[0]
     for c in hdr_r.cells:
         set_cell_background(c, "003366")
-    for idx, text in enumerate(["Criterio Evaluado", "Ponderación", "Desempeño Excelente (Estándar Kinal)", "Desempeño Insuficiente (< 75%)"]):
+    for idx, text in enumerate(["Actividad Formativa / Módulo", "Puntos", "Desempeño Excelente (Estándar Kinal)", "Desempeño Insuficiente (< 75%)"]):
         p = hdr_r.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
         r = p.add_run(text)
@@ -389,7 +397,7 @@ def generate_dosificacion_doc():
                 r.font.bold = True
 
     p_bf = doc.add_paragraph()
-    style_heading(p_bf, "3.2 Ficha Diagnóstica: Levantamiento de Necesidades Actuales de la Industria", level=2)
+    style_heading(p_bf, "3.2 Formato de Levantamiento: Matriz Diagnóstica de Necesidades Industriales", level=2)
 
     tbl_b_fmt = doc.add_table(rows=6, cols=2)
     tbl_b_fmt.alignment = WD_TABLE_ALIGNMENT.CENTER

@@ -148,7 +148,7 @@ def generate_propuesta_doc():
 
     p_sub = doc.add_paragraph()
     style_p(p_sub, space_before=0, space_after=18)
-    r_sub = p_sub.add_run("Capacitación Gerencial y Diálogo Estratégico para Representantes de Empresas: Manejo de Personal, Liderazgo, Factor Humano, Fortalecimiento de Competencias y Necesidades Actuales de la Industria (1 Mes de Duración | Modalidad Virtual Semanal + 2 Jornadas Presenciales Especiales)")
+    r_sub = p_sub.add_run("Capacitación Gerencial y Diálogo Estratégico para Representantes de Empresas: Manejo de Personal, Liderazgo, Factor Humano, Fortalecimiento de Competencias y Validación Técnica a Nivel Superior (1 Mes de Duración | Modalidad Virtual Semanal + 2 Jornadas Presenciales Especiales)")
     r_sub.font.name = "Calibri"
     r_sub.font.size = Pt(11)
     r_sub.font.italic = True
@@ -167,8 +167,8 @@ def generate_propuesta_doc():
         ("Población Destinataria:", "Gerentes Generales, Gerentes de Operaciones/Planta/Mantenimiento, Directores y Gerentes de Talento Humano / RRHH, Reclutadores y Mandos Medios con equipos a su cargo"),
         ("Duración Total:", "1 mes de duración (4 semanas) | 16 horas de contacto sincrónico/presencial + 4 horas de autodiagnóstico empresarial (20 horas formativas ejecutivas totales)"),
         ("Modalidad Híbrida Ejecutiva:", "Híbrida: 1 sesión virtual semanal de 2 horas en Microsoft Teams (8h virtuales) + 2 jornadas presenciales especiales en campus Kinal (8h presenciales)"),
-        ("Jornadas Presenciales Especiales:", "1) Sesión Inicial de Apertura, Presentación de la Iniciativa y Diálogo (Kinal) | 2) Jornada de Cierre, Plenaria de Necesidades Industriales y Entrega de Diplomas y Reconocimientos (Kinal)"),
-        ("Los 5 Ejes Temáticos Oficiales:", "1. Manejo y desarrollo de personal | 2. Liderazgo y factor humano | 3. Fortalecimiento de competencias técnicas | 4. Desarrollo de mandos medios | 5. Necesidades actuales de la industria"),
+        ("Organización Curricular:", "6 Módulos Temáticos (Un módulo por sesión: Módulo 1 en Apertura, Módulos 2 a 5 en Virtuales, Módulo 6 en Cierre) con una Actividad Formativa Evaluable por sesión"),
+        ("Ejes Temáticos Oficiales:", "Manejo y desarrollo de personal, Liderazgo y factor humano, Fortalecimiento de competencias técnicas y validación TSU, Desarrollo de mandos medios, y Necesidades actuales de la industria"),
         ("Acreditación y Reconocimiento:", "Diploma de Participación Individual y Reconocimiento Empresarial Institucional otorgado por Fundación Kinal a la empresa y a su representante (Aprobación >= 75 pts)"),
         ("Sede Presencial:", "Fundación Kinal — Auditorio Ejecutivo y Complejo de Talleres y Laboratorios de Formación Técnica, Zona 7, Ciudad de Guatemala")
     ]
@@ -228,63 +228,32 @@ def generate_propuesta_doc():
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 2. FUNDAMENTACIÓN ESTRATÉGICA: CAPACITACIÓN GERENCIAL Y DIÁLOGO EMPRESARIAL
+    # 2. FUNDAMENTACIÓN ESTRATÉGICA: VALIDACIÓN TÉCNICA Y COMPETENCIAS A NIVEL SUPERIOR
     # =========================================================================
     h1_2 = doc.add_paragraph()
-    style_heading(h1_2, "2. Fundamentación: Capacitación para Líderes y Vinculación con la Industria", level=1)
+    style_heading(h1_2, "2. Fundamentación Estratégica: El Nivel Técnico Superior como Respaldo Industrial", level=1)
 
     p_met = doc.add_paragraph()
     style_p(p_met, space_before=0, space_after=6)
-    r = p_met.add_run("Este programa responde a una doble necesidad estratégica del sector empresarial y educativo guatemalteco:\n"
-                      "1. Dotar a los Gerentes y Líderes de Herramientas Prácticas de Gestión Humana y Técnica: Los directivos y mandos medios enfrentan diariamente el reto de liderar cuadrillas operativas, acelerar curvas de aprendizaje, resolver conflictos de piso, evaluar competencias y reducir la rotación prematura de personal.\n"
-                      "2. Conocer de Primera Mano las Necesidades Actuales de la Industria: Las tecnologías operativas (automatización, IoT industrial, robótica, redes y mantenimiento predictivo) demandan una constante actualización. Kinal abre este espacio de diálogo para escuchar a las empresas y retroalimentar la formación de sus estudiantes y egresados técnicos, fortaleciendo el vínculo escuela-empresa.")
+    r = p_met.add_run("La manufactura y los servicios técnicos contemporáneos en Guatemala han alcanzado niveles de sofisticación tecnológica (automatización de líneas, PLCs avanzados, instrumentación de precisión, redes industriales y mantenimiento predictivo) que vuelven obsoleto el aprendizaje puramente empírico e intuitivo.\n\n"
+                      "En este contexto, la industria requiere certidumbre y respaldo objetivo:\n"
+                      "• El Técnico Superior Universitario (TSU) como Mecanismo de Validación de Competencias: La acreditación técnica a nivel superior formaliza y avala que el personal operativo y de supervisión domina el cálculo aplicado, el diagnóstico analítico de fallas, la lectura de planos normalizados y los protocolos de seguridad industrial. El TSU no compite con la ingeniería de diseño ni sustituye al operario de rutina: se constituye en el respaldo técnico y metodológico más confiable para las jefaturas de planta.\n"
+                      "• Importancia de las Competencias a Nivel Superior en el Área Técnica: Formar mandos medios con competencias superiores técnicas permite cerrar la brecha entre la planeación gerencial y la ejecución en piso, reduciendo paradas no programadas, averías por impericia y retrabajos costosos.\n"
+                      "• Capacitación Gerencial para Auditar y Fortalecer Equipos: Los gerentes participantes adquieren herramientas objetivas para diagnosticar el nivel real de destrezas de sus colaboradores y estructurar planes de desarrollo técnico continuo en sus empresas.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 3. LOS 5 EJES TEMÁTICOS OFICIALES DEL PROGRAMA
+    # 3. COMPETENCIA GENERAL Y PERFILES DEL PARTICIPANTE
     # =========================================================================
     h1_3 = doc.add_paragraph()
-    style_heading(h1_3, "3. Articulación de los 5 Ejes Temáticos del Programa", level=1)
-
-    ejes = [
-        ("1. Manejo y Desarrollo de Personal", 
-         "Métodos directivos de atracción e inducción técnica acelerada (onboarding en 30-60-90 días). Gestión de la curva de aprendizaje en piso de planta, diseño de planes de carrera operativa y estrategias de fidelización para mitigar la rotación prematura."),
-        ("2. Liderazgo y Factor Humano", 
-         "La filosofía del Factor Humano de Fundación Kinal aplicada a cuadrillas: dignidad de la persona, erradicación del maltrato verbal y el autoritarismo en talleres, seguridad psicológica para el reporte de averías/incidentes y cultura del «trabajo bien hecho»."),
-        ("3. Fortalecimiento de Competencias Técnicas", 
-         "Mapeo y diseño de matrices de competencias operativas observables (saber, saber hacer y saber ser). Evaluación técnica práctica en el puesto de trabajo y esquemas de aprendizaje continuo y formación dual escuela-empresa."),
-        ("4. Desarrollo de Mandos Medios", 
-         "Herramientas formativas para supervisores de primera línea, jefes de taller y jefes de turno: comunicación asertiva, retroalimentación constructiva, resolución de conflictos de equipo, liderazgo pedagógico (*Ausbilder*) y 'Charlas de 10 minutos de Factor Humano'."),
-        ("5. Necesidades Actuales de la Industria (Eje de Diálogo)", 
-         "Espacio formal y estructurado de diálogo bidireccional en las dos jornadas presenciales especiales, donde las empresas comparten sus requerimientos tecnológicos, brechas operativas y destrezas demandadas para retroalimentar los planes formativos de Kinal.")
-    ]
-
-    for e_tit, e_desc in ejes:
-        p_e = doc.add_paragraph()
-        style_p(p_e, space_before=2, space_after=4)
-        p_e.paragraph_format.left_indent = Inches(0.2)
-        r_b = p_e.add_run(f"• {e_tit}: ")
-        r_b.font.name = "Calibri"
-        r_b.font.size = Pt(9.5)
-        r_b.font.bold = True
-        r_b.font.color.rgb = COLOR_PRIMARY
-        r_d = p_e.add_run(e_desc)
-        r_d.font.name = "Calibri"
-        r_d.font.size = Pt(9.5)
-        r_d.font.color.rgb = COLOR_DARK
-
-    # =========================================================================
-    # 4. COMPETENCIA GENERAL Y PERFILES DEL PARTICIPANTE
-    # =========================================================================
-    h1_4 = doc.add_paragraph()
-    style_heading(h1_4, "4. Competencia General y Perfil de los Participantes", level=1)
+    style_heading(h1_3, "3. Competencia General y Perfil de los Participantes", level=1)
 
     p_comp = doc.add_paragraph()
     style_p(p_comp, space_before=0, space_after=6)
     r = p_comp.add_run("Competencia General del Programa:\n"
-                       "El participante aplica herramientas gerenciales contemporáneas para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, integrando la cultura del Factor Humano y el estándar del «trabajo bien hecho» en sus cuadrillas, y participa activamente en el diálogo de vinculación industria-academia para identificar y alinear las competencias técnicas y humanas requeridas por el sector productivo.")
+                       "El participante formula e implementa estrategias gerenciales para el manejo, desarrollo y liderazgo de personal operativo y mandos medios, incorporando la cultura del Factor Humano y el estándar del «trabajo bien hecho», y utiliza los criterios del Técnico Superior Universitario (TSU) como marco de validación y fortalecimiento de competencias técnicas a nivel superior para responder a las necesidades actuales de la industria.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.bold = True
@@ -292,32 +261,32 @@ def generate_propuesta_doc():
 
     p_perfiles = doc.add_paragraph()
     style_p(p_perfiles, space_before=4, space_after=6)
-    r = p_perfiles.add_run("• Perfil de Ingreso: Gerentes Generales, Gerentes de Operaciones, Planta o Mantenimiento, Directores/Gerentes de Talento Humano y Recursos Humanos, Jefes de Reclutamiento y Supervisores Generales con responsabilidad sobre equipos técnicos en sectores como manufactura, agroindustria, alimentos, plásticos, telecomunicaciones, energía y servicios técnicos.\n"
-                            "• Perfil de Egreso: Líder empresarial capacitado en metodologías de supervisión formativa, con visión estratégica del talento operativo, capaz de erradicar el maltrato en sus áreas de trabajo, fortalecer las competencias técnicas de su personal y colaborar activamente con Fundación Kinal en iniciativas de empleabilidad y formación técnica.")
+    r = p_perfiles.add_run("• Perfil de Ingreso: Gerentes Generales, Gerentes de Operaciones, Planta o Mantenimiento, Directores/Gerentes de Talento Humano y Recursos Humanos, Jefes de Reclutamiento y Supervisores Generales con responsabilidad sobre equipos técnicos en sectores industriales de Guatemala.\n"
+                            "• Perfil de Egreso: Líder empresarial capacitado en metodologías de supervisión formativa, con capacidad para auditar competencias técnicas operativas con estándares de nivel superior, erradicar el maltrato en planta, estructurar semilleros de aprendizaje y vincular a su empresa con Fundación Kinal.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 5. ESTRUCTURA FORMATIVA Y CALENDARIO OFICIAL (1 MES)
+    # 4. ESTRUCTURA MODULAR: UN MÓDULO POR SESIÓN CON ACTIVIDAD EVALUABLE
     # =========================================================================
-    h1_5 = doc.add_paragraph()
-    style_heading(h1_5, "5. Estructura Formativa Oficial (1 Mes de Duración | Híbrido Ejecutivo)", level=1)
+    h1_4 = doc.add_paragraph()
+    style_heading(h1_4, "4. Estructura Curricular: Un Módulo por Sesión y Actividades Evaluables", level=1)
 
     p_est_desc = doc.add_paragraph()
     style_p(p_est_desc, space_before=0, space_after=6)
-    r = p_est_desc.add_run("El programa articula **1 sesión semanal virtual** a lo largo de un mes con **2 jornadas presenciales especiales** en las instalaciones de Fundación Kinal, garantizando un formato ágil y de alto impacto para los ejecutivos:")
+    r = p_est_desc.add_run("El programa se organiza en **6 Módulos Formativos (un módulo por sesión)**, cada uno dotado de una **Actividad Formativa Evaluable** que asegura la transferencia inmediata de herramientas gerenciales a la empresa:")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     modulos_data = [
-        ("Jornada Especial 1 (Presencial)", "Apertura Institucional, Presentación de la Iniciativa y Mesa de Diálogo 1: Necesidades de la Industria", "4 Horas", "Presencial en Campus Kinal (8:30 a 12:30 hrs)", "Ficha Diagnóstica Inicial de Necesidades y Expectativas"),
-        ("Semana 1 / Sesión Virtual 1", "Manejo y Desarrollo de Personal Técnico: Atracción, Inducción Acelerada y Retención", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Descriptor de Puesto por Competencias y Plan de Inducción"),
-        ("Semana 2 / Sesión Virtual 2", "Liderazgo y Factor Humano: Dignidad en el Trabajo, Trabajo Bien Hecho y Erradicación del Maltrato", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Código de Convivencia Operativa y Protocolo Cero Maltrato"),
-        ("Semana 3 / Sesión Virtual 3", "Fortalecimiento de Competencias Técnicas: Mapeo de Destrezas, Evaluación y Aprendizaje Continuo", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Matriz de Competencias Operativas y Plan de Capacitación en Piso"),
-        ("Semana 4 / Sesión Virtual 4", "Desarrollo de Mandos Medios: Herramientas para Supervisores, Feedback Asertivo y Micro-Charlas", "2 Horas", "Virtual Sincrónico (Microsoft Teams)", "Catálogo de 5 Micro-Charlas de Factor Humano para el Turno"),
-        ("Jornada Especial 2 (Presencial)", "Mesa Redonda Plenaria: Sistematización de Demandas Industriales, Entrega de Diplomas y Reconocimientos", "4 Horas", "Presencial en Campus Kinal (8:30 a 12:30 hrs)", "Diplomas Oficiales Entregados y Acuerdos de Vinculación")
+        ("Módulo 1 (Presencial)", "Apertura Institucional, Presentación de la Iniciativa y Diagnóstico de Necesidades Industriales", "4 Horas", "Presencial en Campus Kinal", "Matriz Diagnóstica de Necesidades Industriales y Brechas Técnicas"),
+        ("Módulo 2 (Virtual 1)", "Manejo y Desarrollo de Personal Técnico: Atracción, Inducción Acelerada y Retención", "2 Horas", "Virtual Sincrónico (Teams)", "Descriptor de Puesto por Competencias y Plan de Onboarding (30-60-90 Días)"),
+        ("Módulo 3 (Virtual 2)", "Liderazgo y Factor Humano en Cuadrillas: Dignidad, Trabajo Bien Hecho y Cero Maltrato", "2 Horas", "Virtual Sincrónico (Teams)", "Código de Convivencia Operativa y Protocolo de Seguridad Psicológica"),
+        ("Módulo 4 (Virtual 3)", "Fortalecimiento de Competencias Técnicas: El Nivel Técnico Superior (TSU) como Respaldo", "2 Horas", "Virtual Sincrónico (Teams)", "Matriz de Validación Técnica de Planta bajo Estándar de Competencias TSU"),
+        ("Módulo 5 (Virtual 4)", "Desarrollo de Mandos Medios: Supervisión de Primera Línea, Feedback y Charlas de Valores", "2 Horas", "Virtual Sincrónico (Teams)", "Plan de Coaching para Supervisores y Catálogo de 5 Micro-Charlas de Factor Humano"),
+        ("Módulo 6 (Presencial)", "Plenaria de Diálogo Industria-Academia, Acuerdos de Vinculación y Clausura", "4 Horas", "Presencial en Campus Kinal", "Sustentación Plenaria del Plan de Acción y Entrega de Diplomas Oficiales")
     ]
 
     tbl_mod = doc.add_table(rows=7, cols=5)
@@ -333,7 +302,7 @@ def generate_propuesta_doc():
     hdr_mod = tbl_mod.rows[0]
     for c in hdr_mod.cells:
         set_cell_background(c, "003366")
-    headers_mod_txt = ["Encuentro / Modalidad", "Eje Temático / Actividad", "Horas", "Formato / Plataforma", "Producto Observable"]
+    headers_mod_txt = ["Módulo / Formato", "Nombre del Módulo", "Horas", "Modalidad / Plataforma", "Actividad Formativa Evaluable"]
     for idx, text in enumerate(headers_mod_txt):
         p = hdr_mod.cells[idx].paragraphs[0]
         style_p(p, space_before=0, space_after=0)
@@ -345,7 +314,7 @@ def generate_propuesta_doc():
 
     for idx, (m_id, m_nom, m_hrs, m_ses, m_prod) in enumerate(modulos_data, start=1):
         row = tbl_mod.rows[idx]
-        if "Presencial" in m_id or "Jornada" in m_id:
+        if "Presencial" in m_id:
             for c in row.cells:
                 set_cell_background(c, "EBF8FF")
         elif idx % 2 == 1:
@@ -366,57 +335,57 @@ def generate_propuesta_doc():
     p_balance = doc.add_paragraph()
     style_p(p_balance, space_before=8, space_after=6)
     r = p_balance.add_run("Balance Formativo:\n"
-                          "• 8 Horas Presenciales Vivenciales (2 Jornadas Especiales en Kinal): Apertura institucional, recorrido guiado de talleres, networking y 2 mesas de diálogo sobre necesidades de la industria, culminando con la entrega protocolaria de diplomas y reconocimientos.\n"
-                          "• 8 Horas Virtuales Sincrónicas en Microsoft Teams: 4 sesiones semanales de 2 horas (1 sesión por semana) dedicadas a herramientas gerenciales en manejo de personal, liderazgo humanista, competencias operativas y mandos medios.\n"
-                          "• 4 Horas de Autodiagnóstico en Kinal.academy (Moodle): Ficha diagnóstica de necesidades de cualificación y plan de mejora operativa para su equipo.\n"
+                          "• 8 Horas Presenciales Vivenciales (Módulos 1 y 6 en Campus Kinal): Apertura institucional, inmersión en talleres técnicos, mesas de diálogo industria-academia, acuerdos de vinculación y entrega solemne de diplomas y reconocimientos.\n"
+                          "• 8 Horas Virtuales Sincrónicas en Microsoft Teams (Módulos 2 a 5): 4 sesiones semanales de 2 horas dedicadas a herramientas gerenciales en manejo de personal, liderazgo humanista, competencias técnicas nivel superior (TSU) y mandos medios.\n"
+                          "• 4 Horas de Autodiagnóstico en Kinal.academy (Moodle): Consolidación de instrumentos de gestión técnica y plan de acción empresarial.\n"
                           "• Total: 20 Horas Formativas Ejecutivas.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 6. ESTRATEGIA ANDRAGÓGICA Y ESPACIOS DE DIÁLOGO
+    # 5. METODOLOGÍA ANDRAGÓGICA Y CAJA DE HERRAMIENTAS
     # =========================================================================
-    h1_6 = doc.add_paragraph()
-    style_heading(h1_6, "6. Metodología Andragógica de Formación Gerencial", level=1)
+    h1_5 = doc.add_paragraph()
+    style_heading(h1_5, "5. Metodología Andragógica de Formación Gerencial", level=1)
 
     p_metod = doc.add_paragraph()
     style_p(p_metod, space_before=0, space_after=6)
-    r = p_metod.add_run("El programa emplea un enfoque andragógico participativo adaptado a directivos y líderes de talento:\n"
-                        "1. Estudio de Casos Gerenciales: Análisis de situaciones críticas de piso de planta (resistencia al cambio, conflictos entre áreas de mantenimiento y producción, supervisores autoritarios, curvas lentas de onboarding).\n"
-                        "2. Mesas de Diálogo Industria-Kinal: Espacios formales donde la gerencia retroalimenta a la academia sobre los perfiles técnicos requeridos en el mercado.\n"
-                        "3. Caja de Herramientas de Gestión: Plantillas editables de descriptores por competencias, protocolos contra el maltrato y formatos de micro-charlas de valores listas para aplicar en la empresa.")
+    r = p_metod.add_run("El programa aplica un modelo andragógico dinámico diseñado para la alta dirección y líderes de área:\n"
+                        "1. Dinámica de Casos Gerenciales: Discusión de escenarios reales de planta (retrasos de producción, supervisores autoritarios, resistencia al reporte de averías, curvas lentas de adaptación técnica).\n"
+                        "2. Entregables Prácticos por Módulo: Cada sesión culmina con una herramienta técnica directamente aplicable en la empresa del participante (descriptores, protocolos, matrices y micro-charlas).\n"
+                        "3. Espacios Formales de Diálogo Industria-Academia: Intercambio bidireccional donde los gerentes aportan retroalimentación crítica sobre las demandas actuales de cualificación técnica.")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 7. ACREDITACIÓN, DIPLOMAS Y RECONOCIMIENTOS EMPRESARIALES
+    # 6. ACREDITACIÓN, DIPLOMAS Y RECONOCIMIENTOS EMPRESARIALES
     # =========================================================================
-    h1_7 = doc.add_paragraph()
-    style_heading(h1_7, "7. Acreditación Institucional, Diplomas y Reconocimientos", level=1)
+    h1_6 = doc.add_paragraph()
+    style_heading(h1_6, "6. Acreditación Institucional, Diplomas y Reconocimientos", level=1)
 
     p_acred = doc.add_paragraph()
     style_p(p_acred, space_before=0, space_after=6)
-    r = p_acred.add_run("En la Jornada Presencial de Cierre en campus Kinal se realizará un acto protocolario especial con dos distinciones oficiales:\n"
-                        "1. Diploma de Participación Individual: Otorgado al representante empresarial que cumplió con el 80% de asistencia a las sesiones sincrónicas y la entrega de sus productos aplicativos (con nota mínima aprobatoria institucional de 75/100 puntos).\n"
-                        "2. Reconocimiento Empresarial Institucional: Galardón emitido por Fundación Kinal a la empresa participante, acreditándola como «Empresa Aliada en la Vinculación Técnica y Formación del Talento Humano», con acceso prioritario a la Bolsa de Egresados y convenios formativos.")
+    r = p_acred.add_run("En el Módulo 6 (Jornada Presencial de Cierre) en campus Kinal se realizará la ceremonia de clausura con dos acreditaciones oficiales:\n"
+                        "1. Diploma de Participación Individual: Otorgado al representante empresarial que cumplió con el 80% de asistencia a las sesiones sincrónicas y la entrega de sus actividades formativas (nota mínima aprobatoria de 75/100 puntos).\n"
+                        "2. Reconocimiento Empresarial Institucional: Galardón otorgado por Fundación Kinal a la empresa participante, acreditándola como «Empresa Aliada en la Vinculación Técnica y Formación del Talento Humano».")
     r.font.name = "Calibri"
     r.font.size = Pt(10)
     r.font.color.rgb = COLOR_DARK
 
     # =========================================================================
-    # 8. PLATAFORMAS TECNOLÓGICAS E INFRAESTRUCTURA
+    # 7. PLATAFORMAS TECNOLÓGICAS E INFRAESTRUCTURA
     # =========================================================================
-    h1_8 = doc.add_paragraph()
-    style_heading(h1_8, "8. Ecosistema Digital e Infraestructura Institucional", level=1)
+    h1_7 = doc.add_paragraph()
+    style_heading(h1_7, "7. Ecosistema Digital e Infraestructura Institucional", level=1)
 
     p_infra = doc.add_paragraph()
     style_p(p_infra, space_before=0, space_after=6)
     r = p_infra.add_run("En cumplimiento de los estándares institucionales de Fundación Kinal:\n"
-                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las 4 sesiones semanales interactivas, con salas de trabajo grupal y grabación de respaldo.\n"
-                        "• Plataforma LMS Oficial: Kinal.academy (Moodle) para la gestión del material de lectura, instrumentos de autodiagnóstico y levantamiento de necesidades de la industria.\n"
-                        "• Instalaciones Presenciales en Kinal: Auditorio Ejecutivo climatizado con soporte audiovisual, salas de networking directivo y recorrido guiado por talleres y laboratorios de formación técnica.")
+                        "• Plataforma Virtual Sincrónica: Microsoft Teams para las sesiones virtuales semanales, con salas de trabajo grupal y repositorio de grabaciones.\n"
+                        "• Plataforma LMS Oficial: Kinal.academy (Moodle) para la descarga de lecturas, plantillas gerenciales y entrega de actividades evaluables.\n"
+                        "• Instalaciones Presenciales en Kinal: Auditorio Ejecutivo climatizado con soporte multimedia, salas de trabajo directivo y recorrido por los talleres y laboratorios de formación técnica.")
     r.font.name = "Calibri"
     r.font.size = Pt(9.5)
     r.font.color.rgb = COLOR_DARK
@@ -431,7 +400,6 @@ def generate_propuesta_doc():
     run_f.font.size = Pt(8.5)
     run_f.font.color.rgb = COLOR_SECONDARY
 
-    # Guardar en ambas ubicaciones para total consistencia
     for out_dir in [os.path.join("Cursos", "Talento_Tecnico"), "Talento_Tecnico"]:
         os.makedirs(out_dir, exist_ok=True)
         out_path = os.path.join(out_dir, "Propuesta_Diplomado_Talento_Tecnico_Kinal.docx")
