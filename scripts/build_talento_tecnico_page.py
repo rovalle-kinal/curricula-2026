@@ -51,12 +51,14 @@ for idx in range(2, 2 + num_sessions):
     
     if "Presencial" in enc_name:
         dur_str = "2 Horas (120 min)"
-        tipo_str = "Presencial Campus Kinal"
-        semana_str = f"Sesión Presencial {1 if s_num == 1 else 2}"
+        tipo_str = "Presencial en Campus Kinal"
+        semana_str = "Sesión Presencial Inicial" if s_num == 1 else "Sesión Presencial de Cierre"
+        horario_str = "Jornada Presencial Especial (Campus Kinal)"
     else:
         dur_str = "2 Horas (120 min)"
-        tipo_str = "Virtual Microsoft Teams"
+        tipo_str = "Virtual en Microsoft Teams"
         semana_str = f"Sesión Virtual {s_num - 1}"
+        horario_str = "Sesión Virtual Sincrónica (Microsoft Teams)"
 
     sessions.append({
         "num": s_num,
@@ -67,6 +69,7 @@ for idx in range(2, 2 + num_sessions):
         "duration": dur_str,
         "tipo": tipo_str,
         "semana": semana_str,
+        "horario": horario_str,
         "objective": obj,
         "apertura": ap,
         "desarrollo": des,
@@ -86,10 +89,10 @@ for t in dos_doc.tables:
 
 # Componentes de evaluación (4 Actividades Formativas Evaluables — Total: 100 Puntos)
 eval_prop_rows = [
-    ["Módulo 1: Código Convivencia y Cero Maltrato", "25 Pts", "Protocolo de respeto, seguridad psicológica y canales de reporte sin temor"],
-    ["Módulo 2: Descriptor, Onboarding y Micro-Charlas", "25 Pts", "Descriptor por competencias demostrables, curva 30-60-90 y 3 micro-charlas"],
-    ["Módulo 3: Evaluación Práctica y Validación TSU", "25 Pts", "Prueba práctica en banco y validación técnica bajo el estándar del Técnico Superior"],
-    ["Módulo 4: Sustentación Plenaria y Acuerdos", "25 Pts", "Sustentación de la ficha diagnóstica empresarial y firma de convenios de vinculación"]
+    ["Módulo 1: Factor Humano & Convivencia", "25 Pts", "Protocolo de respeto, seguridad psicológica y canales de reporte sin temor en planta"],
+    ["Módulo 2: Manejo de Personal & Micro-Charlas", "25 Pts", "Descriptor por competencias demostrables, onboarding 30-60-90 y 3 micro-charlas"],
+    ["Módulo 3: Validación Técnica Superior TSU", "25 Pts", "Prueba práctica en banco y validación técnica bajo el estándar del Técnico Superior"],
+    ["Módulo 4: Sistematización & Acuerdos", "25 Pts", "Sustentación de la ficha diagnóstica empresarial y firma de acuerdos de vinculación"]
 ]
 
 # Temario analítico estructurado en los 4 Módulos Oficiales (Un módulo por sesión de 2 horas)
@@ -240,115 +243,241 @@ html_content = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa Ejecutivo de Vinculación y Liderazgo | Fundación Kinal</title>
-    
-    <!-- Tailwind CSS -->
+    <link rel="icon" type="image/png" href="assets/escudo_kinal_cuadrado.png"><rect width='100' height='100' rx='22' fill='%2322376D'/><path d='M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z' fill='%23EC9123'/><path d='M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z' fill='%23FFD166'/></svg>">
+    <title>Gestión del Talento Técnico y Mandos Medios | Kinal 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
-    
     <style>
-        body {{
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #F8FAFC;
-        }}
-        .brand-serif {{
-            font-family: 'Cinzel', serif;
-        }}
+        body {{ font-family: Arial, Helvetica, sans-serif; background-color: #F8FAFC; color: #0F172A; }}
+        h1, h2, h3, h4, .font-heading, .brand-serif {{ font-family: 'Times New Roman', Times, serif; }}
         .hero-kinal-gradient {{
-            background: linear-gradient(135deg, #0A192F 0%, #172A45 50%, #203A43 100%);
+            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
         }}
-        .active-tab-btn {{
-            border-bottom: 3px solid #EC9123 !important;
-            color: #22376D !important;
+        .tab-btn.active {{
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }}
+        .session-item.active {{
+            background-color: #22376D !important;
+            color: #ffffff !important;
+            border-color: #22376D !important;
+        }}
+        .session-item.active span, .session-item.active p {{
+            color: #e2e8f0 !important;
+        }}
+        .session-item.active .badge-code {{
+            background-color: #EC9123 !important;
+            color: #0D162C !important;
             font-weight: 800 !important;
         }}
-        .tab-btn {{
-            border-bottom: 3px solid transparent;
-            color: #64748B;
-            font-weight: 600;
-            transition: all 0.2s ease;
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- KINAL MOBILE ENGINE - ZERO CLIPPING RESPONSIVE SYSTEM      -->
+    <!-- ========================================================= -->
+    <style id="kinal-mobile-responsive-system">
+        @media (max-width: 767px) {{
+            *, *::before, *::after {{
+                box-sizing: border-box !important;
+            }}
+            html, body {{
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-text-size-adjust: 100% !important;
+                touch-action: pan-y pinch-zoom;
+            }}
+            main, section, header, footer, 
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {{
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+            }}
+            .grid {{
+                width: 100% !important;
+                min-width: 0 !important;
+            }}
+            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {{
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                box-sizing: border-box !important;
+            }}
+            h1, h2, h3, h4, h5, p, span, a, div {{
+                overflow-wrap: break-word !important;
+                word-break: break-word !important;
+            }}
+            .no-scrollbar::-webkit-scrollbar, 
+            nav::-webkit-scrollbar,
+            .overflow-x-auto::-webkit-scrollbar {{
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }}
+            .no-scrollbar, 
+            nav,
+            .overflow-x-auto {{
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+                -webkit-overflow-scrolling: touch !important;
+            }}
+            .tab-btn, button, select, input[type="text"] {{
+                min-height: 42px;
+                touch-action: manipulation;
+            }}
+            nav.flex.overflow-x-auto, 
+            .tab-nav-wrapper {{
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
+            }}
+            nav.flex.overflow-x-auto > * {{
+                flex-shrink: 0 !important;
+            }}
+            main {{
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 14px !important;
+                padding-bottom: 24px !important;
+            }}
+            header .max-w-7xl, header .max-w-6xl {{
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }}
+            .table-responsive-mobile, 
+            .curriculum-grid-container {{
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 12px !important;
+            }}
+            .tab-btn:active, button:active, .card-hover:active, .area-course-card:active {{
+                transform: scale(0.97) !important;
+                transition: transform 0.1s ease !important;
+            }}
+            .btn-doc-group {{
+                display: grid !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 6px !important;
+            }}
+            .btn-doc-item {{
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 6px 4px !important;
+                font-size: 10px !important;
+                gap: 2px !important;
+                text-align: center !important;
+            }}
         }}
-        .tab-btn:hover {{
-            color: #1E293B;
-            border-bottom-color: #CBD5E1;
-        }}
-        .custom-scrollbar::-webkit-scrollbar {{
-            width: 6px;
-        }}
-        .custom-scrollbar::-webkit-scrollbar-track {{
-            background: #F1F5F9;
-        }}
-        .custom-scrollbar::-webkit-scrollbar-thumb {{
-            background: #CBD5E1;
-            border-radius: 4px;
-        }}
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {{
-            background: #94A3B8;
+
+        @media (max-width: 1023px) {{
+            .session-item {{
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: all 0.2s ease;
+            }}
+            [id$="-detail-card"] {{
+                scroll-margin-top: 80px;
+            }}
         }}
     </style>
 </head>
-<body class="min-h-screen flex flex-col text-slate-800 antialiased">
+<body class="min-h-screen flex flex-col antialiased pt-[115px] sm:pt-[125px]">
 
-    <!-- Top Institutional Bar -->
-    <header class="bg-[#152244] border-b border-[#22376D] text-white py-2.5 px-4 sm:px-6 lg:px-8 text-xs font-semibold">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center gap-2">
-                <span class="inline-block w-2 h-2 rounded-full bg-[#EC9123]"></span>
-                <span class="tracking-wide">FUNDACIÓN KINAL • DIRECCIÓN DE VINCULACIÓN EMPRESARIAL</span>
-            </div>
-            <div class="flex items-center gap-4 text-slate-300">
-                <span class="flex items-center gap-1.5"><i data-lucide="handshake" class="w-3.5 h-3.5 text-[#EC9123]"></i> Alianzas Industria-Academia</span>
-                <span class="hidden sm:flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Programa Acreditado</span>
+    <!-- ========================================================= -->
+    <!-- ENCABEZADO FIJO PERMANENTE UNIFICADO                      -->
+    <!-- ========================================================= -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200">
+        
+        <!-- BARRA INSTITUCIONAL SUPERIOR -->
+        <div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Fundación Kinal
+                    </span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-slate-300 font-medium hidden sm:inline">
+                        Ideario Institucional: <em>«El trabajo bien hecho»</em>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#EC9123]"></i> Ciclo Académico 2026
+                    </span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-emerald-400 font-bold flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Aval UNIS-Kinal
+                    </span>
+                </div>
             </div>
         </div>
-    </header>
 
-    <!-- Navigation Bar -->
-    <div class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-4">
-                <a href="cursos_nuevos.html" class="flex items-center gap-2.5 text-slate-600 hover:text-[#22376D] font-bold text-xs transition shrink-0">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">Catálogo de Cursos</span>
+        <!-- HEADER CORPORATIVO (LOGO ETS & BOTONES DE NAVEGACIÓN PRINCIPAL) -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex flex-wrap justify-between items-center gap-3 border-b border-slate-100">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-9 w-auto object-contain transition group-hover:opacity-90">
                 </a>
+            </div>
 
-                <!-- Tabs Navigation -->
-                <nav class="flex space-x-1 sm:space-x-2 overflow-x-auto custom-scrollbar h-full py-1">
-                    <button onclick="switchTab('propuesta')" id="btn-tab-propuesta" class="tab-btn active-tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta Formativa
+            <!-- Botones Principales: Inicio y Vuelta a Cursos Nuevos -->
+            <nav class="flex items-center gap-2 sm:gap-3 text-xs">
+                <a href="cursos_nuevos.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200" title="Volver al catálogo de cursos nuevos">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-[#EC9123]"></i> Nuevos
+                </a>
+                <a href="index.html" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap font-bold border border-slate-200">
+                    <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+                </a>
+            </nav>
+        </header>
+
+        <!-- SUB-BARRA INTEGRADA DE PESTAÑAS DEL CURSO (UNIFICADA CON EL ENCABEZADO) -->
+        <div class="bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-2 py-2 overflow-x-auto no-scrollbar text-xs font-bold">
+                    <button onclick="switchTab('propuesta')" id="btn-propuesta" class="tab-btn active px-3.5 py-1.5 rounded-lg transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Propuesta
                     </button>
-                    <button onclick="switchTab('temario')" id="btn-tab-temario" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="list-checks" class="w-3.5 h-3.5"></i> Temario Analítico (4 Módulos)
+                    <button onclick="switchTab('temario')" id="btn-temario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="list-tree" class="w-3.5 h-3.5"></i> Temario
                     </button>
-                    <button onclick="switchTab('calendario')" id="btn-tab-calendario" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario (4 Sesiones)
+                    <button onclick="switchTab('calendario')" id="btn-calendario" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Calendario
                     </button>
-                    <button onclick="switchTab('secuencias')" id="btn-tab-secuencias" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias Didácticas
+                    <button onclick="switchTab('secuencias')" id="btn-secuencias" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Secuencias
                     </button>
-                    <button onclick="switchTab('evaluacion')" id="btn-tab-evaluacion" class="tab-btn flex items-center gap-1.5 px-3 py-2 text-xs whitespace-nowrap">
-                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Acreditación & Diplomas
+                    <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5 shrink-0">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Evaluación
                     </button>
                 </nav>
             </div>
         </div>
+
     </div>
 
     <!-- Hero Course Banner -->
     <section class="hero-kinal-gradient relative overflow-hidden text-white py-10 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto space-y-3">
             <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-wide uppercase flex items-center gap-1.5">
-                    <i data-lucide="handshake" class="w-3.5 h-3.5 text-amber-300"></i> Vinculación Empresarial Kinal
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide uppercase flex items-center gap-1.5">
+                    <i data-lucide="handshake" class="w-3.5 h-3.5 text-blue-300"></i> Vinculación Empresarial Kinal
                 </span>
-                <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold">
                     Capacitación Gerencial
                 </span>
                 <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
@@ -363,13 +492,13 @@ html_content = f"""<!DOCTYPE html>
             </p>
             <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-200">
                 <span class="flex items-center gap-1.5">
-                    <i data-lucide="clock" class="w-4 h-4 text-[#EC9123]"></i> Total: 8 Horas Formativas
+                    <i data-lucide="clock" class="w-4 h-4 text-[#EC9123]"></i> Total: 8 Horas Formativas Ejecutivas
                 </span>
                 <span class="flex items-center gap-1.5">
-                    <i data-lucide="video" class="w-4 h-4 text-[#EC9123]"></i> 2 Sesiones Virtuales (Microsoft Teams)
+                    <i data-lucide="map-pin" class="w-4 h-4 text-[#EC9123]"></i> 2 Sesiones Presenciales (Campus Kinal • 4h)
                 </span>
                 <span class="flex items-center gap-1.5">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-[#EC9123]"></i> 2 Sesiones Presenciales (Campus Kinal)
+                    <i data-lucide="video" class="w-4 h-4 text-[#EC9123]"></i> 2 Sesiones Virtuales (Microsoft Teams • 4h)
                 </span>
             </div>
         </div>
@@ -383,18 +512,18 @@ html_content = f"""<!DOCTYPE html>
         <!-- ================================================================== -->
         <div id="tab-propuesta" class="tab-content space-y-8">
             
-            <!-- Ficha Técnica -->
+            <!-- Ficha Técnica (UNA SOLA TARJETA) -->
             <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
                 <div class="flex flex-wrap items-center justify-between border-b border-slate-200 pb-4 gap-2">
                     <div class="flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-900 flex items-center justify-center font-black">
-                            <i data-lucide="file-badge" class="w-4 h-4 text-[#EC9123]"></i>
+                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center font-black">
+                            <i data-lucide="file-badge" class="w-4 h-4 text-[#22376D]"></i>
                         </span>
                         <h3 class="text-xl font-black text-slate-900">
                             Ficha Técnica Oficial del Programa
                         </h3>
                     </div>
-                    <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-bold border border-amber-200">
+                    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
                         Código: VINCULACION-LIDERAZGO-2026
                     </span>
                 </div>
@@ -413,34 +542,45 @@ html_content += f"""
                 </div>
             </div>
 
-            <!-- Fundamentación y Competencia -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <h3 class="text-lg font-black text-slate-900 brand-serif flex items-center gap-2">
-                        <i data-lucide="compass" class="w-5 h-5 text-[#EC9123]"></i> Capacitación para Líderes y Diálogo Empresarial
-                    </h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Este programa responde a una doble necesidad: dotar a gerentes y directores de herramientas prácticas para liderar cuadrillas operativas, acelerar curvas de inducción, evaluar destrezas y fortalecer a sus mandos medios.
+            <!-- Marco Filosófico Kinal -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-blue-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="flag" class="w-4 h-4"></i> Misión Institucional de Fundación Kinal
+                    </div>
+                    <p class="text-slate-700 text-xs italic leading-relaxed">
+                        «Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».
                     </p>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Paralelamente, Kinal abre un espacio formal de diálogo directo para escuchar a las empresas participantes, identificar las competencias técnicas y humanas que demanda el mercado y retroalimentar sus carreras técnicas.
-                    </p>
+                    <div class="pt-2 text-xs font-bold text-blue-950">
+                        Valores Nucleares: <span class="font-normal italic">Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable.</span>
+                    </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
-                    <h3 class="text-lg font-black text-slate-900 brand-serif flex items-center gap-2">
-                        <i data-lucide="heart-handshake" class="w-5 h-5 text-[#EC9123]"></i> El Factor Humano: Cultura de Planta y «Trabajo Bien Hecho»
-                    </h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        En Kinal, el <strong>Factor Humano</strong> no es una charla pasajera: es una rama de formación ética y humana que erradica el capataz autoritario, el maltrato verbal y el sarcasmo en plantas y talleres.
-                    </p>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Los gerentes implementarán protocolos de seguridad psicológica, dignidad de la persona, fidelización de cuadrillas operativas y el estándar del <em>«trabajo bien hecho»</em> como ventaja competitiva.
+                <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-3xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-2 text-amber-900 font-extrabold text-sm uppercase">
+                        <i data-lucide="heart-handshake" class="w-4 h-4"></i> El Principio del «Trabajo Bien Hecho» y Factor Humano
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En Kinal, el <strong>Factor Humano</strong> es una rama de formación universal que erradica el capataz autoritario, el maltrato verbal y el sarcasmo en plantas y talleres. Fomenta la dignidad, el orgullo por el trabajo pulcro (5S), la seguridad psicológica y la custodia ética de maquinaria y herramientas.
                     </p>
                 </div>
             </div>
 
-            <!-- Estructura Curricular Modular -->
+            <!-- Fundamentación Estratégica: Validación TSU -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-4">
+                <h3 class="text-xl font-black text-slate-900 brand-serif flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-blue-700"></i>
+                    Fundamentación: El Nivel Técnico Superior (TSU) como Respaldo Industrial
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    La manufactura contemporánea (automatización, PLCs, robótica, redes industriales) exige certidumbre operativa. El <strong>Técnico Superior Universitario (TSU)</strong> se constituye en el mecanismo riguroso de validación de competencias técnicas que respalda a la industria, acreditando que el personal operativo y de supervisión domina el diagnóstico analítico, la lectura de planos y el cálculo aplicado.
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Formar mandos medios con competencias a nivel superior en el área técnica permite cerrar la brecha entre la planeación de la ingeniería de diseño y la ejecución real en piso de planta, garantizando fiabilidad operativa y reducción de costos de mantenimiento.
+                </p>
+            </div>
+
+            <!-- Estructura Curricular Modular (4 Módulos) -->
             <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-3">
                     <h3 class="text-lg font-black text-slate-900 brand-serif flex items-center gap-2">
@@ -469,21 +609,21 @@ html_content += f"""
                             <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-purple-700"></i> Descriptor, Onboarding y Micro-Charlas (25 Pts)
                         </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-cyan-50/60 border border-cyan-200 space-y-2 flex flex-col justify-between">
+                    <div class="p-4 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-2 flex flex-col justify-between">
                         <div class="space-y-1.5">
-                            <span class="px-2.5 py-0.5 rounded-full bg-cyan-900 text-white text-[10px] font-black uppercase">Módulo 3 • Virtual Teams (2h)</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-900 text-white text-[10px] font-black uppercase">Módulo 3 • Virtual Teams (2h)</span>
                             <h4 class="font-bold text-sm text-slate-900 leading-snug">Fortalecimiento y Validación TSU</h4>
                             <p class="text-xs text-slate-600">El Técnico Superior Universitario como respaldo técnico formal, matrices operativas y evaluación en banco.</p>
                         </div>
-                        <div class="pt-2 border-t border-cyan-200/60 text-[11px] font-bold text-cyan-950 flex items-center gap-1.5">
-                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-cyan-700"></i> Evaluación Práctica y Validación TSU (25 Pts)
+                        <div class="pt-2 border-t border-blue-200/60 text-[11px] font-bold text-blue-950 flex items-center gap-1.5">
+                            <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-blue-700"></i> Evaluación Práctica y Validación TSU (25 Pts)
                         </div>
                     </div>
                     <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2 flex flex-col justify-between">
                         <div class="space-y-1.5">
                             <span class="px-2.5 py-0.5 rounded-full bg-emerald-900 text-white text-[10px] font-black uppercase">Módulo 4 • Presencial (2h)</span>
                             <h4 class="font-bold text-sm text-slate-900 leading-snug">Sistematización, Acuerdos y Clausura</h4>
-                            <p class="text-xs text-slate-600">Mesa Redonda Plenaria industria-academia, acuerdos de vinculación y entrega de diplomas institucionales.</p>
+                            <p class="text-xs text-slate-600">Mesa Redonda Plenaria industria-academia, acuerdos de vinculación y entrega solemne de diplomas.</p>
                         </div>
                         <div class="pt-2 border-t border-emerald-200/60 text-[11px] font-bold text-emerald-950 flex items-center gap-1.5">
                             <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-emerald-700"></i> Sustentación Plenaria y Acuerdos (25 Pts)
@@ -492,38 +632,85 @@ html_content += f"""
                 </div>
             </div>
 
+            <!-- Descarga de Documentos Oficiales en Word -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h4 class="text-base sm:text-lg font-black text-slate-900 brand-serif flex items-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5 text-blue-700"></i>
+                        Documentación Oficial del Programa en Microsoft Word
+                    </h4>
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                        Formatos Institucionales
+                    </span>
+                </div>
+                <div class="grid sm:grid-cols-3 gap-3 btn-doc-group">
+                    <a href="Cursos/Talento_Tecnico/Propuesta_Diplomado_Talento_Tecnico_Kinal.docx" download class="btn-doc-item p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 transition text-center space-y-1">
+                        <i data-lucide="file-text" class="w-6 h-6 text-blue-700 mx-auto"></i>
+                        <div class="font-bold text-xs text-slate-900">Propuesta Formativa</div>
+                        <div class="text-[10px] text-slate-500">Documento Oficial (.docx)</div>
+                    </a>
+                    <a href="Cursos/Talento_Tecnico/Temario_Diplomado_Talento_Tecnico_Kinal.docx" download class="btn-doc-item p-4 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center space-y-1">
+                        <i data-lucide="list-checks" class="w-6 h-6 text-emerald-700 mx-auto"></i>
+                        <div class="font-bold text-xs text-slate-900">Temario Analítico</div>
+                        <div class="text-[10px] text-slate-500">Documento Oficial (.docx)</div>
+                    </a>
+                    <a href="Cursos/Talento_Tecnico/Dosificacion_y_Secuencia_Didactica_Talento_Tecnico_Kinal.docx" download class="btn-doc-item p-4 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition text-center space-y-1">
+                        <i data-lucide="calendar" class="w-6 h-6 text-amber-700 mx-auto"></i>
+                        <div class="font-bold text-xs text-slate-900">Dosificación Didáctica</div>
+                        <div class="text-[10px] text-slate-500">Documento Oficial (.docx)</div>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
         <!-- ================================================================== -->
-        <!-- PESTAÑA 2: TEMARIO ANALÍTICO -->
+        <!-- PESTAÑA 2: TEMARIO -->
         <!-- ================================================================== -->
-        <div id="tab-temario" class="tab-content hidden space-y-8">
+        <div id="tab-temario" class="tab-content hidden space-y-6">
             
-            <!-- Barra Superior de Control y Filtros -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
-                <div class="space-y-1">
-                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
-                        <i data-lucide="list-tree" class="w-5 h-5 text-blue-700"></i>
-                        Temario Analítico de los 4 Módulos Oficiales
-                    </h3>
-                    <p class="text-xs text-slate-500">
-                        Organización modular (un módulo por sesión de 2 horas): 2 sesiones presenciales en Campus Kinal + 2 sesiones virtuales en Microsoft Teams, con una actividad evaluable por módulo.
-                    </p>
+            <!-- Barra Superior de Filtros por Categoría -->
+            <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-5 h-5 text-blue-700"></i>
+                            Distribución Modular con Código de Color
+                        </h3>
+                        <p class="text-slate-600 text-xs">
+                            Estructura de 4 módulos formativos divididos por áreas clave. Filtra por categoría para enfocar el análisis.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        Total: 12 Contenidos Clave
+                    </span>
                 </div>
 
-                <!-- Botones de Filtro Interactivo -->
-                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
-                    <button onclick="filterTalentoTemario('all')" id="btn-talento-all" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
-                    <button onclick="filterTalentoTemario('factor_humano')" id="btn-talento-factor_humano" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">⭐ Factor Humano</button>
-                    <button onclick="filterTalentoTemario('gestion')" id="btn-talento-gestion" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">📈 Manejo de Personal</button>
-                    <button onclick="filterTalentoTemario('competencias')" id="btn-talento-competencias" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">🎯 Competencias & TSU</button>
-                    <button onclick="filterTalentoTemario('liderazgo')" id="btn-talento-liderazgo" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition">👥 Mandos Medios</button>
-                    <button onclick="filterTalentoTemario('vinculacion')" id="btn-talento-vinculacion" class="talento-filter-btn px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🤝 Diálogo Industria-Kinal</button>
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                    <button onclick="filterTalentoTemario('all')" id="btn-talento-all" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition">
+                        Todos los Temas (12)
+                    </button>
+                    <button onclick="filterTalentoTemario('factor_humano')" id="btn-talento-factor_humano" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition">
+                        ⭐ Factor Humano Kinal
+                    </button>
+                    <button onclick="filterTalentoTemario('gestion')" id="btn-talento-gestion" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 transition">
+                        📈 Manejo de Personal & Onboarding
+                    </button>
+                    <button onclick="filterTalentoTemario('competencias')" id="btn-talento-competencias" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 transition">
+                        🎯 Competencias & Validación TSU
+                    </button>
+                    <button onclick="filterTalentoTemario('liderazgo')" id="btn-talento-liderazgo" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 transition">
+                        👥 Mandos Medios
+                    </button>
+                    <button onclick="filterTalentoTemario('vinculacion')" id="btn-talento-vinculacion" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition">
+                        🤝 Diálogo Industria-Kinal
+                    </button>
                 </div>
             </div>
 
             <!-- Cuadrícula Modular de Temarios -->
-            <div class="grid lg:grid-cols-2 gap-8 pt-2">
+            <div class="grid lg:grid-cols-2 gap-6">
 """
 
 for mod in temario_modules:
@@ -567,33 +754,40 @@ html_content += f"""
         </div>
 
         <!-- ================================================================== -->
-        <!-- PESTAÑA 3: CALENDARIO (4 SESIONES) -->
+        <!-- PESTAÑA 3: CALENDARIO CRONOLÓGICO -->
         <!-- ================================================================== -->
         <div id="tab-calendario" class="tab-content hidden space-y-6">
-            <div class="border-b border-slate-200 pb-4 flex flex-wrap justify-between items-end gap-2">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
                 <div>
-                    <span class="text-xs font-bold text-[#EC9123] uppercase tracking-wider">Cronograma Ejecutivo (Total 8 Horas)</span>
-                    <h3 class="text-2xl font-black text-slate-900 brand-serif">Dosificación Cronológica de las 4 Sesiones</h3>
-                    <p class="text-slate-600 text-xs mt-1">Sesión 1 Presencial en Kinal (2h) + Sesiones 2 y 3 Virtuales en Teams (4h) + Sesión 4 Presencial de Cierre en Kinal (2h).</p>
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-blue-700"></i>
+                        Calendario Cronológico de Encuentros (Total: 8 Horas)
+                    </h3>
+                    <p class="text-slate-600 text-xs mt-1">
+                        Programa de 4 sesiones de 2 horas (4h presenciales en Campus Kinal + 4h virtuales en Microsoft Teams).
+                    </p>
                 </div>
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
-                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> 4 Sesiones Programadas
+                <div class="flex items-center gap-2 text-xs font-bold text-blue-900 bg-blue-50 px-3 py-1.5 rounded-xl border border-blue-200">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-700"></i> 4 Sesiones Programadas
                 </div>
             </div>
 
+            <!-- Grid de Calendario -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
 """
 
 for s in sessions:
+    badge_bg = "bg-amber-100 text-amber-900" if "Presencial" in s['tipo'] else "bg-purple-100 text-purple-900"
     html_content += f"""
-                <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm hover:border-[#22376D] hover:shadow-md transition flex flex-col justify-between space-y-3">
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-[#22376D] hover:shadow-md transition flex flex-col justify-between space-y-3">
                     <div class="space-y-1.5">
                         <div class="flex justify-between items-center text-[11px]">
-                            <span class="font-black px-2 py-0.5 rounded bg-[#152244] text-[#EC9123]">{s['code']}</span>
-                            <span class="font-bold text-slate-500">{s['semana']}</span>
+                            <span class="font-black px-2 py-0.5 rounded bg-slate-900 text-[#EC9123]">{s['code']}</span>
+                            <span class="font-bold px-2 py-0.5 rounded {badge_bg} text-[10px]">{s['tipo']}</span>
                         </div>
                         <h5 class="font-bold text-slate-900 text-xs leading-snug line-clamp-2">{s['title']}</h5>
-                        <p class="text-[11px] text-slate-500">{s['tipo']}</p>
+                        <p class="text-[11px] text-slate-500">{s['semana']}</p>
                     </div>
                     <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
                         <span class="text-slate-600 font-semibold">{s['duration']}</span>
@@ -609,18 +803,18 @@ html_content += f"""
         </div>
 
         <!-- ================================================================== -->
-        <!-- PESTAÑA 4: SECUENCIAS DIDÁCTICAS INTERACTIVAS -->
+        <!-- PESTAÑA 4: SECUENCIAS (MASTER-DETAIL) -->
         <!-- ================================================================== -->
         <div id="tab-secuencias" class="tab-content hidden space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-4">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm">
                 <div>
-                    <span class="text-xs font-bold text-[#EC9123] uppercase tracking-wider">Microdiseño Didáctico Andragógico</span>
-                    <h3 class="text-2xl font-black text-slate-900 brand-serif flex items-center gap-2">
-                        <i data-lucide="layers" class="w-5 h-5 text-[#22376D]"></i>
-                        Secuencia Didáctica Sesión por Sesión
+                    <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-blue-700"></i>
+                        Secuencia Didáctica Interactiva Sesión a Sesión
                     </h3>
                     <p class="text-slate-600 text-xs mt-0.5">
-                        Selecciona una sesión en el panel lateral para revisar su apertura, desarrollo, cierre, recursos y actividad evaluable.
+                        Selecciona una sesión en el panel lateral para revisar su microdiseño en tres momentos (Apertura, Desarrollo y Cierre) y su actividad evaluable.
                     </p>
                 </div>
                 <div class="flex items-center gap-2 w-full sm:w-auto">
@@ -640,12 +834,12 @@ html_content += f"""
                         <span>Listado de Sesiones</span>
                         <span id="talento-count-badge">4 Sesiones</span>
                     </div>
-                    <div id="talento-sessions-list" class="space-y-1.5 max-h-[580px] overflow-y-auto pr-1">
+                    <div id="talento-sessions-list" class="space-y-1.5 max-h-[560px] overflow-y-auto pr-1">
                         <!-- Rendered by JS -->
                     </div>
                 </div>
 
-                <!-- DETALLE DEL ENCUENTRO SELECCIONADO (DETAIL) -->
+                <!-- DETALLE DE LA SESIÓN SELECCIONADA (DETAIL) -->
                 <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" id="talento-detail-card">
                     <!-- Rendered by JS -->
                 </div>
@@ -654,7 +848,7 @@ html_content += f"""
         </div>
 
         <!-- ================================================================== -->
-        <!-- PESTAÑA 5: EVALUACIÓN Y RÚBRICA -->
+        <!-- PESTAÑA 5: EVALUACIÓN -->
         <!-- ================================================================== -->
         <div id="tab-evaluacion" class="tab-content hidden space-y-8">
             
@@ -662,8 +856,8 @@ html_content += f"""
             <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
                 <div class="flex items-center justify-between border-b border-slate-200 pb-3">
                     <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
-                        <i data-lucide="check-square" class="w-5 h-5 text-[#22376D]"></i>
-                        Esquema de Acreditación y Entrega de Distinciones
+                        <i data-lucide="check-square" class="w-5 h-5 text-blue-700"></i>
+                        Esquema de Evaluación Institucional & Acreditación
                     </h3>
                     <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-xs">
                         Umbral Mínimo: 75 / 100 Puntos
@@ -685,37 +879,43 @@ html_content += f"""
                 </div>
             </div>
 
-            <!-- Rúbrica Analítica de Acreditación -->
+            <!-- Rúbrica Terminal -->
             <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-200 pb-4">
                     <div>
-                        <h4 class="text-lg font-black text-slate-900 brand-serif">Rúbrica Analítica de las 4 Actividades Formativas Evaluables</h4>
-                        <p class="text-xs text-slate-500">Evaluación continua orientada a la aplicación práctica y al diálogo industria-academia (25 puntos cada una).</p>
+                        <h3 class="text-xl font-black text-slate-900 brand-serif flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+                            Rúbrica Analítica Terminal de Evaluación Práctica
+                        </h3>
+                        <p class="text-slate-600 text-xs mt-1">
+                            Evaluación objetiva del desempeño técnico con 4 criterios ponderados a 25 puntos y umbral institucional de 75 puntos.
+                        </p>
                     </div>
-                    <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
-                        100 Puntos Totales
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 font-extrabold text-xs">
+                        Aprobación Mínima: ≥ 75 Pts
                     </span>
                 </div>
+
                 <div class="overflow-x-auto">
                     <table class="w-full text-xs text-left border-collapse">
                         <thead>
-                            <tr class="bg-[#152244] text-white">
-                                <th class="p-3 rounded-tl-xl font-bold">Actividad Formativa / Módulo</th>
-                                <th class="p-3 font-bold text-center">Ponderación</th>
-                                <th class="p-3 font-bold">Desempeño Excelente (Estándar Kinal)</th>
-                                <th class="p-3 rounded-tr-xl font-bold">Desempeño Insuficiente (&lt; 75%)</th>
+                            <tr class="bg-slate-100 text-slate-800 uppercase font-black border-b border-slate-200">
+                                <th class="py-3 px-4 w-1/4">Actividad Formativa / Módulo</th>
+                                <th class="py-3 px-4 w-24 text-center">Ponderación</th>
+                                <th class="py-3 px-4 text-emerald-900">Desempeño Excelente (Trabajo Bien Hecho)</th>
+                                <th class="py-3 px-4 text-rose-900">Desempeño Insuficiente (&lt; 75%)</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-200 border-b border-slate-200">
+                        <tbody class="divide-y divide-slate-100">
 """
 
 for rub in rubrica_rows:
     html_content += f"""
-                            <tr class="hover:bg-slate-50">
-                                <td class="p-3 font-bold text-slate-900">{clean_html(rub[0])}</td>
-                                <td class="p-3 font-extrabold text-[#22376D] text-center">{clean_html(rub[1])}</td>
-                                <td class="p-3 text-slate-700">{clean_html(rub[2])}</td>
-                                <td class="p-3 text-slate-500">{clean_html(rub[3])}</td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="py-3.5 px-4 font-bold text-slate-900 bg-slate-50 border-r border-slate-200 align-top">{clean_html(rub[0])}</td>
+                                <td class="py-3 px-4 text-blue-950 font-bold bg-blue-50/20 border-r border-slate-200 align-top text-center">{clean_html(rub[1])}</td>
+                                <td class="py-3 px-4 text-emerald-950 bg-emerald-50/30 border-r border-slate-200 align-top">{clean_html(rub[2])}</td>
+                                <td class="py-3 px-4 text-rose-950 bg-rose-50/30 align-top text-xs">{clean_html(rub[3])}</td>
                             </tr>
     """
 
@@ -729,7 +929,7 @@ html_content += f"""
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Corporativo -->
     <footer class="bg-[#0D162C] text-white py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-800 text-xs mt-12">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
             <div>
@@ -750,179 +950,162 @@ html_content += f"""
     <!-- Interactive Logic (Tabs, Filtering & Master-Detail) -->
     <script>
         const TALENTO_SESSIONS = {sessions_json};
-        let currentTalentoIndex = 0;
+        let currentTalentoIndex = 1;
 
         function switchTab(tabId) {{
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab-btn'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {{
+                btn.classList.remove('active');
+                btn.classList.add('bg-white', 'text-slate-700');
+            }});
 
             const targetTab = document.getElementById('tab-' + tabId);
-            const targetBtn = document.getElementById('btn-tab-' + tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
 
             if (targetTab) targetTab.classList.remove('hidden');
-            if (targetBtn) targetBtn.classList.add('active-tab-btn');
+            if (targetBtn) {{
+                targetBtn.classList.add('active');
+                targetBtn.classList.remove('bg-white', 'text-slate-700');
+            }}
 
             if (tabId === 'secuencias') {{
-                renderTalentoSessionsList();
-                renderTalentoSessionDetail(currentTalentoIndex);
+                selectTalentoSession(currentTalentoIndex);
             }}
 
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
         }}
 
-        function goToSession(sessionNum) {{
-            const idx = TALENTO_SESSIONS.findIndex(s => s.num === sessionNum);
-            if (idx !== -1) {{
-                currentTalentoIndex = idx;
-                switchTab('secuencias');
-            }}
-        }}
+        function renderTalentoSessionsList(sessionsArray) {{
+            const container = document.getElementById('talento-sessions-list');
+            if (!container) return;
+            container.innerHTML = '';
 
-        function renderTalentoSessionsList(filterText = '') {{
-            const listEl = document.getElementById('talento-sessions-list');
-            if (!listEl) return;
-
-            const filtered = TALENTO_SESSIONS.filter(s => 
-                s.title.toLowerCase().includes(filterText.toLowerCase()) ||
-                s.module.toLowerCase().includes(filterText.toLowerCase()) ||
-                s.code.toLowerCase().includes(filterText.toLowerCase())
-            );
-
-            document.getElementById('talento-count-badge').textContent = filtered.length + ' Sesiones';
-
-            listEl.innerHTML = '';
-            filtered.forEach((s) => {{
-                const originalIndex = TALENTO_SESSIONS.findIndex(item => item.num === s.num);
-                const isSelected = originalIndex === currentTalentoIndex;
-                
-                const itemBtn = document.createElement('button');
-                itemBtn.className = `w-full text-left p-3 rounded-2xl transition border text-xs flex flex-col gap-1 ${{
-                    isSelected 
-                        ? 'bg-[#152244] text-white border-[#152244] shadow-sm' 
-                        : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
-                }}`;
-                
-                itemBtn.innerHTML = `
-                    <div class="flex justify-between items-center w-full">
-                        <span class="font-bold ${{isSelected ? 'text-[#EC9123]' : 'text-[#22376D]'}}">${{s.code}}</span>
-                        <span class="text-[10px] ${{isSelected ? 'text-slate-300' : 'text-slate-400'}}">${{s.duration}}</span>
-                    </div>
-                    <div class="font-bold line-clamp-1">${{s.title}}</div>
-                    <div class="text-[10px] ${{isSelected ? 'text-slate-300' : 'text-slate-500'}}">${{s.semana}}</div>
-                `;
-
-                itemBtn.onclick = () => {{
-                    currentTalentoIndex = originalIndex;
-                    renderTalentoSessionsList(filterText);
-                    renderTalentoSessionDetail(currentTalentoIndex);
-                }};
-
-                listEl.appendChild(itemBtn);
-            }});
-        }}
-
-        function renderTalentoSessionDetail(index) {{
-            const cardEl = document.getElementById('talento-detail-card');
-            const s = TALENTO_SESSIONS[index];
-            if (!cardEl || !s) return;
-
-            cardEl.innerHTML = `
-                <div class="flex flex-wrap justify-between items-start gap-3 border-b border-slate-200 pb-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#152244] text-[#EC9123] text-xs font-black">${{s.code}}</span>
-                            <span class="text-xs font-bold text-slate-500">${{s.semana}}</span>
+            sessionsArray.forEach(s => {{
+                const item = document.createElement('div');
+                const isActive = s.num === currentTalentoIndex;
+                item.className = `session-item p-3 rounded-2xl border text-xs cursor-pointer transition flex items-center justify-between gap-2 ${{isActive ? 'active' : 'bg-white hover:bg-slate-50 border-slate-200'}}`;
+                item.onclick = () => selectTalentoSession(s.num);
+                item.innerHTML = `
+                    <div class="space-y-0.5 overflow-hidden">
+                        <div class="flex items-center gap-1.5">
+                            <span class="badge-code px-2 py-0.5 rounded text-[10px] font-black ${{isActive ? '' : 'bg-slate-900 text-amber-300'}}">${{s.code}}</span>
+                            <span class="font-bold text-slate-900 truncate">${{s.title}}</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mt-1">${{s.title}}</h3>
-                        <p class="text-xs text-[#22376D] font-bold mt-0.5">${{s.module}}</p>
+                        <div class="text-[10px] text-slate-500">${{s.semana}} • ${{s.tipo}}</div>
                     </div>
-                    <div class="text-right">
-                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
-                            ${{s.duration}}
-                        </span>
-                        <div class="text-[11px] text-slate-500 mt-1">${{s.tipo}}</div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                `;
+                container.appendChild(item);
+            }});
+            lucide.createIcons();
+        }}
+
+        function selectTalentoSession(num) {{
+            if (window.innerWidth < 1024) {{
+                setTimeout(function() {{
+                    const card = document.getElementById('talento-detail-card');
+                    if (card) card.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+                }}, 60);
+            }}
+            currentTalentoIndex = num;
+            const s = TALENTO_SESSIONS.find(item => item.num === num);
+            if (!s) return;
+
+            document.querySelectorAll('.session-item').forEach(el => {{
+                el.classList.remove('active');
+                el.classList.add('bg-white');
+            }});
+
+            renderTalentoSessionsList(TALENTO_SESSIONS);
+
+            const detailContainer = document.getElementById('talento-detail-card');
+            detailContainer.innerHTML = `
+                <div class="border-b border-slate-200 pb-5 space-y-2">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 text-amber-400 font-black text-xs tracking-wider">${{s.code}}</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-900 font-bold text-xs border border-blue-200">${{s.module}}</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-lg">${{s.duration}}</span>
                     </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">${{s.title}}</h3>
+                    <div class="text-xs text-[#22376D] font-bold pt-1">
+                        ${{s.semana}} • ${{s.horario}}
+                    </div>
+                </div>
+
+                <div class="bg-blue-50/60 rounded-2xl p-4 border border-blue-200 space-y-1">
+                    <div class="text-[11px] uppercase font-black tracking-wider text-blue-900 flex items-center gap-1.5">
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-[#22376D]"></i> Indicador de Logro / Objetivo Formativo
+                    </div>
+                    <p class="text-slate-800 text-xs leading-relaxed font-medium">${{s.objective}}</p>
                 </div>
 
                 <div class="space-y-4">
-                    <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                            <i data-lucide="target" class="w-3.5 h-3.5 text-[#22376D]"></i> Objetivo Específico
-                        </h4>
-                        <p class="text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200 mt-1 leading-relaxed">
-                            ${{s.objective}}
-                        </p>
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-[#22376D]"></i> Secuencia Didáctica en Tres Momentos (120 Minutos)
+                    </h4>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Fase 1: Apertura, Encuadre & Dinámica Inicial
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">15-20 Minutos</span>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${{s.apertura}}</p>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <div class="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200 text-xs space-y-1">
-                            <strong class="text-blue-900 flex items-center gap-1">
-                                <i data-lucide="play-circle" class="w-3.5 h-3.5"></i> Apertura
-                            </strong>
-                            <p class="text-slate-700 text-[11px] leading-relaxed">${{s.apertura}}</p>
+                    <div class="p-4 rounded-2xl bg-amber-50/40 border border-amber-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-amber-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Fase 2: Desarrollo, Casos Reales & Taller Aplicativo
+                            </span>
+                            <span class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">85-90 Minutos</span>
                         </div>
-                        <div class="p-3.5 rounded-xl bg-amber-50/60 border border-amber-200 text-xs space-y-1">
-                            <strong class="text-amber-900 flex items-center gap-1">
-                                <i data-lucide="activity" class="w-3.5 h-3.5"></i> Desarrollo
-                            </strong>
-                            <p class="text-slate-700 text-[11px] leading-relaxed">${{s.desarrollo}}</p>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200 text-xs space-y-1">
-                            <strong class="text-emerald-900 flex items-center gap-1">
-                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Cierre
-                            </strong>
-                            <p class="text-slate-700 text-[11px] leading-relaxed">${{s.cierre}}</p>
-                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${{s.desarrollo}}</p>
                     </div>
 
-                    <div class="grid sm:grid-cols-2 gap-3 pt-2">
-                        <div class="p-3 rounded-xl border border-slate-200 bg-slate-50 text-xs space-y-1">
-                            <strong class="text-slate-900 flex items-center gap-1.5">
-                                <i data-lucide="monitor" class="w-3.5 h-3.5 text-[#22376D]"></i> Recursos y Plataformas
-                            </strong>
-                            <p class="text-slate-600 text-[11px]">${{s.equipamiento}}</p>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-blue-950 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Fase 3: Cierre, Síntesis & Asignación de Entregable
+                            </span>
+                            <span class="text-[11px] font-bold text-slate-500">15-20 Minutos</span>
                         </div>
-                        <div class="p-3 rounded-xl border border-slate-200 bg-slate-50 text-xs space-y-1">
-                            <strong class="text-slate-900 flex items-center gap-1.5">
-                                <i data-lucide="file-check" class="w-3.5 h-3.5 text-emerald-700"></i> Actividad Evaluable
-                            </strong>
-                            <p class="text-slate-600 text-[11px]">${{s.evidencias}}</p>
-                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed pl-4.5">${{s.cierre}}</p>
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-slate-100 flex justify-between items-center text-xs">
-                    <button onclick="goToPrevSession()" ${{index === 0 ? 'disabled class="opacity-40 cursor-not-allowed text-slate-400 font-bold"' : 'class="text-[#22376D] font-bold hover:underline"'}}>
-                        ← Sesión Anterior
-                    </button>
-                    <span class="text-slate-400 font-semibold">${{index + 1}} de ${{TALENTO_SESSIONS.length}}</span>
-                    <button onclick="goToNextSession()" ${{index === TALENTO_SESSIONS.length - 1 ? 'disabled class="opacity-40 cursor-not-allowed text-slate-400 font-bold"' : 'class="text-[#22376D] font-bold hover:underline"'}}>
-                        Siguiente Sesión →
-                    </button>
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50/60 rounded-2xl p-4 border border-emerald-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-emerald-900 flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i> Actividad Formativa Evaluable (25 Pts)
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${{s.evidencias}}</p>
+                    </div>
+
+                    <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200 space-y-1.5">
+                        <div class="text-[11px] uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5">
+                            <i data-lucide="monitor" class="w-3.5 h-3.5 text-[#22376D]"></i> Recursos Didácticos & Sede
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">${{s.equipamiento}}</p>
+                    </div>
                 </div>
             `;
             lucide.createIcons();
         }}
 
-        function goToPrevSession() {{
-            if (currentTalentoIndex > 0) {{
-                currentTalentoIndex--;
-                renderTalentoSessionsList();
-                renderTalentoSessionDetail(currentTalentoIndex);
-            }}
-        }}
-
-        function goToNextSession() {{
-            if (currentTalentoIndex < TALENTO_SESSIONS.length - 1) {{
-                currentTalentoIndex++;
-                renderTalentoSessionsList();
-                renderTalentoSessionDetail(currentTalentoIndex);
-            }}
-        }}
-
         function filterTalentoList() {{
-            const searchVal = document.getElementById('talento-sec-search').value;
-            renderTalentoSessionsList(searchVal);
+            const q = document.getElementById('talento-sec-search').value.toLowerCase();
+            const filtered = TALENTO_SESSIONS.filter(s => 
+                s.title.toLowerCase().includes(q) || 
+                s.code.toLowerCase().includes(q) ||
+                s.module.toLowerCase().includes(q) ||
+                s.objective.toLowerCase().includes(q)
+            );
+            document.getElementById('talento-count-badge').textContent = `${{filtered.length}} Sesiones`;
+            renderTalentoSessionsList(filtered);
         }}
 
         function filterTalentoTemario(category) {{
@@ -935,20 +1118,24 @@ html_content += f"""
                 }}
             }});
 
-            document.querySelectorAll('.talento-filter-btn').forEach(btn => {{
-                btn.classList.remove('bg-slate-900', 'text-white');
-                btn.classList.add('bg-slate-100', 'text-slate-700');
+            document.querySelectorAll('[id^="btn-talento-"]').forEach(btn => {{
+                btn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition';
             }});
 
             const activeBtn = document.getElementById('btn-talento-' + category);
             if (activeBtn) {{
-                activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
-                activeBtn.classList.add('bg-slate-900', 'text-white');
+                activeBtn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-slate-900 text-white shadow-sm transition';
             }}
+        }}
+
+        function goToSession(num) {{
+            switchTab('secuencias');
+            selectTalentoSession(num);
         }}
 
         document.addEventListener('DOMContentLoaded', () => {{
             lucide.createIcons();
+            selectTalentoSession(1);
         }});
     </script>
 </body>
