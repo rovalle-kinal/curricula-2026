@@ -74,15 +74,17 @@ El objetivo fue concebir la arquitectura pedagógica y documental para el progra
   * **Horario empresa:** Lunes a jueves de 07:00 a 16:00 hrs y viernes de 07:00 a 15:00 hrs.
   * **Fechas de inicio:** Diciembre 2026 o Enero 2027.
   * **Modalidad:** Híbrida (Virtual sincrónico + Presencial de taller/campo).
-  * **Objetivo:** Levantamiento e interpretación de diagramas para:
-    1. Sistemas de agua de proceso y potable.
-    2. Sistemas de combustibles líquidos (búnker y diésel: tuberías, válvulas, bombas, calentadores, traceado de vapor, alivios).
-    3. Sistemas neumáticos (compresores, secadores, pulmón, redes en anillo, FRL, válvulas y actuadores ISO 1219).
-    4. Sistemas hidráulicos básicos (centrales HPU, bombas, válvulas reguladoras y direccionales 4/3, cilindros ISO 1219).
+  * **Objetivo:** Levantamiento e interpretación de diagramas para sistemas de agua, combustibles, neumática e hidráulica.
 * **Solución Implementada:**
   * Preservación de la versión previa en `Historico_Edificacion_Sabatina_2026/`.
-  * Creación del nuevo programa: *«Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales»* (40 Horas Híbridas: 8h virtual Teams + 32h presencial en planta/laboratorio CAD).
-  * Generación de Propuesta Técnica, Plan de Clase, Secuencia Didáctica, Maqueta HTML y PDF Corporativo (`programa_formativo_diagramas_industriales.pdf`).
+  * Generación de la primera versión del paquete corporativo P&ID híbrido de 40h.
+
+### Hito 6: Reenfoque Pedagógico: Interpretación y Dibujo de Planos P&ID
+* **Ajuste y Actualización Solicitada:**
+  * **Nombre acortado y sin código:** Se elimina el código alfanumérico y se formaliza el nombre como: **«Interpretación y Levantamiento de Diagramas P&ID»**.
+  * **Definición de P&ID:** Se integra una explicación exhaustiva de qué es un P&ID (*Piping and Instrumentation Diagram*) y cómo representa la lógica funcional entre equipos de proceso, red de tuberías (NPS/Schedule), válvulas manuales/automáticas e instrumentación y lazos de control (norma ANSI/ISA-5.1).
+  * **Reorientación del Contenido:** Se reduce la teoría química/termodinámica pesada sobre búnker/diésel/viscosidades y se centra el 100% del programa en **lectura analítica, recorrido de campo (*walkdown*), metrología dimensional con calibrador vernier, croquizado a mano alzada/tablet, capas normalizadas en AutoCAD, bloques con atributos editables (`ATTDEF`), esquemas de fluidos ISO 1219, tablas automáticas (`EATTEXT`) y maquetación ejecutiva**.
+  * **Actualización del Principio del «Trabajo Bien Hecho»:** Se reformula vinculándolo a la exactitud dimensional, fidelidad del dibujo a la realidad de planta (*as-built* real sin inventar componentes), prolijidad gráfica CAD, prevención de accidentes en consignaciones LOTO y servicio colaborativo multidisciplinario.
 
 ---
 

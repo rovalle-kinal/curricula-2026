@@ -1,13 +1,13 @@
 # PROPUESTA TÉCNICA FORMATIVA Y TEMARIO CORPORATIVO
-## Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales
-### Especialidad: Agua de Proceso, Combustibles Líquidos (Búnker/Diésel), Neumática e Hidráulica Básica
-### Modalidad Híbrida (Virtual Sincrónico + Taller Presencial en Planta/Laboratorio CAD) | Fundación Kinal — Escuela Técnica Superior
+## Interpretación y Levantamiento de Diagramas P&ID
+### Fundamentos Normativos (ANSI/ISA-5.1, ISO 10628, ISO 1219), Relevamiento en Campo y Dibujo en AutoCAD 2D
+### Modalidad Híbrida (Virtual Sincrónico + Taller Presencial de Campo y Laboratorio CAD) | Fundación Kinal — Escuela Técnica Superior
 
 ---
 
 > [!NOTE]
-> **Propuesta Técnica Corporativa Dirigida a Empresa / Cliente Industrial.**  
-> Diseñada a la medida para la capacitación y homologación de competencias de **6 a 10 colaboradores técnicos** (Mecánicos, Electricistas, Instrumentistas y Dibujante).  
+> **Propuesta Técnica Corporativa Dirigida a Empresa / Sector Industrial.**  
+> Diseñada para la homologación de competencias de **6 a 10 colaboradores técnicos** (Mecánicos, Electricistas, Técnicos en Instrumentación y Control, y Dibujantes Técnicos).  
 > Calendario de Ejecución Propuesto: **Diciembre 2026 o Enero 2027**, dentro de la jornada laboral habitual del cliente.
 
 ---
@@ -16,172 +16,194 @@
 
 | Parámetro | Especificación de la Capacitación |
 | :--- | :--- |
-| **Nombre del Programa** | **Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales** |
-| **Código Institucional** | **ETS-CORP-P&ID-40H** |
+| **Nombre del Programa** | **Interpretación y Levantamiento de Diagramas P&ID** |
 | **Cliente / Destinatario** | Equipo Técnico Multidisciplinario de Planta (Grupo cerrado corporativo) |
-| **Cantidad de Participantes** | **6 a 10 colaboradores** (Cupo optimizado para seguimiento individualizado y prácticas de campo) |
-| **Perfil de los Colaboradores** | Técnicos mecánicos, electricistas, técnicos en instrumentación y control, y dibujante técnico |
+| **Cantidad de Participantes** | **6 a 10 colaboradores** (Cupo optimizado para seguimiento personalizado y prácticas de campo) |
+| **Perfil de los Colaboradores** | Técnicos mecánicos, electricistas, técnicos en instrumentación y control, y dibujantes técnicos |
 | **Carga Horaria Total** | **40 horas pedagógicas** (10 sesiones de 4 horas / 240 minutos cada una) |
-| **Modalidad de Impartición** | **Modalidad Híbrida de Alto Rendimiento:**<br>• **20% Virtual Sincrónico (8 Horas / 2 sesiones):** Fundamentación normativa internacional, simbología ISA/ISO y lectura de diagramas en Microsoft Teams.<br>• **80% Presencial Práctico (32 Horas / 8 sesiones):** Levantamiento in situ en planta/talleres (medición de tuberías, válvulas, bombas) y modelado 2D en Laboratorio CAD de Kinal. |
+| **Modalidad de Impartición** | **Modalidad Híbrida de Alto Rendimiento:**<br>• **20% Virtual Sincrónico (8 Horas / 2 sesiones):** Fundamentación de qué es un P&ID, normativa internacional ISA-5.1, ISO 10628, ISO 1219 y técnicas de lectura de planos en Microsoft Teams.<br>• **80% Presencial Práctico (32 Horas / 8 sesiones):** Levantamiento in situ en planta/talleres (inspección de campo, croquizado, medición de tuberías y tags) y dibujo en Laboratorio CAD de Kinal. |
 | **Horario y Días Sugeridos** | Adaptado a la jornada de la empresa (Lunes a Jueves 07:00 a 16:00 hrs / Viernes 07:00 a 15:00 hrs):<br>• **Opción 1:** Martes y Jueves de 07:30 a 11:30 hrs (o 12:00 a 16:00 hrs) — 5 semanas.<br>• **Opción 2:** 1 jornada semanal intensiva los días Viernes de 07:30 a 11:30 y 12:00 a 15:00 hrs. |
 | **Fechas Propuestas de Inicio** | **Opción Diciembre 2026:** Inicio 01 o 08 de Diciembre de 2026.<br>**Opción Enero 2027:** Inicio 12 o 19 de Enero de 2027. |
-| **Sede y Entornos** | Laboratorios CAD de Alta Gama de Fundación Kinal, Aulas Virtuales Microsoft Teams y/o Instalaciones de Planta del Cliente |
-| **Ecosistema Digital** | **Microsoft Teams / M365** para sesiones remotas y **Moodle (Kinal.academy)** para repositorio de librerías DWG y normativas |
+| **Sede y Entornos** | Laboratorios CAD de Alta Gama de Fundación Kinal, Aulas Virtuales Microsoft Teams e Instalaciones de Planta del Cliente |
+| **Ecosistema Digital** | **Microsoft Teams / M365** para sesiones remotas y **Moodle (Kinal.academy)** para bibliotecas DWG y normativas |
 | **Umbral Aprobatorio** | **75 puntos sobre 100** (Evaluación práctica por suficiencia de competencias técnicas) |
 | **Acreditación Oficial** | Diploma de Especialización Técnica Profesional emitido por **Fundación Kinal** |
 
 ---
 
-## 2. Marco Filosófico e Ideario Institucional de Fundación Kinal
+## 2. ¿Qué es un Diagrama P&ID (*Piping and Instrumentation Diagram*)?
 
-La capacitación técnica en Fundación Kinal no se limita a la transmisión de destrezas operativas; inculca una cultura de integridad, seguridad y búsqueda constante de la excelencia:
+Un **P&ID** (Diagrama de Tuberías e Instrumentación, por sus siglas en inglés) es el documento gráfico maestro de ingeniería que describe de forma esquemática la interconexión funcional de un proceso industrial. No es un plano arquitectónico ni un dibujo a escala geográfica; es el **mapa esquemático de funcionamiento y control de una planta**.
+
+`	ext
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        ARQUITECTURA Y ALCANCE DE UN DIAGRAMA P&ID                      │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+                                            │
+     ┌──────────────────────┬───────────────┴───────────────┬──────────────────────┐
+     ▼                      ▼                               ▼                      ▼
+┌──────────────────┐  ┌──────────────────┐    ┌──────────────────┐  ┌──────────────────┐
+│ 1. EQUIPOS DE    │  │ 2. RED DE        │    │ 3. ELEMENTOS DE  │  │ 4. LAZOS DE      │
+│    PROCESO       │  │    TUBERÍAS      │    │    CONTROL/VÁLV. │  │    INSTRUMENTOS  │
+├──────────────────┤  ├──────────────────┤    ├──────────────────┤  ├──────────────────┤
+│ • Tanques /      │  │ • Diámetro (NPS) │    │ • Válvulas man.  │  │ • Sensores y tags│
+│   Recipientes    │  │ • Cédula / Sch.  │    │   (globo, comp.) │  │   (PI, TT, LT)   │
+│ • Bombas / HPUs  │  │ • Código servicio│    │ • Válvulas auto. │  │ • Líneas señal:  │
+│ • Compresores    │  │ • Sentido flujo  │    │   (solenoide, CV)│  │   eléc., neum.,  │
+│ • Intercambiad.  │  │ • Aislamiento    │    │ • Válvulas PSV   │  │   bus de datos   │
+└──────────────────┘  └──────────────────┘    └──────────────────┘  └──────────────────┘
+`
+
+En un P&ID se integran cuatro componentes esenciales:
+1. **Equipos de proceso:** Representación esquemática normalizada de recipientes, tanques, intercambiadores de calor, bombas centrífugas, bombas de desplazamiento positivo y compresores.
+2. **Red de tuberías y líneas de servicio:** Líneas de proceso y servicios auxiliares (agua, vapor, aire comprimido, fluidos hidráulicos) con su código de tubería (*Line Numbering*), diámetro nominal, cédula, sentido de flujo y accesorios.
+3. **Válvulas y elementos de maniobra:** Simbología precisa de válvulas manuales (compuerta, globo, bola, mariposa, retención/check) y válvulas automáticas con actuadores neumáticos, eléctricos o solenoides, indicando su posición de falla segura (*Fail Open / Fail Close*).
+4. **Instrumentación y lazos de control:** Círculos o globos ISA que identifican la variable medida (Presión, Temperatura, Nivel, Flujo) y la función del instrumento (Transmisor, Indicador, Controlador, Switch, Válvula), interconectados mediante líneas de señal normalizadas.
+
+---
+
+## 3. Marco Filosófico e Ideario Institucional de Fundación Kinal
+
+La capacitación técnica en Fundación Kinal vincula las habilidades operativas con una cultura de integridad, servicio y excelencia profesional:
 
 > [!IMPORTANT]
 > **Misión Institucional de Fundación Kinal:**  
-> *"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad"*.
+> *«Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad»*.
 
 > [!IMPORTANT]
 > **Valores Nucleares de Fundación Kinal:**  
-> *"Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable"*.
+> *«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable»*.
 
-### 2.1 El Principio del «Trabajo Bien Hecho» Aplicado a los Diagramas Industriales de Planta
-En instalaciones de proceso industrial, un error en la interpretación o actualización de un diagrama de tuberías e instrumentación (P&ID) puede derivar en graves accidentes de seguridad operacional, mezclas indebidas de fluidos, fallas catastróficas en bombas o roturas por sobrepresión.
+### 3.1 El Principio del «Trabajo Bien Hecho» en la Interpretación y Dibujo de Planos
+En el entorno industrial, un plano no es un esquema decorativo; es el documento técnico y legal sobre el cual se ejecutan maniobras operativas, mantenimientos y bloqueos de seguridad. Un error en la interpretación de un plano o un dibujo impreciso puede provocar maniobras indebidas, sobrepresiones, derrames o accidentes en procedimientos de consignación LOTO (*Lockout/Tagout*).
 
-En este programa, el **trabajo bien hecho** se traduce en:
-* **Fidelidad y Trazabilidad Absoluta:** Levantamiento riguroso de cada línea de tubería, válvula, bypass, purga y sensor existente en la realidad física de la planta, eliminando suposiciones o planos obsoletos desactualizados (*as-built* verídico).
-* **Seguridad y Códigos de Colores:** Identificación estricta de fluidos y dirección de flujo conforme a normas internacionales (ASME A13.1) para prevenir riesgos en líneas críticas como **búnker caliente, diésel inflamable, aire a alta presión y aceites hidráulicos**.
-* **Estandarización y Lenguaje Técnico Común:** Homologación de criterios entre mecánicos, electricistas, instrumentistas y el dibujante, permitiendo que todo el equipo técnico hable el mismo lenguaje gráfico bajo normas **ANSI/ISA-5.1, ISO 10628 e ISO 1219**.
-
----
-
-## 3. Justificación y Diagnóstico de la Necesidad Operativa
-
-En plantas industriales con operaciones continuas y cuartos de máquinas complejos, el personal de mantenimiento suele enfrentar cuatro retos críticos:
-1. **Planos Obsoletos (*Out of Date*):** Modificaciones de tuberías, reubicación de bombas o reemplazo de válvulas realizadas en paros de planta que nunca se reflejaron en los diagramas de ingeniería.
-2. **Brecha de Comunicación Multidisciplinaria:** El mecánico conoce la ruta física de la tubería; el instrumentista comprende el lazo de control y transmisor; el electricista ubica la alimentación de fuerza; pero el dibujante no cuenta con la información unificada para actualizar el plano CAD.
-3. **Manejo de Fluidos Complejos y Térmicos:** Tuberías de búnker con líneas de acompañamiento térmico (trazado de vapor o eléctrico) y diésel que requieren representación precisa de recirculación, alivios, filtros canasta y corte rápido.
-4. **Sistemas Neumáticos e Hidráulicos sin Esquematizar:** Líneas de aire comprimido con caídas de presión o filtración deficiente, y unidades hidráulicas con válvulas direccionales y de seguridad cuyos esquemas funcionales se desconocen.
-
-**La Solución de Fundación Kinal:** Unificar al equipo técnico en un entrenamiento práctico donde mecánicos, electricistas e instrumentistas aprenden a relevar e interpretar esquemas normalizados, mientras el dibujante consolida la estandarización y modelado paramétrico de bloques inteligentes en AutoCAD.
+En este programa, el principio del **trabajo bien hecho** se materializa en cuatro pilares:
+* **Fidelidad y Verdad Técnica (*As-Built* Real):** Compromiso ético de reflejar en el dibujo exactamente lo que existe en campo. Cero tolerancia a adivinar trayectorias, omitir válvulas de purga o suponer la ubicación de instrumentos.
+* **Prolijidad Gráfica y Estandarización CAD:** Dibujo limpio y estructurado, empleo riguroso de capas normalizadas por servicio, bloques con atributos homogéneos, textos nítidos y cumplimiento estricto de las normas gráficas internacionales (**ANSI/ISA-5.1, ISO 10628 e ISO 1219**).
+* **Cultura de Seguridad y Protección de Vidas:** El dibujante y el técnico comprenden que un diagrama claro protege la vida de los operadores y personal de mantenimiento, permitiendo intervenciones seguras y confiables.
+* **Espíritu de Servicio y Comunicación Multidisciplinaria:** El plano técnico es un puente de colaboración. Un diagrama bien dibujado facilita el trabajo del mecánico, del instrumentista, del electricista y de los supervisores, promoviendo el trabajo en equipo y la eficiencia de planta.
 
 ---
 
-## 4. Objetivo General del Programa
+## 4. Justificación y Necesidad Operativa
+
+El personal técnico de planta a menudo se enfrenta a:
+1. **Planos Desactualizados:** Modificaciones de tuberías, reubicación de válvulas o sustitución de instrumentos que se ejecutaron en campo pero nunca se documentaron en los archivos CAD de ingeniería.
+2. **Brecha en la Lectura Técnica:** Mecánicos y electricistas que operan los equipos pero tienen dificultades para interpretar la simbología de instrumentos ISA, los lazos de control o los códigos de línea.
+3. **Falta de Métodos de Levantamiento:** Ausencia de una técnica metódica para realizar recorridos de campo (*walkdowns*), tomar medidas dimensionales precisas y elaborar croquis estructurados que el dibujante pueda plasmar sin ambigüedades.
+4. **Dibujos CAD sin Estandarización:** Planos elaborados en una sola capa, sin bloques inteligentes, con símbolos no normalizados y sin tablas de equipos asociadas.
+
+**Solución Kinal:** Unificar al equipo técnico en un entrenamiento centrado en la **lectura analítica, el levantamiento en sitio y la diagramación profesional en AutoCAD 2D**, convirtiendo a los técnicos en intérpretes expertos y al equipo de diseño en garantes del dibujo estandarizado.
+
+---
+
+## 5. Objetivo General del Programa
 
 > [!IMPORTANT]
 > **Objetivo de Aprendizaje:**  
-> Capacitar al personal técnico multidisciplinario (mecánicos, electricistas, instrumentistas y dibujante) para **interpretar, relevar en campo y diagramar en AutoCAD 2D planos técnicos y diagramas P&ID** correspondientes a:
-> 1. Sistemas de agua de proceso y agua potable.
-> 2. Sistemas de combustibles líquidos (búnker y diésel, incluyendo tuberías, bombas, válvulas de alivio/corte y trazado de vapor).
-> 3. Sistemas neumáticos (redes de aire comprimido, compresores, tratamiento FRL, válvulas e instrumentación).
-> 4. Sistemas hidráulicos básicos (centrales de potencia HPU, bombas, válvulas reguladoras, direccionales y cilindros).
-> Todo ello bajo estándares internacionales de ingeniería (ISA, ISO, ASME) y con el sello de excelencia del *"trabajo bien hecho"* de Fundación Kinal.
+> Desarrollar competencias teórico-prácticas en el equipo multidisciplinario (mecánicos, electricistas, instrumentistas y dibujantes) para **interpretar con fluidez, relevar en campo y dibujar en AutoCAD 2D diagramas de tuberías e instrumentación (P&ID) y esquemas funcionales de fluidos**, aplicando normas internacionales de representación gráfica (ANSI/ISA-5.1, ISO 10628, ISO 1219 y ASME A13.1), con librerías de bloques inteligentes, capas normalizadas y tablas de equipos, bajo el sello del *«trabajo bien hecho»* de Fundación Kinal.
 
 ---
 
-## 5. Perfil de Ingreso y Egreso
+## 6. Perfil de Ingreso y Egreso
 
 ### Perfil de Ingreso
-* Colaboradores activos de la empresa en las áreas de mantenimiento mecánico, mantenimiento eléctrico, instrumentación y control, o dibujo y diseño técnico.
-* Experiencia práctica en operación de planta, cuartos de máquinas, subestaciones o talleres industriales.
-* Disposición para el trabajo colaborativo interdisciplinario y compromiso con las normas de seguridad de planta.
+* Colaboradores técnicos de planta en áreas de mantenimiento mecánico, eléctrico, instrumentación/control y dibujantes o proyectistas CAD.
+* Experiencia práctica en plantas industriales, cuartos de máquinas, talleres o salas de control.
+* Interés en la estandarización gráfica, la lectura de planos y la seguridad operacional.
 
 ### Perfil de Egreso
-Al finalizar la capacitación, el colaborador:
-1. Lee e interpreta con fluidez diagramas de tuberías e instrumentación (P&ID) y diagramas funcionales de fluidos bajo normas **ANSI/ISA-5.1, ISO 10628 e ISO 1219**.
-2. Realiza levantamientos de campo (*field survey*) identificando componentes reales: diámetros de tubería (NPS/Schedule), tipos de válvulas (globo, compuerta, mariposa, retención, solenoide, modulante), bombas, compresores e instrumentos con sus correspondientes tags.
-3. Elabora croquis técnicos limpios y estructurados a mano alzada y en tablet táctil con capas organizadas y simbología normalizada.
-4. Genera y actualiza diagramas P&ID en AutoCAD 2D aplicando capas por tipo de fluido, librerías de bloques inteligentes con atributos editables y tablas de resumen de instrumentos y equipos.
-5. Identifica y representa sistemas críticos de planta: lazos de búnker caliente, diésel, redes de aire comprimido con purgas de condensado, circuitos hidráulicos y redes hidrosanitarias de proceso.
+Al egresar, el participante:
+1. **Interpreta y decodifica** diagramas P&ID industriales identificando tags de instrumentos ISA, tipos de líneas de señal, válvulas, equipos y sentidos de flujo.
+2. **Ejecuta levantamientos de campo (*walkdowns*)** aplicando técnicas de croquizado a mano alzada y en tablet, midiendo diámetros de tubería (NPS/Schedule) y registrando accesorios in situ.
+3. **Aplica simbología normalizada** según ANSI/ISA-5.1, ISO 10628 e ISO 1219 para sistemas de proceso (agua, vapor, aire comprimido y fluidos hidráulicos).
+4. **Dibuja planos P&ID en AutoCAD 2D** estructurados en capas normalizadas, con librerías de bloques dinámicos y atributos editables.
+5. **Genera tablas automáticas de equipos e instrumentos** (*Equipment & Valve Schedules*) y maqueta planos ejecutivos listos para impresión y entrega oficial en PDF.
 
 ---
 
-## 6. Temario Curricular Jerárquico y Detallado (40 Horas)
+## 7. Temario Curricular Estructurado (40 Horas)
 
-### Módulo 1: Fundamentos Normativos, Simbología Industrial y Lectura de Diagramas (8 Horas — Virtual Sincrónico / Teams)
-* **Tema 1.1: Marco Normativo Internacional de Diagramación Técnica:**
-  * Estructura y tipos de diagramas de planta: Diagrama de Bloques (BFD), Diagrama de Flujo de Proceso (PFD) y Diagrama de Tuberías e Instrumentación (P&ID).
-  * Norma **ANSI/ISA-5.1:** Simbología de identificación de instrumentos, círculos ISA, líneas de señal (eléctrica, neumática, hidráulica, capilar, enlace de datos de software) y ubicación de instrumentos (campo, panel principal, auxiliar).
-  * Código de identificación por letras ISA: variables de proceso (P: Presión, T: Temperatura, F: Flujo/Caudal, L: Nivel, V: Vibración) y letras modificadoras (I: Indicador, C: Controlador, T: Transmisor, V: Válvula, S: Switch).
-  * Norma **ISO 10628:** Reglas generales para diagramas de flujo de plantas químicas y petroquímicas.
-  * Código de colores y rotulado de tuberías según **ASME A13.1** (agua potable, agua tratada, diésel, búnker, aire comprimido, aceite hidráulico).
-* **Tema 1.2: Metodología de Lectura, Rastreo e Interpretación de Lazos:**
-  * Rastreo de líneas de proceso desde fuentes de suministro hasta puntos de consumo.
-  * Identificación de lazos de control cerrados (ej. TIC: Lazo de Control de Temperatura en búnker; PIC: Lazo de Presión en aire).
-  * Filosofía de seguridad operativa: fallas seguras en válvulas automáticas (FC: Falla Cerrada / Fail Close; FO: Falla Abierta / Fail Open; FL: Falla Bloqueada / Fail Locked).
-
----
-
-### Módulo 2: Levantamiento e Interpretación de Sistemas de Agua de Proceso y Potable (8 Horas — Presencial: Campo + Laboratorio CAD)
-* **Tema 2.1: Componentes y Arquitectura de Sistemas de Agua Industrial:**
-  * Redes de agua cruda, agua desmineralizada/suavizada, agua de enfriamiento (cooling towers) y agua potable.
-  * Equipos de impulsión: bombas centrífugas (horizontales, multietapas, sumergibles), curvas de operación básicas, cebado y cavitación.
-  * Válvulas de control y seccionamiento: válvulas de compuerta, mariposa, retención (check oscilante y de disco), globo, de flotador mecánico y válvulas de pie con canastilla.
-  * Sistemas de tratamiento y filtración: filtros de arena, lecho mixto, ablandadores automáticos de resina catiónica y dosificación química.
-* **Tema 2.2: Metrología de Tuberías y Práctica de Levantamiento en Sitio:**
-  * Metrología dimensional de tuberías de agua: determinación de diámetro nominal (NPS / DN), medición exterior con pie de rey/cinta perimétrica y verificación de cédula (Schedule 40/80, tubería PVC, CPVC, acero al carbón y acero inoxidable).
-  * Identificación de accesorios: codos, tes, reducciones concéntricas y excéntricas, uniones bridadas (ANSI 150/300) y juntas de expansión mecánicas.
-  * Toma de datos en campo: croquizado proporcional a mano alzada y en tablet táctil de una estación de bombeo de agua real.
-  * Modelado en AutoCAD 2D del P&ID del sistema de agua de proceso aplicando capas normalizadas y bloques con atributos.
+### Módulo 1: Fundamentos de P&ID, Normativa ISA-5.1 y Lectura de Diagramas (8 Horas — Virtual Sincrónico / Teams)
+* **Tema 1.1: El Diagrama P&ID en la Ingeniería de Plantas:**
+  * Concepto, propósito y jerarquía: Diferencias entre Diagrama de Bloques (BFD), Diagrama de Flujo de Proceso (PFD) y Diagrama de Tuberías e Instrumentación (P&ID).
+  * Anatomía de un plano P&ID: área de dibujo, cajetín, notas generales, referencias cruzadas (*off-page connectors*) y leyendas de simbología.
+  * Código de identificación de tuberías (*Line Numbering*): Diámetro nominal - Servicio de fluido - Número de línea - Especificación de material - Aislamiento térmico.
+  * Código de colores y rotulación según **ASME A13.1**.
+* **Tema 1.2: Norma ANSI/ISA-5.1 — Identificación e Instrumentación:**
+  * Globos o círculos de instrumentos: instrumentos de campo, montados en panel principal, panel auxiliar y sistemas DCS/PLC.
+  * Letras de identificación ISA: primera letra (Variable de proceso: P, T, F, L, V) y letras sucesivas (Función: I, C, T, V, S, A).
+  * Líneas de señal de control: señal eléctrica (discontinua), señal neumática (línea con dobles marcas), enlace digital/software, capilar e hidráulica.
+  * Modos de falla de válvulas automáticas: Falla Abierta (FO), Falla Cerrada (FC), Falla Bloqueada (FL).
+  * Taller práctico virtual: Decodificación y lectura de 20 lazos de control cerrados en planos industriales de muestra.
 
 ---
 
-### Módulo 3: Sistemas de Combustibles Líquidos (Búnker y Diésel) (8 Horas — Presencial: Campo + Laboratorio CAD)
-* **Tema 3.1: Almacenamiento, Bombeo y Manejo Térmico de Búnker y Diésel:**
-  * Características físicas de combustibles industriales: viscosidad Saybolt/Cinemática del búnker C (fuel oil N° 6) vs. diésel N° 2, puntos de fluidez y requerimientos de temperatura.
-  * Tanques de almacenamiento: tanques de recepción principal y tanques de día (*day tanks*), venteos con arrestador de flama, líneas de llenado, rebose y drenaje de fondo (purgas de condensados).
-  * Bombas de transferencia de combustible: bombas de desplazamiento positivo (engranes externos/internos, tornillo de triple husillo) y bombas centrífugas de trasiego.
-  * Sistemas de precalentamiento y traceado para búnker: intercambiadores de calor coraza y tubos, calentadores eléctricos de succión y líneas de traceado de vapor (*steam tracing*) con trampas de vapor tipo balde invertido o termodinámicas.
-* **Tema 3.2: Instrumentación, Válvulas de Seguridad y Levantamiento de Combustibles:**
-  * Válvulas especializadas: válvulas de cierre rápido de emergencia con fusible térmico (*fire valves*), válvulas de seguridad y alivio de presión (PSV/PRV) con línea de retorno a tanque, válvulas de control modulante con actuador neumático y filtros canasta tipo dúplex para limpieza continua.
-  * Instrumentación asociada: transmisores de nivel continuo (radar, presión hidrostática), switches de nivel alto/bajo (LSH/LSL), manómetros con sello de diafragma para búnker y transmisores de temperatura (RTD Pt100).
-  * Práctica de campo: levantamiento y rastreo físico de un sistema de trasiego y quemador de combustible.
-  * Digitalización del P&ID del sistema de búnker y diésel en AutoCAD 2D con bloques dinámicos y simbología ISA.
+### Módulo 2: Simbología de Válvulas, Accesorios y Equipos en Planos P&ID (8 Horas — Virtual Sincrónico / Teams)
+* **Tema 2.1: Simbología Normalizada de Válvulas y Actuadores (ISO 10628 / ISA-5.1):**
+  * Válvulas de seccionamiento y regulación: compuerta, globo, bola, mariposa, aguja y diafragma.
+  * Válvulas de retención (*check*): oscilante, de disco y de doble clapeta.
+  * Válvulas de alivio y seguridad: PSV (seguridad por sobrepresión) y PRV (reductora de presión).
+  * Tipos de actuadores gráficos: manual (palanca/volante), diafragma neumático, cilindro, motor eléctrico y solenoide.
+* **Tema 2.2: Representación Gráfica de Equipos y Accesorios de Tubería:**
+  * Equipos dinámicos: bombas centrífugas (horizontales, verticales), bombas de desplazamiento positivo (engranajes, tornillo), compresores y ventiladores.
+  * Equipos estáticos: recipientes a presión, tanques atmosféricos, torres, intercambiadores de calor (tubo y coraza, placas).
+  * Accesorios de línea: filtros en Y, filtros canasta tipo dúplex, trampas de vapor, juntas de expansión y carreteles de desmontaje.
+  * Ejercicios de rastreo de líneas de proceso (*Line Tracing*) desde suministro hasta destino e identificación de puntos de muestreo y venteos.
 
 ---
 
-### Módulo 4: Sistemas Neumáticos Industriales (8 Horas — Presencial: Campo + Laboratorio CAD)
-* **Tema 4.1: Generación, Tratamiento y Distribución de Aire Comprimido:**
-  * Compresores industriales: compresores de tornillo rotativo con inyección de aceite y compresores reciprocantes de pistón.
-  * Tratamiento de aire: tanques pulmón/acumuladores verticales con válvula de seguridad y purga de condensados (temporizada o de nivel capacitivo), secadores de aire refrigerativos (punto de rocío +3°C) y desecantes regenerativos, torres de filtración coalescente (partículas y vapor de aceite).
-  * Redes de distribución: topología en anillo cerrado (*closed loop*) con pendientes del 1% al 2%, bajadas aéreas con cuello de cisne (*gooseneck*) para atrapar condensados y estaciones de purga automática de fondo.
-* **Tema 4.2: Simbología ISO 1219, Unidades FRL y Actuadores:**
-  * Unidades de Mantenimiento de Aire (FRL): Filtro con separador centrífugo de agua, Regulador de presión con manómetro y Lubricador de niebla de aceite.
-  * Válvulas de control direccional neumático según **ISO 1219**: válvulas 2/2, 3/2, 5/2 y 5/3 vías; tipos de accionamiento (manual, mecánico por rodillo, solenoide eléctrico y pilotado por aire).
-  * Actuadores neumáticos: cilindros de simple efecto con retorno por muelle, cilindros de doble efecto con amortiguación y actuadores rotativos.
-  * Válvulas auxiliares: reguladores de caudal unidireccionales (control de velocidad), válvulas de escape rápido y válvulas antirretorno.
-  * Práctica de levantamiento en planta: relevamiento de compresor, secador, pulmón y red de distribución FRL de taller, modelando el esquema neumático en AutoCAD.
+### Módulo 3: Levantamiento de Campo (*Walkdown*), Metrología y Croquizado Técnico (8 Horas — Presencial: Planta / Taller Kinal)
+* **Tema 3.1: Metodología del Levantamiento de Campo (*Field Walkdown*):**
+  * Planificación de la ruta de relevamiento: identificación de límites de batería, puntos de ingreso y distribución.
+  * Seguridad durante el levantamiento: protocolos EPP, áreas clasificadas y precauciones en líneas calientes o presurizadas.
+  * Metrología dimensional aplicada a tuberías: medición de diámetro exterior (OD) con calibrador vernier y cinta perimétrica; determinación del diámetro nominal (NPS / DN) y cédula (*Schedule 40/80*) mediante tablas normalizadas.
+  * Identificación física de accesorios: tipo de bridas (ANSI 150/300, cara levantada RF / cara plana FF), conexiones roscadas NPT y uniones soldadas.
+* **Tema 3.2: Técnicas de Croquizado a Mano Alzada y en Tablet:**
+  * Principios de croquizado rápido esquemático: proporción visual, alineación ortogonal y uso de cuadrícula.
+  * Registro de información en sitio: asignación de tags, diámetros, sentidos de flujo y elevaciones relativas.
+  * Práctica de campo: levantamiento físico guiado de un sistema de proceso en planta/taller (estación de bombeo, filtración o distribución).
+  * Elaboración del croquis borrador consolidado y validación de datos entre los integrantes de la brigada.
 
 ---
 
-### Módulo 5: Sistemas Hidráulicos Básicos e Integración Capstone (8 Horas — Presencial: Laboratorio CAD)
-* **Tema 5.1: Fundamentos de Oleohidráulica Industrial y Simbología ISO 1219:**
-  * Principio de Pascal y transmisión de potencia mediante aceite hidráulico a alta presión (1,000 a 3,000 PSI).
-  * Centrales y Unidades de Potencia Hidráulica (HPU): depósito/tanque con visor de nivel y temperatura, bombas hidráulicas de desplazamiento positivo (engranajes externos, paletas, pistones axiales), filtro de aspiración y filtro de retorno con manómetro indicador de colmatación.
-  * Válvulas hidráulicas: válvulas de alivio principal (seguridad de presión máxima), válvulas reductoras de presión, válvulas contrabalance y válvulas direccionales 4/3 con centro cerrado, abierto, tándem y flotante.
-  * Actuadores y accesorios: cilindros hidráulicos de alta presión, motores hidráulicos y acumuladores de vejiga/membrana para compensación de pulsaciones.
-* **Tema 5.2: Modelado CAD Estandarizado y Proyecto Capstone Final Integrador:**
-  * Estandarización de librerías en AutoCAD 2D: bloques dinámicos con atributos editables (`ATTDEF`) para bombas, válvulas, instrumentos, tanques y actuadores.
-  * Uso de comandos de extracción de datos (`EATTEXT`) para generar listas automáticas de instrumentos y válvulas (*Valve Schedule* y *Equipment List*).
-  * Maquetación en *Paper Space*: armado de láminas ejecutivas Doble Carta o A3 con cajetín corporativo, lista de simbología, notas técnicas de diseño y plumillas `.CTB`.
-  * **Sustentación del Proyecto Capstone:** Presentación grupal (mecánicos + electricistas + instrumentistas + dibujante) del levantamiento integral de un sistema industrial real de planta (P&ID de agua, combustible, aire o hidráulica) defendido ante el panel evaluador de Kinal.
+### Módulo 4: Dibujo y Digitalización de Diagramas P&ID en AutoCAD 2D (8 Horas — Presencial: Laboratorio CAD)
+* **Tema 4.1: Entorno de Trabajo y Estructuración de Capas Normalizadas:**
+  * Configuración de la plantilla de dibujo P&ID Kinal (.DWT): unidades, límites y estilos de texto normalizados.
+  * Sistema de capas (*Layers*) por fluido y disciplina: L-PROCESO, L-SERVICIOS, E-EQUIPOS, E-VALVULAS, I-INSTRUMENTOS, I-SENALES, TEXTOS, COTAS.
+  * Herramientas de dibujo de precisión esquemática: OSNAP (cuadrante, centro, intersección, perpendicular) y rastreo polar (Polar Tracking).
+  * Inserción del croquis de campo como referencia de calco y trazado vectorial de líneas principales y secundarias.
+* **Tema 4.2: Creación de Bloques Inteligentes con Atributos:**
+  * Creación y gestión de bloques para P&ID: símbolos de bombas, intercambiadores, tanques y válvulas.
+  * Inserción de atributos editables (ATTDEF y BATTMAN) para tags de instrumentos ISA (TAG-LOOP, TAG-NUM, RANGO).
+  * Cruce de tuberías: técnicas de trazado con puente/arco (*jumper*) vs. cruce limpio sin conexión; derivaciones en T con punto de conexión.
+  * Digitalización completa del croquis de campo levantado en el Módulo 3.
 
 ---
 
-## 7. Esquema de Evaluación y Acreditación Institucional
+### Módulo 5: Esquemas ISO 1219, Extracción de Datos, Maquetación y Capstone (8 Horas — Presencial: Laboratorio CAD)
+* **Tema 5.1: Esquematización de Circuitos de Potencia Fluida (Norma ISO 1219):**
+  * Simbología gráfica neumática e hidráulica: unidades FRL, válvulas direccionales (3/2, 5/2, 4/3), reguladores de caudal unidireccional y cilindros.
+  * Diferencias de representación entre un diagrama P&ID de proceso y un esquema funcional de potencia fluida ISO 1219.
+  * Trazado en AutoCAD de circuitos neumáticos e hidráulicos básicos integrados al sistema de planta.
+* **Tema 5.2: Extracción de Datos, Maquetación y Sustentación Capstone:**
+  * Uso de comandos de extracción de datos (EATTEXT): generación automática en el plano de listas de instrumentos (*Instrument Schedule*) y tablas de válvulas (*Valve List*).
+  * Maquetación en espacio papel (*Layouts*): ajuste de láminas (A3 / Doble Carta), ventana gráfica (*Viewport*), cajetín institucional con atributos y asignación de plumillas monocromáticas .CTB.
+  * **Sustentación del Proyecto Capstone:** Presentación grupal del juego de planos P&ID definitivo levantado en planta, con su lista de equipos y especificaciones, defendido ante el panel evaluador de Kinal.
 
-El modelo evaluativo de **Fundación Kinal** se basa en la demostración práctica de competencias en condiciones reales de taller y laboratorio:
+---
 
-* **Escala de Calificación:** 0 a 100 puntos netos.
-* **Nota Mínima Aprobatoria:** **75 puntos sobre 100** en todas las comprobaciones de levantamiento y diagramación.
+## 8. Esquema de Evaluación y Acreditación Institucional
 
-### Desglose Ponderado de Evaluación:
+El modelo de evaluación de **Fundación Kinal** se basa en la demostración práctica de competencias en condiciones reales:
+
+* **Nota Mínima Aprobatoria:** **75 puntos sobre 100** en todas las evidencias y proyectos.
 
 | Componente Evaluativo | Ponderación | Modalidad | Criterios e Instrumentos de Medición |
 | :--- | :---: | :---: | :--- |
-| **Evaluación Teórico-Normativa**<br>(ISA-5.1, ISO 10628, ISO 1219) | **15%** | Virtual (Teams) | Cuestionario técnico de decodificación de tags ISA, simbología de válvulas y lazos de control. |
-| **Prácticas de Campo I y II**<br>(Agua de Proceso y Búnker/Diésel) | **25%** | Presencial (Planta) | Croquis a mano alzada y tablet, identificación exacta de componentes, tags y diámetros nominales. |
-| **Prácticas de Campo III y IV**<br>(Sistemas Neumáticos e Hidráulicos) | **20%** | Presencial (Planta) | Relevamiento de compresores, FRL, HPU y válvulas direccionales conforme a norma ISO 1219. |
-| **Laboratorios de AutoCAD 2D**<br>(P&ID y Bloques con Atributos) | **20%** | Presencial (CAD) | Precisión en trazado vectorial, uso de capas por fluido, bloques inteligentes con atributos y extracción de tablas. |
-| **Proyecto Capstone Final Integrador**<br>(Levantamiento y P&ID de Planta) | **20%** | Presencial (Panel) | Entrega de juego de planos P&ID impreso/PDF maquetado a escala, lista de equipos y defensa técnica grupal. |
+| **Evaluación Teórico-Normativa**<br>(ISA-5.1, ISO 10628, ISO 1219) | **15%** | Virtual (Teams) | Cuestionario técnico de decodificación de tags ISA, simbología de válvulas y lectura de lazos. |
+| **Práctica de Levantamiento en Campo**<br>(Walkdown y Croquizado) | **25%** | Presencial (Planta) | Croquis técnico proporcional, identificación rigurosa de diámetros, accesorios y tags in situ. |
+| **Laboratorios de Dibujo CAD I y II**<br>(Trazado P&ID y Bloques con Atributos) | **25%** | Presencial (CAD) | Precisión en trazado vectorial, uso correcto de capas, inserción de bloques ISA y rotulado de tags. |
+| **Esquemas de Potencia Fluida ISO 1219**<br>(Circuitos Neumáticos/Hidráulicos) | **15%** | Presencial (CAD) | Modelado de circuitos funcionales de potencia fluida bajo norma ISO 1219 en AutoCAD. |
+| **Proyecto Capstone Final Integrador**<br>(Plano P&ID Maquetado y Tabla de Equipos) | **20%** | Presencial (Panel) | Juego de planos P&ID terminado con cajetín, tablas de equipos (EATTEXT), PDF exportado y defensa grupal. |
 | **Total** | **100%** | **Híbrido** | **Umbral Institucional de Aprobación: &ge; 75 Puntos** |

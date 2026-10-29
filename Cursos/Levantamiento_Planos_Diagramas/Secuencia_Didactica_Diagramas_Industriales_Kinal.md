@@ -1,129 +1,190 @@
-# SECUENCIA DIDÁCTICA Y MICROPLANIFICACIÓN PEDAGÓGICA
-## Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales
-### Especialidad: Fluidos, Combustibles (Búnker/Diésel), Neumática e Hidráulica
-### Modalidad Híbrida Corporativa (40 Horas — 10 Sesiones de 4 Horas) | Fundación Kinal — Escuela Técnica Superior
+# SECUENCIA DIDÁCTICA Y MICROPLANIFICACIÓN MINUTO A MINUTO
+## Interpretación y Levantamiento de Diagramas P&ID
+### Metodología Dual en Tres Momentos Didácticos (Apertura, Desarrollo y Cierre)
+### Formato Híbrido Corporativo: 40 Horas (10 Sesiones de 4 Horas / 240 Minutos) | Fundación Kinal — Escuela Técnica Superior
 
 ---
 
 > [!NOTE]
-> **Microdiseño Didáctico Basado en Competencias y Metodología Dual.**  
-> Diseñado a medida para la capacitación de 6 a 10 colaboradores (Mecánicos, Electricistas, Instrumentistas y Dibujante Técnico).  
-> Estructurado en los tres momentos pedagógicos normados por Fundación Kinal (Apertura, Desarrollo y Cierre), aplicando el ciclo de la Acción Completa y evaluando bajo el estándar institucional de suficiencia (&ge; 75 puntos sobre 100).
+> **Microdiseño Pedagógico Institucional.**  
+> Articula cada sesión de 240 minutos en los **tres momentos didácticos institucionales** (Apertura / Inicio, Desarrollo / Laboratorio Práctico, Cierre / Consolidación), guiados por las 6 fases del *Ciclo de la Acción Completa* de la formación dual alemana.  
+> Diseñado para brigadas interdisciplinarias de **6 a 10 colaboradores técnicos** (Mecánicos, Electricistas, Instrumentistas y Dibujantes Técnicos).
 
 ---
 
-## 1. Arquitectura de los Momentos Pedagógicos (Sesión de 240 Minutos)
+## 1. Identificación del Programa
 
-Cada sesión presencial o virtual sincrónica de 4 horas se estructura en tres momentos metodológicos continuos:
-
-```text
-┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│                    ESTRUCTURA DE CADA SESIÓN FORMATIVA (240 MINUTOS)                    │
-└─────────────────────────────────────────────────────────────────────────────────────────┘
-                                             │
-         ┌───────────────────────────────────┼───────────────────────────────────┐
-         ▼                                   ▼                                   ▼
-┌──────────────────┐               ┌──────────────────┐                ┌──────────────────┐
-│  1. APERTURA     │               │  2. DESARROLLO   │                │  3. CIERRE       │
-│  (30 Minutos)    │               │  (170 Minutos)   │                │  (40 Minutos)    │
-├──────────────────┤               ├──────────────────┤                ├──────────────────┤
-│ • Activación     │               │ • Demostración   │                │ • Verificación   │
-│ • Reto de planta │ ════════════> │ • Práctica campo │ ═════════════> │ • Coevaluación   │
-│ • Ideario Kinal  │               │ • Laboratorio CAD│                │ • Bitácora       │
-│ • Seguridad LOTO │               │ • Acción Completa│                │ • Feedback Kinal │
-└──────────────────┘               └──────────────────┘                └──────────────────┘
-```
-
-1. **Apertura / Activación (30 min):** Enlace con la sesión anterior, planteamiento de un caso o dilema operativo real de planta (falla por diagrama obsoleto, fuga en línea no identificada, error de LOTO), medidas de seguridad industrial y alineación con los valores de Fundación Kinal (*trabajo bien hecho, integridad técnica y espíritu de servicio*).
-2. **Desarrollo / Taller de Campo y Laboratorio CAD (170 min):** Ejecución metrológica directa (relevamiento físico de tuberías, bombas, válvulas, instrumentos ISA, componentes FRL e hidráulica ISO 1219), croquizado técnico en libreta/tablet y modelado vectorial en AutoCAD 2D con bloques inteligentes.
-3. **Cierre / Consolidación y Verificación (40 min):** Control de calidad y comprobación cruzada interdisciplinaria (el mecánico audita la ruta física, el instrumentista audita los tags y el dibujante audita las capas y bloques CAD), coevaluación entre pares, registro en la Bitácora del Aprendiz (*Berichtsheft*) y retroalimentación personalizada del instructor.
+* **Nombre del Curso:** Interpretación y Levantamiento de Diagramas P&ID
+* **Carga Horaria:** 40 horas pedagógicas (10 sesiones de 4 horas / 240 minutos cada una)
+* **Modalidad:** Híbrida (8 Horas Virtuales en Microsoft Teams + 32 Horas Presenciales en Planta y Laboratorios CAD Kinal)
+* **Umbral Aprobatorio:** **75 puntos sobre 100** (Reglamento de Evaluación de Fundación Kinal)
+* **Entornos:** Aulas Virtuales Teams, Instalaciones de Planta/Talleres de Mantenimiento y Laboratorios CAD Kinal.
 
 ---
 
-## 2. Matriz de Secuencias Didácticas Detalladas (Sesiones 1 a 10)
+## 2. ¿Qué es un Diagrama P&ID (*Piping and Instrumentation Diagram*)?
 
-| Sesión / Modalidad | Momento y Duración | Actividad del Docente / Instructor | Actividad del Participante / Estudiante (Mecánicos, Electricistas, Instrumentistas, Dibujante) | Recursos y Entorno | Criterios e Instrumentos de Evaluación |
-| :---: | :---: | :--- | :--- | :--- | :--- |
-| **Sesión 1**<br>(Virtual Teams)<br>Normas ISA-5.1 e ISO 10628 | **Apertura**<br>(30 min) | • Presenta el curso y expone el Ideario de Kinal: el valor del *"trabajo bien hecho"* en la seguridad operativa de planta.<br>• Analiza un accidente industrial real provocado por intervenir una tubería mal rotulada o con diagrama desactualizado.<br>• Establece las reglas de interacción virtual y disciplina técnica en Teams. | • Mecánicos y electricistas comparten incidentes reales de planta relacionados con planos no actualizados.<br>• Reflexionan sobre la responsabilidad ética del personal de mantenimiento en la preservación de la vida humana. | Aula virtual en Microsoft Teams; presentación multimedia; casos de estudio. | **Criterio:** Actitud profesional y comprensión del impacto del plano as-built.<br>**Instrumento:** Registro de participación reflexiva. |
-| **Sesión 1**<br>(Virtual Teams)<br>Normas ISA-5.1 e ISO 10628 | **Desarrollo**<br>(170 min) | • Explica la taxonomía de diagramas: BFD, PFD y P&ID.<br>• Desglosa la norma **ANSI/ISA-5.1:** Círculos ISA, ubicación física de instrumentos (campo, panel, montado en rack) y tipos de líneas de señal (eléctrica, neumática, software).<br>• Enseña el código de identificación por letras ISA (variables P, T, F, L y modificadores I, C, T, V).<br>• Expone el código de colores de tuberías según **ASME A13.1**.<br>• Guía un taller interactivo de decodificación de 20 tags industriales. | • El instrumentista lidera la decodificación de los lazos de control (`TIC-101`, `PIC-205`, `LSH-302`).<br>• El mecánico y el dibujante asocian los tags con los equipos físicos reales de planta (bombas, tanques, válvulas).<br>• Resuelven en equipos multidisciplinarios ejercicios de identificación de modos de falla segura (FC, FO, FL). | Plataforma Teams; guía de simbología ISA-5.1; ejercicios interactivos en Moodle Kinal. | **Criterio:** Precisión en decodificación de tags ISA y tipos de señal.<br>**Instrumento:** Cuestionario técnico de comprobación (&ge; 75 pts). |
-| **Sesión 1**<br>(Virtual Teams)<br>Normas ISA-5.1 e ISO 10628 | **Cierre**<br>(40 min) | • Modera la plenaria de revisión de respuestas; aclara dudas sobre letras modificadoras poco comunes.<br>• Asigna lectura técnica previa de simbología de válvulas ISO 10628 para la siguiente sesión. | • Comparan resultados entre equipos; corrigen erratas en la decodificación de lazos.<br>• Asientan en su Bitácora digital la primera entrada: resumen de normas ISA-5.1 y ASME A13.1. | Aula virtual Teams; Bitácora del Aprendiz en OneNote/Teams. | **Criterio:** Asimilación conceptual y autoevaluación.<br>**Instrumento:** Rúbrica formativa de cierre de sesión. |
-| **Sesión 2**<br>(Virtual Teams)<br>Simbología de Válvulas y Equipos | **Apertura**<br>(30 min) | • Conecta con la sesión anterior mediante un reto visual: proyecta un P&ID de una caldera y solicita ubicar la válvula de seguridad de vapor.<br>• Enfatiza el valor del rigor técnico: un símbolo de válvula mal interpretado puede causar una presurización indebida. | • Los participantes identifican los símbolos de válvulas proyectados.<br>• Debaten sobre las diferencias funcionales entre una válvula globo (estrangulamiento) y una válvula compuerta (aislamiento). | Aula virtual Teams; plano de caldera industrial; pizarra digital. | **Criterio:** Reconocimiento inicial de simbología de válvulas.<br>**Instrumento:** Preguntas diagnósticas orales. |
-| **Sesión 2**<br>(Virtual Teams)<br>Simbología de Válvulas y Equipos | **Desarrollo**<br>(170 min) | • Enseña la simbología según **ISO 10628 / ISA-5.1:** válvulas manuales (globo, compuerta, mariposa, bola, retención/check, diafragma) y automáticas (solenoide, motorizada, actuador de diafragma neumático).<br>• Modela la representación de equipos mecánicos: bombas centrífugas, bombas de engranes, bombas de tornillo y tanques atmosféricos/presurizados.<br>• Explica accesorios críticos: filtros canasta, filtros en Y, trampas de vapor y juntas de expansión.<br>• Guía una práctica de rastreo (*line tracking*) en un P&ID industrial real de 3 páginas. | • En parejas interdisciplinarias (mecánico + instrumentista / electricista + dibujante) rastrean una línea de combustible desde el tanque hasta el quemador.<br>• Identifican cada válvula, bypass, punto de muestreo y purga en el plano.<br>• Elaboran una lista preliminar de equipos y válvulas identificadas (*Equipment & Valve List*). | P&IDs industriales reales de muestra en PDF; catálogo de válvulas normalizadas. | **Criterio:** Capacidad de rastreo de líneas y decodificación de válvulas.<br>**Instrumento:** Taller de rastreo de P&ID evaluado (&ge; 75 pts). |
-| **Sesión 2**<br>(Virtual Teams)<br>Simbología de Válvulas y Equipos | **Cierre**<br>(40 min) | • Revisa las listas de equipos elaboradas por los participantes; destaca la importancia del orden y la nomenclatura normalizada.<br>• Presenta el protocolo de seguridad y EPP requerido para la jornada presencial de campo en la Sesión 3. | • Cada equipo comparte dos hallazgos del rastreo del plano.<br>• Verifican su disponibilidad de EPP (botas dieléctricas, lentes de seguridad, guantes y chaleco).<br>• Registran su síntesis en la Bitácora de Aprendizaje. | Plataforma Teams; Bitácora del Aprendiz. | **Criterio:** Preparación operativa para la práctica de campo.<br>**Instrumento:** Verificación de lista de chequeo de seguridad. |
-| **Sesión 3**<br>(Presencial Planta/Kinal)<br>Metrología de Tuberías y Agua | **Apertura**<br>(30 min) | • Bienvenida a la jornada presencial en planta / talleres Kinal.<br>• Charla de seguridad de 5 minutos: protocolos LOTO (bloqueo y etiquetado), líneas presurizadas y orden en el área de trabajo.<br>• Presenta el reto de campo: relevar el sistema de bombeo y filtración de agua de proceso. | • El equipo revisa sus equipos de protección personal y atiende las instrucciones de seguridad del facilitador.<br>• El mecánico y el instrumentista preparan las herramientas de medición directa. | Área de planta / Banco de pruebas de bombeo Kinal; EPP completo. | **Criterio:** Cumplimiento estricto de normas de seguridad de planta.<br>**Instrumento:** Lista de verificación de EPP y protocolo LOTO. |
-| **Sesión 3**<br>(Presencial Planta/Kinal)<br>Metrología de Tuberías y Agua | **Desarrollo**<br>(170 min) | • Modela la medición física de tuberías industriales: determinación de diámetro nominal (NPS) a partir del diámetro exterior medido con vernier/cinta y tablas ANSI B36.10.<br>• Enseña a verificar cédula (*Schedule 40/80*) y tipo de unión (brida ANSI 150/300, roscada NPT o soldada).<br>• Guía el reconocimiento in situ de bombas centrífugas, válvulas de retención, válvulas de mariposa, manómetros e interruptores de flujo.<br>• Supervisa el croquizado a mano alzada y en tablet táctil con stylus: proporción visual, capas y registro de tags. | • Mecánicos e instrumentistas miden diámetros exteriores y espesores de las líneas de agua con calibrador vernier.<br>• Verifican en tablas de tuberías la coincidencia con el tamaño nominal (ej. 2", 3", 4" NPS).<br>• Identifican las placas de datos de las bombas (caudal GPM, cabeza dinámica TDH, RPM y HP del motor eléctrico).<br>• El dibujante, asistido por el equipo, elabora el croquis de campo en tablet/papel con todos los tags y notas técnicas. | Calibradores vernier; flexómetros; metro láser; tablas ANSI B36.10; tablets con stylus. | **Criterio:** Precisión en medición de tuberías y calidad del croquis de campo.<br>**Instrumento:** Rúbrica de levantamiento de campo de agua (&ge; 75 pts). |
-| **Sesión 3**<br>(Presencial Planta/Kinal)<br>Metrología de Tuberías y Agua | **Cierre**<br>(40 min) | • Revisa en campo los croquis elaborados por cada célula de trabajo; verifica que no existan líneas "ciegas" o componentes sin tag.<br>• Enfatiza el cuidado y limpieza de las herramientas antes de retirarse del área de trabajo (*5S*). | • Intercambian croquis entre células y validan la correspondencia con la instalación física real.<br>• Limpian y guardan el instrumental en el dispensario.<br>• Redactan en su Bitácora los aprendizajes sobre correlación entre NPS y diámetro exterior real. | Libreta de campo; Bitácora del Aprendiz; dispensario de herramientas. | **Criterio:** Verificación cruzada y disciplina 5S en taller.<br>**Instrumento:** Lista de cotejo de validación de croquis de campo. |
-| **Sesión 4**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Agua en AutoCAD | **Apertura**<br>(30 min) | • Bienvenida al Laboratorio CAD de Kinal. Asignación de estaciones de trabajo y ergonomía del proyectista.<br>• Presenta la plantilla institucional Kinal para diagramas P&ID (`.DWT`): unidades métricas, capas por fluido (`L-AGUA-PROCESO`, `L-AGUA-POTABLE`, `E-VALVULAS`, `E-BOMBAS`, `I-TAGS`).<br>• Recuerda que el plano CAD debe reflejar la verdad física levantada en la Sesión 3. | • Inician sesión en su estación CAD; verifican periféricos y software.<br>• Cargan la plantilla base de diagramas P&ID en AutoCAD.<br>• Activan herramientas de precisión (`OSNAP` ortogonal y `Polar Tracking` a 90°). | Laboratorio CAD Kinal; estaciones PC; software AutoCAD; plantilla `.DWT`. | **Criterio:** Disposición técnica y configuración del entorno CAD.<br>**Instrumento:** Verificación inicial de pantalla por el docente. |
-| **Sesión 4**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Agua en AutoCAD | **Desarrollo**<br>(170 min) | • Enseña a insertar el croquis de campo de tablet/papel como referencia de calco escalada.<br>• Modela el trazado de líneas principales de proceso con polilíneas ortogonales y flechas de dirección de flujo.<br>• Proporciona la librería de bloques normalizados de agua: bombas centrífugas, válvulas de compuerta, mariposa, retención y círculos de instrumentos ISA.<br>• Guía la edición de atributos de bloques (`ATTDEF`) para completar diámetros, números de equipo y tags (`PI`, `FIT`). | • Digitalizan en AutoCAD el sistema de agua levantado en la Sesión 3.<br>• Trazan las tuberías en las capas correspondientes por color y tipo de línea.<br>• Insertan los bloques de bombas, válvulas e instrumentos en sus posiciones exactas.<br>• El dibujante asesora a mecánicos y electricistas en comandos de dibujo (`PLINE`, `TRIM`, `INSERT`). | Estaciones CAD; AutoCAD; croquis de Sesión 3; librería de bloques P&ID Kinal. | **Criterio:** Calidad del dibujo 2D, orden de capas y atributos de bloques.<br>**Instrumento:** Lista de cotejo de modelado P&ID en AutoCAD (&ge; 75 pts). |
-| **Sesión 4**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Agua en AutoCAD | **Cierre**<br>(40 min) | • Audita en pantalla los diagramas P&ID de agua: verifica la continuidad de líneas y ausencia de cruces sin puente.<br>• Conecta con el ideario Kinal: la prolijidad técnica previene interpretaciones erróneas en paros de planta. | • Ejecutan purgado de dibujo con comando `PURGE` para eliminar elementos no utilizados.<br>• Guardan el archivo con nomenclatura institucional: `P&ID_Agua_NombreEquipo.dwg`.<br>• Asientan en la Bitácora los comandos CAD aprendidos y su aplicación. | Estaciones CAD; Bitácora del Aprendiz en Teams / OneNote. | **Criterio:** Limpieza del archivo CAD y nomenclatura estandarizada.<br>**Instrumento:** Verificación digital en servidor de laboratorio. |
-| **Sesión 5**<br>(Presencial Planta/Kinal)<br>Combustibles (Búnker y Diésel) | **Apertura**<br>(30 min) | • Charla de seguridad especializada: riesgos en líneas de combustibles pesados (búnker caliente a 80-120°C con riesgo de quemaduras) y livianos (diésel inflamable).<br>• Protocolo estricto de cero fuentes de ignición y EPP térmico/químico.<br>• Presenta el reto: relevar el lazo de alimentación y precalentamiento de combustible de un quemador/caldera. | • Los colaboradores verifican su equipo de protección para hidrocarburos.<br>• Mecánicos e instrumentistas discuten por qué el búnker no puede bombearse en frío sin precalentamiento. | Área de calderas / Banco de combustibles de planta o Kinal; EPP especializado. | **Criterio:** Compromiso riguroso con la seguridad en combustibles.<br>**Instrumento:** Lista de cotejo de seguridad y permisos de trabajo. |
-| **Sesión 5**<br>(Presencial Planta/Kinal)<br>Combustibles (Búnker y Diésel) | **Desarrollo**<br>(170 min) | • Guía el rastreo físico de la línea de búnker y diésel: tanque de día, válvulas de corte rápido con fusible térmico (*fire valves*), filtros canasta dúplex y bombas de tornillo/engranes.<br>• Enseña a identificar el traceado de vapor (*steam tracing*): tubería de vapor adherida con aislamiento térmico a la línea de combustible y sus trampas de condensado.<br>• Modela el relevamiento de instrumentos de alta viscosidad: manómetros con sello de diafragma, transmisores de temperatura RTD y switches de nivel.<br>• Supervisa el croquizado técnico de la estación de combustible en tablet/papel. | • La brigada rastrea la línea completa de combustible identificando válvulas de recirculación y alivio (PSV) con retorno a tanque.<br>• Miden diámetros de tuberías de combustible y líneas de vapor de traceado.<br>• Registran los números de placa y tags de las bombas de engranes y calentadores.<br>• Dibujan el croquis del lazo de combustible detallando el traceado y purgas. | Calibradores; flexómetros; metro láser; termómetro infrarrojo; tablets con stylus. | **Criterio:** Relevamiento exacto de traceado, filtros dúplex y válvulas de seguridad.<br>**Instrumento:** Rúbrica de levantamiento de sistemas de combustible (&ge; 75 pts). |
-| **Sesión 5**<br>(Presencial Planta/Kinal)<br>Combustibles (Búnker y Diésel) | **Cierre**<br>(40 min) | • Revisa en campo los croquis de combustible: comprueba que las líneas de traceado de vapor y retorno estén claramente diferenciadas de la línea principal.<br>• Reflexiona sobre el trabajo bien hecho: en líneas de combustible caliente, la precisión del diagrama es vital para evitar derrames o incendios. | • Cotejan el croquis con el trazado real de tuberías en campo.<br>• Limpian y desinfectan herramientas de medición.<br>• Redactan en la Bitácora el resumen técnico sobre la función del traceado de vapor y trampas de condensados. | Libreta de campo; Bitácora del Aprendiz. | **Criterio:** Rigor en la verificación de seguridad y registro.<br>**Instrumento:** Formato de validación de croquis de combustible. |
-| **Sesión 6**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Combustibles CAD | **Apertura**<br>(30 min) | • Revisa los conceptos normativos de representación de líneas traceadas según ISA-5.1 (línea de proceso sólida con línea discontinua envolvente para vapor).<br>• Presenta la librería de bloques para combustibles de Kinal: bombas de engranes, filtros canasta dúplex, válvulas de alivio PSV y calentadores coraza y tubos.<br>• Define las capas en AutoCAD: `L-BUNKER`, `L-DIESEL`, `L-VAPOR-TRACEADO`, `E-CALENTADORES`. | • Inician AutoCAD; configuran los tipos de línea discontinua (`DASHED` para traceado de vapor).<br>• Cargan los croquis de campo de la Sesión 5 en sus espacios de trabajo. | Laboratorio CAD; estaciones PC; software AutoCAD; librería de bloques de combustible. | **Criterio:** Configuración de capas y tipos de línea normalizados.<br>**Instrumento:** Verificación inicial de capas en pantalla. |
-| **Sesión 6**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Combustibles CAD | **Desarrollo**<br>(170 min) | • Modela la digitalización del lazo de combustible búnker/diésel: trazado de tuberías con su correspondiente línea de vapor adyacente.<br>• Guía la inserción de bloques con atributos: especificación de presión de tarado en válvulas de seguridad (`PSV-102: 150 PSI`), temperatura de búnker (`110°C`) y sentido de flujo.<br>• Enseña a representar el lazo de control de temperatura de precalentamiento (`TIC` con válvula modulante de vapor).<br>• Asesora individualmente a los participantes en comandos de edición y alineación. | • Modelan en AutoCAD el P&ID completo del sistema de combustible búnker y diésel.<br>• Completan los atributos de cada bloque de válvula y bomba.<br>• Dibujan el circuito de retorno de combustible al tanque de día.<br>• El dibujante apoya a los instrumentistas en la correcta colocación de los círculos ISA con sus tags. | Estaciones CAD; AutoCAD; croquis de Sesión 5; catálogo de simbología ISA. | **Criterio:** Fidelidad técnica del P&ID, representación del traceado y atributos.<br>**Instrumento:** Rúbrica de modelado P&ID de combustibles (&ge; 75 pts). |
-| **Sesión 6**<br>(Presencial Laboratorio CAD)<br>Modelado P&ID Combustibles CAD | **Cierre**<br>(40 min) | • Audita en pantalla los diagramas P&ID de combustible: verifica que las válvulas de cierre rápido y purgas de condensado estén presentes.<br>• Enfatiza la pulcritud gráfica: líneas limpias sin quiebres innecesarios. | • Corrigen observaciones señaladas por el instructor.<br>• Guardan su archivo DWG y respaldan en Microsoft Teams Kinal.<br>• Asientan en la Bitácora las diferencias gráficas entre P&ID de fluidos fríos vs. combustibles calientes con traceado. | Estaciones CAD; Bitácora del Aprendiz. | **Criterio:** Pulcritud vectorial y preservación de archivos.<br>**Instrumento:** Verificación digital en plataforma. |
-| **Sesión 7**<br>(Presencial Planta/Kinal)<br>Sistemas Neumáticos de Aire | **Apertura**<br>(30 min) | • Charla de seguridad en sistemas presurizados: riesgos de latigazo de mangueras de aire comprimido a 100-150 PSI y proyección de partículas.<br>• Presenta el reto: relevar el cuarto de compresores y la red de distribución de aire de planta.<br>• Explica la importancia de las pendientes y purgas para evitar que el condensado dañe actuadores y herramientas. | • Los técnicos revisan protección ocular y auditiva para el cuarto de compresores.<br>• Mecánicos e instrumentistas debaten sobre los problemas típicos de agua en líneas de aire en su planta. | Cuarto de compresores / Taller neumático Kinal; EPP para ruido y presión. | **Criterio:** Conciencia de seguridad en sistemas neumáticos.<br>**Instrumento:** Registro de asistencia y verificación de EPP. |
-| **Sesión 7**<br>(Presencial Planta/Kinal)<br>Sistemas Neumáticos de Aire | **Desarrollo**<br>(170 min) | • Guía el relevamiento físico de la sala de compresores: compresor de tornillo rotativo, pulmón vertical con válvula de seguridad y purga automática, secador refrigerativo y pre/post filtros coalescentes.<br>• Enseña a rastrear la red de distribución en anillo cerrado (*loop*), identificando bajadas con cuello de cisne (*gooseneck*) y purgas de fondo.<br>• Explica las Unidades de Mantenimiento FRL (Filtro, Regulador, Lubricador) y válvulas distribuidoras según norma **ISO 1219**.<br>• Supervisa el croquizado técnico de la red neumática y el diagrama funcional de un circuito neumático de máquina. | • La brigada mide diámetros de tuberías de aire comprimido y líneas de drenaje de condensados.<br>• Registran las especificaciones del compresor (CFM, PSI, kW) y secador (punto de rocío).<br>• Identifican las unidades FRL y válvulas solenoides 5/2 vías de una máquina neumática real.<br>• Elaboran el croquis técnico en tablet/papel con simbología ISO 1219. | Flexómetros; metro láser; calibrador vernier; tablets con stylus; cuarto de compresores. | **Criterio:** Relevamiento exacto de generación, secado, distribución FRL e ISO 1219.<br>**Instrumento:** Rúbrica de levantamiento neumático (&ge; 75 pts). |
-| **Sesión 7**<br>(Presencial Planta/Kinal)<br>Sistemas Neumáticos de Aire | **Cierre**<br>(40 min) | • Revisa en campo los croquis de aire comprimido: verifica que se representen las purgas de condensado en los puntos bajos de la red.<br>• Recuerda el valor del espíritu de servicio: un diagrama neumático claro permite al electricista y mecánico solucionar fallas de automatización en minutos. | • Intercambian croquis y auditan la coherencia del circuito neumático.<br>• Limpian y guardan herramientas de medición.<br>• Redactan en la Bitácora el resumen de componentes FRL y topología en anillo. | Libreta de campo; Bitácora del Aprendiz. | **Criterio:** Verificación cruzada y consolidación de conceptos.<br>**Instrumento:** Lista de cotejo de croquis neumático. |
-| **Sesión 8**<br>(Presencial Laboratorio CAD)<br>Modelado Neumático en AutoCAD | **Apertura**<br>(30 min) | • Presenta la librería de bloques neumáticos estandarizados según **ISO 1219** en AutoCAD: compresor de tornillo, pulmón, secador, filtro coalescente, FRL, válvulas 3/2, 5/2 y cilindros de doble efecto con amortiguación.<br>• Define las capas en AutoCAD: `L-AIRE-COMPRIMIDO`, `L-PURGAS-CONDENSADO`, `E-COMPRESORES`, `E-FRL`, `E-VALV-NEUMATICAS`. | • Inician sesión en sus estaciones CAD; cargan la librería de bloques ISO 1219.<br>• Abren sus croquis de campo de la Sesión 7 para iniciar la digitalización. | Laboratorio CAD; estaciones PC; AutoCAD; librería de bloques ISO 1219. | **Criterio:** Identificación de bloques neumáticos normalizados.<br>**Instrumento:** Verificación inicial de bloques en pantalla. |
-| **Sesión 8**<br>(Presencial Laboratorio CAD)<br>Modelado Neumático en AutoCAD | **Desarrollo**<br>(170 min) | • Modela la digitalización del P&ID de la sala de compresores y red de distribución en AutoCAD.<br>• Guía el trazado del circuito funcional de automatización neumática conforme a ISO 1219: conexiones de alimentación (1), trabajo (2, 4) y escapes (3, 5).<br>• Enseña a rotular los tags de instrumentos neumáticos (`PSV`, `PDI`, `PIT`) y asignar diámetros a las tuberías de red principal y ramales.<br>• Asiste individualmente a los colaboradores en el ensamble del diagrama. | • Modelan en AutoCAD el P&ID de generación y distribución de aire comprimido.<br>• Diagraman el esquema funcional de la máquina neumática con sus válvulas direccionales y cilindros.<br>• Asignan atributos a los bloques indicando presiones de trabajo (ej. 90 PSI / 6 bar).<br>• El equipo interdisciplinario valida conjuntamente la lógica operativa del circuito. | Estaciones CAD; software AutoCAD; croquis de Sesión 7; norma ISO 1219. | **Criterio:** Calidad técnica del esquema neumático y cumplimiento de ISO 1219.<br>**Instrumento:** Rúbrica de modelado neumático en AutoCAD (&ge; 75 pts). |
-| **Sesión 8**<br>(Presencial Laboratorio CAD)<br>Modelado Neumático en AutoCAD | **Cierre**<br>(40 min) | • Audita en pantalla compartida los diagramas neumáticos: comprueba la correcta simbología de accionamientos de válvulas (solenoide con muelle).<br>• Reflexiona sobre el trabajo bien hecho: la estandarización evita errores en compras de repuestos neumáticos. | • Corrigen observaciones del docente.<br>• Guardan su archivo DWG y respaldan en Microsoft Teams Kinal.<br>• Asientan en la Bitácora el resumen sobre numeración de vías de válvulas según ISO 1219. | Estaciones CAD; Bitácora del Aprendiz. | **Criterio:** Cumplimiento de estándares de dibujo y respaldo.<br>**Instrumento:** Verificación digital en plataforma. |
-| **Sesión 9**<br>(Presencial Taller/CAD)<br>Sistemas Hidráulicos Básicos | **Apertura**<br>(30 min) | • Charla de seguridad en oleohidráulica: peligros extremos de inyección de fluido a alta presión (1,000 a 3,000 PSI) bajo la piel (*micro-fugas* peligrosas).<br>• Presenta el reto: relevar una unidad de potencia hidráulica HPU (banco de pruebas Kinal o prensa de planta).<br>• Explica la diferencia entre presión y caudal en sistemas oleohidráulicos. | • Los técnicos analizan las advertencias de seguridad para líneas hidráulicas presurizadas.<br>• Mecánicos e instrumentistas identifican los componentes principales de la central hidráulica proyectada. | Banco de pruebas hidráulicas Kinal / Planta; EPP completo; proyector. | **Criterio:** Rigor en normas de seguridad para alta presión oleohidráulica.<br>**Instrumento:** Registro de asistencia y evaluación formativa. |
-| **Sesión 9**<br>(Presencial Taller/CAD)<br>Sistemas Hidráulicos Básicos | **Desarrollo**<br>(170 min) | • Guía el levantamiento físico de la HPU: depósito de aceite con nivel/termómetro, bomba de engranes/pistones, filtro de aspiración y retorno con manómetro de colmatación.<br>• Enseña a rastrear válvulas de alivio principal (seguridad de presión máxima), válvulas direccionales 4/3 vías (identificando si el centro es abierto, cerrado o tándem) y cilindros hidráulicos.<br>• Explica la simbología hidráulica según **ISO 1219** y modela el trazado en AutoCAD con capas `L-PRESION-P`, `L-RETORNO-T`, `L-TRABAJO-A-B`, `E-HPU`. | • La brigada releva físicamente la central hidráulica HPU.<br>• Identifican las mangueras y tuberías rígidas de presión (P), retorno al tanque (T) y líneas de cilindros (A, B).<br>• Trazan el croquis funcional a mano alzada.<br>• Se trasladan al Laboratorio CAD y modelan el esquema hidráulico en AutoCAD con bloques normalizados ISO 1219. | Banco hidráulico HPU; instrumentos de medición; tablets; estaciones CAD con AutoCAD. | **Criterio:** Relevamiento exacto de HPU, líneas P/T/A/B y modelado ISO 1219.<br>**Instrumento:** Rúbrica de diagramación hidráulica (&ge; 75 pts). |
-| **Sesión 9**<br>(Presencial Taller/CAD)<br>Sistemas Hidráulicos Básicos | **Cierre**<br>(40 min) | • Revisa en pantalla los diagramas hidráulicos: comprueba la correcta simbología de la válvula de alivio con drenaje interno al tanque.<br>• Presenta los requerimientos finales para la entrega y defensa del Proyecto Capstone en la Sesión 10. | • Corrigen conexiones hidráulicas en sus dibujos CAD.<br>• Organizan los archivos y asignan roles para la sustentación final del Capstone.<br>• Redactan en la Bitácora el resumen de centros de válvulas 4/3 y seguridad en HPU. | Estaciones CAD; Bitácora del Aprendiz. | **Criterio:** Organización del equipo para la evaluación terminal.<br>**Instrumento:** Verificación de avances preparatorios del Capstone. |
-| **Sesión 10**<br>(Presencial Laboratorio CAD)<br>Maquetación y Proyecto Capstone | **Apertura**<br>(30 min) | • Apertura formal de la jornada de evaluación de suficiencia terminal del curso corporativo.<br>• Presenta la Rúbrica Analítica Terminal Integral de 4 Dimensiones DQR adaptada al sector industrial (&ge; 75 pts).<br>• Motiva a los colaboradores a defender su trabajo con serenidad técnica, verdad y orgullo del esfuerzo profesional realizado. | • Los equipos multidisciplinarios preparan su expediente técnico integral (croquis de campo, archivos DWG, tablas de equipos y planos PDF maquetados).<br>• Verifican la conexión de su estación de cómputo para la sustentación. | Laboratorio CAD Kinal; proyector multimedia; rúbricas oficiales de evaluación. | **Criterio:** Disposición profesional, puntualidad y trabajo en equipo.<br>**Instrumento:** Registro de asistencia formal y puntualidad. |
-| **Sesión 10**<br>(Presencial Laboratorio CAD)<br>Maquetación y Proyecto Capstone | **Desarrollo**<br>(170 min) | • Enseña a utilizar el comando `EATTEXT` en AutoCAD para extraer automáticamente la lista de equipos y válvulas del plano a una tabla de AutoCAD o Excel.<br>• Modela la maquetación ejecutiva en *Paper Space*: hoja Doble Carta / A3, Viewport bloqueado a escala esquemática, membrete oficial corporativo Kinal con atributos y asignación de plumillas monocromáticas `.CTB`.<br>• **Preside el panel de auditoría técnica individual/grupal:** cada equipo dispone de 15 minutos para sustentar ante el panel el levantamiento y P&ID definitivo de una línea de proceso de planta. | • Generan la tabla automática de conteo de válvulas e instrumentos en su plano con `EATTEXT`.<br>• Maquetan el juego de planos en Paper Space con membrete corporativo y exportan a PDF vectorial.<br>• **Sustentan ante el panel evaluador:**<br>  1) Mecánico expone la ruta física, bombas y válvulas relevadas.<br>  2) Instrumentista/Electricista expone los lazos de control, tags ISA y seguridad operativa.<br>  3) Dibujante demuestra la estructuración de capas, bloques y estándares CAD.<br>  4) Responden a preguntas técnicas del panel evaluador de Kinal. | Estaciones CAD; software AutoCAD; membrete oficial Kinal; archivo `.CTB`; visor PDF. | **Criterio:** Solvencia técnica multidisciplinaria, fidelidad al as-built y calidad gráfica CAD.<br>**Instrumento:** Rúbrica Analítica Terminal Integral (**Nota mínima: 75 puntos**). |
-| **Sesión 10**<br>(Presencial Laboratorio CAD)<br>Maquetación y Proyecto Capstone | **Cierre**<br>(40 min) | • Entrega de retroalimentación personalizada a cada colaborador con su nota final desglosada.<br>• Clausura institucional: recuerda la Misión de Kinal de servir a la sociedad y a la industria mediante el trabajo bien hecho y la excelencia técnica.<br>• Firma de actas oficiales de acreditación técnica profesional de Fundación Kinal. | • Reciben su retroalimentación constructiva; firma de enterado en sus actas de calificación.<br>• Redactan la última entrada de su Bitácora de Aprendizaje: plan de aplicación inmediata de los diagramas P&ID en el mantenimiento diario de su planta.<br>• Se despiden con satisfacción y espíritu de servicio. | Rúbricas oficiales de calificación; actas de acreditación Kinal; Bitácoras del Aprendiz. | **Criterio:** Consolidación de competencias y aplicabilidad industrial inmediata.<br>**Instrumento:** Calificación terminal definitiva del curso corporativo (&ge; 75 pts). |
+Un **Diagrama P&ID** es la representación esquemática integral de un sistema industrial. Ilustra cómo interactúan mecánicamente los equipos (tanques, bombas, compresores, intercambiadores), las tuberías de proceso y servicio (indicando diámetro, cédula, sentido de flujo y código de fluido), las válvulas (manuales y automáticas) y toda la instrumentación de medición y control (sensores, transmisores, lazos de control y alarmas bajo norma **ANSI/ISA-5.1**).
+
+Su lectura precisa y su dibujo fidedigno permiten:
+1. Comprender la secuencia y lógica de control de una planta sin necesidad de recorrer físicamente todas las líneas.
+2. Identificar puntos seguros de aislamiento y bloqueo para procedimientos de seguridad LOTO.
+3. Detectar fallas operacionales, pérdidas de carga o cavitaciones en bombas.
+4. Mantener la trazabilidad de modificaciones *as-built* para auditorías y certificaciones de calidad.
 
 ---
 
-## 3. Especificación del Proyecto Capstone Terminal Integrador
+## 3. El Principio del «Trabajo Bien Hecho» Aplicado a la Documentación Técnica
 
-El **Proyecto Capstone** es la prueba de suficiencia teórico-práctica que valida la capacidad integral de acción del equipo técnico en su puesto de trabajo (*comprehensive ability to act*):
+> [!IMPORTANT]
+> **Ideario Institucional de Fundación Kinal:**  
+> *«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable»*.
 
-### Alcance del Proyecto:
-Levantamiento integral *as-built*, comprobación dimensional de tuberías, identificación de lazos de control, diagramación en AutoCAD 2D y maquetación ejecutiva del P&ID de un sistema industrial real de planta a elegir entre:
-1. **Sistema de Agua de Proceso y Bombeo.**
-2. **Sistema de Almacenamiento, Precalentamiento y Quemador de Búnker / Diésel.**
-3. **Sala de Compresores, Tratamiento y Red de Distribución Neumática.**
-4. **Unidad de Potencia Oleohidráulica (HPU) y Circuito de Máquina.**
-
-### Componentes Obligatorios del Expediente Técnico:
-1. **Expediente de Campo (Libreta y Tablet):**
-   * Croquis técnico proporcionado a mano alzada y en tablet con capas.
-   * Planilla de relevamiento con diámetros nominales (NPS), tipos de válvulas, especificaciones de bombas/compresores y tags ISA de instrumentos.
-2. **Modelo Digital en AutoCAD (`.DWG`):**
-   * Capas normalizadas Kinal por tipo de fluido (colores y tipos de línea según estándar).
-   * Uso de simbología normalizada: círculos ISA-5.1 para instrumentos, ISO 10628 para válvulas/bombas e ISO 1219 para neumática/hidráulica.
-   * Bloques con atributos editables (`ATTDEF`) completados para cada elemento.
-   * Tabla automática de válvulas e instrumentos generada con comando `EATTEXT`.
-3. **Plano Ejecutivo Maquetado en Paper Space y Exportado a PDF:**
-   * Lámina configurada en tamaño estandarizado (Doble Carta 11x17" o A3).
-   * Cajetín/membrete oficial corporativo de Fundación Kinal con datos de la empresa, título de sistema, código de plano, fecha y nombres de los integrantes de la brigada.
-   * Tabla de plumillas monocromáticas `.CTB` asignada para jerarquía visual de líneas principales vs. señales auxiliares.
-   * Archivo PDF vectorial de alta resolución listo para su archivo técnico en la biblioteca de ingeniería de la planta.
+En plantas de manufactura y energía, un plano mal interpretado o con simbología inventada es una fuente directa de accidentes operacionales graves. El principio del **trabajo bien hecho** en este curso exige:
+* **Fidelidad Absoluta (*As-Built* Real):** Cero suposiciones. Cada línea, válvula de purga, sensor y bypass dibujado debe existir físicamente en campo y estar verificado con instrumentos de medición dimensional.
+* **Prolijidad Gráfica y Disciplina CAD:** Organización estricta de capas por fluido/servicio, utilización exclusiva de librerías normalizadas (ISA-5.1, ISO 10628, ISO 1219), rotulado nítido y acotación estandarizada.
+* **Sentido de Servicio y Cuidado de la Vida:** Un plano técnico de calidad protege la vida de los compañeros de trabajo al proporcionar información veraz para el mantenimiento seguro y la operación continua.
 
 ---
 
-## 4. Rúbrica Integral de Evaluación Terminal (4 Dimensiones DQR — Sector Industrial)
+## 4. Estructura Didáctica de las Sesiones (240 Minutos)
 
-En estricta conformidad con los estándares de **Fundación Kinal**, el umbral aprobatorio es de **75 puntos sobre 100**:
-
-| Dimensión Evaluada (DQR) | Excelente (90 - 100 pts) | Satisfactorio (75 - 89 pts)<br>*[Umbral Aprobatorio Kinal]* | En Desarrollo (60 - 74 pts) | No Aprobado (< 60 pts) |
-| :--- | :--- | :--- | :--- | :--- |
-| **1. Competencia Profesional:**<br>Interpretación Normativa y Metrología de Fluidos (ISA, ISO, ASME) | Identificación impecable de tags ISA, lazos de control y modos de falla (FC/FO); medición dimensional exacta de tuberías NPS/Schedule; dominio de sistemas de agua, búnker con traceado, neumática e hidráulica. | Identifica correctamente tags ISA principales y tipos de válvulas; determina diámetros NPS y presiones; interpreta adecuadamente los 4 sistemas de fluidos (**&ge; 75 pts**). | Errores menores al interpretar letras modificadoras ISA o al correlacionar diámetro exterior con NPS en tablas; requiere apoyo puntual del docente. | Desconoce la simbología básica ISA o confunde líneas de proceso con señales de control; no sabe determinar el diámetro nominal de una tubería. |
-| **2. Competencia Instrumental:**<br>Relevamiento de Campo y Croquizado (Tablet y Libreta) | Croquis técnico de campo limpio, proporcionado y exhaustivo; registro completo de placas de bombas, tags y traceados; excelente uso de capas en tablet y exportación limpia para CAD. | Croquis legible a mano alzada y en tablet con simbología comprensible; registra componentes principales y tags sin omisiones críticas (**&ge; 75 pts**). | Croquis desordenado o desproporcionado; omisión de algunos tags o válvulas secundarias de purga; notas de campo difíciles de interpretar. | Croquis ininteligible, falta de datos básicos de tuberías y equipos; ausencia de croquis digital en tablet o pérdida de información de campo. |
-| **3. Competencia Metodológica:**<br>Modelado en AutoCAD 2D, P&ID y Paper Space | Dominio magistral de AutoCAD: plantilla Kinal respetada al 100%, capas por fluido perfectas, bloques inteligentes con atributos, extracción automática con `EATTEXT`, Viewports maquetados a escala y plumillas CTB impecables. | Modela el P&ID en AutoCAD con capas normalizadas; inserta bloques con atributos de válvulas e instrumentos; genera tabla de equipos y maqueta en Paper Space con membrete Kinal (**&ge; 75 pts**). | Desorden menor en capas de AutoCAD; símbolos dibujados manualmente en lugar de usar bloques; falta de bloqueo en Viewport o textos solapados sobre líneas de proceso. | Incapacidad para modelar el diagrama en AutoCAD; líneas de tubería desconectadas; ausencia de bloques con atributos; no sabe maquetar en Paper Space. |
-| **4. Competencia Personal y Ética:**<br>Seguridad Industrial, Ideario Kinal y Trabajo Bien Hecho | Encarna de forma ejemplar el principio del *"trabajo bien hecho"*. Cero tolerancia a planos desactualizados; riguroso respeto a normas LOTO y seguridad de fluidos térmicos/inflamables; excelente trabajo colaborativo interdisciplinario. | Mantiene un registro ordenado en libreta y bitácora; puntualidad, cumplimiento estricto de normas de seguridad en planta y espíritu de servicio (**&ge; 75 pts**). | Descuido ocasional en el uso de EPP o tardanza leve; colaboración interdisciplinaria limitada entre mecánicos y dibujante. | Actitud negligente ante riesgos de planta (búnker caliente, alta presión), indisciplina, impuntualidad reiterada o falseamiento de datos de campo. |
+Toda sesión del programa se desglosa en los 3 momentos pedagógicos de Kinal:
+1. **Apertura / Inicio (30 - 35 minutos):** Activación motivacional, presentación de un reto técnico o caso real de planta, normas de seguridad y alineación con el ideario Kinal (*Informar y Planificar*).
+2. **Desarrollo / Laboratorio Práctico (170 - 175 minutos):** Trabajo intensivo en campo (medición, *walkdown*, croquizado) o en estaciones CAD (digitalización, bloques inteligentes, capas, enlaces de datos) aplicando el *Ciclo de la Acción Completa* (*Decidir y Ejecutar*).
+3. **Cierre / Consolidación (30 - 35 minutos):** Auditoría de tolerancias, revisión de lazos y simbología, coevaluación entre pares, registro en la Bitácora del Aprendiz y retroalimentación del instructor (*Controlar y Valorar*).
 
 ---
 
-## 5. Seguimiento Formativo y Bitácora del Aprendiz (Berichtsheft)
+## 5. Microplanificación Sesión por Sesión (10 Sesiones / 40 Horas)
 
-Siguiendo el modelo pedagógico dual de Fundación Kinal:
-1. Cada participante mantiene su **Bitácora de Levantamiento Industrial** en formato digital (Microsoft Teams / OneNote) o libreta técnica.
-2. Al finalizar cada sesión de 4 horas, asienta obligatoriamente:
-   * Sistemas relevados (agua, búnker/diésel, aire, hidráulica) e instrumental utilizado.
-   * Dificultades operativas encontradas en planta (válvulas sin placa, tuberías sin rotular, lazos complejos) y cómo se resolvieron.
-   * Reflexión sobre la aplicación del *"trabajo bien hecho"* y la seguridad operacional en su labor diaria.
-3. El instructor revisa y valida digitalmente las entradas como prerrequisito para la acreditación final del curso corporativo.
+### Sesión 1 (Virtual / Teams — 4 Horas / 240 min)
+* **Eje Temático:** Fundamentos de P&ID, Normativa Internacional y Norma ANSI/ISA-5.1
+* **Apertura (30 min):** Bienvenida institucional y presentación del programa. Reflexión: La ética del *«trabajo bien hecho»* y las consecuencias de planos desactualizados en accidentes industriales reales. Presentación de qué es un P&ID y su jerarquía frente al BFD y PFD.
+* **Desarrollo (175 min):** 
+  - Explicación de la norma ANSI/ISA-5.1: simbología de globos de instrumentos, letras de variables (P, T, F, L) y modificadores (I, C, T, V, S).
+  - Tipos de líneas de señal: eléctrica, neumática, digital/software, capilar.
+  - Códigos de identificación de tuberías (*Line Numbering*: Diámetro-Servicio-Línea-Material-Aislamiento) y código de colores ASME A13.1.
+  - Taller interactivo: Decodificación guiada de 20 tags ISA industriales complejos y rastreo de 3 lazos de control cerrados.
+* **Cierre (35 min):** Aplicación de cuestionario técnico individual en Teams. Coevaluación y puesta en común de dudas frecuentes. Tarea preparatoria para la Sesión 2.
+* **Evidencia:** Cuestionario de decodificación de tags ISA aprobado (&ge; 75 pts).
+
+### Sesión 2 (Virtual / Teams — 4 Horas / 240 min)
+* **Eje Temático:** Simbología de Válvulas, Actuadores y Equipos en Planos P&ID
+* **Apertura (30 min):** Retroalimentación de la sesión anterior. Reto del día: ¿Cómo interpretar si una válvula automática cierra o abre ante una falla de energía en planta? Filosofía de seguridad operativa (FC, FO, FL).
+* **Desarrollo (175 min):**
+  - Simbología de válvulas manuales y de regulación según ISO 10628 / ISA-5.1: compuerta, globo, bola, mariposa, retención (*check*), diafragma y aguja.
+  - Válvulas de seguridad y alivio (PSV/PRV).
+  - Actuadores gráficos: manual, diafragma neumático, motor eléctrico y solenoide.
+  - Representación de equipos: tanques atmosféricos, recipientes a presión, bombas centrífugas, bombas de desplazamiento positivo, compresores e intercambiadores.
+  - Taller analítico de rastreo de líneas de proceso (*Line Tracing*) sobre P&IDs industriales reales completos.
+* **Cierre (35 min):** Ejercicio de detección de discrepancias y errores intencionales en planos P&ID. Resumen de pautas para la jornada presencial de levantamiento de campo.
+* **Evidencia:** Taller de rastreo de líneas e interpretación de P&ID completado (&ge; 75 pts).
+
+### Sesión 3 (Presencial: Planta / Kinal — 4 Horas / 240 min)
+* **Eje Temático:** Levantamiento de Campo I: Metodología del Walkdown y Metrología de Tuberías
+* **Apertura (30 min):** Inducción de seguridad en planta/taller: protocolos EPP, áreas clasificadas y precauciones en líneas de fluidos. Organización de las brigadas interdisciplinarias (mecánicos + electricistas + instrumentistas + dibujantes).
+* **Desarrollo (175 min):**
+  - Metodología del recorrido de campo (*Field Walkdown*): delimitación de límites de batería (*battery limits*) y puntos de suministro/consumo.
+  - Metrología de tuberías: uso de calibrador vernier para medición de diámetro exterior (OD), determinación del diámetro nominal (NPS / DN) y cédula (*Schedule 40/80*) mediante tablas normalizadas ANSI B36.10.
+  - Inspección y registro de accesorios: bridas (ANSI 150/300 RF/FF), codos, tes, reducciones concéntricas/excéntricas y conexiones roscadas NPT.
+  - Registro de datos de placa de bombas, motores y recipientes.
+* **Cierre (35 min):** Cotejo dimensional entre brigadas. Verificación de congruencia de diámetros medidos. Registro de datos en la Ficha de Relevamiento Dimensional.
+* **Evidencia:** Ficha técnica de relevamiento dimensional de tuberías y accesorios en campo.
+
+### Sesión 4 (Presencial: Planta / Kinal — 4 Horas / 240 min)
+* **Eje Temático:** Levantamiento de Campo II: Croquizado Técnico a Mano Alzada y en Tablet
+* **Apertura (30 min):** Principios del croquizado técnico esquemático: proporción visual, ortogonalidad y rotulado normalizado. Demostración práctica de técnicas de bocetaje en papel cuadriculado y en tablet táctil con stylus.
+* **Desarrollo (175 min):**
+  - Levantamiento integral in situ de un sistema de proceso en planta (estación de bombeo, filtración o distribución).
+  - Confección del croquis esquemático en tiempo real: trazado de tuberías principales, bypass, derivaciones y válvulas de purga/venteo.
+  - Registro exacto de tags de instrumentos (PI, TI, FIT, LSL) y sentido de flujo de los fluidos.
+  - Revisión in situ entre el mecánico (tubería), el instrumentista (sensores) y el dibujante (croquis).
+* **Cierre (35 min):** Validación cruzada del croquis borrador consolidado. Firma de conformidad de la brigada. Control de calidad de datos antes de pasar a la fase de digitalización CAD.
+* **Evidencia:** Croquis técnico de campo consolidado a mano alzada/tablet validado (&ge; 75 pts).
+
+### Sesión 5 (Presencial: Laboratorio CAD — 4 Horas / 240 min)
+* **Eje Temático:** Dibujo P&ID en AutoCAD 2D I: Entorno, Capas Normalizadas y Trazado Vectorial
+* **Apertura (30 min):** Inducción al entorno de trabajo para diagramación en AutoCAD. Presentación de la plantilla institucional Kinal (.DWT). Importancia de la disciplina de capas para la interoperabilidad de planos.
+* **Desarrollo (175 min):**
+  - Configuración del espacio de trabajo: unidades métricas, límites y estilos de texto normalizados.
+  - Estructuración del sistema de capas: L-PROCESO, L-SERVICIOS, E-EQUIPOS, E-VALVULAS, I-INSTRUMENTOS, I-SENALES, TEXTOS, COTAS.
+  - Herramientas de precisión esquemática: OSNAP (cuadrante, centro, intersección, perpendicular) y rastreo polar (Polar Tracking).
+  - Inserción del croquis de campo escaneado o digital como referencia de calco.
+  - Trazado vectorial de las líneas de proceso principales y secundarias con grosores normalizados.
+* **Cierre (35 min):** Auditoría de capas del archivo DWG. Verificación de ortogonalidad y empalmes de líneas. Limpieza del dibujo con comando PURGE.
+* **Evidencia:** Archivo DWG con trazado vectorial de líneas principales estructurado en capas (&ge; 75 pts).
+
+### Sesión 6 (Presencial: Laboratorio CAD — 4 Horas / 240 min)
+* **Eje Temático:** Dibujo P&ID en AutoCAD 2D II: Creación de Bloques con Atributos y Simbología ISA
+* **Apertura (30 min):** Demostración: Ventajas del modelado paramétrico con bloques inteligentes vs. geometría simple. Principio del *«trabajo bien hecho»* en la estandarización de librerías.
+* **Desarrollo (175 min):**
+  - Creación de bloques para diagramas P&ID: bombas centrífugas, bombas de desplazamiento positivo, intercambiadores, recipientes y válvulas normalizadas.
+  - Definición de atributos editables con ATTDEF para globos de instrumentos ISA (variable, número de lazo, servicio).
+  - Edición y gestión de atributos con BATTMAN.
+  - Técnicas de resolución gráfica de cruces de líneas: puentes/arcos (*jumpers*) vs. cruce limpio; derivaciones con punto de conexión.
+  - Digitalización completa del croquis de campo incorporando equipos, válvulas y tags normalizados.
+* **Cierre (35 min):** Revisión por pares: intercambio de archivos DWG entre brigadas para verificar concordancia entre el croquis de campo y el dibujo CAD.
+* **Evidencia:** Plano P&ID digitalizado en AutoCAD con bloques inteligentes y tags editables (&ge; 75 pts).
+
+### Sesión 7 (Presencial: Taller / CAD — 4 Horas / 240 min)
+* **Eje Temático:** Esquemas Funcionales Neumáticos bajo Norma ISO 1219
+* **Apertura (30 min):** Introducción a los diagramas de potencia fluida: ¿En qué se diferencia un P&ID de proceso de un esquema funcional neumático bajo norma ISO 1219?
+* **Desarrollo (175 min):**
+  - Simbología gráfica neumática normalizada: unidades de preparación de aire FRL (Filtro, Regulador, Lubricador).
+  - Válvulas de control direccional: 3/2, 5/2 y 5/3 vías; tipos de pilotaje (manual, eléctrico por solenoide, neumático).
+  - Actuadores neumáticos: cilindros de simple y doble efecto con amortiguación.
+  - Levantamiento esquemático de un circuito neumático de máquina en taller.
+  - Modelado en AutoCAD del esquema funcional neumático utilizando la librería institucional ISO 1219.
+* **Cierre (35 min):** Simulación de lectura del circuito: seguimiento de señales neumáticas y secuencias operativas. Verificación de numeración de conexiones (1=Presión, 2/4=Trabajo, 3/5=Escape).
+* **Evidencia:** Diagrama neumático funcional normalizado bajo ISO 1219 dibujado en AutoCAD (&ge; 75 pts).
+
+### Sesión 8 (Presencial: Taller / CAD — 4 Horas / 240 min)
+* **Eje Temático:** Esquemas Funcionales Hidráulicos bajo Norma ISO 1219
+* **Apertura (30 min):** Normas de seguridad en oleohidráulica industrial: presiones de trabajo elevadas y criticidad de las válvulas de alivio en los esquemas.
+* **Desarrollo (175 min):**
+  - Simbología hidráulica ISO 1219: unidad de potencia hidráulica HPU (depósito, filtro de aspiración, manómetros de colmatación).
+  - Bombas hidráulicas de desplazamiento positivo (engranajes, paletas, pistones).
+  - Válvulas de control de presión (alivio principal, contrabalance) y válvulas direccionales 4/3 con diversos centros (abierto, cerrado, tándem).
+  - Levantamiento de una unidad hidráulica HPU real en banco de pruebas o planta.
+  - Dibujo y estandarización del circuito oleohidráulico en AutoCAD 2D.
+* **Cierre (35 min):** Auditoría de líneas hidráulicas: verificación de líneas de presión (P), retorno al tanque (T) y drenajes (L). Registro en la bitácora técnica.
+* **Evidencia:** Esquema oleohidráulico funcional normalizado bajo ISO 1219 dibujado en AutoCAD (&ge; 75 pts).
+
+### Sesión 9 (Presencial: Laboratorio CAD — 4 Horas / 240 min)
+* **Eje Temático:** Extracción Automática de Datos, Maquetación en Layouts y Plumillas
+* **Apertura (30 min):** Presentación: De un dibujo a una base de datos gráfica. ¿Cómo generar listas de equipos y válvulas automáticamente sin errores manuales de conteo?
+* **Desarrollo (175 min):**
+  - Comando de extracción de datos en AutoCAD (EATTEXT): configuración del asistente, selección de bloques de instrumentos/válvulas y exportación a tablas vinculadas en el plano (*Instrument Schedule* y *Valve List*).
+  - Configuración del espacio papel (*Layouts*): tamaño de lámina (A3 / Doble Carta), configuración del Viewport bloqueado a escala esquemática legible.
+  - Inserción y llenado del cajetín oficial corporativo Kinal con atributos de proyecto.
+  - Inserción del cuadro de notas generales y simbología gráfica.
+  - Asignación de la tabla de plumillas monocromáticas .CTB Kinal para control de grosores de línea.
+  - Exportación de planos a PDF vectorial de alta definición.
+* **Cierre (35 min):** Revisión de planos impresos o en PDF a tamaño real: control de legibilidad de textos de tags, jerarquía de grosores de línea y alineación de cajetín.
+* **Evidencia:** Lámina ejecutiva P&ID maquetada en Layout con tablas automáticas y cajetín oficial (&ge; 75 pts).
+
+### Sesión 10 (Presencial: Laboratorio CAD / Panel — 4 Horas / 240 min)
+* **Eje Temático:** Sustentación del Proyecto Capstone Final Integrador y Clausura
+* **Apertura (30 min):** Instalación del panel evaluador de Kinal y encuadre de la sustentación técnica. Recordatorio del ideario Kinal: «El trabajo bien hecho» defendido con solvencia técnica y profesionalismo.
+* **Desarrollo (175 min):**
+  - Presentación técnica oral por brigada (15 minutos de exposición + 10 minutos de preguntas del panel):
+    1. Demostración del recorrido de campo (*walkdown*) y del croquis preliminar.
+    2. Explicación de la lógica funcional del diagrama P&ID y lazos de control ISA relevados.
+    3. Justificación técnica de la estructuración CAD (capas, bloques con atributos, tablas de equipos EATTEXT).
+    4. Demostración de modos de falla segura y procedimientos de bloqueo LOTO basados en el plano.
+  - Deliberación del panel evaluador y aplicación de la Rúbrica Analítica Terminal DQR.
+* **Cierre (35 min):** Devolución formativa individualizada y grupal. Entrega de actas de notas (&ge; 75 pts). Acto formal de clausura y entrega de diplomas de especialización Kinal.
+* **Evidencia:** Expediente técnico integral (P&ID en CAD + Tablas + PDF maquetado) sustentado y aprobado (&ge; 75 pts).
+
+---
+
+## 6. Rúbrica Analítica Terminal Integral (Marco DQR Nivel 4-5)
+
+| Dimensión DQR | Criterio de Desempeño | Nivel Excelente (90-100 pts) | Nivel Competente (75-89 pts) | Nivel En Desarrollo (<75 pts) | Ponderación |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **Saber Técnico**<br>(Conocimiento) | Decodificación de simbología ISA-5.1, ISO 10628, ISO 1219 y códigos de tubería. | Identifica y decodifica con total exactitud todos los tags ISA, tipos de señales, válvulas y modos de falla (FC/FO). | Decodifica la gran mayoría de tags y válvulas con errores menores que no comprometen la operación. | Confunde variables de instrumentos, tipos de líneas de señal o desconoce modos de falla en válvulas. | **20%** |
+| **Saber Hacer**<br>(Destrezas de Campo) | Metrología dimensional, *walkdown* y croquizado esquemático en tablet/papel. | Mide con precisión diámetros exteriores (OD), determina NPS y cédula con calibrador; croquis limpio y proporcional. | Releva diámetros y elabora croquis comprensibles con pequeñas omisiones de accesorios secundarios. | Mediciones incorrectas de tuberías, croquis desproporcionado, ilegible o con bypass omitidos. | **25%** |
+| **Saber Hacer**<br>(Digitalización CAD) | Modelado en AutoCAD 2D, estructuración de capas, bloques con atributos y tablas. | Archivo DWG impecable: capas normalizadas por fluido, bloques inteligentes con atributos ISA y tablas automáticas. | Plano CAD bien estructurado con capas y bloques; pequeños desajustes de atributos o capas secundarias. | Dibujo en capa cero, bloques sin atributos, símbolos desproporcionados o sin tablas de equipos. | **30%** |
+| **Saber Ser y Estar**<br>(Ideario y Seguridad) | Principio del *«trabajo bien hecho»*, seguridad operacional, LOTO y defensa Capstone. | Fidelidad total del plano *as-built*, rigor ético sin inventar datos, trabajo colaborativo ejemplar y defensa sólida. | Buen compromiso ético y técnico; participa activamente en la brigada y sustenta con claridad su proyecto. | Indiferencia en seguridad, datos inventados en plano, falta de prolijidad gráfica o débil defensa técnica. | **25%** |
+| **Total** | **Calificación Final Ponderada Institucional** | **Aprobación Sobresaliente** | **Aprobación Competente (&ge; 75 Pts)** | **No Acreditado (< 75 Pts)** | **100%** |
