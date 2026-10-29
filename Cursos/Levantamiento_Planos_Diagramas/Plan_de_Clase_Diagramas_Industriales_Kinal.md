@@ -26,19 +26,7 @@
 
 ---
 
-## 2. ¿Qué es un Diagrama P&ID (*Piping and Instrumentation Diagram*)?
-
-El **P&ID** es el plano maestro de proceso en cualquier instalación industrial. A diferencia de los planos espaciales o maquetas 3D, el P&ID es una representación **esquemática y funcional** que ilustra la relación operativa entre los equipos físicos, las tuberías de transporte de fluidos, las válvulas de control y los instrumentos de medición automática.
-
-Bajo estándares como **simbología técnica normada** e **ISO 10628 / ISO 1219**, el P&ID define:
-1. **Qué fluido circula y en qué dirección:** Mediante líneas de proceso identificadas con diámetros nominales, códigos de servicio y cédulas.
-2. **Cómo se operan y controlan los flujos:** A través de válvulas manuales y automáticas con indicación de su modo de falla segura (*Fail Open / Fail Close*).
-3. **Qué variables se monitorean y controlan:** Presión (P), Temperatura (T), Nivel (L), Caudal/Flujo (F), mediante transmisores, indicadores y controladores enlazados a PLC/DCS.
-4. **Cómo se interconectan los sistemas auxiliares:** Redes de vapor, condensados, aire comprimido y líneas de purga o drenaje.
-
----
-
-## 3. Marco Filosófico y el Principio del «Trabajo Bien Hecho»
+## 2. Marco Filosófico y el Principio del «Trabajo Bien Hecho»
 
 > [!IMPORTANT]
 > **Misión Institucional de Fundación Kinal:**  

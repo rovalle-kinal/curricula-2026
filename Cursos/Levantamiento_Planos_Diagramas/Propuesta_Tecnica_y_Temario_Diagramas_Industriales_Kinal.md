@@ -31,38 +31,7 @@
 
 ---
 
-## 2. ¿Qué es un Diagrama P&ID (*Piping and Instrumentation Diagram*)?
-
-Un **P&ID** (Diagrama de Tuberías e Instrumentación, por sus siglas en inglés) es el documento gráfico maestro de ingeniería que describe de forma esquemática la interconexión funcional de un proceso industrial. No es un plano arquitectónico ni un dibujo a escala geográfica; es el **mapa esquemático de funcionamiento y control de una planta**.
-
-`	ext
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                        ARQUITECTURA Y ALCANCE DE UN DIAGRAMA P&ID                      │
-└────────────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-     ┌──────────────────────┬───────────────┴───────────────┬──────────────────────┐
-     ▼                      ▼                               ▼                      ▼
-┌──────────────────┐  ┌──────────────────┐    ┌──────────────────┐  ┌──────────────────┐
-│ 1. EQUIPOS DE    │  │ 2. RED DE        │    │ 3. ELEMENTOS DE  │  │ 4. LAZOS DE      │
-│    PROCESO       │  │    TUBERÍAS      │    │    CONTROL/VÁLV. │  │    INSTRUMENTOS  │
-├──────────────────┤  ├──────────────────┤    ├──────────────────┤  ├──────────────────┤
-│ • Tanques /      │  │ • Diámetro (NPS) │    │ • Válvulas man.  │  │ • Sensores y tags│
-│   Recipientes    │  │ • Cédula / Sch.  │    │   (globo, comp.) │  │   (PI, TT, LT)   │
-│ • Bombas / HPUs  │  │ • Código servicio│    │ • Válvulas auto. │  │ • Líneas señal:  │
-│ • Compresores    │  │ • Sentido flujo  │    │   (solenoide, CV)│  │   eléc., neum.,  │
-│ • Intercambiad.  │  │ • Aislamiento    │    │ • Válvulas PSV   │  │   bus de datos   │
-└──────────────────┘  └──────────────────┘    └──────────────────┘  └──────────────────┘
-`
-
-En un P&ID se integran cuatro componentes esenciales:
-1. **Equipos de proceso:** Representación esquemática normalizada de recipientes, tanques, intercambiadores de calor, bombas centrífugas, bombas de desplazamiento positivo y compresores.
-2. **Red de tuberías y líneas de servicio:** Líneas de proceso y servicios auxiliares (agua, vapor, aire comprimido, fluidos hidráulicos) con su código de tubería (*Line Numbering*), diámetro nominal, cédula, sentido de flujo y accesorios.
-3. **Válvulas y elementos de maniobra:** Simbología precisa de válvulas manuales (compuerta, globo, bola, mariposa, retención/check) y válvulas automáticas con actuadores neumáticos, eléctricos o solenoides, indicando su posición de falla segura (*Fail Open / Fail Close*).
-4. **Instrumentación y lazos de control:** Símbolos y globos normalizados de identificación que identifican la variable medida (Presión, Temperatura, Nivel, Flujo) y la función del instrumento (Transmisor, Indicador, Controlador, Switch, Válvula), interconectados mediante líneas de señal normalizadas.
-
----
-
-## 3. Marco Filosófico e Ideario Institucional de Fundación Kinal
+## 2. Marco Filosófico e Ideario Institucional de Fundación Kinal
 
 La capacitación técnica en Fundación Kinal vincula las habilidades operativas con una cultura de integridad, servicio y excelencia profesional:
 
