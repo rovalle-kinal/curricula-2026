@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales | Fundación Kinal</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #22376D;
+            --accent: #EC9123;
+            --dark: #1A202C;
+            --secondary: #4A5568;
+            --bg-light: #F7FAFC;
+            --border: #CBD5E0;
+        }
+        body {
+            font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", sans-serif;
+            line-height: 1.4;
+            color: var(--dark);
+            background-color: #F8F9FA;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            border-radius: 8px;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 20pt;
+            margin-bottom: 4px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 12pt;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 6px;
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 14pt;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+        h3 {
+            color: var(--primary-light);
+            font-size: 11pt;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        p, li {
+            font-size: 9.5pt;
+            color: var(--dark);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+            margin-top: 12px;
+            margin-bottom: 22px;
+        }
+        th {
+            background-color: #EDF2F7;
+            color: var(--primary);
+            font-weight: bold;
+            text-align: left;
+            border: 1px solid var(--border);
+            padding: 8px 10px;
+        }
+        td {
+            border: 1px solid var(--border);
+            padding: 7px 10px;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+        .callout {
+            border-left: 4px solid var(--primary);
+            background-color: var(--bg-light);
+            padding: 12px 18px;
+            margin: 14px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout strong {
+            color: var(--primary);
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: var(--accent);
+            border-radius: 4px;
+        }
+        .badge-blue {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+        .badge-green {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #16A34A;
+            border-radius: 4px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .card h4 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 10.5pt;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+            font-size: 8.5pt;
+            color: var(--secondary);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>PROPUESTA TÉCNICA FORMATIVA CORPORATIVA</h1>
+    <div class="subtitle">Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales (Fluidos, Combustibles, Neumática e Hidráulica) | Fundación Kinal</div>
+
+    <!-- FICHA TÉCNICA CORPORATIVA -->
+    <table style="width: 100%; margin-top: 10px;">
+        <tr>
+            <td style="width: 30%; font-weight: bold; color: var(--primary);">Programa y Código</td>
+            <td><strong>Levantamiento e Interpretación de Diagramas y P&ID para Sistemas Industriales</strong> (ETS-CORP-P&ID-40H)</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: var(--primary);">Población Objetivo</td>
+            <td><strong>6 a 10 colaboradores técnicos de planta</strong> (Mecánicos, Electricistas, Instrumentistas y Dibujante Técnico)</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: var(--primary);">Carga Horaria y Modalidad</td>
+            <td>
+                <strong>40 horas pedagógicas híbridas</strong> (10 sesiones de 4 horas / 240 min cada una):<br>
+                • <span class="badge-blue">20% Virtual Sincrónico (8 Horas / 2 sesiones):</span> Fundamentación normativa ISA-5.1, ISO 10628 e ISO 1219 en <strong>Microsoft Teams</strong>.<br>
+                • <span class="badge-green">80% Presencial Práctico (32 Horas / 8 sesiones):</span> Relevamiento físico en planta/talleres y modelado P&ID en Laboratorio CAD de Kinal.
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: var(--primary);">Horarios y Ventana Sugerida</td>
+            <td>
+                Adaptado al horario laboral de la empresa (L-J 07:00 a 16:00 / V 07:00 a 15:00):<br>
+                • <strong>Horario recomendado:</strong> Martes y Jueves de 07:30 a 11:30 hrs (o 12:00 a 16:00 hrs) — 5 semanas.<br>
+                • <strong>Fechas de Inicio Disponibles:</strong> <strong>Diciembre 2026</strong> o <strong>Enero 2027</strong>.
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: var(--primary);">Sistemas Industriales Abordados</td>
+            <td><strong>1) Agua de proceso y potable</strong> &nbsp;|&nbsp; <strong>2) Combustibles líquidos (Búnker y Diésel)</strong> &nbsp;|&nbsp; <strong>3) Neumática de aire comprimido</strong> &nbsp;|&nbsp; <strong>4) Oleohidráulica básica</strong></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: var(--primary);">Umbral Aprobatorio</td>
+            <td><span class="badge">Mínimo 75 / 100 puntos</span> en evaluaciones de campo, laboratorios CAD y Proyecto Capstone</td>
+        </tr>
+    </table>
+
+    <!-- MARCO FILOSÓFICO KINAL -->
+    <h2>1. Marco Filosófico e Ideario Institucional de Fundación Kinal</h2>
+    
+    <div class="callout">
+        <strong>Misión Institucional de Kinal:</strong><br>
+        <em>«Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad».</em>
+    </div>
+
+    <div class="callout">
+        <strong>Valores Nucleares de Kinal:</strong><br>
+        <em>«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable».</em>
+    </div>
+
+    <div class="callout">
+        <strong>Concepto de Competencia Profesional (Marco DQR):</strong><br>
+        <em>«La competencia es la capacidad y disposición de la persona para integrar conocimientos técnicos, destrezas prácticas y responsabilidad personal y social, actuando con criterio ético y autonomía ante situaciones reales de trabajo».</em><br><br>
+        <strong>Competencia Diseñada para el Programa Industrial:</strong><br>
+        <em>«El equipo técnico interpreta con rigor, releva en campo y modela en AutoCAD 2D diagramas de flujo y P&ID de sistemas de agua de proceso, combustibles pesados y livianos (búnker/diésel con traceado de vapor), redes de aire comprimido y circuitos hidráulicos básicos bajo normas ANSI/ISA-5.1, ISO 10628, ISO 1219 y ASME A13.1, garantizando planos as-built fidedignos bajo el estándar del trabajo bien hecho de Fundación Kinal».</em>
+    </div>
+
+    <h3>El Principio del «Trabajo Bien Hecho» en la Seguridad de Planta</h3>
+    <p>En operaciones industriales continuas, un plano de tuberías desactualizado o una válvula mal rotulada representa un peligro crítico de derrame, incendio, sobrepresión o accidente en maniobras de bloqueo (LOTO). En Kinal, el trabajo bien hecho se concreta en la fidelidad total entre el plano y la realidad de campo, la prolijidad técnica en capas y bloques inteligentes en AutoCAD, y la articulación fluida entre mecánicos, electricistas, instrumentistas y dibujante.</p>
+
+    <!-- LOS 4 SISTEMAS INDUSTRIALES -->
+    <h2>2. Alcance Técnico de los 4 Sistemas Industriales de Planta</h2>
+
+    <div class="grid-2">
+        <div class="card">
+            <h4>💧 1. Agua de Proceso y Potable</h4>
+            <ul>
+                <li>Redes de agua cruda, suavizada y potable.</li>
+                <li>Bombas centrífugas, curvas de operación y cebado.</li>
+                <li>Válvulas: compuerta, mariposa, retención (check), globo y flotador.</li>
+                <li>Filtros de arena, lechos suavizadores y medición de caudal.</li>
+                <li>Medición de tuberías: diámetro nominal NPS, cédula Schedule 40/80 y uniones bridadas ANSI.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>🔥 2. Combustibles Líquidos (Búnker y Diésel)</h4>
+            <ul>
+                <li>Almacenamiento: tanques principales y tanques de día con venteos y purgas.</li>
+                <li>Bombas de desplazamiento positivo (engranes y tornillo triple husillo).</li>
+                <li>Traceado de vapor (<em>steam tracing</em>) para búnker e intercambiadores térmicos.</li>
+                <li>Válvulas de seguridad de corte rápido con fusible térmico y válvulas de alivio (PSV) con retorno.</li>
+                <li>Filtros canasta dúplex e instrumentación con sello de diafragma.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>💨 3. Sistemas Neumáticos de Aire Comprimido</h4>
+            <ul>
+                <li>Compresores industriales de tornillo rotativo y pistón.</li>
+                <li>Tanque pulmón, purgas automáticas y secadores refrigerativos (+3°C).</li>
+                <li>Red de distribución en anillo cerrado (<em>loop</em>) con bajadas en cuello de cisne.</li>
+                <li>Unidades de Mantenimiento FRL (Filtro, Regulador, Lubricador).</li>
+                <li>Simbología ISO 1219: válvulas direccionales 3/2, 5/2 y cilindros de doble efecto.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>⚙️ 4. Sistemas Hidráulicos Básicos (Oleohidráulica)</h4>
+            <ul>
+                <li>Unidades de potencia hidráulica (HPU): depósitos, filtros de aspiración y retorno.</li>
+                <li>Bombas hidráulicas de engranajes, paletas y pistones axiales.</li>
+                <li>Válvulas de alivio principal de seguridad (1,000 - 3,000 PSI) y reguladoras de caudal.</li>
+                <li>Válvulas direccionales 4/3 vías (centros abierto, cerrado, tándem y flotante).</li>
+                <li>Actuadores: cilindros hidráulicos de alta presión y motores hidráulicos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TEMARIO CURRICULAR 5 MÓDULOS -->
+    <h2>3. Temario Curricular Jerárquico (40 Horas Híbridas)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 25%;">Módulo</th>
+                <th style="width: 18%;">Modalidad</th>
+                <th style="width: 57%;">Contenidos Nucleares y Competencias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Módulo 1:</strong> Fundamentos Normativos y Simbología ISA/ISO</td>
+                <td><strong>8 Horas</strong><br>(Virtual Teams)</td>
+                <td>
+                    • Tipos de diagramas: BFD, PFD y P&ID.<br>
+                    • Norma <strong>ANSI/ISA-5.1:</strong> Círculos ISA, variables de proceso (P, T, F, L), letras modificadoras y líneas de señal (eléctrica, neumática, software).<br>
+                    • Norma <strong>ISO 10628:</strong> Simbología de válvulas manuales y automáticas (compuerta, globo, mariposa, bola, retención, solenoide) y equipos dinámicos.<br>
+                    • Código de colores de tuberías según <strong>ASME A13.1</strong> y filosofía de falla segura (FC, FO, FL).
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Módulo 2:</strong> Levantamiento de Agua de Proceso y Modelado CAD</td>
+                <td><strong>8 Horas</strong><br>(Campo + CAD)</td>
+                <td>
+                    • Redes de agua industrial, estaciones de bombeo centrífugo y filtración.<br>
+                    • Metrología de tuberías: diámetro exterior (OD), diámetro nominal (NPS), Schedule y clases bridadas.<br>
+                    • Croquizado de campo en tablet táctil y libreta técnica.<br>
+                    • Modelado en AutoCAD 2D: plantilla P&ID Kinal (.DWT), capas por fluido y bloques con atributos de agua.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Módulo 3:</strong> Sistemas de Búnker y Diésel con Traceado de Vapor</td>
+                <td><strong>8 Horas</strong><br>(Campo + CAD)</td>
+                <td>
+                    • Viscosidad de búnker vs. diésel, tanques de día, bombas de engranes/tornillo.<br>
+                    • Líneas de precalentamiento, traceado de vapor (<em>steam tracing</em>) y trampas de condensados.<br>
+                    • Válvulas de corte rápido por fusible térmico, filtros dúplex e instrumentación con sello de diafragma.<br>
+                    • Digitalización en AutoCAD del P&ID de combustibles con lazo de control de temperatura (TIC).
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Módulo 4:</strong> Sistemas Neumáticos de Aire Comprimido (ISO 1219)</td>
+                <td><strong>8 Horas</strong><br>(Campo + CAD)</td>
+                <td>
+                    • Compresores de tornillo, pulmón acumulador, secadores refrigerativos y filtros coalescentes.<br>
+                    • Topología de red en anillo cerrado con bajadas en cuello de cisne y purgas de condensado.<br>
+                    • Unidades de mantenimiento FRL, válvulas de control direccional y cilindros neumáticos.<br>
+                    • Modelado en AutoCAD del P&ID de sala de compresores y esquema funcional de máquina neumática.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Módulo 5:</strong> Oleohidráulica Básica, Extracción de Datos y Capstone</td>
+                <td><strong>8 Horas</strong><br>(Taller + CAD)</td>
+                <td>
+                    • Centrales hidráulicas HPU: depósito, bombas de alta presión, filtros y válvulas de alivio principal.<br>
+                    • Válvulas direccionales 4/3 vías y actuadores hidráulicos según ISO 1219.<br>
+                    • Extracción automática de tablas de equipos y válvulas con comando <code>EATTEXT</code> en AutoCAD.<br>
+                    • Maquetación ejecutiva en Paper Space con membrete oficial Kinal y plumillas monocromáticas .CTB.<br>
+                    • <strong>Proyecto Capstone:</strong> Levantamiento integral grupal as-built y defensa técnica oral (&ge; 75 pts).
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- MACROPLANIFICACIÓN 10 SESIONES -->
+    <h2>4. Macroplanificación Sesión por Sesión (10 Sesiones de 4 Horas / Horario Corporativo)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 10%;">Sesión</th>
+                <th style="width: 18%;">Modalidad</th>
+                <th style="width: 44%;">Actividades Prácticas y Entorno</th>
+                <th style="width: 28%;">Entregable Evaluativo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>S01</strong></td>
+                <td>Virtual (Teams)</td>
+                <td>Decodificación de tags ISA-5.1, tipos de líneas de señal y código de colores ASME A13.1.</td>
+                <td>Taller de tags y señales ISA (&ge; 75 pts).</td>
+            </tr>
+            <tr>
+                <td><strong>S02</strong></td>
+                <td>Virtual (Teams)</td>
+                <td>Simbología de válvulas ISO 10628, rastreo de líneas de proceso en P&IDs industriales y fallas seguras.</td>
+                <td>Taller de rastreo de P&ID industrial.</td>
+            </tr>
+            <tr>
+                <td><strong>S03</strong></td>
+                <td>Presencial (Planta)</td>
+                <td>Medición de tuberías de agua (NPS, Schedule), calibración vernier, bombeo centrífugo y croquis en tablet.</td>
+                <td>Croquis de campo de estación de agua.</td>
+            </tr>
+            <tr>
+                <td><strong>S04</strong></td>
+                <td>Presencial (CAD)</td>
+                <td>Digitalización en AutoCAD del sistema de agua: plantilla Kinal, capas normalizadas y bloques con atributos.</td>
+                <td>Plano P&ID de agua en AutoCAD 2D (&ge; 75 pts).</td>
+            </tr>
+            <tr>
+                <td><strong>S05</strong></td>
+                <td>Presencial (Planta)</td>
+                <td>Rastreo de líneas de búnker y diésel, tanques de día, bombas de engranes, traceado de vapor y válvulas de seguridad.</td>
+                <td>Croquis de campo de combustibles y traceado.</td>
+            </tr>
+            <tr>
+                <td><strong>S06</strong></td>
+                <td>Presencial (CAD)</td>
+                <td>Modelado en AutoCAD del P&ID de combustibles: representación de traceado de vapor y lazo de temperatura TIC.</td>
+                <td>Plano P&ID de búnker/diésel en AutoCAD (&ge; 75 pts).</td>
+            </tr>
+            <tr>
+                <td><strong>S07</strong></td>
+                <td>Presencial (Planta)</td>
+                <td>Relevamiento de sala de compresores, secador, pulmón, red en anillo, estaciones FRL y simbología ISO 1219.</td>
+                <td>Croquis de red de aire y diagrama neumático.</td>
+            </tr>
+            <tr>
+                <td><strong>S08</strong></td>
+                <td>Presencial (CAD)</td>
+                <td>Digitalización del P&ID neumático y circuito de automatización ISO 1219 con bloques dinámicos en AutoCAD.</td>
+                <td>Plano P&ID y esquema neumático CAD (&ge; 75 pts).</td>
+            </tr>
+            <tr>
+                <td><strong>S09</strong></td>
+                <td>Presencial (Taller/CAD)</td>
+                <td>Levantamiento físico de central hidráulica HPU, líneas de presión/retorno, válvulas 4/3 y modelado ISO 1219.</td>
+                <td>Esquema funcional hidráulico HPU en CAD.</td>
+            </tr>
+            <tr>
+                <td><strong>S10</strong></td>
+                <td>Presencial (CAD)</td>
+                <td>Extracción de listas de válvulas e instrumentos (EATTEXT), maquetación en Paper Space y sustentación Capstone.</td>
+                <td><strong>Expediente Capstone Aprobado (&ge; 75 pts)</strong>.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- RÚBRICA Y EVALUACIÓN -->
+    <h2>5. Sistema de Evaluación y Rúbrica Analítica Terminal (Nota Mínima: 75/100)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 25%;">Dimensión Evaluada</th>
+                <th style="width: 25%;">Excelente (90 - 100)</th>
+                <th style="width: 25%;">Satisfactorio (75 - 89)<br><em>[Aprobatorio Kinal]</em></th>
+                <th style="width: 25%;">En Desarrollo / No Aprobado (< 75)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Interpretación Normativa y Fluidos</strong><br>(ISA, ISO, ASME)</td>
+                <td>Decodificación perfecta de tags ISA y lazos de control; correlación exacta de tuberías NPS/Schedule; dominio de agua, búnker con traceado, aire e hidráulica.</td>
+                <td>Identifica tags ISA y válvulas principales; determina diámetros NPS; interpreta los 4 sistemas de fluidos correctamente <strong>(&ge; 75 pts)</strong>.</td>
+                <td>Confunde letras modificadoras ISA o no sabe determinar el diámetro nominal de una tubería; errores graves en lazos de control.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Relevamiento de Campo y Croquizado</strong><br>(Planta y Tablet)</td>
+                <td>Croquis de campo técnico, proporcionado y exhaustivo; registro completo de placas de bombas, tags y traceados; excelente uso de capas en tablet.</td>
+                <td>Croquis legible a mano alzada y en tablet con simbología comprensible; registra componentes y tags sin omisiones críticas <strong>(&ge; 75 pts)</strong>.</td>
+                <td>Croquis ininteligible o desproporcionado; omisión de válvulas de seguridad o purgas; pérdida de información técnica en campo.</td>
+            </tr>
+            <tr>
+                <td><strong>3. Modelado en AutoCAD 2D y P&ID</strong><br>(Bloques, Capas y Paper Space)</td>
+                <td>Plantilla Kinal respetada al 100%; capas por fluido perfectas; bloques con atributos; extracción automática EATTEXT y maquetación ejecutiva a escala.</td>
+                <td>Modela el P&ID en AutoCAD con capas normalizadas; inserta bloques con atributos; genera tabla de equipos y maqueta con membrete Kinal <strong>(&ge; 75 pts)</strong>.</td>
+                <td>Líneas de tubería desconectadas; desorden en capas; textos solapados sobre líneas de proceso; ausencia de bloques con atributos.</td>
+            </tr>
+            <tr>
+                <td><strong>4. Seguridad Industrial y Trabajo Bien Hecho</strong><br>(Ideario Kinal)</td>
+                <td>Encarna de forma ejemplar el trabajo bien hecho. Cero tolerancia a planos desactualizados; riguroso respeto a normas LOTO y seguridad de fluidos térmicos.</td>
+                <td>Mantiene un registro ordenado en bitácora; puntualidad, cumplimiento de normas de seguridad en planta y espíritu de servicio <strong>(&ge; 75 pts)</strong>.</td>
+                <td>Negligencia ante riesgos de fluidos calientes o alta presión; indisciplina, impuntualidad reiterada o falseamiento de datos de campo.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <strong>Fundación Kinal — Escuela Técnica Superior</strong><br>
+        Coordinación de Capacitación Corporativa y Formación Continua | Ciudad de Guatemala, 2026<br>
+        Propuesta técnica diseñada bajo los estándares de Fundación Kinal y el Marco Alemán de Cualificaciones (DQR).
+    </div>
+
+</div>
+
+</body>
+</html>

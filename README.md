@@ -1,81 +1,122 @@
-# Diseño Curricular Dual y Pipeline Multi-Agente (Google Antigravity)
-
-Bienvenido al espacio de trabajo para el **Diseño Curricular y Didáctico Técnico-Profesional y Dual**, fundamentado rigurosamente en los estándares del **Marco Alemán de Cualificaciones (DQR)**, el **Sistema Dual de Formación en Alternancia** y el marco institucional de **Fundación Kinal**.
-
-Este proyecto está configurado bajo una arquitectura **100% Zero-Install** (sin instalaciones locales en el sistema operativo), aprovechando el motor nativo de habilidades y subagentes de Antigravity.
+# Ecosistema de Diseño Instruccional y Curricular Técnico-Profesional
+## Metodología Dual, Marco DQR y Modelo Institucional de Fundación Kinal
+### Proyecto de Automatización y Generación Multiformato para Google Antigravity
 
 ---
 
-## 1. Estructura del Espacio de Trabajo
+Este repositorio contiene la arquitectura completa para el **diseño curricular, didáctico e instruccional de cursos y programas técnicos profesionales**, desarrollado bajo los estándares del **Marco Alemán de Cualificaciones (DQR Nivel 2 a 7)**, el **Sistema Dual de Formación en Alternancia** y los lineamientos ético-pedagógicos de **Fundación Kinal**.
+
+El sistema permite generar de forma automatizada y coherente el paquete documental completo de cualquier curso técnico:
+1. **Propuesta Formativa y Temario Técnico-Comercial (Brochure / Promesa de Venta en Markdown).**
+2. **Plan de Clase y Dosificación Macrocurricular (Macroplanificación por sesiones en Markdown).**
+3. **Secuencia Didáctica y Microplanificación Minuto a Minuto (Tres momentos didácticos + Proyecto Capstone + Rúbrica Analítica).**
+4. **Página Web Maquetada y Responsiva (HTML oficial con la identidad visual corporativa de Kinal).**
+5. **Documento PDF de Alta Definición para Impresión y Entrega (Generado con ReportLab, membrete institucional dinámico y numeración formal).**
+
+---
+
+## 1. Estructura del Repositorio
 
 ```text
-Diseño Instruccional/
 ├── .agents/
 │   └── skills/
-│       └── curriculum-didactic-designer/
-│           ├── SKILL.md                                  # Manifiesto y reglas operativas de la Skill
+│       └── curriculum-didactic-designer/           # SKILL PORTABLE PARA ANTIGRAVITY
+│           ├── SKILL.md                            # Manifiesto y reglas operativas de la Skill
 │           ├── references/
-│           │   └── curricular_map_and_sources.md         # Base inmutable de conocimiento y citas textuales
+│           │   └── curricular_map_and_sources.md   # Base inmutable de conocimiento y citas
 │           └── resources/
-│               └── document_templates.html               # Plantillas visuales en HTML limpio y tablas maestras
+│               └── document_templates.html         # Plantillas visuales HTML y tablas maestras
 │
-├── pipeline/
-│   ├── curated_curriculum_spec.json                      # Fase 1: Especificación curricular curada
-│   ├── macro_curriculum_plan.json                        # Fase 2: Plan macrocurricular (1,200 hrs DQR 6)
-│   └── detailed_didactic_sequences.json                  # Fase 3: Secuencia didáctica dosificada (Inicio-Desarrollo-Cierre)
+├── Cursos/
+│   ├── Levantamiento_Planos_Diagramas/             # CASO DE ESTUDIO: LEVANTAMIENTO Y DIAGRAMAS
+│   │   ├── Historico_Edificacion_Sabatina_2026/    # Versión previa de edificación (25h y 40h)
+│   │   ├── Propuesta_Tecnica_y_Temario_Diagramas_Industriales_Kinal.md  # Propuesta cliente
+│   │   ├── Plan_de_Clase_Diagramas_Industriales_Kinal.md                # Macroplanificación 40h
+│   │   ├── Secuencia_Didactica_Diagramas_Industriales_Kinal.md          # Secuencia didáctica
+│   │   ├── programa_formativo_diagramas_industriales.html               # Maqueta web oficial
+│   │   └── programa_formativo_diagramas_industriales.pdf                # PDF listo para entrega
+│   └── [Otros cursos: Automatización, Cableado, Ciberseguridad, Mecatrónica, IA, etc.]
 │
-├── output/
-│   ├── programa_formativo_dual_dqr6.html                 # Documento final formateado en HTML para Google Docs / Impresión
-│   └── PROGRAMA_FORMATIVO_DUAL_DQR6.md                   # Documento maestro en formato Markdown
+├── docs/
+│   └── MEMORIA_CONVERSACION_DISENO_INSTRUCCIONAL.md  # Memoria histórica de decisiones
 │
-├── scripts/                                              # Scripts de automatización, generación de Word y portales web
+├── scripts/                                         # MOTORES DE COMPILACIÓN Y AUTOMATIZACIÓN
+│   ├── generate_pdf_diagramas_industriales.py       # Compilador PDF ReportLab para P&ID
+│   ├── generate_dual_course_pdfs.py                 # Compilador PDF para cursos 25h y 40h
+│   └── vendor/                                      # Dependencias portables (ReportLab, Pillow)
 │
-└── README.md                                             # Guía técnica y de operación del sistema
+├── AGENTS.md                                        # Reglas mandatorias del workspace
+└── README.md                                        # Guía de importación y uso
 ```
 
 ---
 
-## 2. Pipeline Multi-Agente
+## 2. Guía de Importación en Otra Instancia de Antigravity
 
-El flujo pedagógico opera en 4 fases secuenciales orquestadas por subagentes especializados:
+Para replicar y diseñar cursos con este mismo estándar de calidad en cualquier otra máquina o instancia de **Google Antigravity**:
 
-```mermaid
-flowchart TD
-    Fuentes["Fuentes Inmutables<br>(DQR, Sajonia, Dual, Kinal)"] --> A1["1. Agente Curador & Investigador<br>(curador_investigador)"]
-    A1 -->|curated_curriculum_spec.json| A2["2. Agente Planificador Curricular<br>(planificador_curricular)"]
-    A2 -->|macro_curriculum_plan.json| A3["3. Agente de Dosificación y Secuencias<br>(dosificador_secuencias)"]
-    A3 -->|detailed_didactic_sequences.json| A4["4. Agente Documentador & Exportador<br>(documentador_exportador)"]
-    A4 --> OutHTML["output/programa_formativo_dual_dqr6.html"]
-    A4 --> OutMD["output/PROGRAMA_FORMATIVO_DUAL_DQR6.md"]
+### Paso 1: Clonar o Copiar este Repositorio
+```bash
+git clone https://github.com/rovalle-kinal/instructional_design.git
+cd instructional_design
+```
+*(O copia las carpetas `.agents/skills/curriculum-didactic-designer/` y `AGENTS.md` dentro de la raíz de cualquier proyecto nuevo de Antigravity).*
+
+### Paso 2: Detección Automática de la Skill
+Antigravity detecta automáticamente las habilidades ubicadas en `.agents/skills/`. Puedes verificar que la skill esté activa ejecutando:
+* En el chat de Antigravity: `¿Qué skills tienes disponibles para diseño instruccional?`
+* El agente responderá identificando **`curriculum-didactic-designer`**.
+
+### Paso 3: Motor de Generación de PDFs (ReportLab)
+El repositorio incluye las dependencias necesarias en `scripts/vendor/`, por lo que **no se requiere instalar paquetes en el sistema global**. Si deseas ejecutar los scripts de PDF:
+```bash
+python3 scripts/generate_pdf_diagramas_industriales.py
 ```
 
-### Roles de los Subagentes:
-1. **`curador_investigador`**: Audita, extrae y normaliza las entidades pedagógicas asegurando fidelidad absoluta a las fuentes del cuaderno.
-2. **`planificador_curricular`**: Estructura la macro-dosificación (1,200 horas pedagógicas para DQR 6: 400h aula / 800h empresa) y define los hitos de evaluación integrada.
-3. **`dosificador_secuencias`**: Diseña el microdiseño didáctico de cada sesión en tres momentos (Apertura 20 min, Desarrollo 60 min, Cierre 20 min) vinculando la práctica AEVO, el *Berichtsheft* y los valores del trabajo bien hecho.
-4. **`documentador_exportador`**: Ensambla y exporta los artefactos JSON en un documento unificado con estilos HTML rigurosos y Markdown legible.
+### Paso 4: Prompt Templates para Diseñar un Curso Nuevo
+Copia y pega cualquiera de estos prompts en el chat de Antigravity para iniciar el diseño de un nuevo curso:
+
+#### Prompt 1: Curso Abierto / Especialización Técnica
+```text
+Activa la skill curriculum-didactic-designer. Con base en el ideario de Fundación Kinal y el marco DQR, 
+ayúdame a diseñar el paquete formativo completo para un curso presencial de [NOMBRE DEL CURSO] de [X HORAS] 
+(distribuido en [Y SESIONES]). Genera: 
+1) Propuesta y Temario Técnico en Markdown, 
+2) Plan de Clase / Macroplanificación, 
+3) Secuencia Didáctica en 3 momentos (Apertura, Desarrollo y Cierre), 
+4) Documento HTML maquetado con identidad Kinal, y 
+5) Script de compilación en PDF.
+```
+
+#### Prompt 2: Capacitación Corporativa In-Company a Medida
+```text
+Activa la skill curriculum-didactic-designer. Tenemos una solicitud de capacitación cerrada para una empresa con los siguientes parámetros:
+- Población: [6 a 10 colaboradores / Perfiles: Mecánicos, Electricistas, etc.]
+- Modalidad: [Híbrida: X horas virtuales Teams + Y horas presenciales de taller/planta]
+- Horario de la empresa: [Días y horas de jornada laboral]
+- Objetivo y temas solicitados: [Detallar los sistemas o tecnologías]
+Genera la propuesta técnica corporativa, el plan de clase híbrido, la secuencia didáctica detallada, la página HTML y el PDF oficial con el escudo de Kinal.
+```
 
 ---
 
-## 3. Citas Textuales y Parámetros Obligatorios
+## 3. Normativa y Reglas Mandatorias de Negocio (Kinal y DQR)
 
-* **Formación Profesional Dual:**
-  > *"concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa".*
-* **Concepto de Competencia en el DQR:**
-  > *"the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act".*
-* **Misión de Kinal:**
-  > *"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad".*
-* **Valores de Kinal:**
-  > *"Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable".*
-* **Umbral Aprobatorio:** Nota mínima de **75 puntos sobre 100** en cursos regulares y exámenes por suficiencia (en inglés, suficiencia vía prueba **ELASH II** nivel **A2**).
-* **Carga DQR 6:** **1,200 horas pedagógicas** con alternancia teoría en aula (*Berufsschule*) y práctica en el puesto (*Ausbildung am Arbeitsplatz*).
+1. **Cero Alucinación / Grounding Estricto:** Toda propuesta se fundamenta en las fuentes oficiales del proyecto y normativas internacionales (ANSI/ISA, ISO, ASME, DIN, DQR).
+2. **Citas Textuales Obligatorias:**
+   * **Misión de Kinal:** *«Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad»*.
+   * **Valores Nucleares de Kinal:** *«Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable»*.
+   * **Concepto de Competencia Profesional (Marco DQR):** *«La competencia es la capacidad y disposición de la persona para integrar conocimientos técnicos, destrezas prácticas y responsabilidad personal y social, actuando con criterio ético y autonomía ante situaciones reales de trabajo»*.
+3. **Umbral Aprobatorio:** Nota mínima de **75 puntos sobre 100** para aprobación de cursos, prácticas de taller y exámenes de suficiencia.
+4. **Ecosistema Digital:** Clases sincrónicas en **Microsoft Teams / M365** y gestión académica en Moodle (**Kinal.academy**).
+5. **Estructura Pedagógica de Sesión:**
+   * **Apertura (20 - 35 min):** Activación, caso real de obra/planta, normas de seguridad y alineación con el ideario Kinal.
+   * **Desarrollo (120 - 225 min):** Ejecución práctica en taller/campo y laboratorio CAD aplicando el Ciclo de la Acción Completa.
+   * **Cierre (30 - 40 min):** Control de calidad de tolerancias, coevaluación entre pares, registro en la Bitácora del Aprendiz (*Berichtsheft*) y feedback formativo.
 
 ---
 
-## 4. Cómo Usar Este Espacio de Trabajo
+## 4. Memoria de Conversación y Documentación Histórica
 
-1. **Consultar o visualizar los entregables:**
-   * Abre [`output/programa_formativo_dual_dqr6.html`](./output/programa_formativo_dual_dqr6.html) en tu navegador para ver la maquetación visual con tablas y formato oficial.
-   * Abre [`output/PROGRAMA_FORMATIVO_DUAL_DQR6.md`](./output/PROGRAMA_FORMATIVO_DUAL_DQR6.md) para lectura rápida o edición en Markdown.
-2. **Generar nuevos módulos o cursos:**
-   * Simplemente solicita al asistente en el chat: *"Diseña una nueva secuencia didáctica para el Módulo 2"* o *"Genera una dosificación para el nivel DQR 5 (400 horas)"*. Antigravity activará automáticamente la skill `curriculum-didactic-designer` y sus subagentes.
+Para consultar el registro detallado de cómo evolucionó el programa de levantamiento de planos (de edificación a diagramas industriales P&ID, ajuste de 40h a 25h, eliminación de fotogrametría, inclusión de triangulación y radiaciones, y adaptación para clientes corporativos), revisa:  
+👉 **[`docs/MEMORIA_CONVERSACION_DISENO_INSTRUCCIONAL.md`](./docs/MEMORIA_CONVERSACION_DISENO_INSTRUCCIONAL.md)**

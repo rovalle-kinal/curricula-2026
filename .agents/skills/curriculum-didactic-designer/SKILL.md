@@ -1,94 +1,110 @@
 ---
 name: curriculum-didactic-designer
-description: Designs complete technical and vocational curricula, macro lesson plans, and detailed dual-education didactic sequences strictly grounded on reference sources (DQR, Dual System, Fundación Kinal), exporting the synthesized pedagogical specifications to formatted HTML, Google Docs or Markdown. Trigger when users request syllabus creation, didactic planning, vocational course designs, or dual training programs.
+description: Designs complete technical and vocational curricula, macro lesson plans, and detailed dual-education didactic sequences strictly grounded on reference sources (DQR, Dual System, Fundación Kinal), exporting the synthesized pedagogical specifications to formatted HTML, Google Docs, Markdown and PDF via ReportLab. Trigger when users request syllabus creation, didactic planning, vocational course designs, corporate training programs, or dual training programs.
 ---
 
 # Instruction Set for Antigravity Agent: Technical Curriculum Designer
 
 ## System Purpose
-The agent orchestrates a 4-stage instructional design pipeline that converts loaded source documentation into fully articulated, competence-based technical training programs (following the Dual System, DQR levels 2 to 7, and Fundación Kinal institutional norms), compiling them into an enterprise-grade document ready for presentation or Google Docs export.
+The agent orchestrates an end-to-end instructional design and curriculum engineering pipeline that converts client needs and loaded source documentation into fully articulated, competence-based technical training programs (following the Dual System, DQR levels 2 to 7, and Fundación Kinal institutional norms).
+
+It produces a complete 5-part institutional deliverable package:
+1. **Propuesta Formativa y Temario Técnico-Comercial (Markdown):** Brochure, target audience, business problem, and hierarchical syllabus.
+2. **Plan de Clase y Dosificación Macrocurricular (Markdown):** Session-by-session macroplan, learning outcomes, tools, and evaluations.
+3. **Secuencia Didáctica y Microplanificación (Markdown):** 3-moment didactic microdesign (*Apertura*, *Desarrollo*, *Cierre*), Capstone project, and 4-dimension DQR analytical rubric.
+4. **Página Web Maquetada y Responsiva (HTML):** Enterprise presentation using official Fundación Kinal visual identity (Colors: Navy `#003366`, Flame `#EC9123`, Border `#CBD5E0`, clean styling).
+5. **Documento PDF de Alta Definición (ReportLab):** Ready-to-print executive PDF with institutional header, escudo logo, dynamic numbered canvas (*Página X de Y*), and styled tables.
 
 ---
 
-## Architecture of the Multi-Agent Pipeline
+## Architecture of the Instructional Design Pipeline
 
 ```text
-[Fuentes del Cuaderno: DQR, Sajonia, Duales System, Kinal]
-                        │
-                        ▼
+[Requerimientos del Cliente / Fuentes DQR / Ideario Kinal]
+                            │
+                            ▼
 ┌────────────────────────────────────────────────────────┐
-│ 1. Agente Investigador & Curador de Temario            │
+│ 1. Fase de Diagnóstico y Curaduría Curricular          │
+│    • Perfiles (Mecánicos, Electricistas, etc.)         │
+│    • Modalidad (Presencial o Híbrida Virtual/Presencial)│
+│    • Horarios del cliente y carga horaria (25h a 40h)  │
 └────────────────────────────────────────────────────────┘
-                        │ (JSON: pipeline/curated_curriculum_spec.json)
-                        ▼
+                            │
+                            ▼
 ┌────────────────────────────────────────────────────────┐
-│ 2. Agente Planificador Curricular                      │
+│ 2. Fase de Macroplanificación Curricular (Plan Clase)  │
+│    • Ciclo de la Acción Completa (6 fases duales)      │
+│    • Distribución de sesiones, módulos y hitos         │
 └────────────────────────────────────────────────────────┘
-                        │ (JSON: pipeline/macro_curriculum_plan.json)
-                        ▼
+                            │
+                            ▼
 ┌────────────────────────────────────────────────────────┐
-│ 3. Agente de Dosificación y Secuencias Didácticas      │
+│ 3. Fase de Microdiseño Didáctico (Secuencia)           │
+│    • Apertura (20-35 min), Desarrollo (120-225 min),   │
+│      Cierre (30-40 min)                                │
+│    • Proyecto Capstone terminal integrador             │
+│    • Rúbrica analítica 4 dimensiones DQR (&ge; 75 pts) │
 └────────────────────────────────────────────────────────┘
-                        │ (JSON: pipeline/detailed_didactic_sequences.json)
-                        ▼
+                            │
+                            ▼
 ┌────────────────────────────────────────────────────────┐
-│ 4. Agente Documentador & Exportador                    │
+│ 4. Fase de Compilación y Generación Multiformato       │
+│    • Markdown (Propuesta, Plan, Secuencia)             │
+│    • Maqueta HTML responsive Kinal                     │
+│    • Compilador PDF ReportLab (scripts/generate_*.py)  │
 └────────────────────────────────────────────────────────┘
-                        │
-                        ▼
-[Documento Formativo Final: HTML y Markdown en output/]
+                            │
+                            ▼
+[Entregables Listos en Cursos/<Nombre_Curso>/ y output/]
 ```
 
 ---
 
 ## Operational Workflow
 
-### Step 1: Source Grounding & Extraction (Agent 1: Investigador & Curador)
-- **Input**: Source documentation located in `references/curricular_map_and_sources.md`.
+### Step 1: Source Grounding & Client Diagnosis
+- **Input**: Source documentation (`references/curricular_map_and_sources.md`) and specific user/client parameters (schedule, headcount, participant profile, and technical systems required).
 - **Logic**:
-  - Extract qualification frameworks (DQR 2 through 7), hours requirements (e.g., 400h for DQR 5, 1,200h for DQR 6, 1,600h for DQR 7).
-  - Extract dual education mechanisms (alternance, company-school, AEVO, Berichtsheft, überbetriebliche Ausbildung).
-  - Extract institutional values and evaluation rules from Fundación Kinal (passing score threshold $\ge 75$ points for courses and sufficiency exams, dignity of the person, spirit of service, well-done work, responsible personal freedom).
-  - Strictly exclude external, non-grounded frameworks.
-- **Output**: Save structured data to `pipeline/curated_curriculum_spec.json`.
+  - Differentiate between **Cursos Abiertos de Especialización** (ej. 25h sabatinas) and **Capacitaciones Corporativas In-Company** (ej. 40h híbridas en horario laboral del cliente).
+  - Extract relevant qualification level (DQR 4-5 para especializaciones ocupacionales, DQR 6 para técnico superior / bachelor professional).
+  - Apply the principle of the *"trabajo bien hecho"*, personal safety (LOTO, EPP), and ethical integrity (zero tolerance for fabricated field measurements or outdated *as-built* drawings).
 
-### Step 2: Macro-Curricular Structuring (Agent 2: Planificador Curricular)
-- **Input**: `pipeline/curated_curriculum_spec.json`.
+### Step 2: Macro-Curricular Structuring (Plan de Clase)
 - **Logic**:
-  - Calculate total pedagogical and practical load (e.g., 1,200 hours for DQR 6).
-  - Segment allocation between classroom (Berufsschule) and workplace (Ausbildung am Arbeitsplatz / empresa).
-  - Establish progression paths, articulation (horizontal/vertical), and permeability (Durchlässigkeit).
-  - Formulate macro milestones and integrated theory-practice evaluation (*Theorie und Praxis integrierende Prüfung*).
-- **Output**: Save specification to `pipeline/macro_curriculum_plan.json`.
+  - Structure the program in distinct thematic modules with explicit hour allocations.
+  - Apply the **Ciclo de la Acción Completa** in 6 sequential phases:
+    1. *Informar:* Problem statement, background drawings, and norms.
+    2. *Planificar:* Tools, field route, and interdisciplinary team roles.
+    3. *Decidir:* Technical standards (ISA, ISO, ASME), CAD layers, and safety protocols.
+    4. *Ejecutar:* Field measurements, sketching (tablet/paper), and CAD modeling.
+    5. *Controlar:* Geometric closing, cross-auditing between disciplines, and tolerance checks.
+    6. *Valorar:* Formative feedback against rubric (&ge; 75 pts) and *Berichtsheft* logbook.
 
-### Step 3: Didactic Sequence Generation (Agent 3: Dosificador de Secuencias Didácticas)
-- **Input**: `pipeline/macro_curriculum_plan.json` and `pipeline/curated_curriculum_spec.json`.
+### Step 3: Didactic Sequence Generation (Secuencia Didáctica)
 - **Logic**:
-  - Break every module down into micro-sessions structured into three moments:
-    1. **Apertura / Inicio**: Activation of prior knowledge, real workplace problem, safety, ethics, and Kinal institutional mindset.
-    2. **Desarrollo / Aplicación**: Practical execution in workshop or workstation, alternating theory/practice under AEVO guidelines, teamwork, autonomy, and instrumental skills.
-    3. **Cierre / Consolidación**: Formative reflection, personal feedback, documentation in the apprentice log (*Berichtsheft*), and self-assessment against the "well-done work" standard.
-  - Ensure balance between personal competence (social competence, autonomy) and professional competence (knowledge, skills).
-- **Output**: Save to `pipeline/detailed_didactic_sequences.json`.
+  - Break down every session into the 3 institutional didactic moments:
+    1. **Apertura / Inicio (20 to 35 min):** Motivation, real-world industrial challenge, safety briefing, and Kinal institutional mindset.
+    2. **Desarrollo / Laboratorio y Taller (120 to 225 min):** Hands-on physical measurement (calipers, tapes, laser meter, triangulation, radiations) and CAD drafting (units, OSNAP, Polar, XREFs, blocks with attributes, P&ID).
+    3. **Cierre / Consolidación (30 to 40 min):** Tolerance auditing, peer coevaluation, entry in the *Bitácora del Aprendiz (Berichtsheft)*, and instructor feedback.
+  - Formulate the **Proyecto Capstone Terminal Integrador** as the theoretical-practical sufficiency exam.
+  - Include the **Rúbrica Analítica Terminal Integral** across 4 DQR dimensions with a strict passing threshold of **75/100 points**.
 
-### Step 4: Technical Formatting & Document Generation (Agent 4: Documentador & Exportador)
-- **Input**: `pipeline/detailed_didactic_sequences.json`, `pipeline/macro_curriculum_plan.json`, and template standards from `resources/document_templates.html`.
+### Step 4: Multi-Format Document Generation (HTML & PDF)
 - **Logic**:
-  - Synthesize intermediate JSON artifacts into clean, professional HTML and Markdown:
-    - Arial/default font, line-height 1.25, tables styled with explicit borders (`#cbd5e0`) and padding (`8px` to `10px`).
-    - Hierarchical headings (`<h1>`, `<h2>`, `<h3>`).
-    - Exact verbatim citations for DQR competence definition, Dual Education concept, and Kinal mission/values.
-  - Never use raw unstyled tables or invent non-existent URLs.
-- **Output**: Write deliverables to `output/programa_formativo_dual_dqr6.html` and `output/PROGRAMA_FORMATIVO_DUAL_DQR6.md`.
+  - Produce clean, styled HTML using the Fundación Kinal color palette (`#003366`, `#22376D`, `#EC9123`, `#CBD5E0`, `#F7FAFC`) with tables, badges, callouts, and responsive grid layouts.
+  - Generate an executive PDF using ReportLab with:
+    - Escudo logo (`assets/escudo_kinal_cuadrado.png`).
+    - Two-pass `NumberedCanvas` displaying page headers and dynamic "Página X de Y" footers.
+    - Explicit cell padding, styled borders, and clear typography.
 
 ---
 
 ## Constraints & Mandatory Rules
-1. **Zero Hallucination**: DO NOT invent or extrapolate facts, learning models, or theories not present in the notebook sources.
-2. **Strict Citation of Key Definitions**:
-   - **Formación Profesional Dual**: *"concepto de aprendizaje para jóvenes que tiene como objetivo preparar a los aprendices para su vida profesional, por lo que la formación se realiza en régimen de alternancia entre la escuela o el centro de formación y la empresa. El aprender en el proceso del trabajo es base y a la vez objetivo de la acción formativa"*.
-   - **Concepto de Competencia en el DQR**: *"the ability and readiness of the individual to use knowledge, skills and personal, social and methodological competences and to behave in a considered, individual and socially responsible manner. Competence is understood in this sense as the comprehensive ability to act"*.
-   - **Valores de Kinal**: *"Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable"*.
-   - **Misión de Kinal**: *"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad"*.
-3. **Evaluation Threshold**: Minimum passing grade is strictly **75 points out of 100** for courses and sufficiency exams (*exámenes de suficiencia*).
-4. **Hour Standards**: Honor DQR minimum instructional hours (DQR 5: $\ge 400$ h; DQR 6: $\ge 1,200$ h; DQR 7: $\ge 1,600$ h).
+
+1. **Zero Hallucination / Strict Grounding:** Never invent or extrapolate pedagogical theories outside the project reference sources and standard engineering norms (ANSI/ISA-5.1, ISO 10628, ISO 1219, ASME A13.1, DIN, DQR).
+2. **Strict Institutional Citations (Fundación Kinal):**
+   - **Misión de Kinal:** *"Formar a jóvenes y adultos a través de una educación integral, con énfasis en las áreas técnicas y tecnológicas, influyendo positivamente en su trabajo, su familia y la sociedad"*.
+   - **Valores de Kinal:** *"Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable"*.
+   - **Concepto de Competencia Profesional (Marco DQR en Español):** *"La competencia es la capacidad y disposición de la persona para integrar conocimientos técnicos, destrezas prácticas y responsabilidad personal y social, actuando con criterio ético y autonomía ante situaciones reales de trabajo"*.
+3. **Evaluation Threshold:** Minimum passing grade is strictly **75 points out of 100** for all regular courses, workshops, and sufficiency exams.
+4. **Digital Platforms:** Sychronous online sessions and meetings run strictly on **Microsoft Teams / Microsoft 365**. LMS and virtual campus is **Moodle (Kinal.academy)**. Never reference Google Meet or Google Classroom in Kinal programs.
