@@ -55,7 +55,7 @@ It produces a complete 5-part institutional deliverable package:
 └────────────────────────────────────────────────────────┘
                             │
                             ▼
-[Entregables Listos en Cursos/<Nombre_Curso>/ y output/]
+[Entregables Listos en Cursos/<Nombre_Curso>/]
 ```
 
 ---

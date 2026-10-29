@@ -23,11 +23,18 @@ Este proyecto está dedicado al **Diseño Curricular y Didáctico Técnico-Profe
 
 ---
 
-## 3. Pipeline Multi-Agente y Entregables
-- Mantener la separación de artefactos en la carpeta [`pipeline/`](./pipeline/):
-  - `curated_curriculum_spec.json` (Fase 1: Curaduría)
-  - `macro_curriculum_plan.json` (Fase 2: Macroplanificación)
-  - `detailed_didactic_sequences.json` (Fase 3: Dosificación de secuencias didácticas)
-- Formatear los entregables finales en la carpeta [`output/`](./output/):
-  - Documento maquetado HTML en [`output/programa_formativo_dual_dqr6.html`](./output/programa_formativo_dual_dqr6.html) siguiendo las plantillas en `resources/document_templates.html`.
-  - Documento Markdown en [`output/PROGRAMA_FORMATIVO_DUAL_DQR6.md`](./output/PROGRAMA_FORMATIVO_DUAL_DQR6.md).
+## 3. Estructura de Entregables y Organización del Repositorio
+- **Carpeta Oficial de Cursos (Cursos/<Nombre_Curso>/):** 
+  - **No utilizar la carpeta output/**. Todos los artefactos generados para un curso deben alojarse exclusivamente en su subcarpeta dedicada dentro de [Cursos/](./Cursos/).
+  - Para cada curso diseñado se genera y almacena en su carpeta respectiva el paquete completo:
+    1. Propuesta Técnica y Temario en Markdown / Word (.md / .docx).
+    2. Plan de Clase y Macroplanificación (.md / .docx).
+    3. Secuencia Didáctica en 3 momentos y Rúbrica Analítica (.md / .docx).
+    4. Página Web Maquetada y Responsiva (.html).
+    5. Documento PDF institucional de alta fidelidad compilado con ReportLab (.pdf).
+- **Revisiones Curriculares (Revisiones_Curriculares/):**
+  - Todas las revisiones, mallas, temarios y auditorías curriculares se centralizan en [Revisiones_Curriculares/](./Revisiones_Curriculares/):
+    - CET/: Pensum y actualizaciones del Centro Educativo Técnico (Electrónica e Informática).
+    - TSU/: Pensum, auditorías y planes de clase del Técnico Superior Universitario.
+    - Carreras_Tecnicas/: Temarios y mallas de carreras técnicas (Automotriz, Construcción, Electricidad, Mecánica, Topografía).
+    - PDFs/: Compilaciones y auditorías oficiales en formato PDF.

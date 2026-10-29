@@ -17,7 +17,7 @@ El sistema permite generar de forma automatizada y coherente el paquete document
 
 ## 1. Estructura del Repositorio
 
-```text
+`	ext
 ├── .agents/
 │   └── skills/
 │       └── curriculum-didactic-designer/           # SKILL PORTABLE PARA ANTIGRAVITY
@@ -27,27 +27,41 @@ El sistema permite generar de forma automatizada y coherente el paquete document
 │           └── resources/
 │               └── document_templates.html         # Plantillas visuales HTML y tablas maestras
 │
-├── Cursos/
-│   ├── Levantamiento_Planos_Diagramas/             # CASO DE ESTUDIO: LEVANTAMIENTO Y DIAGRAMAS
-│   │   ├── Historico_Edificacion_Sabatina_2026/    # Versión previa de edificación (25h y 40h)
-│   │   ├── Propuesta_Tecnica_y_Temario_Diagramas_Industriales_Kinal.md  # Propuesta cliente
-│   │   ├── Plan_de_Clase_Diagramas_Industriales_Kinal.md                # Macroplanificación 40h
-│   │   ├── Secuencia_Didactica_Diagramas_Industriales_Kinal.md          # Secuencia didáctica
-│   │   ├── programa_formativo_diagramas_industriales.html               # Maqueta web oficial
-│   │   └── programa_formativo_diagramas_industriales.pdf                # PDF listo para entrega
-│   └── [Otros cursos: Automatización, Cableado, Ciberseguridad, Mecatrónica, IA, etc.]
+├── Cursos/                                         # CARPETA CENTRAL DE TODOS LOS CURSOS
+│   ├── Automatizacion/                             # Paquete formativo Automatización Industrial
+│   ├── Cableado_Estructurado/                      # Paquete formativo Cableado Estructurado
+│   ├── Capacitacion_Instructores_IA/               # Formación de formadores en IA
+│   ├── Ciberseguridad/                             # Paquete formativo Ciberseguridad
+│   ├── Historico_Dual_DQR6/                        # Resguardo histórico versión Dual DQR6
+│   ├── Inteligencia_Artificial/                    # Paquete formativo Inteligencia Artificial
+│   ├── IoT_Domotica/                               # Paquete formativo IoT y Domótica
+│   ├── Levantamiento_Planos_Diagramas/             # Diagramas Industriales P&ID y Planos
+│   ├── Mecatronica/                                # Paquete formativo Mecatrónica Industrial
+│   ├── Productividad_Universitaria/                # Productividad y metodologías de estudio
+│   ├── Talento_Tecnico/                            # Gestión del Talento Técnico y Mandos Medios
+│   ├── Taller_NotebookLM/                          # Taller práctico de NotebookLM
+│   └── Webinar_Copiloto_IA/                        # Webinar Copiloto de Negocios con IA
 │
-├── docs/
-│   └── MEMORIA_CONVERSACION_DISENO_INSTRUCCIONAL.md  # Memoria histórica de decisiones
+├── Revisiones_Curriculares/                        # AUDITORÍAS Y MALLAS CURRICULARES KINAL
+│   ├── CET/                                        # Pensum Centro Educativo Técnico (Electrónica/Informática)
+│   ├── TSU/                                        # Pensum y auditorías Técnico Superior Universitario
+│   ├── Carreras_Tecnicas/                          # Temarios y mallas de Carreras Técnicas (Mecánica, Auto, etc.)
+│   └── PDFs/                                       # Compilaciones oficiales y auditorías en PDF
 │
-├── scripts/                                         # MOTORES DE COMPILACIÓN Y AUTOMATIZACIÓN
+├── docs/                                           # MEMORIAS Y REGISTROS HISTÓRICOS
+│   └── MEMORIA_CONVERSACION_DISENO_INSTRUCCIONAL.md
+│
+├── scripts/                                        # MOTORES ACTIVOS DE GENERACIÓN Y PDF
 │   ├── generate_pdf_diagramas_industriales.py       # Compilador PDF ReportLab para P&ID
 │   ├── generate_dual_course_pdfs.py                 # Compilador PDF para cursos 25h y 40h
+│   ├── generate_career_audit_pdfs.py                # Compilador de auditorías curriculares
+│   ├── generate_single_course_pdfs.py               # Compilador de fichas de cursos
+│   ├── build_talento_tecnico_page.py                # Generador de página web Talento Técnico
 │   └── vendor/                                      # Dependencias portables (ReportLab, Pillow)
 │
 ├── AGENTS.md                                        # Reglas mandatorias del workspace
 └── README.md                                        # Guía de importación y uso
-```
+`
 
 ---
 
