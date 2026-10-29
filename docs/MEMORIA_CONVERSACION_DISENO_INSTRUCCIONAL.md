@@ -121,3 +121,11 @@ Cursos/Levantamiento_Planos_Diagramas/
 ├── programa_formativo_diagramas_industriales.html                [Maqueta web responsive]
 └── programa_formativo_diagramas_industriales.pdf                 [PDF oficial para el cliente]
 ```
+
+### Actualización Reciente: Presentación Ejecutiva y Neutralidad Normativa
+- **Eliminación de Referencias Específicas a ISA / ANSI:** Se reemplazaron términos como ISA-5.1 o bridas ANSI por terminología técnica normalizada e industrial estandarizada (*simbología técnica normada*, *bridas estandarizadas Clase 150/300 RF/FF*).
+- **Estructuración del PDF en 3 Páginas:** 
+  1. *Página 1:* Presentación integral del curso en una sola hoja, incorporando el Temario Curricular Resumido con textos centrados verticalmente (VALIGN: MIDDLE) y suprimiendo la explicación teórica redundante de P&ID.
+  2. *Página 2:* Planificación y dosificación de las 10 sesiones en su propia hoja independiente.
+  3. *Página 3:* Sistema de evaluación y rúbrica analítica terminal.
+- **Estructura Renovada del README:** Incorporación de descripción ejecutiva en menos de 5 líneas, prompts listos para replicación en cualquier agente o arnés de IA, árbol jerárquico depurado y formalización de reglas mandatorias de Kinal.
