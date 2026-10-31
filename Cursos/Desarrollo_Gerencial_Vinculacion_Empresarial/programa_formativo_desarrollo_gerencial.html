@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Desarrollo Gerencial y Vinculación Empresarial | Fundación Kinal</title>
+    
+    <!-- Favicon Oficial Kinal -->
+    <link rel="icon" type="image/png" href="../../assets/escudo_kinal_cuadrado.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tipografías complementarias -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --kinal-blue: #22376D;
+            --kinal-blue-dark: #152244;
+            --kinal-blue-deep: #0D162C;
+            --kinal-blue-light: #2E4A91;
+            --kinal-flame: #EC9123;
+            --kinal-gold: #F5A623;
+            --kinal-gray-8c: #888B8D;
+            --kinal-bg-light: #F8F9FA;
+            --kinal-border: #DDE2E5;
+        }
+
+        body {
+            font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", sans-serif;
+            background-color: var(--kinal-bg-light);
+            color: #1E293B;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .brand-serif, .font-heading {
+            font-family: "Times New Roman", Times, "Playfair Display", Georgia, serif;
+            letter-spacing: -0.01em;
+        }
+
+        .bg-kinal-blue { background-color: var(--kinal-blue); }
+        .bg-kinal-blue-dark { background-color: var(--kinal-blue-dark); }
+        .text-kinal-blue { color: var(--kinal-blue); }
+        .border-kinal-blue { border-color: var(--kinal-blue); }
+
+        .bg-kinal-flame { background-color: var(--kinal-flame); }
+        .text-kinal-flame { color: var(--kinal-flame); }
+        .border-kinal-flame { border-color: var(--kinal-flame); }
+
+        .hero-kinal-gradient {
+            background: linear-gradient(135deg, #0D162C 0%, #152244 50%, #22376D 100%);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .container-print { max-width: 100% !important; padding: 0 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <header class="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="../../assets/escudo_kinal_cuadrado.png" alt="Escudo Fundación Kinal" class="w-10 h-10 object-contain rounded bg-white/10 p-0.5 border border-white/20">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-amber-400 uppercase block">Escuela Técnica Superior</span>
+                    <span class="text-sm font-semibold text-slate-200">Fundación Kinal • Avalado por la Universidad del Istmo</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold flex items-center gap-1.5">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-blue-400"></i> Diplomado Mandos Medios
+                </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-semibold flex items-center gap-1.5">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> DQR 6 / Dual
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-kinal-gradient text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> Formación Aplicada para Mandos Medios y Supervisores
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                Programa de Desarrollo Gerencial<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">y Vinculación Empresarial</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed mb-8">
+                Estructura ejecutiva de 4 sesiones diseñada para fortalecer el liderazgo humano, la retención de personal técnico, el manejo de crisis y la eficiencia operativa en talleres y plantas industriales, bajo el sello del «trabajo bien hecho» y el modelo del Técnico Universitario de KINAL.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-300 block font-medium">Carga Sincrónica</span>
+                        <span class="text-sm font-bold text-white">4 Sesiones • 8 Horas</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0">
+                        <i data-lucide="layers" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-300 block font-medium">Modalidad Híbrida</span>
+                        <span class="text-sm font-bold text-white">2 Presenciales + 2 Virtuales</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-300 block font-medium">Nota de Aprobación</span>
+                        <span class="text-sm font-bold text-white">&ge; 75 / 100 Puntos</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-300 block font-medium">Aval Académico</span>
+                        <span class="text-sm font-bold text-white">ETS Kinal & UNIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRONOGRAMA OFICIAL DE LAS 4 SESIONES (TABLERO PRINCIPAL) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+        <section id="cronograma" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block mb-2">Programación Oficial</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Cronograma y Calendario Ejecutivo de Sesiones</h2>
+                </div>
+                <span class="text-xs text-slate-500 font-medium bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 inline mr-1 text-slate-600"></i> Noviembre 2026 • Martes 14:00 a 16:00 hrs
+                </span>
+            </div>
+
+            <!-- GRID DE 4 SESIONES -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- SESIÓN 1 -->
+                <div class="bg-white rounded-2xl border-2 border-amber-300 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-4">
+                        <div class="flex justify-between items-center text-xs mb-1">
+                            <span class="font-bold text-amber-400 uppercase tracking-wide">Sesión 1</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold uppercase">Presencial</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-snug">Inteligencia Emocional – Factor Humano</h3>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="calendar" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+                                <span class="font-semibold text-slate-900">Martes 3 de noviembre</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="clock" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+                                <span>2:00 p. m. a 4:00 p. m. (120 min)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                <span>Campus Central Kinal</span>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 text-slate-600">
+                                <strong class="text-slate-900 block mb-1">Dinámica Especial:</strong>
+                                Apertura vivencial, potencias del alma (inteligencia y voluntad), CI vs. autogobierno emocional y recorrido por talleres y laboratorios ETS.
+                            </div>
+                        </div>
+                        <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 font-medium">
+                            🎯 <strong>Entregable:</strong> Autodiagnóstico de inteligencia emocional en piso.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SESIÓN 2 -->
+                <div class="bg-white rounded-2xl border-2 border-blue-300 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-4">
+                        <div class="flex justify-between items-center text-xs mb-1">
+                            <span class="font-bold text-amber-400 uppercase tracking-wide">Sesión 2</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 text-[10px] font-bold uppercase">Virtual Sincrónica</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-snug">Manejo de Personal y Mandos Medios</h3>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="calendar" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+                                <span class="font-semibold text-slate-900">Martes 10 de noviembre</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="clock" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+                                <span>2:00 p. m. a 4:00 p. m. (120 min)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="video" class="w-4 h-4 text-indigo-500 flex-shrink-0"></i>
+                                <span>Microsoft Teams / Kinal.academy</span>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 text-slate-600">
+                                <strong class="text-slate-900 block mb-1">Herramientas de Campo:</strong>
+                                Entrega de Onboarding 30-60-90, Micro-Charla diaria de 7 min, Matriz de Hábitos de Confianza y Ruta de Desescalamiento 1-a-1.
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-200 text-[11px] text-blue-900 font-medium">
+                            🎯 <strong>Entregable:</strong> Plantilla de Onboarding adaptada a un puesto real.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SESIÓN 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-4">
+                        <div class="flex justify-between items-center text-xs mb-1">
+                            <span class="font-bold text-amber-400 uppercase tracking-wide">Sesión 3</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 text-[10px] font-bold uppercase">Virtual Sincrónica</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-snug">Fortalecimiento de Competencias Técnicas</h3>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="calendar" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+                                <span class="font-semibold text-slate-900">Martes 17 de noviembre</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="clock" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+                                <span>2:00 p. m. a 4:00 p. m. (120 min)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="video" class="w-4 h-4 text-indigo-500 flex-shrink-0"></i>
+                                <span>Microsoft Teams / Kinal.academy</span>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 text-slate-600">
+                                <strong class="text-slate-900 block mb-1">Enfoque Operativo:</strong>
+                                Diagnóstico de brechas en piso, diseño de Matriz de Polivalencia (Skills Matrix), entrenamiento cruzado y estandarización de POEs.
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-[11px] text-slate-800 font-medium">
+                            🎯 <strong>Entregable:</strong> Matriz de Polivalencia Técnica de su cuadrilla.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SESIÓN 4 -->
+                <div class="bg-white rounded-2xl border-2 border-emerald-300 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-4">
+                        <div class="flex justify-between items-center text-xs mb-1">
+                            <span class="font-bold text-amber-400 uppercase tracking-wide">Sesión 4</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold uppercase">Presencial</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-snug">Rotación de Personal y Cierre Estratégico</h3>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="calendar" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+                                <span class="font-semibold text-slate-900">Martes 24 de noviembre</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="clock" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+                                <span>2:00 p. m. a 4:00 p. m. (120 min)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                <span>Campus Central Kinal</span>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 text-slate-600">
+                                <strong class="text-slate-900 block mb-1">Clausura y Graduación:</strong>
+                                Salario emocional, retención de talento, presentación de planes de acción aplicados, alianza Kinal-UNIS y entrega de diplomas.
+                            </div>
+                        </div>
+                        <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200 text-[11px] text-emerald-900 font-medium">
+                            🎯 <strong>Entregable:</strong> Plan de Acción y Acreditación Oficial UNIS.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BANNERS DE DINÁMICAS VIVENCIALES -->
+            <div class="grid md:grid-cols-2 gap-6 pt-2">
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-2">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">1 y 4</span>
+                        <span>Dinámica de Apertura y Cierre Presencial</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Las Sesiones 1 y 4 se impartirán en el campus de KINAL para facilitar dinámicas vivenciales de integración de mandos medios y permitir el recorrido por talleres y laboratorios de formación técnica.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-2">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <span class="w-7 h-7 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">2 y 3</span>
+                        <span>Continuidad Virtual Aplicada</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Las Sesiones 2 y 3 se desarrollarán en modalidad virtual sincrónica en Microsoft Teams, orientadas a la entrega y aplicación inmediata de herramientas de campo (onboarding, micro-charlas y diagnóstico de brechas técnicas).
+                    </p>
+                </div>
+            </div>
+
+            <!-- VINCULACIÓN CON EL TÉCNICO UNIVERSITARIO (CALLOUT OFICIAL) -->
+            <div class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-blue-800/50 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 inline-block">El Técnico Universitario (KINAL)</span>
+                    <h3 class="text-xl sm:text-2xl font-bold">Vinculación Empresa-Academia de Alto Nivel</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+                        Este diplomado permite a los líderes de empresa conocer de primera mano el modelo educativo del Técnico Universitario de KINAL (avalado por la Universidad del Istmo), un programa de tres años enfocado en preparar mandos medios capaces de dirigir procesos técnicos y personas con rigor operativo, criterio ético y liderazgo humano.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <div class="px-5 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-center">
+                        <span class="text-xs text-slate-300 block">Formación Dual</span>
+                        <span class="text-lg font-bold text-amber-300">3 Años de Carrera</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE HERRAMIENTAS DE CAMPO DESPLEGABLES / DETALLADAS -->
+        <section id="herramientas" class="space-y-8">
+            <div class="border-b border-slate-200 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 inline-block mb-2">Caja de Herramientas Operativas</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Protocolos y Formatos Aplicados en Planta</h2>
+                <p class="text-sm text-slate-600 mt-1">Material entregable para ejecución inmediata en talleres y líneas de producción.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+
+                <!-- HERRAMIENTA 1: ONBOARDING 30-60-90 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
+                            <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Plan de Onboarding 30-60-90 Días</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Guía de inducción técnica estructurada en 3 fases para reducir la curva de aprendizaje y el abandono temprano:
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-blue-900 block font-bold">Fase 1 (1-30d) · Asimilar:</strong>
+                                EPP, kit de herramientas, lectura guiada de POEs y acompañamiento en modo sombra. Hito: Cero incidentes.
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-blue-900 block font-bold">Fase 2 (31-60d) · Aplicar:</strong>
+                                Órdenes individuales, medición de tiempos y diagnóstico de fallas comunes. Hito: 100% rutinas sin reprocesos.
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-blue-900 block font-bold">Fase 3 (61-90d) · Proponer:</strong>
+                                Autonomía plena, atención de contingencias con causa raíz y propuesta de 1 mejora práctica documentada.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] font-semibold text-blue-700 bg-blue-50 p-2 rounded text-center border border-blue-200">
+                        Incluye Matriz de Valoración de 4 Criterios
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 2: MICRO-CHARLA 7 MIN -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Estructura de la Micro-Charla de 7 Min</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Ritual diario de inicio de turno para alinear objetivos operativos, seguridad y reconocimiento:
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                                <span class="px-2 py-0.5 rounded bg-blue-600 text-white font-bold text-[10px]">Min 1</span>
+                                <span class="text-slate-700"><strong>Conexión Humana:</strong> Chequeo de estado visual y de pie.</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                                <span class="px-2 py-0.5 rounded bg-amber-600 text-white font-bold text-[10px]">Min 2-3</span>
+                                <span class="text-slate-700"><strong>Píldora de Seguridad:</strong> 1 riesgo real del día (LOTO/5S).</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                                <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold text-[10px]">Min 4-5</span>
+                                <span class="text-slate-700"><strong>Prioridades Operativas:</strong> 2-3 metas no negociables del turno.</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                                <span class="px-2 py-0.5 rounded bg-purple-600 text-white font-bold text-[10px]">Min 6-7</span>
+                                <span class="text-slate-700"><strong>Reconocimiento:</strong> Validar esfuerzo y cierre con energía.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] font-semibold text-amber-800 bg-amber-50 p-2 rounded text-center border border-amber-200">
+                        Cronómetro Estricto: 7 Minutos Exactos
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 3: PROTOCOLO 1-A-1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-red-100 text-red-800 flex items-center justify-center font-bold">
+                            <i data-lucide="git-pull-request" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Ruta de Desescalamiento 1-a-1</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Protocolo de intervención rápida en 3 pasos (18 minutos) para desarmar roces sin frenar la planta:
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-red-900 block font-bold">Paso 1 (Min 1 a 5) · Contención:</strong>
+                                Retirar de la línea de fuego a privado. Escuchar el 80% del tiempo sin interrumpir.
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-red-900 block font-bold">Paso 2 (Min 6 a 12) · Objetivación:</strong>
+                                Despersonalizar el conflicto. Contrastar hechos con el estándar técnico, bitácora y POE.
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                                <strong class="text-red-900 block font-bold">Paso 3 (Min 13 a 18) · Compromiso:</strong>
+                                Acuerdo concreto de corresponsabilidad con fecha y hora de seguimiento a 48 horas.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] font-semibold text-red-800 bg-red-50 p-2 rounded text-center border border-red-200">
+                        Matriz de 3 Niveles de Tensión Operativa
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RÚBRICA Y EVALUACIÓN ANALÍTICA -->
+        <section id="evaluacion" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block mb-2">Evaluación Formativa</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Rúbrica Analítica de Competencias y Acreditación</h2>
+                </div>
+                <div class="bg-emerald-50 text-emerald-900 border border-emerald-200 px-4 py-2 rounded-xl text-center sm:text-right">
+                    <span class="text-xs block font-medium">Umbral Mínimo Aprobatorio</span>
+                    <span class="text-xl font-extrabold">&ge; 75 / 100 Puntos</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-white border-b border-slate-800">
+                            <th class="p-3 font-bold rounded-tl-lg">Criterio de Desempeño</th>
+                            <th class="p-3 font-bold">Sobresaliente (90-100 pts)</th>
+                            <th class="p-3 font-bold">Competente (80-89 pts)</th>
+                            <th class="p-3 font-bold bg-amber-900/40 text-amber-200">Suficiente (75-79 pts) [Umbral]</th>
+                            <th class="p-3 font-bold rounded-tr-lg">Insuficiente (<75 pts)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-slate-900 bg-slate-50/50">
+                                1. Inteligencia Emocional y Autogobierno (20%)
+                            </td>
+                            <td class="p-3">Domina el autogobierno emocional ante la presión; reconoce la dignidad incondicional del técnico y aplica escucha activa plena.</td>
+                            <td class="p-3">Mantiene la serenidad y trata con respeto a su equipo; identifica sus emociones pero muestra reactividad ocasional leve.</td>
+                            <td class="p-3 bg-amber-50/50 text-amber-950">Mantiene trato formal y respetuoso; cumple las normas de convivencia sin consolidar aún el autogobierno.</td>
+                            <td class="p-3 text-red-700">Reacciona impulsivamente, descalifica a colaboradores o exhibe errores frente al grupo en piso.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-slate-900 bg-slate-50/50">
+                                2. Aplicación de Onboarding y Micro-Charla (30%)
+                            </td>
+                            <td class="p-3">Diseña e implementa con rigor el Plan 30-60-90 y ejecuta la Micro-Charla de 7 min con estructura exacta y reconocimiento visible.</td>
+                            <td class="p-3">Aplica la plantilla de onboarding y realiza micro-charlas de forma regular; presenta leves variaciones en los tiempos.</td>
+                            <td class="p-3 bg-amber-50/50 text-amber-950">Diligencia los formatos pero su aplicación en piso es esporádica o excede los tiempos establecidos.</td>
+                            <td class="p-3 text-red-700">No aplica las herramientas de campo o las reduce a trámites burocráticos sin impacto en el taller.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-slate-900 bg-slate-50/50">
+                                3. Desescalamiento de Conflictos 1-a-1 (25%)
+                            </td>
+                            <td class="p-3">Ejecuta el protocolo de 3 pasos (18 min) en privado; objetiva técnicamente la disputa y asegura seguimiento estricto a 48 hrs.</td>
+                            <td class="p-3">Desescala en privado apoyándose en normas técnicas; logra acuerdos claros aunque el seguimiento requiere refuerzo.</td>
+                            <td class="p-3 bg-amber-50/50 text-amber-950">Separa a los involucrados y dialoga con ellos, pero le cuesta centrar la discusión en hechos técnicos objetivos.</td>
+                            <td class="p-3 text-red-700">Toma partido público, ignora el conflicto esperando que pase solo o amenaza con despidos en caliente.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 font-bold text-slate-900 bg-slate-50/50">
+                                4. Plan de Retención y Diagnóstico (25%)
+                            </td>
+                            <td class="p-3">Presenta una Matriz de Polivalencia precisa y un Plan de Retención con metas medibles para abatir la rotación en su planta.</td>
+                            <td class="p-3">Elabora una matriz de habilidades coherente y propone acciones lógicas de retención técnica en su taller.</td>
+                            <td class="p-3 bg-amber-50/50 text-amber-950">Identifica brechas técnicas básicas y propone mejoras generales con métricas poco definidas.</td>
+                            <td class="p-3 text-red-700">No presenta plan de retención o carece de diagnóstico técnico objetivo de su cuadrilla.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 py-8 px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div class="flex items-center gap-3">
+                <img src="../../assets/escudo_kinal_cuadrado.png" alt="Kinal" class="w-8 h-8 opacity-80">
+                <span>Fundación Kinal • Escuela Técnica Superior • Avalado por la Universidad del Istmo</span>
+            </div>
+            <div>
+                <span>Plataformas Oficiales: Microsoft Teams / M365 • Moodle (Kinal.academy)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INICIALIZACIÓN DE ICONOS LUCIDE -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
