@@ -1,0 +1,3274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Curricular Integral TSU 2026 | Fundación Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-blue-dark: #0b1f3a;
+            --kinal-blue-light: #1e3a8a;
+            --kinal-accent: #d97706;
+            --kinal-accent-light: #fef3c7;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --border-light: #e2e8f0;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+            --color-ia: #6366f1;
+            --color-ia-bg: #eef2ff;
+            /* Rutas */
+            --color-node-selected: #0f2d59;
+            --color-node-prereq: #059669;
+            --color-node-habilita: #d97706;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .app-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        /* HERO HEADER */
+        header.main-header {
+            background: linear-gradient(135deg, var(--kinal-blue-dark) 0%, var(--kinal-blue) 50%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 40px 48px;
+            border-bottom: 5px solid var(--kinal-accent);
+            position: relative;
+        }
+        .header-top-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .badge-pill {
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-pill-alt {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        header.main-header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        header.main-header p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            max-width: 1050px;
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+        .header-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 12px 16px;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+        }
+        .stat-card strong {
+            display: block;
+            font-size: 1.4rem;
+            color: #fef08a;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stat-card span {
+            font-size: 0.82rem;
+            color: #e2e8f0;
+        }
+
+        /* STICKY UNIFIED NAVBAR */
+        nav.sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--kinal-blue-dark);
+            padding: 0 40px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        nav.sticky-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 16px 18px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.sticky-nav a:hover {
+            color: #ffffff;
+            border-bottom-color: var(--kinal-accent);
+        }
+        nav.sticky-nav a.active {
+            color: #ffffff;
+            background: rgba(255,255,255,0.08);
+            border-bottom-color: var(--kinal-accent);
+        }
+
+        main.main-content {
+            padding: 40px 48px;
+        }
+
+        /* SECCIONES */
+        section.portal-section {
+            margin-bottom: 56px;
+            scroll-margin-top: 80px;
+        }
+        .section-header-bar {
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border-light);
+            margin-bottom: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .section-title-group h2 {
+            font-size: 1.7rem;
+            color: var(--kinal-blue);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title-group p {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            margin-top: 4px;
+        }
+
+        /* ESPECIALIDADES GRID */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .spec-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .spec-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: var(--kinal-blue);
+        }
+        .spec-icon { font-size: 2rem; line-height: 1; }
+        .spec-content h4 {
+            font-size: 1rem;
+            color: var(--kinal-blue);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .spec-content p {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.45;
+        }
+
+        .callout-gold {
+            background: #fffbeb;
+            border-left: 4px solid var(--kinal-accent);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .callout-gold h4 { color: #92400e; font-size: 1.05rem; margin-bottom: 6px; }
+        .callout-gold p { color: #78350f; font-size: 0.92rem; line-height: 1.5; }
+
+        /* MAPA CURRICULAR Y RED SVG */
+        .map-instructions {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--kinal-blue);
+            padding: 18px 24px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .legend-bar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: #ffffff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 0.82rem;
+        }
+        .legend-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+        .chip-dot { width: 12px; height: 12px; border-radius: 3px; }
+        .chip-selected { background: var(--color-node-selected); }
+        .chip-prereq { background: var(--color-node-prereq); }
+        .chip-habilita { background: var(--color-node-habilita); }
+
+        .view-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .mode-buttons { display: flex; gap: 8px; }
+        .mode-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mode-btn.active {
+            background: var(--kinal-blue);
+            color: #ffffff;
+            border-color: var(--kinal-blue);
+        }
+        .filter-linea-select select {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 0.88rem;
+            outline: none;
+            background: #ffffff;
+        }
+
+        .map-layout {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 16px;
+            align-items: start;
+        }
+        .curriculum-grid-container {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow-x: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .grid-header-row {
+            display: grid;
+            grid-template-columns: 150px repeat(4, minmax(135px, 1fr));
+            background: var(--kinal-blue-dark);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            border-bottom: 2px solid var(--kinal-accent);
+        }
+        .grid-header-cell {
+            padding: 10px 8px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.82rem;
+            line-height: 1.25;
+        }
+        .grid-header-cell:first-child { text-align: left; }
+        .grid-header-cell:last-child { border-right: none; }
+
+        .grid-linea-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .grid-linea-row:last-child { border-bottom: none; }
+
+        .grid-linea-label {
+            background: #f8fafc;
+            border-right: 1px solid var(--border-color);
+            border-left: 4px solid var(--kinal-blue);
+            padding: 12px 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .linea-row-icon { font-size: 1.25rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+        .grid-linea-label strong {
+            font-size: 0.78rem;
+            color: var(--kinal-blue);
+            line-height: 1.25;
+            display: block;
+        }
+        .linea-row-sub { font-size: 0.70rem; color: var(--text-muted); margin-top: 3px; line-height: 1.2; }
+
+        .grid-linea-cols {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(135px, 1fr));
+        }
+        .grid-cell {
+            padding: 8px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #fafbfc;
+        }
+        .grid-cell:last-child { border-right: none; }
+
+        .node-card {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 6px;
+            padding: 8px 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .node-card:hover {
+            transform: translateY(-1px);
+            border-color: var(--kinal-blue);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+        .node-badge-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .node-code {
+            background: #e2e8f0;
+            color: #1e293b;
+            font-weight: 800;
+            font-size: 0.65rem;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        .node-period { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; }
+        .node-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            margin-bottom: 3px;
+        }
+        .node-icon { font-size: 0.85rem; line-height: 1.2; flex-shrink: 0; }
+        .node-title strong {
+            font-size: 0.76rem;
+            color: var(--kinal-blue);
+            line-height: 1.2;
+        }
+        .node-sub {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            line-height: 1.2;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .node-conn-summary {
+            display: flex;
+            gap: 6px;
+            font-size: 0.64rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 4px;
+        }
+        .conn-count { padding: 1px 4px; border-radius: 3px; font-weight: 700; }
+        .conn-count.in { background: #ecfdf5; color: #065f46; }
+        .conn-count.out { background: #fffbeb; color: #92400e; }
+
+        .node-card.selected {
+            border-color: var(--color-node-selected) !important;
+            background: #eff6ff !important;
+            box-shadow: 0 0 0 3px rgba(15, 45, 89, 0.3) !important;
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        .node-card.prereq-active {
+            border-color: var(--color-node-prereq) !important;
+            background: #ecfdf5 !important;
+            box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.4) !important;
+        }
+        .node-card.prereq-active::after {
+            content: "⬅️ PRERREQUISITO";
+            position: absolute;
+            top: -9px;
+            right: 8px;
+            background: var(--color-node-prereq);
+            color: #ffffff;
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        .node-card.habilita-active {
+            border-color: var(--color-node-habilita) !important;
+            background: #fffbeb !important;
+            box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.4) !important;
+        }
+        .node-card.habilita-active::after {
+            content: "➡️ HABILITA A";
+            position: absolute;
+            top: -9px;
+            right: 8px;
+            background: var(--color-node-habilita);
+            color: #ffffff;
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        .node-card.dimmed { opacity: 0.32; filter: grayscale(40%); }
+
+        /* RED SVG */
+        .network-svg-container {
+            display: none;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .svg-canvas { width: 100%; min-width: 980px; height: 680px; display: block; }
+        .svg-edge { transition: stroke 0.2s, stroke-width 0.2s, stroke-opacity 0.2s; }
+        .svg-edge.edge-prereq-active {
+            stroke: #059669 !important;
+            stroke-width: 3.5 !important;
+            stroke-opacity: 1 !important;
+            marker-end: url(#marker-prereq) !important;
+        }
+        .svg-edge.edge-habilita-active {
+            stroke: #d97706 !important;
+            stroke-width: 3.5 !important;
+            stroke-opacity: 1 !important;
+            marker-end: url(#marker-habilita) !important;
+        }
+        .svg-edge.dimmed { stroke-opacity: 0.1 !important; }
+        .svg-node-rect { transition: stroke 0.2s, fill 0.2s; }
+        .svg-node-group:hover .svg-node-rect { stroke-width: 3; }
+        .svg-node-group.selected .svg-node-rect {
+            fill: #eff6ff !important;
+            stroke: #0f2d59 !important;
+            stroke-width: 3.5 !important;
+        }
+        .svg-node-group.prereq-active .svg-node-rect {
+            fill: #ecfdf5 !important;
+            stroke: #059669 !important;
+            stroke-width: 3 !important;
+        }
+        .svg-node-group.habilita-active .svg-node-rect {
+            fill: #fffbeb !important;
+            stroke: #d97706 !important;
+            stroke-width: 3 !important;
+        }
+        .svg-node-group.dimmed { opacity: 0.35; }
+
+        /* SIDE PANEL */
+        .side-detail-panel {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+        }
+        .side-detail-header {
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 16px;
+        }
+        .side-detail-badge {
+            display: inline-block;
+            background: var(--kinal-blue);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .side-detail-header h3 {
+            font-size: 1.15rem;
+            color: var(--kinal-blue);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        .side-detail-sub { font-size: 0.85rem; color: var(--text-muted); }
+        .side-section { margin-bottom: 16px; }
+        .side-section-title {
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.4px;
+            margin-bottom: 6px;
+        }
+        .side-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .side-list li {
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .side-list-prereq li { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+        .side-list-prereq li:hover { background: #d1fae5; }
+        .side-list-habilita li { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+        .side-list-habilita li:hover { background: #fef3c7; }
+        .side-callout {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            color: #334155;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+        .btn-side-action {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--kinal-blue);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 9px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .btn-side-action:hover { background: #1e3a8a; }
+
+        /* RUTAS TRANSVERSALES */
+        .transversal-routes {
+            margin-top: 40px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 28px;
+        }
+        .transversal-routes h3 {
+            color: var(--kinal-blue);
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .route-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            border-top: 4px solid var(--kinal-blue);
+        }
+        .route-card h4 { font-size: 0.98rem; color: var(--kinal-blue); margin-bottom: 6px; }
+        .route-card p { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 12px; }
+        .route-steps { display: flex; flex-direction: column; gap: 6px; }
+        .route-step-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            padding: 4px 8px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+        }
+        .step-arrow { color: var(--kinal-accent); font-weight: 700; }
+
+        /* TEMARIOS */
+        .controls-panel {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .controls-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .search-box { flex-grow: 1; max-width: 360px; position: relative; }
+        .search-input {
+            width: 100%;
+            padding: 8px 14px 8px 36px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .linea-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tab-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background: var(--kinal-blue);
+            color: #ffffff;
+            border-color: var(--kinal-blue);
+        }
+
+        .linea-header {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--kinal-blue);
+            border-radius: 8px;
+            padding: 22px 28px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .linea-header h2 { font-size: 1.45rem; color: var(--kinal-blue); margin-bottom: 6px; }
+        .linea-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid;
+            margin-bottom: 8px;
+        }
+        .linea-courses-list { display: flex; flex-direction: column; gap: 24px; }
+        .temario-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            scroll-margin-top: 100px;
+        }
+        .temario-header { background: #f8fafc; padding: 20px 24px; border-bottom: 1px solid var(--border-color); }
+        .temario-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+        .badge-bimestre { background: #e2e8f0; color: #1e293b; padding: 3px 8px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; }
+        .badge-periodo { background: #fef3c7; color: #92400e; padding: 3px 8px; border-radius: 4px; font-size: 0.78rem; font-weight: 600; }
+        .badge-horas { background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-size: 0.78rem; font-weight: 600; }
+        .temario-title-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .temario-title-bar h3 { font-size: 1.25rem; color: var(--kinal-blue); display: flex; align-items: center; gap: 10px; }
+        .btn-auditoria-link {
+            color: var(--kinal-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: #ffffff;
+        }
+        .btn-auditoria-link:hover { background: var(--kinal-blue); color: #ffffff; }
+        .temario-subtitulo { font-size: 0.95rem; color: var(--text-muted); }
+        .temario-body { padding: 24px; }
+        .temario-callout { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 18px; border-radius: 0 6px 6px 0; font-size: 0.92rem; color: #1e3a8a; margin-bottom: 18px; }
+        
+        .correlatividades-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .corr-item { display: flex; flex-direction: column; gap: 6px; }
+        .corr-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); }
+        .corr-links { display: flex; gap: 6px; flex-wrap: wrap; }
+        .conn-pill { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; }
+        .prereq-pill { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+        .habilita-pill { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+        .no-prereq { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; font-size: 0.78rem; }
+        .final-curso { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; font-size: 0.78rem; }
+
+        .unidades-container { margin-bottom: 20px; }
+        .unidades-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .btn-toggle-unidades { background: none; border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; cursor: pointer; }
+        .unidades-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+        .unidad-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 16px; }
+        .unidad-title { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border-light); }
+        .unidad-badge { background: #f1f5f9; color: var(--kinal-blue); font-size: 0.72rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
+        .unidad-title h4 { font-size: 0.88rem; color: var(--kinal-blue); }
+        .unidad-temas { padding-left: 18px; font-size: 0.82rem; color: #334155; line-height: 1.45; }
+        .unidad-temas li { margin-bottom: 6px; }
+
+        .ia-box { background: var(--color-ia-bg); border-left: 4px solid var(--color-ia); padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 18px; }
+        .ia-badge { font-size: 0.75rem; font-weight: 800; color: var(--color-ia); text-transform: uppercase; }
+        .ia-box p { font-size: 0.88rem; color: #312e81; margin: 0; }
+
+        .temario-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; padding-top: 14px; border-top: 1px solid var(--border-light); font-size: 0.86rem; }
+        .footer-block strong { display: block; color: var(--kinal-blue); margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; }
+
+        /* AUDITORÍA */
+        .audit-list { display: flex; flex-direction: column; gap: 24px; }
+        .audit-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            scroll-margin-top: 100px;
+        }
+        .audit-card-header { background: #f8fafc; padding: 18px 24px; border-bottom: 1px solid var(--border-color); }
+        .audit-meta { display: flex; gap: 8px; margin-bottom: 6px; }
+        .audit-card-header h3 { font-size: 1.25rem; color: var(--kinal-blue); display: flex; align-items: center; gap: 10px; }
+        .audit-sub { font-size: 0.9rem; color: var(--text-muted); }
+        .audit-body { padding: 24px; }
+        .audit-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 0.9rem; }
+        .audit-table th, .audit-table td { padding: 12px 16px; border: 1px solid var(--border-color); vertical-align: top; text-align: left; }
+        .audit-table th { background: #f8fafc; color: var(--kinal-blue); font-weight: 700; }
+        .row-anular { background: #fff5f5; }
+        .row-actualizar { background: #fefce8; }
+        .row-nuevo { background: #eff6ff; }
+
+        .tag-pill { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; }
+        .tag-original { background: #e2e8f0; color: #334155; }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .audit-callout { padding: 8px 12px; border-radius: 6px; font-size: 0.88rem; }
+        .callout-red { background: var(--color-anular-bg); color: var(--color-anular-text); border-left: 4px solid var(--color-anular-border); }
+        .callout-yellow { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border-left: 4px solid var(--color-actualizar-border); }
+        .callout-blue { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border-left: 4px solid var(--color-nuevo-border); }
+
+        .audit-justificacion { background: #f8fafc; border: 1px solid var(--border-light); padding: 14px 18px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 16px; }
+        .audit-justificacion strong { display: block; color: var(--kinal-blue); margin-bottom: 4px; }
+        .audit-actions { text-align: right; }
+        .btn-goto-temario { font-size: 0.85rem; color: var(--kinal-blue); font-weight: 600; text-decoration: none; }
+        .btn-goto-temario:hover { text-decoration: underline; }
+
+        /* BIMESTRES OPERATIVO */
+        .bimestre-group { margin-bottom: 36px; }
+        .bimestre-group-header {
+            background: #0b1f3a;
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bimestre-group-header h3 { font-size: 1.25rem; color: #fef08a; }
+        .bimestre-group-header span { font-size: 0.85rem; color: #cbd5e1; }
+        .bimestre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        .bimestre-course-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .b-period { font-size: 0.76rem; font-weight: 700; color: var(--kinal-accent); text-transform: uppercase; }
+        .b-code { font-size: 0.75rem; font-weight: 800; color: var(--kinal-blue); }
+        .bimestre-course-card h4 { font-size: 1rem; color: var(--kinal-blue); margin: 6px 0; }
+        .b-eje { font-size: 0.8rem; color: #0369a1; font-weight: 600; margin-bottom: 6px; }
+        .b-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; flex-grow: 1; }
+        .b-links { font-size: 0.82rem; border-top: 1px solid var(--border-light); padding-top: 8px; }
+        .b-links a { color: var(--kinal-blue); text-decoration: none; font-weight: 600; }
+        .b-links a:hover { text-decoration: underline; }
+
+        footer.main-footer {
+            background: var(--kinal-blue-dark);
+            color: #94a3b8;
+            padding: 32px 48px;
+            font-size: 0.9rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .map-layout { grid-template-columns: 1fr; }
+            .side-detail-panel { position: static; }
+            main.main-content { padding: 24px 20px; }
+            header.main-header { padding: 30px 24px; }
+        }
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- KINAL MOBILE ENGINE - ZERO CLIPPING RESPONSIVE SYSTEM      -->
+    <!-- ========================================================= -->
+    <style id="kinal-mobile-responsive-system">
+        @media (max-width: 767px) {
+            /* 1. Box model y contención estricta en 100% viewport */
+            *, *::before, *::after {
+                box-sizing: border-box !important;
+            }
+            html, body {
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-text-size-adjust: 100% !important;
+                touch-action: pan-y pinch-zoom;
+            }
+
+            /* 2. Contenedores fluidos sin desbordes */
+            main, section, header, footer, 
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Tarjetas de cursos (pensums) y contenedores modulares */
+            .grid {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Ruptura de palabras y textos para evitar que empujen el ancho */
+            h1, h2, h3, h4, h5, p, span, a, div {
+                overflow-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+
+            /* 5. Scroll horizontal fluido sin barras antiestéticas */
+            .no-scrollbar::-webkit-scrollbar, 
+            nav::-webkit-scrollbar,
+            .overflow-x-auto::-webkit-scrollbar {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+            .no-scrollbar, 
+            nav,
+            .overflow-x-auto {
+                -ms-overflow-style: none !important;
+                scrollbar-width: none !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            /* 6. Ergonomía táctil: botones y controles con altura mínima */
+            .tab-btn, button, select, input[type="text"] {
+                min-height: 42px;
+                touch-action: manipulation;
+            }
+
+            /* 7. Tab Bar y Navegación Horizontal Swipeable */
+            nav.flex.overflow-x-auto, 
+            .tab-nav-wrapper {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
+            }
+            nav.flex.overflow-x-auto > * {
+                flex-shrink: 0 !important;
+            }
+
+            /* 8. Padding de lectura responsivo en pantallas móviles */
+            main {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 14px !important;
+                padding-bottom: 24px !important;
+            }
+            header .max-w-7xl, header .max-w-6xl {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
+
+            /* 9. Envoltura táctil y cue de desplazamiento para tablas y matrices */
+            .table-responsive-mobile, 
+            .curriculum-grid-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 12px !important;
+            }
+
+            /* 10. Feedback táctil ágil */
+            .tab-btn:active, button:active, .card-hover:active, .area-course-card:active {
+                transform: scale(0.97) !important;
+                transition: transform 0.1s ease !important;
+            }
+
+            /* 11. Botones de descarga de Word apilables o compactos */
+            .btn-doc-group {
+                display: grid !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 6px !important;
+            }
+            .btn-doc-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 6px 4px !important;
+                font-size: 10px !important;
+                gap: 2px !important;
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .session-item {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: all 0.2s ease;
+            }
+            [id$="-detail-card"] {
+                scroll-margin-top: 80px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- HERO HEADER -->
+    <header class="main-header">
+        <div class="header-top-badges">
+            <a href="../index.html" class="badge-pill" style="background: #f59e0b; color: #0f172a; text-decoration: none; font-weight: 800;">← Portal Maestro</a>
+            <span class="badge-pill">Pensum Consolidado 2026</span>
+            <span class="badge-pill-alt">Escuela Técnica Superior Fundación Kinal</span>
+            <span class="badge-pill-alt">Convenio Universidad del Istmo (UNIS)</span>
+            <span class="badge-pill-alt">Equivalencia DQR Niveles 5 y 6</span>
+        </div>
+        <h1>AUDITORÍA Y REDISEÑO CURRICULAR INTEGRAL: TSU 2026</h1>
+        <p>Portal curricular unificado de los <strong>20 cursos</strong> del 3er Año Académico del <strong>Técnico Superior Universitario (TSU)</strong>. Plataforma única que consolida el mapa curricular interactivo con red de correlatividades, los temarios completos por línea de estudio, el dictamen de auditoría (lo que se anula, actualiza y nuevo) y la distribución transversal para las 7 carreras técnicas con Inteligencia Artificial.</p>
+        
+        <div class="header-stats-grid">
+            <div class="stat-card">
+                <strong>20 Cursos</strong>
+                <span>Tronco común de supervisión</span>
+            </div>
+            <div class="stat-card">
+                <strong>4 Bimestres</strong>
+                <span>10 meses lectivos (270 hrs)</span>
+            </div>
+            <div class="stat-card">
+                <strong>4 Líneas</strong>
+                <span>Ejes formativos articulados</span>
+            </div>
+            <div class="stat-card">
+                <strong>7 Especialidades</strong>
+                <span>Convergencia técnica Kinal</span>
+            </div>
+            <div class="stat-card">
+                <strong>&ge; 75 Puntos</strong>
+                <span>Nota mínima aprobatoria</span>
+            </div>
+        </div>
+    </header>
+
+        <!-- STICKY NAVBAR -->
+    <nav class="sticky-nav">
+        <a href="../index.html" style="color: #f59e0b; font-weight: 700; background: rgba(217, 119, 6, 0.15); border-radius: 8px;"><span>←</span> Portal Maestro</a>
+        <a href="#seccion-resumen" class="active"><span>📋</span> Resumen & Especialidades</a>
+        <a href="#seccion-mapa"><span>🗺️</span> Mapa Curricular & Red</a>
+        <a href="temarios_por_linea.html" style="color: #fef08a; font-weight: 700;"><span>📚</span> Temarios por Línea</a>
+        <a href="auditoria_curricular.html" style="color: #67e8f9; font-weight: 700;"><span>⚖️</span> Auditoría & Dictamen</a>
+        <a href="#seccion-bimestres"><span>🗓️</span> Distribución Bimestral</a>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- ======================================================== -->
+        <!-- SECCIÓN 1: RESUMEN, IDEARIO Y 7 ESPECIALIDADES TÉCNICAS   -->
+        <!-- ======================================================== -->
+        <section class="portal-section" id="seccion-resumen">
+            <div class="section-header-bar">
+                <div class="section-title-group">
+                    <h2><span>📋</span> Fundamentación Curricular y Principio de Transversalidad</h2>
+                    <p>El 3er año del TSU integra a técnicos graduados de 7 especialidades para formar mandos medios con visión gerencial y ética profesional.</p>
+                </div>
+            </div>
+
+            <div class="callout-gold">
+                <h4>Ideario Kinal y Parámetros Académicos Institucionales</h4>
+                <p>
+                    La formación del TSU se fundamenta en los cinco pilares institucionales: <em>"Visión cristiana de la vida. Respeto a la dignidad de la persona. Espíritu de servicio. Trabajo bien hecho. Libertad personal responsable"</em>.
+                    <br><strong>Exigencias de Egreso:</strong> Nota mínima aprobatoria de <strong>&ge; 75 puntos sobre 100</strong> en todas las asignaturas y certificación de nivel <strong>A2</strong> en idioma inglés mediante la prueba ELASH II (Kinal Language School).
+                </p>
+            </div>
+
+            <h3 style="color: var(--kinal-blue); font-size: 1.25rem; margin-bottom: 16px;">Convergencia de las 7 Especialidades Técnicas de Kinal (UNIS)</h3>
+            <div class="specs-grid">
+                
+    <div class="spec-card">
+        <span class="spec-icon">🏗️</span>
+        <div class="spec-content">
+            <h4>Construcción</h4>
+            <p>Supervisión de obra civil, cubicajes y presupuestos, control de calidad en probetas de concreto y acero, seguridad en andamios (SSO) y liderazgo de cuadrillas.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">💻</span>
+        <div class="spec-content">
+            <h4>Desarrollo de Aplicaciones Empresariales</h4>
+            <p>Liderazgo de proyectos ágiles de software (Scrum/Kanban), estimación de costos en la nube, calidad de código con linters de IA, SLAs del 99.9% y automatización con Python.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">⚡</span>
+        <div class="spec-content">
+            <h4>Electricidad Industrial</h4>
+            <p>Subestaciones, pliegos tarifarios industriales (EEGSA/ENERGUATE), corrección del factor de potencia, protocolos de bloqueo LOTO y balances de carga energética.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">🔌</span>
+        <div class="spec-content">
+            <h4>Electrónica Industrial</h4>
+            <p>Instrumentación y sensores de planta (4-20 mA), acondicionamiento de señales, interbloqueos de seguridad booleana, disipación térmica y adquisición de datos con Python.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">🚗</span>
+        <div class="spec-content">
+            <h4>Mecánica Automotriz</h4>
+            <p>Gestión de talleres y bahías de servicio, diagnóstico electrónico OBD-II, torque y metrología dimensional, costeo de órdenes de trabajo (OT) y contratos de flotas corporativas.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">⚙️</span>
+        <div class="spec-content">
+            <h4>Mecánica Industrial</h4>
+            <p>Mantenimiento electromecánico y paradas de planta, cálculo de Downtime Cost, manufactura esbelta 5S y SMED, resistencia y fatiga de materiales y maquinado CNC.</p>
+        </div>
+    </div>
+    
+    <div class="spec-card">
+        <span class="spec-icon">📡</span>
+        <div class="spec-content">
+            <h4>Telecomunicaciones</h4>
+            <p>Tendido de fibra óptica y radiobases con respaldo solar, cumplimiento de SLAs de disponibilidad de red, izaje seguro de racks y ciberseguridad física.</p>
+        </div>
+    </div>
+    
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECCIÓN 2: MAPA CURRICULAR Y RED DE PRERREQUISITOS       -->
+        <!-- ======================================================== -->
+        <section class="portal-section" id="seccion-mapa">
+            <div class="section-header-bar">
+                <div class="section-title-group">
+                    <h2><span>🗺️</span> Mapa Curricular Interactivo y Red de Prerrequisitos</h2>
+                    <p>Descubre qué curso conduce a cuál otro mediante la Rejilla Matricial o el Grafo SVG con flechas dirigidas.</p>
+                </div>
+            </div>
+
+            <div class="map-instructions">
+                <div class="map-instructions-text">
+                    <p>Haz <strong>clic o pasa el ratón</strong> sobre cualquier tarjeta o nodo para iluminar su <strong>Ruta Crítica</strong>: se resaltarán en verde sus prerrequisitos y en ámbar los cursos que desbloquea.</p>
+                </div>
+                <div class="legend-bar">
+                    <div class="legend-chip"><span class="chip-dot chip-selected"></span> Seleccionado</div>
+                    <div class="legend-chip"><span class="chip-dot chip-prereq"></span> Prerrequisito Requerido</div>
+                    <div class="legend-chip"><span class="chip-dot chip-habilita"></span> Curso que Habilita</div>
+                </div>
+            </div>
+
+            <div class="view-controls">
+                <div class="mode-buttons">
+                    <button class="mode-btn active" id="btnModeGrid" onclick="switchViewMode('grid')">
+                        <span>📊</span> Rejilla Curricular (Matriz 4x4)
+                    </button>
+                    <button class="mode-btn" id="btnModeNetwork" onclick="switchViewMode('network')">
+                        <span>🕸️</span> Red de Correlatividades (Grafo SVG)
+                    </button>
+                </div>
+
+                <div class="filter-linea-select">
+                    <span>Línea Formativa:</span>
+                    <select id="lineaFilterSelect" onchange="filterMapByLinea(this.value)">
+                        <option value="all">Todas las 4 Líneas de Estudio</option>
+                        <option value="linea-etica">🛡️ Formación Humana y Ética</option>
+                        <option value="linea-gestion">📋 Gestión y Supervisión</option>
+                        <option value="linea-matematica">📐 Ciencias Exactas y Analítica</option>
+                        <option value="linea-fisica">⚡ Física y Tecnología 4.0</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="map-layout">
+                <!-- VISTA 1: REJILLA -->
+                <div class="curriculum-grid-container" id="gridContainer">
+                    <div class="grid-header-row">
+                        <div class="grid-header-cell">Línea Formativa / Eje</div>
+                        <div class="grid-header-cell">Bimestre 1<br><small style="font-weight:400; opacity:0.8;">Fundamentos y Estática</small></div>
+                        <div class="grid-header-cell">Bimestre 2<br><small style="font-weight:400; opacity:0.8;">Costos, SSO y Materiales</small></div>
+                        <div class="grid-header-cell">Bimestre 3<br><small style="font-weight:400; opacity:0.8;">Lean, SLAs y Analítica</small></div>
+                        <div class="grid-header-cell">Bimestre 4<br><small style="font-weight:400; opacity:0.8;">Calidad, BI, Finanzas y Python</small></div>
+                    </div>
+                    
+    <div class="grid-linea-row" id="row-linea-etica">
+        <div class="grid-linea-label" style="border-left-color: #0284c7;">
+            <span class="linea-row-icon">🛡️</span>
+            <div>
+                <strong>Formación Humana, Ética Profesional y Gobernanza IA</strong>
+                <div class="linea-row-sub">4 Asignaturas • 54.0 hrs</div>
+            </div>
+        </div>
+        <div class="grid-linea-cols">
+            
+        <div class="grid-cell bimestre-col-1">
+            
+            <div class="node-card" id="node-b1_etica_general_1" 
+                 data-id="b1_etica_general_1" 
+                 data-codigo="B1-C1"
+                 data-linea="linea-etica"
+                 data-prereq="" 
+                 data-habilita="b2_etica_general_2,b2_administracion_rrhh_sso"
+                 onclick="selectCourseNode('b1_etica_general_1')"
+                 onmouseenter="highlightNodeRuta('b1_etica_general_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B1-C1</span>
+                    <span class="node-period">Periodo 1</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🛡️</span>
+                    <strong>Ética General 1</strong>
+                </div>
+                <div class="node-sub">Antropología y Sentido Trascendente del Trabajo</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 0</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-2">
+            
+            <div class="node-card" id="node-b2_etica_general_2" 
+                 data-id="b2_etica_general_2" 
+                 data-codigo="B2-C1"
+                 data-linea="linea-etica"
+                 data-prereq="b1_etica_general_1" 
+                 data-habilita="b3_etica_profesional_1"
+                 onclick="selectCourseNode('b2_etica_general_2')"
+                 onmouseenter="highlightNodeRuta('b2_etica_general_2')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B2-C1</span>
+                    <span class="node-period">Periodo 1</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">⚖️</span>
+                    <strong>Ética General 2</strong>
+                </div>
+                <div class="node-sub">Libertad Responsable, Compliance e Integridad Industrial</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 1</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-3">
+            
+            <div class="node-card" id="node-b3_etica_profesional_1" 
+                 data-id="b3_etica_profesional_1" 
+                 data-codigo="B3-C1"
+                 data-linea="linea-etica"
+                 data-prereq="b2_etica_general_2" 
+                 data-habilita="b4_etica_profesional_2"
+                 onclick="selectCourseNode('b3_etica_profesional_1')"
+                 onmouseenter="highlightNodeRuta('b3_etica_profesional_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B3-C1</span>
+                    <span class="node-period">Periodo 1</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🤖</span>
+                    <strong>Ética Profesional 1</strong>
+                </div>
+                <div class="node-sub">Automatización, Inteligencia Artificial y la Transición Justa</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 1</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-4">
+            
+            <div class="node-card" id="node-b4_etica_profesional_2" 
+                 data-id="b4_etica_profesional_2" 
+                 data-codigo="B4-C1"
+                 data-linea="linea-etica"
+                 data-prereq="b3_etica_profesional_1" 
+                 data-habilita=""
+                 onclick="selectCourseNode('b4_etica_profesional_2')"
+                 onmouseenter="highlightNodeRuta('b4_etica_profesional_2')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B4-C1</span>
+                    <span class="node-period">Periodo 1</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🧠</span>
+                    <strong>Ética Profesional 2</strong>
+                </div>
+                <div class="node-sub">Principio Human-in-the-Loop (HITL), Juicio Crítico y el Trabajo Bien Hecho</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 0</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="grid-linea-row" id="row-linea-gestion">
+        <div class="grid-linea-label" style="border-left-color: #d97706;">
+            <span class="linea-row-icon">📋</span>
+            <div>
+                <strong>Gestión de Operaciones, Supervisión y Productividad Industrial</strong>
+                <div class="linea-row-sub">8 Asignaturas • 108.0 hrs</div>
+            </div>
+        </div>
+        <div class="grid-linea-cols">
+            
+        <div class="grid-cell bimestre-col-1">
+            
+            <div class="node-card" id="node-b1_fundamentos_administracion" 
+                 data-id="b1_fundamentos_administracion" 
+                 data-codigo="B1-C2"
+                 data-linea="linea-gestion"
+                 data-prereq="" 
+                 data-habilita="b1_planeacion_control_trabajo,b2_herramientas_contables,b2_administracion_rrhh_sso,b3_metodos_produccion"
+                 onclick="selectCourseNode('b1_fundamentos_administracion')"
+                 onmouseenter="highlightNodeRuta('b1_fundamentos_administracion')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B1-C2</span>
+                    <span class="node-period">Periodo 2</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">📋</span>
+                    <strong>Fundamentos de la Administración</strong>
+                </div>
+                <div class="node-sub">Liderazgo Ágil de Mandos Medios y Coordinación de Equipos</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 0</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 4</span>
+                </div>
+            </div>
+            
+            <div class="node-card" id="node-b1_planeacion_control_trabajo" 
+                 data-id="b1_planeacion_control_trabajo" 
+                 data-codigo="B1-C3"
+                 data-linea="linea-gestion"
+                 data-prereq="b1_fundamentos_administracion" 
+                 data-habilita="b3_metodos_produccion,b4_control_calidad"
+                 onclick="selectCourseNode('b1_planeacion_control_trabajo')"
+                 onmouseenter="highlightNodeRuta('b1_planeacion_control_trabajo')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B1-C3</span>
+                    <span class="node-period">Periodo 3</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">⏱️</span>
+                    <strong>Planeación y Control para el Trabajo</strong>
+                </div>
+                <div class="node-sub">Metodología Visual Kanban, Cronogramas Gantt y Eficiencia OEE</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-2">
+            
+            <div class="node-card" id="node-b2_herramientas_contables" 
+                 data-id="b2_herramientas_contables" 
+                 data-codigo="B2-C2"
+                 data-linea="linea-gestion"
+                 data-prereq="b1_fundamentos_administracion,b1_matematica_basica_1" 
+                 data-habilita="b4_fundamentos_marketing,b4_matematica_aplicada_2"
+                 onclick="selectCourseNode('b2_herramientas_contables')"
+                 onmouseenter="highlightNodeRuta('b2_herramientas_contables')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B2-C2</span>
+                    <span class="node-period">Periodo 2</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">💰</span>
+                    <strong>Herramientas Contables para la Supervisión</strong>
+                </div>
+                <div class="node-sub">Costos Industriales (MPD-MOD-CIF), Downtime Cost y Presupuestos OPEX</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+            <div class="node-card" id="node-b2_administracion_rrhh_sso" 
+                 data-id="b2_administracion_rrhh_sso" 
+                 data-codigo="B2-C3"
+                 data-linea="linea-gestion"
+                 data-prereq="b1_fundamentos_administracion" 
+                 data-habilita="b3_servicio_cliente,b4_control_calidad"
+                 onclick="selectCourseNode('b2_administracion_rrhh_sso')"
+                 onmouseenter="highlightNodeRuta('b2_administracion_rrhh_sso')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B2-C3</span>
+                    <span class="node-period">Periodo 3</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🦺</span>
+                    <strong>Administración de RRHH y SSO</strong>
+                </div>
+                <div class="node-sub">Código de Trabajo de Guatemala, Planillas del IGSS y Acuerdo Gubernativo 229-2014</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-3">
+            
+            <div class="node-card" id="node-b3_metodos_produccion" 
+                 data-id="b3_metodos_produccion" 
+                 data-codigo="B3-C2"
+                 data-linea="linea-gestion"
+                 data-prereq="b1_planeacion_control_trabajo,b1_fundamentos_administracion" 
+                 data-habilita="b4_control_calidad"
+                 onclick="selectCourseNode('b3_metodos_produccion')"
+                 onmouseenter="highlightNodeRuta('b3_metodos_produccion')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B3-C2</span>
+                    <span class="node-period">Periodo 2</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🏭</span>
+                    <strong>Métodos de Producción</strong>
+                </div>
+                <div class="node-sub">Lean Manufacturing, Estandarización 5S y Mapeo de Flujo de Valor (VSM)</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 1</span>
+                </div>
+            </div>
+            
+            <div class="node-card" id="node-b3_servicio_cliente" 
+                 data-id="b3_servicio_cliente" 
+                 data-codigo="B3-C3"
+                 data-linea="linea-gestion"
+                 data-prereq="b1_fundamentos_administracion,b2_administracion_rrhh_sso" 
+                 data-habilita="b4_fundamentos_marketing"
+                 onclick="selectCourseNode('b3_servicio_cliente')"
+                 onmouseenter="highlightNodeRuta('b3_servicio_cliente')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B3-C3</span>
+                    <span class="node-period">Periodo 3</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🤝</span>
+                    <strong>Servicio al Cliente</strong>
+                </div>
+                <div class="node-sub">Gestión de Clientes B2B, Acuerdos SLA y Calidad en Servicios Técnicos</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 1</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-4">
+            
+            <div class="node-card" id="node-b4_control_calidad" 
+                 data-id="b4_control_calidad" 
+                 data-codigo="B4-C2"
+                 data-linea="linea-gestion"
+                 data-prereq="b3_metodos_produccion,b3_matematica_aplicada_1" 
+                 data-habilita=""
+                 onclick="selectCourseNode('b4_control_calidad')"
+                 onmouseenter="highlightNodeRuta('b4_control_calidad')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B4-C2</span>
+                    <span class="node-period">Periodo 2</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🎯</span>
+                    <strong>Control de Calidad</strong>
+                </div>
+                <div class="node-sub">Sistemas de Gestión ISO 9001:2015, Metodología Six Sigma (DMAIC) y AMFE</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 0</span>
+                </div>
+            </div>
+            
+            <div class="node-card" id="node-b4_fundamentos_marketing" 
+                 data-id="b4_fundamentos_marketing" 
+                 data-codigo="B4-C3"
+                 data-linea="linea-gestion"
+                 data-prereq="b2_herramientas_contables,b3_servicio_cliente,b3_matematica_aplicada_1" 
+                 data-habilita=""
+                 onclick="selectCourseNode('b4_fundamentos_marketing')"
+                 onmouseenter="highlightNodeRuta('b4_fundamentos_marketing')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B4-C3</span>
+                    <span class="node-period">Periodo 3</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">📈</span>
+                    <strong>Fundamentos del Marketing</strong>
+                </div>
+                <div class="node-sub">Business Intelligence (Power BI), Marketing Industrial B2B y Dashboards</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 3</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 0</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="grid-linea-row" id="row-linea-matematica">
+        <div class="grid-linea-label" style="border-left-color: #16a34a;">
+            <span class="linea-row-icon">📐</span>
+            <div>
+                <strong>Ciencias Exactas Aplicadas y Analítica Cuantitativa</strong>
+                <div class="linea-row-sub">4 Asignaturas • 54.0 hrs</div>
+            </div>
+        </div>
+        <div class="grid-linea-cols">
+            
+        <div class="grid-cell bimestre-col-1">
+            
+            <div class="node-card" id="node-b1_matematica_basica_1" 
+                 data-id="b1_matematica_basica_1" 
+                 data-codigo="B1-C4"
+                 data-linea="linea-matematica"
+                 data-prereq="" 
+                 data-habilita="b2_matematica_basica_2,b2_herramientas_contables,b1_fisica_basica_1"
+                 onclick="selectCourseNode('b1_matematica_basica_1')"
+                 onmouseenter="highlightNodeRuta('b1_matematica_basica_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B1-C4</span>
+                    <span class="node-period">Periodo 4</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">📐</span>
+                    <strong>Matemática Básica 1</strong>
+                </div>
+                <div class="node-sub">Aritmética Cuantitativa, Proporcionalidad y Modelado en Hojas de Cálculo</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 0</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 3</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-2">
+            
+            <div class="node-card" id="node-b2_matematica_basica_2" 
+                 data-id="b2_matematica_basica_2" 
+                 data-codigo="B2-C4"
+                 data-linea="linea-matematica"
+                 data-prereq="b1_matematica_basica_1" 
+                 data-habilita="b3_matematica_aplicada_1,b4_matematica_aplicada_2,b4_fisica_aplicada_3"
+                 onclick="selectCourseNode('b2_matematica_basica_2')"
+                 onmouseenter="highlightNodeRuta('b2_matematica_basica_2')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B2-C4</span>
+                    <span class="node-period">Periodo 4</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">📉</span>
+                    <strong>Matemática Básica 2</strong>
+                </div>
+                <div class="node-sub">Punto de Equilibrio, Modelado de Funciones y Lógica Booleana</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 1</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 3</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-3">
+            
+            <div class="node-card" id="node-b3_matematica_aplicada_1" 
+                 data-id="b3_matematica_aplicada_1" 
+                 data-codigo="B3-C4"
+                 data-linea="linea-matematica"
+                 data-prereq="b2_matematica_basica_2,b1_matematica_basica_1" 
+                 data-habilita="b4_control_calidad,b4_fundamentos_marketing,b4_matematica_aplicada_2"
+                 onclick="selectCourseNode('b3_matematica_aplicada_1')"
+                 onmouseenter="highlightNodeRuta('b3_matematica_aplicada_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B3-C4</span>
+                    <span class="node-period">Periodo 4</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">📊</span>
+                    <strong>Matemática Aplicada 1</strong>
+                </div>
+                <div class="node-sub">Estadística Práctica Aplicada, Principio de Pareto y Análisis de Variabilidad</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 3</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-4">
+            
+            <div class="node-card" id="node-b4_matematica_aplicada_2" 
+                 data-id="b4_matematica_aplicada_2" 
+                 data-codigo="B4-C4"
+                 data-linea="linea-matematica"
+                 data-prereq="b2_herramientas_contables,b2_matematica_basica_2,b3_matematica_aplicada_1" 
+                 data-habilita=""
+                 onclick="selectCourseNode('b4_matematica_aplicada_2')"
+                 onmouseenter="highlightNodeRuta('b4_matematica_aplicada_2')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B4-C4</span>
+                    <span class="node-period">Periodo 4</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🏦</span>
+                    <strong>Matemática Aplicada 2</strong>
+                </div>
+                <div class="node-sub">Ingeniería Económica, Interés Compuesto y Evaluación de Inversiones (VPN/TIR)</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 3</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 0</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="grid-linea-row" id="row-linea-fisica">
+        <div class="grid-linea-label" style="border-left-color: #7c3aed;">
+            <span class="linea-row-icon">⚡</span>
+            <div>
+                <strong>Física Aplicada, Energía, Tecnología e Industria 4.0</strong>
+                <div class="linea-row-sub">4 Asignaturas • 54.0 hrs</div>
+            </div>
+        </div>
+        <div class="grid-linea-cols">
+            
+        <div class="grid-cell bimestre-col-1">
+            
+            <div class="node-card" id="node-b1_fisica_basica_1" 
+                 data-id="b1_fisica_basica_1" 
+                 data-codigo="B1-C5"
+                 data-linea="linea-fisica"
+                 data-prereq="" 
+                 data-habilita="b2_fisica_aplicada_1"
+                 onclick="selectCourseNode('b1_fisica_basica_1')"
+                 onmouseenter="highlightNodeRuta('b1_fisica_basica_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B1-C5</span>
+                    <span class="node-period">Periodo 5</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">⚖️</span>
+                    <strong>Física Básica 1</strong>
+                </div>
+                <div class="node-sub">Estática, Equilibrio de Fuerzas, Torque, Trabajo y Máquinas Simples</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 0</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 1</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-2">
+            
+            <div class="node-card" id="node-b2_fisica_aplicada_1" 
+                 data-id="b2_fisica_aplicada_1" 
+                 data-codigo="B2-C5"
+                 data-linea="linea-fisica"
+                 data-prereq="b1_fisica_basica_1,b1_matematica_basica_1" 
+                 data-habilita="b3_fisica_aplicada_2,b4_control_calidad"
+                 onclick="selectCourseNode('b2_fisica_aplicada_1')"
+                 onmouseenter="highlightNodeRuta('b2_fisica_aplicada_1')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B2-C5</span>
+                    <span class="node-period">Periodo 5</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">🧱</span>
+                    <strong>Física Aplicada 1</strong>
+                </div>
+                <div class="node-sub">Física de Materiales, Resistencia Mecánica y Propiedades Térmico-Dieléctricas</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-3">
+            
+            <div class="node-card" id="node-b3_fisica_aplicada_2" 
+                 data-id="b3_fisica_aplicada_2" 
+                 data-codigo="B3-C5"
+                 data-linea="linea-fisica"
+                 data-prereq="b2_fisica_aplicada_1,b1_matematica_basica_1" 
+                 data-habilita="b4_matematica_aplicada_2,b4_fisica_aplicada_3"
+                 onclick="selectCourseNode('b3_fisica_aplicada_2')"
+                 onmouseenter="highlightNodeRuta('b3_fisica_aplicada_2')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B3-C5</span>
+                    <span class="node-period">Periodo 5</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">⚡</span>
+                    <strong>Física Aplicada 2</strong>
+                </div>
+                <div class="node-sub">Energía, Eficiencia Energética, Tarifas Industriales y Sostenibilidad</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 2</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 2</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="grid-cell bimestre-col-4">
+            
+            <div class="node-card" id="node-b4_fisica_aplicada_3" 
+                 data-id="b4_fisica_aplicada_3" 
+                 data-codigo="B4-C5"
+                 data-linea="linea-fisica"
+                 data-prereq="b3_fisica_aplicada_2,b2_matematica_basica_2,b1_matematica_basica_1" 
+                 data-habilita=""
+                 onclick="selectCourseNode('b4_fisica_aplicada_3')"
+                 onmouseenter="highlightNodeRuta('b4_fisica_aplicada_3')"
+                 onmouseleave="clearHighlightNode()">
+                <div class="node-badge-row">
+                    <span class="node-code">B4-C5</span>
+                    <span class="node-period">Periodo 5</span>
+                </div>
+                <div class="node-title">
+                    <span class="node-icon">💻</span>
+                    <strong>Física Aplicada 3</strong>
+                </div>
+                <div class="node-sub">Sensores Transversales, Instrumentación y Programación Aplicada con Python</div>
+                <div class="node-conn-summary">
+                    <span class="conn-count in" title="Prerrequisitos previos">⬅️ 3</span>
+                    <span class="conn-count out" title="Cursos que desbloquea">➡️ 0</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+    
+                </div>
+
+                <!-- VISTA 2: RED SVG -->
+                <div class="network-svg-container" id="networkContainer">
+                    <svg class="svg-canvas" viewBox="0 0 1020 660">
+                        <defs>
+                            <marker id="marker-linea-etica" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284c7" />
+                            </marker>
+                            <marker id="marker-linea-gestion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706" />
+                            </marker>
+                            <marker id="marker-linea-matematica" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a" />
+                            </marker>
+                            <marker id="marker-linea-fisica" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+                            </marker>
+                            <marker id="marker-prereq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+                            </marker>
+                            <marker id="marker-habilita" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706" />
+                            </marker>
+                        </defs>
+
+                        <rect x="30" y="10" width="190" height="640" rx="8" fill="#f8fafc" stroke="#e2e8f0" />
+                        <text x="125" y="32" text-anchor="middle" font-size="12" font-weight="800" fill="#0f2d59">BIMESTRE 1</text>
+
+                        <rect x="280" y="10" width="190" height="640" rx="8" fill="#fafbfc" stroke="#e2e8f0" />
+                        <text x="375" y="32" text-anchor="middle" font-size="12" font-weight="800" fill="#0f2d59">BIMESTRE 2</text>
+
+                        <rect x="530" y="10" width="190" height="640" rx="8" fill="#f8fafc" stroke="#e2e8f0" />
+                        <text x="625" y="32" text-anchor="middle" font-size="12" font-weight="800" fill="#0f2d59">BIMESTRE 3</text>
+
+                        <rect x="780" y="10" width="190" height="640" rx="8" fill="#fafbfc" stroke="#e2e8f0" />
+                        <text x="875" y="32" text-anchor="middle" font-size="12" font-weight="800" fill="#0f2d59">BIMESTRE 4</text>
+
+                        <g id="svgEdgesGroup">
+            <path id="svg-edge-b1_etica_general_1-b2_etica_general_2" 
+                  class="svg-edge edge-source-b1_etica_general_1 edge-target-b2_etica_general_2 edge-linea-linea-etica"
+                  data-source="b1_etica_general_1" data-target="b2_etica_general_2"
+                  d="M 210.0 80 C 246.0 80, 254.0 80, 290.0 80" 
+                  fill="none" 
+                  stroke="#0284c7" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-etica)" />
+            
+            <path id="svg-edge-b1_etica_general_1-b2_administracion_rrhh_sso" 
+                  class="svg-edge edge-source-b1_etica_general_1 edge-target-b2_administracion_rrhh_sso edge-linea-linea-etica"
+                  data-source="b1_etica_general_1" data-target="b2_administracion_rrhh_sso"
+                  d="M 210.0 80 C 246.0 80, 254.0 320, 290.0 320" 
+                  fill="none" 
+                  stroke="#0284c7" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-etica)" />
+            
+            <path id="svg-edge-b1_fundamentos_administracion-b1_planeacion_control_trabajo" 
+                  class="svg-edge edge-source-b1_fundamentos_administracion edge-target-b1_planeacion_control_trabajo edge-linea-linea-gestion"
+                  data-source="b1_fundamentos_administracion" data-target="b1_planeacion_control_trabajo"
+                  d="M 210.0 200 C 133.5 200, 116.5 320, 40.0 320" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_fundamentos_administracion-b2_herramientas_contables" 
+                  class="svg-edge edge-source-b1_fundamentos_administracion edge-target-b2_herramientas_contables edge-linea-linea-gestion"
+                  data-source="b1_fundamentos_administracion" data-target="b2_herramientas_contables"
+                  d="M 210.0 200 C 246.0 200, 254.0 200, 290.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_fundamentos_administracion-b2_administracion_rrhh_sso" 
+                  class="svg-edge edge-source-b1_fundamentos_administracion edge-target-b2_administracion_rrhh_sso edge-linea-linea-gestion"
+                  data-source="b1_fundamentos_administracion" data-target="b2_administracion_rrhh_sso"
+                  d="M 210.0 200 C 246.0 200, 254.0 320, 290.0 320" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_fundamentos_administracion-b3_metodos_produccion" 
+                  class="svg-edge edge-source-b1_fundamentos_administracion edge-target-b3_metodos_produccion edge-linea-linea-gestion"
+                  data-source="b1_fundamentos_administracion" data-target="b3_metodos_produccion"
+                  d="M 210.0 200 C 358.5 200, 391.5 200, 540.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_planeacion_control_trabajo-b3_metodos_produccion" 
+                  class="svg-edge edge-source-b1_planeacion_control_trabajo edge-target-b3_metodos_produccion edge-linea-linea-gestion"
+                  data-source="b1_planeacion_control_trabajo" data-target="b3_metodos_produccion"
+                  d="M 210.0 320 C 358.5 320, 391.5 200, 540.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_planeacion_control_trabajo-b4_control_calidad" 
+                  class="svg-edge edge-source-b1_planeacion_control_trabajo edge-target-b4_control_calidad edge-linea-linea-gestion"
+                  data-source="b1_planeacion_control_trabajo" data-target="b4_control_calidad"
+                  d="M 210.0 320 C 471.0 320, 529.0 200, 790.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b1_matematica_basica_1-b2_matematica_basica_2" 
+                  class="svg-edge edge-source-b1_matematica_basica_1 edge-target-b2_matematica_basica_2 edge-linea-linea-matematica"
+                  data-source="b1_matematica_basica_1" data-target="b2_matematica_basica_2"
+                  d="M 210.0 450 C 246.0 450, 254.0 450, 290.0 450" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b1_matematica_basica_1-b2_herramientas_contables" 
+                  class="svg-edge edge-source-b1_matematica_basica_1 edge-target-b2_herramientas_contables edge-linea-linea-matematica"
+                  data-source="b1_matematica_basica_1" data-target="b2_herramientas_contables"
+                  d="M 210.0 450 C 246.0 450, 254.0 200, 290.0 200" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b1_matematica_basica_1-b1_fisica_basica_1" 
+                  class="svg-edge edge-source-b1_matematica_basica_1 edge-target-b1_fisica_basica_1 edge-linea-linea-matematica"
+                  data-source="b1_matematica_basica_1" data-target="b1_fisica_basica_1"
+                  d="M 210.0 450 C 133.5 450, 116.5 580, 40.0 580" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b1_fisica_basica_1-b2_fisica_aplicada_1" 
+                  class="svg-edge edge-source-b1_fisica_basica_1 edge-target-b2_fisica_aplicada_1 edge-linea-linea-fisica"
+                  data-source="b1_fisica_basica_1" data-target="b2_fisica_aplicada_1"
+                  d="M 210.0 580 C 246.0 580, 254.0 580, 290.0 580" 
+                  fill="none" 
+                  stroke="#7c3aed" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-fisica)" />
+            
+            <path id="svg-edge-b2_etica_general_2-b3_etica_profesional_1" 
+                  class="svg-edge edge-source-b2_etica_general_2 edge-target-b3_etica_profesional_1 edge-linea-linea-etica"
+                  data-source="b2_etica_general_2" data-target="b3_etica_profesional_1"
+                  d="M 460.0 80 C 496.0 80, 504.0 80, 540.0 80" 
+                  fill="none" 
+                  stroke="#0284c7" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-etica)" />
+            
+            <path id="svg-edge-b2_herramientas_contables-b4_fundamentos_marketing" 
+                  class="svg-edge edge-source-b2_herramientas_contables edge-target-b4_fundamentos_marketing edge-linea-linea-gestion"
+                  data-source="b2_herramientas_contables" data-target="b4_fundamentos_marketing"
+                  d="M 460.0 200 C 608.5 200, 641.5 320, 790.0 320" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b2_herramientas_contables-b4_matematica_aplicada_2" 
+                  class="svg-edge edge-source-b2_herramientas_contables edge-target-b4_matematica_aplicada_2 edge-linea-linea-gestion"
+                  data-source="b2_herramientas_contables" data-target="b4_matematica_aplicada_2"
+                  d="M 460.0 200 C 608.5 200, 641.5 450, 790.0 450" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b2_administracion_rrhh_sso-b3_servicio_cliente" 
+                  class="svg-edge edge-source-b2_administracion_rrhh_sso edge-target-b3_servicio_cliente edge-linea-linea-gestion"
+                  data-source="b2_administracion_rrhh_sso" data-target="b3_servicio_cliente"
+                  d="M 460.0 320 C 496.0 320, 504.0 320, 540.0 320" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b2_administracion_rrhh_sso-b4_control_calidad" 
+                  class="svg-edge edge-source-b2_administracion_rrhh_sso edge-target-b4_control_calidad edge-linea-linea-gestion"
+                  data-source="b2_administracion_rrhh_sso" data-target="b4_control_calidad"
+                  d="M 460.0 320 C 608.5 320, 641.5 200, 790.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b2_matematica_basica_2-b3_matematica_aplicada_1" 
+                  class="svg-edge edge-source-b2_matematica_basica_2 edge-target-b3_matematica_aplicada_1 edge-linea-linea-matematica"
+                  data-source="b2_matematica_basica_2" data-target="b3_matematica_aplicada_1"
+                  d="M 460.0 450 C 496.0 450, 504.0 450, 540.0 450" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b2_matematica_basica_2-b4_matematica_aplicada_2" 
+                  class="svg-edge edge-source-b2_matematica_basica_2 edge-target-b4_matematica_aplicada_2 edge-linea-linea-matematica"
+                  data-source="b2_matematica_basica_2" data-target="b4_matematica_aplicada_2"
+                  d="M 460.0 450 C 608.5 450, 641.5 450, 790.0 450" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b2_matematica_basica_2-b4_fisica_aplicada_3" 
+                  class="svg-edge edge-source-b2_matematica_basica_2 edge-target-b4_fisica_aplicada_3 edge-linea-linea-matematica"
+                  data-source="b2_matematica_basica_2" data-target="b4_fisica_aplicada_3"
+                  d="M 460.0 450 C 608.5 450, 641.5 580, 790.0 580" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b2_fisica_aplicada_1-b3_fisica_aplicada_2" 
+                  class="svg-edge edge-source-b2_fisica_aplicada_1 edge-target-b3_fisica_aplicada_2 edge-linea-linea-fisica"
+                  data-source="b2_fisica_aplicada_1" data-target="b3_fisica_aplicada_2"
+                  d="M 460.0 580 C 496.0 580, 504.0 580, 540.0 580" 
+                  fill="none" 
+                  stroke="#7c3aed" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-fisica)" />
+            
+            <path id="svg-edge-b2_fisica_aplicada_1-b4_control_calidad" 
+                  class="svg-edge edge-source-b2_fisica_aplicada_1 edge-target-b4_control_calidad edge-linea-linea-fisica"
+                  data-source="b2_fisica_aplicada_1" data-target="b4_control_calidad"
+                  d="M 460.0 580 C 608.5 580, 641.5 200, 790.0 200" 
+                  fill="none" 
+                  stroke="#7c3aed" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-fisica)" />
+            
+            <path id="svg-edge-b3_etica_profesional_1-b4_etica_profesional_2" 
+                  class="svg-edge edge-source-b3_etica_profesional_1 edge-target-b4_etica_profesional_2 edge-linea-linea-etica"
+                  data-source="b3_etica_profesional_1" data-target="b4_etica_profesional_2"
+                  d="M 710.0 80 C 746.0 80, 754.0 80, 790.0 80" 
+                  fill="none" 
+                  stroke="#0284c7" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-etica)" />
+            
+            <path id="svg-edge-b3_metodos_produccion-b4_control_calidad" 
+                  class="svg-edge edge-source-b3_metodos_produccion edge-target-b4_control_calidad edge-linea-linea-gestion"
+                  data-source="b3_metodos_produccion" data-target="b4_control_calidad"
+                  d="M 710.0 200 C 746.0 200, 754.0 200, 790.0 200" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b3_servicio_cliente-b4_fundamentos_marketing" 
+                  class="svg-edge edge-source-b3_servicio_cliente edge-target-b4_fundamentos_marketing edge-linea-linea-gestion"
+                  data-source="b3_servicio_cliente" data-target="b4_fundamentos_marketing"
+                  d="M 710.0 320 C 746.0 320, 754.0 320, 790.0 320" 
+                  fill="none" 
+                  stroke="#d97706" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-gestion)" />
+            
+            <path id="svg-edge-b3_matematica_aplicada_1-b4_control_calidad" 
+                  class="svg-edge edge-source-b3_matematica_aplicada_1 edge-target-b4_control_calidad edge-linea-linea-matematica"
+                  data-source="b3_matematica_aplicada_1" data-target="b4_control_calidad"
+                  d="M 710.0 450 C 746.0 450, 754.0 200, 790.0 200" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b3_matematica_aplicada_1-b4_fundamentos_marketing" 
+                  class="svg-edge edge-source-b3_matematica_aplicada_1 edge-target-b4_fundamentos_marketing edge-linea-linea-matematica"
+                  data-source="b3_matematica_aplicada_1" data-target="b4_fundamentos_marketing"
+                  d="M 710.0 450 C 746.0 450, 754.0 320, 790.0 320" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b3_matematica_aplicada_1-b4_matematica_aplicada_2" 
+                  class="svg-edge edge-source-b3_matematica_aplicada_1 edge-target-b4_matematica_aplicada_2 edge-linea-linea-matematica"
+                  data-source="b3_matematica_aplicada_1" data-target="b4_matematica_aplicada_2"
+                  d="M 710.0 450 C 746.0 450, 754.0 450, 790.0 450" 
+                  fill="none" 
+                  stroke="#16a34a" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-matematica)" />
+            
+            <path id="svg-edge-b3_fisica_aplicada_2-b4_matematica_aplicada_2" 
+                  class="svg-edge edge-source-b3_fisica_aplicada_2 edge-target-b4_matematica_aplicada_2 edge-linea-linea-fisica"
+                  data-source="b3_fisica_aplicada_2" data-target="b4_matematica_aplicada_2"
+                  d="M 710.0 580 C 746.0 580, 754.0 450, 790.0 450" 
+                  fill="none" 
+                  stroke="#7c3aed" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  stroke-dasharray="4 3"
+                  marker-end="url(#marker-linea-fisica)" />
+            
+            <path id="svg-edge-b3_fisica_aplicada_2-b4_fisica_aplicada_3" 
+                  class="svg-edge edge-source-b3_fisica_aplicada_2 edge-target-b4_fisica_aplicada_3 edge-linea-linea-fisica"
+                  data-source="b3_fisica_aplicada_2" data-target="b4_fisica_aplicada_3"
+                  d="M 710.0 580 C 746.0 580, 754.0 580, 790.0 580" 
+                  fill="none" 
+                  stroke="#7c3aed" 
+                  stroke-width="2.2" 
+                  stroke-opacity="0.65"
+                  
+                  marker-end="url(#marker-linea-fisica)" />
+            </g>
+                        <g id="svgNodesGroup">
+    <g id="svg-node-b1_etica_general_1" class="svg-node-group" data-id="b1_etica_general_1" data-linea="linea-etica"
+       onclick="selectCourseNode('b1_etica_general_1')" 
+       onmouseenter="highlightNodeRuta('b1_etica_general_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b1_etica_general_1" class="svg-node-rect" 
+              x="40.0" y="50.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+        
+        <path d="M 40.0 58.0 A 8 8 0 0 1 48.0 50.0 L 50.0 50.0 L 50.0 110.0 L 48.0 110.0 A 8 8 0 0 1 40.0 102.0 Z" fill="#0284c7" />
+
+        <text x="58.0" y="68.0" font-size="10" font-weight="800" fill="#475569">B1-C1</text>
+        <text x="198.0" y="68.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 1</text>
+
+        <text x="58.0" y="86.0" font-size="11.5" font-weight="700" fill="#0f2d59">🛡️ Ética General 1</text>
+        <text x="58.0" y="100.0" font-size="8.5" fill="#64748b">Antropología y Sentido Tra...</text>
+    </g>
+    
+    <g id="svg-node-b1_fundamentos_administracion" class="svg-node-group" data-id="b1_fundamentos_administracion" data-linea="linea-gestion"
+       onclick="selectCourseNode('b1_fundamentos_administracion')" 
+       onmouseenter="highlightNodeRuta('b1_fundamentos_administracion')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b1_fundamentos_administracion" class="svg-node-rect" 
+              x="40.0" y="170.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 40.0 178.0 A 8 8 0 0 1 48.0 170.0 L 50.0 170.0 L 50.0 230.0 L 48.0 230.0 A 8 8 0 0 1 40.0 222.0 Z" fill="#d97706" />
+
+        <text x="58.0" y="188.0" font-size="10" font-weight="800" fill="#475569">B1-C2</text>
+        <text x="198.0" y="188.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 2</text>
+
+        <text x="58.0" y="206.0" font-size="11.5" font-weight="700" fill="#0f2d59">📋 Fundamentos de la Administración</text>
+        <text x="58.0" y="220.0" font-size="8.5" fill="#64748b">Liderazgo Ágil de Mandos M...</text>
+    </g>
+    
+    <g id="svg-node-b1_planeacion_control_trabajo" class="svg-node-group" data-id="b1_planeacion_control_trabajo" data-linea="linea-gestion"
+       onclick="selectCourseNode('b1_planeacion_control_trabajo')" 
+       onmouseenter="highlightNodeRuta('b1_planeacion_control_trabajo')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b1_planeacion_control_trabajo" class="svg-node-rect" 
+              x="40.0" y="290.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 40.0 298.0 A 8 8 0 0 1 48.0 290.0 L 50.0 290.0 L 50.0 350.0 L 48.0 350.0 A 8 8 0 0 1 40.0 342.0 Z" fill="#d97706" />
+
+        <text x="58.0" y="308.0" font-size="10" font-weight="800" fill="#475569">B1-C3</text>
+        <text x="198.0" y="308.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 3</text>
+
+        <text x="58.0" y="326.0" font-size="11.5" font-weight="700" fill="#0f2d59">⏱️ Planeación y Control para el Trabajo</text>
+        <text x="58.0" y="340.0" font-size="8.5" fill="#64748b">Metodología Visual Kanban,...</text>
+    </g>
+    
+    <g id="svg-node-b1_matematica_basica_1" class="svg-node-group" data-id="b1_matematica_basica_1" data-linea="linea-matematica"
+       onclick="selectCourseNode('b1_matematica_basica_1')" 
+       onmouseenter="highlightNodeRuta('b1_matematica_basica_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b1_matematica_basica_1" class="svg-node-rect" 
+              x="40.0" y="420.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#16a34a" stroke-width="2" />
+        
+        <path d="M 40.0 428.0 A 8 8 0 0 1 48.0 420.0 L 50.0 420.0 L 50.0 480.0 L 48.0 480.0 A 8 8 0 0 1 40.0 472.0 Z" fill="#16a34a" />
+
+        <text x="58.0" y="438.0" font-size="10" font-weight="800" fill="#475569">B1-C4</text>
+        <text x="198.0" y="438.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 4</text>
+
+        <text x="58.0" y="456.0" font-size="11.5" font-weight="700" fill="#0f2d59">📐 Matemática Básica 1</text>
+        <text x="58.0" y="470.0" font-size="8.5" fill="#64748b">Aritmética Cuantitativa, P...</text>
+    </g>
+    
+    <g id="svg-node-b1_fisica_basica_1" class="svg-node-group" data-id="b1_fisica_basica_1" data-linea="linea-fisica"
+       onclick="selectCourseNode('b1_fisica_basica_1')" 
+       onmouseenter="highlightNodeRuta('b1_fisica_basica_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b1_fisica_basica_1" class="svg-node-rect" 
+              x="40.0" y="550.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#7c3aed" stroke-width="2" />
+        
+        <path d="M 40.0 558.0 A 8 8 0 0 1 48.0 550.0 L 50.0 550.0 L 50.0 610.0 L 48.0 610.0 A 8 8 0 0 1 40.0 602.0 Z" fill="#7c3aed" />
+
+        <text x="58.0" y="568.0" font-size="10" font-weight="800" fill="#475569">B1-C5</text>
+        <text x="198.0" y="568.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 5</text>
+
+        <text x="58.0" y="586.0" font-size="11.5" font-weight="700" fill="#0f2d59">⚖️ Física Básica 1</text>
+        <text x="58.0" y="600.0" font-size="8.5" fill="#64748b">Estática, Equilibrio de Fu...</text>
+    </g>
+    
+    <g id="svg-node-b2_etica_general_2" class="svg-node-group" data-id="b2_etica_general_2" data-linea="linea-etica"
+       onclick="selectCourseNode('b2_etica_general_2')" 
+       onmouseenter="highlightNodeRuta('b2_etica_general_2')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b2_etica_general_2" class="svg-node-rect" 
+              x="290.0" y="50.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+        
+        <path d="M 290.0 58.0 A 8 8 0 0 1 298.0 50.0 L 300.0 50.0 L 300.0 110.0 L 298.0 110.0 A 8 8 0 0 1 290.0 102.0 Z" fill="#0284c7" />
+
+        <text x="308.0" y="68.0" font-size="10" font-weight="800" fill="#475569">B2-C1</text>
+        <text x="448.0" y="68.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 1</text>
+
+        <text x="308.0" y="86.0" font-size="11.5" font-weight="700" fill="#0f2d59">⚖️ Ética General 2</text>
+        <text x="308.0" y="100.0" font-size="8.5" fill="#64748b">Libertad Responsable, Comp...</text>
+    </g>
+    
+    <g id="svg-node-b2_herramientas_contables" class="svg-node-group" data-id="b2_herramientas_contables" data-linea="linea-gestion"
+       onclick="selectCourseNode('b2_herramientas_contables')" 
+       onmouseenter="highlightNodeRuta('b2_herramientas_contables')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b2_herramientas_contables" class="svg-node-rect" 
+              x="290.0" y="170.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 290.0 178.0 A 8 8 0 0 1 298.0 170.0 L 300.0 170.0 L 300.0 230.0 L 298.0 230.0 A 8 8 0 0 1 290.0 222.0 Z" fill="#d97706" />
+
+        <text x="308.0" y="188.0" font-size="10" font-weight="800" fill="#475569">B2-C2</text>
+        <text x="448.0" y="188.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 2</text>
+
+        <text x="308.0" y="206.0" font-size="11.5" font-weight="700" fill="#0f2d59">💰 Herramientas Contables para la Supervisión</text>
+        <text x="308.0" y="220.0" font-size="8.5" fill="#64748b">Costos Industriales (MPD-M...</text>
+    </g>
+    
+    <g id="svg-node-b2_administracion_rrhh_sso" class="svg-node-group" data-id="b2_administracion_rrhh_sso" data-linea="linea-gestion"
+       onclick="selectCourseNode('b2_administracion_rrhh_sso')" 
+       onmouseenter="highlightNodeRuta('b2_administracion_rrhh_sso')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b2_administracion_rrhh_sso" class="svg-node-rect" 
+              x="290.0" y="290.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 290.0 298.0 A 8 8 0 0 1 298.0 290.0 L 300.0 290.0 L 300.0 350.0 L 298.0 350.0 A 8 8 0 0 1 290.0 342.0 Z" fill="#d97706" />
+
+        <text x="308.0" y="308.0" font-size="10" font-weight="800" fill="#475569">B2-C3</text>
+        <text x="448.0" y="308.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 3</text>
+
+        <text x="308.0" y="326.0" font-size="11.5" font-weight="700" fill="#0f2d59">🦺 Administración de RRHH y SSO</text>
+        <text x="308.0" y="340.0" font-size="8.5" fill="#64748b">Código de Trabajo de Guate...</text>
+    </g>
+    
+    <g id="svg-node-b2_matematica_basica_2" class="svg-node-group" data-id="b2_matematica_basica_2" data-linea="linea-matematica"
+       onclick="selectCourseNode('b2_matematica_basica_2')" 
+       onmouseenter="highlightNodeRuta('b2_matematica_basica_2')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b2_matematica_basica_2" class="svg-node-rect" 
+              x="290.0" y="420.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#16a34a" stroke-width="2" />
+        
+        <path d="M 290.0 428.0 A 8 8 0 0 1 298.0 420.0 L 300.0 420.0 L 300.0 480.0 L 298.0 480.0 A 8 8 0 0 1 290.0 472.0 Z" fill="#16a34a" />
+
+        <text x="308.0" y="438.0" font-size="10" font-weight="800" fill="#475569">B2-C4</text>
+        <text x="448.0" y="438.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 4</text>
+
+        <text x="308.0" y="456.0" font-size="11.5" font-weight="700" fill="#0f2d59">📉 Matemática Básica 2</text>
+        <text x="308.0" y="470.0" font-size="8.5" fill="#64748b">Punto de Equilibrio, Model...</text>
+    </g>
+    
+    <g id="svg-node-b2_fisica_aplicada_1" class="svg-node-group" data-id="b2_fisica_aplicada_1" data-linea="linea-fisica"
+       onclick="selectCourseNode('b2_fisica_aplicada_1')" 
+       onmouseenter="highlightNodeRuta('b2_fisica_aplicada_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b2_fisica_aplicada_1" class="svg-node-rect" 
+              x="290.0" y="550.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#7c3aed" stroke-width="2" />
+        
+        <path d="M 290.0 558.0 A 8 8 0 0 1 298.0 550.0 L 300.0 550.0 L 300.0 610.0 L 298.0 610.0 A 8 8 0 0 1 290.0 602.0 Z" fill="#7c3aed" />
+
+        <text x="308.0" y="568.0" font-size="10" font-weight="800" fill="#475569">B2-C5</text>
+        <text x="448.0" y="568.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 5</text>
+
+        <text x="308.0" y="586.0" font-size="11.5" font-weight="700" fill="#0f2d59">🧱 Física Aplicada 1</text>
+        <text x="308.0" y="600.0" font-size="8.5" fill="#64748b">Física de Materiales, Resi...</text>
+    </g>
+    
+    <g id="svg-node-b3_etica_profesional_1" class="svg-node-group" data-id="b3_etica_profesional_1" data-linea="linea-etica"
+       onclick="selectCourseNode('b3_etica_profesional_1')" 
+       onmouseenter="highlightNodeRuta('b3_etica_profesional_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b3_etica_profesional_1" class="svg-node-rect" 
+              x="540.0" y="50.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+        
+        <path d="M 540.0 58.0 A 8 8 0 0 1 548.0 50.0 L 550.0 50.0 L 550.0 110.0 L 548.0 110.0 A 8 8 0 0 1 540.0 102.0 Z" fill="#0284c7" />
+
+        <text x="558.0" y="68.0" font-size="10" font-weight="800" fill="#475569">B3-C1</text>
+        <text x="698.0" y="68.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 1</text>
+
+        <text x="558.0" y="86.0" font-size="11.5" font-weight="700" fill="#0f2d59">🤖 Ética Profesional 1</text>
+        <text x="558.0" y="100.0" font-size="8.5" fill="#64748b">Automatización, Inteligenc...</text>
+    </g>
+    
+    <g id="svg-node-b3_metodos_produccion" class="svg-node-group" data-id="b3_metodos_produccion" data-linea="linea-gestion"
+       onclick="selectCourseNode('b3_metodos_produccion')" 
+       onmouseenter="highlightNodeRuta('b3_metodos_produccion')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b3_metodos_produccion" class="svg-node-rect" 
+              x="540.0" y="170.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 540.0 178.0 A 8 8 0 0 1 548.0 170.0 L 550.0 170.0 L 550.0 230.0 L 548.0 230.0 A 8 8 0 0 1 540.0 222.0 Z" fill="#d97706" />
+
+        <text x="558.0" y="188.0" font-size="10" font-weight="800" fill="#475569">B3-C2</text>
+        <text x="698.0" y="188.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 2</text>
+
+        <text x="558.0" y="206.0" font-size="11.5" font-weight="700" fill="#0f2d59">🏭 Métodos de Producción</text>
+        <text x="558.0" y="220.0" font-size="8.5" fill="#64748b">Lean Manufacturing, Estand...</text>
+    </g>
+    
+    <g id="svg-node-b3_servicio_cliente" class="svg-node-group" data-id="b3_servicio_cliente" data-linea="linea-gestion"
+       onclick="selectCourseNode('b3_servicio_cliente')" 
+       onmouseenter="highlightNodeRuta('b3_servicio_cliente')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b3_servicio_cliente" class="svg-node-rect" 
+              x="540.0" y="290.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 540.0 298.0 A 8 8 0 0 1 548.0 290.0 L 550.0 290.0 L 550.0 350.0 L 548.0 350.0 A 8 8 0 0 1 540.0 342.0 Z" fill="#d97706" />
+
+        <text x="558.0" y="308.0" font-size="10" font-weight="800" fill="#475569">B3-C3</text>
+        <text x="698.0" y="308.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 3</text>
+
+        <text x="558.0" y="326.0" font-size="11.5" font-weight="700" fill="#0f2d59">🤝 Servicio al Cliente</text>
+        <text x="558.0" y="340.0" font-size="8.5" fill="#64748b">Gestión de Clientes B2B, A...</text>
+    </g>
+    
+    <g id="svg-node-b3_matematica_aplicada_1" class="svg-node-group" data-id="b3_matematica_aplicada_1" data-linea="linea-matematica"
+       onclick="selectCourseNode('b3_matematica_aplicada_1')" 
+       onmouseenter="highlightNodeRuta('b3_matematica_aplicada_1')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b3_matematica_aplicada_1" class="svg-node-rect" 
+              x="540.0" y="420.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#16a34a" stroke-width="2" />
+        
+        <path d="M 540.0 428.0 A 8 8 0 0 1 548.0 420.0 L 550.0 420.0 L 550.0 480.0 L 548.0 480.0 A 8 8 0 0 1 540.0 472.0 Z" fill="#16a34a" />
+
+        <text x="558.0" y="438.0" font-size="10" font-weight="800" fill="#475569">B3-C4</text>
+        <text x="698.0" y="438.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 4</text>
+
+        <text x="558.0" y="456.0" font-size="11.5" font-weight="700" fill="#0f2d59">📊 Matemática Aplicada 1</text>
+        <text x="558.0" y="470.0" font-size="8.5" fill="#64748b">Estadística Práctica Aplic...</text>
+    </g>
+    
+    <g id="svg-node-b3_fisica_aplicada_2" class="svg-node-group" data-id="b3_fisica_aplicada_2" data-linea="linea-fisica"
+       onclick="selectCourseNode('b3_fisica_aplicada_2')" 
+       onmouseenter="highlightNodeRuta('b3_fisica_aplicada_2')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b3_fisica_aplicada_2" class="svg-node-rect" 
+              x="540.0" y="550.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#7c3aed" stroke-width="2" />
+        
+        <path d="M 540.0 558.0 A 8 8 0 0 1 548.0 550.0 L 550.0 550.0 L 550.0 610.0 L 548.0 610.0 A 8 8 0 0 1 540.0 602.0 Z" fill="#7c3aed" />
+
+        <text x="558.0" y="568.0" font-size="10" font-weight="800" fill="#475569">B3-C5</text>
+        <text x="698.0" y="568.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 5</text>
+
+        <text x="558.0" y="586.0" font-size="11.5" font-weight="700" fill="#0f2d59">⚡ Física Aplicada 2</text>
+        <text x="558.0" y="600.0" font-size="8.5" fill="#64748b">Energía, Eficiencia Energé...</text>
+    </g>
+    
+    <g id="svg-node-b4_etica_profesional_2" class="svg-node-group" data-id="b4_etica_profesional_2" data-linea="linea-etica"
+       onclick="selectCourseNode('b4_etica_profesional_2')" 
+       onmouseenter="highlightNodeRuta('b4_etica_profesional_2')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b4_etica_profesional_2" class="svg-node-rect" 
+              x="790.0" y="50.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+        
+        <path d="M 790.0 58.0 A 8 8 0 0 1 798.0 50.0 L 800.0 50.0 L 800.0 110.0 L 798.0 110.0 A 8 8 0 0 1 790.0 102.0 Z" fill="#0284c7" />
+
+        <text x="808.0" y="68.0" font-size="10" font-weight="800" fill="#475569">B4-C1</text>
+        <text x="948.0" y="68.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 1</text>
+
+        <text x="808.0" y="86.0" font-size="11.5" font-weight="700" fill="#0f2d59">🧠 Ética Profesional 2</text>
+        <text x="808.0" y="100.0" font-size="8.5" fill="#64748b">Principio Human-in-the-Loo...</text>
+    </g>
+    
+    <g id="svg-node-b4_control_calidad" class="svg-node-group" data-id="b4_control_calidad" data-linea="linea-gestion"
+       onclick="selectCourseNode('b4_control_calidad')" 
+       onmouseenter="highlightNodeRuta('b4_control_calidad')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b4_control_calidad" class="svg-node-rect" 
+              x="790.0" y="170.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 790.0 178.0 A 8 8 0 0 1 798.0 170.0 L 800.0 170.0 L 800.0 230.0 L 798.0 230.0 A 8 8 0 0 1 790.0 222.0 Z" fill="#d97706" />
+
+        <text x="808.0" y="188.0" font-size="10" font-weight="800" fill="#475569">B4-C2</text>
+        <text x="948.0" y="188.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 2</text>
+
+        <text x="808.0" y="206.0" font-size="11.5" font-weight="700" fill="#0f2d59">🎯 Control de Calidad</text>
+        <text x="808.0" y="220.0" font-size="8.5" fill="#64748b">Sistemas de Gestión ISO 90...</text>
+    </g>
+    
+    <g id="svg-node-b4_fundamentos_marketing" class="svg-node-group" data-id="b4_fundamentos_marketing" data-linea="linea-gestion"
+       onclick="selectCourseNode('b4_fundamentos_marketing')" 
+       onmouseenter="highlightNodeRuta('b4_fundamentos_marketing')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b4_fundamentos_marketing" class="svg-node-rect" 
+              x="790.0" y="290.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#d97706" stroke-width="2" />
+        
+        <path d="M 790.0 298.0 A 8 8 0 0 1 798.0 290.0 L 800.0 290.0 L 800.0 350.0 L 798.0 350.0 A 8 8 0 0 1 790.0 342.0 Z" fill="#d97706" />
+
+        <text x="808.0" y="308.0" font-size="10" font-weight="800" fill="#475569">B4-C3</text>
+        <text x="948.0" y="308.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 3</text>
+
+        <text x="808.0" y="326.0" font-size="11.5" font-weight="700" fill="#0f2d59">📈 Fundamentos del Marketing</text>
+        <text x="808.0" y="340.0" font-size="8.5" fill="#64748b">Business Intelligence (Pow...</text>
+    </g>
+    
+    <g id="svg-node-b4_matematica_aplicada_2" class="svg-node-group" data-id="b4_matematica_aplicada_2" data-linea="linea-matematica"
+       onclick="selectCourseNode('b4_matematica_aplicada_2')" 
+       onmouseenter="highlightNodeRuta('b4_matematica_aplicada_2')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b4_matematica_aplicada_2" class="svg-node-rect" 
+              x="790.0" y="420.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#16a34a" stroke-width="2" />
+        
+        <path d="M 790.0 428.0 A 8 8 0 0 1 798.0 420.0 L 800.0 420.0 L 800.0 480.0 L 798.0 480.0 A 8 8 0 0 1 790.0 472.0 Z" fill="#16a34a" />
+
+        <text x="808.0" y="438.0" font-size="10" font-weight="800" fill="#475569">B4-C4</text>
+        <text x="948.0" y="438.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 4</text>
+
+        <text x="808.0" y="456.0" font-size="11.5" font-weight="700" fill="#0f2d59">🏦 Matemática Aplicada 2</text>
+        <text x="808.0" y="470.0" font-size="8.5" fill="#64748b">Ingeniería Económica, Inte...</text>
+    </g>
+    
+    <g id="svg-node-b4_fisica_aplicada_3" class="svg-node-group" data-id="b4_fisica_aplicada_3" data-linea="linea-fisica"
+       onclick="selectCourseNode('b4_fisica_aplicada_3')" 
+       onmouseenter="highlightNodeRuta('b4_fisica_aplicada_3')" 
+       onmouseleave="clearHighlightNode()"
+       style="cursor: pointer;">
+        <rect id="svg-rect-b4_fisica_aplicada_3" class="svg-node-rect" 
+              x="790.0" y="550.0" width="170" height="60" rx="8" ry="8"
+              fill="#ffffff" stroke="#7c3aed" stroke-width="2" />
+        
+        <path d="M 790.0 558.0 A 8 8 0 0 1 798.0 550.0 L 800.0 550.0 L 800.0 610.0 L 798.0 610.0 A 8 8 0 0 1 790.0 602.0 Z" fill="#7c3aed" />
+
+        <text x="808.0" y="568.0" font-size="10" font-weight="800" fill="#475569">B4-C5</text>
+        <text x="948.0" y="568.0" text-anchor="end" font-size="9" font-weight="600" fill="#94a3b8">Periodo 5</text>
+
+        <text x="808.0" y="586.0" font-size="11.5" font-weight="700" fill="#0f2d59">💻 Física Aplicada 3</text>
+        <text x="808.0" y="600.0" font-size="8.5" fill="#64748b">Sensores Transversales, In...</text>
+    </g>
+    </g>
+                    </svg>
+                </div>
+
+                <!-- PANEL LATERAL -->
+                <aside class="side-detail-panel" id="sideDetailPanel">
+                    <div class="side-detail-header">
+                        <span class="side-detail-badge" id="sideBadge">B1-C1</span>
+                        <h3 id="sideTitle">🛡️ Ética General 1</h3>
+                        <div class="side-detail-sub" id="sideSub">Antropología y Sentido Trascendente del Trabajo</div>
+                    </div>
+
+                    <div class="side-section">
+                        <div class="side-section-title">⬅️ Prerrequisitos de Entrada</div>
+                        <ul class="side-list side-list-prereq" id="sidePrereqList">
+                            <li>Ingreso al 3er Año TSU</li>
+                        </ul>
+                    </div>
+
+                    <div class="side-section">
+                        <div class="side-section-title">➡️ Asignaturas que Habilita</div>
+                        <ul class="side-list side-list-habilita" id="sideHabilitaList">
+                            <li>B2-C1 • Ética General 2</li>
+                            <li>B2-C3 • Administración de RRHH y SSO</li>
+                        </ul>
+                    </div>
+
+                    <div class="side-section">
+                        <div class="side-section-title">🎯 Objetivo Transversal</div>
+                        <div class="side-callout" id="sideObjetivo">
+                            Forjar el carácter ético del supervisor técnico bajo el ideario de Kinal: la persona en el centro de la operación y el trabajo bien hecho como medio de superación.
+                        </div>
+                    </div>
+
+                    <div class="side-section">
+                        <div class="side-section-title">🤖 Integración con IA</div>
+                        <div class="side-callout" id="sideIA" style="background: #eef2ff; color: #3730a3; border-color: #c7d2fe;">
+                            Sesgos cognitivos humanos frente a sesgos en modelos de IA: el papel de la conciencia moral que ninguna máquina puede replicar.
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 18px;">
+                        <a href="#temario-b1_etica_general_1" class="btn-side-action" id="sideLinkTemario">Ver Temario Completo ↓</a>
+                        <a href="#audit-b1_etica_general_1" class="btn-side-action" id="sideLinkAudit" style="background:#475569;">Ver Auditoría y Dictamen ↓</a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- RUTAS TRANSVERSALES -->
+            <div class="transversal-routes">
+                <h3><span>🔗</span> Conexiones Curriculares Inter-Ejes (Rutas Críticas Transversales)</h3>
+                <p>Las competencias cuantitativas y físicas sustentan directamente las decisiones operativas, financieras y éticas de los mandos medios.</p>
+
+                <div class="routes-grid">
+                    <div class="route-card" style="border-top-color: #16a34a;">
+                        <h4>Ruta Cuantitativa & Financiera</h4>
+                        <p>De la proporcionalidad matemática a la justificación de inversiones de capital (CAPEX):</p>
+                        <div class="route-steps">
+                            <div class="route-step-item"><span>📐</span> B1-C4 Matemática Básica 1 (Excel)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 💰 B2-C2 Herramientas Contables (Costos)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 📊 B3-C4 Matemática Aplicada 1 (Estadística)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🏦 B4-C4 Matemática Aplicada 2 (Ing. Económica VPN/TIR)</div>
+                        </div>
+                    </div>
+
+                    <div class="route-card" style="border-top-color: #d97706;">
+                        <h4>Ruta de Procesos, Lean & Six Sigma</h4>
+                        <p>De la secuenciación de turnos al aseguramiento de cero defectos en la fuente:</p>
+                        <div class="route-steps">
+                            <div class="route-step-item"><span>📋</span> B1-C2 Fundamentos de la Administración</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> ⏱️ B1-C3 Planeación y Control (OEE & Kanban)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🏭 B3-C2 Métodos de Producción (Lean & VSM)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🎯 B4-C2 Control de Calidad (Six Sigma DMAIC & AMFE)</div>
+                        </div>
+                    </div>
+
+                    <div class="route-card" style="border-top-color: #7c3aed;">
+                        <h4>Ruta Tecnológica e Industria 4.0</h4>
+                        <p>De la lógica formal a la analítica de datos en Power BI y automatización con Python:</p>
+                        <div class="route-steps">
+                            <div class="route-step-item"><span>📉</span> B2-C4 Matemática Básica 2 (Lógica Booleana)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> ⚡ B3-C5 Física Aplicada 2 (Energía y Curvas de Carga)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 📈 B4-C3 Marketing & BI (Power BI)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 💻 B4-C5 Física Aplicada 3 (Sensores & Python)</div>
+                        </div>
+                    </div>
+
+                    <div class="route-card" style="border-top-color: #0284c7;">
+                        <h4>Ruta Ética, Legislación y Gobernanza Humana</h4>
+                        <p>Del respeto inalienable a la supervisión humana indelegable (HITL):</p>
+                        <div class="route-steps">
+                            <div class="route-step-item"><span>🛡️</span> B1-C1 Ética General 1 (Dignidad del Trabajo)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🦺 B2-C3 Administración de RRHH & SSO (Código de Trabajo/IGSS)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🤖 B3-C1 Ética Profesional 1 (Transición Justa)</div>
+                            <div class="route-step-item"><span class="step-arrow">↓</span> 🧠 B4-C1 Ética Profesional 2 (Principio HITL)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECCIÓN 3: TEMARIOS MODERNIZADOS POR LÍNEA DE ESTUDIO   -->
+        <!-- ======================================================== -->
+        <section class="portal-section" id="seccion-temarios" style="background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%); border: 1px solid var(--border-color); border-radius: 12px; padding: 32px 36px; margin-bottom: 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+                <div style="max-width: 820px;">
+                    <span style="display: inline-block; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">
+                        Plan Temático Oficial • 20 Asignaturas
+                    </span>
+                    <h2 style="font-size: 1.6rem; color: var(--kinal-blue); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <span>📚</span> Temarios Modernizados por Línea de Estudio
+                    </h2>
+                    <p style="color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+                        Desglose exhaustivo de las 4 unidades temáticas por curso, vinculación práctica con Inteligencia Artificial (Human-in-the-Loop), herramientas industriales y entregables verificables en las 4 líneas formativas:
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                        <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 12px 14px; border-radius: 8px;">
+                            <div style="font-size: 0.82rem; font-weight: 700; color: #0284c7;">🛡️ Formación Humana y Ética</div>
+                            <div style="font-size: 0.76rem; color: var(--text-muted);">4 Asignaturas • 54.0 Horas</div>
+                        </div>
+                        <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 12px 14px; border-radius: 8px;">
+                            <div style="font-size: 0.82rem; font-weight: 700; color: #d97706;">📋 Gestión & Supervisión</div>
+                            <div style="font-size: 0.76rem; color: var(--text-muted);">8 Asignaturas • 108.0 Horas</div>
+                        </div>
+                        <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 12px 14px; border-radius: 8px;">
+                            <div style="font-size: 0.82rem; font-weight: 700; color: #16a34a;">📐 Ciencias Exactas y Analítica</div>
+                            <div style="font-size: 0.76rem; color: var(--text-muted);">4 Asignaturas • 54.0 Horas</div>
+                        </div>
+                        <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 12px 14px; border-radius: 8px;">
+                            <div style="font-size: 0.82rem; font-weight: 700; color: #7c3aed;">⚡ Física & Industria 4.0</div>
+                            <div style="font-size: 0.76rem; color: var(--text-muted);">4 Asignaturas • 54.0 Horas</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="align-self: center;">
+                    <a href="temarios_por_linea.html" style="display: inline-flex; align-items: center; gap: 8px; background: var(--kinal-blue); color: #ffffff; padding: 14px 26px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(15,45,89,0.25); transition: all 0.2s;">
+                        <span>📚</span> Ver Temarios Detallados por Línea →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECCIÓN 4: AUDITORÍA CURRICULAR Y MATRIZ DE DICTAMEN     -->
+        <!-- ======================================================== -->
+        <section class="portal-section" id="seccion-auditoria" style="background: linear-gradient(135deg, #0b1f3a 0%, #0f2d59 100%); color: #ffffff; border-radius: 12px; padding: 32px 36px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+                <div style="max-width: 820px;">
+                    <span style="display: inline-block; background: rgba(217,119,6,0.2); color: #fef08a; border: 1px solid rgba(217,119,6,0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">
+                        Auditoría Integral • Dictámenes y Transformación
+                    </span>
+                    <h2 style="font-size: 1.6rem; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <span>⚖️</span> Auditoría Curricular y Matriz de Dictamen
+                    </h2>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+                        Diagnóstico formal comparativo para las 20 asignaturas del pensum: identificación de temas obsoletos a anular, modernizaciones metodológicas requeridas e inserción de nuevas competencias técnicas demandadas por la industria guatemalteca e internacional.
+                    </p>
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+                        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 10px 16px; border-radius: 8px;">
+                            <span style="color: #f87171; font-weight: 800; font-size: 0.88rem;">🔴 Anulaciones</span>
+                            <div style="color: #94a3b8; font-size: 0.75rem;">Teoría abstracta sin aplicación en planta</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 10px 16px; border-radius: 8px;">
+                            <span style="color: #facc15; font-weight: 800; font-size: 0.88rem;">🟡 Actualizaciones</span>
+                            <div style="color: #94a3b8; font-size: 0.75rem;">Migración a estándares Industria 4.0</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 10px 16px; border-radius: 8px;">
+                            <span style="color: #60a5fa; font-weight: 800; font-size: 0.88rem;">🔵 Nuevos Contenidos</span>
+                            <div style="color: #94a3b8; font-size: 0.75rem;">IA, SPC, Normas ISO/SAT/DQR 6</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="align-self: center;">
+                    <a href="auditoria_curricular.html" style="display: inline-flex; align-items: center; gap: 8px; background: #d97706; color: #ffffff; padding: 14px 26px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(217,119,6,0.3); transition: all 0.2s;">
+                        <span>⚖️</span> Explorar Auditoría y Matriz de Dictamen →
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ======================================================== -->
+        <!-- SECCIÓN 5: DISTRIBUCIÓN OPERATIVA POR BIMESTRES          -->
+        <!-- ======================================================== -->
+        <section class="portal-section" id="seccion-bimestres">
+            <div class="section-header-bar">
+                <div class="section-title-group">
+                    <h2><span>🗓️</span> Distribución Académica Operativa del Año Lectivo</h2>
+                    <p>Secuencia temporal de los 4 bimestres (10 meses lectivos, febrero a noviembre) con sus 5 periodos diarios de 50 minutos.</p>
+                </div>
+            </div>
+
+            
+    <div class="bimestre-group" id="bimestre-bloque-1">
+        <div class="bimestre-group-header">
+            <h3>Bimestre 1</h3>
+            <span>5 Asignaturas Obligatorias (50 min c/u) • 67.5 Horas Lectivas</span>
+        </div>
+        <div class="bimestre-grid">
+            
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 1 (50 min)</div>
+            <div class="b-code">B1-C1</div>
+            <h4><span>🛡️</span> Ética General 1</h4>
+            <div class="b-eje">Formación Humana y Ética</div>
+            <p class="b-sub">Antropología y Sentido Trascendente del Trabajo</p>
+            <div class="b-links">
+                <a href="#node-b1_etica_general_1" onclick="selectCourseNode('b1_etica_general_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b1_etica_general_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 2 (50 min)</div>
+            <div class="b-code">B1-C2</div>
+            <h4><span>📋</span> Fundamentos de la Administración</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Liderazgo Ágil de Mandos Medios y Coordinación de Equipos</p>
+            <div class="b-links">
+                <a href="#node-b1_fundamentos_administracion" onclick="selectCourseNode('b1_fundamentos_administracion'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b1_fundamentos_administracion">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 3 (50 min)</div>
+            <div class="b-code">B1-C3</div>
+            <h4><span>⏱️</span> Planeación y Control para el Trabajo</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Metodología Visual Kanban, Cronogramas Gantt y Eficiencia OEE</p>
+            <div class="b-links">
+                <a href="#node-b1_planeacion_control_trabajo" onclick="selectCourseNode('b1_planeacion_control_trabajo'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b1_planeacion_control_trabajo">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 4 (50 min)</div>
+            <div class="b-code">B1-C4</div>
+            <h4><span>📐</span> Matemática Básica 1</h4>
+            <div class="b-eje">Ciencias Exactas Aplicadas</div>
+            <p class="b-sub">Aritmética Cuantitativa, Proporcionalidad y Modelado en Hojas de Cálculo</p>
+            <div class="b-links">
+                <a href="#node-b1_matematica_basica_1" onclick="selectCourseNode('b1_matematica_basica_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b1_matematica_basica_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 5 (50 min)</div>
+            <div class="b-code">B1-C5</div>
+            <h4><span>⚖️</span> Física Básica 1</h4>
+            <div class="b-eje">Física y Tecnología</div>
+            <p class="b-sub">Estática, Equilibrio de Fuerzas, Torque, Trabajo y Máquinas Simples</p>
+            <div class="b-links">
+                <a href="#node-b1_fisica_basica_1" onclick="selectCourseNode('b1_fisica_basica_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b1_fisica_basica_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="bimestre-group" id="bimestre-bloque-2">
+        <div class="bimestre-group-header">
+            <h3>Bimestre 2</h3>
+            <span>5 Asignaturas Obligatorias (50 min c/u) • 67.5 Horas Lectivas</span>
+        </div>
+        <div class="bimestre-grid">
+            
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 1 (50 min)</div>
+            <div class="b-code">B2-C1</div>
+            <h4><span>⚖️</span> Ética General 2</h4>
+            <div class="b-eje">Formación Humana y Ética</div>
+            <p class="b-sub">Libertad Responsable, Compliance e Integridad Industrial</p>
+            <div class="b-links">
+                <a href="#node-b2_etica_general_2" onclick="selectCourseNode('b2_etica_general_2'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b2_etica_general_2">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 2 (50 min)</div>
+            <div class="b-code">B2-C2</div>
+            <h4><span>💰</span> Herramientas Contables para la Supervisión</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Costos Industriales (MPD-MOD-CIF), Downtime Cost y Presupuestos OPEX</p>
+            <div class="b-links">
+                <a href="#node-b2_herramientas_contables" onclick="selectCourseNode('b2_herramientas_contables'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b2_herramientas_contables">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 3 (50 min)</div>
+            <div class="b-code">B2-C3</div>
+            <h4><span>🦺</span> Administración de RRHH y SSO</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Código de Trabajo de Guatemala, Planillas del IGSS y Acuerdo Gubernativo 229-2014</p>
+            <div class="b-links">
+                <a href="#node-b2_administracion_rrhh_sso" onclick="selectCourseNode('b2_administracion_rrhh_sso'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b2_administracion_rrhh_sso">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 4 (50 min)</div>
+            <div class="b-code">B2-C4</div>
+            <h4><span>📉</span> Matemática Básica 2</h4>
+            <div class="b-eje">Ciencias Exactas Aplicadas</div>
+            <p class="b-sub">Punto de Equilibrio, Modelado de Funciones y Lógica Booleana</p>
+            <div class="b-links">
+                <a href="#node-b2_matematica_basica_2" onclick="selectCourseNode('b2_matematica_basica_2'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b2_matematica_basica_2">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 5 (50 min)</div>
+            <div class="b-code">B2-C5</div>
+            <h4><span>🧱</span> Física Aplicada 1</h4>
+            <div class="b-eje">Física y Tecnología</div>
+            <p class="b-sub">Física de Materiales, Resistencia Mecánica y Propiedades Térmico-Dieléctricas</p>
+            <div class="b-links">
+                <a href="#node-b2_fisica_aplicada_1" onclick="selectCourseNode('b2_fisica_aplicada_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b2_fisica_aplicada_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="bimestre-group" id="bimestre-bloque-3">
+        <div class="bimestre-group-header">
+            <h3>Bimestre 3</h3>
+            <span>5 Asignaturas Obligatorias (50 min c/u) • 67.5 Horas Lectivas</span>
+        </div>
+        <div class="bimestre-grid">
+            
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 1 (50 min)</div>
+            <div class="b-code">B3-C1</div>
+            <h4><span>🤖</span> Ética Profesional 1</h4>
+            <div class="b-eje">Formación Humana y Ética</div>
+            <p class="b-sub">Automatización, Inteligencia Artificial y la Transición Justa</p>
+            <div class="b-links">
+                <a href="#node-b3_etica_profesional_1" onclick="selectCourseNode('b3_etica_profesional_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b3_etica_profesional_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 2 (50 min)</div>
+            <div class="b-code">B3-C2</div>
+            <h4><span>🏭</span> Métodos de Producción</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Lean Manufacturing, Estandarización 5S y Mapeo de Flujo de Valor (VSM)</p>
+            <div class="b-links">
+                <a href="#node-b3_metodos_produccion" onclick="selectCourseNode('b3_metodos_produccion'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b3_metodos_produccion">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 3 (50 min)</div>
+            <div class="b-code">B3-C3</div>
+            <h4><span>🤝</span> Servicio al Cliente</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Gestión de Clientes B2B, Acuerdos SLA y Calidad en Servicios Técnicos</p>
+            <div class="b-links">
+                <a href="#node-b3_servicio_cliente" onclick="selectCourseNode('b3_servicio_cliente'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b3_servicio_cliente">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 4 (50 min)</div>
+            <div class="b-code">B3-C4</div>
+            <h4><span>📊</span> Matemática Aplicada 1</h4>
+            <div class="b-eje">Ciencias Exactas Aplicadas</div>
+            <p class="b-sub">Estadística Práctica Aplicada, Principio de Pareto y Análisis de Variabilidad</p>
+            <div class="b-links">
+                <a href="#node-b3_matematica_aplicada_1" onclick="selectCourseNode('b3_matematica_aplicada_1'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b3_matematica_aplicada_1">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 5 (50 min)</div>
+            <div class="b-code">B3-C5</div>
+            <h4><span>⚡</span> Física Aplicada 2</h4>
+            <div class="b-eje">Física y Tecnología</div>
+            <p class="b-sub">Energía, Eficiencia Energética, Tarifas Industriales y Sostenibilidad</p>
+            <div class="b-links">
+                <a href="#node-b3_fisica_aplicada_2" onclick="selectCourseNode('b3_fisica_aplicada_2'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b3_fisica_aplicada_2">Ver Temario</a>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="bimestre-group" id="bimestre-bloque-4">
+        <div class="bimestre-group-header">
+            <h3>Bimestre 4</h3>
+            <span>5 Asignaturas Obligatorias (50 min c/u) • 67.5 Horas Lectivas</span>
+        </div>
+        <div class="bimestre-grid">
+            
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 1 (50 min)</div>
+            <div class="b-code">B4-C1</div>
+            <h4><span>🧠</span> Ética Profesional 2</h4>
+            <div class="b-eje">Formación Humana y Ética</div>
+            <p class="b-sub">Principio Human-in-the-Loop (HITL), Juicio Crítico y el Trabajo Bien Hecho</p>
+            <div class="b-links">
+                <a href="#node-b4_etica_profesional_2" onclick="selectCourseNode('b4_etica_profesional_2'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b4_etica_profesional_2">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 2 (50 min)</div>
+            <div class="b-code">B4-C2</div>
+            <h4><span>🎯</span> Control de Calidad</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Sistemas de Gestión ISO 9001:2015, Metodología Six Sigma (DMAIC) y AMFE</p>
+            <div class="b-links">
+                <a href="#node-b4_control_calidad" onclick="selectCourseNode('b4_control_calidad'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b4_control_calidad">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 3 (50 min)</div>
+            <div class="b-code">B4-C3</div>
+            <h4><span>📈</span> Fundamentos del Marketing</h4>
+            <div class="b-eje">Gestión y Supervisión</div>
+            <p class="b-sub">Business Intelligence (Power BI), Marketing Industrial B2B y Dashboards</p>
+            <div class="b-links">
+                <a href="#node-b4_fundamentos_marketing" onclick="selectCourseNode('b4_fundamentos_marketing'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b4_fundamentos_marketing">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 4 (50 min)</div>
+            <div class="b-code">B4-C4</div>
+            <h4><span>🏦</span> Matemática Aplicada 2</h4>
+            <div class="b-eje">Ciencias Exactas Aplicadas</div>
+            <p class="b-sub">Ingeniería Económica, Interés Compuesto y Evaluación de Inversiones (VPN/TIR)</p>
+            <div class="b-links">
+                <a href="#node-b4_matematica_aplicada_2" onclick="selectCourseNode('b4_matematica_aplicada_2'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b4_matematica_aplicada_2">Ver Temario</a>
+            </div>
+        </div>
+        
+        <div class="bimestre-course-card">
+            <div class="b-period">Periodo 5 (50 min)</div>
+            <div class="b-code">B4-C5</div>
+            <h4><span>💻</span> Física Aplicada 3</h4>
+            <div class="b-eje">Física y Tecnología</div>
+            <p class="b-sub">Sensores Transversales, Instrumentación y Programación Aplicada con Python</p>
+            <div class="b-links">
+                <a href="#node-b4_fisica_aplicada_3" onclick="selectCourseNode('b4_fisica_aplicada_3'); scrollToMap();">Ver en Mapa</a> • 
+                <a href="#temario-b4_fisica_aplicada_3">Ver Temario</a>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+
+            <div style="background: #e2e8f0; padding: 24px; border-radius: 8px; margin-top: 24px;">
+                <h3 style="color: var(--kinal-blue); margin-bottom: 8px;">Acreditación y Salida Profesional</h3>
+                <p style="font-size: 0.92rem; color: var(--text-dark);">
+                    Al completar y aprobar satisfactoriamente los 4 bimestres (20 asignaturas con nota &ge; 75 pts) y certificar el nivel A2 en inglés (prueba ELASH II vía Kinal Language School), el egresado obtiene el <strong>Título de Técnico Superior Universitario en su Especialidad</strong> avalado por la <strong>Universidad del Istmo (UNIS)</strong> y Fundación Kinal, con equivalencia internacional a los niveles 5 y 6 del Marco Alemán de Cualificaciones (DQR).
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p><strong>Fundación Kinal • Escuela Técnica Superior • Pensum General del Técnico Superior Universitario (TSU 2026)</strong></p>
+        <p style="margin-top: 6px; font-size: 0.82rem; opacity: 0.8;">Convenio Universidad del Istmo (UNIS) • Marco Alemán de Cualificaciones (DQR 5/6) • Guatemala, 2026</p>
+    </footer>
+
+</div>
+
+<script>
+    const cursosData = {"b1_etica_general_1": {"id": "b1_etica_general_1", "codigo": "B1-C1", "nombre": "Ética General 1", "subtitulo": "Antropología y Sentido Trascendente del Trabajo", "bimestre": "Bimestre 1", "periodo": "Periodo 1 (50 min)", "linea_id": "linea-etica", "eje": "Formación Humana y Ética", "icono": "🛡️", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": [], "habilita": ["b2_etica_general_2", "b2_administracion_rrhh_sso"], "objetivo": "Forjar el carácter ético del supervisor técnico bajo el ideario de Kinal: la persona en el centro de la operación y el trabajo bien hecho como medio de superación personal y servicio a la sociedad.", "subtema_ia": "Sesgos cognitivos humanos frente a sesgos en modelos de IA: el papel irremplazable de la conciencia moral y el juicio prudencial que ninguna máquina o algoritmo predictivo puede replicar.", "herramientas": "Casos de estudio de dilemas éticos industriales, matriz de resolución pacífica de fricciones operativas, protocolos de retroalimentación constructiva."}, "b1_fundamentos_administracion": {"id": "b1_fundamentos_administracion", "codigo": "B1-C2", "nombre": "Fundamentos de la Administración", "subtitulo": "Liderazgo Ágil de Mandos Medios y Coordinación de Equipos", "bimestre": "Bimestre 1", "periodo": "Periodo 2 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "📋", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": [], "habilita": ["b1_planeacion_control_trabajo", "b2_herramientas_contables", "b2_administracion_rrhh_sso", "b3_metodos_produccion"], "objetivo": "Dotar al técnico de competencias de supervisión moderna y liderazgo ágil para articular el puente operativo entre la alta gerencia y el personal de piso.", "subtema_ia": "Uso de asistentes de IA generativa (Copilots) para redacción ejecutiva de descriptores de puestos, actas técnicas de reunión, políticas operativas y minutas de seguimiento.", "herramientas": "Matrices RACI, plataformas de documentación (Notion / Confluence), plantillas de feedback 1-on-1, tableros de objetivos SMART."}, "b1_planeacion_control_trabajo": {"id": "b1_planeacion_control_trabajo", "codigo": "B1-C3", "nombre": "Planeación y Control para el Trabajo", "subtitulo": "Metodología Visual Kanban, Cronogramas Gantt y Eficiencia OEE", "bimestre": "Bimestre 1", "periodo": "Periodo 3 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "⏱️", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_fundamentos_administracion"], "habilita": ["b3_metodos_produccion", "b4_control_calidad"], "objetivo": "Capacitar en la planificación operativa de órdenes de servicio mediante gestión visual, control riguroso de tiempos de ciclo y maximización del indicador OEE.", "subtema_ia": "Algoritmos de IA para estimación predictiva de duración de tareas técnicas basadas en registros históricos y detección temprana de cuellos de botella en cronogramas complejos.", "herramientas": "Trello, ClickUp, plantillas automatizadas de OEE en Excel, MS Project / GanttProject."}, "b1_matematica_basica_1": {"id": "b1_matematica_basica_1", "codigo": "B1-C4", "nombre": "Matemática Básica 1", "subtitulo": "Aritmética Cuantitativa, Proporcionalidad y Modelado en Hojas de Cálculo", "bimestre": "Bimestre 1", "periodo": "Periodo 4 (50 min)", "linea_id": "linea-matematica", "eje": "Ciencias Exactas Aplicadas", "icono": "📐", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": [], "habilita": ["b2_matematica_basica_2", "b2_herramientas_contables", "b1_fisica_basica_1"], "objetivo": "Desarrollar el razonamiento cuantitativo y proporcional para estimar rendimientos, calcular factores de escala y automatizar hojas de cálculo técnicas sin errores conceptuales ni de redondeo.", "subtema_ia": "Uso de asistentes de IA generativa para formulación, depuración y explicación de fórmulas matriciales complejas en Excel y detección automática de errores de sintaxis y circularidad.", "herramientas": "Microsoft Excel / Google Sheets avanzado, plantillas paramétricas de cálculo técnico."}, "b1_fisica_basica_1": {"id": "b1_fisica_basica_1", "codigo": "B1-C5", "nombre": "Física Básica 1", "subtitulo": "Estática, Equilibrio de Fuerzas, Torque, Trabajo y Máquinas Simples", "bimestre": "Bimestre 1", "periodo": "Periodo 5 (50 min)", "linea_id": "linea-fisica", "eje": "Física y Tecnología", "icono": "⚖️", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": [], "habilita": ["b2_fisica_aplicada_1"], "objetivo": "Comprender los principios físicos del equilibrio de fuerzas, momento de torsión, trabajo mecánico y ventaja mecánica aplicados a la seguridad de izaje y estabilidad de equipos.", "subtema_ia": "Herramientas de visión artificial en dispositivos móviles para medición digital de ángulos de eslingado, nivelación de maquinaria y cálculo óptico de distancias en campo.", "herramientas": "Dinamómetros, torquímetros calibrados, eslingas, apps de nivelación y medición óptica por visión artificial."}, "b2_etica_general_2": {"id": "b2_etica_general_2", "codigo": "B2-C1", "nombre": "Ética General 2", "subtitulo": "Libertad Responsable, Compliance e Integridad Industrial", "bimestre": "Bimestre 2", "periodo": "Periodo 1 (50 min)", "linea_id": "linea-etica", "eje": "Formación Humana y Ética", "icono": "⚖️", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_etica_general_1"], "habilita": ["b3_etica_profesional_1"], "objetivo": "Interiorizar la responsabilidad civil, penal y moral de las firmas técnicas y forjar una cultura de integridad empresarial inquebrantable frente a presiones económicas.", "subtema_ia": "Auditoría ética de sistemas de decisión algorítmica: prevención de sesgos discriminatorios en compras automatizadas y selección algorítmica de personal técnico.", "herramientas": "Matrices de conflicto de intereses, protocolos de compliance industrial, simulaciones de dilemas éticos de firma técnica."}, "b2_herramientas_contables": {"id": "b2_herramientas_contables", "codigo": "B2-C2", "nombre": "Herramientas Contables para la Supervisión", "subtitulo": "Costos Industriales (MPD-MOD-CIF), Downtime Cost y Presupuestos OPEX", "bimestre": "Bimestre 2", "periodo": "Periodo 2 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "💰", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_fundamentos_administracion", "b1_matematica_basica_1"], "habilita": ["b4_fundamentos_marketing", "b4_matematica_aplicada_2"], "objetivo": "Habilitar al supervisor para costear operaciones, justificar inversiones y administrar presupuestos de mantenimiento u obra en lenguaje financiero corporativo.", "subtema_ia": "Modelos de IA para escaneo inteligente de facturas y recibos (OCR avanzado), clasificación automática de gastos operativos y detección temprana de desvíos presupuestarios.", "herramientas": "Plantillas de costeo MPD-MOD-CIF en Excel, calculadoras de Downtime Cost, sistemas ERP básicos (módulo de compras y órdenes)."}, "b2_administracion_rrhh_sso": {"id": "b2_administracion_rrhh_sso", "codigo": "B2-C3", "nombre": "Administración de RRHH y SSO", "subtitulo": "Código de Trabajo de Guatemala, Planillas del IGSS y Acuerdo Gubernativo 229-2014", "bimestre": "Bimestre 2", "periodo": "Periodo 3 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "🦺", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_fundamentos_administracion"], "habilita": ["b3_servicio_cliente", "b4_control_calidad"], "objetivo": "Dominar la legislación laboral guatemalteca, el cálculo riguroso de planillas e IGSS, y liderar la seguridad ocupacional para lograr cero accidentes en planta u obra.", "subtema_ia": "Automatización de procesos (RPA) y asistentes de IA para verificación cruzada de consistencia en el cálculo de planillas de pago, horas extras y retenciones laborales del IGSS.", "herramientas": "Plataforma IGSS Digital, matrices IPERC, formatos de permisos de trabajo de alto riesgo (LOTO, alturas), hojas de cálculo de planillas."}, "b2_matematica_basica_2": {"id": "b2_matematica_basica_2", "codigo": "B2-C4", "nombre": "Matemática Básica 2", "subtitulo": "Punto de Equilibrio, Modelado de Funciones y Lógica Booleana", "bimestre": "Bimestre 2", "periodo": "Periodo 4 (50 min)", "linea_id": "linea-matematica", "eje": "Ciencias Exactas Aplicadas", "icono": "📉", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_matematica_basica_1"], "habilita": ["b3_matematica_aplicada_1", "b4_matematica_aplicada_2", "b4_fisica_aplicada_3"], "objetivo": "Modelar el punto de equilibrio operativo de servicios técnicos y dominar la lógica booleana y la algoritmia para estructurar procesos y hojas de cálculo avanzadas.", "subtema_ia": "Asistentes de IA para traducción de reglas de negocio operativas complejas a diagramas de flujo estructurados y validación automática de tablas de verdad booleanas.", "herramientas": "Microsoft Excel avanzado (Solver, funciones lógicas), software de diagramación (Lucidchart / Draw.io / Visio)."}, "b2_fisica_aplicada_1": {"id": "b2_fisica_aplicada_1", "codigo": "B2-C5", "nombre": "Física Aplicada 1", "subtitulo": "Física de Materiales, Resistencia Mecánica y Propiedades Térmico-Dieléctricas", "bimestre": "Bimestre 2", "periodo": "Periodo 5 (50 min)", "linea_id": "linea-fisica", "eje": "Física y Tecnología", "icono": "🧱", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_fisica_basica_1", "b1_matematica_basica_1"], "habilita": ["b3_fisica_aplicada_2", "b4_control_calidad"], "objetivo": "Comprender el comportamiento mecánico, térmico y dieléctrico de los materiales técnicos bajo esfuerzos reales para garantizar factores de seguridad adecuados y prevención de fallas catastróficas.", "subtema_ia": "Modelos de IA y herramientas analíticas para búsqueda y comparación rápida de propiedades de materiales en bases de datos técnicas internacionales (CES EduPack / MatWeb).", "herramientas": "Tablas técnicas de resistencia de materiales, durómetros, ensayos no destructivos básicos, cámaras termográficas."}, "b3_etica_profesional_1": {"id": "b3_etica_profesional_1", "codigo": "B3-C1", "nombre": "Ética Profesional 1", "subtitulo": "Automatización, Inteligencia Artificial y la Transición Justa", "bimestre": "Bimestre 3", "periodo": "Periodo 1 (50 min)", "linea_id": "linea-etica", "eje": "Formación Humana y Ética", "icono": "🤖", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b2_etica_general_2"], "habilita": ["b4_etica_profesional_2"], "objetivo": "Liderar con sensibilidad ética la transformación digital y automatización de procesos, promoviendo el reentrenamiento del personal antes que el despido masivo.", "subtema_ia": "Uso responsable de herramientas de IA generativa en la empresa: directrices de confidencialidad de datos (Data Privacy), propiedad intelectual y prevención de fugas de secretos industriales.", "herramientas": "Casos de estudio de transición tecnológica en plantas industriales, guías de gobernanza de datos y privacidad en IA."}, "b3_metodos_produccion": {"id": "b3_metodos_produccion", "codigo": "B3-C2", "nombre": "Métodos de Producción", "subtitulo": "Lean Manufacturing, Estandarización 5S y Mapeo de Flujo de Valor (VSM)", "bimestre": "Bimestre 3", "periodo": "Periodo 2 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "🏭", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_planeacion_control_trabajo", "b1_fundamentos_administracion"], "habilita": ["b4_control_calidad"], "objetivo": "Aplicar la filosofía Lean y las 5S de Kinal para erradicar desperdicios, balancear líneas operativas y maximizar la productividad del área a cargo.", "subtema_ia": "Optimización de rutas de producción y balanceo de líneas mediante algoritmos genéticos y modelos de investigación de operaciones con Inteligencia Artificial.", "herramientas": "Plantillas VSM, cronómetros de Takt Time, formatos de auditoría 5S, matrices SMED, hojas de trabajo estandarizado."}, "b3_servicio_cliente": {"id": "b3_servicio_cliente", "codigo": "B3-C3", "nombre": "Servicio al Cliente", "subtitulo": "Gestión de Clientes B2B, Acuerdos SLA y Calidad en Servicios Técnicos", "bimestre": "Bimestre 3", "periodo": "Periodo 3 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "🤝", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b1_fundamentos_administracion", "b2_administracion_rrhh_sso"], "habilita": ["b4_fundamentos_marketing"], "objetivo": "Desarrollar una mentalidad de servicio profesional tanto hacia el cliente interno (producción/ingeniería) como hacia clientes externos corporativos en entornos industriales B2B.", "subtema_ia": "Agentes conversacionales inteligentes de soporte técnico de primer nivel y análisis automático de sentimiento en tickets y reportes de servicio postventa.", "herramientas": "Formatos de SLAs técnicos, plataformas de ticketing (Jira Service Desk / Zendesk), protocolos de atención de quejas B2B."}, "b3_matematica_aplicada_1": {"id": "b3_matematica_aplicada_1", "codigo": "B3-C4", "nombre": "Matemática Aplicada 1", "subtitulo": "Estadística Práctica Aplicada, Principio de Pareto y Análisis de Variabilidad", "bimestre": "Bimestre 3", "periodo": "Periodo 4 (50 min)", "linea_id": "linea-matematica", "eje": "Ciencias Exactas Aplicadas", "icono": "📊", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b2_matematica_basica_2", "b1_matematica_basica_1"], "habilita": ["b4_control_calidad", "b4_fundamentos_marketing", "b4_matematica_aplicada_2"], "objetivo": "Utilizar la analítica descriptiva en hojas de cálculo y la ley de Pareto para identificar la dispersión de mediciones y priorizar las causas de fallas y mermas operativas.", "subtema_ia": "Herramientas de IA para análisis exploratorio de datos (Code Interpreter / Data Analysis) para procesar tablas de datos CSV masivos y generar resúmenes estadísticos automáticos en segundos.", "herramientas": "Microsoft Excel (Analysis ToolPak, tablas dinámicas), diagramas de Pareto e histogramas automáticos."}, "b3_fisica_aplicada_2": {"id": "b3_fisica_aplicada_2", "codigo": "B3-C5", "nombre": "Física Aplicada 2", "subtitulo": "Energía, Eficiencia Energética, Tarifas Industriales y Sostenibilidad", "bimestre": "Bimestre 3", "periodo": "Periodo 5 (50 min)", "linea_id": "linea-fisica", "eje": "Física y Tecnología", "icono": "⚡", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b2_fisica_aplicada_1", "b1_matematica_basica_1"], "habilita": ["b4_matematica_aplicada_2", "b4_fisica_aplicada_3"], "objetivo": "Comprender los balances energéticos, la estructura de costos de la energía eléctrica industrial en Guatemala y las tecnologías de climatización y energía solar para reducir costos y huella ambiental.", "subtema_ia": "Algoritmos de IA para análisis de curvas de carga eléctrica en tiempo real y detección automática de consumos parásitos o desvíos energéticos en equipos de planta.", "herramientas": "Analizadores de redes eléctricas, pliegos tarifarios oficiales CNEE / EEGSA, software de dimensionamiento solar fotovoltaico básico."}, "b4_etica_profesional_2": {"id": "b4_etica_profesional_2", "codigo": "B4-C1", "nombre": "Ética Profesional 2", "subtitulo": "Principio Human-in-the-Loop (HITL), Juicio Crítico y el Trabajo Bien Hecho", "bimestre": "Bimestre 4", "periodo": "Periodo 1 (50 min)", "linea_id": "linea-etica", "eje": "Formación Humana y Ética", "icono": "🧠", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b3_etica_profesional_1"], "habilita": [], "objetivo": "Consagrar el principio de que la responsabilidad moral y legal de la supervisión técnica es indelegable a las máquinas, coronando la formación con el ideal del trabajo bien hecho de Kinal.", "subtema_ia": "Gobernanza de sistemas autónomos: protocolos institucionales para garantizar que en decisiones críticas que afecten vidas humanas, seguridad industrial o empleo siempre decida una persona responsable.", "herramientas": "Protocolos de gobernanza HITL, normativas MARN de disposición de residuos peligrosos, guías de integridad técnica."}, "b4_control_calidad": {"id": "b4_control_calidad", "codigo": "B4-C2", "nombre": "Control de Calidad", "subtitulo": "Sistemas de Gestión ISO 9001:2015, Metodología Six Sigma (DMAIC) y AMFE", "bimestre": "Bimestre 4", "periodo": "Periodo 2 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "🎯", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b3_metodos_produccion", "b3_matematica_aplicada_1"], "habilita": [], "objetivo": "Implementar sistemas de gestión de calidad orientados a la prevención en la fuente y dominar la resolución estructurada de problemas mediante el ciclo DMAIC.", "subtema_ia": "Visión artificial con redes neuronales convolucionales (CNN) para inspección automática de defectos superficiales y control dimensional de piezas a alta velocidad en líneas de producción.", "herramientas": "Matrices AMFE, diagramas de Ishikawa, cartas de control estadístico (SPC), formatos de auditoría ISO 9001, modelos de visión artificial en línea."}, "b4_fundamentos_marketing": {"id": "b4_fundamentos_marketing", "codigo": "B4-C3", "nombre": "Fundamentos del Marketing", "subtitulo": "Business Intelligence (Power BI), Marketing Industrial B2B y Dashboards", "bimestre": "Bimestre 4", "periodo": "Periodo 3 (50 min)", "linea_id": "linea-gestion", "eje": "Gestión y Supervisión", "icono": "📈", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b2_herramientas_contables", "b3_servicio_cliente", "b3_matematica_aplicada_1"], "habilita": [], "objetivo": "Transformar la materia de marketing en inteligencia de negocios B2B y diseño de cuadros de mando (Dashboards en Power BI) para comunicar resultados de planta a la alta gerencia.", "subtema_ia": "Analítica predictiva de demanda y herramientas de procesamiento de lenguaje natural (NLP) para generar resúmenes ejecutivos automáticos de reportes de planta para gerencia.", "herramientas": "Microsoft Power BI Desktop, Power Query, DAX básico, plantillas de dashboards industriales."}, "b4_matematica_aplicada_2": {"id": "b4_matematica_aplicada_2", "codigo": "B4-C4", "nombre": "Matemática Aplicada 2", "subtitulo": "Ingeniería Económica, Interés Compuesto y Evaluación de Inversiones (VPN/TIR)", "bimestre": "Bimestre 4", "periodo": "Periodo 4 (50 min)", "linea_id": "linea-matematica", "eje": "Ciencias Exactas Aplicadas", "icono": "🏦", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b2_herramientas_contables", "b2_matematica_basica_2", "b3_matematica_aplicada_1"], "habilita": [], "objetivo": "Dominar el interés compuesto y las herramientas de evaluación económica para justificar financieramente compras de maquinaria, reemplazos y proyectos de automatización técnica.", "subtema_ia": "Simulaciones estocásticas de Monte Carlo asistidas por IA para análisis de riesgo e incertidumbre en presupuestos de inversión técnica y variación de precios de insumos.", "herramientas": "Funciones financieras avanzadas en Excel (VNA, TIR, PAGO, TASA), simuladores de flujos de caja y modelos de reemplazo LCC."}, "b4_fisica_aplicada_3": {"id": "b4_fisica_aplicada_3", "codigo": "B4-C5", "nombre": "Física Aplicada 3", "subtitulo": "Sensores Transversales, Instrumentación y Programación Aplicada con Python", "bimestre": "Bimestre 4", "periodo": "Periodo 5 (50 min)", "linea_id": "linea-fisica", "eje": "Física y Tecnología", "icono": "💻", "horas": "13.5 hrs (15 sesiones)", "prerequisitos": ["b3_fisica_aplicada_2", "b2_matematica_basica_2", "b1_matematica_basica_1"], "habilita": [], "objetivo": "Comprender los principios físicos de sensores y transductores de planta y dominar la programación en Python para automatizar cálculos técnicos, procesar datos y generar reportes.", "subtema_ia": "Asistentes de codificación con Inteligencia Artificial (Copilot / ChatGPT) para generación, explicación y depuración de scripts en Python a partir de instrucciones en lenguaje natural.", "herramientas": "Python 3, Jupyter Notebook / VS Code, bibliotecas matplotlib y pandas básico, sensores industriales transversales."}};
+    let selectedCourseId = "b1_etica_general_1";
+    let currentViewMode = "grid";
+
+    function switchViewMode(mode) {
+        currentViewMode = mode;
+        const btnGrid = document.getElementById('btnModeGrid');
+        const btnNet = document.getElementById('btnModeNetwork');
+        const gridContainer = document.getElementById('gridContainer');
+        const netContainer = document.getElementById('networkContainer');
+
+        if (mode === 'grid') {
+            btnGrid.classList.add('active');
+            btnNet.classList.remove('active');
+            gridContainer.style.display = 'block';
+            netContainer.style.display = 'none';
+        } else {
+            btnGrid.classList.remove('active');
+            btnNet.classList.add('active');
+            gridContainer.style.display = 'none';
+            netContainer.style.display = 'block';
+        }
+        renderActiveRuta(selectedCourseId);
+    }
+
+    function filterMapByLinea(lineaId) {
+        const rows = document.querySelectorAll('.grid-linea-row');
+        rows.forEach(r => {
+            r.style.display = (lineaId === 'all' || r.id === 'row-' + lineaId) ? 'grid' : 'none';
+        });
+
+        const svgNodes = document.querySelectorAll('.svg-node-group');
+        const svgEdges = document.querySelectorAll('.svg-edge');
+
+        svgNodes.forEach(node => {
+            const nLinea = node.getAttribute('data-linea');
+            node.style.display = (lineaId === 'all' || nLinea === lineaId) ? 'block' : 'none';
+        });
+
+        svgEdges.forEach(edge => {
+            edge.style.display = (lineaId === 'all' || edge.classList.contains('edge-linea-' + lineaId)) ? 'block' : 'none';
+        });
+    }
+
+    function selectCourseNode(courseId) {
+        selectedCourseId = courseId;
+        renderActiveRuta(courseId);
+        updateSidePanel(courseId);
+    }
+
+    function highlightNodeRuta(courseId) {
+        renderActiveRuta(courseId);
+    }
+
+    function clearHighlightNode() {
+        renderActiveRuta(selectedCourseId);
+    }
+
+    function renderActiveRuta(courseId) {
+        const course = cursosData[courseId];
+        if (!course) return;
+
+        const allGridNodes = document.querySelectorAll('.node-card');
+        allGridNodes.forEach(node => {
+            node.classList.remove('selected', 'prereq-active', 'habilita-active', 'dimmed');
+            const nId = node.getAttribute('data-id');
+            if (nId === courseId) {
+                node.classList.add('selected');
+            } else if (course.prerequisitos.includes(nId)) {
+                node.classList.add('prereq-active');
+            } else if (course.habilita.includes(nId)) {
+                node.classList.add('habilita-active');
+            } else {
+                node.classList.add('dimmed');
+            }
+        });
+
+        const allSvgNodes = document.querySelectorAll('.svg-node-group');
+        allSvgNodes.forEach(node => {
+            node.classList.remove('selected', 'prereq-active', 'habilita-active', 'dimmed');
+            const nId = node.getAttribute('data-id');
+            if (nId === courseId) {
+                node.classList.add('selected');
+            } else if (course.prerequisitos.includes(nId)) {
+                node.classList.add('prereq-active');
+            } else if (course.habilita.includes(nId)) {
+                node.classList.add('habilita-active');
+            } else {
+                node.classList.add('dimmed');
+            }
+        });
+
+        const allSvgEdges = document.querySelectorAll('.svg-edge');
+        allSvgEdges.forEach(edge => {
+            edge.classList.remove('edge-prereq-active', 'edge-habilita-active', 'dimmed');
+            const src = edge.getAttribute('data-source');
+            const tgt = edge.getAttribute('data-target');
+
+            if (tgt === courseId && course.prerequisitos.includes(src)) {
+                edge.classList.add('edge-prereq-active');
+            } else if (src === courseId && course.habilita.includes(tgt)) {
+                edge.classList.add('edge-habilita-active');
+            } else {
+                edge.classList.add('dimmed');
+            }
+        });
+    }
+
+    function updateSidePanel(courseId) {
+        const course = cursosData[courseId];
+        if (!course) return;
+
+        document.getElementById('sideBadge').innerText = course.codigo + ' • ' + course.bimestre;
+        document.getElementById('sideTitle').innerHTML = course.icono + ' ' + course.nombre;
+        document.getElementById('sideSub').innerText = course.subtitulo;
+        document.getElementById('sideObjetivo').innerText = course.objetivo;
+        document.getElementById('sideIA').innerText = course.subtema_ia;
+
+        const prereqList = document.getElementById('sidePrereqList');
+        prereqList.innerHTML = '';
+        if (course.prerequisitos.length > 0) {
+            course.prerequisitos.forEach(pId => {
+                const pInfo = cursosData[pId];
+                const li = document.createElement('li');
+                li.innerText = '⬅️ ' + pInfo.codigo + ' • ' + pInfo.nombre;
+                li.onclick = () => selectCourseNode(pId);
+                prereqList.appendChild(li);
+            });
+        } else {
+            const li = document.createElement('li');
+            li.style.background = '#f1f5f9';
+            li.style.color = '#64748b';
+            li.style.borderColor = '#cbd5e1';
+            li.innerText = 'Ingreso al 3er Año TSU (Sin prerrequisito previo de 3er año)';
+            prereqList.appendChild(li);
+        }
+
+        const habilitaList = document.getElementById('sideHabilitaList');
+        habilitaList.innerHTML = '';
+        if (course.habilita.length > 0) {
+            course.habilita.forEach(hId => {
+                const hInfo = cursosData[hId];
+                const li = document.createElement('li');
+                li.innerText = '➡️ ' + hInfo.codigo + ' • ' + hInfo.nombre;
+                li.onclick = () => selectCourseNode(hId);
+                habilitaList.appendChild(li);
+            });
+        } else {
+            const li = document.createElement('li');
+            li.style.background = '#fef3c7';
+            li.style.color = '#92400e';
+            li.style.borderColor = '#fde68a';
+            li.innerText = 'Culminación del Plan / Graduación TSU';
+            habilitaList.appendChild(li);
+        }
+
+        document.getElementById('sideLinkTemario').href = 'temarios_por_linea.html#temario-' + course.id;
+        document.getElementById('sideLinkAudit').href = 'auditoria_curricular.html#audit-' + course.id;
+    }
+
+    function filterByLinea(lineaId, btn) {
+        document.querySelectorAll('.linea-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        document.querySelectorAll('.linea-section').forEach(sec => {
+            sec.style.display = (lineaId === 'all' || sec.id === lineaId) ? 'block' : 'none';
+        });
+    }
+
+    function filterTemarios() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        document.querySelectorAll('.temario-card').forEach(card => {
+            card.style.display = card.innerText.toLowerCase().includes(query) ? 'block' : 'none';
+        });
+    }
+
+    function toggleUnidades(id) {
+        const content = document.getElementById('unidades-' + id);
+        if (content) {
+            content.style.display = (content.style.display === 'none') ? 'grid' : 'none';
+        }
+    }
+
+    function toggleAllUnidades(expand) {
+        document.querySelectorAll('.unidades-content').forEach(content => {
+            content.style.display = expand ? 'grid' : 'none';
+        });
+    }
+
+    function scrollToMap() {
+        const el = document.getElementById('seccion-mapa');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToAudit(id) {
+        const el = document.getElementById('audit-' + id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Resaltar link activo en scroll
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section.portal-section');
+        const scrollPos = window.scrollY + 120;
+
+        sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute('id');
+            if (scrollPos >= top && scrollPos < top + height) {
+                document.querySelectorAll('nav.sticky-nav a').forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === '#' + id) {
+                        a.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        selectCourseNode('b1_etica_general_1');
+    });
+</script>
+
+</body>
+</html>

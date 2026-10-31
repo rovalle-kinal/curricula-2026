@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Matemática Aplicada | Dictamen Curricular TSU Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 32px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 6px; }
+        header p { color: #cbd5e1; font-size: 0.98rem; }
+        nav.nav-bar {
+            background: #0b1f3a;
+            padding: 0 40px;
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav.nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.nav-bar a:hover { color: #ffffff; border-bottom-color: var(--kinal-accent); }
+        nav.nav-bar a.active { color: #ffffff; background: rgba(255,255,255,0.06); border-bottom-color: var(--kinal-accent); }
+        main { padding: 40px; }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .analysis-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .analysis-header h3 { font-size: 1.15rem; color: var(--kinal-blue); }
+        .analysis-body { padding: 24px; }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .comp-table th, .comp-table td {
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+        .comp-table th { background: #f1f5f9; color: var(--text-dark); font-weight: 600; }
+
+        .callout-box {
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .callout-yellow { background: var(--color-actualizar-bg); border-left: 4px solid var(--color-actualizar-border); color: var(--color-actualizar-text); }
+        .callout-red { background: var(--color-anular-bg); border-left: 4px solid var(--color-anular-border); color: var(--color-anular-text); }
+        .callout-blue { background: var(--color-nuevo-bg); border-left: 4px solid var(--color-nuevo-border); color: var(--color-nuevo-text); }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="header-badge">Eje Curricular: Ciencias Exactas y Aplicadas</span>
+        <h1>Área de Matemática Básica y Aplicada</h1>
+        <p>Diagnóstico de 4 asignaturas trimestrales del Técnico Superior Universitario (TSU Kinal). Sustitución del repaso escolar de aritmética y álgebra abstracta por Matemática Financiera Aplicada (interés compuesto, amortizaciones, VPN/TIR) y Control Estadístico de Procesos (SPC).</p>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html">Portal General</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; font-weight: 700;">🗺️ Mapa Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; font-weight: 700;">📚 Temarios por Línea</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; font-weight: 700;">🌟 Nueva Distribución 2026</a>
+        <a href="administracion.html">Administración y Operaciones</a>
+        <a href="matematica.html" class="active">Matemática Aplicada</a>
+        <a href="fisica.html">Física y Tecnología (IA)</a>
+        <a href="etica.html">Ética Profesional y HITL</a>
+    </nav>
+
+    <main>
+        <div class="callout-box callout-blue" style="font-size: 0.95rem;">
+            <strong>Principio Rector de la Reforma en Matemática:</strong> Un estudiante de 3er año de Técnico Superior Universitario (nivel DQR 5/6) ya superó dos años de especialidad técnica o posee título de perito/bachiller. Repetir aritmética de primero básico (jerarquía de operaciones o descomposición de números) es un error pedagógico. La matemática del TSU debe ser <strong>instrumental, analítica y financiera</strong>, capacitándolo para justificar inversiones de maquinaria y auditar la variabilidad de procesos.
+        </div>
+
+        <!-- I TRIMESTRE: MATEMÁTICA BÁSICA 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>I Trimestre • Matemática Básica 1: Aritmética y Principios de Álgebra</h3>
+                <div>
+                    <span class="tag-pill tag-anular">Anular Repaso Escolar</span>
+                    <span class="tag-pill tag-nuevo">Matemática Instrumental</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Aritmética Escolar Elemental</strong><br>Jerarquía de operaciones básicas, suma/resta de fracciones manuales, regla de tres simple y leyes de exponentes abstractas.</td>
+                            <td><span class="tag-pill tag-anular">Anular</span></td>
+                            <td>
+                                <div class="callout-box callout-red" style="margin: 0 0 8px 0; padding: 8px 12px;">
+                                    <strong>Motivo de anulación:</strong> Redundancia con el ciclo básico y diversificado. Resta valor universitario al programa TSU.
+                                </div>
+                                <strong>Sustituir por: Proporciones, Conversión Dimensional y Modelado en Hojas de Cálculo:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Análisis dimensional y conversión de unidades técnicas del sistema métrico (SI) al sistema inglés (libras/pulgada cuadrada, galones/minuto, BTU a Watts, caballos de fuerza a Kilowatts).</li>
+                                    <li>Cálculo de tolerancias mecánicas y eléctricas (porcentajes de error, márgenes de seguridad en cargas).</li>
+                                    <li>Formulación de modelos de cálculo automatizados en Excel utilizando referencias relativas, absolutas y funciones lógicas.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Principios de Álgebra Teórica</strong><br>Manipulación simbólica de monomios y polinomios sin contexto real.</td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Sistemas de Ecuaciones Lineales para Balance de Operaciones:</strong>
+                                Resolución de sistemas lineales de 2 y 3 variables aplicados a balances de materia, mezclas industriales y distribución de cargas en circuitos eléctricos/mallas de fluidos.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- II TRIMESTRE: MATEMÁTICA BÁSICA 2 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>II Trimestre • Matemática Básica 2: Álgebra</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Álgebra Aplicada</span>
+                    <span class="tag-pill tag-nuevo">Cálculo Técnico Introductorio</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Álgebra Tradicional de Pizarra</strong><br>Factorización extensiva de trinomios, productos notables y simplificación algebraica de memoria.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Funciones Matemáticas para Modelado de Procesos Físicos:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Funciones lineales y no lineales en planta: curvas características de bombas centrífugas, leyes de enfriamiento exponencial y respuesta de sensores analógicos (escalado 4–20 mA a unidades de ingeniería).</li>
+                                    <li>Interpolación lineal y polinomial para lectura de tablas técnicas de vapor y refrigerantes.</li>
+                                    <li>Trigonometría vectorial aplicada a fuerzas mecánicas y desfases en corriente alterna (triángulo de potencias: activa, reactiva y aparente).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Fundamentos de Cálculo Técnico Aplicado:</strong>
+                                Comprensión conceptual de la derivada como tasa de cambio instantánea (velocidad, aceleración, gradiente térmico) y de la integral como acumulación continua (cálculo de consumo eléctrico acumulado en kWh a partir de curvas de potencia, o volumen total a partir de caudales variables).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- III TRIMESTRE: MATEMÁTICA APLICADA 1 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>III Trimestre • Matemática Aplicada 1: Estadística</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Estadística Descriptiva</span>
+                    <span class="tag-pill tag-nuevo">Control Estadístico de Procesos (SPC)</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estadística Básica Simple</strong><br>Cálculo manual de medias, medianas, modas y elaboración de gráficas de barras en papel milimetrado.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Analítica Descriptiva de Datos Industriales con Software:</strong>
+                                Medidas de dispersión aplicadas al control de calidad (desviación estándar muestral, varianza, coeficiente de variación). Diagramas de dispersión y regresión lineal simple para predecir desgastes o rendimientos según variables operativas.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura actual)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Control Estadístico de Procesos (SPC - Statistical Process Control):</strong>
+                                Competencia nuclear para mandos medios en plantas certificadas bajo ISO:
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Gráficos de control por variables: cartas X-barra y R (media y rango) para monitorear dimensiones y presiones.</li>
+                                    <li>Reglas de detección de causas especiales de variación (puntos fuera de 3 sigmas, tendencias y patrones anómalos).</li>
+                                    <li>Cálculo e interpretación de Índices de Capacidad de Proceso: <strong>Cp y Cpk</strong> (¿es el proceso capaz de cumplir la tolerancia del cliente?).</li>
+                                    <li>Nivel Sigma de calidad y cálculo de Defectos por Millón de Oportunidades (DPMO).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- IV TRIMESTRE: MATEMÁTICA APLICADA 2 -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>IV Trimestre • Matemática Aplicada 2: Ingeniería Económica y Finanzas Técnicas</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Valor del Dinero</span>
+                    <span class="tag-pill tag-nuevo">Interés Compuesto y VPN/TIR</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Concepto Genérico del Dinero</strong><br>Definiciones teóricas de inflación y fuentes de financiamiento.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Interés Compuesto, Tasas Equivalentes y Tablas de Amortización:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li><strong>Interés Compuesto Aplicado:</strong> Fórmulas de capitalización y descuento financiero; conversión de tasas nominales a tasas efectivas anuales (TEA).</li>
+                                    <li>Modelado de anualidades ordinarias y anticipadas para compra de repuestos y suministros.</li>
+                                    <li>Construcción de tablas de amortización de préstamos bancarios en Guatemala (sistema francés de cuota nivelada vs. sistema alemán).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>(Sin cobertura cuantitativa)</em></td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Evaluación Económica de Proyectos y Reemplazo de Equipos Industriales:</strong>
+                                Capacita al técnico superior para defender propuestas de inversión ante la gerencia:
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Cálculo e interpretación del <strong>Valor Presente Neto (VPN / NPV)</strong> y la <strong>Tasa Interna de Retorno (TIR / IRR)</strong>.</li>
+                                    <li>Periodo de Recuperación de la Inversión (<strong>Payback simple y descontado</strong>).</li>
+                                    <li>Análisis de decisiones: ¿Cuándo conviene reparar un motor/máquina vieja frente a sustituirla por tecnología automatizada eficiente?</li>
+                                    <li>Análisis de Costo de Ciclo de Vida del Activo (LCC - Life Cycle Costing): adquisición, consumo energético, mantenimiento y disposición final.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout-box callout-yellow">
+                    <strong>Impacto en el Perfil Kinal:</strong> El graduado del TSU deja de ser un técnico que solicita repuestos a ciegas: se convierte en un mando medio que presenta justificaciones financieras rigurosas, calculando el ahorro de energía y el retorno de inversión con exactitud matemática.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Eje de Matemática Aplicada TSU • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>

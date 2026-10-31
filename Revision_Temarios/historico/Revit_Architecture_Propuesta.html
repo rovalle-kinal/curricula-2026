@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría Curricular y Propuesta: Autodesk Revit Architecture | Kinal 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .item-delete {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+        .item-update {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            color: #854d0e;
+        }
+        .item-new {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+        .item-keep {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; font-size: 11pt; }
+            .shadow-lg, .shadow-md, .shadow-xl { box-shadow: none !important; }
+            .break-inside-avoid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Ir al Portal Maestro" class="bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs uppercase px-2.5 py-1 rounded transition cursor-pointer">Kinal ETS 2026</a>
+                <span class="text-slate-500 text-sm hidden sm:inline">|</span>
+                <h1 class="text-base sm:text-lg font-semibold tracking-tight text-white flex items-center gap-2">
+                    <i data-lucide="box" class="w-5 h-5 text-teal-400"></i>
+                    Autodesk Revit Architecture
+                </h1>
+            </div>
+
+            <!-- Inter-Course Navigation -->
+            <div class="flex items-center gap-2 text-xs no-print">
+                <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Portal Maestro</a>
+                <a href="AutoCAD_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">AutoCAD</a>
+                <span class="px-2.5 py-1.5 rounded-lg bg-teal-600 text-white font-bold">Revit Arch</span>
+                <a href="Revit_Structure_MEP_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Revit Str/MEP</a>
+                <a href="Civil_3D_Propuesta.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Civil 3D</a>
+                <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i> Imprimir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Breadcrumb & Header Title -->
+        <div>
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
+                <span>Programas de Curso</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span>2025_ARA.xlsx</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-teal-600 font-semibold">Auditoría Curricular & Propuesta 2026</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                Auditoría Curricular: Autodesk Revit Architecture (90 Horas)
+            </h2>
+            <p class="text-slate-600 mt-2 text-base max-w-4xl">
+                Alineación a los estándares del <strong>BIM Forum Guatemala</strong>, modelado de sistemas constructivos locales (muros de block de concreto pórtland y sistemas livianos), gestión de fases de proyecto (remodelación/obra nueva), cómputos métricos dinámicos vinculados a presupuestos y visualización generativa con <strong>Inteligencia Artificial (Veras AI)</strong>.
+            </p>
+        </div>
+
+        <!-- Metric Badges Overview -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
+                    <i data-lucide="trash-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">2 Temas</div>
+                    <div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Teoría / Masas Orgánicas)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">14 Temas</div>
+                    <div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Block, Familias, Cómputos)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">4 Temas</div>
+                    <div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos (Fases, Fórmulas, BIM GT)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
+                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-slate-900">31 Temas</div>
+                    <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Se Mantienen (Modelado y Planimetría)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: INVESTIGACIÓN DE MERCADO GUATEMALA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-teal-50 text-teal-700">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        1. Investigación de Mercado: Demanda de Modeladores BIM en Guatemala (2025–2026)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Diagnóstico sustentado en el BIM Forum Guatemala, la Cámara Guatemalteca de la Construcción (CGC) y estudios de arquitectura líderes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="layers" class="w-4 h-4 text-teal-600"></i>
+                        Estándar BIM Forum Guatemala y Niveles LOD
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Las principales empresas de desarrollo inmobiliario y firmas de diseño en Guatemala han adoptado la <strong>Guía BIM Nacional del BIM Forum GT</strong>. Ya no se contratan dibujantes de líneas simples 2D; el mercado demanda modeladores que entiendan niveles de desarrollo <strong>LOD 200 a LOD 350</strong>, con nomenclaturas de familias ordenadas, subproyectos coordinados y parámetros estandarizados.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Referentes: BIM Forum Guatemala, Guía de Adopción BIM CGC.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="hammer" class="w-4 h-4 text-amber-600"></i>
+                        Materialidad Real de Obra en Guatemala
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El temario tradicional suele enseñar muros genéricos de tabique o ladrillo europeo. En Guatemala el 85% de la construcción formal utiliza <strong>mampostería de block de concreto pórtland (14x19x39 cm)</strong>, repellos, cernidos plásticos o sistemas livianos (Tablayeso / Durock / DensGlass). Es indispensable que los muros, pisos y losas en Revit reflejen capas con espesores reales para que el cómputo métrico sea exacto.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Sistemas: Mampostería de Block, Sistemas Livianos, FHA.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                        <i data-lucide="calculator" class="w-4 h-4 text-blue-600"></i>
+                        Extracción de Cantidades (BIM 5D) y Fases
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Los departamentos de costos y presupuestos exigen que el modelo Revit entregue tablas automáticas de cubicación: metros cuadrados de pintura, volumen de mortero, recuento de puertas y cuadros de acabados vinculados dinámicamente. Además, el mercado de remodelaciones y locales comerciales exige el dominio de <strong>Fases de Proyecto (Existente, Demolición y Nuevo)</strong>.
+                    </p>
+                    <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-semibold">
+                        Aplicación: Cómputos para APU, Remodelaciones comerciales y residenciales.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: FICHA ORIGINAL DE VENTA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-teal-50 text-teal-700">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        2. Pestaña "Reporte" Original (Promesa de Venta al Público)
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Datos curriculares extraídos del archivo fuente <code>2025_ARA.xlsx</code> (versión oficial vigente).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 text-xs">
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Nombre Oficial del Curso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 font-semibold">
+                            Autodesk Revit Architecture
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Horarios y Jornadas:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Matutina: Sábados de 08:00 a 12:30 horas<br>
+                            • Vespertina: Sábados de 13:00 a 17:30 horas
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Duración y Módulos:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            • Duración: <strong>90 Horas</strong> presenciales.<br>
+                            • Estructura: <strong>5 Módulos / Seminarios</strong> progresivos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Dirigido a y Perfil de Ingreso:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Arquitectos, ingenieros, estudiantes, dibujantes técnicos y personas involucradas en la planificación y cuantificación de edificaciones. Requiere nociones de dibujo arquitectónico y manejo de computadora.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Acreditaciones:</span>
+                        <p class="text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200 leading-relaxed">
+                            Diploma oficial de Kinal ETS en Autodesk Revit Architecture y preparación de competencias para optar al examen internacional Autodesk Certified Professional (ACP).
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 block mb-1">Diagnóstico Crítico del Programa Original:</span>
+                        <div class="p-3 rounded-lg bg-teal-50 border border-teal-300 text-teal-900 text-xs leading-relaxed">
+                            <strong>💡 Oportunidad de Modernización:</strong> El pensum actual dedica tiempo a renderizado CPU nativo (proceso lento y obsoleto que ya no se utiliza en estudios de arquitectura) y a masas orgánicas complejas que no reflejan la tipología constructiva de Guatemala. Se actualiza para enfocar en <strong>sistemas constructivos de mampostería local, fases de demolición/obra nueva, tablas dinámicas de vanos y renderizado con IA (Veras)</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
+        <!-- ========================================== -->
+        <section id="propuesta" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-teal-50 text-teal-700">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                3. Distribución Modular Auditada con Código de Color (47 Temas Analizados)
+                            </h3>
+                            <p class="text-sm text-slate-500">
+                                Desglose analítico de cada tema de la hoja <em>Temas Módulos</em> con justificación técnica y de mercado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Filtro -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-semibold no-print">
+                        <button onclick="filterItems('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white shadow-sm transition">Todos</button>
+                        <button onclick="filterItems('delete')" id="btn-delete" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition">🔴 Solo Eliminar</button>
+                        <button onclick="filterItems('update')" id="btn-update" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">🟡 Solo Actualizar</button>
+                        <button onclick="filterItems('new')" id="btn-new" class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">🔵 Solo Nuevos</button>
+                        <button onclick="filterItems('keep')" id="btn-keep" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">🟢 Mantener</button>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula Modular -->
+                <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                    <!-- MÓDULO 1 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-teal-400 font-semibold mb-1">
+                                <span>MÓDULO 1 (Semanas 1 a 4)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Interfaz, Configuraciones y Modelado de Terreno</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Dominar la interfaz paramétrica de Revit, configurar plantillas de trabajo y modelar emplazamientos topográficos con plataformas de desplante.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Introducción y presentación del curso</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Metodología de trabajo BIM y diferencias fundamentales con el dibujo asistido tradicional por capas en CAD.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Diferenciación y enmarcamiento de software en el mercado</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> Discusión teórica genérica sobre marcas y programas. Se elimina para entrar directamente a la práctica de configuración paramétrica.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Configuraciones iniciales para generación de plantillas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Configuración de plantilla estándar institucional Kinal: unidades métricas, grosores de línea para impresión, estilos de texto y cotas según BIM Forum GT.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Dibujo en 2D dentro de Autodesk Revit</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Uso de líneas de modelo y líneas de detalle, aplicación de restricciones paramétricas (candados, cotas de igualdad EQ) y planos de referencia (Reference Planes).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Ficha de arquitectura y panel de construcción</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Navegación en la cinta de opciones, paleta de Propiedades y Navegador de Proyectos (Project Browser).</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Georreferenciación del modelo</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Diferenciación entre Punto Base del Proyecto (Project Base Point), Punto de Reconocimiento (Survey Point) y Norte Real / Norte de Proyecto con coordenadas oficiales de Guatemala.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Generación de topografía (Toposolid / Toposurface)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Transición a la herramienta moderna <strong>Toposolid</strong> (sólidos topográficos en versiones 2024-2026), importación de puntos y curvas desde archivos CAD o Civil 3D.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Modificación de curvas de nivel</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Ajuste de intervalos de curvas principales y secundarias, división de superficies y asignación de sub-regiones para caminos peatonales.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Generación de taludes y plataformas de construcción</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Modelado de plataformas de excavación (Building Pads) para niveles de piso de sótanos y áreas exteriores con taludes de corte.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Cuantificación de corte y relleno</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Comparación de fases de terreno natural vs terreno modificado (Graded Region) para calcular volúmenes de movimiento de tierras.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Niveles y Rejillas (Ejes Estructurales) bajo Estándar BIM Forum GT</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Configuración rigurosa de niveles de entrepiso y rejillas con nombres normalizados (Ejes A, B, C / 1, 2, 3), indispensables para vincular con las disciplinas de Estructuras y MEP.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-teal-400 font-semibold mb-1">
+                                <span>MÓDULO 2 (Semanas 5 a 8)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Modelado Arquitectónico y Familias Constructivas</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Modelar muros multicapa, cubiertas, losas, gradas y desarrollar familias paramétricas con materiales constructivos de Guatemala.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Familias de anotación</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Creación y personalización de etiquetas de puertas, ventanas, materiales y cotas de nivel de piso.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Modelado, configuración y aplicación de muros</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Muros compuestos reales: mampostería de block pórtland de 0.14 m con capas de repello + cernido (0.19 m final), y tabiques de yeso/fibrocemento (Tablayeso / Durock).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Modelado, configuración y aplicación de muros cortina</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Fachadas vidriadas con modulación de rejillas, montantes de aluminio y paneles opacos o de cristal templado.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Modelado, configuración y aplicación de suelos (Floors)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Losas de contrapiso y entrepiso con capas de acabado (piso cerámico, adhesivo, losa de concreto) y aplicación de pendientes en terrazas y duchas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Modelado, configuración y aplicación de cubiertas (Roofs)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cubiertas a dos y cuatro aguas con pendiente porcentual, aleros, limahoyas y techos planos impermeabilizados.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Modelado, configuración y aplicación de gradas y barandillas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Gradas monolíticas de concreto armado según Ley de Blondel (2CH + H = 64 cm), descansos, barandales normados y verificación de altura de paso libre.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Análisis de tipos de plantillas de familias de modelo</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Selección de plantillas métricas: basadas en muro, basadas en suelo, basadas en techo y modelo genérico métrico.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Gestión de materiales constructivos</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Asignación de propiedades gráficas (patrones de corte y superficie en planos), propiedades de aspecto físico PBR para renders y costos unitarios.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Creación de familias de modelo paramétricas</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Desarrollo de familias cargables con parámetros de tipo y ejemplar (anchos, altos, materiales): puertas batientes, ventanas corredizas y clósets a medida.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Visibilidad de gráficos, categorías y subcategorías</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Control de visualización por vista (VG/VV), filtros de color y configuración del rango de vista (View Range) para cortes horizontales a 1.20 m.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Modelado de Muebles Fijos de Cocina y Baño Paramétricos</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Modelado de gabinetes de cocina con top de granito/cuarzo y muebles de baño modulares, muy demandados para presentaciones comerciales en estudios de arquitectura.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-teal-400 font-semibold mb-1">
+                                <span>MÓDULO 3 (Semanas 9 a 12)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Planificación y Planimetría Arquitectónica</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Generar el juego completo de planos arquitectónicos (plantas, cortes, fachadas, detalles y cuadros de vanos) listos para licencia y obra.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Creación de familias de formatos (A1, A2, 24x36 pulg)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Diagramación de láminas con membretes normalizados, sellos profesionales y parámetros compartidos de proyecto.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Plantillas de vista (View Templates)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Estandarización de representación gráfica: plantilla de planta de presentación, planta de cotas, planta de acabados y vistas de sección transversal.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Creación de plantas amuebladas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Distribución espacial con mobiliario interior, aparatos sanitarios y ambientación para folletos comerciales.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Creación de plantas acotadas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Líneas continuas de cotas: cota general exterior, cota entre ejes estructurales y cota a vanos de puertas y ventanas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Creación de plantas de acabados</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Etiquetado de tipo de acabado en pisos, muros y cielos rasos vinculado dinámicamente con la tabla de especificaciones técnicas.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Creación de plantas de áreas</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Esquemas de áreas computables para índice de ocupación del suelo (IOS) y coeficiente de edificación municipal.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Creación de vistas de elevaciones y secciones</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cortes arquitectónicos con visualización de estructura, niveles de piso terminado (NPT) y profundidad de vista.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Colocación de habitaciones (Rooms) y esquemas de color</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cálculo automático de superficie m², perímetro y zonificación con leyendas de color por función arquitectónica.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Creación de vistas de detalle (Drafting Views)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Dibujo 2D de detalles típicos de impermeabilización, coronamiento de muros y encuentros de cubierta.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Creación de vistas de leyenda</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Cuadros de simbología gráfica arquitectónica repetibles en múltiples láminas sin duplicar elementos.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Gestión de Fases de Proyecto: Demolición, Existente y Obra Nueva</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Competencia indispensable para proyectos de remodelación y adecuación de locales comerciales, diferenciando en planos elementos a demoler con líneas punteadas rojas y obra nueva en negro continuo.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-teal-400 font-semibold mb-1">
+                                <span>MÓDULO 4 (Semanas 13 a 16)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Cuantificación de Materiales, Masas y Sets de Entrega</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Extraer tablas de cómputo métrico dinámicas de materiales y componentes, modelar masas conceptuales y preparar set de entrega.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Generación de detalles complementarios</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Componentes de detalle repetitivo (block, mortero, grapas y sellos elásticos).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Generación de llamadas de vista (Callouts)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Llamadas en planta y corte para detalles constructivos a escala 1:10, 1:20 o 1:25 de baños, cocinas y fachadas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Importación y vinculación de detalles CAD (DWG)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Buenas prácticas de importación: vincular en lugar de importar, asignación solo en vista actual (Current View Only) para no sobrecargar el modelo central.</p>
+                            </div>
+
+                            <div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Modelado de elementos orgánicos complejos</span>
+                                    <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 text-[10px] font-extrabold uppercase">🔴 Eliminar</span>
+                                </div>
+                                <p class="text-red-950 font-medium"><strong>¿Por qué eliminar?</strong> El modelado de superficies orgánicas de doble curvatura (tipo Zaha Hadid) consume excesivo tiempo lectivo y no responde a la demanda laboral real en Guatemala, donde priman proyectos ortogonales de vivienda, comercio e industria.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Masas conceptuales 3D (In-Place & Conceptual Mass)</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Estudio volumétrico inicial y generación de elementos arquitectónicos por cara (muro por cara, cubierta por cara).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Formas vacías en masas conceptuales</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Operaciones booleanas de corte para modelar patios de luz, vanos irregulares y retranqueos de fachada.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Tablas de cuantificación de materiales (Material Takeoff)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Cómputo exacto por capas: m² de block de concreto, m² de enlucidos/repellos, m² de piso cerámico y m³ de concreto para cotizaciones y presupuestos de obra.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>8. Tablas de componentes (Schedules / Cuadro de Vanos)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Cuadros automáticos de puertas y ventanas con ancho, alto, sillar, tipo de marco, herrajes y cantidad total agrupada.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>9. Generación de índices de planos</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Tabla dinámica de láminas (Sheet List) que se actualiza automáticamente al agregar o renombrar planos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>10. Generación de set de impresión</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración y guardado de sets de impresión para exportar juegos completos de planos en PDF o DWF.</p>
+                            </div>
+
+                            <!-- Nuevo Propuesto -->
+                            <div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>11. [NUEVO] Fórmulas y Parámetros de Costo en Tablas de Planificación</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-extrabold uppercase">🔵 Propuesta Nueva</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Justificación:</strong> Creación de campos calculados en Revit (Costo Total = Área * Costo Unitario en Quetzales), permitiendo obtener el presupuesto preliminar de arquitectura directamente del modelo.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                        <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                            <div class="flex justify-between items-center text-xs text-teal-400 font-semibold mb-1">
+                                <span>MÓDULO 5 (Semanas 17 a 20)</span>
+                                <span>Duración: ~18 Horas</span>
+                            </div>
+                            <h4 class="text-lg font-bold">Gestión de Información, Trabajo Colaborativo y Visualización</h4>
+                            <p class="text-xs text-slate-300 mt-1">
+                                <strong>Logro esperado:</strong> Implementar trabajo en equipo multiusuario (Worksharing), exportar formatos interoperables (IFC/DWG) y crear visualizaciones fotorrealistas.
+                            </p>
+                        </div>
+                        <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>1. Configuración de cámaras y perspectivas 3D</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Colocación de cámaras cónicas con campo visual y altura de ojo real para vistas peatonales y aéreas.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>2. Configuración de renderizado en la nube y motores en tiempo real</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Reemplazo del lento renderizado CPU por renderizado acelerado en la nube (Autodesk Cloud Rendering) y flujos con motores de render en tiempo real (Twinmotion / Enscape).</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>3. Configuración de impresión avanzada</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Configuración de calidad raster vs vectorial y ploteo directo en escala 100% sin márgenes desalineados.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>4. Configuración de exportación 2D (DWG y PDF)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Mapeo correcto de capas Revit a capas CAD bajo estándar AIA para entrega a ingenierías y contratistas que trabajan en AutoCAD.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>5. Trabajo colaborativo en equipo (Worksharing)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Creación del Modelo Central, asignación de Subproyectos (Worksets) y sincronización de modelos locales en servidores de red o Autodesk Docs.</p>
+                            </div>
+
+                            <div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>6. Exportación de modelo 3D (IFC y NWC)</span>
+                                    <span class="px-2 py-0.5 rounded bg-yellow-200 text-yellow-900 text-[10px] font-extrabold uppercase">🟡 Actualizar</span>
+                                </div>
+                                <p class="text-slate-700"><strong>Actualización:</strong> Exportación bajo esquema openBIM IFC 2x3 e IFC 4 para coordinación interdisciplinaria en Autodesk Navisworks y visores abiertos.</p>
+                            </div>
+
+                            <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>7. Configuración y guardado de plantilla personalizada institucional</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-extrabold uppercase">🟢 Mantener</span>
+                                </div>
+                                <p class="text-slate-700">Compilación final de la plantilla .RTE con familias, plantillas de vista y cuadros de vanos para futuros proyectos del estudiante.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: TABLA MATRIZ DE JUSTIFICACIÓN TÉCNICA -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="p-2.5 rounded-lg bg-slate-100 text-slate-800">
+                    <i data-lucide="table" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        4. Matriz Comparativa: Cambios Curriculares en Autodesk Revit Architecture
+                    </h3>
+                    <p class="text-sm text-slate-500">
+                        Resumen técnico y justificaciones normativas en Guatemala.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
+                    <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-3 border-b border-slate-800">Módulo</th>
+                            <th class="p-3 border-b border-slate-800">Tema Evaluado</th>
+                            <th class="p-3 border-b border-slate-800">Acción</th>
+                            <th class="p-3 border-b border-slate-800">Justificación Técnica y de Mercado</th>
+                            <th class="p-3 border-b border-slate-800">Referente en Guatemala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Diferenciación y enmarcamiento de software</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Contenido teórico de catálogo. Se elimina para ganar horas de modelado práctico de muros y losas.</td>
+                            <td class="p-3 text-slate-500 font-medium">Optimización Curricular Kinal</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Modelado de elementos orgánicos complejos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold uppercase text-[10px]">🔴 Eliminar</span></td>
+                            <td class="p-3 text-slate-600">Superficies de doble curvatura que no se construyen en el 99% de las edificaciones en Guatemala y saturan el rendimiento de la PC.</td>
+                            <td class="p-3 text-slate-500 font-medium">Mercado Inmobiliario Real</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Modelado de Terreno y Toposolid</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Actualizar a la herramienta Toposolid de Revit moderno, permitiendo asignar capas con espesor real de suelo.</td>
+                            <td class="p-3 text-slate-500 font-medium">Autodesk Revit 2024-2026</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 2</td>
+                            <td class="p-3 font-medium">Muros Compuestos y Sistemas Constructivos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Configurar muros de mampostería de block de concreto pórtland con repellos y muros de tablayeso/durock según medidas locales.</td>
+                            <td class="p-3 text-slate-500 font-medium">Normas COGUANOR / FHA</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Cómputos Métricos y Cuadros de Vanos</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Cuantificación por capas de material (Material Takeoff) para alimentar directamente hojas de Análisis de Precios Unitarios (APU).</td>
+                            <td class="p-3 text-slate-500 font-medium">CGC / Presupuestos de Obra</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 5</td>
+                            <td class="p-3 font-medium">Trabajo Colaborativo (Worksharing)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-bold uppercase text-[10px]">🟡 Actualizar</span></td>
+                            <td class="p-3 text-slate-600">Manejo de subproyectos (Worksets) y sincronización con archivo central en red para flujos de trabajo en estudios de diseño.</td>
+                            <td class="p-3 text-slate-500 font-medium">BIM Forum Guatemala</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 1</td>
+                            <td class="p-3 font-medium">Niveles y Rejillas Normalizados</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Estandarización de ejes y alturas para integración federada con disciplinas de estructura y MEP sin desajustes.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Estándar BIM Forum GT</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 3</td>
+                            <td class="p-3 font-medium">Fases de Proyecto (Existente / Demolición)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Control de fases constructivas indispensable para planos de remodelación y ampliación residencial y comercial.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">Práctica Profesional en GT</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-3 font-semibold text-slate-900">Módulo 4</td>
+                            <td class="p-3 font-medium">Fórmulas de Costo Directo en Tablas</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold uppercase text-[10px]">🔵 Nuevo Propuesto</span></td>
+                            <td class="p-3 text-slate-600">Parámetros de costo unitario y fórmulas de subtotal directo en Quetzales dentro de las tablas de cómputo métrico.</td>
+                            <td class="p-3 text-slate-500 font-medium font-semibold text-blue-900">BIM 5D Presupuestos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: APARTADO DE INNOVACIÓN CON IA -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center gap-3 border-b border-indigo-700/50 pb-4">
+                <div class="p-2.5 rounded-lg bg-purple-500/20 text-purple-300">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-purple-500/30 text-purple-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-purple-400/30">Módulo Adicional / Opcional</span>
+                        <h3 class="text-xl font-bold text-white">5. Innovación Tecnológica: IA en Modelado y Visualización con Revit</h3>
+                    </div>
+                    <p class="text-sm text-purple-200 mt-0.5">
+                        Herramientas de inteligencia artificial generativa integradas al flujo de diseño arquitectónico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-amber-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        Renders Instantáneos con Veras AI
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Plugin de IA generativa integrado directamente en la interfaz de Revit que toma la vista 3D del modelo paramétrico y mediante descripciones de texto (prompts) genera renders fotorrealistas de alta calidad en segundos, explorando variantes de materiales, iluminación y vegetación sin tiempos de renderizado.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-amber-200 font-mono">
+                        Herramienta: Veras AI by EvolveLAB / Stable Diffusion.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-purple-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                        Generación de Scripts Dynamo Asistida por LLMs
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Uso de modelos de lenguaje avanzados para redactar nodos de código en Python dentro de Autodesk Dynamo, automatizando tareas repetitivas como renumerar puertas, renombrar láminas o verificar alturas de cielos falsos en segundos sin requerir programación avanzada.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-purple-200 font-mono">
+                        Herramienta: ChatGPT / Claude + Dynamo Python Node.
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
+                    <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        Diseño Generativo de Distribución Espacial
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Uso de Autodesk Generative Design para calcular automáticamente la distribución óptima de mobiliario en oficinas, orientación solar de fachadas y distanciamiento de circulaciones según criterios de iluminación natural y normativa de salidas de emergencia.
+                    </p>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
+                        Herramienta: Autodesk Generative Design for Revit.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        Fundación Kinal • Escuela Técnica Superior • Coordinación Académica • Propuesta Curricular Autodesk Revit Architecture 2026
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script>
+        lucide.createIcons();
+
+        function filterItems(status) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = ['all', 'delete', 'update', 'new', 'keep'];
+
+            buttons.forEach(btn => {
+                const buttonElement = document.getElementById('btn-' + btn);
+                if (buttonElement) {
+                    if (btn === status) {
+                        buttonElement.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    } else {
+                        buttonElement.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                    }
+                }
+            });
+
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

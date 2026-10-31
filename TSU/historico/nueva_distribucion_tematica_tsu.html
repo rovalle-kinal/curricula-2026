@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Distribución Temática TSU 2026 | Fundación Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-ia: #4f46e5;
+            --color-ia-bg: #eef2ff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 36px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+        header p { color: #cbd5e1; font-size: 1.05rem; max-width: 950px; }
+        
+        main { padding: 40px; }
+
+        .callout-gold {
+            border-left: 4px solid var(--kinal-accent);
+            background: #fffbeb;
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+        .callout-gold h4 { color: #92400e; margin-bottom: 6px; font-size: 1.1rem; }
+        .callout-gold p { color: #78350f; font-size: 0.95rem; }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+            margin: 20px 0 36px 0;
+        }
+        .spec-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .spec-icon { font-size: 2rem; line-height: 1; }
+        .spec-title { font-weight: 700; color: var(--kinal-blue); font-size: 0.98rem; margin-bottom: 4px; }
+        .spec-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+        .bimestre-block {
+            margin-bottom: 48px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .bimestre-header {
+            background: #0b1f3a;
+            color: #ffffff;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bimestre-header h2 { font-size: 1.35rem; font-weight: 700; color: #fef08a; }
+        .bimestre-header span { font-size: 0.88rem; color: #94a3b8; }
+
+        .course-row {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+        .course-row:last-child { border-bottom: none; }
+        .course-row:nth-child(even) { background: #fafbfc; }
+
+        .course-title-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .course-title-bar h3 {
+            font-size: 1.2rem;
+            color: var(--kinal-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .badge-code {
+            background: #e2e8f0;
+            color: #334155;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .badge-eje {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .course-obj {
+            font-size: 0.93rem;
+            color: #334155;
+            margin-bottom: 14px;
+            background: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border-left: 3px solid var(--kinal-blue);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 14px;
+        }
+        @media (max-width: 860px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+
+        .units-box {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 14px 18px;
+        }
+        .units-box h4 {
+            font-size: 0.92rem;
+            color: var(--kinal-blue);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .units-box ul {
+            padding-left: 18px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+        }
+        .units-box li { margin-bottom: 4px; }
+
+        .ia-box {
+            background: var(--color-ia-bg);
+            border: 1px solid #c7d2fe;
+            border-radius: 6px;
+            padding: 14px 18px;
+        }
+        .ia-box h4 {
+            font-size: 0.92rem;
+            color: var(--color-ia);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ia-box p {
+            font-size: 0.88rem;
+            color: #3730a3;
+            margin-bottom: 8px;
+        }
+        .spec-relevance {
+            font-size: 0.82rem;
+            color: #4338ca;
+            background: rgba(255,255,255,0.7);
+            padding: 6px 10px;
+            border-radius: 4px;
+            border-left: 2px solid var(--color-ia);
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="header-badge">Propuesta de Rediseño Curricular Integral 2026</span>
+        <h1>Nueva Distribución Temática: Año Académico TSU</h1>
+        <p>Estructura transversal unificada para los 20 cursos del 3er año académico de la Escuela Técnica Superior de Fundación Kinal (Avalado por Universidad del Istmo - UNIS), integrando Inteligencia Artificial como competencia estratégica común a las 7 especialidades.</p>
+    </header>
+    <nav class="nav-bar" style="background: #0b1f3a; padding: 0 40px; display: flex; gap: 16px; overflow-x: auto; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <a href="index.html" style="color: #94a3b8; text-decoration: none; padding: 14px 18px; font-weight: 600; font-size: 0.95rem; display: inline-block;">Portal General (20 Cursos)</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; text-decoration: none; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; display: inline-block;">🗺️ Mapa y Red Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; text-decoration: none; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; display: inline-block;">📚 Temarios por Línea de Estudio</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; text-decoration: none; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; display: inline-block; border-bottom: 3px solid #d97706; background: rgba(255,255,255,0.06);">🌟 Nueva Distribución 2026</a>
+    </nav>
+
+    <nav style="background: #0b1f3a; padding: 0 40px; display: flex; gap: 16px; overflow-x: auto; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <a href="index.html" style="color: #cbd5e1; text-decoration: none; padding: 14px 18px; font-weight: 600; font-size: 0.95rem; display: inline-block;">← Ver Dictamen Detallado de los 20 Cursos (Auditoría Original vs. Modernizada)</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; text-decoration: none; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; display: inline-block; border-bottom: 3px solid var(--kinal-accent);">🌟 Nueva Distribución Temática 2026</a>
+    </nav>
+
+    <main>
+        <div class="callout-gold">
+            <h4>El Reto de la Transversalidad: El Año Académico Común</h4>
+            <p>El 3er Año Académico del TSU se imparte en común para estudiantes de <strong>7 especialidades técnicas diferentes</strong> que ya completaron sus 2 primeros años de especialidad práctica. Por lo tanto, el contenido no debe encerrarse en una sola especialidad técnica, sino consolidar las <strong>competencias transversales de supervisión, rigor cuantitativo, optimización de recursos, transformación digital con IA y ética profesional</strong> que exige la industria guatemalteca para puestos de jefatura y mandos medios.</p>
+        </div>
+
+        <h2 style="color: var(--kinal-blue); margin-bottom: 14px;">Las 7 Especialidades del TSU Integradas</h2>
+        <div class="specialties-grid">
+
+            <div class="spec-card">
+                <div class="spec-icon">🏗️</div>
+                <div>
+                    <div class="spec-title">Construcción</div>
+                    <div class="spec-desc">Supervisión de obras civiles, presupuestos de construcción, seguridad en andamios y calidad de materiales.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">💻</div>
+                <div>
+                    <div class="spec-title">Desarrollo de Aplicaciones Empresariales</div>
+                    <div class="spec-desc">Liderazgo de proyectos de software, DevOps, arquitectura cloud, QA y gobernanza de datos.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">⚡</div>
+                <div>
+                    <div class="spec-title">Electricidad Industrial</div>
+                    <div class="spec-desc">Distribución trifásica, subestaciones, factor de potencia, eficiencia energética y normativas NEC/AMM.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">🔌</div>
+                <div>
+                    <div class="spec-title">Electrónica Industrial</div>
+                    <div class="spec-desc">Instrumentación, acondicionamiento de señales, PLCs, sistemas embebidos e interfaces IoT.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">🚗</div>
+                <div>
+                    <div class="spec-title">Mecánica Automotriz</div>
+                    <div class="spec-desc">Diagnóstico electrónico OBD-II, electromovilidad, gestión de flotas y talleres de servicio automotriz.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">⚙️</div>
+                <div>
+                    <div class="spec-title">Mecánica Industrial</div>
+                    <div class="spec-desc">Mantenimiento electromecánico, maquinado CNC, calderas, sistemas de bombeo y lubricación de plantas.</div>
+                </div>
+            </div>
+    
+            <div class="spec-card">
+                <div class="spec-icon">📡</div>
+                <div>
+                    <div class="spec-title">Telecomunicaciones</div>
+                    <div class="spec-desc">Redes de fibra óptica, enlaces inalámbricos, infraestructura de telecomunicaciones y ciberseguridad física.</div>
+                </div>
+            </div>
+    
+        </div>
+
+        <h2 style="color: var(--kinal-blue); margin-bottom: 20px;">Distribución Temática de los 20 Cursos (Bimestres 1 al 4)</h2>
+
+        <div class="bimestre-block">
+            <div class="bimestre-header">
+                <h2>Bimestre 1</h2>
+                <span>5 Cursos Obligatorios (50 min c/u) • 60 Sesiones Anuales</span>
+            </div>
+    
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🛡️</span> Ética General 1: Antropología y Sentido Trascendente del Trabajo</h3>
+                    <div>
+                        <span class="badge-code">B1-C1</span>
+                        <span class="badge-eje">Formación Humana y Ética</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Forjar el carácter ético del supervisor técnico bajo el ideario de Kinal: la persona en el centro de la operación y el trabajo bien hecho como medio de superación.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. La dignidad inalienable de la persona humana en el entorno laboral</li><li>2. El trabajo como vocación, servicio al prójimo y santificación de la vida ordinaria</li><li>3. Inteligencia emocional, autodominio y templanza bajo la presión de planta u obra</li><li>4. Comunicación no violenta y resolución de conflictos en cuadrillas de trabajo</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Sesgos cognitivos humanos frente a sesgos en modelos de IA: el papel de la conciencia moral que ninguna máquina puede replicar.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Aplica a resolver disputas entre albañiles en obra, técnicos de taller automotriz, programadores bajo estrés de entregas o electricistas en turno nocturno.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>📋</span> Fundamentos de la Administración: Liderazgo Ágil de Mandos Medios</h3>
+                    <div>
+                        <span class="badge-code">B1-C2</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Dotar al técnico de habilidades de supervisión moderna para coordinar equipos multidisciplinarios con enfoque ágil y orientado a resultados.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. El supervisor técnico como puente estratégico entre la alta gerencia y la operación</li><li>2. Estructuras organizacionales horizontales y células de trabajo autónomas</li><li>3. Técnicas de delegación efectiva y retroalimentación constructiva (Feedback 1-on-1)</li><li>4. Gestión del cambio tecnológico y motivación de personal de diferentes generaciones</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Uso de asistentes de IA generativa (Copilots) para redacción ejecutiva de descriptores de puestos, actas técnicas y políticas operativas.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Permite organizar cuadrillas de obra civil, células Scrum de desarrollo, equipos de mantenimiento de redes de telecom o brigadas eléctricas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>⏱️</span> Planeación y Control para el Trabajo: Metodología Visual y OEE</h3>
+                    <div>
+                        <span class="badge-code">B1-C3</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Capacitar en la planificación temporal de proyectos y órdenes de servicio mediante gestión visual y medición de la eficiencia global de equipos.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Secuenciación y balanceo de órdenes de trabajo (OT) en entornos de producción y servicios</li><li>2. Gestión visual del flujo operativo mediante tableros Kanban físicos y digitales (Trello/Notion)</li><li>3. Eficiencia Global de Equipos (OEE): Disponibilidad, Rendimiento y Calidad</li><li>4. Diagramas de Gantt dinámicos y software de cronogramas para proyectos técnicos</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Algoritmos de IA para estimación predictiva de duración de tareas y detección temprana de cuellos de botella en cronogramas.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Monitorea tiempos de atención en taller automotriz, avance de construcción en obra, sprints de software o paradas de maquinaria industrial.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>📐</span> Matemática Básica 1: Aritmética Cuantitativa y Modelado en Hojas de Cálculo</h3>
+                    <div>
+                        <span class="badge-code">B1-C4</span>
+                        <span class="badge-eje">Ciencias Exactas Aplicadas</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Desarrollar el razonamiento cuantitativo y proporcional para estimar rendimientos, calcular factores de escala y automatizar hojas de cálculo técnicas sin errores.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Análisis dimensional y conversiones técnicas rigurosas (Sistema Internacional vs. Inglés)</li><li>2. Proporcionalidad directa e inversa, razones, porcentajes de variación y factores de escala en planos</li><li>3. Formulación y modelado de plantillas técnicas automatizadas en hojas de cálculo (Excel)</li><li>4. Sistemas de ecuaciones lineales aplicados a balances de recursos y estimación de presupuestos</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Uso de asistentes de IA generativa para formulación, depuración y explicación de fórmulas complejas en hojas de cálculo y detección de errores de sintaxis.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Cálculo de rendimientos y cubicajes (Construcción), estimación de costos y horas por sprint (Software), balance de cargas (Electricidad/Telecom), presupuestos de reparación (Automotriz/Mecánica), escalado de circuitos (Electrónica).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>⚖️</span> Física Básica 1: Estática, Fuerzas, Trabajo y Máquinas Simples</h3>
+                    <div>
+                        <span class="badge-code">B1-C5</span>
+                        <span class="badge-eje">Física y Tecnología</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Comprender los principios físicos del equilibrio de fuerzas, momento de torsión, trabajo mecánico y ventaja mecánica aplicados a la seguridad de izaje y estabilidad de equipos.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Estática de partículas y cuerpos rígidos: vectores de fuerza coplanares y primera condición de equilibrio (sumatoria F = 0)</li><li>2. Momento de una fuerza (Torque): brazo de palanca, segunda condición de equilibrio (sumatoria M = 0), apriete seguro y estabilidad</li><li>3. Trabajo mecánico (W = F·d), potencia (Watts y HP), energía y rendimiento/eficiencia mecánica</li><li>4. Máquinas simples y ventaja mecánica: poleas fijas/móviles, polipastos de izaje, palancas, planos inclinados y fricción real de anclajes</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Herramientas de visión artificial en dispositivos móviles para medición digital de ángulos, nivelación y cálculo óptico de distancias en campo.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Capacidad de carga y estabilidad de andamios (Construcción), torque seguro en pernos y culatas (Automotriz/Mecánica), izaje seguro de racks y servidores (Software/Telecom), tensión y flecha en cables y postes (Electricidad/Telecom), montaje y sujeción de gabinetes (Electrónica).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    
+        <div class="bimestre-block">
+            <div class="bimestre-header">
+                <h2>Bimestre 2</h2>
+                <span>5 Cursos Obligatorios (50 min c/u) • 60 Sesiones Anuales</span>
+            </div>
+    
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>⚖️</span> Ética General 2: Libertad Responsable, Compliance e Integridad</h3>
+                    <div>
+                        <span class="badge-code">B2-C1</span>
+                        <span class="badge-eje">Formación Humana y Ética</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Interiorizar la responsabilidad jurídica y moral de las firmas técnicas y desarrollar una cultura de integridad empresarial inquebrantable.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Libertad personal responsable: la responsabilidad civil y penal de las firmas técnicas</li><li>2. La verdad en las bitácoras: prohibición de falsedad en inspecciones y memorias de cálculo</li><li>3. Compliance industrial: prevención de sobornos, dádivas de proveedores y conflicto de intereses</li><li>4. Seguridad psicológica y canales de denuncia de irregularidades técnicas o ambientales</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Auditoría ética de sistemas de decisión algorítmica: prevención de sesgos en compras automatizadas y contrataciones de personal.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Rechazo de compras de repuestos genéricos peligrosos en mecánica/electricidad, rechazo de materiales de mala calidad en construcción o licencias piratas en software.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>💰</span> Herramientas Contables: Costos Industriales y Presupuestos Operativos</h3>
+                    <div>
+                        <span class="badge-code">B2-C2</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Habilitar al supervisor para costear operaciones, justificar inversiones y administrar presupuestos de mantenimiento u obra en lenguaje financiero.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Estructura de costos: Materia Prima Directa (MPD), Mano de Obra (MOD) y Costos Indirectos (CIF)</li><li>2. Cuantificación del costo horario de parada no planificada de equipos (Downtime Cost)</li><li>3. Costeo de órdenes de trabajo (OT), presupuestos de obra y servicios técnicos</li><li>4. Elaboración y control de presupuestos operativos de área (OPEX) y capital (CAPEX básico)</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Modelos de IA para escaneo inteligente de facturas (OCR avanzado), clasificación automática de gastos y detección de desvíos presupuestarios.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Presupuestos de remodelaciones en construcción, costos de reparación mayor en talleres mecánicos, costos de hosting cloud en software o tendido de fibra en telecom.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🦺</span> Administración de RRHH y SSO: Código de Trabajo, Planillas de IGSS y Acuerdo 229-2014</h3>
+                    <div>
+                        <span class="badge-code">B2-C3</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Dominar la legislación laboral guatemalteca, el cálculo de planillas y retenciones del IGSS, y liderar la seguridad ocupacional para lograr cero accidentes en planta u obra.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Código de Trabajo de Guatemala: jornadas diurna, mixta y nocturna, horas extras y libro de salarios</li><li>2. Cálculo de Salarios, Planillas y Retenciones del IGSS (cuota laboral 4.83%, patronal 12.67% y finiquitos)</li><li>3. Seguridad y Salud Ocupacional (SSO): marco legal del Acuerdo Gubernativo 229-2014 y Comités Bipartitos</li><li>4. Identificación de Peligros, Evaluación de Riesgos y Control (Matriz IPERC) y protocolos críticos (LOTO, alturas, EPP)</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Automatización de procesos (RPA) y asistentes de IA para verificación de consistencia en el cálculo de planillas de pago, horas extras y retenciones laborales.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Universal: todo supervisor técnico en las 7 carreras lidera personal de cuadrilla o taller, debiendo verificar horas extras, liquidaciones, descuentos del IGSS y velar por el cumplimiento de las normas de SSO.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>📉</span> Matemática Básica 2: Punto de Equilibrio, Modelado de Funciones y Lógica Matemática</h3>
+                    <div>
+                        <span class="badge-code">B2-C4</span>
+                        <span class="badge-eje">Ciencias Exactas Aplicadas</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Modelar el punto de equilibrio operativo de servicios técnicos y dominar la lógica booleana y la algoritmia para estructurar procesos y hojas de cálculo avanzadas.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Funciones lineales y análisis de punto de equilibrio operativo (Punto de Equilibrio = CF / Margen Contribución) en Excel</li><li>2. Funciones no lineales y modelado de tendencias: depreciación de activos fijos y degradación temporal de equipos</li><li>3. Lógica matemática y operadores booleanos: proposiciones, tablas de verdad (AND, OR, NOT, XOR) y funciones condicionales en Excel</li><li>4. Algoritmia básica y diagramación de flujo de procesos estandarizados bajo normas ANSI/ISO</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Asistentes de IA para traducción de reglas de negocio operativas a diagramas de flujo y árboles de decisión lógica estructurados.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Cálculo de rentabilidad y flujos de procesos en obra civil (Construcción), lógica de programación directa (Software), interbloqueos y condiciones de seguridad (Electricidad/Electrónica), diagnóstico estructurado de fallas en taller (Automotriz/Mecánica), diagramas de conmutación de red (Telecomunicaciones).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🧱</span> Física Aplicada 1: Física de Materiales, Resistencia y Propiedades Físico-Mecánicas</h3>
+                    <div>
+                        <span class="badge-code">B2-C5</span>
+                        <span class="badge-eje">Física y Tecnología</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Comprender el comportamiento mecánico, térmico y dieléctrico de los materiales técnicos bajo esfuerzos reales, garantizando factores de seguridad adecuados y prevención de fallas.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Esfuerzos mecánicos fundamentales (tensión, compresión, cortante, flexión, torsión) y Ley de Hooke</li><li>2. Propiedades mecánicas y térmicas: elasticidad, plasticidad, tenacidad, fatiga de materiales y dilatación térmica lineal</li><li>3. Propiedades eléctricas y dieléctricas: materiales conductores, aislantes, semiconductores y disipación térmica</li><li>4. Criterios técnicos de selección de materiales y prevención de corrosión, degradación ambiental y fallas</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Modelos de IA y herramientas analíticas para búsqueda y comparación automática de propiedades de materiales en bases de datos técnicas.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Resistencia de probetas de concreto y acero (Construcción), aleaciones y disipadores térmicos para servidores y racks (Software/Hardware), tensión en tendidos y rigidez de aisladores (Electricidad/Telecom), esfuerzos en chasis y fatiga en frenos (Automotriz), pernos de sujeción y fatiga de ejes (Mecánica), dieléctricos y pistas en PCB (Electrónica).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    
+        <div class="bimestre-block">
+            <div class="bimestre-header">
+                <h2>Bimestre 3</h2>
+                <span>5 Cursos Obligatorios (50 min c/u) • 60 Sesiones Anuales</span>
+            </div>
+    
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🤖</span> Ética Profesional 1: Automatización, IA y la Transición Justa</h3>
+                    <div>
+                        <span class="badge-code">B3-C1</span>
+                        <span class="badge-eje">Formación Humana y Ética</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Liderar con sensibilidad ética la transformación digital y automatización de procesos, promoviendo el reentrenamiento del personal antes que el despido masivo.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Automatización y el futuro del empleo en Guatemala: el imperativo moral de la transición justa</li><li>2. Reskilling y Upskilling: el deber de elevar las competencias del operario técnico</li><li>3. Ética en IA industrial: prevención de sesgos algorítmicos en evaluaciones de desempeño</li><li>4. Privacidad del trabajador: límites éticos al monitoreo biométrico y software espía</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Uso responsable de herramientas de IA generativa en la empresa: confidencialidad de datos, propiedad intelectual y prevención de fugas de secretos industriales.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Esencial para el supervisor que instala robots en una línea de ensamble, automatiza pruebas de software, o moderniza maquinaria desplazando mano de obra no calificada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🏭</span> Métodos de Producción: Lean Manufacturing y Estandarización 5S</h3>
+                    <div>
+                        <span class="badge-code">B3-C2</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Aplicar la filosofía Lean y las 5S de Kinal para erradicar desperdicios, balancear líneas operativas y maximizar la productividad del área a cargo.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Los 8 desperdicios industriales (Mudas): sobreproducción, tiempos de espera, defectos y mermas</li><li>2. Implementación de 5S en taller y oficina (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) como hábito Kinal</li><li>3. Mapeo de Flujo de Valor (VSM - Value Stream Mapping) del estado actual y futuro</li><li>4. Estandarización de operaciones, tiempo de ciclo (Takt Time) y técnica SMED para cambios rápidos</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Optimización de rutas de producción y balanceo de líneas mediante algoritmos genéticos y modelos de investigación de operaciones con IA.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Optimización del patio de materiales en construcción, reducción de tiempos de servicio en bahías de taller automotriz, flujo de tickets de telecom o sprints ágiles de software.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🤝</span> Servicio al Cliente: Gestión de Clientes B2B y Acuerdos SLA</h3>
+                    <div>
+                        <span class="badge-code">B3-C3</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Desarrollar una mentalidad de servicio profesional tanto hacia el cliente interno (producción/ingeniería) como hacia clientes externos corporativos.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. El concepto de cliente interno en organizaciones técnicas: sinergia mantenimiento-producción</li><li>2. Acuerdos de Nivel de Servicio (SLA - Service Level Agreements) para disponibilidad técnica</li><li>3. Gestión de garantías de maquinaria, soporte técnico postventa y manejo de reclamos B2B</li><li>4. El espíritu de servicio cristiano como diferenciador de excelencia profesional del egresado Kinal</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Agentes conversacionales inteligentes de soporte técnico de primer nivel y análisis automático de sentimiento en tickets de servicio postventa.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Soporte postventa de maquinaria industrial, acuerdos de uptime en redes de telecomunicaciones, garantías de obra civil o contratos de soporte de software (SLA 99.9%).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>📊</span> Matemática Aplicada 1: Estadística Práctica Aplicada y Análisis de Datos Operativos</h3>
+                    <div>
+                        <span class="badge-code">B3-C4</span>
+                        <span class="badge-eje">Ciencias Exactas Aplicadas</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Utilizar la analítica descriptiva en hojas de cálculo y la ley de Pareto para identificar la dispersión de mediciones y priorizar las causas de fallas y mermas operativas.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Estadística descriptiva práctica en hojas de cálculo: media, mediana, moda, desviación estándar y percentiles en Excel</li><li>2. Organización y visualización de datos: tablas de frecuencia, histogramas y diagramas de caja para detección de variabilidad</li><li>3. Principio de Pareto (Regla 80/20) y estratificación para priorización operativa de problemas, defectos o quejas</li><li>4. Tendencias operacionales y correlación lineal simple: diagramas de dispersión, coeficiente de correlación (R) y proyecciones</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Herramientas de IA para análisis exploratorio de datos (Code Interpreter / Data Analysis) para procesar tablas CSV y generar resúmenes estadísticos automáticos.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Dispersión de resistencia en probetas de obra (Construcción), métricas de latencia y tiempos de respuesta (Software), historial de variaciones de voltaje (Electricidad), control de tolerancias de componentes (Electrónica), tiempos de servicio en taller (Automotriz), frecuencia de fallas de máquinas (Mecánica), latencia y disponibilidad de enlaces (Telecom).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>⚡</span> Física Aplicada 2: Energía, Eficiencia Energética y Sostenibilidad Operativa</h3>
+                    <div>
+                        <span class="badge-code">B3-C5</span>
+                        <span class="badge-eje">Física y Tecnología</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Comprender los balances energéticos, el costo de la energía eléctrica industrial en Guatemala y las tecnologías de climatización y energía solar para reducir costos y huella de carbono.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Principios de energía y balances operativos: formas de energía, principio de conservación (Ein = Eout + Pérdidas) y unidades prácticas (J, BTU, kWh)</li><li>2. Potencia eléctrica, consumo en kWh y facturación de energía industrial en Guatemala (pliegos tarifarios EEGSA / ENERGUATE)</li><li>3. Transferencia de calor (conducción, convección, radiación) y climatización básica (HVAC / enfriamiento de espacios técnicos)</li><li>4. Eficiencia energética, fundamentos de energía solar fotovoltaica (paneles, inversores, baterías) y reducción de huella de carbono</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Algoritmos de IA para análisis de curvas de carga eléctrica y detección automática de consumos parásitos o desvíos energéticos.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Aislamiento térmico y ahorro energético en edificaciones (Construcción), consumo y refrigeración de centros de datos (Software), auditorías energéticas y tarifas industriales (Electricidad), disipación de calor en gabinetes (Electrónica), eficiencia térmica en motores y aire acondicionado vehicular (Automotriz), optimización de compresores (Mecánica), radiobases con respaldo solar (Telecom).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    
+        <div class="bimestre-block">
+            <div class="bimestre-header">
+                <h2>Bimestre 4</h2>
+                <span>5 Cursos Obligatorios (50 min c/u) • 60 Sesiones Anuales</span>
+            </div>
+    
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🧠</span> Ética Profesional 2: Principio Human-in-the-Loop y el Trabajo Bien Hecho</h3>
+                    <div>
+                        <span class="badge-code">B4-C1</span>
+                        <span class="badge-eje">Formación Humana y Ética</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Consagrar el principio de que la responsabilidad moral y legal de la supervisión técnica es indelegable a las máquinas, coronando la formación con el ideal del trabajo bien hecho.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. El principio Human-in-the-Loop (HITL): supervisión humana obligatoria en sistemas automatizados e IA</li><li>2. Superación del sesgo de automatización (Automation Bias) y desarrollo del juicio crítico profesional</li><li>3. El trabajo bien hecho Kinal: rechazo al plagio, al 'copia y pega' de IA y veracidad en peritajes</li><li>4. Responsabilidad ambiental, economía circular y gestión ética de residuos peligrosos (e-waste)</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Gobernanza de sistemas autónomos: protocolos para garantizar que en paradas de emergencia, seguridad de vidas o despidos siempre decida una persona.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Universal: ninguna IA debe autorizar una excavación riesgosa, liberar un código bancario a producción, encender una subestación o diagnosticar frenos sin firma humana responsable.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🎯</span> Control de Calidad: Sistemas ISO 9001:2015 y Metodología Six Sigma</h3>
+                    <div>
+                        <span class="badge-code">B4-C2</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Implementar sistemas de gestión de calidad orientados a la prevención en la fuente y dominar la resolución estructurada de problemas mediante el ciclo DMAIC.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Sistemas de Gestión de Calidad bajo norma ISO 9001:2015 y enfoque basado en riesgos</li><li>2. Las 7 herramientas clásicas de la calidad para análisis de causas raíz (Ishikawa, Pareto 80/20)</li><li>3. Aseguramiento de calidad en la fuente y diseño de dispositivos a prueba de errores (Poka-Yoke)</li><li>4. Metodología Six Sigma: ciclo DMAIC (Definir, Medir, Analizar, Mejorar, Controlar) y matrices AMFE</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Visión artificial con redes neuronales convolucionales (CNN) para inspección automática de defectos superficiales y control dimensional a alta velocidad.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Control de fisuras en soldaduras o concreto, inspección de piezas mecanizadas, revisión automática de código (linter con IA), calidad de crimpado de cables o empaque.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>📈</span> Fundamentos del Marketing: Business Intelligence y Analítica con Power BI</h3>
+                    <div>
+                        <span class="badge-code">B4-C3</span>
+                        <span class="badge-eje">Gestión y Supervisión</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Transformar la materia de marketing en inteligencia de negocios B2B y diseño de cuadros de mando (Dashboards) para comunicar resultados de planta a gerencia.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Fundamentos de marketing industrial B2B, propuesta de valor técnica y compras corporativas</li><li>2. Business Intelligence (BI): conexión, modelado y limpieza de datos operativos de planta</li><li>3. Creación de Cuadros de Mando (Dashboards en Power BI): visualización de KPIs de producción y costos</li><li>4. Técnicas de presentación ejecutiva de resultados técnicos ante comités de gerencia y dirección</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Analítica predictiva de demanda y herramientas de procesamiento de lenguaje natural (NLP) para generar resúmenes automáticos de reportes de planta.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Presentación de avance físico-financiero de obra, métricas de fallas vehiculares de flota, indicadores de tiempo medio entre fallas (MTBF/MTTR) o disponibilidad de software.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>🏦</span> Matemática Aplicada 2: Ingeniería Económica, Interés Compuesto y Proyectos</h3>
+                    <div>
+                        <span class="badge-code">B4-C4</span>
+                        <span class="badge-eje">Ciencias Exactas Aplicadas</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Dominar el interés compuesto y las herramientas de evaluación económica para justificar financieramente compras de maquinaria, reemplazos y proyectos técnicos.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Interés compuesto, capitalización discreta/continua, tasas nominales vs. efectivas (TEA) e inflación</li><li>2. Anualidades y tablas de amortización de préstamos comerciales y arrendamiento (Leasing) de equipo</li><li>3. Evaluación financiera de inversiones técnicas: Valor Presente Neto (VPN) y Tasa Interna de Retorno (TIR)</li><li>4. Periodo de recuperación (Payback) y análisis de reemplazo de maquinaria (reparar vs. comprar nuevo)</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Simulaciones estocásticas de Monte Carlo asistidas por IA para análisis de riesgo e incertidumbre en presupuestos de inversión técnica.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Justificar compra de una retroexcavadora en construcción, un escáner automotriz avanzado, un torno CNC, un servidor en la nube o un analizador de espectro telecom.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="course-row">
+                <div class="course-title-bar">
+                    <h3><span>💻</span> Física Aplicada 3: Tecnología, Sensores y Programación Aplicada con Python</h3>
+                    <div>
+                        <span class="badge-code">B4-C5</span>
+                        <span class="badge-eje">Física y Tecnología</span>
+                    </div>
+                </div>
+                <div class="course-obj">
+                    <strong>Objetivo de Supervisión Transversal:</strong> Comprender los principios físicos de sensores y transductores de planta y dominar la lógica de programación en Python para automatizar cálculos técnicos, procesar datos y generar reportes.
+                </div>
+                <div class="content-grid">
+                    <div class="units-box">
+                        <h4>Unidades Temáticas Principales</h4>
+                        <ul>
+                            <li>1. Fundamentos físicos de medición: sensores y transductores de planta (temperatura, proximidad, ópticos, interruptores y presión)</li><li>2. Lógica de programación y sintaxis básica de Python para técnicos (variables, condicionales if/else, bucles for/while)</li><li>3. Automatización de cálculos técnicos, creación de funciones modulares y procesamiento de archivos de datos (CSV)</li><li>4. Visualización gráfica de variables físicas y tendencias (librería matplotlib) y desarrollo de scripts de validación técnica</li>
+                        </ul>
+                    </div>
+                    <div class="ia-box">
+                        <h4>🤖 Subtema de Inteligencia Artificial (IA)</h4>
+                        <p>Asistentes de codificación con Inteligencia Artificial (Copilot / ChatGPT) para generación y depuración de scripts en Python a partir de instrucciones en lenguaje natural.</p>
+                        <div class="spec-relevance">
+                            <strong>Aplicabilidad a las 7 especialidades:</strong> Script en Python para cubicaje y cálculo de materiales (Construcción), integración de scripts con APIs y lógica de backend (Software), cálculo automatizado de caídas de tensión y calibres (Electricidad), adquisición de datos de instrumentación (Electrónica), procesamiento de registros de escáner automotriz OBD-II (Automotriz), análisis de bitácoras de fallas de maquinaria (Mecánica), scripts de monitoreo continuo de conectividad de red (Telecom).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    
+        <div style="background: #e2e8f0; padding: 24px; border-radius: 8px; margin-top: 30px;">
+            <h3 style="color: var(--kinal-blue); margin-bottom: 8px;">Alineación Normativa y Pedagógica Kinal</h3>
+            <ul style="padding-left: 20px; font-size: 0.92rem; color: var(--text-dark);">
+                <li><strong>Ideario Institucional:</strong> Fomento del principio del <em>"trabajo bien hecho"</em>, espíritu de servicio y respeto incondicional a la dignidad humana.</li>
+                <li><strong>Nota Mínima Aprobatoria:</strong> Rigurosamente fijada en <strong>&ge; 75 puntos sobre 100</strong> en todas las evaluaciones formativas y suficiencias.</li>
+                <li><strong>Acreditación de Inglés:</strong> Certificación obligatoria de nivel <strong>A2</strong> en la prueba estandarizada <strong>ELASH II</strong>.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Propuesta de Distribución Temática TSU • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>

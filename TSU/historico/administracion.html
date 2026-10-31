@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Administración y Operaciones | Dictamen Curricular TSU Kinal</title>
+    <style>
+        :root {
+            --kinal-blue: #0f2d59;
+            --kinal-accent: #d97706;
+            --kinal-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --color-actualizar-bg: #fef9c3;
+            --color-actualizar-text: #854d0e;
+            --color-actualizar-border: #facc15;
+            --color-anular-bg: #fee2e2;
+            --color-anular-text: #991b1b;
+            --color-anular-border: #f87171;
+            --color-nuevo-bg: #dbeafe;
+            --color-nuevo-text: #1e40af;
+            --color-nuevo-border: #60a5fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--kinal-blue) 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 32px 40px;
+            border-bottom: 4px solid var(--kinal-accent);
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.25);
+            color: #fef08a;
+            border: 1px solid var(--kinal-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 6px; }
+        header p { color: #cbd5e1; font-size: 0.98rem; }
+        nav.nav-bar {
+            background: #0b1f3a;
+            padding: 0 40px;
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav.nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        nav.nav-bar a:hover { color: #ffffff; border-bottom-color: var(--kinal-accent); }
+        nav.nav-bar a.active { color: #ffffff; background: rgba(255,255,255,0.06); border-bottom-color: var(--kinal-accent); }
+        main { padding: 40px; }
+        
+        .tag-pill {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .tag-actualizar { background: var(--color-actualizar-bg); color: var(--color-actualizar-text); border: 1px solid var(--color-actualizar-border); }
+        .tag-anular { background: var(--color-anular-bg); color: var(--color-anular-text); border: 1px solid var(--color-anular-border); }
+        .tag-nuevo { background: var(--color-nuevo-bg); color: var(--color-nuevo-text); border: 1px solid var(--color-nuevo-border); }
+
+        .analysis-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .analysis-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .analysis-header h3 { font-size: 1.15rem; color: var(--kinal-blue); }
+        .analysis-body { padding: 24px; }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .comp-table th, .comp-table td {
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+        .comp-table th { background: #f1f5f9; color: var(--text-dark); font-weight: 600; }
+
+        .callout-box {
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .callout-yellow { background: var(--color-actualizar-bg); border-left: 4px solid var(--color-actualizar-border); color: var(--color-actualizar-text); }
+        .callout-red { background: var(--color-anular-bg); border-left: 4px solid var(--color-anular-border); color: var(--color-anular-text); }
+        .callout-blue { background: var(--color-nuevo-bg); border-left: 4px solid var(--color-nuevo-border); color: var(--color-nuevo-text); }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 24px 40px;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="header-badge">Eje Curricular: Gestión, Producción y Supervisión</span>
+        <h1>Área de Administración y Operaciones Industriales</h1>
+        <p>Diagnóstico de 8 asignaturas distribuidas en los 4 trimestres del Técnico Superior Universitario (TSU Kinal). Transformación de la administración burocrática clásica en Gestión de Operaciones Ágiles, Lean Manufacturing y Liderazgo de Mandos Medios.</p>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html">Portal General</a>
+        <a href="mapa_curricular.html" style="color: #67e8f9; font-weight: 700;">🗺️ Mapa Curricular</a>
+        <a href="temarios_por_linea.html" style="color: #a7f3d0; font-weight: 700;">📚 Temarios por Línea</a>
+        <a href="nueva_distribucion_tematica_tsu.html" style="color: #fef08a; font-weight: 700;">🌟 Nueva Distribución 2026</a>
+        <a href="administracion.html" class="active">Administración y Operaciones</a>
+        <a href="matematica.html">Matemática Aplicada</a>
+        <a href="fisica.html">Física y Tecnología (IA)</a>
+        <a href="etica.html">Ética Profesional y HITL</a>
+    </nav>
+
+    <main>
+        <!-- I TRIMESTRE -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>I Trimestre • Fundamentos de Administración para la Supervisión & Planeación y Control</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Actualizar Metodología</span>
+                    <span class="tag-pill tag-nuevo">Nuevas Herramientas Ágiles</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Teoría General de la Administración</strong><br>Escuelas clásicas (Taylor, Fayol, Weber). Organigramas formales estáticos y manuales de puestos en papel.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Gestión Moderna de Operaciones para Mandos Medios:</strong>
+                                Reducir la teoría histórica al mínimo y enfocar al supervisor en el rol de liderazgo de piso de planta:
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Estructuras organizacionales horizontales y células de trabajo autónomas.</li>
+                                    <li>Comunicación asertiva, resolución de fricciones operativas y rendición de cuentas (*Accountability*).</li>
+                                    <li>El supervisor como facilitador de procesos y mentor técnico bajo el ideario de servicio Kinal.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Planeación Tradicional</strong><br>Cronogramas manuales, presupuestos estáticos de gasto y control por memorándums.</td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Planificación Operativa con Tableros Visuales y Métricas OEE:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Gestión visual de tareas mediante <strong>Tableros Kanban físicos y digitales</strong> (Trello / ClickUp / Notion).</li>
+                                    <li>Cálculo de Eficiencia Global de Equipos (<strong>OEE - Overall Equipment Effectiveness</strong>): Disponibilidad × Rendimiento × Calidad.</li>
+                                    <li>Diagramas de Gantt dinámicos para paradas de planta y mantenimientos programados.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout-box callout-blue">
+                    <strong>Alineación con la Industria Guatemalteca:</strong> La Cámara de Industria de Guatemala (CIG) señala que las empresas manufactureras ya no requieren supervisores que "vigilen horarios", sino líderes de mando medio que dominen la medición del tiempo de ciclo (*Takt Time*) y la reducción de cuellos de botella en línea.
+                </div>
+            </div>
+        </div>
+
+        <!-- II TRIMESTRE -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>II Trimestre • Herramientas Contables & Administración de RRHH y Seguridad Industrial</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">Costos Industriales</span>
+                    <span class="tag-pill tag-nuevo">SSO Acuerdo 229-2014</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Contabilidad General</strong><br>Balances generales, estados de resultados mercantiles y partidas dobles teóricas.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Contabilidad de Costos Industriales y Presupuestos de Taller:</strong>
+                                El supervisor no es contador público; necesita gestionar los costos del piso de producción:
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Estructura de costos: Materia Prima Directa (MPD), Mano de Obra Directa (MOD) y Costos Indirectos de Fabricación (CIF).</li>
+                                    <li>Cálculo del costo por hora de máquina parada (*Downtime cost*).</li>
+                                    <li>Elaboración y control de presupuestos operativos de mantenimiento (OPEX/CAPEX básico) en hojas de cálculo.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguridad Industrial Genérica</strong><br>Listados generales de accidentes y conceptos básicos de botiquín.</td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Salud y Seguridad Ocupacional (SSO) bajo Marco Legal Guatemalteco:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Cumplimiento estricto del <strong>Acuerdo Gubernativo 229-2014</strong> y sus reformas (Reglamento de SSO de Guatemala).</li>
+                                    <li>Conformación y operación del Comité Bipartito de Salud y Seguridad Ocupacional.</li>
+                                    <li>Matriz de Identificación de Peligros y Evaluación de Riesgos (IPERC) y normas internacionales <strong>ISO 45001</strong>.</li>
+                                    <li>Protocolos de Bloqueo y Etiquetado de Energía (<strong>LOTO</strong>) y Trabajo Seguro en Alturas / Espacios Confinados.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Administración de Personal</strong><br>Formatos de reclutamiento estándar.</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Legislación Laboral de Guatemala y Gestión de Equipos:</strong>
+                                Código de Trabajo guatemalteco (jornadas diurna, nocturna y mixta, cálculo de horas extras, libro de salarios, prestaciones de ley como Bono 14 y Aguinaldo). Liderazgo humano y fomento del trabajo bien hecho.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- III TRIMESTRE -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>III Trimestre • Métodos de Producción & Servicio al Cliente</h3>
+                <div>
+                    <span class="tag-pill tag-nuevo">Lean Manufacturing</span>
+                    <span class="tag-pill tag-anular">Depurar Ventas Retail</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Métodos de Producción Tradicional</strong><br>Estudios de tiempos y movimientos con cronómetro tradicional y diagramas de flujo lineales.</td>
+                            <td><span class="tag-pill tag-nuevo">Nuevo</span></td>
+                            <td>
+                                <strong>Manufactura Esbelta (Lean Manufacturing) y 5S:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>Identificación y eliminación sistemática de los 8 desperdicios industriales (*Mudas*).</li>
+                                    <li>Implementación rigurosa de las <strong>5S</strong> en taller (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) como hábito formativo Kinal.</li>
+                                    <li>Mapeo de Flujo de Valor (<strong>VSM - Value Stream Mapping</strong>) del estado actual y futuro.</li>
+                                    <li>Técnica de cambio rápido de herramientas (<strong>SMED</strong>) para reducir tiempos de preparación de maquinaria.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Servicio al Cliente Comercial</strong><br>Protocolos de cortesía telefónica y atención en mostrador de ventas al por menor.</td>
+                            <td><span class="tag-pill tag-anular">Anular</span></td>
+                            <td>
+                                <div class="callout-box callout-red" style="margin: 0 0 8px 0; padding: 8px 12px;">
+                                    <strong>Motivo de anulación:</strong> El enfoque de venta al menudeo no aporta valor a un técnico superior de planta.
+                                </div>
+                                <strong>Sustituir por: Servicio Técnico Industrial B2B y Gestión del Cliente Interno:</strong>
+                                Acuerdos de Nivel de Servicio (SLA) entre el departamento de mantenimiento y producción. Gestión de garantías técnicas, postventa de maquinaria y espíritu de servicio según el ideario Kinal.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- IV TRIMESTRE -->
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <h3>IV Trimestre • Control de Calidad & Fundamentos de Marketing</h3>
+                <div>
+                    <span class="tag-pill tag-actualizar">ISO 9001 / Six Sigma</span>
+                    <span class="tag-pill tag-anular">Anular 4P Tradicionales</span>
+                    <span class="tag-pill tag-nuevo">Business Intelligence</span>
+                </div>
+            </div>
+            <div class="analysis-body">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Contenido Actual (Pensum 2026)</th>
+                            <th style="width: 20%;">Dictamen</th>
+                            <th style="width: 55%;">Propuesta de Modernización y Pertinencia Industrial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Control de Calidad Elemental</strong><br>Inspección final por muestreo al término de línea (detección de defectos a posteriori).</td>
+                            <td><span class="tag-pill tag-actualizar">Actualizar</span></td>
+                            <td>
+                                <strong>Sistemas de Gestión de Calidad (ISO 9001:2015) y Aseguramiento en la Fuente:</strong>
+                                <ul style="margin: 6px 0 0 16px;">
+                                    <li>De la inspección reactiva al aseguramiento de calidad en la fuente (*Poka-Yoke* / a prueba de errores).</li>
+                                    <li>Las 7 herramientas clásicas de la calidad (Diagrama de Ishikawa, Diagrama de Pareto 80/20, Histogramas, Hojas de verificación).</li>
+                                    <li>Introducción al ciclo de mejora continua <strong>DMAIC (Six Sigma)</strong> y auditorías internas de proceso.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fundamentos de Marketing</strong><br>Las 4 P tradicionales (Producto, Precio, Plaza, Promoción) para productos de consumo masivo (retail).</td>
+                            <td><span class="tag-pill tag-anular">Anular</span></td>
+                            <td>
+                                <div class="callout-box callout-red" style="margin: 0 0 8px 0; padding: 8px 12px;">
+                                    <strong>Motivo de anulación:</strong> Los mandos medios técnicos pierden 50 minutos semanales en teorías de publicidad masiva que jamás aplicarán en la supervisión de operaciones técnicas.
+                                </div>
+                                <strong>Sustituir por: Analítica de Datos y Cuadros de Mando (Dashboards en Power BI):</strong>
+                                Capacitar al supervisor técnico para conectar bases de datos de producción, visualizar KPIs en tiempo real (mermas, paros no programados, piezas conformes) y presentar reportes ejecutivos a gerencia.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout-box callout-yellow">
+                    <strong>Resumen del Dictamen para Administración:</strong> El TSU debe eliminar el perfil "administrativo de escritorio" y formar al <strong>Supervisor de Operaciones e Industria 4.0</strong>, preparado para liderar cuadrillas técnicas, aplicar Lean y hablar el lenguaje financiero de la gerencia con datos precisos.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Fundación Kinal • Escuela Técnica Superior • Eje de Administración y Operaciones TSU • Guatemala, 2026
+    </footer>
+</div>
+
+</body>
+</html>
