@@ -1,512 +1,465 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Área de Mecánica Industrial, Soldadura y Calderas de Vapor | Escuela Técnica Superior — Fundación Kinal</title>
-<!-- Favicon Oficial: Escudo de Fundación Kinal -->
-<link href="assets/escudo_kinal_cuadrado.png" rel="icon" type="image/png"/><rect fill="%2322376D" height="100" rx="22" width="100"></rect><path d="M50 15 C55 35 78 45 78 65 C78 80 65 90 50 90 C35 90 22 80 22 65 C22 45 45 35 50 15 Z" fill="%23EC9123"></path><path d="M50 38 C53 48 64 54 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 54 47 48 50 38 Z" fill="%23FFD166"></path>"&gt;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Mecánica Industrial, Soldadura y Calderas | Escuela Técnica Superior — Fundación Kinal</title>
+    
+    <!-- Favicon Oficial: Escudo Fundación Kinal -->
+    <link rel="icon" type="image/png" href="assets/escudo_kinal_cuadrado.png">
     
     <!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<!-- Google Fonts complementarias para renderizado web fiel a Times y Arial -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&amp;display=swap" rel="stylesheet"/>
-<style>
-        /* =========================================================
-           IDENTIDAD GRÁFICA OFICIAL — FUNDACIÓN KINAL
-           Manual de Identidad Corporativa:
-           - Títulos: Times New Roman / Times Bold
-           - Complementaria / Lectura: Arial (Regular, Italic, Bold)
-           - Color Azul Kinal: C:100 M:90 Y:30 K:15 -> RGB(34, 55, 109) -> #22376D
-           - Color Llama Kinal: C:5 M:50 Y:100 K:0  -> RGB(236, 145, 35) -> #EC9123
-           ========================================================= */
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts: Times Serif + IBM Plex Mono + IBM Plex Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <!--
+    /* =========================================================================
+     * HALLMARK THEME: WHITEPRINT TECHNICAL DOSSIER (LIGHT THEME)
+     * Brand: Fundación Kinal (#22376D Azul Kinal, #EC9123 Llama Kinal)
+     * Principles: Clean architectural paper ground, keylines, zero AI-slop
+     * Ergonomics: Split-Pane Master-Detail with Scannable Tabs
+     * ========================================================================= */
+    -->
+    <style>
         :root {
+            /* Paleta Institucional Kinal */
             --kinal-blue: #22376D;
             --kinal-blue-dark: #152244;
             --kinal-blue-deep: #0D162C;
-            --kinal-blue-light: #2E4A91;
             --kinal-flame: #EC9123;
-            --kinal-gold: #F5A623;
-            --kinal-gray-8c: #888B8D;
-            --kinal-bg-light: #F8F9FA;
-            --kinal-border: #DDE2E5;
+            --kinal-flame-hover: #F29D38;
+            --kinal-bg: #F8FAFC;
+            --kinal-surface: #FFFFFF;
+            --border-tech: 1px solid #CBD5E1;
+            
+            /* Tipografías Oficiales */
+            --font-display: "Times New Roman", Times, "Playfair Display", Georgia, serif;
+            --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+            --font-body: Arial, Helvetica, "IBM Plex Sans", sans-serif;
         }
 
-        body {
-            font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", sans-serif;
-            background-color: var(--kinal-bg-light);
-            color: #1E293B;
+        html, body {
+            overflow-x: clip; /* Hallmark Floor 4 */
+            background-color: #F1F5F9;
+            color: #0F172A;
+            font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Tipografía Corporativa Oficial de Kinal para Títulos */
-        h1, h2, h3, h4, .font-kinal-title, .brand-serif, .font-heading {
-            font-family: "Times New Roman", Times, "Playfair Display", Georgia, serif;
-            letter-spacing: -0.01em;
+        h1, h2, h3, .brand-serif {
+            font-family: var(--font-display);
         }
 
-        .bg-kinal-blue { background-color: var(--kinal-blue); }
-        .bg-kinal-blue-dark { background-color: var(--kinal-blue-dark); }
-        .text-kinal-blue { color: var(--kinal-blue); }
-        .border-kinal-blue { border-color: var(--kinal-blue); }
-
-        .bg-kinal-flame { background-color: var(--kinal-flame); }
-        .text-kinal-flame { color: var(--kinal-flame); }
-        .border-kinal-flame { border-color: var(--kinal-flame); }
-
-        .hero-kinal-gradient {
-            background: linear-gradient(135deg, #0D162C 0%, #152244 45%, #22376D 100%);
+        /* Barra Lateral en Fondo Claro */
+        .sidebar-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            color: #475569;
+            transition: all 0.15s ease;
+        }
+        .sidebar-card:hover {
+            background-color: #F8FAFC;
+            border-color: #94A3B8;
+            color: #0F172A;
+        }
+        .sidebar-card-active {
+            background-color: #EFF6FF !important;
+            border-color: var(--kinal-blue) !important;
+            border-left: 4px solid var(--kinal-flame) !important;
+            box-shadow: 0 2px 8px rgba(34, 55, 109, 0.08);
         }
 
-        /* Código de color auditado institucional */
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: #94A3B8;
+        }
+        .status-indicator-active {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: var(--kinal-flame);
+            box-shadow: 0 0 6px var(--kinal-flame);
+        }
+
+        /* Pestañas de Navegación del Curso */
+        .tab-pill {
+            transition: all 0.15s ease;
+        }
+        .tab-pill-active {
+            color: var(--kinal-blue) !important;
+            border-color: var(--kinal-flame) !important;
+            font-weight: 700 !important;
+        }
+
+        /* Tarjetas de Módulo Hallmark: Precision Keylines */
+        .technical-spec-card {
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+        }
+
+        /* Códigos de Color de Auditoría Oficiales Kinal */
         .item-delete, .status-delete { background-color: #FEF2F2; border-left: 4px solid #DC2626; color: #991B1B; }
         .item-update, .status-update { background-color: #FEFCE8; border-left: 4px solid #EAB308; color: #854D0E; }
         .item-new, .status-new       { background-color: #EFF6FF; border-left: 4px solid #2563EB; color: #1E40AF; }
         .item-keep, .status-keep     { background-color: #F0FDF4; border-left: 4px solid #16A34A; color: #166534; }
         .status-ia                   { background-color: #FAF5FF; border-left: 4px solid #9333EA; color: #6B21A8; }
 
-        @media print { .no-print { display: none !important; } }
-
-        /* Estilos móviles sin desborde */
-        @media (max-width: 767px) {
-            *, *::before, *::after { box-sizing: border-box !important; }
-            html, body { overflow-x: hidden !important; max-width: 100vw !important; }
-            .no-scrollbar::-webkit-scrollbar { display: none !important; }
-            .no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
-            
-            main, section, header, footer, 
-            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-                box-sizing: border-box !important;
-            }
-            .card-hover, [class*="rounded-3xl"], [class*="rounded-2xl"], .area-course-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-                box-sizing: border-box !important;
-            }
-            h1, h2, h3, h4, h5, p, span, a, div {
-                overflow-wrap: break-word !important;
-                word-break: break-word !important;
-            }
-            .tab-btn, button, select, input[type="text"] {
-                min-height: 42px;
-                touch-action: manipulation;
-            }
+        /* Focus accesible instantáneo */
+        a:focus-visible, button:focus-visible, select:focus-visible {
+            outline: 2px solid var(--kinal-flame) !important;
+            outline-offset: 2px !important;
         }
 
-        @media (max-width: 1023px) {
-            .session-item {
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
-                transition: all 0.2s ease;
-            }
-            [id$="-detail-card"] {
-                scroll-margin-top: 80px;
-            }
+        @media print {
+            .no-print, aside { display: none !important; }
+            main { width: 100% !important; max-width: 100% !important; }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
-<!-- ========================================================= -->
-<!-- BARRA INSTITUCIONAL SUPERIOR                              -->
-<!-- ========================================================= -->
-<div class="bg-[#152244] text-white text-xs border-b-2 border-[#EC9123]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap justify-between items-center gap-2">
-<div class="flex items-center gap-3">
-<span class="inline-flex items-center gap-1.5 font-bold tracking-wider uppercase text-[#EC9123]">
-<i class="w-3.5 h-3.5" data-lucide="award"></i> Fundación Kinal
-                </span>
-<span class="text-slate-500">|</span>
-<span class="text-slate-300 font-medium hidden sm:inline">
-                    Ideario Institucional: <em>«El trabajo bien hecho»</em>
-</span>
-</div>
-<div class="flex items-center gap-4 text-slate-300 font-medium">
-<span class="flex items-center gap-1.5">
-<i class="w-3.5 h-3.5 text-[#EC9123]" data-lucide="calendar"></i> Ciclo Académico 2026
-                </span>
-<span class="text-slate-600">|</span>
-<span class="text-emerald-400 font-bold flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="shield-check"></i> Aval UNIS-Kinal
-                </span>
-</div>
-</div>
-</div>
-<!-- ========================================================= -->
-<!-- HEADER CORPORATIVO (SOLO LOGO ETS & BOTONES SUPERIORES)   -->
-<!-- ========================================================= -->
-<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-4">
-<!-- Logotipo de Escuela Técnica Superior (ETS) -->
-<div class="flex items-center">
-<a class="flex items-center group" href="index.html">
-<img alt="Escuela Técnica Superior" class="h-8 sm:h-10 w-auto object-contain transition group-hover:opacity-90" src="assets/escuela_tecnica_superior.png"/>
-</a>
-</div>
-<!-- Navegación: Botones de 1 palabra con fondo blanco (excepto Inicio) -->
-<nav class="flex items-center gap-2 sm:gap-3 text-xs overflow-x-auto no-scrollbar py-1">
-<a class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 border text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border-slate-200 hover:border-[#22376D] font-bold" href="construccion.html">
-<i class="w-4 h-4 text-[#EC9123]" data-lucide="hard-hat"></i> Construcción
-                </a>
-<a class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 border text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border-slate-200 hover:border-[#22376D] font-bold" href="electricidad.html">
-<i class="w-4 h-4 text-[#EC9123]" data-lucide="zap"></i> Electricidad
-                </a>
-<a class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 border text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap ring-2 ring-[#EC9123] border-[#EC9123] font-black" href="mecanica.html">
-<i class="w-4 h-4 text-[#EC9123]" data-lucide="wrench"></i> Industrial
-                </a>
-<a class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 border text-[#22376D] transition flex items-center gap-1.5 shadow-sm whitespace-nowrap border-slate-200 hover:border-[#22376D] font-bold" href="automotriz.html">
-<i class="w-4 h-4 text-[#EC9123]" data-lucide="car"></i> Mecánica
-                </a>
-<a class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-[#22376D] border border-slate-200 transition flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap font-bold" href="index.html">
-<i class="w-4 h-4 text-[#EC9123]" data-lucide="home"></i>
-</a>
-</nav>
-</div>
-</header>
-<!-- ========================================================= -->
-<!-- HERO PRINCIPAL DEL ÁREA (FONDO AZUL DEGRADADO LIMPIO)     -->
-<!-- ========================================================= -->
-<section class="hero-kinal-gradient text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-<div class="max-w-7xl mx-auto space-y-6 relative z-10">
-<!-- Badge institucional superior -->
-<div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#EC9123] text-xs font-bold tracking-wide uppercase">
-<span>Escuela Técnica Superior (ETS) • Ciclo Lectivo 2026</span>
-</div>
-<!-- Título Institucional Times Bold SIN LLAMA -->
-<h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight brand-serif text-white">
-                Área de Mecánica Industrial, Soldadura y Calderas de Vapor
-            </h1>
-<p class="text-slate-200 text-sm sm:text-base lg:text-lg max-w-4xl leading-relaxed">
-                Mantenimiento predictivo industrial con alineación láser de ejes y análisis de vibraciones IoT, calificación de procedimientos y soldadores según códigos internacionales AWS D1.1 y ASME Sección IX (procesos GMAW, FCAW, TIG inoxidable) y operación segura de calderas pirotubulares bajo la normativa de seguridad de recipientes a presión.
-            </p>
-<!-- Cita Doctrinal y Formativa Limpia -->
-<div class="pt-1 text-xs text-slate-300">
-</div>
-<!-- Métricas Clave Consolidadas -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 text-left">
-<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
-<div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Carga Práctica</div>
-<div class="text-2xl sm:text-3xl font-bold brand-serif text-white">540 Horas</div>
-<div class="text-[11px] text-emerald-400 font-medium">100% Taller Especializado</div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
-<div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Especialidades</div>
-<div class="text-2xl sm:text-3xl font-bold brand-serif text-white">3 Programas de Taller</div>
-<div class="text-[11px] text-[#EC9123] font-medium">Currícula Actualizada</div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
-<div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Normativas</div>
-<div class="text-sm font-bold brand-serif text-white line-clamp-2">AWS D1.1 </div>
-<div class="text-[11px] text-amber-300 font-medium">Estándar Industrial</div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/15 space-y-1">
-<div class="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Aprobación Mínima</div>
-<div class="text-2xl sm:text-3xl font-bold brand-serif text-amber-400">≥ 75 Pts</div>
-<div class="text-[11px] text-slate-300 font-medium">Exigencia Kinal / 100</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ========================================================= -->
-<!-- CONTENIDO PRINCIPAL: METODOLOGÍA & CURSOS DEL PENSUM       -->
-<!-- ========================================================= -->
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 flex-1">
-<!-- Metodología de Código de Color Institucional -->
-<div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-<h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-2">
-<i class="w-4 h-4 text-[#22376D]" data-lucide="info"></i> Metodología de Auditoría Curricular Kinal
-            </h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-<div class="p-3 rounded-xl bg-red-50 border border-red-200 text-red-900">
-<strong class="text-red-700 block mb-1">🔴 ROJO (Eliminar)</strong>
-                    Contenidos obsoletos retirados para optimizar el tiempo de taller.
-                </div>
-<div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
-<strong class="text-amber-700 block mb-1">🟡 AMARILLO (Actualizar)</strong>
-                    Temas existentes modernizados según las normas técnicas vigentes.
-                </div>
-<div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-blue-900">
-<strong class="text-blue-700 block mb-1">🔵 AZUL (Propuesta Nueva)</strong>
-                    Nuevas competencias prioritarias demandadas por la industria en Guatemala.
-                </div>
-<div class="p-3 rounded-xl bg-purple-50 border border-purple-200 text-purple-900">
-<strong class="text-purple-700 block mb-1">🟣 PÚRPURA (Innovación IA)</strong>
-                    Módulos aplicados de Inteligencia Artificial incorporados en cada programa.
-                </div>
-</div>
-</div>
-<!-- Selector de Cursos del Área -->
-<div class="space-y-4" id="course-selector-anchor">
-<div class="flex flex-wrap justify-between items-center gap-4">
-<div>
-<h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="layers"></i>
-                        Cursos Auditados de esta Área
-                    </h2>
-<p class="text-xs text-slate-500">Haz clic en cualquier tarjeta para desplegar el informe completo de auditoría.</p>
-</div>
-<div class="flex items-center gap-2 text-xs">
-<label class="text-slate-600 font-semibold" for="area-quick-select">Selector Rápido:</label>
-<select class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 font-medium focus:ring-2 focus:ring-blue-600" id="area-quick-select" onchange="showCourse(this.value)">
-<option value="mantenimiento_mecanico">Mantenimiento Mecánico Industrial (180h)</option>
-<option value="soldadura_industrial">Soldadura Industrial (180h)</option>
-<option value="calderas_vapor">Calderas de Vapor (180h)</option>
-</select>
-</div>
-</div>
-<!-- Grid de Tarjetas de Cursos -->
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-<div class="area-course-card group bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:shadow-lg transition cursor-pointer flex flex-col justify-between" id="card-mantenimiento_mecanico" onclick="showCourse('mantenimiento_mecanico')">
-<div class="space-y-3">
-<div class="flex justify-between items-start">
-<span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-[11px] uppercase tracking-wider">
-                        180 Horas • 10 Módulos
-                    </span>
-<div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition">
-<i class="w-4 h-4" data-lucide="tool"></i>
-</div>
-</div>
-<div>
-<h4 class="text-base font-bold text-slate-900 group-hover:text-blue-700 transition">
-                        Mantenimiento Mecánico Industrial
-                    </h4>
-<p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Alineación láser de ejes, calentadores de inducción para rodamientos, tribología y detección de fugas por ultrasonido.
-                    </p>
-</div>
-</div>
-<div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-<span class="text-purple-700 font-medium flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="bot"></i> IA Aplicada
-                </span>
-<span class="text-blue-600 font-bold group-hover:translate-x-0.5 transition flex items-center gap-0.5">
-                    Ver Auditoría <i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-</span>
-</div>
-</div>
-<div class="area-course-card group bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:shadow-lg transition cursor-pointer flex flex-col justify-between" id="card-soldadura_industrial" onclick="showCourse('soldadura_industrial')">
-<div class="space-y-3">
-<div class="flex justify-between items-start">
-<span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-[11px] uppercase tracking-wider">
-                        180 Horas • 10 Módulos
-                    </span>
-<div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition">
-<i class="w-4 h-4" data-lucide="flame"></i>
-</div>
-</div>
-<div>
-<h4 class="text-base font-bold text-slate-900 group-hover:text-blue-700 transition">
-                        Soldadura Industrial
-                    </h4>
-<p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Calificación según AWS D1.1 y ASME IX, procesos GMAW/FCAW pesados, TIG sanitario en acero inoxidable y líquidos penetrantes.
-                    </p>
-</div>
-</div>
-<div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-<span class="text-purple-700 font-medium flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="bot"></i> IA Aplicada
-                </span>
-<span class="text-blue-600 font-bold group-hover:translate-x-0.5 transition flex items-center gap-0.5">
-                    Ver Auditoría <i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-</span>
-</div>
-</div>
-<div class="area-course-card group bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:shadow-lg transition cursor-pointer flex flex-col justify-between" id="card-calderas_vapor" onclick="showCourse('calderas_vapor')">
-<div class="space-y-3">
-<div class="flex justify-between items-start">
-<span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-[11px] uppercase tracking-wider">
-                        180 Horas • 5 Módulos
-                    </span>
-<div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition">
-<i class="w-4 h-4" data-lucide="gauge"></i>
-</div>
-</div>
-<div>
-<h4 class="text-base font-bold text-slate-900 group-hover:text-blue-700 transition">
-                        Calderas de Vapor
-                    </h4>
-<p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Tratamiento químico de agua, quemadores modulantes, retorno de condensados y cumplimiento del Reglamento de Calderas MinTrab.
-                    </p>
-</div>
-</div>
-<div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-<span class="text-purple-700 font-medium flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="bot"></i> IA Aplicada
-                </span>
-<span class="text-blue-600 font-bold group-hover:translate-x-0.5 transition flex items-center gap-0.5">
-                    Ver Auditoría <i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Visor de Detalle del Curso Seleccionado -->
-<div class="space-y-4 pt-4" id="detail-viewer-wrapper">
-<div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider">
-<span class="flex items-center gap-1.5 text-blue-900">
-<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Informe de Auditoría Completa del Curso
-                </span>
-</div>
-<!-- Contenedores individuales de cursos -->
-<div class="course-detail-pane" id="course-pane-mantenimiento_mecanico" style="display: block;">
-<div class="bg-slate-900 text-white p-4 rounded-t-2xl flex flex-wrap justify-between items-center gap-4">
-<div class="flex items-center gap-3">
-<span class="px-2.5 py-1 rounded bg-blue-600 text-white text-xs font-bold uppercase">Curso 1 de 3</span>
-<span class="text-slate-400">|</span>
-<span class="text-slate-200 font-bold text-sm sm:text-base flex items-center gap-2">
-<i class="w-4 h-4 text-blue-400" data-lucide="tool"></i>
-                        Mantenimiento Mecánico Industrial (180 Horas)
-                    </span>
-</div>
-<div class="flex items-center gap-2">
-<button class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5" onclick="scrollToSelector()">
-<i class="w-3.5 h-3.5" data-lucide="grid"></i> Ver Lista de Cursos
-                    </button>
-</div>
-</div>
-<div class="bg-white border-x border-b border-slate-200 rounded-b-2xl p-6 sm:p-8 space-y-8">
-<div>
-<div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
-<span>Programas de Curso</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span>2026_MMIM.xlsx</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span class="text-blue-600 font-semibold">Auditoría Curricular &amp; Propuesta 2026</span>
-</div>
-<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                Auditoría Curricular: Mantenimiento Mecánico Industrial (180 Horas)
-            </h2>
-<p class="text-slate-600 mt-2 text-base max-w-4xl">
-                Modernización integral orientada a paradas de planta, montaje electromecánico y confiabilidad de activos en Guatemala: Alineación Láser de Ejes, Calentamiento Inductivo de Rodamientos, Análisis Vibracional Básico, Sellos Mecánicos en Bombas Centrífugas y Metodología RCM en sistemas CMMS.
-            </p>
-</div>
-<!-- Metric Badges Overview -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="trash-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">4 Temas</div>
-<div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Petróleo/Historia/Periféricas)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="refresh-cw"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">14 Temas</div>
-<div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Láser/Sellos/CMMS)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="plus-circle"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">3 Temas</div>
-<div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (Láser / Inducción / RCM)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="check-circle-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">75 Temas</div>
-<div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
-</div>
-</div>
-</div>
-<!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
-                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
-                </h3>
-<p class="text-slate-600 text-sm mt-1">
-                    Exigencias técnicas en ingenios azucareros, plantas papeleras, envasadoras de bebidas, cementeras y molinos harineros en Guatemala.
-                </p>
-</div>
-<div class="grid md:grid-cols-3 gap-6 text-sm">
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-blue-600" data-lucide="crosshair"></i>
-                        Alineación Láser de Ejes y Poleas
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Más del 50% de las fallas prematuras de rodamientos y acoples en plantas industriales guatemaltecas son causadas por desalineación de ejes. El método tradicional de regla y calibrador de espesores ya no es tolerado en equipos críticos de más de 25 HP; las empresas exigen alineación láser con reporte digital.
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-amber-600" data-lucide="flame"></i>
-                        Cero Daño Térmico en Montaje de Cojinetes
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        El calentamiento de rodamientos con soplete de acetileno o baños de aceite sucio degrada la metalurgia del acero cromo y quema los sellos de fábrica. La industria exige el uso estricto de calentadores de inducción electromagnética con control térmico por sonda magnética (máximo 110 °C).
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-emerald-600" data-lucide="clipboard-check"></i>
-                        Gestión Digital con CMMS y Cultura RCM
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Las empresas han migrado las órdenes de trabajo de papel a sistemas computarizados (SAP PM, Maximo, Fracttal). El mecánico debe registrar tiempos de paro, causas de fallo según taxonomía ISO 14224 y calcular indicadores de confiabilidad como el OEE y el MTTR.
-                    </p>
-</div>
-</div>
-</section>
-<!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
-                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
-                </h3>
-</div>
-<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
-<div><strong>Programa Académico:</strong> Mantenimiento Mecánico Industrial (2026_MMIM.xlsx)</div>
-<div><strong>Duración Total:</strong> 180 Horas distribuidas en 10 Módulos cronológicos</div>
-<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
-<div><strong>Acreditación:</strong> Diploma de Técnico en Mantenimiento Mecánico Industrial</div>
-<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, destreza manual e interés en maquinaria pesada y mecanismos industriales.</div>
-<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para desmontar, inspeccionar, reparar y alinear bombas, reductores, rodamientos y sistemas de transmisión en plantas manufactureras.</div>
-</div>
-<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
-<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
-<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
-                    Diagnóstico Crítico / Anomalías Detectadas en el Programa Original
-                </h4>
-<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
-<li><strong>Contenido Petroquímico Fuera de Enfoque:</strong> El Módulo 5 dedica clases teóricas a <em>"El petróleo"</em> y <em>"El proceso de destilación"</em>, conocimientos de refinería que no aportan a la labor del mecánico de planta, quien necesita diagnosticar compatibilidad de grasas con jabón de litio/poliurea y viscosidades ISO VG.</li>
-<li><strong>Falta de Metrología Láser en Alineación:</strong> El Módulo 6 se limitaba a métodos tradicionales de alineación de acoples con regla y palpador manual, desfasado de los equipos láser con compensación térmica utilizados en la industria guatemalteca moderna.</li>
-<li><strong>Incongruencia en Tipos de Bombas:</strong> El Módulo 7 incluye <em>"Bomba periférica"</em> (equipo doméstico de bajo caudal), restando tiempo al mantenimiento de bombas centrífugas de procesos químicos y de alimentos con sellos mecánicos dobles.</li>
-</ul>
-</div>
-</section>
-<!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+<body class="bg-slate-100/90 text-slate-800 min-h-screen flex flex-col">
 
-<!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
-<section class="space-y-6" id="propuesta_mantenimiento_mecanico">
+    <!-- ========================================================= -->
+    <!-- BARRA SUPERIOR INSTITUCIONAL (FONDO BLANCO PULIDO)       -->
+    <!-- ========================================================= -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-4">
+            
+            <!-- Logotipo ETS & Kinal -->
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="assets/escuela_tecnica_superior.png" alt="Escuela Técnica Superior" class="h-8 sm:h-9 w-auto object-contain">
+                    <div class="hidden sm:block border-l border-slate-200 pl-3">
+                        <div class="text-[10px] uppercase font-mono tracking-wider text-[#EC9123] font-bold">EXPEDIENTE CURRICULAR 2026</div>
+                        <div class="text-xs font-semibold text-[#22376D]">Fundación Kinal • Auditoría de Contenidos</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navegación entre Áreas Técnicas -->
+            
+        <nav class="flex items-center gap-2 text-xs overflow-x-auto no-scrollbar py-1">
+            
+                <a href="construccion.html" class="px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold flex items-center gap-1.5 transition">
+                    <i data-lucide="hard-hat" class="w-4 h-4 text-[#EC9123]"></i> Construcción
+                </a>
+            
+                <a href="electricidad.html" class="px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold flex items-center gap-1.5 transition">
+                    <i data-lucide="zap" class="w-4 h-4 text-[#EC9123]"></i> Electricidad
+                </a>
+            
+                <a href="mecanica.html" class="px-3.5 py-1.5 rounded-lg bg-[#22376D] text-white border border-[#22376D] font-bold flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="wrench" class="w-4 h-4 text-[#EC9123]"></i> Industrial
+                </a>
+            
+                <a href="automotriz.html" class="px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold flex items-center gap-1.5 transition">
+                    <i data-lucide="car" class="w-4 h-4 text-[#EC9123]"></i> Mecánica
+                </a>
+            
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 transition flex items-center justify-center font-bold">
+            <i data-lucide="home" class="w-4 h-4 text-[#EC9123]"></i>
+        </a>
+    
+        </nav>
+    
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- HERO PRINCIPAL EN FONDO CLARO (WHITEPRINT ARCHITECTURAL)  -->
+    <!-- ========================================================= -->
+    <section class="bg-white border-b border-slate-200 text-slate-900 py-10 px-4 sm:px-6 relative overflow-hidden">
+        <div class="max-w-[1600px] mx-auto space-y-6">
+            
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#22376D] text-xs font-mono font-bold uppercase tracking-wider">
+                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-[#EC9123]"></i>
+                    ESPECIFICACIÓN TÉCNICA INSTITUCIONAL • CICLO LECTIVO 2026
+                </div>
+                <div class="text-xs font-mono text-slate-500 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Dossier de Auditoría Curricular Kinal</span>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-3">
+                    <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight brand-serif text-[#22376D]">
+                        Área de Mecánica Industrial, Soldadura y Calderas
+                    </h1>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl">
+                        Mantenimiento mecánico de planta, alineación de ejes con precisión micrométrica, calificación de soldadores según códigos internacionales AWS D1.1 y ASME Sección IX, y operación segura de calderas de vapor.
+                    </p>
+                </div>
+
+                <!-- Bloque de Métricas Consolidadas -->
+                <div class="lg:col-span-4 grid grid-cols-2 gap-3 font-mono">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">Carga Total</div>
+                        <div class="text-2xl font-black text-[#22376D]">540 Horas</div>
+                        <div class="text-[10px] text-emerald-700 font-semibold">Taller Fabril & Ensayos</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">Especialidades</div>
+                        <div class="text-2xl font-black text-slate-800">3 Expedientes</div>
+                        <div class="text-[10px] text-slate-500 font-medium">Taller & Gabinete</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">Estándar Normativo</div>
+                        <div class="text-xs font-bold text-slate-700 mt-1 line-clamp-1">AWS D1.1 • ASME • OSHA</div>
+                        <div class="text-[10px] text-[#EC9123] font-semibold">Exigencia Industrial</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">Aprobación Mínima</div>
+                        <div class="text-2xl font-black text-amber-600">≥ 75 Pts</div>
+                        <div class="text-[10px] text-slate-500 font-medium">Umbral Kinal / 100</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ÁREA DE TRABAJO: WORKBENCH SPLIT-PANE CON DOCKET LATERAL   -->
+    <!-- ========================================================= -->
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- PANEL LATERAL FIJO (DOCKET DE NAVEGACIÓN EN FONDO CLARO) -->
+            <aside class="lg:col-span-4 xl:col-span-3 space-y-4 lg:sticky lg:top-20">
+                
+                <div class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="layers" class="w-4 h-4 text-[#22376D]"></i>
+                            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-800">
+                                Programas Auditados
+                            </h3>
+                        </div>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-50 text-[#22376D] font-bold border border-blue-200">3 Cursos</span>
+                    </div>
+
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Selecciona un expediente técnico para abrir su ficha completa, temario modular y justificación analítica:
+                    </p>
+
+                    <!-- Lista de Cursos -->
+                    <div class="space-y-2.5">
+                        
+            <button onclick="selectCourseMaster('mantenimiento_mecanico')" id="master-nav-mantenimiento_mecanico" 
+                    class="w-full text-left p-3.5 rounded-xl border transition flex flex-col gap-1.5 sidebar-card-active group focus:outline-none">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="status-indicator-active"></span>
+                        <span class="font-mono text-[10px] font-bold tracking-wider text-slate-500 group-hover:text-[#22376D] uppercase">EXPEDIENTE 01</span>
+                    </div>
+                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">180 Horas</span>
+                </div>
+                <h4 class="font-bold text-sm tracking-tight text-slate-900 group-hover:text-[#22376D] transition leading-snug">
+                    Mantenimiento Mecánico Industrial
+                </h4>
+                <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1.5 border-t border-slate-100">
+                    <span class="text-[11px] font-medium text-slate-500">10 Módulos</span>
+                    <span class="text-[#22376D] font-bold text-[11px] flex items-center gap-1 group-hover:translate-x-0.5 transition">
+                        Ver <i data-lucide="arrow-right" class="w-3 h-3 text-[#EC9123]"></i>
+                    </span>
+                </div>
+            </button>
+        
+
+            <button onclick="selectCourseMaster('soldadura_industrial')" id="master-nav-soldadura_industrial" 
+                    class="w-full text-left p-3.5 rounded-xl border transition flex flex-col gap-1.5 sidebar-card group focus:outline-none">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="status-indicator"></span>
+                        <span class="font-mono text-[10px] font-bold tracking-wider text-slate-500 group-hover:text-[#22376D] uppercase">EXPEDIENTE 02</span>
+                    </div>
+                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">180 Horas</span>
+                </div>
+                <h4 class="font-bold text-sm tracking-tight text-slate-900 group-hover:text-[#22376D] transition leading-snug">
+                    Soldadura Industrial
+                </h4>
+                <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1.5 border-t border-slate-100">
+                    <span class="text-[11px] font-medium text-slate-500">10 Módulos</span>
+                    <span class="text-[#22376D] font-bold text-[11px] flex items-center gap-1 group-hover:translate-x-0.5 transition">
+                        Ver <i data-lucide="arrow-right" class="w-3 h-3 text-[#EC9123]"></i>
+                    </span>
+                </div>
+            </button>
+        
+
+            <button onclick="selectCourseMaster('calderas_vapor')" id="master-nav-calderas_vapor" 
+                    class="w-full text-left p-3.5 rounded-xl border transition flex flex-col gap-1.5 sidebar-card group focus:outline-none">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="status-indicator"></span>
+                        <span class="font-mono text-[10px] font-bold tracking-wider text-slate-500 group-hover:text-[#22376D] uppercase">EXPEDIENTE 03</span>
+                    </div>
+                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">180 Horas</span>
+                </div>
+                <h4 class="font-bold text-sm tracking-tight text-slate-900 group-hover:text-[#22376D] transition leading-snug">
+                    Calderas de Vapor
+                </h4>
+                <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1.5 border-t border-slate-100">
+                    <span class="text-[11px] font-medium text-slate-500">5 Módulos</span>
+                    <span class="text-[#22376D] font-bold text-[11px] flex items-center gap-1 group-hover:translate-x-0.5 transition">
+                        Ver <i data-lucide="arrow-right" class="w-3 h-3 text-[#EC9123]"></i>
+                    </span>
+                </div>
+            </button>
+        
+                    </div>
+
+                    <!-- Código de Color Institucional Resumido -->
+                    <div class="pt-4 border-t border-slate-100 space-y-2 text-[11px] font-mono">
+                        <div class="text-slate-500 font-bold uppercase text-[10px] mb-2 flex items-center gap-1.5">
+                            <i data-lucide="palette" class="w-3.5 h-3.5 text-[#EC9123]"></i> Código de Color
+                        </div>
+                        <div class="flex items-center gap-2 text-red-700">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> 🔴 Rojo: A Eliminar (Obsoletos)
+                        </div>
+                        <div class="flex items-center gap-2 text-amber-700">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> 🟡 Amarillo: A Actualizar (Normas)
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-700">
+                            <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> 🔵 Azul: Nuevas Competencias
+                        </div>
+                        <div class="flex items-center gap-2 text-emerald-700">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> 🟢 Verde: Mantener (Fundamentos)
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- CONTENEDOR PRINCIPAL: EXPEDIENTES DE CURSO ORGANIZADOS POR PESTAÑAS -->
+            <main class="lg:col-span-8 xl:col-span-9 space-y-8 min-w-0" id="main-dossier-viewer">
+                
+        <!-- EXPEDIENTE TÉCNICO COMPLETO: Mantenimiento Mecánico Industrial -->
+        <div id="course-pane-mantenimiento_mecanico" class="course-detail-pane space-y-6" style="display: block;">
+            
+            <!-- CARÁTULA PRINCIPAL DEL EXPEDIENTE (FONDO BLANCO PULIDO) -->
+            <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-6">
+                
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-[#22376D]/10 text-[#22376D] font-mono font-bold uppercase tracking-wider text-[11px] border border-[#22376D]/20">
+                            EXPEDIENTE TÉCNICO 01 • 2026_MMIM.
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-mono text-[11px] border border-slate-200">
+                            10 Módulos
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs">
+                        <span class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> Auditado 2026
+                        </span>
+                        <span class="text-slate-700 font-bold bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200 text-amber-900">
+                            180 Horas
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 brand-serif leading-tight">
+                        Mantenimiento Mecánico Industrial
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-4xl leading-relaxed">
+                        Modernización integral orientada a paradas de planta, montaje electromecánico y confiabilidad de activos en Guatemala: Alineación Láser de Ejes, Calentamiento Inductivo de Rodamientos, Análisis Vibracional Básico, Sellos Mecánicos en Bombas Centrífugas y Metodología RCM en sistemas CMMS.
+                    </p>
+                </div>
+
+                <!-- TABLERO EJECUTIVO DE MODIFICACIONES (4 BLOQUES) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+                    <div class="p-4 rounded-xl bg-red-50/70 border border-red-200 text-red-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-red-800">
+                            <span>🔴 ELIMINAR</span>
+                            <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-red-900 font-mono">4</div>
+                            <div class="text-[11px] text-red-700 mt-0.5 font-medium">Contenidos obsoletos retirados</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-amber-800">
+                            <span>🟡 ACTUALIZAR</span>
+                            <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-amber-900 font-mono">14</div>
+                            <div class="text-[11px] text-amber-800 mt-0.5 font-medium">Temas modernizados con normas</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-blue-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-blue-800">
+                            <span>🔵 NUEVOS</span>
+                            <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-blue-900 font-mono">3</div>
+                            <div class="text-[11px] text-blue-800 mt-0.5 font-medium">Demandados por el mercado GT</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-emerald-800">
+                            <span>🟢 MANTENER</span>
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-emerald-900 font-mono">75</div>
+                            <div class="text-[11px] text-emerald-800 mt-0.5 font-medium">Fundamentos prácticos vigentes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BARRA DE PESTAÑAS TÉCNICAS OPTIMIZADAS -->
+                <div class="border-b border-slate-200 pt-2 flex flex-wrap gap-2 text-xs font-semibold no-print">
+                    <button onclick="switchTab('mantenimiento_mecanico', 'modular')" id="tab-btn-mantenimiento_mecanico-modular"
+                            class="tab-pill tab-pill-active flex items-center gap-2 px-4 py-2.5 border-b-2">
+                        <i data-lucide="git-merge" class="w-4 h-4"></i>
+                        1. Temario Modular Auditado (10 Módulos)
+                    </button>
+                    <button onclick="switchTab('mantenimiento_mecanico', 'ficha')" id="tab-btn-mantenimiento_mecanico-ficha"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        2. Ficha Técnica y Competencias
+                    </button>
+                    <button onclick="switchTab('mantenimiento_mecanico', 'mercado')" id="tab-btn-mantenimiento_mecanico-mercado"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        3. Demanda de Mercado y Normas
+                    </button>
+                    <button onclick="switchTab('mantenimiento_mecanico', 'innovacion')" id="tab-btn-mantenimiento_mecanico-innovacion"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                        4. Matriz Comparativa & IA
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- CONTENEDOR DE PESTAÑAS (MUESTRA LA ACTIVA) -->
+            <div class="tab-content-container space-y-6">
+                
+                <!-- PESTAÑA 1: TEMARIO MODULAR AUDITADO (DEFAULT) -->
+                <div id="tab-pane-mantenimiento_mecanico-modular" class="tab-pane" style="display: block;">
+                    <section class="space-y-6" id="propuesta_mantenimiento_mecanico">
 <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
 <div class="flex items-center gap-3">
@@ -1481,8 +1434,88 @@
 </div>
 </div>
 </section>
-<!-- SECCIÓN 4: Matriz Comparativa -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                </div>
+
+                <!-- PESTAÑA 2: FICHA TÉCNICA Y COMPETENCIAS GENERALES -->
+                <div id="tab-pane-mantenimiento_mecanico-ficha" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+</div>
+<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+<div><strong>Programa Académico:</strong> Mantenimiento Mecánico Industrial (2026_MMIM.xlsx)</div>
+<div><strong>Duración Total:</strong> 180 Horas distribuidas en 10 Módulos cronológicos</div>
+<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+<div><strong>Acreditación:</strong> Diploma de Técnico en Mantenimiento Mecánico Industrial</div>
+<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, destreza manual e interés en maquinaria pesada y mecanismos industriales.</div>
+<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para desmontar, inspeccionar, reparar y alinear bombas, reductores, rodamientos y sistemas de transmisión en plantas manufactureras.</div>
+</div>
+<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Programa Original
+                </h4>
+<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+<li><strong>Contenido Petroquímico Fuera de Enfoque:</strong> El Módulo 5 dedica clases teóricas a <em>"El petróleo"</em> y <em>"El proceso de destilación"</em>, conocimientos de refinería que no aportan a la labor del mecánico de planta, quien necesita diagnosticar compatibilidad de grasas con jabón de litio/poliurea y viscosidades ISO VG.</li>
+<li><strong>Falta de Metrología Láser en Alineación:</strong> El Módulo 6 se limitaba a métodos tradicionales de alineación de acoples con regla y palpador manual, desfasado de los equipos láser con compensación térmica utilizados en la industria guatemalteca moderna.</li>
+<li><strong>Incongruencia en Tipos de Bombas:</strong> El Módulo 7 incluye <em>"Bomba periférica"</em> (equipo doméstico de bajo caudal), restando tiempo al mantenimiento de bombas centrífugas de procesos químicos y de alimentos con sellos mecánicos dobles.</li>
+</ul>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 3: DEMANDA DE MERCADO Y NORMAS -->
+                <div id="tab-pane-mantenimiento_mecanico-mercado" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+<p class="text-slate-600 text-sm mt-1">
+                    Exigencias técnicas en ingenios azucareros, plantas papeleras, envasadoras de bebidas, cementeras y molinos harineros en Guatemala.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-6 text-sm">
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-blue-600" data-lucide="crosshair"></i>
+                        Alineación Láser de Ejes y Poleas
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Más del 50% de las fallas prematuras de rodamientos y acoples en plantas industriales guatemaltecas son causadas por desalineación de ejes. El método tradicional de regla y calibrador de espesores ya no es tolerado en equipos críticos de más de 25 HP; las empresas exigen alineación láser con reporte digital.
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-amber-600" data-lucide="flame"></i>
+                        Cero Daño Térmico en Montaje de Cojinetes
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        El calentamiento de rodamientos con soplete de acetileno o baños de aceite sucio degrada la metalurgia del acero cromo y quema los sellos de fábrica. La industria exige el uso estricto de calentadores de inducción electromagnética con control térmico por sonda magnética (máximo 110 °C).
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-emerald-600" data-lucide="clipboard-check"></i>
+                        Gestión Digital con CMMS y Cultura RCM
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Las empresas han migrado las órdenes de trabajo de papel a sistemas computarizados (SAP PM, Maximo, Fracttal). El mecánico debe registrar tiempos de paro, causas de fallo según taxonomía ISO 14224 y calcular indicadores de confiabilidad como el OEE y el MTTR.
+                    </p>
+</div>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 4: MATRIZ & INNOVACIÓN IA REALISTA -->
+                <div id="tab-pane-mantenimiento_mecanico-innovacion" class="tab-pane space-y-6" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="border-b border-slate-100 pb-4">
 <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 4</span>
 <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
@@ -1529,205 +1562,235 @@
 </table>
 </div>
 </section>
-<!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
-<section class="bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-<div class="flex items-center gap-3 border-b border-white/10 pb-4">
-<div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-300">
-<i class="w-6 h-6" data-lucide="bot"></i>
-</div>
-<div>
-<span class="bg-blue-500/30 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-blue-400/30">Módulo Adicional / Opcional</span>
-<h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Mantenimiento Mecánico</h3>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="activity"></i>
-                        Análisis Predictivo de Vibraciones Mecánicas Asistido por IA
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Sensores inalámbricos triaxiales acoplados a motores y bombas que transmiten datos a modelos de Machine Learning, identificando desbalance, holguras o falla en pista exterior de rodamientos con semanas de anticipación.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: SKF Enlight AI / Prüftechnik OMNITREND AI.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="camera"></i>
-                        Inspección Visual y Detección de Fricción con Cámaras Acústicas IA
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Cámaras de ultrasonido con IA que visualizan en pantalla la procedencia exacta de ruidos de cavitación en tuberías y chirridos de rodamientos no perceptibles al oído humano en entornos ruidosos de fábrica.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Fluke ii910 Acoustic Imager AI.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="file-text"></i>
-                        Asistente RAG para Procedimientos de Desarme y Manuales OEM
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Copilot técnico que analiza planos seccionales y manuales de mantenimiento de reductores Sew-Eurodrive y bombas Goulds, entregando de inmediato torques de apriete, tolerancias de montaje y secuencias seguras de desarme.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Mechanical OEM Copilot / NotebookLM Industrial.
-                    </div>
-</div>
-</div>
-</section>
-</div>
-</div>
-<div class="course-detail-pane" id="course-pane-soldadura_industrial" style="display: none;">
-<div class="bg-slate-900 text-white p-4 rounded-t-2xl flex flex-wrap justify-between items-center gap-4">
-<div class="flex items-center gap-3">
-<span class="px-2.5 py-1 rounded bg-blue-600 text-white text-xs font-bold uppercase">Curso 2 de 3</span>
-<span class="text-slate-400">|</span>
-<span class="text-slate-200 font-bold text-sm sm:text-base flex items-center gap-2">
-<i class="w-4 h-4 text-blue-400" data-lucide="flame"></i>
-                        Soldadura Industrial (180 Horas)
-                    </span>
-</div>
-<div class="flex items-center gap-2">
-<button class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5" onclick="scrollToSelector()">
-<i class="w-3.5 h-3.5" data-lucide="grid"></i> Ver Lista de Cursos
-                    </button>
-</div>
-</div>
-<div class="bg-white border-x border-b border-slate-200 rounded-b-2xl p-6 sm:p-8 space-y-8">
-<div>
-<div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
-<span>Programas de Curso</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span>2025_SI.xlsx</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span class="text-blue-600 font-semibold">Auditoría Curricular &amp; Propuesta 2026</span>
-</div>
-<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                Auditoría Curricular: Soldadura Industrial (180 Horas)
-            </h2>
-<p class="text-slate-600 mt-2 text-base max-w-4xl">
-                Estandarización bajo códigos <strong>AWS D1.1</strong> (Estructuras de Acero) y <strong>ASME Sección IX</strong> (Recipientes y Tuberías a Presión): Procesos SMAW, GMAW, incorporación de GTAW (TIG) Sanitario en Acero Inoxidable 304/316L, simbología AWS A2.4 y Ensayos No Destructivos con Líquidos Penetrantes (PT).
+                    
+    <!-- INNOVACIÓN TECNOLÓGICA: INTELIGENCIA ARTIFICIAL APLICADA (REALISTA Y CERO COSTO) -->
+    <section class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+                    Innovación Tecnológica Aplicada 2026
+                </span>
+                <span class="text-xs font-mono text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 font-semibold flex items-center gap-1.5">
+                    <i data-lucide="smartphone" class="w-4 h-4 text-emerald-600"></i> 100% Accesible (Sin Licencias de Pago)
+                </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="bot" class="w-5 h-5 text-purple-700"></i>
+                Aplicación Práctica de Inteligencia Artificial en Mantenimiento Mecánico Industrial
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-4xl leading-relaxed">
+                Herramientas prácticas orientadas al trabajo real en taller y campo en Guatemala. No requieren adquisición de software comercial ni equipamiento costoso; se operan directamente desde el smartphone del técnico o las herramientas institucionales de Fundación Kinal.
             </p>
-</div>
-<!-- Metric Badges Overview -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="trash-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">4 Temas</div>
-<div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Reborde / Evaluaciones)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="refresh-cw"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">17 Temas</div>
-<div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (AWS D1.1 / E7018 / GMAW)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="plus-circle"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">3 Temas</div>
-<div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (TIG Sanitario / WPS / END)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="check-circle-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">58 Temas</div>
-<div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
-</div>
-</div>
-</div>
-<!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
-                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
-                </h3>
-<p class="text-slate-600 text-sm mt-1">
-                    Exigencias de homologación en proyectos de infraestructura metálica (CGC / AGIES), naves industriales, tanques de almacenamiento y plantas agroindustriales en Guatemala.
-                </p>
-</div>
-<div class="grid md:grid-cols-3 gap-6 text-sm">
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-blue-600" data-lucide="award"></i>
-                        Homologación y Calificación AWS D1.1
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Los contratistas de montaje estructural en Guatemala exigen soldadores calificados bajo código AWS D1.1 en posiciones 3G y 4G con electrodo E7018 de bajo hidrógeno para garantizar resistencia sísmica según las normas AGIES NSE-2. El soldador empírico sin certificación queda excluido de obras formales.
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-amber-600" data-lucide="shield"></i>
-                        Soldadura Sanitaria TIG en Inoxidable
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Las industrias cervecera, azucarera, láctea y farmacéutica de Guatemala tienen una demanda crítica insatisfecha de soldadores de tubería de acero inoxidable AISI 304/316L mediante proceso GTAW (TIG) con purga de argón para líneas libres de bacterias y con cordones interiores lisos.
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-emerald-600" data-lucide="search"></i>
-                        Control de Calidad y Ensayos No Destructivos
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Toda junta de responsabilidad estructural es auditada mediante Ensayos No Destructivos (END). El soldador debe conocer la morfología de defectos comunes (socavaciones, inclusiones de escoria, falta de fusión) y realizar autoinspección visual (VT) y pruebas de líquidos penetrantes (PT).
-                    </p>
-</div>
-</div>
-</section>
-<!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
-                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
-                </h3>
-</div>
-<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
-<div><strong>Programa Académico:</strong> Soldadura Industrial (2025_SI.xlsx)</div>
-<div><strong>Duración Total:</strong> 180 Horas cronológicas distribuidas en 10 Módulos de taller</div>
-<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
-<div><strong>Acreditación:</strong> Diploma Técnico en Soldadura Industrial</div>
-<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, disciplina, buena visión y destreza psicomotriz.</div>
-<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Capacitado para organizar y ejecutar técnicamente uniones soldadas mediante procesos Oxi-Gas, SMAW y GMAW según normas técnicas AWS y especificaciones de fabricación.</div>
-</div>
-<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
-<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
-<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
-                    Diagnóstico Crítico / Anomalías Severas Detectadas en el Archivo Original (2025_SI.xlsx)
-                </h4>
-<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
-<li><strong>Cabeceras con Valores Cero y Marcadores Genéricos:</strong> En el Excel fuente, las cabeceras de los Módulos 1 y 2 tienen el valor numérico <code>0</code>, las fechas de inicio dicen <code>0-enero</code>, y el Módulo 3 se titula textualmente <code>Nombre</code> con indicador de logro <code>Indicador de logro</code>. Esto evidencia una plantilla corrupta o incompleta.</li>
-<li><strong>Error en Horario de Jornada Vespertina:</strong> En la hoja <em>Reporte</em>, la jornada vespertina registra erróneamente <em>"Sábados de 08:00 a 12:30 horas"</em> (horario idéntico a la matutina), en lugar de la tarde (13:00 a 17:30 hrs).</li>
-<li><strong>Omisión Crítica del Proceso TIG Sanitario:</strong> El pensum no contempla en absoluto el proceso GTAW (TIG) en tuberías sanitarias de acero inoxidable, el servicio técnico mejor remunerado y de mayor demanda en la industria guatemalteca.</li>
-<li><strong>Ausencia de Estándares de Calificación WPS/PQR:</strong> El temario se enfoca en ejercicios de taller sin estructurar la preparación del soldador para aprobar pruebas de calificación homologadas por inspectores certificados CWI (Certified Welding Inspector).</li>
-</ul>
-</div>
-</section>
-<!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        </div>
 
-<!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
-<section class="space-y-6" id="propuesta_soldadura_industrial">
+        <div class="grid sm:grid-cols-2 gap-4">
+            
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Identificación de Equivalencias de Rodamientos y Retenedores
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Fotografía o consulta de códigos de rodamientos (SKF, FAG, NSK, Timken) con el móvil para identificar al instante juegos radiales (C3, C4), tipo de sellos (2RS, ZZ) y lubricantes equivalentes recomendados para maquinaria de planta.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Generación Asistida de Procedimientos de Bloqueo y Etiquetado (LOTO)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Estructuración de listas de verificación de energía cero para mantenimiento seguro en bombas, reductores o calderas bajo norma OSHA 1910.147, utilizando asistentes conversacionales libres en el celular.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="flame" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Calculadora Asistida de Parámetros de Soldadura (WPS Básico)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Consulta guiada en smartphone de rangos de amperaje, voltaje, tipo de electrodo (E6010, E7018, inoxidable) y temperatura de precalentamiento según el espesor de placa y bisel conforme a los lineamientos AWS D1.1 / ASME Sección IX.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Monitoreo y Registro de Calidad de Agua en Calderas de Vapor
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Hojas de cálculo en el ecosistema Microsoft de Kinal con fórmulas guiadas para graficar tendencias de pH, sílice, dureza y sulfitos, alertando al operario sobre riesgos de incrustación o corrosión sin software de telemetría costoso.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+    
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <!-- EXPEDIENTE TÉCNICO COMPLETO: Soldadura Industrial -->
+        <div id="course-pane-soldadura_industrial" class="course-detail-pane space-y-6" style="display: none;">
+            
+            <!-- CARÁTULA PRINCIPAL DEL EXPEDIENTE (FONDO BLANCO PULIDO) -->
+            <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-6">
+                
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-[#22376D]/10 text-[#22376D] font-mono font-bold uppercase tracking-wider text-[11px] border border-[#22376D]/20">
+                            EXPEDIENTE TÉCNICO 02 • 2026_SOLDAD.xlsx
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-mono text-[11px] border border-slate-200">
+                            10 Módulos
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs">
+                        <span class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> Auditado 2026
+                        </span>
+                        <span class="text-slate-700 font-bold bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200 text-amber-900">
+                            180 Horas
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 brand-serif leading-tight">
+                        Soldadura Industrial
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-4xl leading-relaxed">
+                        Estandarización bajo códigosAWS D1.1(Estructuras de Acero) yASME Sección IX(Recipientes y Tuberías a Presión): Procesos SMAW, GMAW, incorporación de GTAW (TIG) Sanitario en Acero Inoxidable 304/316L, simbología AWS A2.4 y Ensayos No Destructivos con Líquidos Penetrantes (PT).
+                    </p>
+                </div>
+
+                <!-- TABLERO EJECUTIVO DE MODIFICACIONES (4 BLOQUES) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+                    <div class="p-4 rounded-xl bg-red-50/70 border border-red-200 text-red-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-red-800">
+                            <span>🔴 ELIMINAR</span>
+                            <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-red-900 font-mono">4</div>
+                            <div class="text-[11px] text-red-700 mt-0.5 font-medium">Contenidos obsoletos retirados</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-amber-800">
+                            <span>🟡 ACTUALIZAR</span>
+                            <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-amber-900 font-mono">17</div>
+                            <div class="text-[11px] text-amber-800 mt-0.5 font-medium">Temas modernizados con normas</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-blue-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-blue-800">
+                            <span>🔵 NUEVOS</span>
+                            <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-blue-900 font-mono">3</div>
+                            <div class="text-[11px] text-blue-800 mt-0.5 font-medium">Demandados por el mercado GT</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-emerald-800">
+                            <span>🟢 MANTENER</span>
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-emerald-900 font-mono">58</div>
+                            <div class="text-[11px] text-emerald-800 mt-0.5 font-medium">Fundamentos prácticos vigentes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BARRA DE PESTAÑAS TÉCNICAS OPTIMIZADAS -->
+                <div class="border-b border-slate-200 pt-2 flex flex-wrap gap-2 text-xs font-semibold no-print">
+                    <button onclick="switchTab('soldadura_industrial', 'modular')" id="tab-btn-soldadura_industrial-modular"
+                            class="tab-pill tab-pill-active flex items-center gap-2 px-4 py-2.5 border-b-2">
+                        <i data-lucide="git-merge" class="w-4 h-4"></i>
+                        1. Temario Modular Auditado (10 Módulos)
+                    </button>
+                    <button onclick="switchTab('soldadura_industrial', 'ficha')" id="tab-btn-soldadura_industrial-ficha"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        2. Ficha Técnica y Competencias
+                    </button>
+                    <button onclick="switchTab('soldadura_industrial', 'mercado')" id="tab-btn-soldadura_industrial-mercado"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        3. Demanda de Mercado y Normas
+                    </button>
+                    <button onclick="switchTab('soldadura_industrial', 'innovacion')" id="tab-btn-soldadura_industrial-innovacion"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                        4. Matriz Comparativa & IA
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- CONTENEDOR DE PESTAÑAS (MUESTRA LA ACTIVA) -->
+            <div class="tab-content-container space-y-6">
+                
+                <!-- PESTAÑA 1: TEMARIO MODULAR AUDITADO (DEFAULT) -->
+                <div id="tab-pane-soldadura_industrial-modular" class="tab-pane" style="display: block;">
+                    <section class="space-y-6" id="propuesta_soldadura_industrial">
 <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
 <div class="flex items-center gap-3">
@@ -2590,8 +2653,89 @@
 </div>
 </div>
 </section>
-<!-- SECCIÓN 4: Matriz Comparativa -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                </div>
+
+                <!-- PESTAÑA 2: FICHA TÉCNICA Y COMPETENCIAS GENERALES -->
+                <div id="tab-pane-soldadura_industrial-ficha" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+</div>
+<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+<div><strong>Programa Académico:</strong> Soldadura Industrial (2025_SI.xlsx)</div>
+<div><strong>Duración Total:</strong> 180 Horas cronológicas distribuidas en 10 Módulos de taller</div>
+<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+<div><strong>Acreditación:</strong> Diploma Técnico en Soldadura Industrial</div>
+<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, disciplina, buena visión y destreza psicomotriz.</div>
+<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Capacitado para organizar y ejecutar técnicamente uniones soldadas mediante procesos Oxi-Gas, SMAW y GMAW según normas técnicas AWS y especificaciones de fabricación.</div>
+</div>
+<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
+                    Diagnóstico Crítico / Anomalías Severas Detectadas en el Archivo Original (2025_SI.xlsx)
+                </h4>
+<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+<li><strong>Cabeceras con Valores Cero y Marcadores Genéricos:</strong> En el Excel fuente, las cabeceras de los Módulos 1 y 2 tienen el valor numérico <code>0</code>, las fechas de inicio dicen <code>0-enero</code>, y el Módulo 3 se titula textualmente <code>Nombre</code> con indicador de logro <code>Indicador de logro</code>. Esto evidencia una plantilla corrupta o incompleta.</li>
+<li><strong>Error en Horario de Jornada Vespertina:</strong> En la hoja <em>Reporte</em>, la jornada vespertina registra erróneamente <em>"Sábados de 08:00 a 12:30 horas"</em> (horario idéntico a la matutina), en lugar de la tarde (13:00 a 17:30 hrs).</li>
+<li><strong>Omisión Crítica del Proceso TIG Sanitario:</strong> El pensum no contempla en absoluto el proceso GTAW (TIG) en tuberías sanitarias de acero inoxidable, el servicio técnico mejor remunerado y de mayor demanda en la industria guatemalteca.</li>
+<li><strong>Ausencia de Estándares de Calificación WPS/PQR:</strong> El temario se enfoca en ejercicios de taller sin estructurar la preparación del soldador para aprobar pruebas de calificación homologadas por inspectores certificados CWI (Certified Welding Inspector).</li>
+</ul>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 3: DEMANDA DE MERCADO Y NORMAS -->
+                <div id="tab-pane-soldadura_industrial-mercado" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+<p class="text-slate-600 text-sm mt-1">
+                    Exigencias de homologación en proyectos de infraestructura metálica (CGC / AGIES), naves industriales, tanques de almacenamiento y plantas agroindustriales en Guatemala.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-6 text-sm">
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-blue-600" data-lucide="award"></i>
+                        Homologación y Calificación AWS D1.1
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Los contratistas de montaje estructural en Guatemala exigen soldadores calificados bajo código AWS D1.1 en posiciones 3G y 4G con electrodo E7018 de bajo hidrógeno para garantizar resistencia sísmica según las normas AGIES NSE-2. El soldador empírico sin certificación queda excluido de obras formales.
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-amber-600" data-lucide="shield"></i>
+                        Soldadura Sanitaria TIG en Inoxidable
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Las industrias cervecera, azucarera, láctea y farmacéutica de Guatemala tienen una demanda crítica insatisfecha de soldadores de tubería de acero inoxidable AISI 304/316L mediante proceso GTAW (TIG) con purga de argón para líneas libres de bacterias y con cordones interiores lisos.
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-emerald-600" data-lucide="search"></i>
+                        Control de Calidad y Ensayos No Destructivos
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Toda junta de responsabilidad estructural es auditada mediante Ensayos No Destructivos (END). El soldador debe conocer la morfología de defectos comunes (socavaciones, inclusiones de escoria, falta de fusión) y realizar autoinspección visual (VT) y pruebas de líquidos penetrantes (PT).
+                    </p>
+</div>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 4: MATRIZ & INNOVACIÓN IA REALISTA -->
+                <div id="tab-pane-soldadura_industrial-innovacion" class="tab-pane space-y-6" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="border-b border-slate-100 pb-4">
 <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 4</span>
 <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
@@ -2638,204 +2782,235 @@
 </table>
 </div>
 </section>
-<!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
-<section class="bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-<div class="flex items-center gap-3 border-b border-white/10 pb-4">
-<div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-300">
-<i class="w-6 h-6" data-lucide="bot"></i>
-</div>
-<div>
-<span class="bg-blue-500/30 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-blue-400/30">Módulo Adicional / Opcional</span>
-<h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Soldadura Industrial</h3>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="camera"></i>
-                        Inspección Visual de Cordones de Soldadura con Visión Artificial
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Cámaras de inspección con modelos de redes neuronales que escanean el cordón de soldadura en tiempo real, midiendo el ancho del cordón, la altura de sobreespesor y alertando de porosidades o socavados milimétricos.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Xiris Weld Vision AI / WeldEye Automated Inspection.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="glasses"></i>
-                        Simulación de Arco en Realidad Aumentada con Retroalimentación IA
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Entrenamiento en simuladores de soldadura con algoritmos de IA que miden en microsegundos el ángulo de trabajo, la distancia de arco (arc length) y la velocidad de avance, corrigiendo al aprendiz sin gastar gases ni probetas.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Soldamatic Augmented Training AI / Lincoln VRTEX.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="file-check"></i>
-                        Generador de Especificaciones de Procedimiento (WPS) con IA
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Asistente técnico entrenado en las tablas de variables esenciales de AWS D1.1 y ASME IX que calcula la entrada de calor (heat input en kJ/mm), precalentamiento requerido y secuencia de pases de soldadura.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: WeldAssistant Copilot / AWS Code Consultant.
-                    </div>
-</div>
-</div>
-</section>
-</div>
-</div>
-<div class="course-detail-pane" id="course-pane-calderas_vapor" style="display: none;">
-<div class="bg-slate-900 text-white p-4 rounded-t-2xl flex flex-wrap justify-between items-center gap-4">
-<div class="flex items-center gap-3">
-<span class="px-2.5 py-1 rounded bg-blue-600 text-white text-xs font-bold uppercase">Curso 3 de 3</span>
-<span class="text-slate-400">|</span>
-<span class="text-slate-200 font-bold text-sm sm:text-base flex items-center gap-2">
-<i class="w-4 h-4 text-blue-400" data-lucide="gauge"></i>
-                        Calderas de Vapor (180 Horas)
-                    </span>
-</div>
-<div class="flex items-center gap-2">
-<button class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5" onclick="scrollToSelector()">
-<i class="w-3.5 h-3.5" data-lucide="grid"></i> Ver Lista de Cursos
-                    </button>
-</div>
-</div>
-<div class="bg-white border-x border-b border-slate-200 rounded-b-2xl p-6 sm:p-8 space-y-8">
-<div>
-<div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-2">
-<span>Programas de Curso</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span>2025_CV.xlsx</span>
-<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
-<span class="text-blue-600 font-semibold">Auditoría Curricular &amp; Propuesta 2026</span>
-</div>
-<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                Auditoría Curricular: Calderas de Vapor (180 Horas)
-            </h2>
-<p class="text-slate-600 mt-2 text-base max-w-4xl">
-                Alineación rigurosa con el <strong>Reglamento de Calderas del MinTrab</strong> (Guatemala), tratamiento químico de agua bajo estándar <strong>ASME Consensus</strong>, combustión electrónica con quemadores modulantes, auditoría acústica/térmica de trampas de vapor y recuperación de calor de purgas.
+                    
+    <!-- INNOVACIÓN TECNOLÓGICA: INTELIGENCIA ARTIFICIAL APLICADA (REALISTA Y CERO COSTO) -->
+    <section class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+                    Innovación Tecnológica Aplicada 2026
+                </span>
+                <span class="text-xs font-mono text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 font-semibold flex items-center gap-1.5">
+                    <i data-lucide="smartphone" class="w-4 h-4 text-emerald-600"></i> 100% Accesible (Sin Licencias de Pago)
+                </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="bot" class="w-5 h-5 text-purple-700"></i>
+                Aplicación Práctica de Inteligencia Artificial en Soldadura Industrial
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-4xl leading-relaxed">
+                Herramientas prácticas orientadas al trabajo real en taller y campo en Guatemala. No requieren adquisición de software comercial ni equipamiento costoso; se operan directamente desde el smartphone del técnico o las herramientas institucionales de Fundación Kinal.
             </p>
-</div>
-<!-- Metric Badges Overview -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="trash-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">6 Temas</div>
-<div class="text-xs font-medium text-red-600 uppercase tracking-wider">A Eliminar (Pluma / Evaluaciones)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="refresh-cw"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">10 Temas</div>
-<div class="text-xs font-medium text-amber-600 uppercase tracking-wider">A Actualizar (Modulación/ASME/Trampas)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="plus-circle"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">4 Temas</div>
-<div class="text-xs font-medium text-blue-600 uppercase tracking-wider">Nuevos Propuestos (MinTrab / Ultrasonido / Flash)</div>
-</div>
-</div>
-<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">
-<i class="w-6 h-6" data-lucide="check-circle-2"></i>
-</div>
-<div>
-<div class="text-2xl font-bold text-slate-900">45 Temas</div>
-<div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Fundamentos Conservados</div>
-</div>
-</div>
-</div>
-<!-- SECCIÓN 1: Contexto Industrial y Demanda Laboral en Guatemala -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
-                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
-                </h3>
-<p class="text-slate-600 text-sm mt-1">
-                    Operación crítica de generación de vapor en plantas textiles, ingenios azucareros, industria de alimentos, farmacéutica, bebidas y beneficio de café en Guatemala.
-                </p>
-</div>
-<div class="grid md:grid-cols-3 gap-6 text-sm">
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-blue-600" data-lucide="scale"></i>
-                        Cumplimiento Legal MinTrab (Inspección y Fogoneros)
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        El Ministerio de Trabajo y Previsión Social de Guatemala exige mediante su Reglamento de Calderas que toda caldera cuente con operadores certificados (fogoneros), bitácora de operación diaria foliada, pruebas hidrostáticas periódicas y válvulas de seguridad calibradas. No cumplir acarrea clausura inmediata y responsabilidad penal.
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-amber-600" data-lucide="droplet"></i>
-                        Química del Agua y Prevención de Explosiones
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Un espesor de solo 1 mm de incrustación calcárea en los tubos incrementa el consumo de combustible en un 5% y provoca el sobrecalentamiento del metal hasta la rotura explosiva. Se demanda formación analítica en pruebas de campo diarias de dureza, alcalinidad, fosfatos y ciclos de concentración.
-                    </p>
-</div>
-<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
-<i class="w-5 h-5 text-emerald-600" data-lucide="dollar-sign"></i>
-                        Auditoría Energética de Redes de Vapor y Trampas
-                    </div>
-<p class="text-slate-600 text-xs leading-relaxed">
-                        Una sola trampa de vapor termodinámica abierta en un ramal de 100 psi puede desperdiciar más de USD $8,000 anuales en combustible búnker/diésel. Los técnicos deben dominar la auditoría por ultrasonido y cámaras térmicas para certificar el retorno de condensado caliente al desaireador.
-                    </p>
-</div>
-</div>
-</section>
-<!-- SECCIÓN 2: Ficha Oficial de Venta y Diagnóstico Crítico -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="border-b border-slate-100 pb-4">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
-                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
-                </h3>
-</div>
-<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
-<div><strong>Programa Académico:</strong> Calderas de Vapor (2025_CV.xlsx)</div>
-<div><strong>Duración Total:</strong> 180 Horas distribuidas en 5 Unidades modulares de 36 hrs</div>
-<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
-<div><strong>Acreditación:</strong> Diploma Técnico en Calderas de Vapor / Operador Certificado</div>
-<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, interés en plantas térmicas, física del calor y operaciones de sala de máquinas.</div>
-<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para operar calderas pirotubulares y acuotubulares, supervisar el tratamiento químico del agua, realizar mantenimiento preventivo y optimizar la combustión con seguridad.</div>
-</div>
-<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
-<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
-<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
-                    Diagnóstico Crítico / Anomalías Detectadas en el Archivo Original (2025_CV.xlsx)
-                </h4>
-<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
-<li><strong>Estructura Incompleta en el Excel Original:</strong> El archivo presenta los Módulos 6 al 10 con casillas numéricas <code>0</code> sin contenido, lo que confundía el conteo modular. En realidad, la materia se dosifica en 5 módulos profundos de 36 horas cada uno para completar las 180 horas totales.</li>
-<li><strong>Método Obsoleto de Estimación de Emisiones:</strong> En el Módulo 4 se incluye <em>"Cálculos de pérdidas: método de la pluma"</em>, una técnica visual que ha sido completamente reemplazada por analizadores digitales de combustión con celdas electroquímicas que miden ppm de CO y exceso de aire.</li>
-<li><strong>Omisión del Marco Jurídico MinTrab:</strong> No se explicitaba el estudio detallado del Reglamento de Calderas del Ministerio de Trabajo de Guatemala, esencial para que el operador conozca las responsabilidades penales de la operación y el registro en bitácora foliada.</li>
-</ul>
-</div>
-</section>
-<!-- SECCIÓN 3: Distribución Modular Detallada y Auditoría Tema por Tema -->
+        </div>
 
-<!-- SECCIÓN 3: PROPUESTA CURRICULAR CON CÓDIGO DE COLOR -->
-<section class="space-y-6" id="propuesta_calderas_vapor">
+        <div class="grid sm:grid-cols-2 gap-4">
+            
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Identificación de Equivalencias de Rodamientos y Retenedores
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Fotografía o consulta de códigos de rodamientos (SKF, FAG, NSK, Timken) con el móvil para identificar al instante juegos radiales (C3, C4), tipo de sellos (2RS, ZZ) y lubricantes equivalentes recomendados para maquinaria de planta.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Generación Asistida de Procedimientos de Bloqueo y Etiquetado (LOTO)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Estructuración de listas de verificación de energía cero para mantenimiento seguro en bombas, reductores o calderas bajo norma OSHA 1910.147, utilizando asistentes conversacionales libres en el celular.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="flame" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Calculadora Asistida de Parámetros de Soldadura (WPS Básico)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Consulta guiada en smartphone de rangos de amperaje, voltaje, tipo de electrodo (E6010, E7018, inoxidable) y temperatura de precalentamiento según el espesor de placa y bisel conforme a los lineamientos AWS D1.1 / ASME Sección IX.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Monitoreo y Registro de Calidad de Agua en Calderas de Vapor
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Hojas de cálculo en el ecosistema Microsoft de Kinal con fórmulas guiadas para graficar tendencias de pH, sílice, dureza y sulfitos, alertando al operario sobre riesgos de incrustación o corrosión sin software de telemetría costoso.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+    
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <!-- EXPEDIENTE TÉCNICO COMPLETO: Calderas de Vapor -->
+        <div id="course-pane-calderas_vapor" class="course-detail-pane space-y-6" style="display: none;">
+            
+            <!-- CARÁTULA PRINCIPAL DEL EXPEDIENTE (FONDO BLANCO PULIDO) -->
+            <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-6">
+                
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-[#22376D]/10 text-[#22376D] font-mono font-bold uppercase tracking-wider text-[11px] border border-[#22376D]/20">
+                            EXPEDIENTE TÉCNICO 03 • 2026_CALDER.xlsx
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-mono text-[11px] border border-slate-200">
+                            5 Módulos
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs">
+                        <span class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> Auditado 2026
+                        </span>
+                        <span class="text-slate-700 font-bold bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200 text-amber-900">
+                            180 Horas
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 brand-serif leading-tight">
+                        Calderas de Vapor
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-4xl leading-relaxed">
+                        Alineación rigurosa con elReglamento de Calderas del MinTrab(Guatemala), tratamiento químico de agua bajo estándarASME Consensus, combustión electrónica con quemadores modulantes, auditoría acústica/térmica de trampas de vapor y recuperación de calor de purgas.
+                    </p>
+                </div>
+
+                <!-- TABLERO EJECUTIVO DE MODIFICACIONES (4 BLOQUES) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+                    <div class="p-4 rounded-xl bg-red-50/70 border border-red-200 text-red-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-red-800">
+                            <span>🔴 ELIMINAR</span>
+                            <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-red-900 font-mono">6</div>
+                            <div class="text-[11px] text-red-700 mt-0.5 font-medium">Contenidos obsoletos retirados</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-amber-800">
+                            <span>🟡 ACTUALIZAR</span>
+                            <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-amber-900 font-mono">10</div>
+                            <div class="text-[11px] text-amber-800 mt-0.5 font-medium">Temas modernizados con normas</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-blue-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-blue-800">
+                            <span>🔵 NUEVOS</span>
+                            <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-blue-900 font-mono">4</div>
+                            <div class="text-[11px] text-blue-800 mt-0.5 font-medium">Demandados por el mercado GT</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-xs font-bold text-emerald-800">
+                            <span>🟢 MANTENER</span>
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-2xl sm:text-3xl font-black text-emerald-900 font-mono">45</div>
+                            <div class="text-[11px] text-emerald-800 mt-0.5 font-medium">Fundamentos prácticos vigentes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BARRA DE PESTAÑAS TÉCNICAS OPTIMIZADAS -->
+                <div class="border-b border-slate-200 pt-2 flex flex-wrap gap-2 text-xs font-semibold no-print">
+                    <button onclick="switchTab('calderas_vapor', 'modular')" id="tab-btn-calderas_vapor-modular"
+                            class="tab-pill tab-pill-active flex items-center gap-2 px-4 py-2.5 border-b-2">
+                        <i data-lucide="git-merge" class="w-4 h-4"></i>
+                        1. Temario Modular Auditado (5 Módulos)
+                    </button>
+                    <button onclick="switchTab('calderas_vapor', 'ficha')" id="tab-btn-calderas_vapor-ficha"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        2. Ficha Técnica y Competencias
+                    </button>
+                    <button onclick="switchTab('calderas_vapor', 'mercado')" id="tab-btn-calderas_vapor-mercado"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        3. Demanda de Mercado y Normas
+                    </button>
+                    <button onclick="switchTab('calderas_vapor', 'innovacion')" id="tab-btn-calderas_vapor-innovacion"
+                            class="tab-pill flex items-center gap-2 px-4 py-2.5 border-b-2 text-slate-500 hover:text-slate-800 border-transparent">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                        4. Matriz Comparativa & IA
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- CONTENEDOR DE PESTAÑAS (MUESTRA LA ACTIVA) -->
+            <div class="tab-content-container space-y-6">
+                
+                <!-- PESTAÑA 1: TEMARIO MODULAR AUDITADO (DEFAULT) -->
+                <div id="tab-pane-calderas_vapor-modular" class="tab-pane" style="display: block;">
+                    <section class="space-y-6" id="propuesta_calderas_vapor">
 <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
 <div class="flex items-center gap-3">
@@ -3487,8 +3662,88 @@
 </div>
 </div>
 </section>
-<!-- SECCIÓN 4: Matriz Comparativa -->
-<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                </div>
+
+                <!-- PESTAÑA 2: FICHA TÉCNICA Y COMPETENCIAS GENERALES -->
+                <div id="tab-pane-calderas_vapor-ficha" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 2</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="file-spreadsheet"></i>
+                    Ficha Oficial de Venta ("Reporte") y Diagnóstico Crítico de Anomalías
+                </h3>
+</div>
+<div class="grid md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+<div><strong>Programa Académico:</strong> Calderas de Vapor (2025_CV.xlsx)</div>
+<div><strong>Duración Total:</strong> 180 Horas distribuidas en 5 Unidades modulares de 36 hrs</div>
+<div><strong>Jornadas:</strong> Matutina y Vespertina (Sábados de 8:00 a 12:30 y 13:00 a 17:30 hrs)</div>
+<div><strong>Acreditación:</strong> Diploma Técnico en Calderas de Vapor / Operador Certificado</div>
+<div class="md:col-span-2"><strong>Perfil de Ingreso:</strong> Tercer grado de educación básica, interés en plantas térmicas, física del calor y operaciones de sala de máquinas.</div>
+<div class="md:col-span-2"><strong>Perfil de Egreso:</strong> Competencia para operar calderas pirotubulares y acuotubulares, supervisar el tratamiento químico del agua, realizar mantenimiento preventivo y optimizar la combustión con seguridad.</div>
+</div>
+<div class="bg-amber-50 border border-amber-300 rounded-xl p-5 space-y-3">
+<h4 class="text-amber-900 font-bold text-sm flex items-center gap-2">
+<i class="w-5 h-5 text-amber-600" data-lucide="alert-triangle"></i>
+                    Diagnóstico Crítico / Anomalías Detectadas en el Archivo Original (2025_CV.xlsx)
+                </h4>
+<ul class="text-xs text-amber-950 space-y-2 list-disc list-inside leading-relaxed">
+<li><strong>Estructura Incompleta en el Excel Original:</strong> El archivo presenta los Módulos 6 al 10 con casillas numéricas <code>0</code> sin contenido, lo que confundía el conteo modular. En realidad, la materia se dosifica en 5 módulos profundos de 36 horas cada uno para completar las 180 horas totales.</li>
+<li><strong>Método Obsoleto de Estimación de Emisiones:</strong> En el Módulo 4 se incluye <em>"Cálculos de pérdidas: método de la pluma"</em>, una técnica visual que ha sido completamente reemplazada por analizadores digitales de combustión con celdas electroquímicas que miden ppm de CO y exceso de aire.</li>
+<li><strong>Omisión del Marco Jurídico MinTrab:</strong> No se explicitaba el estudio detallado del Reglamento de Calderas del Ministerio de Trabajo de Guatemala, esencial para que el operador conozca las responsabilidades penales de la operación y el registro en bitácora foliada.</li>
+</ul>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 3: DEMANDA DE MERCADO Y NORMAS -->
+                <div id="tab-pane-calderas_vapor-mercado" class="tab-pane" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+<div class="border-b border-slate-100 pb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 1</span>
+<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+<i class="w-5 h-5 text-blue-600" data-lucide="trending-up"></i>
+                    Contexto Industrial y Demanda Laboral en Guatemala (2026)
+                </h3>
+<p class="text-slate-600 text-sm mt-1">
+                    Operación crítica de generación de vapor en plantas textiles, ingenios azucareros, industria de alimentos, farmacéutica, bebidas y beneficio de café en Guatemala.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-6 text-sm">
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-blue-600" data-lucide="scale"></i>
+                        Cumplimiento Legal MinTrab (Inspección y Fogoneros)
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        El Ministerio de Trabajo y Previsión Social de Guatemala exige mediante su Reglamento de Calderas que toda caldera cuente con operadores certificados (fogoneros), bitácora de operación diaria foliada, pruebas hidrostáticas periódicas y válvulas de seguridad calibradas. No cumplir acarrea clausura inmediata y responsabilidad penal.
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-amber-600" data-lucide="droplet"></i>
+                        Química del Agua y Prevención de Explosiones
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Un espesor de solo 1 mm de incrustación calcárea en los tubos incrementa el consumo de combustible en un 5% y provoca el sobrecalentamiento del metal hasta la rotura explosiva. Se demanda formación analítica en pruebas de campo diarias de dureza, alcalinidad, fosfatos y ciclos de concentración.
+                    </p>
+</div>
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+<div class="font-bold text-slate-900 flex items-center gap-2 text-base">
+<i class="w-5 h-5 text-emerald-600" data-lucide="dollar-sign"></i>
+                        Auditoría Energética de Redes de Vapor y Trampas
+                    </div>
+<p class="text-slate-600 text-xs leading-relaxed">
+                        Una sola trampa de vapor termodinámica abierta en un ramal de 100 psi puede desperdiciar más de USD $8,000 anuales en combustible búnker/diésel. Los técnicos deben dominar la auditoría por ultrasonido y cámaras térmicas para certificar el retorno de condensado caliente al desaireador.
+                    </p>
+</div>
+</div>
+</section>
+                </div>
+
+                <!-- PESTAÑA 4: MATRIZ & INNOVACIÓN IA REALISTA -->
+                <div id="tab-pane-calderas_vapor-innovacion" class="tab-pane space-y-6" style="display: none;">
+                    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
 <div class="border-b border-slate-100 pb-4">
 <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Sección 4</span>
 <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
@@ -3535,111 +3790,242 @@
 </table>
 </div>
 </section>
-<!-- SECCIÓN 5: Innovación Tecnológica: Inteligencia Artificial Aplicada -->
-<section class="bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-<div class="flex items-center gap-3 border-b border-white/10 pb-4">
-<div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-300">
-<i class="w-6 h-6" data-lucide="bot"></i>
-</div>
-<div>
-<span class="bg-blue-500/30 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider border border-blue-400/30">Módulo Adicional / Opcional</span>
-<h3 class="text-xl font-bold text-white">Innovación Tecnológica: Inteligencia Artificial en Calderas de Vapor</h3>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="sliders"></i>
-                        Optimización Predictiva de la Relación Aire/Combustible con ML
+                    
+    <!-- INNOVACIÓN TECNOLÓGICA: INTELIGENCIA ARTIFICIAL APLICADA (REALISTA Y CERO COSTO) -->
+    <section class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+                    Innovación Tecnológica Aplicada 2026
+                </span>
+                <span class="text-xs font-mono text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 font-semibold flex items-center gap-1.5">
+                    <i data-lucide="smartphone" class="w-4 h-4 text-emerald-600"></i> 100% Accesible (Sin Licencias de Pago)
+                </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="bot" class="w-5 h-5 text-purple-700"></i>
+                Aplicación Práctica de Inteligencia Artificial en Calderas de Vapor
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-4xl leading-relaxed">
+                Herramientas prácticas orientadas al trabajo real en taller y campo en Guatemala. No requieren adquisición de software comercial ni equipamiento costoso; se operan directamente desde el smartphone del técnico o las herramientas institucionales de Fundación Kinal.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+            
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="search" class="w-5 h-5"></i>
                     </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Algoritmos que analizan la temperatura ambiente, humedad del aire y la señal de oxígeno en chimenea para ajustar la curva de combustión del quemador en tiempo real, maximizando la eficiencia térmica del generador.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Combustion Copilot AI / Yokogawa TDLS AI.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="camera"></i>
-                        Auditoría de Aislamiento y Redes de Vapor con Termografía Asistida por IA
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Cámaras térmicas con reconocimiento de patrones que escanean kilómetros de tubería de vapor y calculan automáticamente los dólares perdidos por radiación en válvulas sin chaqueta térmica aislante.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: FLIR Thermal Studio AI / Spirax Sarco Steam Energy Monitor.
-                    </div>
-</div>
-<div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 space-y-3">
-<div class="text-blue-300 font-bold text-sm flex items-center gap-2">
-<i class="w-4 h-4" data-lucide="droplet"></i>
-                        Dosificación Química Inteligente y Predicción de Incrustación
-                    </div>
-<p class="text-xs text-slate-200 leading-relaxed">
-                        Modelos de machine learning conectados a sondas de conductividad y pH que ajustan automáticamente la inyección de dispersantes y purga de lodos, previniendo arrastres corrosivos de vapor húmedo a la planta.
-                    </p>
-<div class="pt-2 border-t border-white/10 text-[11px] text-blue-200 font-mono">
-                        Herramienta: Nalco Water 3D TRASAR AI / Kurita Water Predictor.
-                    </div>
-</div>
-</div>
-</section>
-</div>
-</div>
-</div>
-</main>
-<!-- ========================================================= -->
-<!-- FOOTER INSTITUCIONAL (SOLO FUNDACIÓN KINAL EN BLANCO)     -->
-<!-- ========================================================= -->
-<footer class="bg-[#0D162C] text-white border-t-4 border-[#EC9123] py-12 px-4 sm:px-6 lg:px-8 mt-12">
-<div class="max-w-7xl mx-auto space-y-8">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800 pb-8">
-<div class="flex items-center gap-4">
-<img alt="Fundación Kinal" class="h-10 sm:h-12 w-auto object-contain" src="assets/fundacion_kinal_blanco.png"/>
-</div>
-<div class="text-xs text-slate-400 max-w-md text-left md:text-right">
-<strong class="text-white block mb-0.5">Fundación Kinal — Escuela Técnica Superior (ETS)</strong>
-                    Servicios de capacitación técnica y tecnológica dirigidos a empresas y personas individuales para desarrollar competencias laborales al mejor nivel.
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Identificación de Equivalencias de Rodamientos y Retenedores
+                    </h5>
                 </div>
-</div>
-<div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-<div>
-                    © 2026 Fundación Kinal. Todos los derechos reservados. Ciudad de Guatemala.
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Fotografía o consulta de códigos de rodamientos (SKF, FAG, NSK, Timken) con el móvil para identificar al instante juegos radiales (C3, C4), tipo de sellos (2RS, ZZ) y lubricantes equivalentes recomendados para maquinaria de planta.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
                 </div>
-<div class="flex items-center gap-4">
-<span class="text-slate-400">Ideario: <em>«El trabajo bien hecho»</em></span>
-<span>•</span>
-<span class="text-[#EC9123]">Aval UNIS-Kinal</span>
-</div>
-</div>
-</div>
-</footer>
-<script>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Generación Asistida de Procedimientos de Bloqueo y Etiquetado (LOTO)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Estructuración de listas de verificación de energía cero para mantenimiento seguro en bombas, reductores o calderas bajo norma OSHA 1910.147, utilizando asistentes conversacionales libres en el celular.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="flame" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Calculadora Asistida de Parámetros de Soldadura (WPS Básico)
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Consulta guiada en smartphone de rangos de amperaje, voltaje, tipo de electrodo (E6010, E7018, inoxidable) y temperatura de precalentamiento según el espesor de placa y bisel conforme a los lineamientos AWS D1.1 / ASME Sección IX.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#22376D] transition space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-[#22376D] flex items-center justify-center shrink-0">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <h5 class="text-sm font-bold text-slate-900 leading-snug">
+                        Monitoreo y Registro de Calidad de Agua en Calderas de Vapor
+                    </h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Hojas de cálculo en el ecosistema Microsoft de Kinal con fórmulas guiadas para graficar tendencias de pH, sílice, dureza y sulfitos, alertando al operario sobre riesgos de incrustación o corrosión sin software de telemetría costoso.
+                </p>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cero Costo / Libre
+                    </span>
+                    <span class="text-slate-400">Smartphone / M365</span>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+    
+                </div>
+
+            </div>
+
+        </div>
+        
+            </main>
+
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- PIE DE PÁGINA INSTITUCIONAL                               -->
+    <!-- ========================================================= -->
+    <footer class="bg-white text-slate-700 border-t-2 border-[#EC9123] py-8 px-4 sm:px-6 mt-16 text-xs shadow-inner">
+        <div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="assets/escuela_tecnica_superior.png" alt="Fundación Kinal" class="h-8 w-auto object-contain">
+                <div class="text-slate-500 font-mono text-[11px]">
+                    Fundación Kinal • Escuela Técnica Superior (ETS) — Dossier Curricular 2026
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-slate-500 font-mono text-[11px]">
+                <span>Ideario: <em>«El trabajo bien hecho»</em></span>
+                <span>•</span>
+                <span class="text-[#EC9123] font-bold">Aval Académico UNIS-Kinal</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- SCRIPTS DE INTERACCIÓN                                    -->
+    <!-- ========================================================= -->
+    <script>
         lucide.createIcons();
 
-        function showCourse(courseId) {
-            document.querySelectorAll('.course-detail-pane').forEach(el => el.style.display = 'none');
-            const target = document.getElementById(`course-pane-${courseId}`);
-            if (target) target.style.display = 'block';
+        function selectCourseMaster(courseId) {
+            // 1. Hide all course panes
+            document.querySelectorAll('.course-detail-pane').forEach(el => {
+                el.style.display = 'none';
+            });
 
-            const sel = document.getElementById('area-quick-select');
-            if (sel) sel.value = courseId;
+            // 2. Show active pane
+            const targetPane = document.getElementById(`course-pane-${courseId}`);
+            if (targetPane) {
+                targetPane.style.display = 'block';
+            }
 
-            const viewer = document.getElementById('detail-viewer-wrapper');
-            if (viewer) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // 3. Update sidebar active state
+            document.querySelectorAll('[id^="master-nav-"]').forEach(btn => {
+                btn.classList.remove('sidebar-card-active');
+                btn.classList.add('sidebar-card');
+                const dot = btn.querySelector('.status-indicator-active, .status-indicator');
+                if (dot) {
+                    dot.className = 'status-indicator';
+                }
+            });
+
+            const activeBtn = document.getElementById(`master-nav-${courseId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('sidebar-card');
+                activeBtn.classList.add('sidebar-card-active');
+                const dot = activeBtn.querySelector('.status-indicator');
+                if (dot) {
+                    dot.className = 'status-indicator-active';
+                }
+            }
+
+            // 4. Scroll viewer to top on mobile
+            if (window.innerWidth < 1024) {
+                const viewer = document.getElementById('main-dossier-viewer');
+                if (viewer) {
+                    viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
 
             if (window.lucide) lucide.createIcons();
         }
 
-        function scrollToSelector() {
-            const el = document.getElementById('course-selector-anchor');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Tab switcher within a course
+        function switchTab(courseId, tabKey) {
+            const pane = document.getElementById(`course-pane-${courseId}`);
+            if (!pane) return;
+
+            // Hide all tab panes in this course
+            pane.querySelectorAll('.tab-pane').forEach(tp => {
+                tp.style.display = 'none';
+            });
+
+            // Show selected tab pane
+            const activeTabPane = document.getElementById(`tab-pane-${courseId}-${tabKey}`);
+            if (activeTabPane) {
+                activeTabPane.style.display = 'block';
+            }
+
+            // Update tab button styles
+            pane.querySelectorAll('.tab-pill').forEach(btn => {
+                btn.classList.remove('tab-pill-active');
+                btn.classList.add('text-slate-500', 'border-transparent');
+            });
+
+            const activeBtn = document.getElementById(`tab-btn-${courseId}-${tabKey}`);
+            if (activeBtn) {
+                activeBtn.classList.add('tab-pill-active');
+                activeBtn.classList.remove('text-slate-500', 'border-transparent');
+            }
+
+            if (window.lucide) lucide.createIcons();
         }
 
+        // Legacy compatibility
+        function showCourse(courseId) {
+            selectCourseMaster(courseId);
+        }
+
+        function scrollToSelector() {
+            const viewer = document.getElementById('main-dossier-viewer');
+            if (viewer) {
+                viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Filter items within active pane
         function filterEtsItems(status, courseId) {
             const pane = document.getElementById(`course-pane-${courseId}`);
             if (!pane) return;
+
             const items = pane.querySelectorAll('.content-item');
             items.forEach(item => {
                 if (status === 'all') {
@@ -3662,11 +4048,11 @@
             };
 
             Object.values(buttons).forEach(btn => {
-                if (btn) btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+                if (btn) btn.classList.remove('ring-2', 'ring-offset-2', 'ring-[#22376D]', 'font-black');
             });
 
             if (buttons[status]) {
-                buttons[status].classList.add('ring-2', 'ring-offset-2', 'ring-slate-900', 'font-black');
+                buttons[status].classList.add('ring-2', 'ring-offset-2', 'ring-[#22376D]', 'font-black');
             }
         }
     </script>
