@@ -4515,711 +4515,909 @@
             <div class="tab-content-container space-y-6">
                 
                 <!-- PESTAÑA 1: TEMARIO MODULAR AUDITADO (DEFAULT) -->
-                <div id="tab-pane-automatizacion_industrial-modular" class="tab-pane" style="display: block;">
+                                <div id="tab-pane-automatizacion_industrial-modular" class="tab-pane" style="display: block;">
                     <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-<div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
-<div>
-<span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 3</span>
-<h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
-<i class="w-5 h-5 text-amber-600" data-lucide="list-checks"></i>
-                        Distribución Modular y Auditoría Analítica Tema por Tema
-                    </h3>
-<p class="text-slate-600 text-sm mt-1">
-                        Total de temas auditados en el pensum original: <strong>72 temas</strong> desglosados en sus 6 módulos oficiales.
-                    </p>
-</div>
-<!-- Filtros Interactivos -->
-<div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
-<button class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition" id="btn-all-automatizacion_industrial" onclick="filterEtsItems('all', 'automatizacion_industrial')">Todos (75)</button>
-<button class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition" id="btn-delete-automatizacion_industrial" onclick="filterEtsItems('delete', 'automatizacion_industrial')">🔴 Eliminar (2)</button>
-<button class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition" id="btn-update-automatizacion_industrial" onclick="filterEtsItems('update', 'automatizacion_industrial')">🟡 Actualizar (15)</button>
-<button class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition" id="btn-new-automatizacion_industrial" onclick="filterEtsItems('new', 'automatizacion_industrial')">🔵 Nuevos (3)</button>
-<button class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition" id="btn-keep-automatizacion_industrial" onclick="filterEtsItems('keep', 'automatizacion_industrial')">🟢 Mantener (55)</button>
-</div>
-</div>
-<!-- Distribución Modular del Temario -->
-<div class="grid lg:grid-cols-2 gap-8 pt-4">
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 1 (Semanas 1 a 7)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Automatismos y Lógica Cableada</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Proyectar, ensamblar y validar cuadros de automatización industrial combinando lógica electromagnética cableada con normas internacionales de seguridad funcional.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Introducción a la automatización</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Sistemas de control (lazo abierto/lazo cerrado)</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Control Continuo de Procesos</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar control en lazo cerrado PID, transmisores de presión diferencial y calibración de campo con protocolo HART.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Aparatos de maniobra y medidas de protección</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Medidas de protección</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Comités de normalización</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Simbología IEC</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Automatismos de lógica cableada</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Automatismos de lógica programable</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Interpretación y representación de diagramas</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Herramientas de simulación y diseño de paneles</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Simulación de automatismos de lógica cableada</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Dibujo CAD básico - integración de paneles eléctricos</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-</div>
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 2 (Semanas 8 a 14)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Instrumentación Industrial</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Calibrar transmisores de presión, nivel, flujo y temperatura con lazo de corriente estándar 4-20 mA y protocolo HART en bancos de prueba certificados.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Introducción a la instrumentación industrial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Control Continuo de Procesos</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Incorporar control en lazo cerrado PID, transmisores de presión diferencial y calibración de campo con protocolo HART.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Variables de proceso industrial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Sensores análogos y digitales</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Acondicionadores de señal</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Interpretación de hojas técnicas de sensores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Escalabilidad y calibración de sensores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración y calibración de sensores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Virtualización de instrumentos</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Programación G para la instrumentación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Arreglos y clusters</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Estructuras y elementos de programación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Funciones básicas y avanzadas</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Integración de instrumentos a ARDUINO como DAQ</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hardware No Industrial</div>
-<p class="text-slate-700 leading-relaxed">🔴 Eliminar: El uso de placas Arduino para adquisición de datos (DAQ) no cumple con aislamiento ni inmunidad al ruido industrial. Debe sustituirse por tarjetas I/O analógicas de PLC y transmisores 4-20mA.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Visualización de variables de proceso industrial/conectividad</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Data Dashboard para instrumentación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">[NUEVO] Control PID en Procesos Continuos y Sintonización de Lazos de Presión/Nivel</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800">🔵</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ingeniería de Procesos</div>
-<p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Sintonización de algoritmos PID (métodos Ziegler-Nichols y curvas de reacción) para control de nivel en calderas, hornos y tanques de mezcla.</p>
-</div>
-</div>
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 3 (Semanas 15 a 21)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Programación Combinacional de PLC</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Resolver algoritmos de lógica combinacional, enclavamientos y matrices booleanas para control seguro de maquinaria industrial en lenguajes IEC 61131-3.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Tecnología digital de control</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Herramientas de programación y simulación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Plataformas de Control</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Utilización intensiva de Siemens TIA Portal V18/V19 (S7-1200 / S7-1500) y Rockwell Studio 5000, estándar dominante en el sector productivo guatemalteco.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Conceptos básicos de programación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Modos de operación</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Depuración y monitoreo de programas</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Tipos de datos y direccionamiento</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Procedimiento de apertura proyecto PLC (software/hardware)</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Plataformas de Control</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Utilización intensiva de Siemens TIA Portal V18/V19 (S7-1200 / S7-1500) y Rockwell Studio 5000, estándar dominante en el sector productivo guatemalteco.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Operaciones lógicas con bits</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Enclavamientos</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Paro de proceso vs paro de emergencia</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Optimización de segmentos</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Set y Reset</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Tipos de temporizadores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Diagramas de tiempo</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Operaciones con temporizadores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Operación con contadores y comparadores</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-</div>
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 4 (Semanas 22 a 28)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Programación Secuencial de PLC</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Modelar y programar procesos continuos y secuenciales mediante Diagramas de Función Secuencial (GRAFCET/SFC) y máquinas de estados deterministas.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Pensamiento lógico secuencial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Introducción al control industrial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Grafcet vs diagramas de Petri</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metodología Secuencial</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Diagramas Funcionales de Secuencia (SFC / S7-GRAPH) y máquinas de estados en Texto Estructurado (SCL) para depuración rápida de fallas.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Otros bloques de organización</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Diagramación secuencial o flujo de proceso</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metodología Secuencial</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Implementación en Diagramas Funcionales de Secuencia (SFC / S7-GRAPH) y máquinas de estados en Texto Estructurado (SCL) para depuración rápida de fallas.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Pasos y condiciones</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Señales de transferencia</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Seccionamiento del programa (control de secuencia, control actividad)</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Secciones independientes (procesos de paro y emergencia)</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Lectura análoga de variables</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Comparaciones, temporizadores y conteo como señal de transferencia</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Escalabilidad de lectura análoga en PLC</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">[NUEVO] Redes Industriales PROFINET e Integración de Sensores Inteligentes IO-Link</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800">🔵</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Comunicaciones Industriales</div>
-<p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Topologías en anillo MRP, conectorización RJ45 industrial apantallada Cat 6A y parametrización de maestros y dispositivos IO-Link.</p>
-</div>
-</div>
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 5 (Semanas 29 a 34)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Programación de Relés Industriales</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Configurar relés de control inteligente y relés de seguridad SIL/PL para paradas de emergencia, barreras ópticas y resguardos perimetrales de planta.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Networking local</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración de red LAN industrial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración de red WLAN industrial</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Logo! SoftComfort v8</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Logo! Versión 8</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración de comunicación y simulación Factory IO-Logo!</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Manejo de control análogo en Logo! y transmisión vía profinet</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Comunicación inter Logos!</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Introducción a LWE</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Integración con LWE como HMI</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Aplicaciones prácticas de integración multiplataforma</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Automatización Industrial</div>
-<p class="text-slate-700 leading-relaxed">Eje técnico imprescindible para el diseño, cableado e implementación de sistemas de control en la industria guatemalteca.</p>
-</div>
-<div class="content-item item-delete p-3 rounded text-xs space-y-1" data-status="delete">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Networking local</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tema Duplicado</div>
-<p class="text-slate-700 leading-relaxed">🔴 Eliminar: Tema duplicado textualmente en el Módulo 5 (aparece en posición 1 y posición 12 del temario oficial).</p>
-</div>
-</div>
-<div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
-<div class="bg-slate-900 text-white p-4 border-b border-slate-800">
-<div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
-<span>MÓDULO 6 (Semanas 35 a 40)</span>
-<span>Duración: ~30 Horas</span>
-</div>
-<h4 class="text-lg font-bold">Redes Industriales e IIOT</h4>
-<p class="text-xs text-slate-300 mt-1">
-<strong>Logro esperado:</strong> Interconectar equipos de planta mediante buses de campo y Ethernet Industrial (Modbus TCP, PROFINET), supervisándolos a través de interfaces HMI/SCADA e IIoT.
-                            </p>
-</div>
-<div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Introducción a NODE-red y su importancia en la automatización industrial.</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">IIoT e Industria 4.0</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Despliegue de dashboards industriales con Node-RED, integración de brokers MQTT industriales y servidores OPC-UA conectados a bases de datos relacionales.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Instalación y configuración de NODE-red en Windows</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">IIoT e Industria 4.0</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Despliegue de dashboards industriales con Node-RED, integración de brokers MQTT industriales y servidores OPC-UA conectados a bases de datos relacionales.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración básica de un proyecto NODE-red.</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">IIoT e Industria 4.0</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Despliegue de dashboards industriales con Node-RED, integración de brokers MQTT industriales y servidores OPC-UA conectados a bases de datos relacionales.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Comunicación con LOGO! SIEMENS</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-update p-3 rounded text-xs space-y-1" data-status="update">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">Configuración de la conexión entre NODE-red y LOGO! SIEMENS.</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800">🟡</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Relés Inteligentes y Pasarelas</div>
-<p class="text-slate-700 leading-relaxed">🟡 Actualizar: Enfoque del LOGO! 8 como relé concentrador periférico o pasarela IoT para monitoreo web ligero (LWE), sin desplazar las prácticas con PLC de gama media.</p>
-</div>
-<div class="content-item item-new p-3 rounded text-xs space-y-1" data-status="new">
-<div class="flex justify-between items-start gap-2">
-<span class="font-bold text-slate-900">[NUEVO] Arquitecturas SCADA con Ignition / WinCC y Conectividad OPC UA / MQTT</span>
-<span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800">🔵</span>
-</div>
-<div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Supervisión Centralizada y SCADA</div>
-<p class="text-slate-700 leading-relaxed">🔵 Propuesta Nueva: Desarrollo de sistemas de supervisión y control (SCADA) con pantallas de tendencias históricas, gestión de alarmas ISA-18.2 y enlace a bases de datos SQL.</p>
-</div>
-</div>
-</div>
-</div>
-</div></div></div></div></div></section>
+                        
+                        <!-- ENCABEZADO DE SECCIÓN Y FILTROS -->
+                        <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">Sección 3</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
+                                    <i class="w-5 h-5 text-amber-600" data-lucide="list-checks"></i>
+                                    Distribución Modular y Auditoría Curricular 2027 (2 Columnas)
+                                </h3>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    Total de temas auditados: <strong>77 temas</strong> desglosados en sus 6 módulos oficiales con trazabilidad completa (tachados, gris y azul).
+                                </p>
+                            </div>
+                            
+                            <!-- Filtros Interactivos -->
+                            <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
+                                <button class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition" id="btn-all-automatizacion_industrial" onclick="filterEtsItems('all', 'automatizacion_industrial')">Todos (77)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition" id="btn-delete-automatizacion_industrial" onclick="filterEtsItems('delete', 'automatizacion_industrial')">🔴 Tachados (3)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-700 font-medium hover:bg-slate-300 transition" id="btn-update-automatizacion_industrial" onclick="filterEtsItems('update', 'automatizacion_industrial')">🟡 En Gris: Actualizados (22)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition" id="btn-new-automatizacion_industrial" onclick="filterEtsItems('new', 'automatizacion_industrial')">🔵 En Azul: Nuevos / Ampliación (8)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition" id="btn-keep-automatizacion_industrial" onclick="filterEtsItems('keep', 'automatizacion_industrial')">🟢 Mantener (44)</button>
+                            </div>
+                        </div>
+
+                        <!-- CÓDIGO DE LEYENDA EXPLICATIVO SEGÚN RECOMENDACIÓN -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                            <div class="p-3 rounded-lg border border-red-200 bg-red-50/80 text-red-950 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-red-500 mt-0.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-red-900">Tachado (Sin eliminar):</strong> Temas desaconsejados para DAQ industrial (Arduino), contenidos especializados reubicados fuera de módulo o duplicados en temario previo.
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-lg border border-slate-300 bg-slate-100/90 text-slate-800 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-slate-500 mt-0.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-slate-900">En Gris (Actualizados 2027):</strong> Temas base que se actualizan con software estándar (TIA Portal V19, Studio 5000, LabVIEW, FBD/UDF, GRAFCET).
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-lg border border-blue-200 bg-blue-50/90 text-blue-950 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-blue-600 mt-0.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-blue-900">En Azul (Nuevos / Ampliación):</strong> Temas de ampliación condicionada 2027: HART, Banco PID, S7-GRAPH/SCL, Estaciones físicas, MQTT, OPC UA, SCADA y SQL.
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/80 text-emerald-950 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-emerald-500 mt-0.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-emerald-900">En Verde (Mantener):</strong> Fundamentos imprescindibles de lógica electromagnética, temporización, seguridad ISO y redes de campo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CUADRÍCULA MODULAR EN 2 COLUMNAS (MÓDULOS 1 Y 2, 3 Y 4, 5 Y 6) -->
+                        <div class="grid lg:grid-cols-2 gap-8 pt-4">
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 1: MÓDULO 1: LÓGICA CABLEADA           -->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 1 (Semanas 1 a 7)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">1. Lógica Cableada y Automatismos</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> Mando, protección, simbología, simulación, diagramas y fallas. Lazo abierto/cerrado introductorio. (PID y HART especializados fuera de este módulo).
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Introducción a la automatización industrial</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Lógica Cableada</div>
+                                        <p class="text-slate-700 leading-relaxed">Conceptos fundamentales de automatización, evolución de la manufactura y rol del técnico de control.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Sistemas de control (lazo abierto y lazo cerrado introductorio)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Control Básico</div>
+                                        <p class="text-slate-600 leading-relaxed">Concepto comparativo entre control en lazo abierto y lazo cerrado elemental aplicado a arrancadores y servomecanismos de taller.</p>
+                                    </div>
+
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-red-900 line-through">PID y transmisores HART especializados en módulo 1</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Alineación 2027 • Reubicado</div>
+                                        <p class="text-red-700 leading-relaxed line-through">PID y calibración de campo HART quedan fuera de este módulo 1; se trasladan formalmente al Módulo 2 (Instrumentación Industrial) para focalizar el módulo 1 en mando electromagnético y protecciones.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Aparatos de maniobra (contactores, relés, pulsadores, selectores)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Mando Electromagnético</div>
+                                        <p class="text-slate-700 leading-relaxed">Dimensionamiento, selección y conexionado de bobinas, contactos principales y auxiliares.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Medidas de protección (disyuntores, guardamotores, relés térmicos)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Protección de Circuitos</div>
+                                        <p class="text-slate-700 leading-relaxed">Curvas de disparo térmico y magnético, coordinación de protecciones y protección contra sobrecargas y cortocircuitos.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Comités de normalización y seguridad eléctrica</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Normativa</div>
+                                        <p class="text-slate-700 leading-relaxed">Estándares IEC 60947, NFPA 70E y regulaciones locales para operación segura de tableros industriales.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Simbología normalizada IEC y NEMA</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Simbología</div>
+                                        <p class="text-slate-700 leading-relaxed">Identificación alfanumérica y gráfica de componentes de fuerza y mando según IEC 60617.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Automatismos de lógica cableada básica y enclavamientos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Circuitos de Mando</div>
+                                        <p class="text-slate-700 leading-relaxed">Arranque directo, inversión de giro, temporización neumática/electrónica y enclavamientos cruzados.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Automatismos de lógica programable (introductorio)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Transición Tecnológica</div>
+                                        <p class="text-slate-700 leading-relaxed">Transición de la lógica electromagnética cableada hacia controladores de estado sólido.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Interpretación y representación de diagramas unifilares y multifilares</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diagramas</div>
+                                        <p class="text-slate-700 leading-relaxed">Lectura fluida de planos esquemáticos de fuerza, mando y borneras de conexión.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Herramientas de simulación y diseño de paneles (CADe_SIMU / PC_SIMU)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Simulación</div>
+                                        <p class="text-slate-700 leading-relaxed">Diseño y simulación virtual de circuitos cableados previo al montaje físico en taller.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Simulación de automatismos de lógica cableada</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Validación</div>
+                                        <p class="text-slate-700 leading-relaxed">Validación interactiva de la secuencia de encendido, paro y disparo por sobrecarga.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Dibujo CAD básico - integración de paneles eléctricos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diseño Físico</div>
+                                        <p class="text-slate-700 leading-relaxed">Distribución espacial en canaletas, riel DIN, clemas y dimensionamiento térmico del gabinete.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Diagnóstico y localización sistemática de fallas en diagramas y tableros</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Nuevo 2027</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Fallas y Mantenimiento</div>
+                                        <p class="text-blue-900 leading-relaxed">Técnicas de rastreo metódico de fallas con multímetro: corte de señal, protecciones térmicas disparadas, falsos contactos y aislamiento galvánico.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 2: MÓDULO 2: INSTRUMENTACIÓN INDUSTRIAL-->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 2 (Semanas 8 a 14)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">2. Instrumentación Industrial</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> Sensores, señales 0–10 V y 4–20 mA, escalamiento, LabVIEW y adquisición didáctica. <span class="text-amber-300">Ampliación condicionada:</span> Transmisores HART, calibración y banco PID.
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Introducción a la instrumentación industrial y metrología</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamentos de Medición</div>
+                                        <p class="text-slate-600 leading-relaxed">Definiciones de exactitud, precisión, repetibilidad, histéresis y rango de medida en instrumentación de planta.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Variables de proceso industrial (presión, nivel, flujo y temperatura)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Variables de Proceso</div>
+                                        <p class="text-slate-700 leading-relaxed">Principios físicos de medición para las 4 variables críticas de la industria química, alimentos y manufactura.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Sensores análogos y digitales (señales estándar 0–10 V y 4–20 mA)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Transmisión Analógica</div>
+                                        <p class="text-slate-600 leading-relaxed">Estandarización de lazos de corriente 4–20 mA (inmunidad al ruido electromagnético) y señales de tensión 0–10 V en distancias cortas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Acondicionadores de señal y transmisores de 2 y 4 hilos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Acondicionamiento</div>
+                                        <p class="text-slate-700 leading-relaxed">Amplificación, linealización, filtrado y aislamiento galvánico de señales analógicas de baja potencia.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Interpretación de hojas técnicas de sensores y diagramas P&ID</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Documentación Técnica</div>
+                                        <p class="text-slate-700 leading-relaxed">Lectura de simbología ISA 5.1 en diagramas de tuberías e instrumentación (P&ID) y especificaciones de fabricante.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Escalamiento matemático y calibración de sensores</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Escalamiento</div>
+                                        <p class="text-slate-600 leading-relaxed">Fórmulas de interpolación lineal (y = mx + b), normalización de unidades físicas (bar, °C, m³/h) a cuentas digitales (0–27648).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Configuración física y conexionado de sensores en campo</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Montaje Práctico</div>
+                                        <p class="text-slate-700 leading-relaxed">Conexión de sensores de 2, 3 y 4 hilos (PNP/NPN, NO/NC), cables apantallados y puesta a tierra de shields.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Virtualización de instrumentos con LabVIEW y adquisición didáctica (DAQ)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Adquisición Didáctica</div>
+                                        <p class="text-slate-600 leading-relaxed">Configuración de módulos DAQ didácticos (NI USB-6008/6009) y programación gráfica G para instrumentación virtual.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Programación G para la instrumentación y panel frontal</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">LabVIEW</div>
+                                        <p class="text-slate-700 leading-relaxed">Diseño de interfaces gráficas de usuario (GUI) con manómetros, termómetros y gráficas dinámicas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Arreglos, clusters y manejo de tipos de datos en adquisición</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Estructuras de Datos</div>
+                                        <p class="text-slate-700 leading-relaxed">Agrupamiento de canales analógicos multicanal y manipulación matricial de muestras continuas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Estructuras y elementos de programación (While, For, Case)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Flujo de Ejecución</div>
+                                        <p class="text-slate-700 leading-relaxed">Control de muestreo temporal, registros de desplazamiento (shift registers) y bucles temporizados.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Funciones básicas y avanzadas de filtrado de señal</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tratamiento de Señal</div>
+                                        <p class="text-slate-700 leading-relaxed">Promediación móvil, eliminación de picos espurios y acondicionamiento digital de variables ruidosas.</p>
+                                    </div>
+
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-red-900 line-through">Integración de instrumentos a ARDUINO como DAQ</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Trazabilidad Curricular</div>
+                                        <p class="text-red-700 leading-relaxed line-through">Tachado sin eliminar: Desaconsejado en entornos industriales por falta de aislamiento galvánico e inmunidad electromagnética. Reemplazado por LabVIEW, DAQ didáctica y tarjetas analógicas de PLC.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Visualización de variables de proceso industrial y conectividad</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Monitoreo</div>
+                                        <p class="text-slate-700 leading-relaxed">Publicación de variables de proceso para visualización en tiempo real y registro de datos.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Data Dashboard para instrumentación</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Tableros Gráficos</div>
+                                        <p class="text-slate-700 leading-relaxed">Configuración de paneles ejecutivos con alarmas visuales de límite alto/bajo (Hi/Lo).</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Transmisores inteligentes con protocolo HART y calibración de campo</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Instrumentación Inteligente</div>
+                                        <p class="text-blue-900 leading-relaxed">Comunicación digital FSK sobre lazo 4–20 mA, configuración con calibrador/comunicador de campo, ajuste de cero/span y diagnóstico de fallas.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Control de procesos en lazo cerrado PID y banco didáctico de calibración</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Lazos PID de Campo</div>
+                                        <p class="text-blue-900 leading-relaxed">Algoritmos de control PID continuo, sintonización de parámetros (Kp, Ti, Td) en banco físico de presión y nivel, eliminación del error estacionario.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 1: MÓDULO 3: PLC COMBINACIONAL         -->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 3 (Semanas 15 a 21)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">3. Programación Combinacional de PLC</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> Ladder, direccionamiento, temporizadores, contadores, enclavamientos y diagnóstico. <span class="text-amber-300">Ampliación condicionada:</span> Nuevas plataformas bajo esquema de licencias.
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Tecnología digital de control y arquitectura de PLC</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hardware de PLC</div>
+                                        <p class="text-slate-700 leading-relaxed">Estructura modular, fuente de alimentación, CPU, buses internos y módulos de E/S discretas y analógicas.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Herramientas de programación y simulación (TIA Portal / Studio 5000)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Entornos de Ingeniería</div>
+                                        <p class="text-slate-600 leading-relaxed">Manejo de suites industriales dominantes en Guatemala: Siemens TIA Portal V18/V19 (S7-1200) y Rockwell Studio 5000 (CompactLogix).</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Conceptos básicos de programación en lenguaje Ladder (LADDER / KOP)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Lenguaje LADDER</div>
+                                        <p class="text-slate-600 leading-relaxed">Diagramas de contactos normalizados bajo IEC 61131-3, flujo de potencia lógica y orden de ejecución de peldaños (rungs).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Modos de operación del autómata (RUN, STOP, FAULT) y ciclo de scan</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Ciclo Scan</div>
+                                        <p class="text-slate-700 leading-relaxed">Lectura de entradas, ejecución de lógica de usuario, actualización de salidas y tareas de comunicaciones.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Depuración, forzado de variables y diagnóstico de programas en línea</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diagnóstico</div>
+                                        <p class="text-slate-600 leading-relaxed">Tablas de observación (Watch tables), forzado seguro de variables y análisis del buffer de diagnóstico de CPU.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Tipos de datos y direccionamiento estructurado de E/S</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Direccionamiento</div>
+                                        <p class="text-slate-600 leading-relaxed">Direccionamiento simbólico y absoluto (BOOL, BYTE, WORD, DWORD, INT, REAL), marcas internas y bloques de datos (DB).</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Procedimiento de apertura y configuración de hardware en PLC</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hardware Config</div>
+                                        <p class="text-slate-600 leading-relaxed">Carga de hardware desde catálogo de dispositivos, asignación de direcciones IP de subred y configuración de tarjetas auxiliares.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Operaciones lógicas con bits (contactos NO, NC, bobinas, flancos P/N)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Lógica Booleana</div>
+                                        <p class="text-slate-700 leading-relaxed">Compuertas lógicas AND, OR, NOT, XOR y detección precisa de transiciones por flanco positivo y negativo.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Enclavamientos lógicos por software y eléctricos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad Operativa</div>
+                                        <p class="text-slate-700 leading-relaxed">Enclavamientos dobles para inversión de marcha en motores y prevención de cortocircuitos lógicos.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Paro de proceso vs paro de emergencia (ISO 13850)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seguridad Funcional</div>
+                                        <p class="text-slate-700 leading-relaxed">Diferenciación entre parada controlada de producción y desconexión intempestiva por relé de seguridad Cat. 4.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Optimización de segmentos y buenas prácticas de programación</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Legibilidad y Mantenimiento</div>
+                                        <p class="text-slate-700 leading-relaxed">Comentarios en peldaños, nemotécnicos estandarizados y estructuración limpia para facilitar el mantenimiento en turno.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Instrucciones de memorización Set (S) y Reset (R)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Biestables</div>
+                                        <p class="text-slate-700 leading-relaxed">Comportamiento con dominancia de puesta a cero (SR) o de activación (RS), precauciones en paros imprevistos.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Tipos de temporizadores normalizados (TON, TOF, TP)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Temporización</div>
+                                        <p class="text-slate-700 leading-relaxed">Temporizador al retardo a la conexión (TON), a la desconexión (TOF) y generador de pulsos de ancho fijo (TP).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Diagramas de tiempo aplicados al control de motores</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Cronogramas Lógicos</div>
+                                        <p class="text-slate-700 leading-relaxed">Secuencias temporizadas de lubricación previa, arranque escalonado estrella-triángulo y frenado dinámico.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Operaciones con temporizadores combinados y cascada de tiempos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Cascadas Temporizadas</div>
+                                        <p class="text-slate-700 leading-relaxed">Generación de osciladores, trenes de pulsos y retardos combinados en cintas transportadoras.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Operación con contadores progresivos/regresivos (CTU, CTD, CTUD) y comparadores</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Conteo y Comparación</div>
+                                        <p class="text-slate-700 leading-relaxed">Conteo de lotes de producto terminado, preseteo dinámico e instrucciones de comparación matemática (CMP ==, <>, >=, <=).</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Nuevas plataformas de PLC bajo esquema de licencias corporativas</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Multiplataforma y Licencias</div>
+                                        <p class="text-blue-900 leading-relaxed">Portabilidad y migración de proyectos entre Siemens TIA Portal V19, Rockwell Studio 5000 y plataformas abiertas (Codesys / Beckhoff TwinCAT) según el esquema de licencias industriales.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 2: MÓDULO 4: PLC SECUENCIAL            -->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 4 (Semanas 22 a 28)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">4. Programación Secuencial de PLC</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> GRAFCET/conceptos de estados, secuencias, transiciones, pruebas, diagnóstico y proyecto. <span class="text-amber-300">Ampliación condicionada:</span> S7-GRAPH/SCL y redes avanzadas.
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Pensamiento lógico secuencial aplicado a la manufactura</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Metodología Secuencial</div>
+                                        <p class="text-slate-700 leading-relaxed">Descomposición metódica de procesos fabriles en fases ordenadas, evitando colisiones mecánicas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Introducción al control industrial secuencial y máquinas de estado</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Máquinas de Estado</div>
+                                        <p class="text-slate-700 leading-relaxed">Concepto de estado presente, condiciones de transición y estado siguiente para control de celdas automatizadas.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">GRAFCET y Diagramas Funcionales de Secuencia (IEC 60848)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Modelado GRAFCET</div>
+                                        <p class="text-slate-600 leading-relaxed">Etapas iniciales, intermedias, transiciones activables, receptividades y reglas de evolución formal.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Bloques de organización modular (OB, FB, FC y Data Blocks DB)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Arquitectura Modular</div>
+                                        <p class="text-slate-700 leading-relaxed">Encapsulamiento funcional de código en bloques de función con memoria de instancia y librerías reusables.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Diagramación secuencial, secuencias únicas y bifurcaciones (O / Y)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Flujo de Proceso</div>
+                                        <p class="text-slate-600 leading-relaxed">Divergencias en selección alternativa (O) y paralelismos simultáneos de sincronización (Y).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Pasos, acciones asociadas (continuas, memorizadas, condicionadas) y receptividades</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Acciones GRAFCET</div>
+                                        <p class="text-slate-700 leading-relaxed">Clasificación de acciones según norma: continuas (N), temporizadas (L/D) y memorizadas (S/R).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Señales de transferencia y sincronización entre subprocesos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Sincronismo</div>
+                                        <p class="text-slate-700 leading-relaxed">Interbloqueos y handshakes entre estaciones contiguas de transferencia de piezas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Seccionamiento del programa (control de secuencias, modos manual y automático)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Modos de Marcha</div>
+                                        <p class="text-slate-700 leading-relaxed">Implementación de la guía GEMMA para transiciones limpias entre ciclo automático, paso a paso y puesta en posición inicial.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Secciones independientes: tratamiento de alarmas y secuencias de paro de emergencia</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Alarmas y E-Stop</div>
+                                        <p class="text-slate-700 leading-relaxed">Gestión prioritaria de fallas mecánicas, tiempos de espera excedidos (watchdogs) y reinicio seguro.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Lectura y escalamiento de variables análogas en el ciclo secuencial</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Analógicas en Secuencia</div>
+                                        <p class="text-slate-700 leading-relaxed">Condiciones de avance disparadas por umbrales de presión, temperatura o peso en balanza.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Pruebas, simulación dinámica y diagnóstico con gemelos digitales (Factory I/O)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gemelo Digital</div>
+                                        <p class="text-slate-600 leading-relaxed">Puesta en marcha virtual conectando TIA Portal con simuladores físicos 3D (Factory I/O) para depurar colisiones antes del taller.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Proyecto integrador de automatización secuencial de celda</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Proyecto de Aplicación</div>
+                                        <p class="text-slate-700 leading-relaxed">Programación integral de una estación clasificadora o empaquetadora con actuadores neumáticos y sensores inductivos/ópticos.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Programación avanzada en S7-GRAPH (SFC) y Texto Estructurado (SCL)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">S7-GRAPH y SCL</div>
+                                        <p class="text-blue-900 leading-relaxed">Programación nativa gráfica en S7-GRAPH (Sequential Function Chart) y algoritmos de control matemático en lenguaje estructurado SCL bajo IEC 61131-3.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Redes industriales avanzadas e integración de sensores IO-Link</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Redes de Campo Avanzadas</div>
+                                        <p class="text-blue-900 leading-relaxed">Topologías en anillo con redundancia PROFINET MRP y maestros IO-Link para parametrización digital remota de sensores en secuencias industriales.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 1: MÓDULO 5: RELÉS INDUSTRIALES        -->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 5 (Semanas 29 a 35)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">5. Programación de Relés Industriales</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> LOGO! como controlador, FBD/UDF, analógica, Ethernet y LWE; prácticas por estaciones. <span class="text-amber-300">Ampliación condicionada:</span> Más unidades físicas e instrumentación.
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Networking local industrial y asignación de nodos</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Redes de Celda</div>
+                                        <p class="text-slate-700 leading-relaxed">Direccionamiento estático en subredes locales, cables Ethernet categoría industrial y conectores blindados RJ45.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Configuración de red LAN industrial cableada para relés programables</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Switches Industriales</div>
+                                        <p class="text-slate-700 leading-relaxed">Conexión a switches industriales no administrables y prueba de enlace físico (Link/Activity).</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Configuración de red WLAN y routers industriales en tablero</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Wi-Fi de Mantenimiento</div>
+                                        <p class="text-slate-700 leading-relaxed">Acceso inalámbrico seguro para mantenimiento y diagnóstico sin abrir puertas de tableros energizados.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">LOGO! como controlador de procesos y software SoftComfort v8</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">LOGO! como Controlador</div>
+                                        <p class="text-slate-600 leading-relaxed">Posicionamiento del LOGO! 8.3/8.4 como controlador inteligente de procesos auxiliares y concentrador de señales de planta.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Programación en Diagrama de Bloques (FBD) y creación de macro-bloques (UDF)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">FBD y Funciones UDF</div>
+                                        <p class="text-slate-600 leading-relaxed">Estructuración lógica con compuertas FBD y encapsulamiento modular en funciones definidas por el usuario (UDF).</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Manejo de señales análogas (0–10 V / 4–20 mA) en LOGO! y Ethernet</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Analógica y Conectividad</div>
+                                        <p class="text-slate-600 leading-relaxed">Amplificadores analógicos, comparadores de valor umbral y transmisión de datos analógicos vía Ethernet industrial.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Comunicación inter-controladores LOGO! (Master/Slave y Peer-to-Peer)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Red Inter-LOGO!</div>
+                                        <p class="text-slate-700 leading-relaxed">Intercambio de marcas de red (NI/NQ) entre múltiples unidades distribuidas en diferentes máquinas.</p>
+                                    </div>
+
+                                    <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-900">Introducción a LOGO! Web Editor (LWE) y servidor web embebido</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-emerald-100 text-emerald-800">🟢 Mantener</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Servidor Web LWE</div>
+                                        <p class="text-slate-700 leading-relaxed">Habilitación del servidor HTTP/HTTPS en la CPU y arquitectura de páginas HTML5 personalizadas.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Integración con LWE como HMI Web responsiva para monitoreo remoto</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">HMI Web Embebida</div>
+                                        <p class="text-slate-600 leading-relaxed">Diseño de pantallas gráficas táctiles para smartphone o tablet con botones de marcha/paro y visualización de termómetros.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Aplicaciones prácticas de integración multiplataforma por estaciones</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Estaciones de Trabajo</div>
+                                        <p class="text-slate-600 leading-relaxed">Organización del laboratorio por estaciones modulares donde el relé interactúa con actuadores y pantallas locales.</p>
+                                    </div>
+
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-red-900 line-through">Networking local industrial (tema duplicado)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Trazabilidad Curricular</div>
+                                        <p class="text-red-700 leading-relaxed line-through">Tachado sin eliminar: Tema duplicado textualmente en la versión original de temario; se preserva tachado para estricta trazabilidad.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Prácticas por estaciones con más unidades físicas e instrumentación</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">Ampliación Física en Taller</div>
+                                        <p class="text-blue-900 leading-relaxed">Dotación de más unidades físicas de expansión (DM8, AM2, RTD Pt100) y acoplamiento de sensores de temperatura y presión industriales para prácticas simultáneas por parejas.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================== -->
+                            <!-- COLUMNA 2: MÓDULO 6: REDES E IIOT              -->
+                            <!-- ============================================== -->
+                            <div class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden flex flex-col">
+                                <div class="bg-slate-900 text-white p-4 border-b border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-1">
+                                        <span>MÓDULO 6 (Semanas 36 a 40)</span>
+                                        <span>Duración: ~30 Horas</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold">6. Redes Industriales e IIoT</h4>
+                                    <p class="text-xs text-slate-300 mt-1">
+                                        <strong>En 2027:</strong> Direcciones IP, intercambio de variables y una supervisión final operativa. <span class="text-amber-300">Ampliación condicionada:</span> MQTT, OPC UA, SCADA, SQL y redes avanzadas.
+                                    </p>
+                                </div>
+                                <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
+                                    
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Configuración de direcciones IP industriales y segmentación de subredes</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Direccionamiento IP</div>
+                                        <p class="text-slate-600 leading-relaxed">Asignación estática de direcciones IPv4, cálculo de máscaras de subred (/24), puertas de enlace (Gateways) y resolución de conflictos de IP en planta.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Intercambio de variables punto a punto y cliente-servidor (S7 / Modbus TCP)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Intercambio de Variables</div>
+                                        <p class="text-slate-600 leading-relaxed">Lectura y escritura cíclica de variables de proceso entre PLCs Siemens y relés LOGO! mediante funciones PUT/GET y registros Holding Modbus TCP.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Supervisión final operativa mediante dashboards de monitoreo en Node-RED</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Supervisión Final Operativa</div>
+                                        <p class="text-slate-600 leading-relaxed">Despliegue de un panel de mando centralizado en Node-RED para visualizar el estado global de producción, tiempos de ciclo y paradas de máquinas.</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Instalación y configuración del entorno Node-RED en gateways y PCs</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Node-RED Industrial</div>
+                                        <p class="text-slate-600 leading-relaxed">Gestión de nodos paleta (node-red-contrib-s7, dashboard), flujos de datos y depuración mediante consola de depuración (Debug node).</p>
+                                    </div>
+
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-slate-700">Comunicación bidireccional entre Node-RED y controladores industriales</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Comandos de Control</div>
+                                        <p class="text-slate-600 leading-relaxed">Envío de consignas (setpoints) desde la interfaz web hacia los controladores y confirmación de acuse de recibo.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Conectividad IIoT con brokers MQTT y servidores industriales OPC UA</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">IIoT, MQTT y OPC UA</div>
+                                        <p class="text-blue-900 leading-relaxed">Publicación y suscripción ligera con protocolo MQTT (Mosquitto/HiveMQ) y servidor/cliente OPC UA para integración universal IT/OT interoperable.</p>
+                                    </div>
+
+                                    <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <span class="font-bold text-blue-900 bg-blue-100/70 px-1 py-0.5 rounded">🔵 Supervisión SCADA de planta con registro histórico en bases de datos SQL</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-blue-100 text-blue-800 border border-blue-200">🔵 Ampliación Condicionada</span>
+                                        </div>
+                                        <div class="text-[11px] font-medium text-blue-700 uppercase tracking-wider">SCADA, SQL y Redes Avanzadas</div>
+                                        <p class="text-blue-900 leading-relaxed">Desarrollo de pantallas SCADA (Ignition / WinCC), gestión de alarmas según norma ISA-18.2, trazabilidad de producción y almacenamiento en bases de datos SQL relacionales (PostgreSQL / MySQL).</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
                 </div>
 
                 <!-- PESTAÑA 2: FICHA TÉCNICA Y COMPETENCIAS GENERALES -->
