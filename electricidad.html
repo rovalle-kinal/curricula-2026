@@ -4515,7 +4515,7 @@
             <div class="tab-content-container space-y-6">
                 
                 <!-- PESTAÑA 1: TEMARIO MODULAR AUDITADO (DEFAULT) -->
-                                <div id="tab-pane-automatizacion_industrial-modular" class="tab-pane" style="display: block;">
+                                                <div id="tab-pane-automatizacion_industrial-modular" class="tab-pane" style="display: block;">
                     <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
                         
                         <!-- ENCABEZADO DE SECCIÓN Y FILTROS -->
@@ -4527,32 +4527,32 @@
                                     Distribución Modular y Auditoría Curricular 2027 (2 Columnas)
                                 </h3>
                                 <p class="text-slate-600 text-sm mt-1">
-                                    Total de temas auditados: <strong>77 temas</strong> desglosados en sus 6 módulos oficiales con trazabilidad completa (tachados, gris y azul).
+                                    Total de temas auditados: <strong>77 temas</strong> desglosados en sus 6 módulos oficiales con trazabilidad completa (tachados en gris, amarillo, azul y verde).
                                 </p>
                             </div>
                             
                             <!-- Filtros Interactivos -->
                             <div class="flex flex-wrap items-center gap-1.5 text-xs no-print">
                                 <button class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition" id="btn-all-automatizacion_industrial" onclick="filterEtsItems('all', 'automatizacion_industrial')">Todos (77)</button>
-                                <button class="px-3 py-1.5 rounded-lg bg-red-100 text-red-800 font-medium hover:bg-red-200 transition" id="btn-delete-automatizacion_industrial" onclick="filterEtsItems('delete', 'automatizacion_industrial')">🔴 Tachados (3)</button>
-                                <button class="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-700 font-medium hover:bg-slate-300 transition" id="btn-update-automatizacion_industrial" onclick="filterEtsItems('update', 'automatizacion_industrial')">🟡 En Gris: Actualizados (22)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-700 font-medium hover:bg-slate-300 transition" id="btn-delete-automatizacion_industrial" onclick="filterEtsItems('delete', 'automatizacion_industrial')">🔘 En Gris: Tachados (3)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-medium hover:bg-amber-200 transition" id="btn-update-automatizacion_industrial" onclick="filterEtsItems('update', 'automatizacion_industrial')">🟡 En Amarillo: Actualizados (22)</button>
                                 <button class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition" id="btn-new-automatizacion_industrial" onclick="filterEtsItems('new', 'automatizacion_industrial')">🔵 En Azul: Nuevos / Ampliación (8)</button>
-                                <button class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition" id="btn-keep-automatizacion_industrial" onclick="filterEtsItems('keep', 'automatizacion_industrial')">🟢 Mantener (44)</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 transition" id="btn-keep-automatizacion_industrial" onclick="filterEtsItems('keep', 'automatizacion_industrial')">🟢 En Verde: Mantener (44)</button>
                             </div>
                         </div>
 
                         <!-- CÓDIGO DE LEYENDA EXPLICATIVO SEGÚN RECOMENDACIÓN -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                            <div class="p-3 rounded-lg border border-red-200 bg-red-50/80 text-red-950 flex items-start gap-2">
-                                <span class="inline-block w-3 h-3 rounded-full bg-red-500 mt-0.5 shrink-0"></span>
+                            <div class="p-3 rounded-lg border border-slate-300 bg-slate-100/90 text-slate-800 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-slate-400 mt-0.5 shrink-0"></span>
                                 <div>
-                                    <strong class="text-red-900">Tachado (Sin eliminar):</strong> Temas desaconsejados para DAQ industrial (Arduino), contenidos especializados reubicados fuera de módulo o duplicados en temario previo.
+                                    <strong class="text-slate-900">En Gris (Tachado sin borrar):</strong> Temas desaconsejados para DAQ industrial (Arduino), contenidos especializados reubicados fuera de módulo o duplicados en temario previo.
                                 </div>
                             </div>
-                            <div class="p-3 rounded-lg border border-slate-300 bg-slate-100/90 text-slate-800 flex items-start gap-2">
-                                <span class="inline-block w-3 h-3 rounded-full bg-slate-500 mt-0.5 shrink-0"></span>
+                            <div class="p-3 rounded-lg border border-amber-300 bg-amber-50/90 text-amber-950 flex items-start gap-2">
+                                <span class="inline-block w-3 h-3 rounded-full bg-amber-500 mt-0.5 shrink-0"></span>
                                 <div>
-                                    <strong class="text-slate-900">En Gris (Actualizados 2027):</strong> Temas base que se actualizan con software estándar (TIA Portal V19, Studio 5000, LabVIEW, FBD/UDF, GRAFCET).
+                                    <strong class="text-amber-900">En Amarillo (Actualizados 2027):</strong> Temas base que se modernizan con software estándar (TIA Portal V19, Studio 5000, LabVIEW, FBD/UDF, GRAFCET).
                                 </div>
                             </div>
                             <div class="p-3 rounded-lg border border-blue-200 bg-blue-50/90 text-blue-950 flex items-start gap-2">
@@ -4597,22 +4597,22 @@
                                         <p class="text-slate-700 leading-relaxed">Conceptos fundamentales de automatización, evolución de la manufactura y rol del técnico de control.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Sistemas de control (lazo abierto y lazo cerrado introductorio)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Sistemas de control (lazo abierto y lazo cerrado introductorio)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Control Básico</div>
-                                        <p class="text-slate-600 leading-relaxed">Concepto comparativo entre control en lazo abierto y lazo cerrado elemental aplicado a arrancadores y servomecanismos de taller.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Control Básico</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Concepto comparativo entre control en lazo abierto y lazo cerrado elemental aplicado a arrancadores y servomecanismos de taller.</p>
                                     </div>
 
-                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-slate-100/80 border-l-4 border-slate-400" data-status="delete">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-red-900 line-through">PID y transmisores HART especializados en módulo 1</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                            <span class="font-bold text-slate-500 line-through">PID y transmisores HART especializados en módulo 1</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-600">🔘 Tachado (Gris)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Alineación 2027 • Reubicado</div>
-                                        <p class="text-red-700 leading-relaxed line-through">PID y calibración de campo HART quedan fuera de este módulo 1; se trasladan formalmente al Módulo 2 (Instrumentación Industrial) para focalizar el módulo 1 en mando electromagnético y protecciones.</p>
+                                        <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Alineación 2027 • Reubicado</div>
+                                        <p class="text-slate-500 leading-relaxed line-through">PID y calibración de campo HART quedan fuera de este módulo 1; se trasladan formalmente al Módulo 2 (Instrumentación Industrial) para focalizar el módulo 1 en mando electromagnético y protecciones.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4733,13 +4733,13 @@
                                 </div>
                                 <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
                                     
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Introducción a la instrumentación industrial y metrología</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Introducción a la instrumentación industrial y metrología</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fundamentos de Medición</div>
-                                        <p class="text-slate-600 leading-relaxed">Definiciones de exactitud, precisión, repetibilidad, histéresis y rango de medida en instrumentación de planta.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Fundamentos de Medición</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Definiciones de exactitud, precisión, repetibilidad, histéresis y rango de medida en instrumentación de planta.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4751,13 +4751,13 @@
                                         <p class="text-slate-700 leading-relaxed">Principios físicos de medición para las 4 variables críticas de la industria química, alimentos y manufactura.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Sensores análogos y digitales (señales estándar 0–10 V y 4–20 mA)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Sensores análogos y digitales (señales estándar 0–10 V y 4–20 mA)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Transmisión Analógica</div>
-                                        <p class="text-slate-600 leading-relaxed">Estandarización de lazos de corriente 4–20 mA (inmunidad al ruido electromagnético) y señales de tensión 0–10 V en distancias cortas.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Transmisión Analógica</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Estandarización de lazos de corriente 4–20 mA (inmunidad al ruido electromagnético) y señales de tensión 0–10 V en distancias cortas.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4778,13 +4778,13 @@
                                         <p class="text-slate-700 leading-relaxed">Lectura de simbología ISA 5.1 en diagramas de tuberías e instrumentación (P&ID) y especificaciones de fabricante.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Escalamiento matemático y calibración de sensores</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Escalamiento matemático y calibración de sensores</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Escalamiento</div>
-                                        <p class="text-slate-600 leading-relaxed">Fórmulas de interpolación lineal (y = mx + b), normalización de unidades físicas (bar, °C, m³/h) a cuentas digitales (0–27648).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Escalamiento</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Fórmulas de interpolación lineal (y = mx + b), normalización de unidades físicas (bar, °C, m³/h) a cuentas digitales (0–27648).</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4796,13 +4796,13 @@
                                         <p class="text-slate-700 leading-relaxed">Conexión de sensores de 2, 3 y 4 hilos (PNP/NPN, NO/NC), cables apantallados y puesta a tierra de shields.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Virtualización de instrumentos con LabVIEW y adquisición didáctica (DAQ)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Virtualización de instrumentos con LabVIEW y adquisición didáctica (DAQ)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Adquisición Didáctica</div>
-                                        <p class="text-slate-600 leading-relaxed">Configuración de módulos DAQ didácticos (NI USB-6008/6009) y programación gráfica G para instrumentación virtual.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Adquisición Didáctica</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Configuración de módulos DAQ didácticos (NI USB-6008/6009) y programación gráfica G para instrumentación virtual.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4841,13 +4841,13 @@
                                         <p class="text-slate-700 leading-relaxed">Promediación móvil, eliminación de picos espurios y acondicionamiento digital de variables ruidosas.</p>
                                     </div>
 
-                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-slate-100/80 border-l-4 border-slate-400" data-status="delete">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-red-900 line-through">Integración de instrumentos a ARDUINO como DAQ</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                            <span class="font-bold text-slate-500 line-through">Integración de instrumentos a ARDUINO como DAQ</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-600">🔘 Tachado (Gris)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Trazabilidad Curricular</div>
-                                        <p class="text-red-700 leading-relaxed line-through">Tachado sin eliminar: Desaconsejado en entornos industriales por falta de aislamiento galvánico e inmunidad electromagnética. Reemplazado por LabVIEW, DAQ didáctica y tarjetas analógicas de PLC.</p>
+                                        <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Trazabilidad Curricular</div>
+                                        <p class="text-slate-500 leading-relaxed line-through">Tachado sin eliminar: Desaconsejado en entornos industriales por falta de aislamiento galvánico e inmunidad electromagnética. Reemplazado por LabVIEW, DAQ didáctica y tarjetas analógicas de PLC.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4914,22 +4914,22 @@
                                         <p class="text-slate-700 leading-relaxed">Estructura modular, fuente de alimentación, CPU, buses internos y módulos de E/S discretas y analógicas.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Herramientas de programación y simulación (TIA Portal / Studio 5000)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Herramientas de programación y simulación (TIA Portal / Studio 5000)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Entornos de Ingeniería</div>
-                                        <p class="text-slate-600 leading-relaxed">Manejo de suites industriales dominantes en Guatemala: Siemens TIA Portal V18/V19 (S7-1200) y Rockwell Studio 5000 (CompactLogix).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Entornos de Ingeniería</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Manejo de suites industriales dominantes en Guatemala: Siemens TIA Portal V18/V19 (S7-1200) y Rockwell Studio 5000 (CompactLogix).</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Conceptos básicos de programación en lenguaje Ladder (LADDER / KOP)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Conceptos básicos de programación en lenguaje Ladder (LADDER / KOP)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Lenguaje LADDER</div>
-                                        <p class="text-slate-600 leading-relaxed">Diagramas de contactos normalizados bajo IEC 61131-3, flujo de potencia lógica y orden de ejecución de peldaños (rungs).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Lenguaje LADDER</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Diagramas de contactos normalizados bajo IEC 61131-3, flujo de potencia lógica y orden de ejecución de peldaños (rungs).</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -4941,31 +4941,31 @@
                                         <p class="text-slate-700 leading-relaxed">Lectura de entradas, ejecución de lógica de usuario, actualización de salidas y tareas de comunicaciones.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Depuración, forzado de variables y diagnóstico de programas en línea</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Depuración, forzado de variables y diagnóstico de programas en línea</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Diagnóstico</div>
-                                        <p class="text-slate-600 leading-relaxed">Tablas de observación (Watch tables), forzado seguro de variables y análisis del buffer de diagnóstico de CPU.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Diagnóstico</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Tablas de observación (Watch tables), forzado seguro de variables y análisis del buffer de diagnóstico de CPU.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Tipos de datos y direccionamiento estructurado de E/S</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Tipos de datos y direccionamiento estructurado de E/S</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Direccionamiento</div>
-                                        <p class="text-slate-600 leading-relaxed">Direccionamiento simbólico y absoluto (BOOL, BYTE, WORD, DWORD, INT, REAL), marcas internas y bloques de datos (DB).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Direccionamiento</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Direccionamiento simbólico y absoluto (BOOL, BYTE, WORD, DWORD, INT, REAL), marcas internas y bloques de datos (DB).</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Procedimiento de apertura y configuración de hardware en PLC</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Procedimiento de apertura y configuración de hardware en PLC</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Hardware Config</div>
-                                        <p class="text-slate-600 leading-relaxed">Carga de hardware desde catálogo de dispositivos, asignación de direcciones IP de subred y configuración de tarjetas auxiliares.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Hardware Config</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Carga de hardware desde catálogo de dispositivos, asignación de direcciones IP de subred y configuración de tarjetas auxiliares.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -5095,13 +5095,13 @@
                                         <p class="text-slate-700 leading-relaxed">Concepto de estado presente, condiciones de transición y estado siguiente para control de celdas automatizadas.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">GRAFCET y Diagramas Funcionales de Secuencia (IEC 60848)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">GRAFCET y Diagramas Funcionales de Secuencia (IEC 60848)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Modelado GRAFCET</div>
-                                        <p class="text-slate-600 leading-relaxed">Etapas iniciales, intermedias, transiciones activables, receptividades y reglas de evolución formal.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Modelado GRAFCET</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Etapas iniciales, intermedias, transiciones activables, receptividades y reglas de evolución formal.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -5113,13 +5113,13 @@
                                         <p class="text-slate-700 leading-relaxed">Encapsulamiento funcional de código en bloques de función con memoria de instancia y librerías reusables.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Diagramación secuencial, secuencias únicas y bifurcaciones (O / Y)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Diagramación secuencial, secuencias únicas y bifurcaciones (O / Y)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Flujo de Proceso</div>
-                                        <p class="text-slate-600 leading-relaxed">Divergencias en selección alternativa (O) y paralelismos simultáneos de sincronización (Y).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Flujo de Proceso</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Divergencias en selección alternativa (O) y paralelismos simultáneos de sincronización (Y).</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -5167,13 +5167,13 @@
                                         <p class="text-slate-700 leading-relaxed">Condiciones de avance disparadas por umbrales de presión, temperatura o peso en balanza.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Pruebas, simulación dinámica y diagnóstico con gemelos digitales (Factory I/O)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Pruebas, simulación dinámica y diagnóstico con gemelos digitales (Factory I/O)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Gemelo Digital</div>
-                                        <p class="text-slate-600 leading-relaxed">Puesta en marcha virtual conectando TIA Portal con simuladores físicos 3D (Factory I/O) para depurar colisiones antes del taller.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Gemelo Digital</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Puesta en marcha virtual conectando TIA Portal con simuladores físicos 3D (Factory I/O) para depurar colisiones antes del taller.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -5249,31 +5249,31 @@
                                         <p class="text-slate-700 leading-relaxed">Acceso inalámbrico seguro para mantenimiento y diagnóstico sin abrir puertas de tableros energizados.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">LOGO! como controlador de procesos y software SoftComfort v8</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">LOGO! como controlador de procesos y software SoftComfort v8</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">LOGO! como Controlador</div>
-                                        <p class="text-slate-600 leading-relaxed">Posicionamiento del LOGO! 8.3/8.4 como controlador inteligente de procesos auxiliares y concentrador de señales de planta.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">LOGO! como Controlador</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Posicionamiento del LOGO! 8.3/8.4 como controlador inteligente de procesos auxiliares y concentrador de señales de planta.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Programación en Diagrama de Bloques (FBD) y creación de macro-bloques (UDF)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Programación en Diagrama de Bloques (FBD) y creación de macro-bloques (UDF)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">FBD y Funciones UDF</div>
-                                        <p class="text-slate-600 leading-relaxed">Estructuración lógica con compuertas FBD y encapsulamiento modular en funciones definidas por el usuario (UDF).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">FBD y Funciones UDF</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Estructuración lógica con compuertas FBD y encapsulamiento modular en funciones definidas por el usuario (UDF).</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Manejo de señales análogas (0–10 V / 4–20 mA) en LOGO! y Ethernet</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Manejo de señales análogas (0–10 V / 4–20 mA) en LOGO! y Ethernet</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Analógica y Conectividad</div>
-                                        <p class="text-slate-600 leading-relaxed">Amplificadores analógicos, comparadores de valor umbral y transmisión de datos analógicos vía Ethernet industrial.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Analógica y Conectividad</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Amplificadores analógicos, comparadores de valor umbral y transmisión de datos analógicos vía Ethernet industrial.</p>
                                     </div>
 
                                     <div class="content-item item-keep p-3 rounded text-xs space-y-1" data-status="keep">
@@ -5294,31 +5294,31 @@
                                         <p class="text-slate-700 leading-relaxed">Habilitación del servidor HTTP/HTTPS en la CPU y arquitectura de páginas HTML5 personalizadas.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Integración con LWE como HMI Web responsiva para monitoreo remoto</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Integración con LWE como HMI Web responsiva para monitoreo remoto</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">HMI Web Embebida</div>
-                                        <p class="text-slate-600 leading-relaxed">Diseño de pantallas gráficas táctiles para smartphone o tablet con botones de marcha/paro y visualización de termómetros.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">HMI Web Embebida</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Diseño de pantallas gráficas táctiles para smartphone o tablet con botones de marcha/paro y visualización de termómetros.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Aplicaciones prácticas de integración multiplataforma por estaciones</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Aplicaciones prácticas de integración multiplataforma por estaciones</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Estaciones de Trabajo</div>
-                                        <p class="text-slate-600 leading-relaxed">Organización del laboratorio por estaciones modulares donde el relé interactúa con actuadores y pantallas locales.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Estaciones de Trabajo</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Organización del laboratorio por estaciones modulares donde el relé interactúa con actuadores y pantallas locales.</p>
                                     </div>
 
-                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-red-50/70 border-l-4 border-red-500" data-status="delete">
+                                    <div class="content-item item-delete p-3 rounded text-xs space-y-1 bg-slate-100/80 border-l-4 border-slate-400" data-status="delete">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-red-900 line-through">Networking local industrial (tema duplicado)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-red-100 text-red-800">🔴 Tachado</span>
+                                            <span class="font-bold text-slate-500 line-through">Networking local industrial (tema duplicado)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-600">🔘 Tachado (Gris)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-red-600 uppercase tracking-wider">Trazabilidad Curricular</div>
-                                        <p class="text-red-700 leading-relaxed line-through">Tachado sin eliminar: Tema duplicado textualmente en la versión original de temario; se preserva tachado para estricta trazabilidad.</p>
+                                        <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Trazabilidad Curricular</div>
+                                        <p class="text-slate-500 leading-relaxed line-through">Tachado sin eliminar: Tema duplicado textualmente en la versión original de temario; se preserva tachado para estricta trazabilidad.</p>
                                     </div>
 
                                     <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
@@ -5349,49 +5349,49 @@
                                 </div>
                                 <div class="p-5 divide-y divide-slate-100 flex-1 space-y-2">
                                     
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Configuración de direcciones IP industriales y segmentación de subredes</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Configuración de direcciones IP industriales y segmentación de subredes</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Direccionamiento IP</div>
-                                        <p class="text-slate-600 leading-relaxed">Asignación estática de direcciones IPv4, cálculo de máscaras de subred (/24), puertas de enlace (Gateways) y resolución de conflictos de IP en planta.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Direccionamiento IP</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Asignación estática de direcciones IPv4, cálculo de máscaras de subred (/24), puertas de enlace (Gateways) y resolución de conflictos de IP en planta.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Intercambio de variables punto a punto y cliente-servidor (S7 / Modbus TCP)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Intercambio de variables punto a punto y cliente-servidor (S7 / Modbus TCP)</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Intercambio de Variables</div>
-                                        <p class="text-slate-600 leading-relaxed">Lectura y escritura cíclica de variables de proceso entre PLCs Siemens y relés LOGO! mediante funciones PUT/GET y registros Holding Modbus TCP.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Intercambio de Variables</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Lectura y escritura cíclica de variables de proceso entre PLCs Siemens y relés LOGO! mediante funciones PUT/GET y registros Holding Modbus TCP.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Supervisión final operativa mediante dashboards de monitoreo en Node-RED</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Supervisión final operativa mediante dashboards de monitoreo en Node-RED</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Supervisión Final Operativa</div>
-                                        <p class="text-slate-600 leading-relaxed">Despliegue de un panel de mando centralizado en Node-RED para visualizar el estado global de producción, tiempos de ciclo y paradas de máquinas.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Supervisión Final Operativa</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Despliegue de un panel de mando centralizado en Node-RED para visualizar el estado global de producción, tiempos de ciclo y paradas de máquinas.</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Instalación y configuración del entorno Node-RED en gateways y PCs</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Instalación y configuración del entorno Node-RED en gateways y PCs</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Node-RED Industrial</div>
-                                        <p class="text-slate-600 leading-relaxed">Gestión de nodos paleta (node-red-contrib-s7, dashboard), flujos de datos y depuración mediante consola de depuración (Debug node).</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Node-RED Industrial</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Gestión de nodos paleta (node-red-contrib-s7, dashboard), flujos de datos y depuración mediante consola de depuración (Debug node).</p>
                                     </div>
 
-                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-slate-50 border-l-4 border-slate-400" data-status="update">
+                                    <div class="content-item item-update p-3 rounded text-xs space-y-1 bg-amber-50/80 border-l-4 border-amber-400" data-status="update">
                                         <div class="flex justify-between items-start gap-2">
-                                            <span class="font-bold text-slate-700">Comunicación bidireccional entre Node-RED y controladores industriales</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-slate-200 text-slate-700">🟡 En Gris (Actualizado)</span>
+                                            <span class="font-bold text-amber-950">Comunicación bidireccional entre Node-RED y controladores industriales</span>
+                                            <span class="px-2 py-0.5 rounded text-xs font-bold whitespace-nowrap bg-amber-100 text-amber-800 border border-amber-200">🟡 Actualizado (Amarillo)</span>
                                         </div>
-                                        <div class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Comandos de Control</div>
-                                        <p class="text-slate-600 leading-relaxed">Envío de consignas (setpoints) desde la interfaz web hacia los controladores y confirmación de acuse de recibo.</p>
+                                        <div class="text-[11px] font-medium text-amber-700 uppercase tracking-wider">Comandos de Control</div>
+                                        <p class="text-amber-900/90 leading-relaxed">Envío de consignas (setpoints) desde la interfaz web hacia los controladores y confirmación de acuse de recibo.</p>
                                     </div>
 
                                     <div class="content-item item-new p-3 rounded text-xs space-y-1 bg-blue-50/90 border-l-4 border-blue-600" data-status="new">
